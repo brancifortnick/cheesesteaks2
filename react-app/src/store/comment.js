@@ -11,7 +11,7 @@ const getComments = (comments) => ({
 });
 
 
-const getSongComments = (comments) => ({
+const getImagesComments = (comments) => ({
   type: GET_COMMENTS,
   payload: comments,
 });
@@ -44,11 +44,11 @@ export const getAllComments = () => async (dispatch) => {
   }
 };
 
-export const getSongsComments = (song_id) => async (dispatch) => {
-  const res = await fetch(`/api/songs/${song_id}/comments`)
+export const getSongsComments = (image_id) => async (dispatch) => {
+  const res = await fetch(`/api/comments/${image_id}`)
   if(res.ok){
     const comments = await res.json();
-    dispatch(getSongComments(comments));
+    dispatch(getImagesComments(comments));
   }
 }
 
@@ -86,7 +86,7 @@ export const deleteAComment = (id) => async (dispatch) => {
   if (res.ok) {
     dispatch(deleteComment(id));
   } else {
-    console.log("Musician Can't be deleted");
+    console.log("Comment Can't be deleted");
   }
 };
 
@@ -99,7 +99,7 @@ export const updateAComment = (formData, commentId) => async (dispatch) => {
     const updatedComment = await res.json();
     dispatch(editComment(updatedComment));
   } else {
-    console.log("Musician Can't be edited");
+    console.log("Comment Can't be edited");
   }
 };
 

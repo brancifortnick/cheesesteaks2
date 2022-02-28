@@ -1,80 +1,82 @@
-const GET_TRACKS = "song/GET_TRACKS";
-const ADD_TRACK = "song/ADD_TRACK";
-const GET_ONE_TRACK = "song/GET_ONE_TRACK";
-const DELETE_TRACK = "song/DELETE_TRACK";
+const GET_PHOTOS = "image/GET_PHOTOS";
+const GET_ONE_PHOTO = "image/GET_ONE_PHOTO";
+const DELETE_PHOTO = "image/DELETE_PHOTO";
+const UPDATE_PHOTO = "image/UPDATE_PHOTO";
+const ADD_ONE_PHOTO = "image/ADD_ONE_PHOTO";
 
-const getAllSongs = (songs) => ({
-  type: GET_TRACKS,
-  payload: songs,
+const getOnePhoto = (image) => ({
+  type: GET_ONE_PHOTO,
+  payload: image,
 });
 
-const addOneSong = (song) => ({
-  type: ADD_TRACK,
-  payload: song,
+const getAllPhotos = (image) => ({
+  type: GET_PHOTOS,
+  payload: image,
 });
 
-const grabOneSong = (song) => ({
-  type: GET_ONE_TRACK,
-  payload: song,
+const addOnePhoto = (image) => ({
+  type: ADD_ONE_PHOTO,
+  payload: image,
 });
 
-const deleteATrack = (song) => ({
-  type: DELETE_TRACK,
-  payload: song,
+const deleteOnePhoto = (image) => ({
+  type: DELETE_PHOTO,
+  payload: image,
 });
 
-export const getMusiciansTracks = (id) => async (dispatch) => {
-  const response = await fetch(`/api/musicians/${id}/songs`);
-  if (response.ok) {
-    const songData = await response.json();
-    dispatch(getAllSongs(songData.songs));
-  } else {
-    console.log("+++++++____first thunk in SONG STORE___+++++++");
+const updateOnePhoto = (image) => ({
+  type: UPDATE_PHOTO,
+  payload: image,
+});
+
+export const getPhotos = () => async (dispatch) => {
+  const res = await fetch("/api/images/");
+  if (res.ok) {
+    const photos = await res.json();
+    console.log(photos.images, "photos.images>>>>> store");
+    dispatch(getAllPhotos(photos.images));
   }
 };
 
-export const createNewSong =
-  (title, file_url, song_img, musician_id) => async (dispatch) => {
-    file_url = file_url.url;
-    const res = await fetch("/api/songs/new", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ title, file_url, song_img, musician_id }),
-    });
-    if (res.ok) {
-      const newSong = await res.json();
-      console.log(
-        newSong,
-        "newSong value from createNewSOng thunk in song.store"
-      );
-      dispatch(addOneSong(newSong));
-      return newSong;
-    } else {
-      console.log(
-        "erroring out in musician thunk---> createNewSong---> STORE ***SONG**"
-      );
-    }
-  };
+export const editImage = (formData, id) => async (dispatch) => {
+  const res = await fetch(`/api/images/${id}`, {
+    method: "PUT",
+    body: formData,
+  });
+  if (res.ok) {
+    const imageUpdate = await res.json();
+    dispatch(updateOnePhoto(imageUpdate));
+  }
+};
 
-// export const getOneSingleSong = (id) => async (dispatch) => {
-//   const response = await fetch(`/api/musicians/songs/${id}`);
-//   if (response.ok) {
-//     const singleSong = await response.json();
-//     dispatch(grabOneSong(singleSong));
-//     return singleSong;
-//   } else {
-//     console.log("error coming from store => getting single song in SONGSTORE");
-//   }
-// };
+export const getAPhoto = (id) => async (dispatch) => {
+  const res = await fetch(`/api/images/${id}`);
+  if (res.ok) {
+    const photo = await res.json();
+    dispatch(getOnePhoto(photo));
+  }
+};
 
-export const deleteTrack = (id) => async (dispatch) => {
-  const response = await fetch(`/api/songs/${id}`, {
+export const addImage = (formData) => async (dispatch) => {
+  const res = await fetch("/api/images/", {
+    method: "POST",
+    body: formData,
+  });
+  if (res.ok) {
+    let image = await res.json();
+    dispatch(addOnePhoto(image));
+  } else {
+    console.log("store ERROR");
+  }
+};
+
+export const deletePhoto = (id) => async (dispatch) => {
+  const res = await fetch(`/api/images/${id}`, {
     method: "DELETE",
   });
-  if (response.ok) {
-    dispatch(deleteATrack(id));
+  if (res.ok) {
+    const removeData = await res.json();
+    dispatch(deleteOnePhoto(removeData));
   }
 };
 
@@ -82,22 +84,31 @@ const initialState = {};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case GET_TRACKS:
-      const getState = {};
-      action.payload.forEach((song) => {
-        getState[song.id] = song;
+    case GET_PHOTOS:
+      const currentState = {};
+      action.payload.forEach((image) => {
+        currentState[image.id] = image;
       });
-      return getState;
-    case ADD_TRACK:
-      const newNew = { ...state };
-      newNew[action.payload.id] = action.payload;
-      return newNew;
-    case GET_ONE_TRACK:
-      return { ...action.payload };
-    case DELETE_TRACK:
-      const currentState = { ...state };
-      delete currentState[action.payload]; // maybe this should be action.payload.id-not sure
       return currentState;
+
+    case ADD_ONE_PHOTO:
+      const addingState = { ...state };
+      addingState[action.payload.id] = action.payload;
+      return addingState;
+
+    case GET_ONE_PHOTO:
+      return { ...action.payload };
+
+    case UPDATE_PHOTO:
+      const updateState = { ...action.payload };
+      //   updateState[action.payload.id] = action.payload;
+      return updateState;
+
+    case DELETE_PHOTO:
+      const removeState = { ...state };
+      delete removeState[action.payload.id];
+      return removeState;
+
     default:
       return state;
   }

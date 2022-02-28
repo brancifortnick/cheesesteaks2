@@ -30,12 +30,6 @@ const updateBio = (location) => ({
   payload: location,
 });
 
-// const addImage = (musician) => ({
-//   type: ADD_IMAGE,
-//   payload: musician,
-// });
-//---put route
-
 export const getAllLocations = (id) => async (dispatch) => {
   const res = await fetch(`/api/locations/`);
   if (res.ok) {
