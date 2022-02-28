@@ -54,6 +54,15 @@ def logout():
     return {'message': 'User logged out'}
 
 
+@auth_routes.route('/demo', methods=['POST'])
+def demo():
+    """
+    Logs a user in as demo user
+    """
+    user = User.query.filter_by(username="Demo").first()
+    login_user(user)
+    return user.to_dict()
+
 @auth_routes.route('/signup', methods=['POST'])
 def sign_up():
     """
