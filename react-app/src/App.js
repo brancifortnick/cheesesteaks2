@@ -10,6 +10,7 @@ import User from "./components/User";
 import { authenticate } from "./store/session";
 import LandingPage from "./components/LandingPage";
 import LocationUpload from "./components/LocationUpload";
+import AllLocations from "./components/AllLocations";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -47,6 +48,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId/new-location' exact={true}>
           <LocationUpload />
+        </ProtectedRoute>
+        <ProtectedRoute path='/locations' exact={true}>
+          <AllLocations />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
