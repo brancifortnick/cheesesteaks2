@@ -16,7 +16,7 @@ def seed_locations():
     )
     location3 = Location(
         user_id=3,
-        musician_name='Steak2',
+        location_name='Steak2',
         profile_img='https://mycheesesteaks.s3.amazonaws.com/steak2.jpg',
         biography="I too, also produce music, and work alongside big name artists'",
     )
