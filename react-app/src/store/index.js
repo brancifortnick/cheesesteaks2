@@ -1,9 +1,17 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
+import user from './user';
+import location from './location';
+import image from './image';
+import comment from './comment';
 
 const rootReducer = combineReducers({
   session,
+  user:user,
+  location,
+  image,
+  comment,
 });
 
 
