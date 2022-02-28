@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getAllLocations, postNewLocation } from "../store/location";
-import "./MusicianFormThree.css";
+
 
 const LocationUpload = () => {
   const history = useHistory();
@@ -19,7 +19,7 @@ const LocationUpload = () => {
     const formData = new FormData();
     formData.append("profile_img", profile_img);
     //fetching from backend route
-    const res = await fetch("/api/locations/new-picture", {
+    const res = await fetch("/api/locations/new-location", {
       method: "POST",
       body: formData,
     });
@@ -38,16 +38,16 @@ const LocationUpload = () => {
 
   return (
     <div className="outer_card">
-      <h1 id="add-musician-text">Add A Location</h1>
-      <form className="musician-form" onSubmit={onSubmit}>
+      <h1 id="add-location-text">Add A Location</h1>
+      <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
           <label htmlFor="location_name" >
            Location Name
           </label>
           <input
             type="text"
-            name="musician_name"
-            placeholder="Musician Name"
+            name="location_name"
+            placeholder="Location Name"
             onChange={(e) => setLocationName(e.target.value)}
             value={location_name}
           />

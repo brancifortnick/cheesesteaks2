@@ -28,9 +28,9 @@ const NavBar = () => {
             </NavLink>
           ) : null}
         </div>
-        <div className='nav-link'>
-          <NavLink to='/images/' exact={true}>
-            Images
+        <div className="nav-link">
+          <NavLink to="/locations" exact={true}>
+            Locations
           </NavLink>
         </div>
         <div className="nav-link">
@@ -59,15 +59,18 @@ const NavBar = () => {
             Demo Login
           </button>
         ) : null}
-        {/* {user ? (
-        <div className="nav-link">
-          <NavLink to={`/users/${user.id}/upload/`}>Upload</NavLink>
-        </div>
-        ): null} */}
-        {/* <li>
-          "`${user.username}`'s Profile
+        {!user ? (
+          <div>
+            <button id="demo-button" onClick={demoLoginButton}>
+              Demo
+            </button>
+          </div>
+        ) : null}
+        <button>
+          {`${user.username}'s Profile`}
           <NavLink to={`/users/${user.id}`}></NavLink>
-          </li> */}
+        </button>
+        <NavLink to={`/users/${user.id}/new-location`}>Add Location</NavLink>
         <div className="nav-link">{user ? <LogoutButton /> : null}</div>
       </div>
     </nav>
