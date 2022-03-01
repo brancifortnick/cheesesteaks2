@@ -21,7 +21,7 @@ def get_photos(id):
     images = Image.query.get(id)
     return images.to_dict()
 
-@image_routes.route("", methods=["POST"])
+@image_routes.route("/", methods=["POST"])
 @login_required
 def upload_image():
 

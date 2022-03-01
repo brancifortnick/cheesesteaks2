@@ -49,18 +49,18 @@ function Locations() {
               locationId={locationId}
             />
           ) : null}
-      </div>
-      <div>
-        {currentUser.id === Number(location.user_id) ? (
-          <ImageUpload locationId={locationId} />
-        ): null}
-
+        </div>
+        <div>
+          {currentUser.id === Number(location.user_id) ? (
+            <ImageUpload locationId={locationId} />
+          ) : null}
+        </div>
       </div>
       {/* <div id="delete-component">
         {currentUser.id === Number(musicians.user_id) ? (
           <DeleteMusician musicianId={musicianId} />
         ) : null}
-      </div> */}
+
 
       {/* <div className="song-form">
         {currentUser.id === Number(musicians.user_id) ? (
