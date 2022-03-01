@@ -11,7 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.comment_routes import comment_routes
 from .api.image_routes import image_routes
 from .api.location_routes import location_routes
-
+from .api.vote_routes import vote_routes
 
 from .seeds import seed_commands
 
@@ -38,6 +38,8 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(location_routes, url_prefix='/api/locations')
 app.register_blueprint(image_routes, url_prefix='/api/images')
 app.register_blueprint(comment_routes, url_prefix='/api/comments')
+app.register_blueprint(vote_routes, url_prefix='/api/votes')
+
 db.init_app(app)
 Migrate(app, db)
 
