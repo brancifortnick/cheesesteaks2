@@ -2,23 +2,12 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 import { useSelector } from 'react-redux';
 
-const MapPageA = () => {
+const GoogleLocation = () => {
 
 const UserPositionString =  useSelector(state => state.session.user.geolocation);
 const currentUser = useSelector(state => state.session.user)
 
-const [users, setUsers] = useState([]);
 
-useEffect(() => {
-  async function fetchData() {
-    const response = await fetch('/api/users/');
-    const responseData = await response.json();
-    setUsers(responseData.users);
-  }
-  fetchData();
-}, []);
-
-// console.log("999999999999999999999999999999999999999", users)
 
 
 function ChangeUserPos(StringPos) {
@@ -96,4 +85,4 @@ const onUnmount = useCallback(function callback(map) {
 
 }
 
-export default MapPageA
+export default GoogleLocation;
