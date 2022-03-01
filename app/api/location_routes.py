@@ -17,14 +17,14 @@ def get_locations():
 
 @location_routes.route('/<int:id>', methods=['GET'])
 @login_required
-def get_artist_id(id):
+def get_location_id(id):
     location = Location.query.get(id)
     return location.to_dict()
 
 
 @location_routes.route('/<int:id>/images')
 @login_required
-def locations_songs(id):
+def locations_images(id):
     images = Image.query.filter(Image.location_id == id).all()
     return {'images': [image.to_dict() for image in images]}
 

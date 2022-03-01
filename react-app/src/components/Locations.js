@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import UpdateBiography from "./UpdateBiography";
 import ImageUpload from "./ImageUpload";
 import Voting from "./Voting";
+import DeleteLocation from "./DeleteLocation";
+
 
 function Locations() {
   const dispatch = useDispatch();
@@ -56,12 +58,11 @@ function Locations() {
       <div>
         <Voting />
       </div>
-      {/* <div id="delete-component">
-        {currentUser.id === Number(musicians.user_id) ? (
-          <DeleteMusician musicianId={musicianId} />
+      <div id="delete-component">
+        {currentUser.id === Number(location.user_id) ? (
+          <DeleteLocation locationId={locationId} />
         ) : null}
-
-
+      </div>
       {/* <div className="song-form">
         {currentUser.id === Number(musicians.user_id) ? (
           <UploadSong musicianId={musicianId} />
