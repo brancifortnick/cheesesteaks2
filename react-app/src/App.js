@@ -13,6 +13,7 @@ import LocationUpload from "./components/LocationUpload";
 import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
 import MapLocation from "./components/GoogleLocation";
+import GoogleLocation from "./components/GoogleLocation";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -47,7 +48,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true}>
           <LandingPage />
-          {/* <MapLocation /> */}
+          {/* <GoogleLocation /> */}
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId/new-location" exact={true}>
           <LocationUpload />
