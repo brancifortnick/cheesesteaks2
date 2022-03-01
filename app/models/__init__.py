@@ -3,3 +3,4 @@ from .user import User
 from .comment import Comment
 from .location import Location
 from .image import Image
+from .vote import Vote

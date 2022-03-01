@@ -1,8 +1,11 @@
 from flask.cli import AppGroup
+
+from app.seeds.votes import seed_votes
 from .users import seed_users, undo_users
 from .locations import seed_locations, undo_locations
 from .comments import seed_comments, undo_comments
 from .images import seed_images, undo_images
+from .votes import seed_votes, undo_votes
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
 seed_commands = AppGroup('seed')
@@ -15,6 +18,7 @@ def seed():
     seed_images()
     seed_locations()
     seed_comments()
+    seed_votes()
     # Add other seed functions here
 
 
@@ -25,4 +29,5 @@ def undo():
     undo_images()
     undo_locations()
     undo_comments()
+    undo_votes()
     # Add other undo functions here
