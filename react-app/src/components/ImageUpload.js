@@ -4,7 +4,9 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addImage} from '../store/image'
 
-const ImageUpload = ({id}) => {
+const ImageUpload = ({locationId}) => {
+
+
   const dispatch = useDispatch()
   const history = useHistory()
   const user = useSelector((state) => state.session.user);
@@ -22,7 +24,7 @@ const ImageUpload = ({id}) => {
 
     dispatch(addImage(formData))
 
-    history.push(`/users/${user.id}/images/`);
+    history.push(`/locations/${locationId}`);
   };
 
   const addPictureFile = (e) => {

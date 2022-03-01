@@ -4,6 +4,7 @@ import { getOneLocation } from "../store/location";
 import { useDispatch, useSelector } from "react-redux";
 import {useParams} from 'react-router-dom'
 import UpdateBiography from "./UpdateBiography";
+import ImageUpload from "./ImageUpload";
 
 
 
@@ -49,6 +50,11 @@ function Locations() {
             />
           ) : null}
       </div>
+      <div>
+        {currentUser.id === Number(location.user_id) ? (
+          <ImageUpload locationId={locationId} />
+        ): null}
+
       </div>
       {/* <div id="delete-component">
         {currentUser.id === Number(musicians.user_id) ? (
