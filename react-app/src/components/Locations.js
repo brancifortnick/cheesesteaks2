@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { getOneLocation } from "../store/location";
 import { useDispatch, useSelector } from "react-redux";
-import {useParams} from 'react-router-dom'
+import { useParams } from "react-router-dom";
 import UpdateBiography from "./UpdateBiography";
 import ImageUpload from "./ImageUpload";
-
-
+import Voting from "./Voting";
 
 function Locations() {
   const dispatch = useDispatch();
@@ -15,10 +14,8 @@ function Locations() {
 
   const location = useSelector((state) => state.location);
 
-
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
-
   }, [dispatch, locationId]);
 
   return (
@@ -55,6 +52,9 @@ function Locations() {
             <ImageUpload locationId={locationId} />
           ) : null}
         </div>
+      </div>
+      <div>
+        <Voting />
       </div>
       {/* <div id="delete-component">
         {currentUser.id === Number(musicians.user_id) ? (

@@ -1,0 +1,7 @@
+.image_card{
+   height: 300px;
+   width: 500px;
+}
+.locations-container{
+flex-wrap: wrap;
+}

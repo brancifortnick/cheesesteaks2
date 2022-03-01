@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import {getAllLocations} from '../store/location';
-
+import './AllLocations.css'
 
 function AllLocations() {
   const dispatch = useDispatch();
