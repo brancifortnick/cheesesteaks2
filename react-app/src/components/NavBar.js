@@ -2,21 +2,22 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import { demoLogin } from "../store/session";
 import LogoutButton from "./auth/LogoutButton";
 import "./NavBar.css";
 
 const NavBar = () => {
-
-  const history = useHistory()
-  const dispatch = useDispatch()
+  const history = useHistory();
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
+  const { userId } = useParams();
 
   const demoLoginButton = async (e) => {
     e.preventDefault();
-    dispatch(demoLogin())
-    history.push('/')
-  }
+    dispatch(demoLogin());
+    history.push("/");
+  };
 
   return (
     <nav>
@@ -60,17 +61,18 @@ const NavBar = () => {
           </button>
         ) : null}
         {!user ? (
-          <div>
-            <button id="demo-button" onClick={demoLoginButton}>
-              Demo
-            </button>
-          </div>
+          <button id="demo-button" onClick={demoLoginButton}>
+            Demo
+          </button>
         ) : null}
+        {user ? (
         <button>
-          {`${user.username}'s Profile`}
-          <NavLink to={`/users/${user.id}`}></NavLink>
+          <NavLink to={`/users/${user.id}`}>{`${user.username}` + 's profile'}</NavLink>
         </button>
-        <NavLink to={`/users/${user.id}/new-location`}>Add Location</NavLink>
+        ): null}
+        {user ? (
+          <NavLink to={`/users/${user.id}/new-location`}>Add Location</NavLink>
+        ) : null}
         <div className="nav-link">{user ? <LogoutButton /> : null}</div>
       </div>
     </nav>
