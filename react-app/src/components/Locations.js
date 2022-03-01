@@ -27,12 +27,14 @@ function Locations() {
           className="card"
           src={location.profile_img}
           alt="profile_img"
+          style={{ height: "300px", width: "500px" }}
         ></img>
       ) : (
         <img
           className="card"
           src="https://via.placeholder.com/350x150"
           alt="_blank"
+          style={{ height: "300px", width: "500px" }}
         ></img>
       )}
 
