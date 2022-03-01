@@ -11,6 +11,7 @@ import { authenticate } from "./store/session";
 import LandingPage from "./components/LandingPage";
 import LocationUpload from "./components/LocationUpload";
 import AllLocations from "./components/AllLocations";
+import Locations from "./components/Locations";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -46,11 +47,14 @@ function App() {
         <ProtectedRoute path="/" exact={true}>
           <LandingPage />
         </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId/new-location' exact={true}>
+        <ProtectedRoute path="/users/:userId/new-location" exact={true}>
           <LocationUpload />
         </ProtectedRoute>
-        <ProtectedRoute path='/locations' exact={true}>
+        <ProtectedRoute path="/locations" exact={true}>
           <AllLocations />
+        </ProtectedRoute>
+        <ProtectedRoute path="/locations/:locationId" exact={true}>
+          <Locations />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
