@@ -20,6 +20,7 @@ class Image(db.Model):
 
     locations = db.relationship('Location', back_populates='images')
     comments = db.relationship('Comment', back_populates='images')
+    votes = db.relationship('Vote', back_populates='images')
 
     def to_dict(self):
         return {

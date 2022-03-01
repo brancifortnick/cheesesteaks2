@@ -1,6 +1,6 @@
 from flask.cli import AppGroup
 
-from app.seeds.votes import seed_votes
+
 from .users import seed_users, undo_users
 from .locations import seed_locations, undo_locations
 from .comments import seed_comments, undo_comments

@@ -19,6 +19,7 @@ class User(db.Model, UserMixin):
 
     locations= db.relationship('Location', back_populates='users')
     comments = db.relationship('Comment', back_populates='users')
+    votes = db.relationship('Vote', back_populates='users')
 
     @property
     def password(self):
