@@ -5,12 +5,13 @@ import user from './user';
 import location from './location';
 import image from './image';
 import comment from './comment';
-
+import vote from './vote'
 const rootReducer = combineReducers({
   session,
   user:user,
   location,
   image,
+  vote,
   comment,
 });
 
