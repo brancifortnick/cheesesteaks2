@@ -16,11 +16,11 @@ class Vote(db.Model):
     images = db.relationship('Image', back_populates='votes')
 
 
-def to_dict(self):
-      return {
-            'id': self.id,
-            'vote':self.vote,
-            'downvote':self.downvote,
-            'user_id':self.user_id,
-            'image_id':self.image_id,
+    def to_dict(self):
+            return {
+                  'id': self.id,
+                  'vote':self.vote,
+                  'downvote':self.downvote,
+                  'user_id':self.user_id,
+                  'image_id':self.image_id,
       }

@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import UpdateBiography from "./UpdateBiography";
 import ImageUpload from "./ImageUpload";
-import Voting from "./Voting";
+import Voting from "./VoteCounter";
 import DeleteLocation from "./DeleteLocation";
+import GetPhotosVotes from "./GetPhotosVotes";
 
 
 function Locations() {
@@ -46,25 +47,25 @@ function Locations() {
         <div id="update-biography">
           {currentUser.id === Number(location.user_id) ? (
             <UpdateBiography
-              locationBiography={location.biography}
+              locationBio={location.biography}
               locationId={locationId}
+
             />
           ) : null}
         </div>
         <div>
           {currentUser.id === Number(location.user_id) ? (
-            <ImageUpload locationId={locationId} />
+            <ImageUpload locationId={locationId}/>
           ) : null}
         </div>
       </div>
-      <div>
-        <Voting />
-      </div>
+
       <div id="delete-component">
         {currentUser.id === Number(location.user_id) ? (
           <DeleteLocation locationId={locationId} />
         ) : null}
       </div>
+
       {/* <div className="song-form">
         {currentUser.id === Number(musicians.user_id) ? (
           <UploadSong musicianId={musicianId} />

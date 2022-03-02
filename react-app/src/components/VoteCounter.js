@@ -3,14 +3,31 @@ import { useSelector } from "react-redux";
 import { getAllVotes, postNewVotes } from "../store/vote";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { getAPhoto } from "../store/image";
+import { getAllLocations } from "../store/location";
 
-const VoteCounter = () => {
+const VoteCounter = ({imageId}) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
-  const image = useSelector((state) => state.image);
+  const image = useSelector(state => (state.image))
 
-  const [vote, setVote] = useState(0);
+  console.log(image, '<<<<<<<<<<<<<<<<imageId inside VOTECOUNER?????????')
+
+  const [vote, setVote] = useState(0); // be cautious of this useState
   const [downvote, setDownVote] = useState(0);
+
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    const formData = new FormData();
+    formData.append("vote", vote);
+    formData.append("downvote", downvote);
+    dispatch(postNewVotes(formData))
+  };
+
+  useEffect(()=> {
+    dispatch(getAllLocations())
+  },[dispatch])
+
 
   const down = () => {
     setDownVote((downvote) => (downvote -= 1));
@@ -19,7 +36,7 @@ const VoteCounter = () => {
     setVote((vote) => (vote += 1));
   };
   return (
-    <div>
+    <form onSubmit={onSubmit}>
       <div>
         <button onClick={down}>downvote</button>
         {downvote}
@@ -28,7 +45,7 @@ const VoteCounter = () => {
         <button onClick={up}>upvote</button>
         {vote}
       </div>
-    </div>
+    </form>
   );
 };
 

@@ -14,8 +14,8 @@ const postVotes = (vote) => ({
 export const getAllVotes = () => async (dispatch)=>{
   const res = await fetch("/api/votes/");
   if (res.ok) {
-    const votes = await res.json();
-    dispatch(getVotes(votes.votes))
+    const data = await res.json();
+    dispatch(getVotes(data))
   }
 };
 
@@ -34,16 +34,16 @@ export const postNewVotes = (formData) => async (dispatch) => {
 const initialState = {};
 
 export default function reducer(state = initialState, action) {
+  const current = {};
   switch (action.type) {
     case GET_VOTES:
-      const current = {};
       action.payload.forEach((vote) => {
         current[vote.id] = vote;
       });
       return current;
-    case ADD_VOTES: {
+    case ADD_VOTES:
       return { ...action.payload };
-    }
+
     default:
       return state;
   }
