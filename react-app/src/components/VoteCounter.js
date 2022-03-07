@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { getAPhoto } from "../store/image";
 import { getAllLocations } from "../store/location";
 
+
 const VoteCounter = ({locationId}) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
@@ -15,6 +16,9 @@ const VoteCounter = ({locationId}) => {
 
   const [vote, setVote] = useState(0); // be cautious of this useState
   const [downvote, setDownVote] = useState(0);
+  // const [location_id, setLocation] = useState(null)
+  // const [user_id, setUser] = useState(null)
+
 
   const onSubmit = async (e) => {
     e.preventDefault()
@@ -27,8 +31,8 @@ const VoteCounter = ({locationId}) => {
   };
 
   useEffect(()=> {
-    dispatch(getAllLocations())
-  },[dispatch])
+    dispatch(getAllVotes(Number(locationId)))
+  },[dispatch,locationId])
 
 
   const down = () => {
@@ -40,14 +44,15 @@ const VoteCounter = ({locationId}) => {
   return (
     <form onSubmit={onSubmit}>
       <div>
-        <button onClick={down}>downvote</button>
+        <button onClick={down}>-</button>
         {downvote}
       </div>
       <div>
-        <button onClick={up}>upvote</button>
+        <button onClick={up}>+</button>
         {vote}
       </div>
-    </form>
+
+</form>
   );
 };
 
