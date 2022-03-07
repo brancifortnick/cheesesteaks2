@@ -14,6 +14,7 @@ const ImageUpload = ({locationId}) => {
 
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
+  
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +22,8 @@ const ImageUpload = ({locationId}) => {
 
     formData.append("image", image);
     formData.append('title', title);
-
+    // formData.append('location_id', Number(locationId))
+    // formData.append('user_id', user.id)
     dispatch(addImage(formData))
 
     history.push(`/locations/${locationId}`);

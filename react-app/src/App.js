@@ -13,7 +13,7 @@ import LocationUpload from "./components/LocationUpload";
 import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
-import GetPhotosVotes from "./components/GetPhotosVotes";
+import GetPhotosImages from './components/GetPhotosImages';
 import VoteCounter from "./components/VoteCounter";
 import GetLocationsImages from "./components/GetLocationImages";
 
@@ -60,10 +60,10 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/locations/:locationId" exact={true}>
           <Locations />
-          <VoteCounter />
+          {/* <VoteCounter /> */}
         </ProtectedRoute>
-        <ProtectedRoute path="/locations/:locationId/images/:imageId" exact={true}>
-        <GetLocationsImages />
+        <ProtectedRoute path="/locations/:locationId/images/" exact={true}>
+        {/* <GetLocationsImages /> */}
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

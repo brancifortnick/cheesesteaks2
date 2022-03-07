@@ -7,9 +7,9 @@ import UpdateBiography from "./UpdateBiography";
 import ImageUpload from "./ImageUpload";
 import Voting from "./VoteCounter";
 import DeleteLocation from "./DeleteLocation";
-import GetPhotosVotes from "./GetPhotosVotes";
+import GetPhotosImages from "./GetPhotosImages";
 import VoteCounter from "./VoteCounter";
-import {getAllVotes} from '../store/vote'
+import { getAllVotes } from '../store/vote'
 import GetLocationsImages from "./GetLocationImages";
 
 
@@ -17,7 +17,7 @@ function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
   const { locationId } = useParams();
-  const image = useSelector(state => state.image)
+  const image = useSelector(state => Object.values(state.image))
   const location = useSelector((state) => state.location);
 
   useEffect(() => {
@@ -52,25 +52,27 @@ function Locations() {
           {currentUser.id === Number(location.user_id) ? (
             <UpdateBiography
               locationBio={location.biography}
-              locationId={locationId}
+              locationId={location.id}
 
             />
           ) : null}
         </div>
         <div>
           {currentUser.id === Number(location.user_id) ? (
-            <ImageUpload  locationId={locationId}/>
+            <ImageUpload locationId={location.id} />
           ) : null}
         </div>
       </div>
-      <NavLink to={`/locations/${location.id}/images/`}>Images</NavLink>
+      
+
+
       <div id="delete-component">
         {currentUser.id === Number(location.user_id) ? (
           <DeleteLocation locationId={locationId} />
         ) : null}
       </div>
       <div>
-
+      
       </div>
 
       {/* </div>
