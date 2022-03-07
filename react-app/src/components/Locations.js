@@ -8,7 +8,8 @@ import ImageUpload from "./ImageUpload";
 import Voting from "./VoteCounter";
 import DeleteLocation from "./DeleteLocation";
 import GetPhotosVotes from "./GetPhotosVotes";
-
+import VoteCounter from "./VoteCounter";
+import {getAllVotes} from '../store/vote'
 
 function Locations() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ function Locations() {
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
+    // dispatch(getAllVotes(Number(locationId)))
   }, [dispatch, locationId]);
 
   return (
@@ -65,7 +67,9 @@ function Locations() {
           <DeleteLocation locationId={locationId} />
         ) : null}
       </div>
-
+      <div>
+        <VoteCounter locationId={locationId} />
+      </div>
       {/* <div className="song-form">
         {currentUser.id === Number(musicians.user_id) ? (
           <UploadSong musicianId={musicianId} />

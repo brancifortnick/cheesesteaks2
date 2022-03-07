@@ -31,7 +31,7 @@ function AllLocations() {
     );
   });
   return (
-    <div className="locations-list-container">
+    <div key=''className="locations-list-container">
       <div className="locations-list-components">{locationsList}</div>
     </div>
   );

@@ -6,12 +6,12 @@ import { useParams } from "react-router-dom";
 import { getAPhoto } from "../store/image";
 import { getAllLocations } from "../store/location";
 
-const VoteCounter = ({imageId}) => {
+const VoteCounter = ({locationId}) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
-  const image = useSelector(state => (state.image))
+  const location = useSelector(state => (state.location))
 
-  console.log(image, '<<<<<<<<<<<<<<<<imageId inside VOTECOUNER?????????')
+  console.log(locationId, '<<<<<<<<<<<<<<<<locationId inside VOTECOUNER?????????')
 
   const [vote, setVote] = useState(0); // be cautious of this useState
   const [downvote, setDownVote] = useState(0);
@@ -21,6 +21,8 @@ const VoteCounter = ({imageId}) => {
     const formData = new FormData();
     formData.append("vote", vote);
     formData.append("downvote", downvote);
+    formData.append('location_id', parseInt(locationId))
+    formData.append('user_id', user.id)
     dispatch(postNewVotes(formData))
   };
 
