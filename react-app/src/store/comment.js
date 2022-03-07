@@ -11,7 +11,7 @@ const getComments = (comments) => ({
 });
 
 
-const getImagesComments = (comments) => ({
+const getImageComments = (comments) => ({
   type: GET_COMMENTS,
   payload: comments,
 });
@@ -44,11 +44,11 @@ export const getAllComments = () => async (dispatch) => {
   }
 };
 
-export const getSongsComments = (image_id) => async (dispatch) => {
+export const getImagesComments = (image_id) => async (dispatch) => {
   const res = await fetch(`/api/comments/${image_id}`)
   if(res.ok){
     const comments = await res.json();
-    dispatch(getImagesComments(comments));
+    dispatch(getImageComments(comments));
   }
 }
 

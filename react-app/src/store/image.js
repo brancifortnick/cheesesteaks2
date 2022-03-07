@@ -58,7 +58,7 @@ export const getAPhoto = (id) => async (dispatch) => {
 };
 
 export const addImage = (formData) => async (dispatch) => {
-  const res = await fetch("/api/images/", {
+  const res = await fetch("/api/images/new", {
     method: "POST",
     body: formData,
   });

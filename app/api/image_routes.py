@@ -4,7 +4,7 @@ from flask_login import login_required, current_user
 from app.models import Comment ,Image, db
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
-# from app.forms import ImageForm
+from app.forms import ImageForm
 
 image_routes = Blueprint('images', __name__)
 
@@ -36,30 +36,22 @@ def upload_image():
 
     url = upload["url"]
 
-    new_image = Image(
-        title=request.form['title'],
-        user_id=current_user.id,
-        image=url
-    )
-    db.session.add(new_image)
+    return {"url": url}
+
+
+@image_routes.route('/new', methods=['POST'])
+@login_required
+def complete_picture():
+
+    form = ImageForm()  # make song form
+
+    new_picture = Image()
+
+    form.populate_obj(new_picture)
+
+    db.session.add(new_picture)
     db.session.commit()
-    return new_image.to_dict()
-    # return {"url": url}
-
-
-# @image_routes.route('/new', methods=['POST'])
-# @login_required
-# def complete_picture():
-
-#     form = ImageForm()  # make song form
-
-#     new_picture = Image()
-
-#     form.populate_obj(new_picture)
-
-#     db.session.add(new_picture)
-#     db.session.commit()
-#     return new_picture.to_dict()
+    return new_picture.to_dict()
 
 # @image_routes.route('/<int:id>/comments')
 # @login_required

@@ -42,7 +42,8 @@ const VoteCounter = ({locationId}) => {
     setVote((vote) => (vote += 1));
   };
   return (
-    <form onSubmit={onSubmit}>
+    // <form onSubmit={onSubmit}>
+    <>
       <div>
         <button onClick={down}>-</button>
         {downvote}
@@ -51,8 +52,7 @@ const VoteCounter = ({locationId}) => {
         <button onClick={up}>+</button>
         {vote}
       </div>
-
-</form>
+    </>
   );
 };
 

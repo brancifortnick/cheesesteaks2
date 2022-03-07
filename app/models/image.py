@@ -29,7 +29,7 @@ class Image(db.Model):
             'image': self.image,
             'user_id': self.user_id,
             'location_id': self.location_id,
-            "user": self.users.to_dict(),
+            # "user": self.users.to_dict(),
             'created_at': self.created_at,
             'updated_at': self.updated_at,
         }

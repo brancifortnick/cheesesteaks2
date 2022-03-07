@@ -10,18 +10,19 @@ import DeleteLocation from "./DeleteLocation";
 import GetPhotosVotes from "./GetPhotosVotes";
 import VoteCounter from "./VoteCounter";
 import {getAllVotes} from '../store/vote'
+import GetLocationsImages from "./GetLocationImages";
 
 
 function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
   const { locationId } = useParams();
-
+  const image = useSelector(state => state.image)
   const location = useSelector((state) => state.location);
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
-    dispatch(getAllVotes(Number(locationId)))
+    // dispatch(getAllVotes(Number(locationId)))
   }, [dispatch, locationId]);
 
   return (
@@ -58,11 +59,11 @@ function Locations() {
         </div>
         <div>
           {currentUser.id === Number(location.user_id) ? (
-            <ImageUpload locationId={locationId}/>
+            <ImageUpload  locationId={locationId}/>
           ) : null}
         </div>
       </div>
-
+      <NavLink to={`/locations/${location.id}/images/`}>Images</NavLink>
       <div id="delete-component">
         {currentUser.id === Number(location.user_id) ? (
           <DeleteLocation locationId={locationId} />
@@ -71,10 +72,7 @@ function Locations() {
       <div>
 
       </div>
-      {/* <div className="song-form">
-        {currentUser.id === Number(musicians.user_id) ? (
-          <UploadSong musicianId={musicianId} />
-        ) : null} */}
+
       {/* </div>
       <div className="audio-div">
         <AllSongs musicianId={musicianId} />
