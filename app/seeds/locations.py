@@ -6,19 +6,19 @@ def seed_locations():
         user_id=1,
         location_name='Pats',
         profile_img='https://mycheesesteaks.s3.amazonaws.com/pats.jpg',
-        biography='Music is my life, and I spent my time focusing on music production and music theory to gain practical knowledge in order to follow my true passion - MUSIC!',
+        biography='Pats steaks is famous in Philly and competes with its arch nemesis Geno"s!',
     )
     location2 = Location(
         user_id=2,
         location_name='WizWit',
         profile_img='https://mycheesesteaks.s3.amazonaws.com/wizwit.jpg',
-        biography='I currently work in "the Big Apple" as a music producer'
+        biography='Grab a wizwit from this location'
     )
     location3 = Location(
         user_id=3,
         location_name='Steak2',
         profile_img='https://mycheesesteaks.s3.amazonaws.com/steak2.jpg',
-        biography="I too, also produce music, and work alongside big name artists'",
+        biography="Steak3 bio",
     )
     db.session.add(location)
     db.session.add(location2)

@@ -10,10 +10,10 @@ class Vote(db.Model):
     vote = db.Column(db.Integer)
     downvote = db.Column(db.Integer)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    image_id = db.Column(db.Integer, db.ForeignKey("images.id"))
+    location_id = db.Column(db.Integer, db.ForeignKey("locations.id"))
 
     users = db.relationship('User', back_populates='votes')
-    images = db.relationship('Image', back_populates='votes')
+    locations = db.relationship('Location', back_populates='votes')
 
 
     def to_dict(self):
@@ -22,5 +22,5 @@ class Vote(db.Model):
                   'vote':self.vote,
                   'downvote':self.downvote,
                   'user_id':self.user_id,
-                  'image_id':self.image_id,
+                  'location_id':self.location_id,
       }

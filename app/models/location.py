@@ -19,6 +19,7 @@ class Location(db.Model):
 
     users = db.relationship('User', back_populates='locations')
     images = db.relationship('Image', back_populates='locations')
+    votes = db.relationship('Vote', back_populates='locations')
 
     def to_dict(self):
         return {
