@@ -53,7 +53,7 @@ def complete_picture():
     db.session.commit()
     print('does error happen here')
     print(new_picture.to_dict(), 'imageROUTES=======new')
-    
+    return new_picture
     
 
 # @image_routes.route('/<int:id>/comments')

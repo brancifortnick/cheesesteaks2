@@ -45,11 +45,11 @@ const VoteCounter = ({locationId}) => {
     // <form onSubmit={onSubmit}>
     <>
       <div>
-        <button onChange={down}>-</button>
+        <button onChange={down()}>-</button>
         {downvote}
       </div>
       <div>
-        <button onChange={up}>+</button>
+        <button onChange={up()}>+</button>
         {vote}
       </div>
     </>

@@ -57,14 +57,14 @@ export const getAPhoto = (id) => async (dispatch) => {
   }
 };
 
-export const addImage = (user_id, location_id, image, title) => async (dispatch) => {
-  image = image.url
+export const addImage = (userId, locationId, image, title) => async (dispatch) => {
+  image = image.url //<=== necessary?
   const res = await fetch("/api/images/new", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ user_id, location_id, image, title }),
+    body: JSON.stringify({ userId, locationId, image, title }),
   });
   if (res.ok) {
     const image = await res.json();

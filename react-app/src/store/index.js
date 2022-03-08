@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   session,
   user:user,
   location,
-  image:image,
+  image,
   vote,
   comment,
 });
