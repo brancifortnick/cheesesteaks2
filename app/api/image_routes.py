@@ -21,7 +21,7 @@ def get_photos(id):
     images = Image.query.get(id)
     return images.to_dict()
 
-@image_routes.route("/", methods=["POST"])
+@image_routes.route("/new-image", methods=["POST"])
 @login_required
 def upload_image():
 
@@ -43,7 +43,7 @@ def upload_image():
 @login_required
 def complete_picture():
 
-    form = ImageForm()  # make song form
+    form = ImageForm() 
 
     new_picture = Image()
 
@@ -51,7 +51,10 @@ def complete_picture():
 
     db.session.add(new_picture)
     db.session.commit()
-    return new_picture.to_dict()
+    print('does error happen here')
+    print(new_picture.to_dict(), 'imageROUTES=======new')
+    
+    
 
 # @image_routes.route('/<int:id>/comments')
 # @login_required

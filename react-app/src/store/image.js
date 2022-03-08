@@ -57,16 +57,20 @@ export const getAPhoto = (id) => async (dispatch) => {
   }
 };
 
-export const addImage = (formData) => async (dispatch) => {
+export const addImage = (user_id, location_id, image, title) => async (dispatch) => {
+  image = image.url
   const res = await fetch("/api/images/new", {
     method: "POST",
-    body: formData,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ user_id, location_id, image, title }),
   });
   if (res.ok) {
-    let image = await res.json();
+    const image = await res.json();
     dispatch(addOnePhoto(image));
   } else {
-    console.log("store ERROR");
+    console.log("store ERROR---addIMAGE");
   }
 };
 

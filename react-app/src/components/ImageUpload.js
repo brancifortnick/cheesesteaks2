@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addImage} from '../store/image'
+import { addImage, getPhotos} from '../store/image'
 
 const ImageUpload = ({locationId}) => {
 
@@ -10,23 +10,28 @@ const ImageUpload = ({locationId}) => {
   const dispatch = useDispatch()
   const history = useHistory()
   const user = useSelector((state) => state.session.user);
-
-
-  const [title, setTitle] = useState("");
-  const [image, setImage] = useState(null);
   
+  let userId = user.id
+
+  const [title, setTitle] = useState('');
+  const [image, setImage] = useState('');
+  const [location_id, setLocation] = useState(locationId)
+  const [user_id, setUser] = useState(userId)
 
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-
     formData.append("image", image);
-    formData.append('title', title);
-    // formData.append('location_id', Number(locationId))
-    // formData.append('user_id', user.id)
-    dispatch(addImage(formData))
-
-    history.push(`/locations/${locationId}`);
+    const getData = await fetch(`/api/images/new-image`, {
+      method: "POST",
+      body: formData 
+     })
+     if(getData.ok){
+       let image = await getData.json()
+       dispatch(addImage(image, title, locationId ,user.id))
+       dispatch(getPhotos())
+     }
+    history.push(`/`);
   };
 
   const addPictureFile = (e) => {
@@ -44,7 +49,7 @@ const ImageUpload = ({locationId}) => {
             onChange={(e) => setTitle(e.target.value)}
             value={title}
           />
-          <input type="file" accept="image/*" onChange={addPictureFile} />
+          <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
           <button type="submit">Submit</button>
         </div>
       </form>

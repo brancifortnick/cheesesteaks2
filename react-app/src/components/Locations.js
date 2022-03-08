@@ -58,9 +58,10 @@ function Locations() {
           ) : null}
         </div>
         <div>
-          {currentUser.id === Number(location.user_id) ? (
+          <NavLink to={`/locations/${location.id}/image-upload`}>Upload Food</NavLink>
+          {/* {currentUser.id === Number(location.user_id) ? (
             <ImageUpload locationId={location.id} />
-          ) : null}
+          ) : null} */}
         </div>
       </div>
       

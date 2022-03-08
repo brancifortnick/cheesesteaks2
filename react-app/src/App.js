@@ -16,6 +16,8 @@ import { MapContainer } from "./components/MapContainer";
 import GetPhotosImages from './components/GetPhotosImages';
 import VoteCounter from "./components/VoteCounter";
 import GetLocationsImages from "./components/GetLocationImages";
+import ImageUpload from "./components/ImageUpload";
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -62,8 +64,8 @@ function App() {
           <Locations />
           {/* <VoteCounter /> */}
         </ProtectedRoute>
-        <ProtectedRoute path="/locations/:locationId/images/" exact={true}>
-        {/* <GetLocationsImages /> */}
+        <ProtectedRoute path="/locations/:locationId/image-upload" exact={true}>
+          <ImageUpload  />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

@@ -8,8 +8,8 @@ from app.models import Image
 
 
 class ImageForm(FlaskForm):
-    user_id = IntegerField('user_id', validators=[DataRequired()])
-    location_id = IntegerField('image_id', validators=[
+    user_id = IntegerField('user_id')
+    location_id = IntegerField('location_id')
+    image = StringField('image' ,validators=[
                                 DataRequired()])
-    image = StringField('profile_img')
     title = StringField('title')
