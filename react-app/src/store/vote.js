@@ -38,14 +38,9 @@ export const postNewVotes = (formData) => async (dispatch) => {
 };
 
 
-export const editVotes = (downvote, upvote, locationId, userId) => async (dispatch) => {
-  const formData = {
-    downvote: Number(downvote),
-    upvote: Number(upvote),
-    location_id: Number(locationId),
-    user_id: Number(userId),
-  };
-  const res = await fetch(`/api/votes/edit`, {
+export const editVotes = (formData, locationId) => async (dispatch) => {
+
+  const res = await fetch(`/api/locations/${locationId}/votes`, {
     method: "PUT",
     body: formData,
   });

@@ -16,7 +16,7 @@ import { MapContainer } from "./components/MapContainer";
 import VoteCounter from "./components/VoteCounter";
 import GetLocationsImages from "./components/GetLocationsImages";
 import ImageUpload from "./components/ImageUpload";
-
+import VoteUpdater from "./components/VoteUpdater";
 //!adding this so i can make a large commit message for safe revert//
 
 function App() {
@@ -62,7 +62,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/locations/:locationId" exact={true}>
           <Locations />
-          {/* <VoteCounter /> */}
+          
         </ProtectedRoute>
         <ProtectedRoute path="/locations/:locationId/image-upload" exact={true}>
           <ImageUpload  />

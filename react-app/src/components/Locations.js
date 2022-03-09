@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import UpdateBiography from "./UpdateBiography";
 import DeleteLocation from "./DeleteLocation";
+import VoteUpdater from "./VoteUpdater";
+import VoteCounter from "./VoteCounter";
 // import ImageUpload from "./ImageUpload";
 // import Voting from "./VoteCounter";
 // import GetPhotosImages from "./GetPhotosImages";
@@ -70,7 +72,7 @@ function Locations() {
         ) : null}
       </div>
       <div>
-      
+      {/* <VoteCounter locationId={locationId} /> */} 
       </div>
 
       {/* </div>

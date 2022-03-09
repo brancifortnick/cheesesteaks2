@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_login import login_required
 from app.forms import LocationForm
-from app.models import db, Location, Image
+from app.models import db, Location, Image, Vote
 from app.s3_helpers import (
     get_unique_filename, allowed_file, upload_file_to_s3)
 
@@ -79,6 +79,13 @@ def delete_musician(id):
     db.session.delete(location)
     db.session.commit()
     return {'id': id}
+
+
+@location_routes.route('/<int:id>')
+@login_required
+def get_locos_votes(id):
+    votes = Vote.query.filter(Vote.location_id == id).all()
+    return votes.to_dict()
 
 
 @location_routes.route("/<int:id>/biography", methods=["PUT"])
