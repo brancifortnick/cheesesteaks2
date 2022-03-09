@@ -17,6 +17,7 @@ import VoteCounter from "./components/VoteCounter";
 import GetLocationsImages from "./components/GetLocationsImages";
 import ImageUpload from "./components/ImageUpload";
 
+//!adding this so i can make a large commit message for safe revert//
 
 function App() {
   const [loaded, setLoaded] = useState(false);
