@@ -14,7 +14,7 @@ import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
 import VoteCounter from "./components/VoteCounter";
-import GetLocationsImages from "./components/notusing";
+import GetLocationsImages from "./components/GetLocationsImages";
 import ImageUpload from "./components/ImageUpload";
 
 
