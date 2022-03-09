@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { getAllVotes, postNewVotes } from "../store/vote";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
 import { getPhotos } from "../store/image";
 
-function GetPhotosImages({ locationId }){
+function GetLocationsImages() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   const images = useSelector((state) => Object.values(state.image));
@@ -13,8 +11,8 @@ function GetPhotosImages({ locationId }){
   console.log(images, "<><><><images OBJ<><><><><");
 
   useEffect(() => {
-    dispatch(getPhotos(Number(locationId)));
-  }, [dispatch, locationId]);
+    dispatch(getPhotos());
+  }, [dispatch]);
 
   const locationsPictures = images.map((image) => {
     return (
@@ -34,4 +32,4 @@ function GetPhotosImages({ locationId }){
   );
 };
 
-export default GetPhotosImages;
+export default GetLocationsImages;

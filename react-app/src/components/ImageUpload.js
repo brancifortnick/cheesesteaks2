@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addImage, getPhotos} from '../store/image'
+import { addImage, getPhotos } from '../store/image'
 
 const ImageUpload = () => {
 
@@ -11,7 +11,7 @@ const ImageUpload = () => {
   const history = useHistory()
   const user = useSelector((state) => state.session.user);
   const params = useParams()
-  const {locationId} = params;
+  const { locationId } = params;
   console.log(locationId, user.id, '>>>>>from IMAGEUPLOAD frontend')
   let userId = user.id
 
@@ -22,10 +22,10 @@ const ImageUpload = () => {
 
   console.log(locationId, userId, '>>>>from IMAGEUPLOAD FRONTEND')
 
-useEffect(()=> {
-  setLocation(locationId)
-  setUser(userId)
-},[])
+  useEffect(() => {
+    setLocation(locationId)
+    setUser(userId)
+  }, [])
 
 
   const onSubmit = async (e) => {
@@ -35,16 +35,8 @@ useEffect(()=> {
     formData.append('title', title)
     formData.append('user_id', user.id);
     formData.append('location_id', locationId);
-    // const getData = await fetch(`/api/images/new-image`, {
-    //   method: "POST",
-    //   body: formData,
-    //  })
-    //  if(getData.ok){
-    //    let image = await getData.json()
-       dispatch(addImage(formData))
-      //  dispatch(getPhotos())
-      
-      history.push(`/`);
+    dispatch(addImage(formData))
+    history.push(`/locations/${locationId}/locations-pictures`);
   };
 
 

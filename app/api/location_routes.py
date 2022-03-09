@@ -61,6 +61,13 @@ def create_musician():
     return new_location.to_dict()
 
 
+@location_routes.route('/<int:id>/locations-pictures')
+@login_required
+def get_locs_images(id):
+    images = Image.filter.query(Image.location_id == id).all()
+    return images.to_dict()
+
+
 @location_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
 def delete_musician(id):

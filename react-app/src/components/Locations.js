@@ -4,13 +4,13 @@ import { getOneLocation } from "../store/location";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import UpdateBiography from "./UpdateBiography";
-import ImageUpload from "./ImageUpload";
-import Voting from "./VoteCounter";
 import DeleteLocation from "./DeleteLocation";
-import GetPhotosImages from "./GetPhotosImages";
-import VoteCounter from "./VoteCounter";
-import { getAllVotes } from '../store/vote'
-import GetLocationsImages from "./GetLocationImages";
+// import ImageUpload from "./ImageUpload";
+// import Voting from "./VoteCounter";
+// import GetPhotosImages from "./GetPhotosImages";
+// import VoteCounter from "./VoteCounter";
+// import { getAllVotes } from '../store/vote'
+// import GetLocationsImages from "./notusing";
 
 
 function Locations() {
@@ -59,9 +59,6 @@ function Locations() {
         </div>
         <div>
           <NavLink to={`/locations/${location.id}/image-upload`}>Upload Food</NavLink>
-          {/* {currentUser.id === Number(location.user_id) ? (
-            <ImageUpload locationId={location.id} />
-          ) : null} */}
         </div>
       </div>
       

@@ -38,16 +38,7 @@ export const getPhotos = () => async (dispatch) => {
   }
 };
 
-export const editImage = (formData, id) => async (dispatch) => {
-  const res = await fetch(`/api/images/${id}`, {
-    method: "PUT",
-    body: formData,
-  });
-  if (res.ok) {
-    const imageUpdate = await res.json();
-    dispatch(updateOnePhoto(imageUpdate));
-  }
-};
+
 
 export const getAPhoto = (id) => async (dispatch) => {
   const res = await fetch(`/api/images/${id}`);
@@ -63,15 +54,25 @@ export const addImage = (formData) => async (dispatch) => {
     body: formData,
   
   });
-  console.log('respone coming from addimage thunk', '""""""""""""""""""""""""""""""')
   if (res.ok) {
     const imageObj = await res.json();
-    console.log(imageObj, "STORE addImage thunk........................")
     dispatch(addOnePhoto(imageObj));
   } else {
     console.log('error res is not okay in addimage')
   }
 };
+
+export const editImage = (formData, id) => async (dispatch) => {
+  const res = await fetch(`/api/images/${id}`, {
+    method: "PUT",
+    body: formData,
+  });
+  if (res.ok) {
+    const imageUpdate = await res.json();
+    dispatch(updateOnePhoto(imageUpdate));
+  }
+};
+
 
 export const deletePhoto = (id) => async (dispatch) => {
   const res = await fetch(`/api/images/${id}`, {
@@ -97,7 +98,6 @@ export default function reducer(state = initialState, action) {
       const addingState = { ...state };
       addingState[action.payload.id] = action.payload;
       return addingState;
-
     case GET_ONE_PHOTO:
       return { ...action.payload };
     case UPDATE_PHOTO:
