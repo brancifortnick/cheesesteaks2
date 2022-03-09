@@ -22,11 +22,11 @@ def get_location_id(id):
     return location.to_dict()
 
 
-@location_routes.route('/<int:id>/images')
-@login_required
-def locations_images(id):
-    images = Image.query.filter(Image.location_id == id).all()
-    return {'images': [image.to_dict() for image in images]}
+# @location_routes.route('/<int:id>/images')
+# @login_required
+# def locations_images(id):
+#     images = Image.query.filter(Image.location_id == id).all()
+#     return {'images': [image.to_dict() for image in images]}
 
 
 @location_routes.route('/new-location', methods=['POST'])

@@ -16,27 +16,37 @@ const ImageUpload = () => {
   let userId = user.id
 
   const [title, setTitle] = useState('');
-  const [image, setImage] = useState('');
-  // const [location_id, setLocation] = useState(locationId)
-  // const [user_id, setUser] = useState(userId)
+  const [image, setImage] = useState(null);
+  const [location_id, setLocation] = useState(locationId)
+  const [user_id, setUser] = useState(userId)
 
   console.log(locationId, userId, '>>>>from IMAGEUPLOAD FRONTEND')
+
+useEffect(()=> {
+  setLocation(locationId)
+  setUser(userId)
+},[])
+
 
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("image", image);
-    const getData = await fetch(`/api/images/new-image`, {
-      method: "POST",
-      body: formData,
-     })
-     if(getData.ok){
-       let image = await getData.json()
-       dispatch(addImage(image, title, locationId ,user.id))
-       dispatch(getPhotos())
-     }
-    history.push(`/`);
+    formData.append('title', title)
+    formData.append('user_id', user.id);
+    formData.append('location_id', locationId);
+    // const getData = await fetch(`/api/images/new-image`, {
+    //   method: "POST",
+    //   body: formData,
+    //  })
+    //  if(getData.ok){
+    //    let image = await getData.json()
+       dispatch(addImage(formData))
+      //  dispatch(getPhotos())
+      
+      history.push(`/`);
   };
+
 
   const addPictureFile = (e) => {
     const file = e.target.files[0];

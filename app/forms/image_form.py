@@ -10,6 +10,5 @@ from app.models import Image
 class ImageForm(FlaskForm):
     user_id = IntegerField('user_id')
     location_id = IntegerField('location_id')
-    image = StringField('image',validators=[
-                                DataRequired()])
+    image = StringField('image')
     title = StringField('title')

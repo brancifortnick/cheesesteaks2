@@ -1,12 +1,13 @@
 
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import Comment ,Image, db
+from app.models import Comment, Image, db
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
-from app.forms import ImageForm
+# from app.forms import ImageForm
 
 image_routes = Blueprint('images', __name__)
+
 
 @image_routes.route('/', methods=['GET'])
 @login_required
@@ -18,8 +19,9 @@ def images():
 @image_routes.route('/<int:id>')
 @login_required
 def get_photos(id):
-    images = Image.query.get(id)
-    return images.to_dict()
+    image = Image.query.get(id)
+    return image.to_dict()
+
 
 @image_routes.route("/new-image", methods=["POST"])
 @login_required
@@ -36,32 +38,46 @@ def upload_image():
 
     url = upload["url"]
 
-    return {"url": url}
+    new_image = Image(
+        image=url,
+        user_id=current_user.id,
+        location_id=request.form['location_id'],
+        title=request.form['title'],
+    )
 
-
-@image_routes.route('/new', methods=['POST'])
-@login_required
-def complete_picture():
-
-    form = ImageForm() 
-
-    new_picture = Image()
-
-    form.populate_obj(new_picture)
-
-    db.session.add(new_picture)
+    db.session.add(new_image)
     db.session.commit()
-    print('does error happen here')
-    print(new_picture.to_dict(), 'imageROUTES=======new')
-    return new_picture
-    
+    return new_image.to_dict()
 
-# @image_routes.route('/<int:id>/comments')
+    # return {"url": url}
+
+
+# @image_routes.route('/added', methods=['POST'])
 # @login_required
-# def get_photo_comments(id):
-#     comments = Comment.query.filter(Comment.image_id == id).all()
-#     return {'comments': [comment.to_dict() for comment in comments]}
+# def get_the_image_obj():
 
+    # @image_routes.route('/new', methods=['POST'])
+    # @login_required
+    # def complete_picture():
+
+    #     form = ImageForm()
+
+    #     new_picture = Image()
+
+    #     form.populate_obj(new_picture)
+    #     print(new_picture, 'BCKEND IMAGE ROUTES /new')
+
+    #     db.session.add(new_picture)
+    #     db.session.commit()
+    #     print('does error happen here')
+    #     print(new_picture.to_dict(), 'imageROUTES=======new')
+    #     return new_picture
+
+    # @image_routes.route('/<int:id>/comments')
+    # @login_required
+    # def get_photo_comments(id):
+    #     comments = Comment.query.filter(Comment.image_id == id).all()
+    #     return {'comments': [comment.to_dict() for comment in comments]}
 
 
 @image_routes.route('/delete/<int:id>', methods=['DELETE'])
@@ -74,4 +90,4 @@ def delete_musician(id):
 
     db.session.delete(image)
     db.session.commit()
-    return {'id': id }
+    return {'id': id}

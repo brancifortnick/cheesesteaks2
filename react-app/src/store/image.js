@@ -57,20 +57,19 @@ export const getAPhoto = (id) => async (dispatch) => {
   }
 };
 
-export const addImage = (userId, locationId, image, title) => async (dispatch) => {
-  image = image.url //<=== necessary?
-  const res = await fetch("/api/images/new", {
+export const addImage = (formData) => async (dispatch) => {
+  const res = await fetch("/api/images/new-image", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ userId, locationId, image, title }),
+    body: formData,
+  
   });
+  console.log('respone coming from addimage thunk', '""""""""""""""""""""""""""""""')
   if (res.ok) {
-    const image = await res.json();
-    dispatch(addOnePhoto(image));
+    const imageObj = await res.json();
+    console.log(imageObj, "STORE addImage thunk........................")
+    dispatch(addOnePhoto(imageObj));
   } else {
-    console.log("store ERROR---addIMAGE");
+    console.log('error res is not okay in addimage')
   }
 };
 
@@ -89,12 +88,11 @@ const initialState = {};
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case GET_PHOTOS:
-      const currentState = {};
+      let currentState = {};
       action.payload.forEach((image) => {
         currentState[image.id] = image;
       });
       return currentState;
-
     case ADD_ONE_PHOTO:
       const addingState = { ...state };
       addingState[action.payload.id] = action.payload;
@@ -102,17 +100,13 @@ export default function reducer(state = initialState, action) {
 
     case GET_ONE_PHOTO:
       return { ...action.payload };
-
     case UPDATE_PHOTO:
       const updateState = { ...action.payload };
-      //   updateState[action.payload.id] = action.payload;
       return updateState;
-
     case DELETE_PHOTO:
       const removeState = { ...state };
       delete removeState[action.payload.id];
       return removeState;
-
     default:
       return state;
   }
