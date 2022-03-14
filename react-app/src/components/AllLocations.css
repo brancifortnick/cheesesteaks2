@@ -1,7 +1,10 @@
-.image_card{
-   height: 300px;
-   width: 500px;
+.image_card {
+    height: 300px;
+    width: 500px;
 }
-.locations-container{
-flex-wrap: wrap;
+
+.locations-container {
+    display: inline-flex;
+    flex-direction: row;
+    align-content: space-between;
 }
