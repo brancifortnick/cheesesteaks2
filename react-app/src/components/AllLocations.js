@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import {getAllLocations} from '../store/location';
+import { getAllLocations } from '../store/location';
+import AddComments from "./AddComments";
 import './AllLocations.css'
 
 function AllLocations() {
@@ -25,13 +26,14 @@ function AllLocations() {
               ></img>
               <div className="location-name">{location.location_name}</div>
             </NavLink>
+            <AddComments locationId={location.id} />
           </div>
         </div>
       </div>
     );
   });
   return (
-    <div key=''className="locations-list-container">
+    <div key='' className="locations-list-container">
       <div className="locations-list-components">{locationsList}</div>
     </div>
   );

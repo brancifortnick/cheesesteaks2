@@ -55,13 +55,13 @@ export const getAPhoto = (id) => async (dispatch) => {
   }
 };
 
-export const getImageComments = (id) => async (dispatch) => {
-  const res = await fetch(`/api/images/${id}/comments`);
-  if (res.ok) {
-    const photo = await res.json();
-    dispatch(getComments(photo));
-  }
-};
+// export const getImageComments = (id) => async (dispatch) => {
+//   const res = await fetch(`/api/images/${id}/comments`);
+//   if (res.ok) {
+//     const photo = await res.json();
+//     dispatch(getComments(photo));
+//   }
+// };
 
 
 

@@ -1,5 +1,5 @@
 const GET_COMMENTS = "comment/GET_COMMENTS";
-const GET_SONG_COMMENTS = 'comments/GET_SONG_COMMENTS';
+const GET_IMAGE_COMMENTS = 'comments/GET_SONG_COMMENTS';
 const ADD_COMMENT = "comment/ADD_COMMENT";
 const GET_ONE_COMMENT = "comment/GET_ONE_COMMENT";
 const DELETE_COMMENT = "comment/DELETE_COMMENT";
@@ -12,7 +12,7 @@ const getComments = (comments) => ({
 
 
 const getImageComments = (comments) => ({
-  type: GET_COMMENTS,
+  type: GET_IMAGE_COMMENTS,
   payload: comments,
 });
 
@@ -45,10 +45,10 @@ export const getAllComments = () => async (dispatch) => {
 };
 
 // export const getImagesComments = (image_id) => async (dispatch) => {
-//   const res = await fetch(`/api/${image_id}/comments`)
+//   const res = await fetch(`/api/comments/${image_id}`)
 //   if (res.ok) {
 //     const comments = await res.json();
-//     dispatch(getImageComments(comments));
+//     dispatch(getImageComments(comments.comments));
 //   }
 // }
 
@@ -107,7 +107,7 @@ const initialState = {};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case GET_SONG_COMMENTS:
+    case GET_IMAGE_COMMENTS:
       let newComState = {};
       action.payload.forEach((comment) => {
         newComState[comment.id] = comment;

@@ -64,11 +64,13 @@ function Locations() {
           <NavLink to={`/locations/${location.id}/locations-pictures`}>Users Pictures</NavLink>
         </div>
       </div>
+      {/* {currentUser.id === Number(location.user_id) ? (
+        <AddComments locationId={locationId} imageId={image.id} />
+      ) : null} */}
+      <div>
 
-      {/* <div>{currentUser.id === comment.user_id ? (
-        <AddComments />
-      ) : null}
-      </div> */}
+
+      </div>
 
       <div id="delete-component">
         {currentUser.id === Number(location.user_id) ? (

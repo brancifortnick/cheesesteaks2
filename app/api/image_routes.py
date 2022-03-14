@@ -50,13 +50,6 @@ def upload_image():
     return new_image.to_dict()
 
 
-# @image_routes.route('/<int:id>/comments')
-# @login_required
-# def get_photo_comments(id):
-#     comments = Comment.query.filter(Comment.image_id == id).all()
-#     return comments.to_dict()
-
-
 @image_routes.route('/delete/<int:id>', methods=['DELETE'])
 @login_required
 def delete_musician(id):
