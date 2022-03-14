@@ -20,6 +20,8 @@ const ImageUpload = () => {
   const [location_id, setLocation] = useState(locationId)
   const [user_id, setUser] = useState(userId)
 
+  // location_id = Number(locationId)
+
   console.log(locationId, userId, '>>>>from IMAGEUPLOAD FRONTEND')
 
   useEffect(() => {

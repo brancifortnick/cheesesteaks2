@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { getPhotos } from "../store/image";
+import  './GetLocationsImages.css'
 
 function GetLocationsImages() {
   const dispatch = useDispatch();
@@ -16,18 +17,18 @@ function GetLocationsImages() {
 
   const locationsPictures = images.map((image) => {
     return (
-      <>
+      <div className="locations-pictures-container">
         <div key={image.id}>
-          <p>{image.title}</p>
-          <img src={image.image} alt='_blank'></img>
-          <p>{image.location_id}</p>
+          <p className="image-title">{image.title}</p>
+          <p className="image-location-id">{image.location_id}</p>
+          <img className='locations-pictures'src={image.image} alt='_blank'></img>
         </div>
-      </>
+      </div>
     );
   });
   return (
     <>
-      <h1>{locationsPictures}</h1>
+    {locationsPictures}
     </>
   );
 };

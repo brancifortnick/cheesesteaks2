@@ -1,0 +1,10 @@
+.locations-pictures-container{
+    display: inline-flex;
+    flex-direction: row;
+    align-content: space-around;
+}
+.locations-pictures{
+    height: 300px;
+    width: 500px;
+    padding: 4px;
+}

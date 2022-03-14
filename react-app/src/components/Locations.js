@@ -7,24 +7,25 @@ import UpdateBiography from "./UpdateBiography";
 import DeleteLocation from "./DeleteLocation";
 import VoteUpdater from "./VoteUpdater";
 import VoteCounter from "./VoteCounter";
+import GetLocationsImages from "./GetLocationsImages";
 // import ImageUpload from "./ImageUpload";
 // import Voting from "./VoteCounter";
 // import GetPhotosImages from "./GetPhotosImages";
 // import VoteCounter from "./VoteCounter";
 // import { getAllVotes } from '../store/vote'
 // import GetLocationsImages from "./notusing";
-
+import getPhotos from '../store/image';
 
 function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
   const { locationId } = useParams();
   const image = useSelector(state => Object.values(state.image))
+  console.log(image, "image <<<<<<<< locations.js ??????????????????")
   const location = useSelector((state) => state.location);
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
-    // dispatch(getAllVotes(Number(locationId)))
   }, [dispatch, locationId]);
 
   return (
@@ -61,6 +62,9 @@ function Locations() {
         </div>
         <div>
           <NavLink to={`/locations/${location.id}/image-upload`}>Upload Food</NavLink>
+        </div>
+        <div>
+            <NavLink to={`/locations/${location.id}/locations-pictures`}>Users Pictures</NavLink>
         </div>
       </div>
       
