@@ -8,20 +8,17 @@ import DeleteLocation from "./DeleteLocation";
 import VoteUpdater from "./VoteUpdater";
 import VoteCounter from "./VoteCounter";
 import GetLocationsImages from "./GetLocationsImages";
-// import ImageUpload from "./ImageUpload";
-// import Voting from "./VoteCounter";
-// import GetPhotosImages from "./GetPhotosImages";
-// import VoteCounter from "./VoteCounter";
-// import { getAllVotes } from '../store/vote'
-// import GetLocationsImages from "./notusing";
-import getPhotos from '../store/image';
+import AddComments from "./AddComments";
+
+
 
 function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
   const { locationId } = useParams();
   const image = useSelector(state => Object.values(state.image))
-  console.log(image, "image <<<<<<<< locations.js ??????????????????")
+  const comment = useSelector(state => Object.values(state.comment))
+  console.log(image, "image <<<<<<<< locations.js ??????????????????", comment, '[][][]][[]][][]][][][][][[[]][[][commentcommentcomment[[[]]]]]')
   const location = useSelector((state) => state.location);
 
   useEffect(() => {
@@ -64,11 +61,14 @@ function Locations() {
           <NavLink to={`/locations/${location.id}/image-upload`}>Upload Food</NavLink>
         </div>
         <div>
-            <NavLink to={`/locations/${location.id}/locations-pictures`}>Users Pictures</NavLink>
+          <NavLink to={`/locations/${location.id}/locations-pictures`}>Users Pictures</NavLink>
         </div>
       </div>
-      
 
+      {/* <div>{currentUser.id === comment.user_id ? (
+        <AddComments />
+      ) : null}
+      </div> */}
 
       <div id="delete-component">
         {currentUser.id === Number(location.user_id) ? (
@@ -76,7 +76,7 @@ function Locations() {
         ) : null}
       </div>
       <div>
-      {/* <VoteCounter locationId={locationId} /> */} 
+        {/* <VoteCounter locationId={locationId} /> */}
       </div>
 
       {/* </div>

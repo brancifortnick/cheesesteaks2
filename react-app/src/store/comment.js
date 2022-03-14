@@ -46,7 +46,7 @@ export const getAllComments = () => async (dispatch) => {
 
 export const getImagesComments = (image_id) => async (dispatch) => {
   const res = await fetch(`/api/comments/${image_id}`)
-  if(res.ok){
+  if (res.ok) {
     const comments = await res.json();
     dispatch(getImageComments(comments));
   }
@@ -126,7 +126,7 @@ export default function reducer(state = initialState, action) {
       delete deleteState[action.payload];
       return deleteState;
     case EDIT_COMMENT:
-      const editState = {...state}
+      const editState = { ...state }
       editState[action.payload.id] = action.payload
       return editState;
     default:

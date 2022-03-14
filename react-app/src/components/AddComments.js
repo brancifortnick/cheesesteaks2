@@ -1,42 +1,46 @@
-import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { getImagesComments } from "../store/comment";
-import {Modal} from '../context/Modal'
-
-const AddComments = ({imageId}) => {
-
-    const dispatch = useDispatch();
+import { createComment, getImagesComments } from "../store/comment";
+import { Modal } from '../context/Modal'
 
 
-    const [comment, setComment] = useState("");
+const AddComments = ({ image }) => {
+
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.session.user)
+
+  const [comment, setComment] = useState("");
+  const [showModal, setModal] = useState(false);
 
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("comment", comment);
+    formData.append("image_id", image.id);
+    formData.append("user_id", user.id);
 
-    const onSubmit = async (e) => {
-      e.preventDefault();
-      const formData = new FormData();
-      formData.append("comment", comment);
-      formData.append("image_id", Number(imageId));
-      formData.append("user_id", user.id);
+    dispatch(createComment(formData));
 
-      dispatch(createComment(formData));
+    setComment("");
+  };
 
-      setComment("");
-    };
+  useEffect(() => {
+    dispatch(getImagesComments())
+  }, [dispatch]);
 
-    useEffect(() => {
-      dispatch(getImagesComments())
-    }, [dispatch]);
+  const updateComment = (e) => setComment(e.target.value);
 
-    const updateComment = (e) => setComment(e.target.value);
-
-    return (
+  return (
+    <>
+      <button id="biography-edit" onClick={() => setModal(true)}>
+        Edit Locations Bio
+      </button>
       <div>
         <div id='comment-modal'>
-        <button className='comment-button' onClick={() => setModal(true)}>Click here to comment</button>
+          <button className='comment-button' onClick={() => setModal(true)}>Click here to comment</button>
         </div>
         {showModal && (
           <Modal onClose={() => setModal(false)}>
@@ -50,15 +54,16 @@ const AddComments = ({imageId}) => {
               />
 
               <div id='comment-create'>
-              <button className="comment_submit" type="submit">
-                Submit Comment
-              </button>
+                <button className="comment_submit" type="submit">
+                  Submit Comment
+                </button>
               </div>
             </form>
           </Modal>
         )}
-        </div>
-    );
-  };
+      </div>
+    </>
+  );
+};
 
 export default AddComments;

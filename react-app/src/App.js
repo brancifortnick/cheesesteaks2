@@ -17,6 +17,7 @@ import VoteCounter from "./components/VoteCounter";
 import GetLocationsImages from "./components/GetLocationsImages";
 import ImageUpload from "./components/ImageUpload";
 import VoteUpdater from "./components/VoteUpdater";
+import AddComments from "./components/AddComments";
 //!adding this so i can make a large commit message for safe revert//
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/locations/:locationId/locations-pictures' exact={!false}>
           <GetLocationsImages />
+
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
