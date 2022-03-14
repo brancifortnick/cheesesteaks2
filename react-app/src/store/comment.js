@@ -44,13 +44,13 @@ export const getAllComments = () => async (dispatch) => {
   }
 };
 
-export const getImagesComments = (image_id) => async (dispatch) => {
-  const res = await fetch(`/api/comments/${image_id}`)
-  if (res.ok) {
-    const comments = await res.json();
-    dispatch(getImageComments(comments));
-  }
-}
+// export const getImagesComments = (image_id) => async (dispatch) => {
+//   const res = await fetch(`/api/${image_id}/comments`)
+//   if (res.ok) {
+//     const comments = await res.json();
+//     dispatch(getImageComments(comments));
+//   }
+// }
 
 export const createComment = (formData) => async (dispatch) => {
   const res = await fetch(`/api/comments/new`, {

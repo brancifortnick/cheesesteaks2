@@ -69,7 +69,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/locations/:locationId/locations-pictures' exact={!false}>
           <GetLocationsImages />
-
+          <AddComments />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

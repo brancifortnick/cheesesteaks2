@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_login import login_required
-from app.models import Comment, db
+from app.models import Comment, Image, db
 from flask_login import current_user, login_required
 
 
@@ -34,11 +34,11 @@ def add_comment():
     return new_comment.to_dict()
 
 
-@comment_routes.route('/<int:image_id>')
-@login_required
-def get_locs_images(image_id):
-    comments = Comment.filter.query(Comment.image_id == image_id).all()
-    return {'comments': [comment.to_dict() for comment in comments]}
+# @comment_routes.route('/<int:image_id>')
+# @login_required
+# def get_locs_images(image_id):
+#     comments = Comment.filter.query(Comment.image_id == image_id).all()
+#     return {'comments': [comment.to_dict() for comment in comments]}
 
 
 @comment_routes.route('/delete/<int:id>', methods=['DELETE'])

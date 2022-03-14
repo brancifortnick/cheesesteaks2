@@ -49,35 +49,12 @@ def upload_image():
     db.session.commit()
     return new_image.to_dict()
 
-    # return {"url": url}
 
-
-# @image_routes.route('/added', methods=['POST'])
+# @image_routes.route('/<int:id>/comments')
 # @login_required
-# def get_the_image_obj():
-
-    # @image_routes.route('/new', methods=['POST'])
-    # @login_required
-    # def complete_picture():
-
-    #     form = ImageForm()
-
-    #     new_picture = Image()
-
-    #     form.populate_obj(new_picture)
-    #     print(new_picture, 'BCKEND IMAGE ROUTES /new')
-
-    #     db.session.add(new_picture)
-    #     db.session.commit()
-    #     print('does error happen here')
-    #     print(new_picture.to_dict(), 'imageROUTES=======new')
-    #     return new_picture
-
-    # @image_routes.route('/<int:id>/comments')
-    # @login_required
-    # def get_photo_comments(id):
-    #     comments = Comment.query.filter(Comment.image_id == id).all()
-    #     return {'comments': [comment.to_dict() for comment in comments]}
+# def get_photo_comments(id):
+#     comments = Comment.query.filter(Comment.image_id == id).all()
+#     return comments.to_dict()
 
 
 @image_routes.route('/delete/<int:id>', methods=['DELETE'])

@@ -18,7 +18,7 @@ function GetLocationsImages() {
   const locationsPictures = images.map((image) => {
     return (
       <div className="locations-pictures-container">
-        <div key={image.id} image={image.id}>
+        <div key={image.id} imageId={image.id}>
           <p className="image-title">{image.title}</p>
           <p className="image-location-id">{image.location_id}</p>
           <img className='locations-pictures' src={image.image} alt='_blank'></img>

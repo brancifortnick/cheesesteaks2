@@ -2,11 +2,11 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { createComment, getImagesComments } from "../store/comment";
+import { createComment } from "../store/comment";
 import { Modal } from '../context/Modal'
+import { getImageComments } from "../store/image";
 
-
-const AddComments = ({ image }) => {
+const AddComments = ({ imageId }) => {
 
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user)
@@ -19,7 +19,7 @@ const AddComments = ({ image }) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("comment", comment);
-    formData.append("image_id", image.id);
+    formData.append("image_id", imageId);
     formData.append("user_id", user.id);
 
     dispatch(createComment(formData));
@@ -28,7 +28,7 @@ const AddComments = ({ image }) => {
   };
 
   useEffect(() => {
-    dispatch(getImagesComments())
+    dispatch(getImageComments())
   }, [dispatch]);
 
   const updateComment = (e) => setComment(e.target.value);
@@ -36,7 +36,7 @@ const AddComments = ({ image }) => {
   return (
     <>
       <button id="biography-edit" onClick={() => setModal(true)}>
-        Edit Locations Bio
+        Edit Comment
       </button>
       <div>
         <div id='comment-modal'>
