@@ -9,6 +9,7 @@ import VoteUpdater from "./VoteUpdater";
 import VoteCounter from "./VoteCounter";
 import GetLocationsImages from "./GetLocationsImages";
 import AddComments from "./AddComments";
+import AllComments from "./AllComments";
 
 
 
@@ -61,7 +62,7 @@ function Locations() {
           <GetLocationsImages locationId={locationId} />
 
         </div>
-
+        <AllComments locationId={locationId} />
       </div>
       {/* {currentUser.id === Number(location.user_id) ? (
         <AddComments locationId={locationId} imageId={image.id} />

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllComments, getImageComments } from '../store/comment'
 
-function AllComments({ locationId }) {
+function AllComments({ imageId }) {
 
     const dispatch = useDispatch()
     const comments = useSelector(state => Object.values(state.comment))
@@ -10,8 +10,8 @@ function AllComments({ locationId }) {
 
 
     useEffect(() => {
-        dispatch(getAllComments(locationId))
-    }, [dispatch, locationId])
+        dispatch(getAllComments(imageId))
+    }, [dispatch, imageId])
 
     return (
         <div id="comment-div">

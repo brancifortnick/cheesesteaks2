@@ -38,7 +38,7 @@ const ImageUpload = () => {
     formData.append('user_id', user.id);
     formData.append('location_id', locationId);
     dispatch(addImage(formData))
-    history.push(`/locations/${locationId}/locations-pictures/${image.id}`);
+    history.push(`/locations/${locationId}`);
   };
 
 
