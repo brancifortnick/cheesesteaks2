@@ -61,9 +61,7 @@ function Locations() {
           <GetLocationsImages locationId={locationId} />
 
         </div>
-        <div>
-          <NavLink to={`/locations/${location.id}/locations-pictures`}>Users Pictures</NavLink>
-        </div>
+
       </div>
       {/* {currentUser.id === Number(location.user_id) ? (
         <AddComments locationId={locationId} imageId={image.id} />
