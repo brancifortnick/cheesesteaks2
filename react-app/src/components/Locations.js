@@ -54,13 +54,11 @@ function Locations() {
             <UpdateBiography
               locationBio={location.biography}
               locationId={location.id}
-
             />
           ) : null}
         </div>
         <div>
           <GetLocationsImages locationId={locationId} />
-
         </div>
         <AllComments locationId={locationId} />
       </div>

@@ -17,9 +17,9 @@ function AllComments({ imageId }) {
         <div id="comment-div">
             {comments?.map((comment) => (
                 <div key={comment.id}>
-                    <div>
+                    {/* <div>
                         {comment?.username}
-                    </div>
+                    </div> */}
                     <div className="user-object--content">
                         {comment?.comment}
                         {/* 
