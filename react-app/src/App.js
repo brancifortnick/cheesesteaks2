@@ -18,6 +18,8 @@ import GetLocationsImages from "./components/GetLocationsImages";
 import ImageUpload from "./components/ImageUpload";
 import VoteUpdater from "./components/VoteUpdater";
 import AddComments from "./components/AddComments";
+import AllComments from "./components/AllComments";
+import DisplayComments from "./components/DisplayComments";
 //!adding this so i can make a large commit message for safe revert//
 
 function App() {
@@ -73,6 +75,10 @@ function App() {
         {/* <ProtectedRoute path='/locations/:locationId/locations-pictures' exact={!false}>
           <GetLocationsImages />
         </ProtectedRoute> */}
+        <ProtectedRoute path='/locations/:locationId/:imageId/comments'>
+          {/* <AllComments /> */}
+          <DisplayComments />
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );

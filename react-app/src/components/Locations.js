@@ -59,7 +59,7 @@ function Locations() {
         </div>
         <div>
           <GetLocationsImages locationId={locationId} />
-          {/* <NavLink to={`/locations/${location.id}/image-upload`}>Upload Food</NavLink> */}
+
         </div>
         <div>
           <NavLink to={`/locations/${location.id}/locations-pictures`}>Users Pictures</NavLink>

@@ -2,16 +2,16 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllComments, getImageComments } from '../store/comment'
 
-function AllComments() {
+function AllComments({ locationId }) {
 
     const dispatch = useDispatch()
     const comments = useSelector(state => Object.values(state.comment))
     const user = useSelector(state => state.session.user)
-    const { imageId } = useParams()
+
 
     useEffect(() => {
-        dispatch(getAllComments())
-    }, [dispatch])
+        dispatch(getAllComments(locationId))
+    }, [dispatch, locationId])
 
     return (
         <div id="comment-div">

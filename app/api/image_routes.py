@@ -52,7 +52,7 @@ def upload_image():
 
 @image_routes.route('/delete/<int:id>', methods=['DELETE'])
 @login_required
-def delete_musician(id):
+def delete_photo(id):
     image = Image.query.get(id)
 
     if not image:

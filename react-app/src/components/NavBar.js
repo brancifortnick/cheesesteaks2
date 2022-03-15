@@ -66,10 +66,12 @@ const NavBar = () => {
           </button>
         ) : null}
         {user ? (
-        <button>
-          <NavLink to={`/users/${user.id}`}>{`${user.username}` + 's profile'}</NavLink>
-        </button>
-        ): null}
+          <button>
+            <NavLink to={`/users/${user.id}`}>{`${user.username}` + 's profile'}</NavLink>
+          </button>
+
+        ) : null}
+
         {user ? (
           <NavLink to={`/users/${user.id}/new-location`}>Add Location</NavLink>
         ) : null}

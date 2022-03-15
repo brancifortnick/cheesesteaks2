@@ -2,21 +2,23 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { getOneComment } from "../store/comment";
 import { getPhotos } from "../store/image";
 import AddComments from "./AddComments";
 import DeleteLocationsImages from "./DeleteLocationsImage";
 import './GetLocationsImages.css'
 
-function GetLocationsImages({ imageId }) {
+function GetLocationsImages({ locationId }) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   const images = useSelector((state) => Object.values(state.image));
-  const { locationId } = useParams()
+  // const { locationId } = useParams()
   console.log(images, "<><><><images OBJ<><><><><");
 
   useEffect(() => {
-    dispatch(getPhotos(Number(imageId)));
-  }, [dispatch, imageId]);
+    dispatch(getPhotos(Number(locationId)));
+    dispatch(getOneComment(Number(locationId)))
+  }, [dispatch, locationId]);
 
   const locationsPictures = images.map((image) => {
     return (
