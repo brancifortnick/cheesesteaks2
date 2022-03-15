@@ -64,14 +64,6 @@ function Locations() {
         </div>
         <AllComments locationId={locationId} />
       </div>
-      {/* {currentUser.id === Number(location.user_id) ? (
-        <AddComments locationId={locationId} imageId={image.id} />
-      ) : null} */}
-      <div>
-
-
-      </div>
-
       <div id="delete-component">
         {currentUser.id === Number(location.user_id) ? (
           <DeleteLocation locationId={locationId} />
@@ -80,11 +72,6 @@ function Locations() {
       <div>
         {/* <VoteCounter locationId={locationId} /> */}
       </div>
-
-      {/* </div>
-      <div className="audio-div">
-        <AllSongs musicianId={musicianId} />
-      </div> */}
     </div>
   );
 }
