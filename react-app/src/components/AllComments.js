@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { getImageComments } from '../store/comment'
+import { getAllComments, getImageComments } from '../store/comment'
 
 function AllComments() {
 
@@ -11,15 +10,13 @@ function AllComments() {
     const { imageId } = useParams()
 
     useEffect(() => {
-        dispatch(getImageComments(Number(imageId)))
-    }, [dispatch, imageId])
+        dispatch(getAllComments())
+    }, [dispatch])
 
     return (
         <div id="comment-div">
             {comments?.map((comment) => (
-
                 <div key={comment.id}>
-
                     <div>
                         {comment?.username}
                     </div>
@@ -38,5 +35,5 @@ function AllComments() {
             )}
         </div>
     )
-}
+};
 export default AllComments;
