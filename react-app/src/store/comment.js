@@ -44,13 +44,13 @@ export const getAllComments = () => async (dispatch) => {
   }
 };
 
-// export const getImagesComments = (image_id) => async (dispatch) => {
-//   const res = await fetch(`/api/comments/${image_id}`)
-//   if (res.ok) {
-//     const comments = await res.json();
-//     dispatch(getImageComments(comments.comments));
-//   }
-// }
+export const getImagesComments = (image_id) => async (dispatch) => {
+  const res = await fetch(`/api/comments/${image_id}`)
+  if (res.ok) {
+    const comments = await res.json();
+    dispatch(getImageComments(comments.comments));
+  }
+}
 
 export const createComment = (formData) => async (dispatch) => {
   const res = await fetch(`/api/comments/new`, {
@@ -58,9 +58,7 @@ export const createComment = (formData) => async (dispatch) => {
     body: formData,
   });
   if (res.ok) {
-    console.log("hey before newcomment---redux");
     const newComment = await res.json();
-    console.log(newComment, "we are in the redux store after newComment");
     dispatch(postComment(newComment));
     console.log(newComment, " after calling postComment");
     return newComment;
@@ -107,7 +105,7 @@ const initialState = {};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case GET_IMAGE_COMMENTS:
+    case GET_COMMENTS:
       let newComState = {};
       action.payload.forEach((comment) => {
         newComState[comment.id] = comment;

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { getImagesComments, createComment } from "../store/comment";
 import { Modal } from '../context/Modal'
 
-const AddComments = () => {
+const AddComments = ({ imageId }) => {
 
   const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ const AddComments = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("comment", comment);
-
+    formData.append('image_id', Number(imageId))
     formData.append("user_id", user.id);
 
     dispatch(createComment(formData));
@@ -26,9 +26,9 @@ const AddComments = () => {
     setComment("");
   };
 
-  // useEffect(() => {
-  //   dispatch(getImagesComments())
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getImagesComments(Number(imageId)))
+  }, [dispatch, imageId]);
 
   const updateComment = (e) => setComment(e.target.value);
 

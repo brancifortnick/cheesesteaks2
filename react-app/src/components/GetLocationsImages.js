@@ -6,16 +6,16 @@ import { getPhotos } from "../store/image";
 import AddComments from "./AddComments";
 import './GetLocationsImages.css'
 
-function GetLocationsImages() {
+function GetLocationsImages({ imageId }) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   const images = useSelector((state) => Object.values(state.image));
-  // const { id } = useParams();
+  const { locationId } = useParams()
   console.log(images, "<><><><images OBJ<><><><><");
 
   useEffect(() => {
-    dispatch(getPhotos());
-  }, [dispatch]);
+    dispatch(getPhotos(Number(imageId)));
+  }, [dispatch, imageId]);
 
   const locationsPictures = images.map((image) => {
     return (
@@ -25,6 +25,7 @@ function GetLocationsImages() {
           <p className="image-title">{image.title}</p>
           <p className="image-location-id">{image.location_id}</p>
           <img className='locations-pictures' src={image.image} alt='_blank'></img>
+          <AddComments imageId={image.id} locationId={locationId} />
         </div>
       </div>
     );

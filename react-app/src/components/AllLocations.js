@@ -26,7 +26,7 @@ function AllLocations() {
               ></img>
               <div className="location-name">{location.location_name}</div>
             </NavLink>
-            <AddComments locationId={location.id} />
+
           </div>
         </div>
       </div>

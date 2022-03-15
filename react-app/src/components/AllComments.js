@@ -8,22 +8,18 @@ function AllComments() {
     const dispatch = useDispatch()
     const comments = useSelector(state => Object.values(state.comment))
     const user = useSelector(state => state.session.user)
-    const { id } = useParams()
+    const { imageId } = useParams()
 
     useEffect(() => {
-        dispatch(getImageComments(Number(id)))
-    }, [dispatch])
+        dispatch(getImageComments(Number(imageId)))
+    }, [dispatch, imageId])
 
     return (
         <div id="comment-div">
             {comments?.map((comment) => (
 
                 <div key={comment.id}>
-                    {/* <img
-                        src={comment?.user?.avatar}
-                        className="user-object--avi"
-                        alt="avatar"
-                    /> */}
+
                     <div>
                         {comment?.username}
                     </div>

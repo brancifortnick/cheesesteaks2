@@ -70,10 +70,9 @@ function App() {
         <ProtectedRoute path="/locations/:locationId/image-upload" exact={true}>
           <ImageUpload />
         </ProtectedRoute>
-        <ProtectedRoute path='/locations/:locationId/locations-pictures' exact={!false}>
+        {/* <ProtectedRoute path='/locations/:locationId/locations-pictures' exact={!false}>
           <GetLocationsImages />
-
-        </ProtectedRoute>
+        </ProtectedRoute> */}
       </Switch>
     </BrowserRouter>
   );
