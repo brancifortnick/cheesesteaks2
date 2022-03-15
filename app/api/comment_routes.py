@@ -16,7 +16,7 @@ def get_all():
 @comment_routes.route('/<int:id>')
 def get_by_id(id):
     comments = Comment.query.get(id)
-    return {'comments': [comment.to_dict() for comment in comments]}
+    return comments.to_dict()
 
 
 #post is working
