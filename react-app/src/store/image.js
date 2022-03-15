@@ -92,7 +92,7 @@ export const editImage = (formData, id) => async (dispatch) => {
 
 
 export const deletePhoto = (id) => async (dispatch) => {
-  const res = await fetch(`/api/images/${id}`, {
+  const res = await fetch(`/api/images/delete/${id}`, {
     method: "DELETE",
   });
   if (res.ok) {

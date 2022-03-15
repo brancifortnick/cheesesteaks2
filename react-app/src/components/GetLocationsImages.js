@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getPhotos } from "../store/image";
 import AddComments from "./AddComments";
+import DeleteLocationsImages from "./DeleteLocationsImage";
 import './GetLocationsImages.css'
 
 function GetLocationsImages({ imageId }) {
@@ -26,6 +27,7 @@ function GetLocationsImages({ imageId }) {
           <p className="image-location-id">{image.location_id}</p>
           <img className='locations-pictures' src={image.image} alt='_blank'></img>
           <AddComments imageId={image.id} locationId={locationId} />
+          <DeleteLocationsImages imageId={image.id} location={locationId} />
         </div>
       </div>
     );
