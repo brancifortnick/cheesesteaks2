@@ -8,14 +8,14 @@ class Comment(db.Model):
 
     __tablename__ = 'comments'
 
-
     id = db.Column(db.Integer, primary_key=True)
     comment = db.Column(db.String(255), nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    image_id =  db.Column(db.Integer, db.ForeignKey('images.id'), nullable=False)
+    image_id = db.Column(db.Integer, db.ForeignKey('images.id'))
     created_at = db.Column(db.DateTime(timezone=True),
                            nullable=False, server_default=func.now())
-    updated_at = db.Column(db.DateTime(timezone=True),nullable=False, server_default=func.now())
+    updated_at = db.Column(db.DateTime(timezone=True),
+                           nullable=False, server_default=func.now())
 
     users = db.relationship('User', back_populates='comments')
     images = db.relationship('Image', back_populates='comments')

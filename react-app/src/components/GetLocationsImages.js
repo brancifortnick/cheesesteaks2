@@ -29,7 +29,7 @@ function GetLocationsImages({ locationId }) {
           <p className="image-location-id">{image.location_id}</p>
           <img className='locations-pictures' src={image.image} alt='_blank'></img>
           <AddComments imageId={image.id} locationId={locationId} />
-          <DeleteLocationsImages imageId={image.id} location={locationId} />
+          <DeleteLocationsImages imageId={image.id} locationId={locationId} />
         </div>
       </div>
     );

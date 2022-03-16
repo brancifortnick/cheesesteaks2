@@ -11,7 +11,7 @@ const NavBar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
-  const { userId } = useParams();
+  // const { userId } = useParams();
 
   const demoLoginButton = async (e) => {
     e.preventDefault();
@@ -34,13 +34,13 @@ const NavBar = () => {
             Locations
           </NavLink>
         </div>
-        <div className="nav-link">
+        {/* <div className="nav-link">
           {user ? (
             <NavLink to="/users" exact={true} activeClassName="active">
               Users
             </NavLink>
           ) : null}
-        </div>
+        </div> */}
         <div className="nav-link">
           {!user ? (
             <NavLink to="/login" exact={true} activeClassName="active">
