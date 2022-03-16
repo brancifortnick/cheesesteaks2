@@ -5,7 +5,10 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { demoLogin } from "../store/session";
 import LogoutButton from "./auth/LogoutButton";
+import LoginIcon from '@mui/icons-material/Login';
+import Button from '@mui/material/Button';
 import "./NavBar.css";
+
 
 const NavBar = () => {
   const history = useHistory();
@@ -56,15 +59,15 @@ const NavBar = () => {
           ) : null}
         </div>
         {!user ? (
-          <button className="demo-login" onClick={demoLoginButton}>
+          <Button variant='contained' color='primary' className="demo-login" onClick={demoLoginButton}>
             Demo Login
-          </button>
+          </Button>
         ) : null}
-        {!user ? (
+        {/* {!user ? (
           <button id="demo-button" onClick={demoLoginButton}>
             Demo
           </button>
-        ) : null}
+        ) : null} */}
         {user ? (
           <button>
             <NavLink to={`/users/${user.id}`}>{`${user.username}` + 's profile'}</NavLink>
