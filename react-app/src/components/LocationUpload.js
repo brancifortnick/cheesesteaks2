@@ -4,6 +4,10 @@ import { useHistory } from "react-router-dom";
 import { getAllLocations, postNewLocation } from "../store/location";
 import { TextField } from "@mui/material";
 import { TextFormatRounded } from "@mui/icons-material";
+import TextareaAutosize from '@mui/base/TextareaAutosize';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import './LocationUpload.css'
 
 const LocationUpload = () => {
   const history = useHistory();
@@ -42,38 +46,45 @@ const LocationUpload = () => {
       <h1 id="add-location-text">Add Establishment </h1>
       <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
-          <TextField
-            type="text"
-            name="location_name"
-            placeholder="Location Name"
-            onChange={(e) => setLocationName(e.target.value)}
-            value={location_name}
-          />
+          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5 }}>
+            <TextField
+              type="text"
+              name="location_name"
+              placeholder="Location Name"
+              onChange={(e) => setLocationName(e.target.value)}
+              value={location_name}
+            /></Box>
         </div>
-        <label htmlFor="add-location-pic">
-          Add Location Picture
+        <label id='location-photo-text' htmlFor="add-location-pic">
+          Add Location Photo
         </label>
-        <input
-          type="file"
-          accept="image/*"
-          name="profile_img"
-          onChange={updateProfileImg}
-        />
-        <label htmlFor="biography" >
+        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, p: 2 }}>
+          <input
+            type="file"
+            accept="image/*"
+            name="profile_img"
+            onChange={updateProfileImg}
+          />
+        </Box>
+        {/* <label htmlFor="biography" >
           Biography
-        </label>
-        <textarea
-          name="biography"
-          type="text"
-          placeholder="biography..."
-          onChange={(e) => setBiography(e.target.value)}
-          value={biography}
-        />
-        <button className="submit" type="submit" id="create_location">
-          Submit
-        </button>
+        </label> */}
+        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5 }}>
+          <TextareaAutosize
+            name="biography"
+            type="text"
+            placeholder="biography..."
+            onChange={(e) => setBiography(e.target.value)}
+            value={biography}
+            minRows={5}
+            style={{ width: 400 }}
+          />
+        </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, pt: .5 }}>
+          <Button variant='contained' color='primary' type='submit'>Submit</Button>
+        </Box>
       </form>
-    </div>
+    </div >
   );
 };
 
