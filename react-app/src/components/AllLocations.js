@@ -6,6 +6,7 @@ import AddComments from "./AddComments";
 import Grid from '@mui/material/Grid';
 import DeleteEstablishment from "./DeleteEstablishment";
 import './AllLocations.css'
+import VoteCounter from "./VoteCounter";
 
 function AllLocations() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function AllLocations() {
       <div className="locations-container">
         <div key={idx}>
           <div className="location-div-container">
+            <VoteCounter locationId={location.id} />
             {/* 
             <Grid
               container

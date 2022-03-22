@@ -57,7 +57,7 @@ function Locations() {
             />
           ) : null}
         </div>
-        <VoteCounter locationId={location.id} />
+
         <div>
           <GetLocationsImages locationId={locationId} />
         </div>

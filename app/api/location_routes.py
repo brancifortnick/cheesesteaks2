@@ -88,7 +88,8 @@ def delete_musician(id):
 @location_routes.route('/<int:id>/votes')
 @login_required
 def get_locos_votes(id):
-    votes = Vote.query.filter(Vote.location_id == id).all()
+    votes = Vote.filter.query(Vote.location_id == id).one_or_none()
+    # return {'votes': [vote.to_dict() for vote in votes]}
     return votes.to_dict()
 
 

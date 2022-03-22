@@ -11,6 +11,7 @@ import "./NavBar.css";
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import HomeIcon from './HomeIcon'
 
+
 const NavBar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -64,6 +65,7 @@ const NavBar = () => {
             </NavLink>
           ) : null}
         </div>
+
         {!user ? (
           <Button variant='contained' color='primary' className="demo-login" onClick={demoLoginButton}>
             Demo Login
@@ -85,6 +87,7 @@ const NavBar = () => {
           <NavLink to={`/users/${user.id}/new-location`}>Add Location</NavLink>
         ) : null}
         <div className="nav-link">{user ? <LogoutButton /> : null}</div>
+
       </div>
     </nav>
   );

@@ -3,7 +3,7 @@ from app.models import Vote, db, Vote
 from flask_login import login_required, current_user
 from app.forms import VoteForm
 
-vote_routes = Blueprint('votes',__name__ )
+vote_routes = Blueprint('votes', __name__)
 
 
 @vote_routes.route('/')
@@ -19,6 +19,7 @@ def get_vote_ids(id):
     votes = Vote.query.get(id)
     return votes.to_dict()
 
+
 @vote_routes.route('/add', methods=['POST'])
 @login_required
 def get_new_votes():
@@ -32,3 +33,15 @@ def get_new_votes():
     db.session.add(votes)
     db.session.commit()
     return votes.to_dict()
+
+
+# @vote_routes.route('/<int:id>', methods=['PUT'])
+# @login_required
+# def get_updated_votes(id):
+#     update_votes = Vote.query.get(id)
+#     update_votes.vote = request.form['vote']
+
+#     db.session.add(update_votes)
+
+#     db.session.commit()
+#     return update_votes.to_dict()

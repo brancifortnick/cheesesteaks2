@@ -20,7 +20,7 @@ class Image(db.Model):
 
     locations = db.relationship('Location', back_populates='images')
     comments = db.relationship('Comment', back_populates='images')
-
+    users = db.relationship('User', back_populates='images')
 
     def to_dict(self):
         return {
@@ -31,4 +31,5 @@ class Image(db.Model):
             'location_id': self.location_id,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
+
         }

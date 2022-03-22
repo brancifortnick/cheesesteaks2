@@ -14,8 +14,8 @@ const VoteCounter = ({ locationId }) => {
 
   console.log(locationId, '<<<<<<<<<<<<<<<<locationId inside VOTECOUNER?????????')
 
-  const [vote, setVote] = useState(null); // be cautious of this useState
-  const [downvote, setDownVote] = useState(null);
+  const [vote, setVote] = useState(0); // be cautious of this useState
+  const [downvote, setDownVote] = useState(0);
 
 
   const onSubmit = async (e) => {
@@ -24,16 +24,19 @@ const VoteCounter = ({ locationId }) => {
     formData.append("vote", vote);
     formData.append("downvote", downvote);
     formData.append('user_id', user.id)
-    formData.append('location_id', locationId)
-    dispatch(editVotes(formData, locationId))
-
+    formData.append('location_id', Number(locationId))
+    dispatch(postNewVotes(formData))
   };
 
   useEffect(() => {
-    // dispatch(editVotes(Number(locationId)))
-    dispatch(getAllVotes(Number(locationId)))
+    dispatch(editVotes(Number(locationId)))
+    // dispatch(getAllVotes(Number(locationId)))
   }, [dispatch, locationId])
 
+
+  let totalVote = (downvote, vote) => {
+    return downvote += vote;
+  }
 
   const down = () => {
     setDownVote(downvote => downvote -= 1);
@@ -48,6 +51,7 @@ const VoteCounter = ({ locationId }) => {
   return (
     <form onSubmit={onSubmit}>
       <>
+
         <div>
           <button onClick={down}>downvote</button>
           {downvote}

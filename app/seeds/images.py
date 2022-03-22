@@ -1,7 +1,6 @@
 from app.models import db, Image
 
 
-
 def seed_images():
     image = Image(
         image='https://mycheesesteaks.s3.amazonaws.com/pats.jpg',
@@ -24,12 +23,11 @@ def seed_images():
 
     )
 
-
     db.session.add(image)
     db.session.add(image2)
     db.session.add(image3)
-
     db.session.commit()
+
 
 def undo_images():
     db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')

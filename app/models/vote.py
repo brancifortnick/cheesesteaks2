@@ -15,12 +15,12 @@ class Vote(db.Model):
     users = db.relationship('User', back_populates='votes')
     locations = db.relationship('Location', back_populates='votes')
 
-
     def to_dict(self):
-            return {
-                  'id': self.id,
-                  'vote':self.vote,
-                  'downvote':self.downvote,
-                  'user_id':self.user_id,
-                  'location_id':self.location_id,
-      }
+        return {
+            'id': self.id,
+            'vote': self.vote,
+            'downvote': self.downvote,
+            'user_id': self.user_id,
+            'location_id': self.location_id,
+
+        }

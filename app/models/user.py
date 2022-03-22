@@ -17,9 +17,10 @@ class User(db.Model, UserMixin):
     updated_at = db.Column(db.DateTime(timezone=True),
                            nullable=False, server_default=func.now())
 
-    locations= db.relationship('Location', back_populates='users')
+    locations = db.relationship('Location', back_populates='users')
     comments = db.relationship('Comment', back_populates='users')
     votes = db.relationship('Vote', back_populates='users')
+    images = db.relationship('Image', back_populates='users')
 
     @property
     def password(self):

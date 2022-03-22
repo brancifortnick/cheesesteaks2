@@ -45,8 +45,11 @@ export const editVotes = (formData, locationId) => async (dispatch) => {
     body: formData,
   });
   if (res.ok) {
+    console.log(res, "resssssss editVotes")
     const votes = await res.json();
     dispatch(editTheVotes(votes))
+  } else {
+    console.log('didnt make it past res')
   }
 }
 
