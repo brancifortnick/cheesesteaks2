@@ -71,7 +71,7 @@ const LoginForm = () => {
         ))}
       </div>
       {/* <Box sx={{ display: 'inline-flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', m: 1, width: '28ch' }}> */}
-      <Box sx={{ mx: "auto", width: '28ch', }}>
+      <Box sx={{ mx: "auto", width: '28ch', pt: 4 }}>
         <TextField
           required
           id="outlined-required"
@@ -97,6 +97,7 @@ const LoginForm = () => {
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
                   edge="start"
+                  size='large'
                 >
                   {values.showPassword ? <VisibilityOff /> : <Visibility />}
                 </IconButton>

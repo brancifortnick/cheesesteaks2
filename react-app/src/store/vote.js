@@ -9,8 +9,8 @@ const getVotes = (vote) => ({
 });
 
 const postVotes = (vote) => ({
-    type: ADD_VOTES,
-    payload: vote,
+  type: ADD_VOTES,
+  payload: vote,
 })
 
 const editTheVotes = (vote) => ({
@@ -18,7 +18,7 @@ const editTheVotes = (vote) => ({
   payload: vote,
 })
 
-export const getAllVotes = () => async (dispatch)=>{
+export const getAllVotes = () => async (dispatch) => {
   const res = await fetch("/api/votes/");
   if (res.ok) {
     const data = await res.json();
@@ -31,10 +31,10 @@ export const postNewVotes = (formData) => async (dispatch) => {
     method: "POST",
     body: formData,
   });
-   if (res.ok) {
-       const vote = await res.json();
-       dispatch(postVotes(vote))
-   }
+  if (res.ok) {
+    const vote = await res.json();
+    dispatch(postVotes(vote))
+  }
 };
 
 
@@ -44,7 +44,7 @@ export const editVotes = (formData, locationId) => async (dispatch) => {
     method: "PUT",
     body: formData,
   });
-  if(res.ok){
+  if (res.ok) {
     const votes = await res.json();
     dispatch(editTheVotes(votes))
   }
@@ -55,18 +55,18 @@ const initialState = {};
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case GET_VOTES:
-    const current = {};
+      const current = {};
       action.payload.forEach((vote) => {
         current[vote.id] = vote;
       });
       return current;
     case ADD_VOTES:
-      const theState = {...state}
+      const theState = { ...state }
       theState[action.payload.id] = action.payload;
       return theState;
-      // return {...action.payload}
+    // return {...action.payload}
     case EDIT_VOTES:
-      const theCurrState = {...state}
+      const theCurrState = { ...state }
       theCurrState[action.payload.id] = action.payload;
       return theCurrState;
     default:

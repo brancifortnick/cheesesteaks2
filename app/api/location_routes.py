@@ -21,7 +21,11 @@ def get_location_id(id):
     location = Location.query.get(id)
     return location.to_dict()
 
-
+# @location_routes.route('<int:location_id>', methods=['PUT'])
+# @login_required
+# def get_location_votes(location_id):
+#     votes = Vote.query.filter(Vote.location_id == location_id)
+#     return {'votes': [vote.to_dict() for vote in votes]}
 # @location_routes.route('/<int:id>/images')
 # @login_required
 # def locations_images(id):
@@ -81,7 +85,7 @@ def delete_musician(id):
     return {'id': id}
 
 
-@location_routes.route('/<int:id>')
+@location_routes.route('/<int:id>/votes')
 @login_required
 def get_locos_votes(id):
     votes = Vote.query.filter(Vote.location_id == id).all()

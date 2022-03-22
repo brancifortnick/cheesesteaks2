@@ -11,7 +11,7 @@ const LogoutButton = () => {
   };
 
   return <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 0.5 }}>
-    <Button variant='contained' color='primary' type='submit'>Logout</Button>
+    <Button variant='contained' color='primary' type='submit' onClick={onLogout}>Logout</Button>
   </Box>
 };
 

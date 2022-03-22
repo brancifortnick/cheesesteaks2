@@ -7,15 +7,15 @@ import { getAPhoto } from "../store/image";
 import { getAllLocations } from "../store/location";
 import VoteUpdater from "./VoteUpdater";
 
-const VoteCounter = () => {
+const VoteCounter = ({ locationId }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   const location = useSelector(state => (state.location))
-  const { locationId } = useParams
+
   console.log(locationId, '<<<<<<<<<<<<<<<<locationId inside VOTECOUNER?????????')
 
-  const [vote, setVote] = useState(0); // be cautious of this useState
-  const [downvote, setDownVote] = useState(0);
+  const [vote, setVote] = useState(null); // be cautious of this useState
+  const [downvote, setDownVote] = useState(null);
 
 
   const onSubmit = async (e) => {
@@ -23,15 +23,16 @@ const VoteCounter = () => {
     const formData = new FormData();
     formData.append("vote", vote);
     formData.append("downvote", downvote);
-    formData.append('location_id', parseInt(locationId))
     formData.append('user_id', user.id)
+    formData.append('location_id', locationId)
     dispatch(editVotes(formData, locationId))
 
   };
 
   useEffect(() => {
+    // dispatch(editVotes(Number(locationId)))
     dispatch(getAllVotes(Number(locationId)))
-  }, [dispatch])
+  }, [dispatch, locationId])
 
 
   const down = () => {
@@ -52,7 +53,7 @@ const VoteCounter = () => {
           {downvote}
         </div>
         <div>
-          <button onClick={up}>vote</button> {`onchange event and theres an onclick above so i remember`}
+          <button onClick={up}>vote</button>
           {vote}
         </div>
       </>
