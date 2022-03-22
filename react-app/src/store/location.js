@@ -72,7 +72,7 @@ export const deleteOneLocation = (id) => async (dispatch) => {
   if (res.ok) {
     dispatch(deleteLocation(id));
   } else {
-    console.log("Musician Can't be deleted");
+    console.log("Establishment Can't be deleted");
   }
 };
 

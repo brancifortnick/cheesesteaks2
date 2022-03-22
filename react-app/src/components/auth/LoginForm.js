@@ -72,19 +72,7 @@ const LoginForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
-      {/* <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div> */}
       {/* <Box sx={{ display: 'inline-flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', m: 1, width: '28ch' }}> */}
-
-
       <Box sx={{ mx: "auto", width: '28ch', mt: 4 }}>
         <TextField
           required
@@ -117,16 +105,6 @@ const LoginForm = () => {
           />
         </FormControl>
       </Box>
-
-      {/* <div> */}
-      {/* <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        /> */}
       <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 0.5 }}>
         <Button variant='contained' color='primary' type='submit'>Login</Button>
       </Box>

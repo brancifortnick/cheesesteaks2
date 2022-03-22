@@ -28,7 +28,7 @@ const LocationUpload = () => {
       dispatch(postNewLocation(profile_img, biography, user.id, location_name));
       dispatch(getAllLocations());
     }
-    history.push(`/users/${user.id}`);
+    history.push(`/locations`);
   };
 
   const updateProfileImg = (e) => {
@@ -42,7 +42,7 @@ const LocationUpload = () => {
       <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
           <label htmlFor="location_name" >
-           Location Name
+            Location Name
           </label>
           <input
             type="text"

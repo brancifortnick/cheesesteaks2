@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateBiography, getOneLocation} from '../store/location'
+import { updateBiography, getOneLocation } from '../store/location'
 import { Modal } from "../context/Modal";
 import { useHistory } from "react-router-dom";
 // import "./UpdateBiography.css";
+// import Modal from '@mui/material/Modal';
 
 const UpdateBiography = ({ locationBio, locationId }) => {
   const dispatch = useDispatch();

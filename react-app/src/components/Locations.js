@@ -10,8 +10,8 @@ import VoteCounter from "./VoteCounter";
 import GetLocationsImages from "./GetLocationsImages";
 import AddComments from "./AddComments";
 import AllComments from "./AllComments";
-
-
+import Grid from '@mui/material/Grid';
+import DeleteEstablishment from "./DeleteEstablishment";
 
 function Locations() {
   const dispatch = useDispatch();

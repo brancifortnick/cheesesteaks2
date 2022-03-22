@@ -8,13 +8,17 @@ import LogoutButton from "./auth/LogoutButton";
 import LoginIcon from '@mui/icons-material/Login';
 import Button from '@mui/material/Button';
 import "./NavBar.css";
-
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import HomeIcon from './HomeIcon'
 
 const NavBar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   // const { userId } = useParams();
+
+
+
 
   const demoLoginButton = async (e) => {
     e.preventDefault();
@@ -28,13 +32,14 @@ const NavBar = () => {
         <div className="nav-link">
           {user ? (
             <NavLink to="/" exact={true} activeClassName="active">
-              Home
+              <HomeIcon />
             </NavLink>
           ) : null}
         </div>
         <div className="nav-link">
+
           <NavLink to="/locations" exact={true}>
-            Locations
+            <StorefrontIcon />
           </NavLink>
         </div>
         {/* <div className="nav-link">
