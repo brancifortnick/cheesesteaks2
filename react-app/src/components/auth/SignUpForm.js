@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
-
+import { TextField } from '@mui/material';
+import './SignUpForm.css';
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
@@ -49,44 +50,38 @@ const SignUpForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
+      <div className='form-container'>
         <label>User Name</label>
-        <input
+        <TextField
           type='text'
           name='username'
           onChange={updateUsername}
           value={username}
-        ></input>
-      </div>
-      <div>
+        />
         <label>Email</label>
-        <input
+        <TextField
           type='text'
           name='email'
           onChange={updateEmail}
           value={email}
-        ></input>
-      </div>
-      <div>
+        />
         <label>Password</label>
-        <input
+        <TextField
           type='password'
           name='password'
           onChange={updatePassword}
           value={password}
-        ></input>
-      </div>
-      <div>
+        />
         <label>Repeat Password</label>
-        <input
+        <TextField
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
-        ></input>
+        />
+        <button type='submit'>Sign Up</button>
       </div>
-      <button type='submit'>Sign Up</button>
     </form>
   );
 };

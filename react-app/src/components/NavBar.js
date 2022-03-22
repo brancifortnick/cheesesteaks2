@@ -37,10 +37,11 @@ const NavBar = () => {
           ) : null}
         </div>
         <div className="nav-link">
-
-          <NavLink to="/locations" exact={true}>
-            <StorefrontIcon />
-          </NavLink>
+          {user ? (
+            <NavLink to="/locations" exact={true}>
+              <StorefrontIcon />
+            </NavLink>
+          ) : null}
         </div>
         {/* <div className="nav-link">
           {user ? (

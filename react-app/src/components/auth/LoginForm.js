@@ -51,9 +51,7 @@ const LoginForm = () => {
   }
 
 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
+
 
   const handleClickShowPassword = () => {
     setValues({
@@ -73,12 +71,12 @@ const LoginForm = () => {
         ))}
       </div>
       {/* <Box sx={{ display: 'inline-flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', m: 1, width: '28ch' }}> */}
-      <Box sx={{ mx: "auto", width: '28ch', mt: 4 }}>
+      <Box sx={{ mx: "auto", width: '28ch', }}>
         <TextField
           required
-          id="filled-required"
+          id="outlined-required"
           label="Required"
-          variant="filled"
+          variant="outlined"
           value={email}
           onChange={updateEmail} />
       </Box>
@@ -96,7 +94,7 @@ const LoginForm = () => {
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
-                  edge="end"
+                  edge="start"
                 >
                   {values.showPassword ? <VisibilityOff /> : <Visibility />}
                 </IconButton>
