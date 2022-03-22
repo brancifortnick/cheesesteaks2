@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getAllLocations, postNewLocation } from "../store/location";
-
+import { TextField } from "@mui/material";
+import { TextFormatRounded } from "@mui/icons-material";
 
 const LocationUpload = () => {
   const history = useHistory();
@@ -38,13 +39,10 @@ const LocationUpload = () => {
 
   return (
     <div className="outer_card">
-      <h1 id="add-location-text">Add A Location</h1>
+      <h1 id="add-location-text">Add Establishment </h1>
       <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
-          <label htmlFor="location_name" >
-            Location Name
-          </label>
-          <input
+          <TextField
             type="text"
             name="location_name"
             placeholder="Location Name"

@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import { TextField } from '@mui/material';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 import './SignUpForm.css';
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -80,7 +82,9 @@ const SignUpForm = () => {
           value={repeatPassword}
           required={true}
         />
-        <button type='submit'>Sign Up</button>
+        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 0.5 }}>
+          <Button variant='contained' color='primary' type='submit'>Sign Up</Button>
+        </Box>
       </div>
     </form>
   );

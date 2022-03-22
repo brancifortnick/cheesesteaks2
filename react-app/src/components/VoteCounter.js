@@ -11,7 +11,7 @@ const VoteCounter = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   const location = useSelector(state => (state.location))
-const {locationId} = useParams 
+  const { locationId } = useParams
   console.log(locationId, '<<<<<<<<<<<<<<<<locationId inside VOTECOUNER?????????')
 
   const [vote, setVote] = useState(0); // be cautious of this useState
@@ -26,16 +26,16 @@ const {locationId} = useParams
     formData.append('location_id', parseInt(locationId))
     formData.append('user_id', user.id)
     dispatch(editVotes(formData, locationId))
-    
+
   };
 
-  useEffect(()=> {
+  useEffect(() => {
     dispatch(getAllVotes(Number(locationId)))
-  },[dispatch])
+  }, [dispatch])
 
 
   const down = () => {
-    setDownVote(downvote => downvote-=1);
+    setDownVote(downvote => downvote -= 1);
   };
   const up = () => {
     setVote(vote => vote += 1);
@@ -46,18 +46,16 @@ const {locationId} = useParams
   // should i be using a form => also should this be an onChange Event vs a click event i think so
   return (
     <form onSubmit={onSubmit}>
-    <>
-   
-      <div>
-        <button onClick={down}>downvote</button> 
-        {downvote}
-      </div>
-      <div>
-   
-        <button onChange={up}>vote</button> {`onchange event and theres an onclick above so i remember`}
-        {vote}
-      </div>
-    </>
+      <>
+        <div>
+          <button onClick={down}>downvote</button>
+          {downvote}
+        </div>
+        <div>
+          <button onClick={up}>vote</button> {`onchange event and theres an onclick above so i remember`}
+          {vote}
+        </div>
+      </>
     </form>
   );
 };

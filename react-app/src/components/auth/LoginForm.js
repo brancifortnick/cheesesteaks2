@@ -78,6 +78,7 @@ const LoginForm = () => {
           label="Required"
           variant="outlined"
           value={email}
+          defaultValue="Normal"
           onChange={updateEmail} />
       </Box>
       <Box sx={{ mx: "auto", width: '28ch' }}>
@@ -87,6 +88,7 @@ const LoginForm = () => {
             id="password"
             type={values.showPassword ? 'text' : 'password'}
             value={password}
+            defaultValue="Normal"
             onChange={updatePassword}
             endAdornment={
               <InputAdornment position="end">

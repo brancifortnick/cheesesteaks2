@@ -39,7 +39,7 @@ const NavBar = () => {
         <div className="nav-link">
           {user ? (
             <NavLink to="/locations" exact={true}>
-              <StorefrontIcon />
+              <StorefrontIcon color='primary' fontSize="large" />
             </NavLink>
           ) : null}
         </div>
@@ -74,12 +74,12 @@ const NavBar = () => {
             Demo
           </button>
         ) : null} */}
-        {user ? (
+        {/* {user ? (
           <button>
             <NavLink to={`/users/${user.id}`}>{`${user.username}` + 's profile'}</NavLink>
           </button>
 
-        ) : null}
+        ) : null} */}
 
         {user ? (
           <NavLink to={`/users/${user.id}/new-location`}>Add Location</NavLink>

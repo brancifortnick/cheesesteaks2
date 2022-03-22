@@ -16,10 +16,11 @@ export default function SvgIconsColor() {
     return (
         <Box
             sx={{
-                mx: 4
+                mx: 4,
+
             }}
         >
-            <HomeIcon fontSize="large" />
+            <HomeIcon fontSize="large" color='primary' />
 
         </Box>
     );
