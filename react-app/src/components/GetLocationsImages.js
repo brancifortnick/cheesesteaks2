@@ -9,10 +9,12 @@ import DeleteLocationsImages from "./DeleteLocationsImage";
 import './GetLocationsImages.css'
 
 function GetLocationsImages({ locationId }) {
+  console.log(locationId, "locatioID coming from GETlocationsImages")
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   const images = useSelector((state) => Object.values(state.image));
-  // const { locationId } = useParams()
+ const location = useSelector(state => (state.location))
+ console.log(location, 'LOCATION from getlocationsimages')
   console.log(images, "<><><><images OBJ<><><><><");
 
   useEffect(() => {
@@ -21,7 +23,8 @@ function GetLocationsImages({ locationId }) {
   }, [dispatch, locationId]);
 
   const locationsPictures = images.map((image) => {
-    return (
+   return image.location_id === location.id ? (
+// return (
       <div className="locations-pictures-container">
         <div key={image.id}>
 
@@ -32,7 +35,7 @@ function GetLocationsImages({ locationId }) {
           <DeleteLocationsImages imageId={image.id} locationId={locationId} />
         </div>
       </div>
-    );
+    ): null;
   });
   //images.map here to get imageId
   return (

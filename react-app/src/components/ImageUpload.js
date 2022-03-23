@@ -25,8 +25,8 @@ const ImageUpload = () => {
   console.log(locationId, userId, '>>>>from IMAGEUPLOAD FRONTEND')
 
   useEffect(() => {
-    setLocation(locationId)
-    setUser(userId)
+    setLocation(location_id)
+    setUser(user_id)
   }, [])
 
 
