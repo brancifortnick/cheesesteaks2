@@ -21,7 +21,7 @@ function AllLocations() {
       <div className="locations-container">
         <div key={idx}>
           <div className="location-div-container">
-            <VoteCounter locationId={location.id} />
+            {/* <VoteCounter locationId={location.id} /> */}
             {/* 
             <Grid
               container

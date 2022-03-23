@@ -51,3 +51,10 @@ def update_comment(id):
     db.session.add(update_comment)
     db.session.commit()
     return update_comment.to_dict()
+
+
+# @comment_routes.route('/<int:image_id>', methods=['GET'])
+# @login_required
+# def get_picture_comments(image_id):
+#     grab_comment = Comment.query.get(image_id)
+#     return grab_comment.to_dict()
