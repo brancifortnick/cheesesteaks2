@@ -10,17 +10,18 @@ import VoteCounter from "./VoteCounter";
 import GetLocationsImages from "./GetLocationsImages";
 import AddComments from "./AddComments";
 import AllComments from "./AllComments";
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
 import DeleteEstablishment from "./DeleteEstablishment";
+import { getImagesComments } from "../store/comment";
 
 function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
   const { locationId } = useParams();
-  const image = useSelector(state => Object.values(state.image))
-  const comment = useSelector(state => Object.values(state.comment))
-  console.log(image, "image <<<<<<<< locations.js ??????????????????", comment, '[][][]][[]][][]][][][][][[[]][[][commentcommentcomment[[[]]]]]')
+  const image = useSelector((state) => Object.values(state.image));
+  const comment = useSelector((state) => Object.values(state.comment));
   const location = useSelector((state) => state.location);
+  console.log(image, "image <<<<<<<< locations.js");
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
@@ -57,20 +58,20 @@ function Locations() {
             />
           ) : null}
         </div>
-
         <div>
-          <GetLocationsImages locationId={locationId} />
+          {" "}
+          {/* <AddComments imageId={image.id} /> */}
         </div>
-        <AllComments locationId={locationId} />
+        <div>
+          <GetLocationsImages imageId={image.id} locationId={locationId} />
+        </div>
       </div>
       <div id="delete-component">
         {currentUser.id === Number(location.user_id) ? (
           <DeleteLocation locationId={locationId} />
         ) : null}
       </div>
-      <div>
-        {/* <VoteCounter locationId={locationId} /> */}
-      </div>
+      <div>{/* <VoteCounter locationId={locationId} /> */}</div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import { getImagesComments, createComment } from "../store/comment";
 import { Modal } from '../context/Modal'
 
 const AddComments = ({ imageId }) => {
-
+  console.log(imageId, "addcomments {}===============")
   const dispatch = useDispatch();
 
   const user = useSelector(state => state.session.user)
@@ -18,7 +18,7 @@ const AddComments = ({ imageId }) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("comment", comment);
-    formData.append('image_id', Number(imageId))
+    formData.append('image_id',imageId)
     formData.append("user_id", user.id);
 
     dispatch(createComment(formData));

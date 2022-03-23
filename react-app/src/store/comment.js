@@ -126,6 +126,8 @@ export default function reducer(state = initialState, action) {
       const deleteState = { ...state };
       delete deleteState[action.payload];
       return deleteState;
+    case GET_IMAGE_COMMENTS:
+      return {...action.payload}
     case EDIT_COMMENT:
       const editState = { ...state }
       editState[action.payload.id] = action.payload
