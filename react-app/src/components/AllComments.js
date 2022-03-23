@@ -4,16 +4,25 @@ import { getAllComments, getImageComments } from '../store/comment'
 import DeleteComment from './DeleteComment';
 import EditComment from "./EditComment";
 
-function AllComments({ imageId }) {
+function AllComments() {
 
     const dispatch = useDispatch()
+    const image = useSelector(state => (state.image))
+
+
+
+    console.log(image, "ALLCOMMENTS======= image obj")
     const comments = useSelector(state => Object.values(state.comment))
     const user = useSelector(state => state.session.user)
 
+//    let imageObj = Object.values(image).filter(image=> image.id === comments.image_id);
+//     console.log(imageObj, "imageOBJ creation")
+    //comments.image_id === image.id
 
+    // console.log(imageId, '<<<<<<<<<<imageID')
     useEffect(() => {
-        dispatch(getAllComments(imageId))
-    }, [dispatch, imageId])
+        dispatch(getAllComments())
+    }, [dispatch])
 
     return (
         <div id="comment-div">
