@@ -6,7 +6,7 @@ import { getImagesComments, createComment } from "../store/comment";
 import { Modal } from '../context/Modal'
 
 const AddComments = ({ imageId }) => {
-  console.log(imageId, "addcomments {}===============")
+
   const dispatch = useDispatch();
 
   const user = useSelector(state => state.session.user)
@@ -26,8 +26,14 @@ const AddComments = ({ imageId }) => {
     setComment("");
   };
 
+// const helper = (comment) => {
+//  if (imageId === comment.imageId){
+//     return new Array(comment)
+//  }
+// }
+
   useEffect(() => {
-    dispatch(getImagesComments(Number(imageId)))
+    dispatch(getImagesComments((imageId)))
   }, [dispatch, imageId]);
 
   const updateComment = (e) => setComment(e.target.value);

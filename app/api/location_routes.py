@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_login import login_required
 from app.forms import LocationForm
-from app.models import db, Location, Image, Vote
+from app.models import db, Location, Image, Vote, Comment
 from app.s3_helpers import (
     get_unique_filename, allowed_file, upload_file_to_s3)
 

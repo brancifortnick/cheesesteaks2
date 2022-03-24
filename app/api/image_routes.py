@@ -61,3 +61,12 @@ def delete_photo(id):
     db.session.delete(image)
     db.session.commit()
     return {'id': id}
+
+
+
+
+# @image_routes.route('/<int:id>/comments')
+# @login_required
+# def get_comments_from_params(id):
+#     comments = Comment.filter.query(Comment.image_id == id)
+#     return comments.to_dict()

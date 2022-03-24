@@ -5,10 +5,23 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 import React, { useState } from "react";
+// import { useGeolocation } from "./services/getgeo";
+// import { useDispatch, useEffect } from "react";
 
 export const MapContainer = () => {
   const [selected, setSelected] = useState({});
-    const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  // const dispatch = useDispatch();
+  // const getCoords = useGeolocation();
+
+  //  useEffect(()=> {
+  //  dispatch(getCoords())
+  //  },[dispatch])
+
+  //  console.log(getCoords.latitude);
+  //  console.log(getCoords.longitude)
+
   const mapStyles = {
     height: "50vh",
     width: "100%",
@@ -78,7 +91,6 @@ export const MapContainer = () => {
             onCloseClick={() => setSelected({})}
           >
             <p>{selected.name}</p>
-
           </InfoWindow>
         )}
       </GoogleMap>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, createContext } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
@@ -20,11 +20,14 @@ import VoteUpdater from "./components/VoteUpdater";
 import AddComments from "./components/AddComments";
 import AllComments from "./components/AllComments";
 import DisplayComments from "./components/DisplayComments";
+export var UserContext = createContext();
 //!adding this so i can make a large commit message for safe revert//
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+
+
 
 
   useEffect(() => {
@@ -38,9 +41,8 @@ function App() {
     return null;
   }
 
-
-
   return (
+    // <UserContext.Provider value={{stateForId, setStateForId}}>
     <BrowserRouter>
       <NavBar />
       <Switch>
@@ -68,20 +70,21 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/locations/:locationId" exact={true}>
           <Locations />
-
         </ProtectedRoute>
         <ProtectedRoute path="/locations/:locationId/image-upload" exact={true}>
           <ImageUpload />
         </ProtectedRoute>
+
         {/* <ProtectedRoute path='/locations/:locationId/locations-pictures' exact={!false}>
           <GetLocationsImages />
         </ProtectedRoute> */}
-        <ProtectedRoute path='/locations/:locationId/:imageId/comments'>
-          {/* <AllComments /> */}
-          <DisplayComments />
-        </ProtectedRoute>
+        {/* <ProtectedRoute path="/locations/:locationId/comments/:imageId"> */}
+        {/* <AllComments /> */}
+        {/*
+          </ProtectedRoute> */}
       </Switch>
     </BrowserRouter>
+    // </UserContext.Provider>
   );
 }
 

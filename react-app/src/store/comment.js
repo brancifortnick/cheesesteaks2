@@ -1,5 +1,5 @@
 const GET_COMMENTS = "comment/GET_COMMENTS";
-const GET_IMAGE_COMMENTS = 'comments/GET_SONG_COMMENTS';
+const GET_IMAGE_COMMENTS = 'comments/GET_IMAGE_COMMENTS';
 const ADD_COMMENT = "comment/ADD_COMMENT";
 const GET_ONE_COMMENT = "comment/GET_ONE_COMMENT";
 const DELETE_COMMENT = "comment/DELETE_COMMENT";
@@ -36,7 +36,7 @@ const deleteComment = (comment) => ({
   payload: comment,
 });
 
-export const getAllComments = () => async (dispatch) => {
+export const getAllComments = (id) => async (dispatch) => {
   const response = await fetch(`/api/comments/`);
   if (response.ok) {
     const data = await response.json();

@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 from flask_login import login_required
 from app.models import Comment, Image, db
 from flask_login import current_user, login_required
@@ -16,7 +16,11 @@ def get_all():
 @comment_routes.route('/<int:id>')
 def get_by_id(id):
     comments = Comment.query.get(id)
-    return comments.to_dict()
+    if comments:
+       return comments.to_dict()
+    elif not comments:
+       return jsonify('comments do not exist')
+
 
 
 #post is working
@@ -53,7 +57,7 @@ def update_comment(id):
     return update_comment.to_dict()
 
 
-# @comment_routes.route('/<int:image_id>', methods=['GET'])
+# @comment_routes.route('/<image_id>', methods=['GET'])
 # @login_required
 # def get_picture_comments(image_id):
 #     grab_comment = Comment.query.get(image_id)

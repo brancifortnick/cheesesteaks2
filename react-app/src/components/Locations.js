@@ -13,6 +13,7 @@ import AllComments from "./AllComments";
 import Grid from "@mui/material/Grid";
 import DeleteEstablishment from "./DeleteEstablishment";
 import { getImagesComments } from "../store/comment";
+import DisplayComments from './DisplayComments'
 
 function Locations() {
   const dispatch = useDispatch();
@@ -60,10 +61,11 @@ function Locations() {
         </div>
         <div>
           {" "}
-          {/* <AddComments imageId={image.id} /> */}
-        </div>
-        <div>
-          <GetLocationsImages imageId={image.id} locationId={locationId} />
+          {/* <AddComments  locationId={locationId}/> */}
+          <div>
+            <GetLocationsImages imageId={image.id} locationId={locationId} />
+          </div>
+          <DisplayComments imageId={image.id} locationId={locationId} />
         </div>
       </div>
       <div id="delete-component">
