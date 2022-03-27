@@ -39,7 +39,14 @@ function GetLocationsImages({ locationId }) {
          ></img>
          <AddComments imageId={image.id} locationId={locationId} />
          <AllComments imageId={image.id} locationId={locationId} />
-         <DeleteLocationsImages imageId={image.id} locationId={locationId} />
+         <div>
+           {user.id === image.user_id ? (
+             <DeleteLocationsImages
+               imageId={image.id}
+               locationId={locationId}
+             />
+           ) : null}
+         </div>
        </div>
      </div>
    ) : null;

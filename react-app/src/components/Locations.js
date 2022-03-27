@@ -14,6 +14,7 @@ import Grid from "@mui/material/Grid";
 import DeleteEstablishment from "./DeleteEstablishment";
 import { getImagesComments } from "../store/comment";
 import DisplayComments from './DisplayComments'
+import DeleteLocationsImages from "./DeleteLocationsImage";
 
 function Locations() {
   const dispatch = useDispatch();
@@ -43,7 +44,9 @@ function Locations() {
           src="https://via.placeholder.com/350x150"
           alt="_blank"
           style={{ height: "300px", width: "500px" }}
-        >{'image not found'}</img>
+        >
+          {"image not found"}
+        </img>
       )}
 
       <div className="biography-div">
@@ -73,6 +76,11 @@ function Locations() {
           <DeleteLocation locationId={locationId} />
         ) : null}
       </div>
+      {/* <div>
+        {currentUser.id === Number(image.user_id) ? (
+          <DeleteLocationsImages imageId={image.id} locationId={locationId} />
+        ) : null}
+      </div> */}
       <div>{/* <VoteCounter locationId={locationId} /> */}</div>
     </div>
   );

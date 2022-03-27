@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useHistory, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { demoLogin } from "../store/session";
@@ -40,7 +40,7 @@ const NavBar = () => {
         <div className="nav-link">
           {user ? (
             <NavLink to="/locations" exact={true}>
-              <StorefrontIcon color='primary' fontSize="large" />
+              <StorefrontIcon color="primary" fontSize="large" />
             </NavLink>
           ) : null}
         </div>
@@ -67,7 +67,12 @@ const NavBar = () => {
         </div>
 
         {!user ? (
-          <Button variant='contained' color='primary' className="demo-login" onClick={demoLoginButton}>
+          <Button
+            variant="contained"
+            color="primary"
+            className="demo-login"
+            onClick={demoLoginButton}
+          >
             Demo Login
           </Button>
         ) : null}
@@ -82,12 +87,14 @@ const NavBar = () => {
           </button>
 
         ) : null} */}
-
-        {user ? (
-          <NavLink to={`/users/${user.id}/new-location`}>Add Location</NavLink>
-        ) : null}
+        <div className='link-location'>
+          {user ? (
+            <Link to={`/users/${user.id}/new-location`}>
+              Add Location
+            </Link>
+          ) : null}
+        </div>
         <div className="nav-link">{user ? <LogoutButton /> : null}</div>
-
       </div>
     </nav>
   );
