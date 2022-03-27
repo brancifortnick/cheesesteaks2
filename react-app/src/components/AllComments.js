@@ -13,25 +13,22 @@ function AllComments({imageId}) {
 
 
   useEffect(() => {
-    dispatch(getAllComments());
-  }, [dispatch]);
+    dispatch(getImagesComments(imageId));
+  }, [dispatch, imageId]);
 
   return (
     <div id="comment-div">
-
       {comments?.map((comment) => (
         <div key={comment.id}>
           <div>
             {"-"}
-
-            {comment.image_id}
-            {comment?.username}
+            {comment.image_id}"- {"im the image_id"}"
+            <aside>{comment?.username}</aside>
           </div>
           <div>{comment.comment}</div>
           {comment?.user_id === user?.id ? (
             <div className="button--buttons-container">
-
-              <EditComment imageId={imageId}commentId={comment.id} />
+              <EditComment imageId={imageId} commentId={comment.id} />
               <DeleteComment commentId={comment.id} />
             </div>
           ) : null}
