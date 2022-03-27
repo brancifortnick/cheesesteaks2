@@ -27,17 +27,22 @@ function GetLocationsImages({ locationId }) {
 
   const locationsPictures = images.map((image) => {
    return image.location_id === location.id ? (
-      <div className="locations-pictures-container">
-        <div key={image.id} imageId={image.id}>
-          <p className="image-title">{image.title}</p>
-          <p>{image.id}</p>
-          <img className='locations-pictures' src={image.image} alt='_blank'></img>
-          <AddComments imageId={image.id} locationId={locationId} />
-          <AllComments imageId={image.id} locationId={locationId} />
-          <DeleteLocationsImages imageId={image.id} locationId={locationId} />
-        </div>
-      </div>
-    ): null;
+     <div className="locations-pictures-container">
+       <div key={image.id} imageId={image.id}>
+         <p className="image-title">{image.title}</p>
+         <span>{"im the image id fool"}</span>
+         <p>{image.id}</p>
+         <img
+           className="locations-pictures"
+           src={image.image}
+           alt="_blank"
+         ></img>
+         <AddComments imageId={image.id} locationId={locationId} />
+         <AllComments imageId={image.id} locationId={locationId} />
+         <DeleteLocationsImages imageId={image.id} locationId={locationId} />
+       </div>
+     </div>
+   ) : null;
   });
   //images.map here to get imageId
   return (

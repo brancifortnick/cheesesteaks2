@@ -23,9 +23,11 @@ function AllComments({imageId}) {
           <div>
             {"-"}
             {comment.image_id}"- {"im the image_id"}"
-            <aside>{comment?.username}</aside>
           </div>
-          <div>{comment.comment}</div>
+          <aside>
+            {"reviewed by"} - {comment?.username}
+          </aside>
+          <h4>{comment.comment}</h4>
           {comment?.user_id === user?.id ? (
             <div className="button--buttons-container">
               <EditComment imageId={imageId} commentId={comment.id} />

@@ -108,7 +108,7 @@ const initialState = {};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case GET_COMMENTS:
+    case GET_IMAGE_COMMENTS:
       let newComState = {};
       action.payload.forEach((comment) => {
         newComState[comment.id] = comment;

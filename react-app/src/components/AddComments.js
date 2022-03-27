@@ -32,9 +32,9 @@ const AddComments = ({ imageId }) => {
 //  }
 // }
 
-  useEffect(() => {
-    dispatch(getImagesComments((imageId)))
-  }, [dispatch, imageId]);
+  // useEffect(() => {
+  //   dispatch(getImagesComments((imageId)))
+  // }, [dispatch, imageId]);
 
   const updateComment = (e) => setComment(e.target.value);
 
