@@ -43,7 +43,7 @@ function Locations() {
           src="https://via.placeholder.com/350x150"
           alt="_blank"
           style={{ height: "300px", width: "500px" }}
-        ></img>
+        >{'image not found'}</img>
       )}
 
       <div className="biography-div">

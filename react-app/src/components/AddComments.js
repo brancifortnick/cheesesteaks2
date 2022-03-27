@@ -22,7 +22,7 @@ const AddComments = ({ imageId }) => {
     formData.append("user_id", user.id);
 
     dispatch(createComment(formData));
-
+    setModal(false)
     setComment("");
   };
 
