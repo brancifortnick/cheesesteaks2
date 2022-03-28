@@ -3,8 +3,10 @@
   flex-direction: row;
   align-content: space-around;
   flex-flow: wrap;
+  box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.383);
+  backdrop-filter: blur(5px);
 }
 .locations-pictures {
   height: 300px;
-  width: 500px;
+  width: 345px;
 }

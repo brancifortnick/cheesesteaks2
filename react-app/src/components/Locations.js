@@ -5,8 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import UpdateBiography from "./UpdateBiography";
 import DeleteLocation from "./DeleteLocation";
-
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
 import GetLocationsImages from "./GetLocationsImages";
+
 import AllComments from "./AllComments";
 import DeleteEstablishment from "./DeleteEstablishment";
 import { getImagesComments } from "../store/comment";
@@ -29,13 +31,15 @@ function Locations() {
   return (
     <div className="card-container">
       {location.profile_img !== null ? (
-        <img
-          className="card"
-          src={location.profile_img}
-          alt="profile_img"
-          style={{ height: "300px", width: "500px" }}
-        ></img>
-
+        <Box sx={{ display: "flex", alignContent: "center", mx: "auto" }}>
+          <Avatar sx={{ width: 300, height: 300 }}>
+            <img
+              className="card"
+              src={location.profile_img}
+              alt="image loading..."
+            ></img>
+          </Avatar>
+        </Box>
       ) : null}
 
       <div className="description-div">
