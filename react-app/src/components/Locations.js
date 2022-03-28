@@ -12,7 +12,7 @@ import DeleteEstablishment from "./DeleteEstablishment";
 import { getImagesComments } from "../store/comment";
 import Grid from "@mui/material/Grid";
 import DeleteLocationsImages from "./DeleteLocationsImage";
-
+import './Locations.css'
 
 function Locations() {
   const dispatch = useDispatch();

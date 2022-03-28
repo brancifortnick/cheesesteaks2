@@ -3,6 +3,8 @@
   flex-direction: row;
   align-content: space-around;
   flex-flow: wrap;
+  margin: 4px;
+  padding: 40px;
 }
 .image_card {
   height: 300px;

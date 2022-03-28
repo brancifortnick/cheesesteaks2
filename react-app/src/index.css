@@ -1,11 +1,15 @@
 /* TODO Add site wide styles */
+
 html,
 body {
+  margin: 0;
   margin-left: 7rem;
   margin-right: 7rem;
 }
 
-a:hover, a:visited, a:link, a:active
-{
-    text-decoration: none;
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
 }
