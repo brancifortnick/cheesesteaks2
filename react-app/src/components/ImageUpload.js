@@ -6,7 +6,6 @@ import { addImage, getPhotos } from '../store/image'
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import { Label } from "@mui/icons-material";
 import './ImageUpload.css'
 const ImageUpload = () => {
 

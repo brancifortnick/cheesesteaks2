@@ -28,10 +28,10 @@ export default function MediaCard() {
                     secondary text goes here
                 </Typography>
             </CardContent>
-            {/* <CardActions>
+            <CardActions>
                 <Button size="small"></Button>
                 <Button size="small"></Button>
-            </CardActions> */}
+            </CardActions>
         </Card>
     );
 }

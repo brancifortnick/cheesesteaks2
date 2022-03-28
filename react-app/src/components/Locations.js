@@ -23,7 +23,6 @@ function Locations() {
   const image = useSelector((state) => Object.values(state.image));
   const comment = useSelector((state) => Object.values(state.comment));
   const location = useSelector((state) => state.location);
-  console.log(image, "image <<<<<<<< locations.js");
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
