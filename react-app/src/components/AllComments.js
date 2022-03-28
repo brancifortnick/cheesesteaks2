@@ -5,8 +5,12 @@ import { getAllComments, getImagesComments } from "../store/comment";
 import DeleteComment from "./DeleteComment";
 import EditComment from "./EditComment";
 import AddComments from "./AddComments";
-import {UserContext} from '../App'
-function AllComments({imageId}) {
+import { UserContext } from '../App'
+import ListItem from '@mui/material/ListItem';
+
+
+
+function AllComments({ imageId }) {
   const dispatch = useDispatch();
   const comments = useSelector((state) => Object.values(state.comment));
   const user = useSelector((state) => state.session.user);

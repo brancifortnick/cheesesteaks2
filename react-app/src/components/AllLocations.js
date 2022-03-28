@@ -7,6 +7,11 @@ import Grid from '@mui/material/Grid';
 import DeleteEstablishment from "./DeleteEstablishment";
 import './AllLocations.css'
 import VoteCounter from "./VoteCounter";
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 function AllLocations() {
   const dispatch = useDispatch();
@@ -21,31 +26,38 @@ function AllLocations() {
       <div className="locations-container">
         <div key={idx}>
           <div className="location-div-container">
-            {/* <VoteCounter locationId={location.id} /> */}
-            {/* 
-            <Grid
-              container
-              direction="row"
-              justifyContent="space-around"
-              alignItems="center"
+            <Card sx={{ maxWidth: 345 }}>
+              <NavLink to={`/locations/${location.id}`}>
+                <CardMedia
+                  component="card-img-style"
+                  height="140"
+                  image={location.profile_img}
+                  alt="establishment"
+                />
+                <img
+                  src={location.profile_img}
+                  alt="loading..."
+                  className="image_card"
+                ></img></NavLink>
+              <CardContent>
 
-            > */}
-            <NavLink to={`/locations/${location.id}`}>
-              <img
-                src={location.profile_img}
-                alt="loading..."
-                className="image_card"
-              ></img>
-              <div className="location-name">{location.location_name}</div>
-            </NavLink>
+                <Typography gutterBottom variant="h5" component="div">
+                  {location.location_name}
+                </Typography>
 
-            <NavLink to={`/locations/${location.id}/image-upload`}>Upload Food</NavLink>
-            {currentUser.id === Number(location.user_id) ? (
-              <DeleteEstablishment
-                locationId={location.id}
-              />
-            ) : null}
-            {/* </Grid> */}
+                <Typography variant="body2" color="text.secondary">
+                  <NavLink to={`/locations/${location.id}/image-upload`}>Add Photos</NavLink>
+                </Typography>
+
+                <Typography variant="delete-ele" color="delete.button">
+                  {currentUser.id === Number(location.user_id) ? (
+                    <DeleteEstablishment locationId={location.id} />
+                  ) : null}
+                </Typography>
+
+              </CardContent>
+            </Card>
+
           </div>
         </div>
       </div>
@@ -58,3 +70,11 @@ function AllLocations() {
   );
 }
 export default AllLocations;
+/* {
+            <Grid
+              container
+              direction="row"
+              justifyContent="space-around"
+              alignItems="center"
+
+            > }*/
