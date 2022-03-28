@@ -19,7 +19,6 @@ import ImageUpload from "./components/ImageUpload";
 import VoteUpdater from "./components/VoteUpdater";
 import AddComments from "./components/AddComments";
 import AllComments from "./components/AllComments";
-import DisplayComments from "./components/DisplayComments";
 export var UserContext = createContext();
 //!adding this so i can make a large commit message for safe revert//
 
@@ -67,6 +66,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/locations" exact={true}>
           <AllLocations />
+
         </ProtectedRoute>
         <ProtectedRoute path="/locations/:locationId" exact={true}>
           <Locations />
@@ -74,14 +74,6 @@ function App() {
         <ProtectedRoute path="/locations/:locationId/image-upload" exact={true}>
           <ImageUpload />
         </ProtectedRoute>
-
-        {/* <ProtectedRoute path='/locations/:locationId/locations-pictures' exact={!false}>
-          <GetLocationsImages />
-        </ProtectedRoute> */}
-        {/* <ProtectedRoute path="/locations/:locationId/comments/:imageId"> */}
-        {/* <AllComments /> */}
-        {/*
-          </ProtectedRoute> */}
       </Switch>
     </BrowserRouter>
     // </UserContext.Provider>

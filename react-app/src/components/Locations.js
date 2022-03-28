@@ -5,16 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import UpdateBiography from "./UpdateBiography";
 import DeleteLocation from "./DeleteLocation";
-import VoteUpdater from "./VoteUpdater";
-import VoteCounter from "./VoteCounter";
+
 import GetLocationsImages from "./GetLocationsImages";
-import AddComments from "./AddComments";
 import AllComments from "./AllComments";
-import Grid from "@mui/material/Grid";
 import DeleteEstablishment from "./DeleteEstablishment";
 import { getImagesComments } from "../store/comment";
-import DisplayComments from './DisplayComments'
+import Grid from "@mui/material/Grid";
 import DeleteLocationsImages from "./DeleteLocationsImage";
+
 
 function Locations() {
   const dispatch = useDispatch();
@@ -37,20 +35,12 @@ function Locations() {
           alt="profile_img"
           style={{ height: "300px", width: "500px" }}
         ></img>
-      ) : (
-        <img
-          className="card"
-          src="https://via.placeholder.com/350x150"
-          alt="_blank"
-          style={{ height: "300px", width: "500px" }}
-        >
-          {"image not found"}
-        </img>
-      )}
 
-      <div className="biography-div">
+      ) : null}
+
+      <div className="description-div">
         <div id="bio">
-          <strong>Biography</strong>
+          <strong>Description</strong>
         </div>
         <p id="bio">{location.biography}</p>
         <div id="update-biography">
@@ -66,8 +56,9 @@ function Locations() {
           {/* <AddComments  locationId={locationId}/> */}
           <div>
             <GetLocationsImages imageId={image.id} locationId={locationId} />
+
           </div>
-          <DisplayComments imageId={image.id} locationId={locationId} />
+          <AllComments imageId={image.id} locationId={locationId} />
         </div>
       </div>
       <div id="delete-component">

@@ -42,7 +42,7 @@ const UpdateBiography = ({ locationBio, locationId }) => {
               />
             </label>
             <button type="submit" id="update-biography-submit">
-              Post Bio
+              Post New Description
             </button>
           </form>
         </Modal>
