@@ -56,7 +56,7 @@ const LocationUpload = () => {
             /></Box>
         </div>
         <label id='location-photo-text' htmlFor="add-location-pic">
-          Add Location Photo
+          Photo
         </label>
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, p: 2 }}>
           <input
@@ -73,7 +73,7 @@ const LocationUpload = () => {
           <TextareaAutosize
             name="biography"
             type="text"
-            placeholder="biography..."
+            placeholder="description..."
             onChange={(e) => setBiography(e.target.value)}
             value={biography}
             minRows={5}

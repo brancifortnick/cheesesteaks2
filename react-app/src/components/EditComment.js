@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { Modal } from "../context/Modal";
 import { updateAComment, getAllComments } from "../store/comment";
+import { TextareaAutosize } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
 
@@ -36,15 +37,16 @@ const EditComment = ({ commentId }) => {
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form onSubmit={onSubmit}>
-            <label id="comment-label">
-              Comment Label
-              <textarea
-                name="comment"
-                placeholder={comment}
-                onChange={(e) => setComment(e.target.value)}
-                value={comment}
-              />
-            </label>
+            <TextareaAutosize
+              className="comment-input"
+              type="text"
+              placeholder={comment}
+              onChange={(e) => setComment(e.target.value)}
+              value={comment}
+              minRows={5}
+              style={{ width: 400 }}
+            />
+
             <button type="submit" id="update-comment-submit">
               Submit your new comment
             </button>

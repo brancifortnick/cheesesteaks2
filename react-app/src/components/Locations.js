@@ -58,7 +58,7 @@ function Locations() {
             <GetLocationsImages imageId={image.id} locationId={locationId} />
 
           </div>
-          <AllComments imageId={image.id} locationId={locationId} />
+          {/* <AllComments imageId={image.id} locationId={locationId} /> */}
         </div>
       </div>
       <div id="delete-component">
