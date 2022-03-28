@@ -3,7 +3,11 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addImage, getPhotos } from '../store/image'
-
+import TextareaAutosize from '@mui/base/TextareaAutosize';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import { Label } from "@mui/icons-material";
+import './ImageUpload.css'
 const ImageUpload = () => {
 
 
@@ -51,16 +55,31 @@ const ImageUpload = () => {
     <>
       <form className="form-container" onSubmit={onSubmit}>
         <div>
-          <input
-            type="text"
-            name="title"
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-          />
-          <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
-          <button type="submit">Submit</button>
+          <label id='title'>Title</label>
+          <Box sx={{
+            display: 'flex', flexDirection: 'column', alignContent: 'center', mt: .5,
+            p: .5
+          }}>
+            <input
+              type="text"
+              name="title"
+              placeholder='add title..'
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+            />
+          </Box>
+
+
+          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, p: 1 }}>
+
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, pt: 1 }}>
+
+            <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
+            <Button variant='contained' color='primary' type='submit'>Submit</Button>
+          </Box>
         </div>
-      </form>
+      </form >
     </>
   );
 };

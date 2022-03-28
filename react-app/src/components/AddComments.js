@@ -4,6 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getImagesComments, createComment } from "../store/comment";
 import { Modal } from '../context/Modal'
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { TextareaAutosize } from "@mui/material";
+import { Label } from "@mui/icons-material";
+// import Modal from '@mui/material/Modal';
 
 const AddComments = ({ imageId }) => {
 
@@ -18,7 +24,7 @@ const AddComments = ({ imageId }) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("comment", comment);
-    formData.append('image_id',imageId)
+    formData.append('image_id', imageId)
     formData.append("user_id", user.id);
 
     dispatch(createComment(formData));
@@ -26,15 +32,6 @@ const AddComments = ({ imageId }) => {
     setComment("");
   };
 
-// const helper = (comment) => {
-//  if (imageId === comment.imageId){
-//     return new Array(comment)
-//  }
-// }
-
-  // useEffect(() => {
-  //   dispatch(getImagesComments((imageId)))
-  // }, [dispatch, imageId]);
 
   const updateComment = (e) => setComment(e.target.value);
 
@@ -46,12 +43,15 @@ const AddComments = ({ imageId }) => {
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form className="comment-container" onSubmit={onSubmit}>
-            <textarea
+
+            <TextareaAutosize
               className="comment-input"
               type="text"
               placeholder="Comment here..."
               onChange={updateComment}
               value={comment}
+              minRows={5}
+              style={{ width: 400 }}
             />
 
             <div id='comment-create'>
@@ -61,8 +61,9 @@ const AddComments = ({ imageId }) => {
             </div>
           </form>
         </Modal>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 };
 
