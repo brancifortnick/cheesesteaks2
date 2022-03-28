@@ -90,7 +90,7 @@ const NavBar = () => {
         <div className='link-location'>
           {user ? (
             <Link to={`/users/${user.id}/new-location`}>
-              Add Location
+              Add Establishment
             </Link>
           ) : null}
         </div>

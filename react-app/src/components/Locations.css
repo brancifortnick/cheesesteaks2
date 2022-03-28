@@ -1,3 +1,28 @@
 .card-container {
+  display: flex;
+  flex-direction: column;
   margin: 4px;
+  padding-top: 24px;
+}
+
+img.card {
+  align-self: center;
+}
+/* .establishment-images {
+  flex-direction: column;
+  justify-content: center;
+} */
+
+.description-div {
+  padding-top: 2pt;
+  align-self: center;
+}
+
+#bio {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 3px;
 }

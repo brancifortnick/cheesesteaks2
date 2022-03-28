@@ -39,28 +39,28 @@ function Locations() {
       ) : null}
 
       <div className="description-div">
-        <div id="bio">
-          <strong>Description</strong>
-        </div>
-        <p id="bio">{location.biography}</p>
-        <div id="update-biography">
-          {currentUser.id === Number(location.user_id) ? (
-            <UpdateBiography
-              locationBio={location.biography}
-              locationId={location.id}
-            />
-          ) : null}
-        </div>
-        <div>
-          {" "}
-          {/* <AddComments  locationId={locationId}/> */}
-          <div>
-            <GetLocationsImages imageId={image.id} locationId={locationId} />
 
-          </div>
-          {/* <AllComments imageId={image.id} locationId={locationId} /> */}
-        </div>
+        <span id='description-text'><strong>Description</strong></span>
       </div>
+      <p id="bio">{location.biography}</p>
+      <div id="update-biography">
+        {currentUser.id === Number(location.user_id) ? (
+          <UpdateBiography
+            locationBio={location.biography}
+            locationId={location.id}
+          />
+        ) : null}
+      </div>
+      <div>
+        {" "}
+        {/* <AddComments  locationId={locationId}/> */}
+        <div className='establishment-images'>
+          <GetLocationsImages imageId={image.id} locationId={locationId} />
+
+        </div>
+        {/* <AllComments imageId={image.id} locationId={locationId} /> */}
+      </div>
+
       <div id="delete-component">
         {currentUser.id === Number(location.user_id) ? (
           <DeleteLocation locationId={locationId} />
