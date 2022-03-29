@@ -6,9 +6,9 @@ import { getImagesComments, createComment } from "../store/comment";
 import { Modal } from '../context/Modal'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
 import { TextareaAutosize } from "@mui/material";
-import { Label } from "@mui/icons-material";
 // import Modal from '@mui/material/Modal';
 
 const AddComments = ({ imageId }) => {
@@ -38,7 +38,7 @@ const AddComments = ({ imageId }) => {
   return (
     <div>
       <div id='comment-modal'>
-        <button className='comment-button' onClick={() => setModal(true)}>Click here to comment</button>
+        <Fab color="primary" aria-label="add"> <AddIcon onClick={() => setModal(true)} /></Fab>
       </div>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
@@ -55,9 +55,10 @@ const AddComments = ({ imageId }) => {
             />
 
             <div id='comment-create'>
-              <button className="comment_submit" type="submit">
+
+              <Button className="comment_submit" type="submit" color='primary'>
                 Submit Comment
-              </button>
+              </Button>
             </div>
           </form>
         </Modal>

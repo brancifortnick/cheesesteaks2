@@ -7,7 +7,11 @@ import EditComment from "./EditComment";
 import AddComments from "./AddComments";
 import { UserContext } from '../App'
 import ListItem from '@mui/material/ListItem';
-
+import Typography from '@mui/material/Typography';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+import List from '@mui/material/List'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 
 function AllComments({ imageId }) {
@@ -28,19 +32,28 @@ function AllComments({ imageId }) {
             {"-"}
             {comment.image_id}"- {"im the image_id"}"
           </div>
-          <header>
+          <p>
             {"reviewed by"} - {comment?.username}
-          </header>
-          <h4>{comment.comment}</h4>
+          </p>
+          {/* <List sx={{ width: '100%', maxWidth: 360 }}> */}
+          <Typography
+            component="span"
+            variant="body1"
+            color="text.primary" >
+            {comment.comment}</Typography>
+
           {comment?.user_id === user?.id ? (
-            <div className="button--buttons-container">
+            <div className="button-buttons-container">
               <EditComment imageId={imageId} commentId={comment.id} />
               <DeleteComment commentId={comment.id} />
             </div>
           ) : null}
+
+          {/* </List> */}
         </div>
       ))}
     </div>
   );
 }
 export default AllComments;
+//bgcolor: ''

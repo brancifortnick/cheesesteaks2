@@ -47,7 +47,7 @@ function AllLocations() {
                 </Typography>
 
                 <Typography variant="body2" color="text.secondary">
-                  <NavLink to={`/locations/${location.id}/image-upload`}>Add Photos</NavLink>
+                  <NavLink style={{ color: "blue" }} to={`/locations/${location.id}/image-upload`}>Add Photos</NavLink>
                 </Typography>
 
                 <CardActions>

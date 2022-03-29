@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { getAllLocations, postNewLocation } from "../store/location";
 import { TextField } from "@mui/material";
 import { TextFormatRounded } from "@mui/icons-material";
+import { Label } from "@mui/icons-material";
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -79,6 +80,7 @@ const LocationUpload = () => {
             minRows={5}
             style={{ width: 400 }}
           />
+
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, pt: .5 }}>
           <Button variant='contained' color='primary' type='submit'>Submit</Button>

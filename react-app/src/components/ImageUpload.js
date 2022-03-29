@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addImage, getPhotos } from '../store/image'
 import TextareaAutosize from '@mui/base/TextareaAutosize';
+import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import './ImageUpload.css'
@@ -54,15 +55,17 @@ const ImageUpload = () => {
     <>
       <form className="form-container" onSubmit={onSubmit}>
         <div>
-          <label id='title'>Title</label>
+          <label id='title'>WizWit or WitOut</label>
           <Box sx={{
             display: 'flex', flexDirection: 'column', alignContent: 'center', mt: .5,
-            p: .5
+            p: .5, width: 500,
+            maxWidth: '100%',
           }}>
-            <input
+            <TextField
+              fullWidth
               type="text"
               name="title"
-              placeholder='add title..'
+              placeholder='add title to your food...'
               onChange={(e) => setTitle(e.target.value)}
               value={title}
             />
