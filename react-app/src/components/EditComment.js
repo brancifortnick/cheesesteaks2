@@ -5,9 +5,9 @@ import { Modal } from "../context/Modal";
 import { updateAComment, getAllComments } from "../store/comment";
 import { TextareaAutosize } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import Fab from '@mui/material/Fab';
-import Box from '@mui/material/Box';
 import { Button } from "@mui/material";
+import './EditComment.css';
+import Box from '@mui/material/Box';
 
 const EditComment = ({ commentId }) => {
   const dispatch = useDispatch();
@@ -28,16 +28,8 @@ const EditComment = ({ commentId }) => {
   }, [dispatch, commentId]);
 
   return (
-    <>
-      <div id="edit-comment">
-        {/* <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignContent: 'center' }}> */}
-        <button
-          onClick={() => setModal(true)}>
-          <EditIcon color='primary' />
-        </button>
-        {/* </Box> */}
-      </div>
-
+    <div className='edit-container'>
+      <EditIcon onClick={() => setModal(true)} color='white' />
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form onSubmit={onSubmit}>
@@ -50,17 +42,17 @@ const EditComment = ({ commentId }) => {
               minRows={5}
               style={{ width: 400 }}
             />
-            {/* <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center' }}> */}
-
             <Button type="submit" id="update-comment-submit">
               Submit your new comment
             </Button>
-            {/* </Box> */}
+
           </form>
         </Modal>
       )
       }
-    </>
+    </div>
   );
 };
 export default EditComment;
+{/* <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignContent: 'center' }}> */ }
+{/* <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center' }}> */ }

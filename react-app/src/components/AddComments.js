@@ -38,7 +38,7 @@ const AddComments = ({ imageId }) => {
   return (
     <div>
       <div id='comment-modal'>
-        <Fab color="primary" aria-label="add"> <AddIcon onClick={() => setModal(true)} /></Fab>
+        <Fab color="primary" aria-label="add" size='small'> <AddIcon onClick={() => setModal(true)} /></Fab>
       </div>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
@@ -55,7 +55,7 @@ const AddComments = ({ imageId }) => {
             />
 
             <div id='comment-create'>
-
+              {'add a turnery statement here!!!!'}
               <Button className="comment_submit" type="submit" color='primary'>
                 Submit Comment
               </Button>

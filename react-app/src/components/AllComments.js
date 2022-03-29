@@ -12,7 +12,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List'
 import DeleteIcon from '@mui/icons-material/Delete'
-
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
 
 function AllComments({ imageId }) {
   const dispatch = useDispatch();
@@ -32,24 +33,29 @@ function AllComments({ imageId }) {
             {"-"}
             {comment.image_id}"- {"im the image_id"}"
           </div> */}
-          <p>
-            {"reviewed by"} - {comment?.username}
-          </p>
-          {/* <List sx={{ width: '100%', maxWidth: 360 }}> */}
-          <Typography
-            component="span"
-            variant="body1"
-            color="text.primary" >
-            {comment.comment}</Typography>
 
-          {comment?.user_id === user?.id ? (
-            <div className="button-buttons-container">
-              <EditComment imageId={imageId} commentId={comment.id} />
-              <DeleteComment commentId={comment.id} />
-            </div>
-          ) : null}
+          {"reviewed by"} - {comment?.username}
 
-          {/* </List> */}
+          <List sx={{ width: '100%', maxWidth: 300, mx: 'auto' }}>
+            <ListItemText
+              component="div"
+              // variant="body2"
+              color="text.primary" >
+              {comment.comment}</ListItemText>
+            <ButtonGroup disableElevation variant="contained">
+              {comment?.user_id === user?.id ? (
+
+                <Button> <EditComment imageId={imageId} commentId={comment.id} /> </Button>
+
+              ) : null}
+              {Number(imageId) === comment.image_id ? (
+                <Button >
+                  <DeleteComment commentId={comment.id} />
+                </Button>
+              ) : null}
+
+            </ButtonGroup>
+          </List>
         </div>
       ))}
     </div>

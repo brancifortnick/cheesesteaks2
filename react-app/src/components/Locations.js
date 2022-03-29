@@ -8,7 +8,8 @@ import DeleteLocation from "./DeleteLocation";
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import GetLocationsImages from "./GetLocationsImages";
-
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
 import AllComments from "./AllComments";
 import DeleteEstablishment from "./DeleteEstablishment";
 import { getImagesComments } from "../store/comment";
@@ -43,7 +44,6 @@ function Locations() {
       ) : null}
 
       <div className="description-div">
-
         <span id='description-text'><strong>Description</strong></span>
       </div>
       <p id="bio">{location.biography}</p>
@@ -60,11 +60,8 @@ function Locations() {
         {/* <AddComments  locationId={locationId}/> */}
         <div className='establishment-images'>
           <GetLocationsImages imageId={image.id} locationId={locationId} />
-
         </div>
-        {/* <AllComments imageId={image.id} locationId={locationId} /> */}
       </div>
-
       <div id="delete-component">
         {currentUser.id === Number(location.user_id) ? (
           <DeleteLocation locationId={locationId} />
@@ -75,7 +72,7 @@ function Locations() {
           <DeleteLocationsImages imageId={image.id} locationId={locationId} />
         ) : null}
       </div> */}
-      <div>{/* <VoteCounter locationId={locationId} /> */}</div>
+
     </div>
   );
 }

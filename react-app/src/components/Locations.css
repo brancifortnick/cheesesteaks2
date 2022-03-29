@@ -12,7 +12,8 @@ img.card {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-content: flex-start;
+  align-content: center;
+  padding: 4pt;
 }
 
 .description-div {

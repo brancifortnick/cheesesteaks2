@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllComments, deleteAComment } from "../store/comment";
 import { useHistory } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
-
+import { Button } from "@mui/material";
 import './DeleteComment';
 
 const DeleteComment = ({ commentId }) => {
@@ -11,7 +11,7 @@ const DeleteComment = ({ commentId }) => {
     const dispatch = useDispatch();
 
     const history = useHistory();
-    const musician = useSelector(state => state.musician);
+    const image = useSelector(state => state.image);
     const user = useSelector(state => state.session.user);
 
     const commentDelete = async (e) => {
@@ -26,10 +26,8 @@ const DeleteComment = ({ commentId }) => {
 
     return (
         <form id='delete-form'>
-            <div>
-                <button className="delete-comment" type="submit" onClick={commentDelete}><DeleteIcon color='primary' />
-                </button>
-            </div>
+            <DeleteIcon className="delete-comment" type="submit" onClick={commentDelete} color='white' />
+            {/* <button className="delete-comment" type="submit" onClick={commentDelete}>     </button> */}
         </form >
     );
 };

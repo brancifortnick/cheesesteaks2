@@ -15,7 +15,10 @@ import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
+
+
 const LoginForm = () => {
+
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -50,9 +53,6 @@ const LoginForm = () => {
     return <Redirect to='/' />;
   }
 
-
-
-
   const handleClickShowPassword = () => {
     setValues({
       ...values,
@@ -71,7 +71,7 @@ const LoginForm = () => {
         ))}
       </div>
       {/* <Box sx={{ display: 'inline-flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', m: 1, width: '28ch' }}> */}
-      <Box sx={{ mx: "auto", width: '28ch', pt: 4 }}>
+      <Box sx={{ mx: "auto", width: '28ch', pt: 8 }}>
         <TextField
           required
           id="outlined-required"
@@ -106,7 +106,7 @@ const LoginForm = () => {
           />
         </FormControl>
       </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 0.5 }}>
+      <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 2 }}>
         <Button variant='contained' color='primary' type='submit'>Login</Button>
       </Box>
       {/* </div> */}
