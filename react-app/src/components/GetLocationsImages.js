@@ -59,9 +59,9 @@ function GetLocationsImages({ locationId }) {
                 <AddComments imageId={image.id} locationId={locationId} />
               </CardActions>
 
-              <CardActions>
-                <AllComments imageId={image.id} locationId={locationId} />
-              </CardActions>
+
+              <AllComments imageId={image.id} locationId={locationId} />
+
 
               <CardActions>
                 {user.id === image.user_id ? (
