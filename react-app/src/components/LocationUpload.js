@@ -56,7 +56,7 @@ const LocationUpload = () => {
               value={location_name}
             /></Box>
         </div>
-        <label id='location-photo-text' htmlFor="add-location-pic">
+        <label style={{ color: "#1976d2", marginTop: '2pt' }} id='location-photo-text' htmlFor="add-location-pic">
           Photo
         </label>
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, p: 2 }}>

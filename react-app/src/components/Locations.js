@@ -38,7 +38,7 @@ function Locations() {
           <DeleteLocation locationId={locationId} />
         ) : null}
       </div>
-      <NavLink style={{ color: "blue" }} to={`/locations/${location.id}/image-upload`}>Add Photos</NavLink>
+      <NavLink style={{ marginTop: '4pt', fontWeight: 'bolder', color: "#1976d2" }} to={`/locations/${location.id}/image-upload`}>Add Photos</NavLink>
       {location.profile_img !== null ? (
         <Box sx={{ display: "flex", alignContent: "center", mx: "auto" }}>
           <Avatar sx={{ width: 300, height: 300 }}>

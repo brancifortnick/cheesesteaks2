@@ -19,6 +19,7 @@ img.card {
 .description-div {
   padding-top: 2pt;
   align-self: center;
+  color: #1976d2;
 }
 
 #bio {
@@ -27,5 +28,5 @@ img.card {
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid black;
-  padding: 3px;
+  padding-bottom: 3%;
 }
