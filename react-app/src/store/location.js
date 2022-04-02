@@ -65,6 +65,19 @@ export const getOneLocation = (id) => async (dispatch) => {
   } //
 };
 
+
+export const getSeveralLocationPics = (id) => async (dispatch) => {
+  const res = await fetch(`/api/locations/${id}/locations-pictures`);
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(getAllLocs(data.locations));
+  } else {
+    console.log('your an asshole bro')
+  }
+};
+
+
+
 export const deleteOneLocation = (id) => async (dispatch) => {
   const res = await fetch(`/api/locations/${id}`, {
     method: "DELETE",

@@ -50,7 +50,7 @@ function AllLocations() {
                   <NavLink style={{ color: "blue" }} to={`/locations/${location.id}/image-upload`}>Add Photos</NavLink>
                 </Typography>
 
-                <CardActions>
+                <CardActions sx={{ mt: 8 }}>
                   {currentUser.id === Number(location.user_id) ? (
                     <DeleteEstablishment locationId={location.id} />
                   ) : null}

@@ -65,11 +65,11 @@ def create_musician():
     return new_location.to_dict()
 
 
-@location_routes.route('/<int:id>/locations-pictures')
-@login_required
-def get_locs_images(id):
-    images = Image.filter.query(Image.location_id == id).all()
-    return images.to_dict()
+# @location_routes.route('/<int:id>/locations-pictures')
+# @login_required
+# def get_locs_images(id):
+#     images = Image.query.filter(Image.location_id == id).all()
+#     return {'images': [image.to_dict() for image in images]}
 
 
 @location_routes.route('/<int:id>', methods=['DELETE'])
@@ -85,12 +85,12 @@ def delete_musician(id):
     return {'id': id}
 
 
-@location_routes.route('/<int:id>/votes')
-@login_required
-def get_locos_votes(id):
-    votes = Vote.filter.query(Vote.location_id == id).one_or_none()
-    # return {'votes': [vote.to_dict() for vote in votes]}
-    return votes.to_dict()
+# @location_routes.route('/<int:id>/votes')
+# @login_required
+# def get_locos_votes(id):
+#     votes = Vote.filter.query(Vote.location_id == id).one_or_none()
+#     # return {'votes': [vote.to_dict() for vote in votes]}
+#     return votes.to_dict()
 
 
 @location_routes.route("/<int:id>/biography", methods=["PUT"])

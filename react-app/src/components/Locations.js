@@ -16,12 +16,14 @@ import { getImagesComments } from "../store/comment";
 import Grid from "@mui/material/Grid";
 import DeleteLocationsImages from "./DeleteLocationsImage";
 import './Locations.css'
+import GetSingleComment from "./GetSingleComment";
 
 function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
   const { locationId } = useParams();
   const image = useSelector((state) => Object.values(state.image));
+  console.log(image, "coming from locations.js <<<<<imageOBJ??????")
   const comment = useSelector((state) => Object.values(state.comment));
   const location = useSelector((state) => state.location);
 
@@ -31,6 +33,12 @@ function Locations() {
 
   return (
     <div className="card-container">
+      <div id="delete-component">
+        {currentUser.id === Number(location.user_id) ? (
+          <DeleteLocation locationId={locationId} />
+        ) : null}
+      </div>
+      <NavLink style={{ color: "blue" }} to={`/locations/${location.id}/image-upload`}>Add Photos</NavLink>
       {location.profile_img !== null ? (
         <Box sx={{ display: "flex", alignContent: "center", mx: "auto" }}>
           <Avatar sx={{ width: 300, height: 300 }}>
@@ -42,11 +50,6 @@ function Locations() {
           </Avatar>
         </Box>
       ) : null}
-
-      <div className="description-div">
-        <span id='description-text'><strong>Description</strong></span>
-      </div>
-      <p id="bio">{location.biography}</p>
       <div id="update-biography">
         {currentUser.id === Number(location.user_id) ? (
           <UpdateBiography
@@ -55,18 +58,19 @@ function Locations() {
           />
         ) : null}
       </div>
+      <div className="description-div">
+        <span id='description-text'><strong>Description</strong></span>
+      </div>
+      <p id="bio">{location.biography}</p>
+
       <div>
         {" "}
-        {/* <AddComments  locationId={locationId}/> */}
+
         <div className='establishment-images'>
           <GetLocationsImages imageId={image.id} locationId={locationId} />
         </div>
       </div>
-      <div id="delete-component">
-        {currentUser.id === Number(location.user_id) ? (
-          <DeleteLocation locationId={locationId} />
-        ) : null}
-      </div>
+
       {/* <div>
         {currentUser.id === Number(image.user_id) ? (
           <DeleteLocationsImages imageId={image.id} locationId={locationId} />

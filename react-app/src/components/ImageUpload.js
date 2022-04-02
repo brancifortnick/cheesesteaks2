@@ -42,7 +42,7 @@ const ImageUpload = () => {
     formData.append('user_id', user.id);
     formData.append('location_id', locationId);
     dispatch(addImage(formData))
-    history.push(`/locations/${locationId}`);
+    history.push(`/locations/${locationId}`); // change route to include :imageId
   };
 
 
@@ -55,7 +55,7 @@ const ImageUpload = () => {
     <>
       <form className="form-container" onSubmit={onSubmit}>
         <div>
-          <label id='title'>WizWit or WitOut</label>
+          <label style={{ color: "#1976d2" }} id='title'>WizWit or WitOut</label>
           <Box sx={{
             display: 'flex', flexDirection: 'column', alignContent: 'center', mt: .5,
             p: .5, width: 500,

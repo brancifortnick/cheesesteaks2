@@ -29,10 +29,10 @@ function AllComments({ imageId }) {
     <div id="comment-div">
       {comments?.map((comment) => (
         <div key={comment.id}>
-          {/* <div>
+          <div>
             {"-"}
             {comment.image_id}"- {"im the image_id"}"
-          </div> */}
+          </div>
 
           {"reviewed by"} - {comment?.username}
 

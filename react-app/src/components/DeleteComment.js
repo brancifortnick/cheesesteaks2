@@ -9,20 +9,21 @@ import './DeleteComment';
 const DeleteComment = ({ commentId }) => {
 
     const dispatch = useDispatch();
-
+    // const images = useSelector(state => Object.values(state.image))
     const history = useHistory();
     const image = useSelector(state => state.image);
     const user = useSelector(state => state.session.user);
 
+
     const commentDelete = async (e) => {
         e.preventDefault();
         dispatch(deleteAComment(commentId));
-        dispatch(getAllComments())
+
     };
 
-    // useEffect(() => {
-    //     dispatch(getAllComments());
-    // }, [dispatch]);
+    useEffect(() => {
+        dispatch(getAllComments());
+    }, [dispatch]);
 
     return (
         <form id='delete-form'>
