@@ -13,6 +13,7 @@ import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
+import GetLocationsImages from "./GetLocationsImages";
 
 function AllLocations() {
   const dispatch = useDispatch();
@@ -40,6 +41,8 @@ function AllLocations() {
                   alt="loading..."
                   className="image_card"
                 ></img></NavLink>
+
+              <GetLocationsImages />
               <CardContent>
 
                 <Typography gutterBottom variant="h5" component="div">

@@ -8,7 +8,7 @@ import comment from './comment';
 import vote from './vote'
 const rootReducer = combineReducers({
   session,
-  user:user,
+  user,
   location,
   image,
   vote,

@@ -30,5 +30,5 @@ class Comment(db.Model):
             'updated_at': self.updated_at,
             'user': self.users.to_dict(),
             'username': self.users.username,
-            'image': self.images.to_dict()
+            # 'image': self.images.to_dict()
         }

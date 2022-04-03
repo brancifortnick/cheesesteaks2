@@ -32,6 +32,9 @@ const AddComments = ({ imageId }) => {
     setComment("");
   };
 
+  useEffect(() => {
+    dispatch(getImagesComments(imageId))
+  }, dispatch, imageId)
 
   const updateComment = (e) => setComment(e.target.value);
 
@@ -55,15 +58,13 @@ const AddComments = ({ imageId }) => {
             />
 
             <div id='comment-create'>
-              {'add a turnery statement here!!!!'}
               <Button className="comment_submit" type="submit" color='primary'>
                 Submit Comment
               </Button>
             </div>
           </form>
         </Modal>
-      )
-      }
+      )}
     </div >
   );
 };

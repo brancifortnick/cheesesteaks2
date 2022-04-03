@@ -9,9 +9,9 @@ from app.s3_helpers import (
 image_routes = Blueprint('images', __name__)
 
 
-@image_routes.route('/', methods=['GET'])
+@image_routes.route('')
 @login_required
-def images():
+def get_images():
     images = Image.query.all()
     return {'images': [image.to_dict() for image in images]}
 
@@ -19,8 +19,8 @@ def images():
 @image_routes.route('/<int:id>')
 @login_required
 def get_photos(id):
-    image = Image.query.get(id)
-    return image.to_dict()
+    images = Image.query.get(id)
+    return images.to_dict()
 
 
 @image_routes.route("/new-image", methods=["POST"])

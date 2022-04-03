@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { Modal } from "../context/Modal";
-import { updateAComment, getAllComments } from "../store/comment";
+import { updateAComment, getImagesComments } from "../store/comment";
 import { TextareaAutosize } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import { Button } from "@mui/material";
@@ -24,8 +24,8 @@ const EditComment = ({ commentId }) => {
     history.push(`/locations/${locationId}`);
   };
   useEffect(() => {
-    dispatch(getAllComments(parseInt(commentId)));
-  }, [dispatch, commentId]);
+    dispatch(getImagesComments(parseInt(commentId)));
+  }, [dispatch]);
 
   return (
     <div className='edit-container'>

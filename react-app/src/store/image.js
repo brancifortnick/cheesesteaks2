@@ -37,7 +37,7 @@ const getComments = (image) => ({
 
 
 export const getPhotos = () => async (dispatch) => {
-  const res = await fetch("/api/images/");
+  const res = await fetch("/api/images");
   if (res.ok) {
     const photos = await res.json();
     console.log(photos.images, "photos.images>>>>> store");
@@ -120,10 +120,10 @@ export default function reducer(state = initialState, action) {
     case UPDATE_PHOTO:
       const updateState = { ...action.payload };
       return updateState;
-    case GET_COMMENTS:
-      const commentState = { ...state }
-      commentState[action.payload.id] = action.payload
-      return commentState;
+    // case GET_COMMENTS:
+    //   const commentState = { ...state }
+    //   commentState[action.payload.id] = action.payload
+    //   return commentState;
     case DELETE_PHOTO:
       const removeState = { ...state };
       delete removeState[action.payload.id];

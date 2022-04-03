@@ -28,10 +28,7 @@ const ImageUpload = () => {
 
   console.log(locationId, userId, '>>>>from IMAGEUPLOAD FRONTEND')
 
-  useEffect(() => {
-    setLocation(location_id)
-    setUser(user_id)
-  }, [])
+
 
 
   const onSubmit = async (e) => {

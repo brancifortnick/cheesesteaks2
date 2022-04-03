@@ -18,9 +18,9 @@ function GetSingleComment({ imageId }) {
     console.log(image, 'image coming from getsinglecomment')
 
 
-    useEffect(() => {
-        dispatch(getOneComment(imageId))
-    }, [dispatch, imageId])
+    // useEffect(() => {
+    //     dispatch(getOneComment(imageId))
+    // }, [dispatch, imageId])
 
     return (
 

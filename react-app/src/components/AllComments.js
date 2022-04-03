@@ -16,50 +16,78 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 
 function AllComments({ imageId }) {
+
+
   const dispatch = useDispatch();
   const comments = useSelector((state) => Object.values(state.comment));
   const user = useSelector((state) => state.session.user);
-
+  const images = useSelector(state => Object.values(state.image))
 
   useEffect(() => {
+    console.log(imageId, 'inside useEffect allcomments')
     dispatch(getImagesComments(imageId));
   }, [dispatch, imageId]);
 
   return (
+
     <div id="comment-div">
       {comments?.map((comment) => (
         <div key={comment.id}>
           <div>
-            {"-"}
-            {comment.image_id}"- {"im the image_id"}"
+            {comment.image_id}"- {"im the comment.image_id"}"
+            <h4>{"reviewed by"} - {comment?.username}</h4>
+            <p>{comment.comment}</p>
+            <List sx={{ width: '100%', maxWidth: 300, mx: 'auto' }}>
+              <ListItemText
+                component="div"
+                // variant="body2"
+                color="text.primary" >
+              </ListItemText>
+
+
+              <ButtonGroup disableElevation variant="contained">
+                {comment?.user_id === user?.id ? (
+
+                  <Button>
+                    <EditComment commentId={comment.id} />
+                  </Button>
+
+                ) : null}
+
+                {comment?.user_id === user?.id ? (
+                  <Button >
+                    <DeleteComment commentId={comment.id} />
+                  </Button>
+                ) : null}
+              </ButtonGroup>
+            </List>
           </div>
-
-          {"reviewed by"} - {comment?.username}
-
-          <List sx={{ width: '100%', maxWidth: 300, mx: 'auto' }}>
-            <ListItemText
-              component="div"
-              // variant="body2"
-              color="text.primary" >
-              {comment.comment}</ListItemText>
-            <ButtonGroup disableElevation variant="contained">
-              {comment?.user_id === user?.id ? (
-
-                <Button> <EditComment imageId={imageId} commentId={comment.id} /> </Button>
-
-              ) : null}
-              {Number(imageId) === comment.image_id ? (
-                <Button >
-                  <DeleteComment commentId={comment.id} />
-                </Button>
-              ) : null}
-
-            </ButtonGroup>
-          </List>
         </div>
+
       ))}
     </div>
+
   );
-}
+};
+
+
+
 export default AllComments;
-//bgcolor: ''
+
+/*{/* <CardContent>
+<CardActions>
+{comments.map((comment) => (
+   <div key={comment.id}>
+   comment.image_id == image.id ? (
+   <AllComments commentId={comment.id} imageId={image.id} />
+ ): null}
+
+</CardActions>
+   
+)} */
+
+
+
+
+
+
