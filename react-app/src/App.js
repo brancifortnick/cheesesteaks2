@@ -76,7 +76,7 @@ function App() {
           <ImageUpload />
         </ProtectedRoute>
         <ProtectedRoute path='/images/:imageId' exact={true}>
-          <PhotoPage />
+          <AllComments />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

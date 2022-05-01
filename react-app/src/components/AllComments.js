@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllComments, getImagesComments } from "../store/comment";
+import { getImageComments, getAPhoto, getPhotos } from "../store/image";
 import DeleteComment from "./DeleteComment";
 import EditComment from "./EditComment";
 import AddComments from "./AddComments";
@@ -15,21 +16,30 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 
-function AllComments({ imageId }) {
+function AllComments() {
 
 
   const dispatch = useDispatch();
   const comments = useSelector((state) => Object.values(state.comment));
   const user = useSelector((state) => state.session.user);
   const images = useSelector(state => Object.values(state.image))
+  const { imageId } = useParams()
+
 
   useEffect(() => {
     console.log(imageId, 'inside useEffect allcomments')
-    dispatch(getImagesComments(imageId));
-  }, [dispatch, imageId]);
+    dispatch(getPhotos(imageId))
+    dispatch(getImageComments())
+    console.log(imageId, "imageId, after dispatch")
+  }, [dispatch, imageId])
+
+
+
+
+
+
 
   return (
-
     <div id="comment-div">
       {comments?.map((comment) => (
         <div key={comment.id}>
@@ -64,10 +74,12 @@ function AllComments({ imageId }) {
           </div>
         </div>
 
+
       ))}
+
     </div>
 
-  );
+  )
 };
 
 

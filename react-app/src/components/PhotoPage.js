@@ -27,9 +27,8 @@ function PhotoPage() {
     const photoComments = comments.filter((comment) => {
         return comment.image_id === imageId ? (
             <div className='establishment-images'>
-                <GetLocationsImages imageId={imageId} />
                 <div><AddComments /></div>
-                <div><AllComments /></div>
+                <div><AllComments imageId={imageId} /></div>
             </div>
         ) : null;
     });
