@@ -44,20 +44,33 @@ const LocationUpload = () => {
 
   return (
     <div className="outer_card">
-      <h1 id="add-location-text">Add Establishment </h1>
+      <div>
+        <h1 id="add-location-text">Add Establishment </h1>
+      </div>
       <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5 }}>
-            <TextField
+            {/* <TextField
               type="text"
               name="location_name"
               placeholder="Location Name"
               onChange={(e) => setLocationName(e.target.value)}
               value={location_name}
             /></Box>
+            }}> */}
+            <TextField
+              type="text"
+              name="location_name"
+              placeholder="Location Name"
+              onChange={(e) => setLocationName(e.target.value)}
+              value={location_name}
+            />
+          </Box>
+          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, p: 1 }}>
+          </Box>
         </div>
         <label style={{ color: "#1976d2", marginTop: '2pt' }} id='location-photo-text' htmlFor="add-location-pic">
-          Photo
+          Upload Photo
         </label>
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, p: 2 }}>
           <input
@@ -71,14 +84,16 @@ const LocationUpload = () => {
           Biography
         </label> */}
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5 }}>
-          <TextareaAutosize
+          <TextField
+            multiline
+            fullWidth
             name="biography"
             type="text"
-            placeholder="description..."
+            placeholder="description"
             onChange={(e) => setBiography(e.target.value)}
             value={biography}
             minRows={5}
-            style={{ width: 400 }}
+
           />
 
         </Box>

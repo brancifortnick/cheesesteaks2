@@ -62,7 +62,7 @@ const ImageUpload = () => {
               fullWidth
               type="text"
               name="title"
-              placeholder='add title to your food...'
+              placeholder='Title your photo'
               onChange={(e) => setTitle(e.target.value)}
               value={title}
             />

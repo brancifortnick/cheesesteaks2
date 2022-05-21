@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { updateBiography, getOneLocation } from '../store/location'
 import { Modal } from "../context/Modal";
 import { useHistory } from "react-router-dom";
+import Button from "@mui/material/Button";
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 // import "./UpdateBiography.css";
 // import Modal from '@mui/material/Modal';
 
@@ -26,27 +29,35 @@ const UpdateBiography = ({ locationBio, locationId }) => {
 
   return (
     <>
-      <button id="biography-edit" onClick={() => setModal(true)}>
-        Edit Locations Bio
-      </button>
+      <Button sx={{ backgroundColor: 'white' }} id="biography-edit" onClick={() => setModal(true)}>
+        Describe your experience
+      </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form onSubmit={onSubmit}>
-            <label id="biography-form">
-              Restaurants Biography
-              <textarea
+            <Box sx={{
+              display: 'flex', flexDirection: 'row', alignContent: 'center', mt: .5,
+              p: .5, width: 400, flexWrap: 'wrap', fontWeight: '800', fontStyle: 'italic',
+              maxWidth: '100%',
+            }}>
+              <TextField
+                fullWidth
+                type="text"
                 name="biography"
                 placeholder={locationBio}
                 onChange={(e) => setBiography(e.target.value)}
                 value={biography}
               />
-            </label>
-            <button type="submit" id="update-biography-submit">
+            </Box>
+
+
+            <Button type="submit" id="update-biography-submit">
               Post New Description
-            </button>
+            </Button>
           </form>
         </Modal>
-      )}
+      )
+      }
     </>
   );
 };

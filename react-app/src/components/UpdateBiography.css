@@ -1,0 +1,10 @@
+textarea[name="biography"] {
+  min-height: 250px;
+  min-width: 300px;
+  font-size: 14pt;
+}
+
+button.update-biography {
+  margin: 40px;
+  padding: 2px;
+}

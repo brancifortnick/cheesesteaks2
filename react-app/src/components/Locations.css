@@ -1,19 +1,24 @@
 .card-container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   margin: 4px;
   padding-top: 24px;
 }
 
 img.card {
-  align-self: center;
+  display: block;
+  image-rendering: optimizeQuality;
+  /* width: 100%; */
 }
 .establishment-images {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-content: center;
-  padding: 4pt;
+  padding-top: 4%;
+  margin: 8px;
 }
 
 .description-div {
@@ -25,8 +30,31 @@ img.card {
 #bio {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid black;
+  align-content: center;
+  border-radius: 3px;
   padding-bottom: 3%;
+  font-weight: 750;
+}
+#update-biography {
+  display: block;
+  margin: auto;
+  padding: 4pt;
+}
+
+#add-pictures {
+  padding: 4px;
+  font-weight: 900;
+  font-size: medium;
+  font-style: helvetica, sans-serif;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+#delete-component {
+  border: none;
+  outline: transparent;
+  color: #2941ab;
+  padding-top: 4px;
+  padding-bottom: 6px;
 }

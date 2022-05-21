@@ -1,10 +1,8 @@
 /* TODO Add site wide styles */
-
 html,
 body {
   margin: 0;
-  margin-left: 7rem;
-  margin-right: 7rem;
+  background-color: #1ed760;
 }
 
 a:hover,
@@ -13,4 +11,20 @@ a:link,
 a:active {
   text-decoration: none;
   color: white;
+}
+#main-wrapper {
+  display: -webkit-inline-box;
+  box-sizing: border-box;
+  max-width: 100vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  width: 100%;
 }

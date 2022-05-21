@@ -45,40 +45,42 @@ function App() {
     // <UserContext.Provider value={{stateForId, setStateForId}}>
     <BrowserRouter>
       <NavBar />
-      <Switch>
-        <Route path="/login" exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path="/users" exact={true}>
-          <UsersList />
-        </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true}>
-          <User />
-        </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true}>
-          <LandingPage />
-          <MapContainer />
-        </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId/new-location" exact={true}>
-          <LocationUpload />
-        </ProtectedRoute>
-        <ProtectedRoute path="/locations" exact={true}>
-          <AllLocations />
+      <div id='main-wrapper'>
+        <Switch>
+          <Route path="/login" exact={true}>
+            <LoginForm />
+          </Route>
+          <Route path="/sign-up" exact={true}>
+            <SignUpForm />
+          </Route>
+          <ProtectedRoute path="/users" exact={true}>
+            <UsersList />
+          </ProtectedRoute>
+          <ProtectedRoute path="/users/:userId" exact={true}>
+            <User />
+          </ProtectedRoute>
+          <ProtectedRoute path="/" exact={true}>
+            <LandingPage />
+            <MapContainer />
+          </ProtectedRoute>
+          <ProtectedRoute path="/users/:userId/new-location" exact={true}>
+            <LocationUpload />
+          </ProtectedRoute>
+          <ProtectedRoute path="/locations" exact={true}>
+            <AllLocations />
 
-        </ProtectedRoute>
-        <ProtectedRoute path="/locations/:locationId" exact={true}>
-          <Locations />
-        </ProtectedRoute>
-        <ProtectedRoute path="/locations/:locationId/image-upload" exact={true}>
-          <ImageUpload />
-        </ProtectedRoute>
-        <ProtectedRoute path='/images/:imageId' exact={true}>
-          <AllComments />
-        </ProtectedRoute>
-      </Switch>
+          </ProtectedRoute>
+          <ProtectedRoute path="/locations/:locationId" exact={true}>
+            <Locations />
+          </ProtectedRoute>
+          <ProtectedRoute path="/locations/:locationId/image-upload" exact={true}>
+            <ImageUpload />
+          </ProtectedRoute>
+          <ProtectedRoute path='/images/:imageId' exact={true}>
+            <AllComments />
+          </ProtectedRoute>
+        </Switch>
+      </div>
     </BrowserRouter>
     // </UserContext.Provider>
   );
