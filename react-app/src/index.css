@@ -4,7 +4,10 @@ body {
   margin: 0;
   background-color: #1ed760;
 }
-
+/* #1ed760 */
+/* div#root {
+  background: black;
+} */
 a:hover,
 a:visited,
 a:link,
@@ -24,6 +27,7 @@ a:active {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  border-radius: 6px;
 }
 img {
   width: 100%;
