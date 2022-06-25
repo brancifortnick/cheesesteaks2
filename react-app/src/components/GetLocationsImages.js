@@ -34,8 +34,8 @@ function GetLocationsImages({ locationId }) {
 
         <div key={image.id} imageId={image.id}>
           <NavLink to={`/images/${image.id}`}>
-            <Card sx={{ maxWidth: 345 }}>
-              <Typography sx={{ pl: 4, mx: 'auto' }} gutterBottom variant="h5" component="div">
+            <Card sx={{ maxWidth: 300, heigh: 'auto' }}>
+              <Typography sx={{ p: 0, mx: 'auto' }} gutterBottom variant="h5" component="div">
                 {image.title}
               </Typography>
 

@@ -7,6 +7,6 @@
   backdrop-filter: blur(5px);
 }
 .locations-pictures {
-  height: 300px;
-  width: 345px;
+  max-height: 300px;
+  max-width: 300px;
 }
