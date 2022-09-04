@@ -1,10 +1,10 @@
-/* TODO Add site wide styles */
-
+*,
 body {
   margin: 0;
 }
 html {
   background-image: url(assets/priscilla-du-preez-INjdgkCwHp0-unsplash.jpg);
+  scroll-behavior: smooth;
 }
 /* #1ed760 */
 /* div#root {
@@ -31,6 +31,8 @@ a:active {
   justify-content: center;
   align-items: center;
   border-radius: 6px;
+  border: 4px solid rgb(238, 222, 192);
+  /* background-color: white; */
 }
 img {
   width: 100%;
