@@ -3,8 +3,8 @@ body {
   margin: 0;
 }
 html {
-  background-image: url(assets/priscilla-du-preez-INjdgkCwHp0-unsplash.jpg);
   scroll-behavior: smooth;
+  background-image: url(./assets/priscilla-du-preez-INjdgkCwHp0-unsplash.jpg);
 }
 /* #1ed760 */
 /* div#root {

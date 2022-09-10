@@ -50,35 +50,37 @@ const ImageUpload = () => {
 
   return (
     <>
-      <form className="form-container" onSubmit={onSubmit}>
-        <div>
-          <label style={{ color: "#1976d2" }} id='title'>WizWit or WitOut</label>
-          <Box sx={{
-            display: 'flex', flexDirection: 'column', alignContent: 'center', mt: .5,
-            p: .5, width: 500,
-            maxWidth: '100%',
-          }}>
-            <TextField
-              fullWidth
-              type="text"
-              name="title"
-              placeholder='Title your photo'
-              onChange={(e) => setTitle(e.target.value)}
-              value={title}
-            />
-          </Box>
+      <section className='b'>
+        <form className="form-container" onSubmit={onSubmit}>
+          <div>
+            <label style={{ color: "#1976d2" }} id='title'>WizWit or WitOut</label>
+            <Box sx={{
+              display: 'flex', flexDirection: 'column', alignContent: 'center', mt: .5,
+              p: .5, width: 500,
+              maxWidth: '100%',
+            }}>
+              <TextField
+                fullWidth
+                type="text"
+                name="title"
+                placeholder='Title your photo'
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+              />
+            </Box>
 
 
-          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, p: 1 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, p: 1 }}>
 
-          </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, pt: 1 }}>
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, pt: 1 }}>
 
-            <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
-            <Button variant='contained' color='primary' type='submit'>Submit</Button>
-          </Box>
-        </div>
-      </form >
+              <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
+              <Button variant='contained' color='primary' type='submit'>Submit</Button>
+            </Box>
+          </div>
+        </form >
+      </section>
     </>
   );
 };

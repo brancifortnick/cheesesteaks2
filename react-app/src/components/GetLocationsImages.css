@@ -1,7 +1,7 @@
 .locations-pictures-container {
   display: inline-flex;
   flex-direction: row;
-  align-content: space-around;
+  align-content: space-evenly;
   flex-flow: wrap;
   box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.383);
   backdrop-filter: blur(5px);
