@@ -25,7 +25,7 @@ const EditComment = ({ commentId }) => {
   };
   useEffect(() => {
     dispatch(getImagesComments(parseInt(commentId)));
-  }, [dispatch]);
+  }, [dispatch, commentId]);
 
   return (
     <div className='edit-container'>

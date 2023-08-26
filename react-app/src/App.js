@@ -20,6 +20,7 @@ import VoteUpdater from "./components/VoteUpdater";
 import AddComments from "./components/AddComments";
 import AllComments from "./components/AllComments";
 import PhotoPage from "./components/PhotoPage";
+import { Add } from "@mui/icons-material";
 export var UserContext = createContext();
 //!adding this so i can make a large commit message for safe revert//
 
@@ -77,6 +78,7 @@ function App() {
             <ImageUpload />
           </ProtectedRoute>
           <ProtectedRoute path='/images/:imageId' exact={true}>
+            {/* <AddComments /> */}
             <AllComments />
           </ProtectedRoute>
         </Switch>

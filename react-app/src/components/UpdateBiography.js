@@ -20,7 +20,7 @@ const UpdateBiography = ({ locationBio, locationId }) => {
     formData.append("biography", biography);
     dispatch(updateBiography(formData, locationId));
     setModal(false);
-    history.push(`/locations/${locationId}`);
+    history.push(`/locations/`);
   };
 
   useEffect(() => {

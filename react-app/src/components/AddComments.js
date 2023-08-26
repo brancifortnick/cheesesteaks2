@@ -18,7 +18,7 @@ const AddComments = ({ imageId }) => {
   const user = useSelector(state => state.session.user)
   const [comment, setComment] = useState("");
   const [showModal, setModal] = useState(false)
-
+  
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -33,8 +33,8 @@ const AddComments = ({ imageId }) => {
   };
 
   useEffect(() => {
-    dispatch(getImagesComments(imageId))
-  }, dispatch, imageId)
+    dispatch(getImagesComments())
+  }, [dispatch, imageId])
 
   const updateComment = (e) => setComment(e.target.value);
 

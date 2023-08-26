@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getImagesComments, deleteAComment } from "../store/comment";
 import { useHistory } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
-
+import { getImageComments } from "../store/image";
 import { Button } from "@mui/material";
 import './DeleteComment';
 
@@ -23,8 +23,8 @@ const DeleteComment = ({ commentId }) => {
     };
 
     useEffect(() => {
-        dispatch(getImagesComments());
-    }, [dispatch]);
+        dispatch(getImagesComments(commentId));
+    }, [dispatch, commentId]);
 
     return (
         <form id='delete-form'>

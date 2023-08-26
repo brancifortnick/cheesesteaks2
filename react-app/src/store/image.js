@@ -37,7 +37,7 @@ const getComments = (image) => ({
 
 
 export const getPhotos = () => async (dispatch) => {
-  const res = await fetch("/api/images");
+  const res = await fetch("/api/images/");
   if (res.ok) {
     const photos = await res.json();
     console.log(photos.images, "photos.images>>>>> store");

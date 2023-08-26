@@ -20,8 +20,8 @@ function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
   const { locationId } = useParams();
-  const image = useSelector((state) => Object.values(state.image));
-  console.log(image, "coming from locations.js <<<<<imageOBJ??????");
+
+
   const comment = useSelector((state) => Object.values(state.comment));
   const location = useSelector((state) => state.location);
 
@@ -79,7 +79,7 @@ function Locations() {
         </div>
         {" "}
         <div className="establishment-images">
-          <GetLocationsImages imageId={image.id} locationId={locationId} />
+          <GetLocationsImages locationId={locationId} />
         </div>
       </div>
 

@@ -17,18 +17,21 @@ const ImageUpload = () => {
   const params = useParams()
   const { locationId } = params;
   console.log(locationId, user.id, '>>>>>from IMAGEUPLOAD frontend')
-  let userId = user.id
+  // let userId = user.id
 
   const [title, setTitle] = useState('');
   const [image, setImage] = useState(null);
   const [location_id, setLocation] = useState(locationId)
-  const [user_id, setUser] = useState(userId)
+  const [user_id, setUser] = useState(Number(user.id))
 
   // location_id = Number(locationId)
 
-  console.log(locationId, userId, '>>>>from IMAGEUPLOAD FRONTEND')
+  console.log(locationId, user.id, '>>>>from IMAGEUPLOAD FRONTEND')
 
+  useEffect(() => {
 
+    setUser(user.id)
+  }, [dispatch])
 
 
   const onSubmit = async (e) => {
@@ -36,9 +39,10 @@ const ImageUpload = () => {
     const formData = new FormData();
     formData.append("image", image);
     formData.append('title', title)
-    formData.append('user_id', user.id);
+    formData.append('user_id', user_id);
     formData.append('location_id', locationId);
     dispatch(addImage(formData))
+
     history.push(`/locations/${locationId}`); // change route to include :imageId
   };
 
