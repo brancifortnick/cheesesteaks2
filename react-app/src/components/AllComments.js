@@ -45,7 +45,7 @@ function AllComments() {
       {comments?.map((comment) => (
         <div key={comment.id}>
           
-          <AddComments commentId={comment.id} imageId={imageId}/>
+          <AddComments />
           <div>
             {comment.image_id}"- {"im the comment.image_id"}"
             <h4>{"reviewed by"} - {comment?.username}</h4>

@@ -21,6 +21,7 @@ import AddComments from "./components/AddComments";
 import AllComments from "./components/AllComments";
 import PhotoPage from "./components/PhotoPage";
 import { Add } from "@mui/icons-material";
+import DisplayComments from "./components/DisplayComments";
 export var UserContext = createContext();
 //!adding this so i can make a large commit message for safe revert//
 
@@ -76,10 +77,13 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute path="/locations/:locationId/image-upload" exact={true}>
             <ImageUpload />
+
+
+
           </ProtectedRoute>
           <ProtectedRoute path='/images/:imageId' exact={true}>
-            {/* <AddComments /> */}
-            <AllComments />
+            <AddComments />
+
           </ProtectedRoute>
         </Switch>
       </div>

@@ -11,21 +11,21 @@ import AddIcon from '@mui/icons-material/Add';
 import { TextareaAutosize } from "@mui/material";
 // import Modal from '@mui/material/Modal';
 
-const AddComments = ({ imageId }) => {
+const AddComments = () => {
 
   const dispatch = useDispatch();
 
   const user = useSelector(state => state.session.user)
   const [comment, setComment] = useState("");
   const [showModal, setModal] = useState(false)
-  
+  const { imageId } = useParams()
 
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("comment", comment);
-    formData.append('image_id', imageId)
-    formData.append("user_id", user.id);
+    formData.append('image_id', Number(imageId))
+    formData.append("user_id", user.id)
 
     dispatch(createComment(formData));
     setModal(false)
