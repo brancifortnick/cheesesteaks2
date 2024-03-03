@@ -6,11 +6,11 @@ import AddComments from './AddComments';
 import { ImageAspectRatio, NightShelter } from '@mui/icons-material';
 
 
-const DisplayComments = ({ imageId }) => {
+const DisplayComments = () => {
   const comments = useSelector((state) => Object.values(state.comment));
 
   const images = useSelector((state) => Object.values(state.image));
-
+  const { imageId } = useParams()
   const user = useSelector(state => state.session.user)
 
   return (

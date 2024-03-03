@@ -29,9 +29,12 @@ function AllComments() {
 
   useEffect(() => {
     console.log(imageId, 'inside useEffect allcomments')
-    dispatch(getPhotos(imageId))
-    dispatch(getImagesComments())
-    console.log(imageId, "imageId, after dispatch")
+    if (images) {
+      dispatch(getPhotos(imageId))
+      dispatch(getImagesComments())
+    }
+    else
+      console.log(imageId, "imageId, after dispatch")
   }, [dispatch, imageId])
 
 
@@ -44,7 +47,7 @@ function AllComments() {
     <div id="comment-div">
       {comments?.map((comment) => (
         <div key={comment.id}>
-          
+
           <AddComments />
           <div>
             {comment.image_id}"- {"im the comment.image_id"}"
@@ -98,11 +101,5 @@ export default AllComments;
  ): null}
 
 </CardActions>
-   
+
 )} */
-
-
-
-
-
-

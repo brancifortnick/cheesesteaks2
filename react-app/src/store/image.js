@@ -40,7 +40,7 @@ export const getPhotos = () => async (dispatch) => {
   const res = await fetch("/api/images/");
   if (res.ok) {
     const photos = await res.json();
-    console.log(photos.images, "photos.images>>>>> store");
+    console.log(photos.images, "photos.images>>>>> store", console.log(photos, "res after fetch to images"));
     dispatch(getAllPhotos(photos.images));
   }
 };
@@ -113,7 +113,7 @@ export default function reducer(state = initialState, action) {
       return currentState;
     case ADD_ONE_PHOTO:
       const addingState = { ...state };
-      addingState[action.payload.id] = action.payload;
+      addingState[action.payload?.id] = action.payload;
       return addingState;
     case GET_ONE_PHOTO:
       return { ...action.payload };
@@ -121,9 +121,10 @@ export default function reducer(state = initialState, action) {
       const updateState = { ...action.payload };
       return updateState;
     case GET_COMMENTS:
-      const commentState = { ...state }
-      commentState[action.payload.id] = action.payload
-      return commentState;
+      // const commentState = { ...state }
+      // commentState[action.payload] = action.payload
+      // return commentState;
+      return { ...action.payload }
     case DELETE_PHOTO:
       const removeState = { ...state };
       delete removeState[action.payload.id];

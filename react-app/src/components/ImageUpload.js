@@ -14,9 +14,7 @@ const ImageUpload = () => {
   const dispatch = useDispatch()
   const history = useHistory()
   const user = useSelector((state) => state.session.user);
-  const params = useParams()
-  const { locationId } = params;
-  console.log(locationId, user.id, '>>>>>from IMAGEUPLOAD frontend')
+  const { locationId } = useParams()
   // let userId = user.id
 
   const [title, setTitle] = useState('');
@@ -24,13 +22,20 @@ const ImageUpload = () => {
   const [location_id, setLocation] = useState(locationId)
   const [user_id, setUser] = useState(Number(user.id))
 
+
   // location_id = Number(locationId)
+
 
   console.log(locationId, user.id, '>>>>from IMAGEUPLOAD FRONTEND')
 
   useEffect(() => {
-
-    setUser(user.id)
+    if (!user)
+      return null
+    else if (!location_id) {
+      location_id = locationId
+      setUser(user.id)
+      setLocation(locationId)
+    }
   }, [dispatch])
 
 

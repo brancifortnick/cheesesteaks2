@@ -72,7 +72,7 @@ export const getSeveralLocationPics = (id) => async (dispatch) => {
     const data = await res.json();
     dispatch(getAllLocs(data.locations));
   } else {
-    console.log('your an asshole bro')
+    console.log('no!!!- not getting serveral pics')
   }
 };
 

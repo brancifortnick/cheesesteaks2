@@ -1,6 +1,6 @@
 const GET_IMAGE_COMMENTS = 'comments/GET_IMAGE_COMMENTS';
 const ADD_COMMENT = "comment/ADD_COMMENT";
-// const GET_ONE_COMMENT = "comment/GET_ONE_COMMENT";
+const GET_ONE_COMMENT = "comment/GET_ONE_COMMENT";
 const DELETE_COMMENT = "comment/DELETE_COMMENT";
 const EDIT_COMMENT = "comment/EDIT_COMMENT";
 
@@ -10,10 +10,10 @@ const getImageComments = (comments) => ({
   payload: comments,
 });
 
-// const getOne = (comment) => ({
-//   type: GET_ONE_COMMENT,
-//   payload: comment,
-// });
+const getOne = (comment) => ({
+  type: GET_ONE_COMMENT,
+  payload: comment,
+});
 
 const postComment = (comment) => ({
   type: ADD_COMMENT,
@@ -55,15 +55,15 @@ export const createComment = (formData) => async (dispatch) => {
   }
 };
 
-// export const getOneComment = (id) => async (dispatch) => {
-//   const response = await fetch(`/api/comments/${id}`);
-//   if (response.ok) {
-//     const data = await response.json();
-//     dispatch(getOne(data));
-//   } else {
-//     console.log("Can't fetch comments");
-//   }
-// };
+export const getOneComment = (id) => async (dispatch) => {
+  const response = await fetch(`/api/comments/${id}`);
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(getOne(data));
+  } else {
+    console.log("Can't fetch comments");
+  }
+};
 
 
 
@@ -105,11 +105,11 @@ export default function reducer(state = initialState, action) {
     case ADD_COMMENT:
       const curr = { ...state };
       console.log(state, "inside of reducer");
-      curr[action.payload.id] = action.payload;
+      curr[action.payload.id] = action.payload?.id;
       console.log(state, "after add_comment>>>>> redux store reducer");
       return curr;
-    // case GET_ONE_COMMENT:
-    //   return { ...action.payload };
+    case GET_ONE_COMMENT:
+      return { ...action.payload };
     case DELETE_COMMENT:
       const deleteState = { ...state };
       delete deleteState[action.payload];
