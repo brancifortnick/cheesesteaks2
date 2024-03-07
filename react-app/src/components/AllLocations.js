@@ -41,7 +41,7 @@ function AllLocations() {
                 ></img>
               </NavLink>
 
-              <GetLocationsImages />
+              <GetLocationsImages locationId={location.id} />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   {location.location_name}

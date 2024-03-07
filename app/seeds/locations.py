@@ -7,12 +7,14 @@ def seed_locations():
         location_name='Pats',
         profile_img='https://mycheesesteaks.s3.amazonaws.com/pats.jpg',
         biography='Pats steaks is famous in Philly and competes with its arch nemesis Geno"s!',
+
     )
     location2 = Location(
         user_id=2,
         location_name='WizWit',
         profile_img='https://mycheesesteaks.s3.amazonaws.com/wizwit.jpg',
-        biography='Grab a wizwit from this location'
+        biography='Grab a wizwit from this location',
+
     )
     location3 = Location(
         user_id=3,

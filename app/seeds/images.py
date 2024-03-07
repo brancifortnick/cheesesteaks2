@@ -6,21 +6,21 @@ def seed_images():
         image='https://mycheesesteaks.s3.amazonaws.com/pats.jpg',
         title='test',
         user_id=1,
-
+        location_id=1,
     )
 
     image2 = Image(
         image='https://mycheesesteaks.s3.amazonaws.com/wizwit.jpg',
         title='test2',
         user_id=2,
-
+        location_id=2,
     )
 
     image3 = Image(
         image='https://mycheesesteaks.s3.amazonaws.com/steak2.jpg',
         title='test3',
         user_id=3,
-
+        location_id=3,
     )
 
     db.session.add(image)

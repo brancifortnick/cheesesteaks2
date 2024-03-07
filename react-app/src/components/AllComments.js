@@ -16,6 +16,7 @@ import List from '@mui/material/List'
 import DeleteIcon from '@mui/icons-material/Delete'
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
+import DisplayComments from "./DisplayComments";
 
 function AllComments() {
 
@@ -47,6 +48,7 @@ function AllComments() {
     <div id="comment-div">
       {comments?.map((comment) => (
         <div key={comment.id}>
+          <DisplayComments commentId={comment.id} />
 
           <AddComments />
           <div>

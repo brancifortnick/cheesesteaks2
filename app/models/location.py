@@ -9,6 +9,7 @@ class Location(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     location_name = db.Column(db.String(30), nullable=False, unique=True)
+    image_id = db.Column(db.Integer(), db.ForeignKey('images.id'))
     profile_img = db.Column(db.String(255))
     biography = db.Column(db.String(255))
     created_at = db.Column(db.DateTime(timezone=True),

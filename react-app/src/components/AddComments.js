@@ -33,7 +33,7 @@ const AddComments = () => {
   };
 
   useEffect(() => {
-    dispatch(getImagesComments())
+    dispatch(getImagesComments(imageId))
   }, [dispatch, imageId])
 
   const updateComment = (e) => setComment(e.target.value);

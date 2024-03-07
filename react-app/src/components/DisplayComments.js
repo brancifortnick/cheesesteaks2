@@ -17,13 +17,14 @@ const DisplayComments = () => {
     <div id="comment-div">
       {comments?.map((comment) => (
         <div key={comment.id}>
-          {comment?.image_id === images.forEach((val)=> val ?  val.id : null )? (
-            <div className="button--buttons-container">
-              <AllComments  commentId={comment.id} />
-            </div>
-          ) : null}
+          {comment.comment}
+          <div className="button--buttons-container">
+
+          </div>
+
         </div>
-      ))}
+      )
+      )}
     </div>
   )
 };
