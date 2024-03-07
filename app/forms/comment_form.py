@@ -9,4 +9,4 @@ class CommentForm(FlaskForm):
     user_id = IntegerField('user_id')
     image_id = IntegerField('image_id')
     comment = StringField('comment')
-    location_id = IntegerField('location_id')
+    # location_id = IntegerField('location_id')
