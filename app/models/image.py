@@ -31,5 +31,5 @@ class Image(db.Model):
             'location_id': self.location_id,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
-            'comments': [comment.id for comment in self.comments]
+            'comments': [comment.to_dict() for comment in self.comments]
         }

@@ -8,15 +8,17 @@ comment_routes = Blueprint('comments', __name__)
 
 
 @comment_routes.route('/<int:id>')
+@login_required
 def get_one_comment(id):
     comment = Comment.query.get(id)
     return comment.to_dict()
 
 
-
-@comment_routes.route('/<int:id>')
-def get_comments(id):
-    comments = Comment.query.filter(Comment.image_id == id).all()
+@comment_routes.route('/')
+@login_required
+def get_comments():
+    # comments = Comment.query.filter(Comment.image_id == id).all()
+    comments = Comment.query.all()
     return {'comments': [comment.to_dict() for comment in comments]}
 
 

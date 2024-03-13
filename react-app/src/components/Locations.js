@@ -15,8 +15,9 @@ import { getImagesComments } from "../store/comment";
 import Grid from "@mui/material/Grid";
 import DeleteLocationsImages from "./DeleteLocationsImage";
 import "./Locations.css";
+import DisplayComments from "./DisplayComments";
 
-function Locations() {
+function Locations({ imageId }) {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
   const { locationId } = useParams();
@@ -37,6 +38,11 @@ function Locations() {
         ) : null}
       </div>
 
+      <div>
+
+        <DisplayComments />
+        {/* {imageId === comment.image_id ? () : null} */}
+      </div>
       {location.profile_img !== null ? (
         <Box sx={{ display: "flex", alignContent: "center", mx: "auto" }}>
           <Avatar sx={{ width: 300, height: 300 }}>

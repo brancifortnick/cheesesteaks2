@@ -8,6 +8,9 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import './ImageUpload.css'
+import AllComments from "./AllComments";
+
+
 const ImageUpload = () => {
 
 
@@ -58,7 +61,8 @@ const ImageUpload = () => {
   };
 
   return (
-    <>
+    <div>
+      <AllComments />
       <section className='b'>
         <form className="form-container" onSubmit={onSubmit}>
           <div>
@@ -90,7 +94,7 @@ const ImageUpload = () => {
           </div>
         </form >
       </section>
-    </>
+    </div>
   );
 };
 

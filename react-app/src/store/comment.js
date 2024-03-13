@@ -1,12 +1,12 @@
-const GET_IMAGE_COMMENTS = 'comments/GET_IMAGE_COMMENTS';
+const GET_THE_COMMENTS = 'comments/GET_THE_COMMENTS';
 const ADD_COMMENT = "comment/ADD_COMMENT";
 const GET_ONE_COMMENT = "comment/GET_ONE_COMMENT";
 const DELETE_COMMENT = "comment/DELETE_COMMENT";
 const EDIT_COMMENT = "comment/EDIT_COMMENT";
 
 
-const getImageComments = (comments) => ({
-  type: GET_IMAGE_COMMENTS,
+const getAllTheComments = (comments) => ({
+  type: GET_THE_COMMENTS,
   payload: comments,
 });
 
@@ -30,15 +30,25 @@ const deleteComment = (comment) => ({
   payload: comment,
 });
 
-
-
-export const getImagesComments = (id) => async (dispatch) => {
-  const res = await fetch(`/api/comments/${id}`)
-  if (res.ok) {
-    const comments = await res.json();
-    dispatch(getImageComments(comments.comments));
+export const getTheComments = () => async (dispatch) => {
+  const response = await fetch(`/api/comments/`)
+  if (response.ok) {
+    const allcomments = await response.json()
+    dispatch(getAllTheComments(allcomments.comments))
+    return allcomments
+  }
+  else {
+    console.log('error from getAllcomments aka getTheComments thunk from store ---Comment')
   }
 }
+
+// export const getImagesComments = (id) => async (dispatch) => {
+//   const res = await fetch(`/api/comments/${id}`)
+//   if (res.ok) {
+//     const comments = await res.json();
+//     dispatch(getAllTheComments(comments.comments));
+//   }
+// }
 
 export const createComment = (formData) => async (dispatch) => {
   const res = await fetch(`/api/comments/new`, {
@@ -96,16 +106,16 @@ const initialState = {};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case GET_IMAGE_COMMENTS:
+    case GET_THE_COMMENTS:
       let newComState = {};
       action.payload.forEach((comment) => {
-        newComState[comment.id] = comment;
+        newComState[comment?.id] = comment;
       });
       return newComState;
     case ADD_COMMENT:
       const curr = { ...state };
       console.log(state, "inside of reducer");
-      curr[action.payload.id] = action.payload?.id;
+      curr[action.payload.id] = action.payload;
       console.log(state, "after add_comment>>>>> redux store reducer");
       return curr;
     case GET_ONE_COMMENT:

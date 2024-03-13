@@ -60,6 +60,9 @@ export const getImageComments = (id) => async (dispatch) => {
   if (res.ok) {
     const photo = await res.json();
     dispatch(getComments(photo));
+    return photo;
+  } else {
+    console.log('error coming from image store with getImageComments thunk')
   }
 };
 
@@ -121,10 +124,9 @@ export default function reducer(state = initialState, action) {
       const updateState = { ...action.payload };
       return updateState;
     case GET_COMMENTS:
-      // const commentState = { ...state }
-      // commentState[action.payload] = action.payload
-      // return commentState;
-      return { ...action.payload }
+      const commentState = { ...state }
+      commentState[action.payload] = action.payload
+      return commentState;
     case DELETE_PHOTO:
       const removeState = { ...state };
       delete removeState[action.payload.id];

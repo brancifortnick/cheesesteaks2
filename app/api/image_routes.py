@@ -63,8 +63,8 @@ def delete_photo(id):
     return {'id': id}
 
 
-@image_routes.route('/<int:id>/comments')
-@login_required
-def get_comments_from_params(id):
-    comments = Comment.filter.query(Comment.image_id == id)
-    return comments.to_dict()
+# @image_routes.route('/<int:id>/comments')
+# @login_required
+# def get_comments_from_params(id):
+#     comments = Comment.filter.query(Comment.image_id == id)
+#     return comments.to_dict()

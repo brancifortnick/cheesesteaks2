@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getImagesComments, deleteAComment } from "../store/comment";
+import { getTheComments, deleteAComment } from "../store/comment";
 import { useHistory } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { getImageComments } from "../store/image";
@@ -23,7 +23,7 @@ const DeleteComment = ({ commentId }) => {
     };
 
     useEffect(() => {
-        dispatch(getImagesComments(commentId));
+        dispatch(getTheComments(commentId));
     }, [dispatch, commentId]);
 
     return (

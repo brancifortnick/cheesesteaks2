@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import { getAllComments, getImagesComments } from "../store/comment";
+import { getTheComments } from "../store/comment";
 import { getImageComments, getAPhoto, getPhotos } from "../store/image";
 import DeleteComment from "./DeleteComment";
 import EditComment from "./EditComment";
@@ -30,9 +30,9 @@ function AllComments() {
 
   useEffect(() => {
     console.log(imageId, 'inside useEffect allcomments')
-    if (images) {
+    if (!images) {
       dispatch(getPhotos(imageId))
-      dispatch(getImagesComments())
+      dispatch(getTheComments())
     }
     else
       console.log(imageId, "imageId, after dispatch")
@@ -48,9 +48,9 @@ function AllComments() {
     <div id="comment-div">
       {comments?.map((comment) => (
         <div key={comment.id}>
-          <DisplayComments commentId={comment.id} />
+          <AllComments commentId={comment.id} />
 
-          <AddComments />
+
           <div>
             {comment.image_id}"- {"im the comment.image_id"}"
             <h4>{"reviewed by"} - {comment?.username}</h4>
