@@ -24,7 +24,7 @@ function AllLocations() {
   const locationsList = locations.map((location, idx) => {
     return (
       <div className="locations-container">
-        <div key={idx}>
+        <div key={location.id}>
           <div className="location-div-container">
             <Card sx={{ maxWidth: 400 }}>
               <NavLink to={`/locations/${location.id}`}>

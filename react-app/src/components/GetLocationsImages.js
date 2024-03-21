@@ -33,7 +33,7 @@ function GetLocationsImages({ locationId }) {
       <div className="locations-pictures-container">
 
         <div key={image.id} imageId={image.id}>
-          <NavLink to={`/images/${image.id}`}>
+          <NavLink to={`/locations/${locationId}/images/${image.id}`}>
             <Card sx={{ maxWidth: 300, heigh: 'auto' }}>
               <Typography sx={{ p: 0, mx: 'auto' }} gutterBottom variant="h5" component="div">
                 {image.title}

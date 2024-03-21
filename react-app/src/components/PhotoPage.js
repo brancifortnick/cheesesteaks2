@@ -7,28 +7,32 @@ import AddComments from './AddComments';
 import GetLocationsImages from "./GetLocationsImages";
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
+import { AddComment } from '@mui/icons-material';
 
 
 
-function PhotoPage() {
+function PhotoPage({ locationId }) {
 
 
     const dispatch = useDispatch()
     const history = useHistory()
     const { imageId } = useParams();
     console.log(imageId, "imageID coming from photopage lalaallalalalallalal")
-    const comments = useSelector(state => Object.values(state.comment));
+    const comments = useSelector((state) => Object.values(state.comment));
+    const DeleteLocationsImage = useSelector((state) => Object.values(state.location))
+    console.log(locationId, "locationId passed into PhotoPage component as a prop********************")
 
     useEffect(() => {
         dispatch(getPhotos())
     }, [dispatch])
 
 
+
     const photoComments = comments.filter((comment) => {
-        return comment.image_id === imageId ? (
+        return comment.image_id === locationId ? (
             <div className='establishment-images'>
-                <div><AddComments /></div>
-                <div><AllComments imageId={imageId} /></div>
+                { }    <AddComment locationId={locationId} />
+
             </div>
         ) : null;
     });

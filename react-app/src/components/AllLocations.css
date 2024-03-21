@@ -1,11 +1,12 @@
 .locations-container {
   display: inline-block;
-  flex-direction: row;
+  flex-direction: column;
   align-content: space-between;
   flex-flow: wrap;
   box-shadow: 2px 4px 10px 4px rgba(0, 0, 0, 0.383);
   backdrop-filter: blur(7px);
   margin: 30px 15px;
+
 }
 .image_card {
   /* height: 345px;

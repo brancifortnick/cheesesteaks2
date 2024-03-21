@@ -1,18 +1,18 @@
-const GET_PHOTOS = "image/GET_PHOTOS";
+const GET_PHOTOS = "images/GET_PHOTOS";
 const GET_ONE_PHOTO = "image/GET_ONE_PHOTO";
 const DELETE_PHOTO = "image/DELETE_PHOTO";
 const UPDATE_PHOTO = "image/UPDATE_PHOTO";
 const ADD_ONE_PHOTO = "image/ADD_ONE_PHOTO";
-const GET_COMMENTS = 'image/GET_COMMENTS';
+// const GET_COMMENTS = 'image/GET_COMMENTS';
 
 const getOnePhoto = (image) => ({
   type: GET_ONE_PHOTO,
   payload: image,
 });
 
-const getAllPhotos = (image) => ({
+const getAllPhotos = (images) => ({
   type: GET_PHOTOS,
-  payload: image,
+  payload: images,
 });
 
 const addOnePhoto = (image) => ({
@@ -30,17 +30,17 @@ const updateOnePhoto = (image) => ({
   payload: image,
 });
 
-const getComments = (image) => ({
-  type: GET_COMMENTS,
-  payload: image,
-})
+// const getComments = (image) => ({
+//   type: GET_COMMENTS,
+//   payload: image,
+// })
 
 
 export const getPhotos = () => async (dispatch) => {
   const res = await fetch("/api/images/");
   if (res.ok) {
     const photos = await res.json();
-    console.log(photos.images, "photos.images>>>>> store", console.log(photos, "res after fetch to images"));
+    console.log(photos.images, "photos.images>>>>> store")
     dispatch(getAllPhotos(photos.images));
   }
 };
@@ -55,16 +55,16 @@ export const getAPhoto = (id) => async (dispatch) => {
   }
 };
 
-export const getImageComments = (id) => async (dispatch) => {
-  const res = await fetch(`/api/images/${id}`);
-  if (res.ok) {
-    const photo = await res.json();
-    dispatch(getComments(photo));
-    return photo;
-  } else {
-    console.log('error coming from image store with getImageComments thunk')
-  }
-};
+// export const getImageComments = (id) => async (dispatch) => {
+//   const res = await fetch(`/api/images/${id}`);
+//   if (res.ok) {
+//     const photo = await res.json();
+//     dispatch(getComments(photo));
+//     return photo;
+//   } else {
+//     console.log('error coming from image store with getImageComments thunk')
+//   }
+// };
 
 
 
@@ -123,10 +123,10 @@ export default function reducer(state = initialState, action) {
     case UPDATE_PHOTO:
       const updateState = { ...action.payload };
       return updateState;
-    case GET_COMMENTS:
-      const commentState = { ...state }
-      commentState[action.payload] = action.payload
-      return commentState;
+    // case GET_COMMENTS:
+    //   const commentState = { ...state }
+    //   commentState[action.payload] = action.payload
+    //   return commentState;
     case DELETE_PHOTO:
       const removeState = { ...state };
       delete removeState[action.payload.id];
