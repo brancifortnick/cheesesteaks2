@@ -3,7 +3,8 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
   getOneLocation,
-  deleteOneLocation
+  deleteOneLocation,
+  getAllLocations
 } from "../store/location";
 import Button from '@mui/material/Button'
 import { Box } from "@mui/material";
@@ -14,11 +15,12 @@ const DeleteLocation = ({ locationId }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     dispatch(deleteOneLocation(Number(locationId)));
-    history.push('/locations/')
+
   };
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
+
   }, [dispatch, locationId]);
 
   return (

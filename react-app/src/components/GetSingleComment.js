@@ -11,7 +11,7 @@ function GetSingleComment({ imageId }) {
 
     const dispatch = useDispatch();
     const comments = useSelector((state) => Object.values(state.comment));
-    const comment = useSelector(state => state.comment)
+
     const user = useSelector((state) => state.session.user);
     const image = useSelector(state => Object.values(state.image))
 
@@ -27,11 +27,12 @@ function GetSingleComment({ imageId }) {
         <div>
             {comments.map((comment) => {
                 <div key={comment.id}>
+
                     <li>{comment.comment}</li>
                     <li>{comment.image_id}</li>
 
 
-                    {image.id === comment.image['id'] ? (
+                    {image.id === comment.image_id ? (
 
                         console.log('whats happenin')
                     ) : null}

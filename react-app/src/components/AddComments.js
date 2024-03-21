@@ -36,7 +36,7 @@ const AddComments = ({ locationId }) => {  //added imageId prop and then usepara
 
   useEffect(() => {
     dispatch(getTheComments())
-  }, [dispatch])
+  }, [])
 
   const updateComment = (e) => setComment(e.target.value);
 

@@ -122,7 +122,7 @@ export default function reducer(state = initialState, action) {
       return { ...action.payload };
     case DELETE_COMMENT:
       const deleteState = { ...state };
-      delete deleteState[action.payload];
+      delete deleteState[action.payload.id];
       return deleteState;
     case EDIT_COMMENT:
       const editState = { ...state }
