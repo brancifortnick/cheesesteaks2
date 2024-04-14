@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addImage, getPhotos } from '../store/image'
+import { addImage, getAPhoto, getPhotos } from '../store/image'
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import './ImageUpload.css'
 import AllComments from "./AllComments";
+import GetLocationsImages from "./GetLocationsImages";
 
 
 const ImageUpload = () => {
@@ -51,9 +52,13 @@ const ImageUpload = () => {
     formData.append('location_id', locationId);
     dispatch(addImage(formData))
 
-    history.push(`/locations/${locationId}`); // change route to include :imageId
+    history.push(`/location/${locationId}`); // change route to include :imageId
   };
 
+
+  useEffect(() => {
+    dispatch(getAPhoto(locationId))
+  }, [dispatch, locationId])
 
   const addPictureFile = (e) => {
     const file = e.target.files[0];
@@ -62,7 +67,7 @@ const ImageUpload = () => {
 
   return (
     <div>
-      <AllComments />
+      {/* <AllComments /> */}
       <section className='b'>
         <form className="form-container" onSubmit={onSubmit}>
           <div>

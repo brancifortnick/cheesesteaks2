@@ -42,13 +42,13 @@ export const getTheComments = () => async (dispatch) => {
   }
 }
 
-// export const getImagesComments = (id) => async (dispatch) => {
-//   const res = await fetch(`/api/comments/${id}`)
-//   if (res.ok) {
-//     const comments = await res.json();
-//     dispatch(getAllTheComments(comments.comments));
-//   }
-// }
+export const getImagesComments = (locationId, imageId) => async (dispatch) => {
+  const res = await fetch(`/api/locations/${locationId}/images/${imageId}`)
+  if (res.ok) {
+    const comments = await res.json();
+    dispatch(getAllTheComments(comments.comments));
+  }
+}
 
 export const createComment = (formData) => async (dispatch) => {
   const res = await fetch(`/api/comments/new`, {

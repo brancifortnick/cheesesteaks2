@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getPhotos } from '../store/image';
+import { getAPhoto, getPhotos } from '../store/image';
 import AllComments from './AllComments';
 import AddComments from './AddComments';
 import GetLocationsImages from "./GetLocationsImages";
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 import { AddComment } from '@mui/icons-material';
-
+import { NavLink } from 'react-router-dom'
+import { getOneLocation } from '../store/location';
 
 
 function PhotoPage({ locationId }) {
@@ -18,29 +19,37 @@ function PhotoPage({ locationId }) {
     const history = useHistory()
     const { imageId } = useParams();
     console.log(imageId, "imageID coming from photopage lalaallalalalallalal")
-    const comments = useSelector((state) => Object.values(state.comment));
+    const photos = useSelector((state) => Object.values(state.image));
     const DeleteLocationsImage = useSelector((state) => Object.values(state.location))
     console.log(locationId, "locationId passed into PhotoPage component as a prop********************")
 
-    useEffect(() => {
-        dispatch(getPhotos())
-    }, [dispatch])
+    // useEffect(() => {
+    //     if (!imageId) {
+    //         dispatch(getAPhoto())
+    //     } else if (!locationId) {
+    //         dispatch(getOneLocation());
+    //         dispatch(GetLocationsImages(locationId))
+    //     } else if (!photos)
+    //         console.log('useFx in photopage')
+
+    // }, [dispatch, imageId])
 
 
 
-    const photoComments = comments.filter((comment) => {
-        return comment.image_id === locationId ? (
-            <div className='establishment-images'>
-                { }    <AddComment locationId={locationId} />
+    const photoData = photos.filter((image) => {
+        return (
+            <div key={image.id} >
+                <NavLink to={`/locations/${locationId}/images/${imageId}`}>{image + "image details"}</NavLink>
+                {image.location_id}</div>
+        )
 
-            </div>
-        ) : null;
+
     });
 
 
     return (
         <>
-            {photoComments}
+            {photoData}
         </>
     )
 };

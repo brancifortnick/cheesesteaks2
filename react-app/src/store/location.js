@@ -36,6 +36,8 @@ export const getAllLocations = (id) => async (dispatch) => {
     const data = await res.json();
     dispatch(getAllLocs(data.locations));
     // return data;
+  } else {
+    console.log('no!!!- not getting locations')
   }
 };
 

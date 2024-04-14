@@ -29,14 +29,12 @@ const AddComments = ({ locationId }) => {  //added imageId prop and then usepara
     formData.append("user_id", user.id)
 
     dispatch(createComment(formData));
+    dispatch(getTheComments())
     setModal(false)
     setComment("");
-    history.push(`/locations/${locationId}`)
+    history.push(`/locations/${locationId}/images/${imageId}`)
   };
 
-  useEffect(() => {
-    dispatch(getTheComments())
-  }, [])
 
   const updateComment = (e) => setComment(e.target.value);
 

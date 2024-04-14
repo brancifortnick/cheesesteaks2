@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import { getOneComment, getImagesComments, getAllComments } from "../store/comment";
-import { getPhotos } from "../store/image";
+import { getAPhoto, getPhotos } from "../store/image";
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Card from '@mui/material/Card';
@@ -11,6 +11,7 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import DeleteLocationsImages from "./DeleteLocationsImage";
 import './GetLocationsImages.css'
+import { getOneLocation } from "../store/location";
 
 function GetLocationsImages({ locationId }) {
 
@@ -18,18 +19,18 @@ function GetLocationsImages({ locationId }) {
   const user = useSelector((state) => state.session.user);
   const images = useSelector((state) => Object.values(state.image));
 
-  const location = useSelector(state => (state.location))
+  const locations = useSelector(state => Object.values(state.location))
   const comments = useSelector(state => Object.values(state.comment))
 
 
   useEffect(() => {
-    dispatch(getPhotos(Number(locationId)));
+    dispatch(getAPhoto(locationId));
 
 
   }, [dispatch, locationId]);
 
-  const locationsPictures = images.map((image) => {
-    return image.location_id === location.id ? (
+  const locationsPictures = locations.map((image) => {
+    return image.id === image.location_id ? (
       <div className="locations-pictures-container">
 
         <div key={image.id} imageId={image.id}>

@@ -28,24 +28,24 @@ function Locations() {
   const location = useSelector((state) => state.location);
 
 
-  const filteredImages = images.filter((image) => {
-    return image.id === location.image_id
-  })
+  // const filteredImages = images.map((image) => {
+  //   return image.id === location.image_id
+  // })
 
-  const filterThefiltered = (objArray) => {
-    let obj = Object.values(objArray)
-    for (obj of objArray) {
-      for (let i = 0; i < objArray.length; i++) {
-        let eachImageDetail = objArray[i]
-        if (eachImageDetail) {
-          console.log(eachImageDetail)
-        } else {
-          console.log('error in filter the filtered')
-        }
-      }
-    }
-  }
-  console.log(comments, "comments from LOCATions#######################00000000*********************", images, "IMAGES FROM LOCATIONS+========", location, "location from location", locationId, '<====this is the location id', filterThefiltered(filteredImages))
+  // const filterThefiltered = (objArray) => {
+  //   let obj = Object.values(objArray)
+  //   for (obj of objArray) {
+  //     for (let i = 0; i < objArray.length; i++) {
+  //       let eachImageDetail = objArray[i]
+  //       if (eachImageDetail) {
+  //         console.log(eachImageDetail)
+  //       } else {
+  //         console.log('error in filter the filtered')
+  //       }
+  //     }
+  //   }
+  // }
+  // console.log(comments, "comments from LOCATions#######################00000000*********************", images, "IMAGES FROM LOCATIONS+========", location, "location from location", locationId, '<====this is the location id', filterThefiltered(filteredImages))
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
@@ -60,8 +60,8 @@ function Locations() {
       </div>
 
       <div>
-
-        <DisplayComments />
+        {/*
+        <DisplayComments /> */}
         {/* {imageId === comment.image_id ? () : null} */}
       </div>
       {location.profile_img !== null ? (
@@ -110,7 +110,7 @@ function Locations() {
         </div>
       </div>
       <div>
-        <PhotoPage locationId={locationId} />
+        {/* <PhotoPage locationId={locationId} /> */}
       </div>
       {/*imageId={filteredImages}*/}
       {/* <div>

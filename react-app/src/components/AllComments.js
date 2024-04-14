@@ -30,12 +30,15 @@ function AllComments() {
 
   useEffect(() => {
     console.log(imageId, 'inside useEffect allcomments')
-    if (!images) {
+    if (!imageId) {
       dispatch(getPhotos(imageId))
       dispatch(getTheComments())
-    }
-    else
-      console.log(imageId, "imageId, after dispatch")
+      if (!images) {
+        return;
+
+      }
+
+    } else { console.log('error-usefx all comments front end component') }
   }, [dispatch, imageId])
 
 
