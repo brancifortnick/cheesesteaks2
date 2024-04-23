@@ -13,28 +13,31 @@ import DeleteLocationsImages from "./DeleteLocationsImage";
 import './GetLocationsImages.css'
 import { getOneLocation } from "../store/location";
 
-function GetLocationsImages({ locationId }) {
+function GetLocationsImages() {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   const images = useSelector((state) => Object.values(state.image));
 
-  const locations = useSelector(state => Object.values(state.location))
-  const comments = useSelector(state => Object.values(state.comment))
 
+
+
+  const location = useSelector(state => (state.location))
+  const comments = useSelector(state => Object.values(state.comment))
+  const { locationId } = useParams();
 
   useEffect(() => {
-    dispatch(getAPhoto(locationId));
+    dispatch(getPhotos(Number(locationId)))
 
 
   }, [dispatch, locationId]);
 
-  const locationsPictures = locations.map((image) => {
-    return image.id === image.location_id ? (
+  const locationsPictures = images.map((image) => {
+    return (
       <div className="locations-pictures-container">
 
-        <div key={image.id} imageId={image.id}>
-          <NavLink to={`/locations/${locationId}/images/${image.id}`}>
+        <div key={image.id}>
+
             <Card sx={{ maxWidth: 300, heigh: 'auto' }}>
               <Typography sx={{ p: 0, mx: 'auto' }} gutterBottom variant="h5" component="div">
                 {image.title}
@@ -63,11 +66,11 @@ function GetLocationsImages({ locationId }) {
                 </CardActions>
               </CardContent>
             </Card>
-          </NavLink>
+
 
         </div>
       </div>
-    ) : null;
+    );
   });
   //images.map here to get imageId
   return (

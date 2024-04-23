@@ -21,16 +21,21 @@ import PhotoPage from "./PhotoPage";
 function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
-  const { locationId } = useParams();
 
-  const images = useSelector((state) => Object.values(state.image))
+
+
+  const image = useSelector((state) => state.image)
   const comments = useSelector((state) => Object.values(state.comment));
   const location = useSelector((state) => state.location);
 
 
+  const { locationId } = useParams()
   // const filteredImages = images.map((image) => {
   //   return image.id === location.image_id
   // })
+  // useEffect(() => {
+  //   dispatch(getImagesComments(locationId))
+  // }, [dispatch, locationId]);
 
   // const filterThefiltered = (objArray) => {
   //   let obj = Object.values(objArray)
@@ -49,13 +54,14 @@ function Locations() {
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
-  }, [dispatch, locationId]);
+
+  }, [dispatch]);
 
   return (
     <div className="card-container">
       <div id="delete-component">
         {currentUser.id === Number(location.user_id) ? (
-          <DeleteLocation locationId={locationId} />
+          <DeleteLocation locationId={location.id} />
         ) : null}
       </div>
 
@@ -106,7 +112,7 @@ function Locations() {
         </div>
         {" "}
         <div className="establishment-images">
-          <GetLocationsImages locationId={locationId} />
+          <GetLocationsImages imageId={image.id} locationId={locationId} />
         </div>
       </div>
       <div>

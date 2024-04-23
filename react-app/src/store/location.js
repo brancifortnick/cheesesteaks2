@@ -64,9 +64,10 @@ export const getOneLocation = (id) => async (dispatch) => {
   if (res.ok) {
     const data = await res.json();
     dispatch(getOne(data));
-  } //
-};
-
+  } else {
+    console.log('error from location store')
+  };
+}
 
 export const getSeveralLocationPics = (id) => async (dispatch) => {
   const res = await fetch(`/api/locations/${id}/locations-pictures`);

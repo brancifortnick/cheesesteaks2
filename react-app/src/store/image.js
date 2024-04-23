@@ -81,7 +81,22 @@ export const addImage = (formData) => async (dispatch) => {
     console.log('error res is not okay in addimage')
   }
 };
-
+export const postNewPhoto =
+  (image, title, user_id, location_id) => async (dispatch) => {
+    const res = await fetch("/api/images/new", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(image, title, user_id, location_id),
+    });
+    if (res.ok) {
+      const image = await res.json();
+      dispatch(addOnePhoto(image));
+    } else {
+      console.log('image Not Added - Error');
+    }
+  };
 export const editImage = (formData, id) => async (dispatch) => {
   const res = await fetch(`/api/images/${id}`, {
     method: "PUT",

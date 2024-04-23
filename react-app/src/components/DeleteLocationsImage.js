@@ -9,9 +9,9 @@ const DeleteLocationsImages = ({ imageId }) => {
 
     const history = useHistory();
     const dispatch = useDispatch();
-    const image = useSelector(state => state.image)
+
     const { locationId } = useParams()
-    console.log(locationId, 'locationID????????????????????????????????????????????????---deletelocationsimages')
+
     const onSubmit = async (e) => {
         e.preventDefault();
         dispatch(deletePhoto(Number(imageId)));
@@ -20,7 +20,7 @@ const DeleteLocationsImages = ({ imageId }) => {
 
     useEffect(() => {
         dispatch(getPhotos())
-    }, [dispatch])
+    }, [dispatch, imageId])
 
     return (
         <div>

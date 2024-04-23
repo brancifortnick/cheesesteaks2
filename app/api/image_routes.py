@@ -2,6 +2,7 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import Comment, Image, db
+from app.forms import ImageForm
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 # from app.forms import ImageForm
@@ -38,16 +39,19 @@ def upload_image():
 
     url = upload["url"]
 
-    new_image = Image(
-        image=url,
-        user_id=current_user.id,
-        location_id=request.form['location_id'],
-        title=request.form['title'],
-    )
+    return {'url': url}
 
+
+@image_routes.route('/new', methods=['POST'])
+@login_required
+def second_image_loader():
+    form = ImageForm()
+    new_image = Image()
+    form.populate_obj(new_image)
     db.session.add(new_image)
     db.session.commit()
     return new_image.to_dict()
+
 
 
 @image_routes.route('/delete/<int:id>', methods=['DELETE'])

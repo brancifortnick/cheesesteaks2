@@ -39,13 +39,12 @@ function PhotoPage({ locationId }) {
     const photoData = photos.filter((image) => {
         return (
             <div key={image.id} >
-                <NavLink to={`/locations/${locationId}/images/${imageId}`}>{image + "image details"}</NavLink>
+                {image + "image details"}
                 {image.location_id}</div>
         )
 
-
-    });
-
+    }
+    )
 
     return (
         <>

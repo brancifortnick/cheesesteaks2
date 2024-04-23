@@ -16,7 +16,7 @@ const DeleteEstablishment = ({ locationId }) => {
     const onSubmit = async (e) => {
         e.preventDefault();
         dispatch(deleteOneLocation(Number(locationId)));
-        history.push('/locations')
+        history.push('/')
     };
 
     useEffect(() => {
