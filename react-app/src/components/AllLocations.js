@@ -11,7 +11,7 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-import GetLocationsImages from "./GetLocationsImages";
+
 
 function AllLocations() {
   const dispatch = useDispatch();
@@ -24,9 +24,9 @@ function AllLocations() {
   const locationsList = locations.map((location, idx) => {
     return (
       <div className="locations-container">
-        <div key={location.id}>
+        <div key={idx} id='location-key'>
           <div className="location-div-container">
-            <Card sx={{ maxWidth: 400 }}>
+            <Card sx={{}}>
               <NavLink to={`/locations/${location.id}`}>
                 <CardMedia
                   component="card-img-style"
@@ -44,15 +44,15 @@ function AllLocations() {
                 <Typography gutterBottom variant="h5" component="div">
                   {location.location_name}
                 </Typography>
-
-                <Typography variant="body2" color="text.secondary">
+                {/* <Typography variant="body2" color="text.secondary">
                   <NavLink
                     style={{ color: "#1976d2", fontWeight: "bolder" }}
                     to={`/locations/${location.id}/image-upload`}
                   >
                     Add Photos
                   </NavLink>
-                </Typography>
+                </Typography> */}
+
 
                 <CardActions sx={{ mt: 8 }}>
                   {currentUser.id === Number(location.user_id) ? (

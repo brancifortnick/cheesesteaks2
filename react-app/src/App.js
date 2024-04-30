@@ -14,12 +14,12 @@ import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
 import VoteCounter from "./components/VoteCounter";
-import GetLocationsImages from "./components/GetLocationsImages";
-import ImageUpload from "./components/ImageUpload";
+
+
 import VoteUpdater from "./components/VoteUpdater";
 import AddComments from "./components/AddComments";
 import AllComments from "./components/AllComments";
-import PhotoPage from "./components/PhotoPage";
+
 import { Add } from "@mui/icons-material";
 import DisplayComments from "./components/DisplayComments";
 
@@ -74,18 +74,13 @@ function App() {
             <AllLocations />
 
           </ProtectedRoute>
-          <ProtectedRoute path="/locations/:locationId" exact={true}>
+          <ProtectedRoute path="/locations/:locationId" >
             <Locations />
           </ProtectedRoute>
-          <ProtectedRoute path="/locations/:locationId/image-upload" exact={true}>
-            <ImageUpload />
 
+          {/* <ProtectedRoute path='/locations/:locationId/images/:imageId' exact={true}>
 
-
-          </ProtectedRoute>
-          <ProtectedRoute path='/locations/:locationId/images/:imageId' exact={true}>
-            <PhotoPage />
-          </ProtectedRoute>
+          </ProtectedRoute> */}
 
         </Switch>
       </div>

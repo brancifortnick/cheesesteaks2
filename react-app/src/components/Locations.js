@@ -7,7 +7,7 @@ import UpdateBiography from "./UpdateBiography";
 import DeleteLocation from "./DeleteLocation";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
-import GetLocationsImages from "./GetLocationsImages";
+import AddComments from "./AddComments";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import DeleteEstablishment from "./DeleteEstablishment";
@@ -16,14 +16,15 @@ import Grid from "@mui/material/Grid";
 import DeleteLocationsImages from "./DeleteLocationsImage";
 import "./Locations.css";
 import DisplayComments from "./DisplayComments";
-import PhotoPage from "./PhotoPage";
+import { Modal } from "../context/Modal";
+
 
 function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
+  const userId = useSelector((state) => state.session.user?.id);
 
-
-
+  const [showModal, setModal] = useState(false)
   const image = useSelector((state) => state.image)
   const comments = useSelector((state) => Object.values(state.comment));
   const location = useSelector((state) => state.location);
@@ -58,73 +59,70 @@ function Locations() {
   }, [dispatch]);
 
   return (
-    <div className="card-container">
-      <div id="delete-component">
-        {currentUser.id === Number(location.user_id) ? (
-          <DeleteLocation locationId={location.id} />
-        ) : null}
-      </div>
+    <>
 
-      <div>
-        {/*
+
+      <div className="card-container">
+        <div id="delete-component">
+          {currentUser.id === Number(location.user_id) ? (
+            <DeleteLocation locationId={location.id} />
+          ) : null}
+        </div>
+
+        <div>
+          {/*
         <DisplayComments /> */}
-        {/* {imageId === comment.image_id ? () : null} */}
-      </div>
-      {location.profile_img !== null ? (
-        <Box sx={{ display: "flex", alignContent: "center", mx: "auto" }}>
-          <Avatar sx={{ width: 300, height: 300 }}>
-            <img
-              // style={{ objectFit: 'contain' }}
-              className="card"
-              src={location.profile_img}
-              alt="image loading..."
-            ></img>
-          </Avatar>
-        </Box>
-      ) : null}
-      <div id="update-biography">
-        {currentUser.id === Number(location.user_id) ? (
-          <UpdateBiography
-
-            locationBio={location.biography}
-            locationId={location.id}
-          />
-        ) : null}
-      </div>
-
-      <div className="description-div">
-        <span id="description-text">
-          <strong>Description</strong>
-        </span>
-
-      </div>
-
-      <p id="bio">{location.biography}</p>
-
-      <div>
-        <div id='add-pictures'>
-          <NavLink
-            style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', marginTop: "4pt", fontWeight: "bolder", color: "#1976d2" }}
-            to={`/locations/${location.id}/image-upload`}
-          >
-            Add Photos
-          </NavLink>
+          {/* {imageId === comment.image_id ? () : null} */}
         </div>
-        {" "}
-        <div className="establishment-images">
-          <GetLocationsImages imageId={image.id} locationId={locationId} />
-        </div>
-      </div>
-      <div>
-        {/* <PhotoPage locationId={locationId} /> */}
-      </div>
-      {/*imageId={filteredImages}*/}
-      {/* <div>
-        {currentUser.id === Number(image.user_id) ? (
-          <DeleteLocationsImages imageId={image.id} locationId={locationId} />
+        {location.profile_img !== null ? (
+          <Box sx={{ display: "flex", alignContent: "center", mx: "auto" }}>
+            <Avatar sx={{ width: 300, height: 300 }}>
+              <img
+                // style={{ objectFit: 'contain' }}
+                className="card"
+                src={location.profile_img}
+                alt="image loading..."
+              ></img>
+            </Avatar>
+          </Box>
         ) : null}
-      </div> */}
-    </div>
+        <div id="update-biography">
+          {currentUser.id === Number(location.user_id) ? (
+            <UpdateBiography
+
+              locationBio={location.biography}
+              locationId={location.id}
+            />
+          ) : null}
+        </div>
+
+        <div className="description-div">
+          <span id="description-text">
+            <strong>Description</strong>
+          </span>
+
+        </div>
+
+        <p id="bio">{location.biography}</p>
+
+        <div>
+
+
+        </div>
+        <div>
+
+        </div>
+
+      </div>
+      <Button sx={{}} onClick={() => setModal(true)}> Add Photos</Button>
+      {
+        showModal && (
+          <Modal onClose={() => setModal(false)}>
+            {'put component here to upload images'}
+          </Modal >
+        )
+      }
+    </>
   );
-}
+};
 export default Locations;

@@ -30,7 +30,7 @@ const UpdateBiography = ({ locationBio, locationId }) => {
   return (
     <>
       <Button sx={{ backgroundColor: 'white' }} id="biography-edit" onClick={() => setModal(true)}>
-        Describe your experience
+        Edit your experience description
       </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>

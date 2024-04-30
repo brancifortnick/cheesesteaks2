@@ -88,7 +88,7 @@ export const postNewPhoto =
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(image, title, user_id, location_id),
+      body: JSON.stringify({ image, title, user_id, location_id }),
     });
     if (res.ok) {
       const image = await res.json();

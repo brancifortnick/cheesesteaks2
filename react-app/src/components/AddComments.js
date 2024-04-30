@@ -32,7 +32,7 @@ const AddComments = ({ locationId }) => {  //added imageId prop and then usepara
     dispatch(getTheComments())
     setModal(false)
     setComment("");
-    history.push(`/locations/${locationId}/images/${imageId}`)
+    history.push(`/locations/${locationId}`)
   };
 
 
