@@ -75,7 +75,7 @@ function Locations() {
           {/* {imageId === comment.image_id ? () : null} */}
         </div>
         {location.profile_img !== null ? (
-          <Box sx={{ display: "flex", alignContent: "center", mx: "auto" }}>
+          <Box >
             <Avatar sx={{ width: 300, height: 300 }}>
               <img
                 // style={{ objectFit: 'contain' }}

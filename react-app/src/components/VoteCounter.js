@@ -14,8 +14,8 @@ const VoteCounter = ({ locationId }) => {
 
   console.log(locationId, '<<<<<<<<<<<<<<<<locationId inside VOTECOUNER?????????')
 
-  const [vote, setVote] = useState(0); // be cautious of this useState
-  const [downvote, setDownVote] = useState(0);
+  const [vote, setVote] = useState(''); // be cautious of this useState
+  const [downvote, setDownVote] = useState('');
 
 
   const onSubmit = async (e) => {
@@ -35,11 +35,11 @@ const VoteCounter = ({ locationId }) => {
 
 
   let totalVote = (downvote, vote) => {
-    return downvote += vote;
+    return (downvote) += (vote);
   }
 
   const down = () => {
-    setDownVote(downvote => downvote -= 1);
+    setDownVote(downvote => (downvote) -= 1);
   };
   const up = () => {
     setVote(vote => vote += 1);
@@ -53,12 +53,12 @@ const VoteCounter = ({ locationId }) => {
       <>
 
         <div>
-          <button onClick={down}>downvote</button>
-          {downvote}
+          <button onClick={down} value={down}>downvote</button>
+          {Number(downvote)}
         </div>
         <div>
-          <button onClick={up}>vote</button>
-          {vote}
+          <button onClick={up} value={vote}>vote</button>
+          {Number(vote)}
         </div>
       </>
     </form>

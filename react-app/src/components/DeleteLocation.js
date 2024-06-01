@@ -15,8 +15,7 @@ const DeleteLocation = ({ locationId }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     dispatch(deleteOneLocation(Number(locationId)));
-    history.push('/locations'
-    )
+
     const message = (msg) => alert(msg)
     let msg = 'hey did this update the deleted object'
     msg ? message() : console.log('message function failing')
