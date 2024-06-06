@@ -55,16 +55,6 @@ export const getAPhoto = (id) => async (dispatch) => {
   }
 };
 
-// export const getImageComments = (id) => async (dispatch) => {
-//   const res = await fetch(`/api/images/${id}`);
-//   if (res.ok) {
-//     const photo = await res.json();
-//     dispatch(getComments(photo));
-//     return photo;
-//   } else {
-//     console.log('error coming from image store with getImageComments thunk')
-//   }
-// };
 
 
 

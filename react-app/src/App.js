@@ -14,7 +14,7 @@ import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
 import VoteCounter from "./components/VoteCounter";
-
+import AllImages from "./components/AllImages";
 
 import VoteUpdater from "./components/VoteUpdater";
 import AddComments from "./components/AddComments";
@@ -77,11 +77,9 @@ function App() {
           <ProtectedRoute path="/locations/:locationId" >
             <Locations />
           </ProtectedRoute>
-
-          {/* <ProtectedRoute path='/locations/:locationId/images/:imageId' exact={true}>
-
-          </ProtectedRoute> */}
-
+          <ProtectedRoute path='/images'>
+            <AllImages />
+          </ProtectedRoute>
         </Switch>
       </div>
     </BrowserRouter>

@@ -18,6 +18,8 @@ import "./Locations.css";
 import DisplayComments from "./DisplayComments";
 import { Modal } from "../context/Modal";
 import { getPhotos } from "../store/image";
+import AllImages from "./AllImages";
+
 
 function Locations() {
   const dispatch = useDispatch();
@@ -111,9 +113,7 @@ function Locations() {
 
 
         </div>
-        <div>
 
-        </div>
 
       </div>
       <Button sx={{}} onClick={() => setModal(true)}> Add Photos</Button>
