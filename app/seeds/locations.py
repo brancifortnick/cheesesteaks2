@@ -26,7 +26,7 @@ def seed_locations():
     db.session.add(location2)
     db.session.add(location3)
     db.session.commit()
-
+    return [location, location2, location3]
 
 def undo_locations():
     db.session.execute('TRUNCATE locations RESTART IDENTITY CASCADE;')

@@ -53,7 +53,7 @@ def upload_picture():
 
 @location_routes.route('/new', methods=['POST'])
 @login_required
-def create_musician():
+def create_location():
 
     form = LocationForm()
 

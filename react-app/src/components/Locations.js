@@ -17,7 +17,7 @@ import DeleteLocationsImages from "./DeleteLocationsImage";
 import "./Locations.css";
 import DisplayComments from "./DisplayComments";
 import { Modal } from "../context/Modal";
-
+import { getPhotos } from "../store/image";
 
 function Locations() {
   const dispatch = useDispatch();
@@ -25,15 +25,17 @@ function Locations() {
   const userId = useSelector((state) => state.session.user?.id);
 
   const [showModal, setModal] = useState(false)
-  const image = useSelector((state) => state.image)
+  const images = useSelector((state) => state.image)
   const comments = useSelector((state) => Object.values(state.comment));
   const location = useSelector((state) => state.location);
+  // console.log(images, "image from locations.js+++++++++++++++++++++", location, "location from locations.js ++++++++++++++")
 
 
   const { locationId } = useParams()
-  // const filteredImages = images.map((image) => {
-  //   return image.id === location.image_id
-  // })
+  const filteredImages = Object.values(images).filter((image) => {
+    return image.location_id === location.id
+  })
+  console.log(filteredImages, "filteredImages")
   // useEffect(() => {
   //   dispatch(getImagesComments(locationId))
   // }, [dispatch, locationId]);
@@ -55,7 +57,7 @@ function Locations() {
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
-
+    dispatch(getPhotos())
   }, [dispatch]);
 
   return (
