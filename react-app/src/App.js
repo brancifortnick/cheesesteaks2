@@ -80,6 +80,9 @@ function App() {
           <ProtectedRoute path='/images'>
             <AllImages />
           </ProtectedRoute>
+          <ProtectedRoute path='/images/:imageId'>
+
+          </ProtectedRoute>
         </Switch>
       </div>
     </BrowserRouter>

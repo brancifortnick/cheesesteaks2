@@ -19,7 +19,7 @@ function AllImagesRefactor() {
     const location = useSelector(state => (state.location))
     // const comments = useSelector(state => state.comment)
     const { locationId } = useParams()
-    console.log(locationId, location.id, "allimagesRefactor====>>>>")
+    console.log(locationId, "allimagesRefactor====>>>>")
     console.log("allimagesrefactor", "images", images)
 
     useEffect(() => {
@@ -33,7 +33,7 @@ function AllImagesRefactor() {
             <div className="pictures-container">
                 <div key={image.id} imageId={image.id}>
                     <p className="image-title">{image.title}</p>
-                    <span>{image.id + " " + "im the image id fool"}</span>
+                    <span>{"im the image id fool" + "" + image.id}</span>
                     <Card sx={{}}>
                         <NavLink to={`/images/${image.id}`}>
                             <CardMedia

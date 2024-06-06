@@ -21,6 +21,7 @@ import { getPhotos } from "../store/image";
 import AllImages from "./AllImages";
 import AllImagesRefactor from './AllImagesRefactor';
 import ImageUpload from "./ImageUpload";
+import { Folder } from "@mui/icons-material";
 
 function Locations() {
   const dispatch = useDispatch();
@@ -28,35 +29,31 @@ function Locations() {
   const userId = useSelector((state) => state.session.user?.id);
 
   const [showModal, setModal] = useState(false)
-  const images = useSelector((state) => state.image)
+  const images = useSelector((state) => Object.values(state.image))
   const comments = useSelector((state) => Object.values(state.comment));
   const location = useSelector((state) => state.location);
-  // console.log(images, "image from locations.js+++++++++++++++++++++", location, "location from locations.js ++++++++++++++")
+  console.log(images, "image from locations.js+++++++++++++++++++++", location, "location from locations.js ++++++++++++++")
 
 
   const { locationId } = useParams()
   const filteredImages = Object.values(images).filter((image) => {
-    return image.location_id === location.id
+    return image.location_id === location.id ? (
+      <AllImagesRefactor />
+    ) : null
   })
-  console.log(filteredImages, "filteredImages")
-  // useEffect(() => {
-  //   dispatch(getImagesComments(locationId))
-  // }, [dispatch, locationId]);
-
-  // const filterThefiltered = (objArray) => {
-  //   let obj = Object.values(objArray)
-  //   for (obj of objArray) {
-  //     for (let i = 0; i < objArray.length; i++) {
-  //       let eachImageDetail = objArray[i]
-  //       if (eachImageDetail) {
-  //         console.log(eachImageDetail)
+  // const getIdFromFilter = (filteredImages) => {
+  //   for (let each in filteredImages) {
+  //     for (let i = 0; i < each.length; i++) {
+  //       let imageData = filteredImages[i]
+  //       if (imageData.location_id === location.id) {
+  //         console.log(imageData)
   //       } else {
-  //         console.log('error in filter the filtered')
+  //         console.log('function dailing=> no data')
   //       }
   //     }
   //   }
   // }
-  // console.log(comments, "comments from LOCATions#######################00000000*********************", images, "IMAGES FROM LOCATIONS+========", location, "location from location", locationId, '<====this is the location id', filterThefiltered(filteredImages))
+  console.log("filteredImages", (filteredImages))
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
@@ -111,15 +108,17 @@ function Locations() {
         <p id="bio">{location.biography}</p>
 
         <div>
+
           <AllImagesRefactor />
+
 
         </div>
 
 
-      </div>
-      <Button sx={{}} onClick={() => setModal(true)}> Add Photos</Button>
+      </div><NavLink to={`/images/new`}>
+        <Button sx={{}} onClick={() => setModal(true)}> Add Photos</Button></NavLink>
 
     </>
   );
-};
+}
 export default Locations;

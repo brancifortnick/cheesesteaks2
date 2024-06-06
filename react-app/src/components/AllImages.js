@@ -29,7 +29,7 @@ const AllImages = () => {
                     {image.title}
                 </div>
                 <div>
-                    <img alt='...loading' src={image.image} />
+                    <img alt='...loading' src={image.image} ></img>
 
 
                 </div>

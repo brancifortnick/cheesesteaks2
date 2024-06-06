@@ -101,13 +101,8 @@ const ImageUpload = () => {
                                 onChange={(e) => setTitle(e.target.value)}
                                 value={title}
                             />
-                            {/* <label>
-            <input
-              type="text"
-              name="title"
-              onChange={(e) => setLocation(e.target.value)}
-              value={location}
-            /></label> */}
+
+
                             <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
                             <button type="submit">Submit</button>
                         </div>
