@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { getAPhoto, getPhotos } from "../store/image";
 
-
+import ImageUpload from "./ImageUpload";
 
 
 
@@ -29,8 +29,8 @@ const AllImages = () => {
                     {image.title}
                 </div>
                 <div>
-                    <img alt='...loading' src={image.image} ></img>
 
+                    <ImageUpload />
 
                 </div>
             </div>

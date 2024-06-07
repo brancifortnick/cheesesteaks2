@@ -10,7 +10,7 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-function AllImagesRefactor() {
+function AllImagesRefactor({ locationId }) {
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
@@ -18,8 +18,8 @@ function AllImagesRefactor() {
     const image = useSelector((state) => (state.image))
     const location = useSelector(state => (state.location))
     // const comments = useSelector(state => state.comment)
-    const { locationId } = useParams()
-    console.log(locationId, "allimagesRefactor====>>>>")
+    const { } = useParams()
+    console.log(locationId, location, "allimagesRefactor====>>>>")
     console.log("allimagesrefactor", "images", images)
 
     useEffect(() => {
@@ -29,7 +29,7 @@ function AllImagesRefactor() {
     }, [dispatch, locationId]);
 
     const locationsPictures = images.map((image) => {
-        return image.url !== null ? (
+        return image.url !== null && location.id === image.location_id ? (
             <div className="pictures-container">
                 <div key={image.id} imageId={image.id}>
                     <p className="image-title">{image.title}</p>
@@ -42,28 +42,19 @@ function AllImagesRefactor() {
                                 image={location.profile_img}
                                 alt="location_image...."
                             />
-                            <img
-                                src={image.image}
-                                alt="loading..."
-                                className="image_card"
-                            ></img>
                         </NavLink>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 {image.title}
                             </Typography>
-
                             <img
                                 className="locations-pictures"
                                 src={image.image}
                                 alt="_blank"
                             ></img>
-
-
-
                             <CardActions sx={{ mt: 8 }}>
-                                {user.id === Number(location.user_id) ? (
-                                    <DeleteLocationsImages locationId={location.id} />
+                                {user.id === Number(image.user_id) ? (
+                                    <DeleteLocationsImages />
                                 ) : null}
                             </CardActions>
                         </CardContent>
@@ -73,7 +64,6 @@ function AllImagesRefactor() {
 
         ) : null;
     });
-    //images.map here to get imageId
     return (
         <>
             {locationsPictures}

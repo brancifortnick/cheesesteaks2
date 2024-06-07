@@ -36,7 +36,7 @@ const updateOnePhoto = (image) => ({
 // })
 
 
-export const getPhotos = () => async (dispatch) => {
+export const getPhotos = (id) => async (dispatch) => {
   const res = await fetch("/api/images/");
   if (res.ok) {
     const photos = await res.json();
@@ -73,6 +73,7 @@ export const addImage = (formData) => async (dispatch) => {
 };
 export const postNewPhoto =
   (image, title, user_id, location_id) => async (dispatch) => {
+    image.url = image
     const res = await fetch("/api/images/new", {
       method: "POST",
       headers: {

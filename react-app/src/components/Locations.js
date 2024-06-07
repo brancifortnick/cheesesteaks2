@@ -36,24 +36,25 @@ function Locations() {
 
 
   const { locationId } = useParams()
-  const filteredImages = Object.values(images).filter((image) => {
-    return image.location_id === location.id ? (
-      <AllImagesRefactor />
-    ) : null
-  })
+  // const filteredImages = Object.values(images).filter((image) => {
+  //   return image.location_id === location.id ? (
+  //     <AllImagesRefactor />
+  //   ) : null
+  // })
+  // console.log("filteredImages", (filteredImages))
   // const getIdFromFilter = (filteredImages) => {
   //   for (let each in filteredImages) {
   //     for (let i = 0; i < each.length; i++) {
   //       let imageData = filteredImages[i]
   //       if (imageData.location_id === location.id) {
-  //         console.log(imageData)
+  //         console.log(imageData, 'imagedata')
   //       } else {
   //         console.log('function dailing=> no data')
   //       }
   //     }
   //   }
   // }
-  console.log("filteredImages", (filteredImages))
+
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
@@ -78,7 +79,9 @@ function Locations() {
         </div>
         {location.profile_img !== null ? (
           <Box >
-            <Avatar sx={{ width: 300, height: 300 }}>
+            <Avatar sx={{
+              display: "flex", justifyContent: "center", width: 300, height: 300
+            }}>
               <img
                 // style={{ objectFit: 'contain' }}
                 className="card"

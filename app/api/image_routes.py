@@ -17,7 +17,7 @@ def get_images():
     return {'images': [image.to_dict() for image in images]}
 
 
-@image_routes.route('/<int:id>')
+@image_routes.route('/<id>')
 @login_required
 def get_photos(id):
     images = Image.query.get(id)
@@ -45,13 +45,17 @@ def upload_image():
 @image_routes.route('/new', methods=['POST'])
 @login_required
 def second_image_loader():
+
     form = ImageForm()
+
     new_image = Image()
+
     form.populate_obj(new_image)
+
     db.session.add(new_image)
     db.session.commit()
-    return new_image.to_dict()
 
+    return new_image.to_dict()
 
 
 @image_routes.route('/delete/<int:id>', methods=['DELETE'])

@@ -69,15 +69,15 @@ export const getOneLocation = (id) => async (dispatch) => {
   };
 }
 
-export const getSeveralLocationPics = (id) => async (dispatch) => {
-  const res = await fetch(`/api/locations/${id}/locations-pictures`);
-  if (res.ok) {
-    const data = await res.json();
-    dispatch(getAllLocs(data.locations));
-  } else {
-    console.log('no!!!- not getting serveral pics')
-  }
-};
+// export const getSeveralLocationPics = (id) => async (dispatch) => {
+//   const res = await fetch(`/api/locations/${id}/locations-pictures`);
+//   if (res.ok) {
+//     const data = await res.json();
+//     dispatch(getAllLocs(data.locations));
+//   } else {
+//     console.log('no!!!- not getting serveral pics')
+//   }
+// };
 
 
 
