@@ -69,21 +69,17 @@ function Locations() {
   }, [dispatch]);
   let imageId;
   return (
-    <>
+    <div>
 
 
       <div className="card-container">
         <div id="delete-component">
-          {currentUser.id === Number(location.user_id) ? (
-            <DeleteLocation locationId={location.id} />
+          {currentUser.id === location.user_id ? (
+            <DeleteLocation locationId={location.id} location={location} />
           ) : null}
         </div>
 
-        <div>
-          {/*
-        <DisplayComments /> */}
-          {/* {imageId === comment.image_id ? () : null} */}
-        </div>
+
         {location.profile_img !== null ? (
           <Box >
             <Avatar sx={{
@@ -112,14 +108,9 @@ function Locations() {
             />
           ) : null}
         </div>
-
-
-
         {/* <NavLink to={`/images/`}>
           <Image locationId={location.id} images={images} />
         </NavLink> */}
-
-
 
         <div className="description-div">
           <span id="description-text">
@@ -137,7 +128,9 @@ function Locations() {
 
         </div>
       </div>
-    </>
+    </div>
+
   )
 }
+
 export default Locations;

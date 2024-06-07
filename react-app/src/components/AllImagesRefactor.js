@@ -31,8 +31,8 @@ function AllImagesRefactor() {
     const locationsPictures = images.map((image) => {
         return image.url !== null && location.id === image.location_id ? (
             <div className="pictures-container">
-                <div key={image.id} imageId={image.id}>
-                    <p className="image-title">{image.title}</p>
+                <div key={image} imageId={image.id}>
+                    {/* <h4 className="image-title">{image.title}</h4> */}
                     <div>{"im the image id fool" + "" + image.id}</div>
                     <Card sx={{ display: "flex", alignContent: "center" }}>
                         <NavLink to={`/images/${image.id}`}>
