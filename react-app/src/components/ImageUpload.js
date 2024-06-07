@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAPhoto, getLocationsImages, getPhotos, postNewPhoto } from '../store/image'
 
 import { Modal } from "../context/Modal";
+import { getOneLocation } from "../store/location";
 
 
 
@@ -18,7 +19,7 @@ const ImageUpload = () => {
 
     const { locationId } = useParams()
     console.log(locationId, 'locationID from useparmas in IMAGEUPLOAD F?E C')
-    console.log(locationId, user.id, '>>>>>from IMAGEUPLOAD frontend')
+    console.log(locationId, user, '>>>>>from IMAGEUPLOAD frontend')
     const location = useSelector(state => state.location)
     console.log(location, "location from image upload ==> useselector gravving state")
 
@@ -52,8 +53,8 @@ const ImageUpload = () => {
             let image = await res.json();
             dispatch(postNewPhoto(image, title, user.id, Number(locationId)));
 
-
-            dispatch(getAPhoto(Number(locationId)))
+            dispatch(getPhotos())
+            dispatch(getOneLocation(Number(locationId)))
         }
         history.push(`/locations/${locationId}`);
     };
@@ -88,11 +89,11 @@ const ImageUpload = () => {
                 id="upload-location-image"
                 onClick={() => setModal(true)}
             >
-                upload a photo
+                Click here to upload your photos
             </button>
             {showModal && (
                 <Modal onClose={() => setModal(false)}>
-                    <h2>Add New Photos</h2>
+                    <h2>Describe and Upload your photo</h2>
                     <form className="form-container" onSubmit={onSubmit}>
                         <div>
                             <input
@@ -105,6 +106,7 @@ const ImageUpload = () => {
 
                             <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
                             <button type="submit">Submit</button>
+
                         </div>
                     </form>
                 </Modal>

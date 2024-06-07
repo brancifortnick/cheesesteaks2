@@ -19,10 +19,11 @@ const DeleteLocation = ({ locationId }) => {
     const message = (msg) => alert(msg)
     let msg = 'hey did this update the deleted object'
     msg ? message() : console.log('message function failing')
+    history.push('/locations')
   };
 
   useEffect(() => {
-    dispatch(getOneLocation(Number(locationId)));
+    dispatch(getAllLocations());
 
   }, [dispatch, locationId]);
 

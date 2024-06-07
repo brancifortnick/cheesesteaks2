@@ -73,7 +73,7 @@ export const addImage = (formData) => async (dispatch) => {
 };
 export const postNewPhoto =
   (image, title, user_id, location_id) => async (dispatch) => {
-    image.url = image
+    image = image.url
     const res = await fetch("/api/images/new", {
       method: "POST",
       headers: {

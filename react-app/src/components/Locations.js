@@ -22,6 +22,10 @@ import AllImages from "./AllImages";
 import AllImagesRefactor from './AllImagesRefactor';
 import ImageUpload from "./ImageUpload";
 import { Folder } from "@mui/icons-material";
+import Image from './Image';
+
+
+
 
 function Locations() {
   const dispatch = useDispatch();
@@ -55,12 +59,15 @@ function Locations() {
   //   }
   // }
 
+  const image = useSelector(state => state.image)
+  console.log(image, "image")
+
 
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
     dispatch(getPhotos())
   }, [dispatch]);
-
+  let imageId;
   return (
     <>
 
@@ -91,6 +98,11 @@ function Locations() {
             </Avatar>
           </Box>
         ) : null}
+        <div>
+
+          <ImageUpload imageId={imageId} locationId={location.id} />
+
+        </div>
         <div id="update-biography">
           {currentUser.id === Number(location.user_id) ? (
             <UpdateBiography
@@ -101,10 +113,19 @@ function Locations() {
           ) : null}
         </div>
 
+
+
+        {/* <NavLink to={`/images/`}>
+          <Image locationId={location.id} images={images} />
+        </NavLink> */}
+
+
+
         <div className="description-div">
           <span id="description-text">
             <strong>Description</strong>
           </span>
+
 
         </div>
 
@@ -114,14 +135,9 @@ function Locations() {
 
           <AllImagesRefactor />
 
-
         </div>
-
-
-      </div><NavLink to={`/images/new`}>
-        <Button sx={{}} onClick={() => setModal(true)}> Add Photos</Button></NavLink>
-
+      </div>
     </>
-  );
+  )
 }
 export default Locations;

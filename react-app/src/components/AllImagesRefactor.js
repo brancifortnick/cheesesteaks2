@@ -10,7 +10,7 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-function AllImagesRefactor({ locationId }) {
+function AllImagesRefactor() {
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
@@ -18,7 +18,7 @@ function AllImagesRefactor({ locationId }) {
     const image = useSelector((state) => (state.image))
     const location = useSelector(state => (state.location))
     // const comments = useSelector(state => state.comment)
-    const { } = useParams()
+    const { locationId } = useParams()
     console.log(locationId, location, "allimagesRefactor====>>>>")
     console.log("allimagesrefactor", "images", images)
 
@@ -33,8 +33,8 @@ function AllImagesRefactor({ locationId }) {
             <div className="pictures-container">
                 <div key={image.id} imageId={image.id}>
                     <p className="image-title">{image.title}</p>
-                    <span>{"im the image id fool" + "" + image.id}</span>
-                    <Card sx={{}}>
+                    <div>{"im the image id fool" + "" + image.id}</div>
+                    <Card sx={{ display: "flex", alignContent: "center" }}>
                         <NavLink to={`/images/${image.id}`}>
                             <CardMedia
                                 component="card-img-style"
