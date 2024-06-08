@@ -52,6 +52,9 @@ export const getAPhoto = (id) => async (dispatch) => {
   if (res.ok) {
     const photo = await res.json();
     dispatch(getOnePhoto(photo));
+  } else {
+    console.log('erroring from store')
+
   }
 };
 

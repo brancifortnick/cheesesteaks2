@@ -12,7 +12,7 @@ const DeleteLocationsImages = ({ imageId }) => {
     const dispatch = useDispatch();
     const image = useSelector(state => state.image)
     const user = useSelector(state => state.session.user)
-    console.log(locationId, 'locationID????????????????????????????????????????????????---deletelocationsimages', image, "image state from DELTELOCATIONSIMAGES))))))))))))))))))))))))))))))))))))))))", imageId, "passed in as a prop obj")
+    // console.log(locationId, 'locationID????????????????????????????????????????????????---deletelocationsimages', image, "image state from DELTELOCATIONSIMAGES))))))))))))))))))))))))))))))))))))))))", imageId, "passed in as a prop obj")
     const onSubmit = async (e) => {
         e.preventDefault();
         dispatch(deletePhoto(Number(imageId)));
@@ -20,7 +20,7 @@ const DeleteLocationsImages = ({ imageId }) => {
     };
 
     useEffect(() => {
-        dispatch(getPhotos())
+        dispatch(getPhotos(locationId))
     }, [dispatch, locationId])
 
     return (

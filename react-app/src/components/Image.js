@@ -6,30 +6,28 @@ import { getAPhoto, getPhotos } from "../store/image";
 
 
 
-const Image = () => {
+const Image = ({ imageId }) => {
 
     const location = useSelector(state => state.location)
-    const images = useSelector((state) => Object.values(state.image))
-    const { locationId } = useParams()
-    console.log(locationId, images)
+    const image = useSelector((state) => (state.image))
 
-    const filterImages = images.map((each) => {
+    console.log(image, "actual image component=====><<<<<=====")
+    const dispatch = useDispatch()
 
-        return (
-            <div>
-                <div>
 
-                </div>
-                <div>{each.title}</div>
-                <img src={each.image} alt='image-not-loading' />
-            </div>
-        )
-    })
+    useEffect(() => {
+        dispatch(getAPhoto(Number(imageId)))
+    }, [dispatch])
 
     return (
-        <>
-            {filterImages}
-        </>
+        <div>
+
+            <p>{imageId + 'imageId'}</p>
+            <div>{image.title}</div>
+            <img src={image.image} alt="blank_" />
+        </div>
+
     )
-}
+};
+
 export default Image;

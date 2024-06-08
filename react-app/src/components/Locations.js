@@ -66,7 +66,7 @@ function Locations() {
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
     dispatch(getPhotos())
-  }, [dispatch, locationId]);
+  }, [dispatch]);
   let imageId;
   return (
     <>
@@ -90,9 +90,9 @@ function Locations() {
           </Box>
         ) : null}
         <div>
-
-          <ImageUpload userId={userId} imageId={imageId} locationId={location.id} />
-
+          {currentUser !== 'unauthorized' ? (
+            <ImageUpload userId={userId} imageId={imageId} locationId={location.id} />
+          ) : null}
         </div>
         <div id="update-biography">
           {currentUser.id === Number(location.user_id) ? (

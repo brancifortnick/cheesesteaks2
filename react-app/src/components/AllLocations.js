@@ -38,7 +38,7 @@ function AllLocations() {
                   src={location.profile_img}
                   alt="loading..."
                   className="image_card"
-                ></img>
+                />
               </NavLink>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
@@ -55,7 +55,7 @@ function AllLocations() {
 
 
                 <CardActions sx={{ mt: 8 }}>
-                  {currentUser.id === Number(location.user_id) ? (
+                  {(currentUser.id === location.user_id) ? (
                     <DeleteEstablishment locationId={location.id} />
                   ) : null}
                 </CardActions>

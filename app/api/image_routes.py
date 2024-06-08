@@ -17,7 +17,7 @@ def get_images():
     return {'images': [image.to_dict() for image in images]}
 
 
-@image_routes.route('/<id>')
+@image_routes.route('/<int:id>')
 @login_required
 def get_photos(id):
     images = Image.query.get(id)

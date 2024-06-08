@@ -36,12 +36,12 @@ const AllImages = () => {
                         className="image_card"
                     ></img>
                 </NavLink>
-                <div>
+                {/* <div>
                     {currentUser ? (
                         <ImageUpload imageId={image.id} />
 
                     ) : alert('you must sign in')}
-                </div>
+                </div> */}
             </div>
             // ) : null;
         )

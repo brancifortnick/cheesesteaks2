@@ -26,36 +26,29 @@ function AllImagesRefactor() {
         dispatch(getPhotos());
 
         //
-    }, [dispatch, locationId]);
+    }, [dispatch]);
 
     const locationsPictures = images.map((image) => {
-        return image.url !== null && location.id === image.location_id ? (
+        return image !== null && location.id === image.location_id ? (
             <div className="pictures-container">
-                <div key={image} imageId={image.id}>
+                <div key={image.id}>
                     {/* <h4 className="image-title">{image.title}</h4> */}
                     <div>{"im the image id fool" + "" + image.id}</div>
                     <Card sx={{ display: "flex", alignContent: "center" }}>
-                            <CardMedia
-                                component="card-img-style"
-                                height="200"
-                                image={location.profile_img}
-                            alt="blank_"
-                            />
+
 
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 {image.title}
                             </Typography>
-                            <NavLink to={`/images/${image.id}`}>
-
                             <img
                                 className="locations-pictures"
                                 src={image.image}
                                 alt="_blank"
-                                /></NavLink>
+                            />
                             <CardActions sx={{ mt: 8 }}>
                                 {user.id === Number(image.user_id) ? (
-                                    <DeleteLocationsImages />
+                                    <DeleteLocationsImages imageId={image.id} userId={user.id} locationId={locationId} />
                                 ) : null}
                             </CardActions>
                         </CardContent>

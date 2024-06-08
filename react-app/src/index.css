@@ -20,7 +20,7 @@ a:active {
 }
 #main-wrapper {
   display: -webkit-inline-box;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   max-width: 100vh;
   left: 0;
   right: 0;
