@@ -40,5 +40,5 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
-            # 'locations': [location.id for location in self.locations]
+            'locations': [location.id for location in self.locations]
         }

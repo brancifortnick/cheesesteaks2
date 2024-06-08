@@ -6,12 +6,12 @@ import { getAPhoto, getPhotos } from "../store/image";
 
 
 
-const Image = ({ images }) => {
+const Image = () => {
 
     const location = useSelector(state => state.location)
-    const image = useSelector((state) => state.image)
+    const images = useSelector((state) => Object.values(state.image))
     const { locationId } = useParams()
-    console.log(locationId, image)
+    console.log(locationId, images)
 
     const filterImages = images.map((each) => {
 
@@ -20,7 +20,8 @@ const Image = ({ images }) => {
                 <div>
 
                 </div>
-                <img src={each.image} />
+                <div>{each.title}</div>
+                <img src={each.image} alt='image-not-loading' />
             </div>
         )
     })

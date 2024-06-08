@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import { getPhotos } from "../store/image";
-import DeleteLocationsImages from "./DeleteLocationsImage";
+import DeleteLocationsImages from "./DeleteLocationsImages";
 import { getAllLocations, getOneLocation } from "../store/location";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -19,8 +19,8 @@ function AllImagesRefactor() {
     const location = useSelector(state => (state.location))
     // const comments = useSelector(state => state.comment)
     const { locationId } = useParams()
-    console.log(locationId, location, "allimagesRefactor====>>>>")
-    console.log("allimagesrefactor", "images", images)
+    console.log("locationId <<<<<", locationId, "location>>>>", location, "allimagesRefactor====>>>>")
+    console.log("allimagesrefactor", "image singular state without object.values", image, "plural=>", images)
 
     useEffect(() => {
         dispatch(getPhotos());
@@ -35,23 +35,24 @@ function AllImagesRefactor() {
                     {/* <h4 className="image-title">{image.title}</h4> */}
                     <div>{"im the image id fool" + "" + image.id}</div>
                     <Card sx={{ display: "flex", alignContent: "center" }}>
-                        <NavLink to={`/images/${image.id}`}>
                             <CardMedia
                                 component="card-img-style"
                                 height="200"
                                 image={location.profile_img}
-                                alt="location_image...."
+                            alt="blank_"
                             />
-                        </NavLink>
+
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 {image.title}
                             </Typography>
+                            <NavLink to={`/images/${image.id}`}>
+
                             <img
                                 className="locations-pictures"
                                 src={image.image}
                                 alt="_blank"
-                            ></img>
+                                /></NavLink>
                             <CardActions sx={{ mt: 8 }}>
                                 {user.id === Number(image.user_id) ? (
                                     <DeleteLocationsImages />

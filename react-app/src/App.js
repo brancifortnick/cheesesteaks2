@@ -15,7 +15,7 @@ import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
 import VoteCounter from "./components/VoteCounter";
 import AllImages from "./components/AllImages";
-
+import Image from './components/Image'
 import VoteUpdater from "./components/VoteUpdater";
 import AddComments from "./components/AddComments";
 import AllComments from "./components/AllComments";
@@ -81,7 +81,7 @@ function App() {
             <AllImages />
           </ProtectedRoute>
           <ProtectedRoute path='/images/:imageId'>
-
+            <Image />
           </ProtectedRoute>
         </Switch>
       </div>

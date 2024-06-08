@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAPhoto, getLocationsImages, getPhotos, postNewPhoto } from '../store/image'
 
 import { Modal } from "../context/Modal";
 import { getOneLocation } from "../store/location";
+import { Button } from "@mui/material";
 
 
 
@@ -15,7 +16,7 @@ const ImageUpload = () => {
 
     const dispatch = useDispatch()
     const history = useHistory()
-    const user = useSelector((state) => state.session.user?.id);
+    const user = useSelector((state) => state.session.user);
 
     const { locationId } = useParams()
     console.log(locationId, 'locationID from useparmas in IMAGEUPLOAD F?E C')
@@ -55,6 +56,7 @@ const ImageUpload = () => {
 
             dispatch(getPhotos())
             dispatch(getOneLocation(Number(locationId)))
+            setModal(false);
         }
         history.push(`/locations/${locationId}`);
     };
@@ -75,7 +77,7 @@ const ImageUpload = () => {
 
     useEffect(() => {
         dispatch(getAPhoto(parseInt(locationId)))
-    }, dispatch, locationId)
+    }, dispatch)
 
 
     const addPictureFile = (e) => {
@@ -85,12 +87,12 @@ const ImageUpload = () => {
 
     return (
         <div className="image-form-container">
-            <button
+            <Button
                 id="upload-location-image"
                 onClick={() => setModal(true)}
             >
-                Click here to upload your photos
-            </button>
+                Click here to upload photos
+            </Button>
             {showModal && (
                 <Modal onClose={() => setModal(false)}>
                     <h2>Describe and Upload your photo</h2>
@@ -102,6 +104,11 @@ const ImageUpload = () => {
                                 onChange={(e) => setTitle(e.target.value)}
                                 value={title}
                             />
+                            <input type='hidden'
+                                name='u-id'
+                                value={user.id}
+                            />
+
 
 
                             <input type="file" accept="image/*" name='image' onChange={addPictureFile} />

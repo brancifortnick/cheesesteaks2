@@ -26,7 +26,7 @@ function AllLocations() {
       <div className="locations-container">
         <div key={idx} id='location-key'>
           <div className="location-div-container">
-            <Card sx={{}}>
+            <Card sx={{ maxWidth: "200px" }}>
               <NavLink to={`/locations/${location.id}`}>
                 <CardMedia
                   component="card-img-style"

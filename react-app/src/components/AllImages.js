@@ -28,10 +28,19 @@ const AllImages = () => {
                 <div>
                     {image.title}
                 </div>
+                <NavLink to={`/images/${image.id}`}>
+
+                    <img
+                        src={image.image}
+                        alt="loading..."
+                        className="image_card"
+                    ></img>
+                </NavLink>
                 <div>
+                    {currentUser ? (
+                        <ImageUpload imageId={image.id} />
 
-                    <ImageUpload />
-
+                    ) : alert('you must sign in')}
                 </div>
             </div>
             // ) : null;

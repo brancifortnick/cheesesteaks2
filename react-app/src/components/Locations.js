@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import DeleteEstablishment from "./DeleteEstablishment";
 import { getImagesComments } from "../store/comment";
 import Grid from "@mui/material/Grid";
-import DeleteLocationsImages from "./DeleteLocationsImage";
+import DeleteLocationsImages from "./DeleteLocationsImages";
 import "./Locations.css";
 import DisplayComments from "./DisplayComments";
 import { Modal } from "../context/Modal";
@@ -66,24 +66,19 @@ function Locations() {
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
     dispatch(getPhotos())
-  }, [dispatch]);
+  }, [dispatch, locationId]);
   let imageId;
   return (
-    <div>
+    <>
 
 
       <div className="card-container">
-        <div id="delete-component">
-          {currentUser.id === location.user_id ? (
-            <DeleteLocation locationId={location.id} location={location} />
-          ) : null}
-        </div>
 
 
         {location.profile_img !== null ? (
           <Box >
             <Avatar sx={{
-              display: "flex", justifyContent: "center", width: 300, height: 300
+              display: "flex", alignContent: "center", justifyContent: "spaceEvenly", width: 300, height: 300
             }}>
               <img
                 // style={{ objectFit: 'contain' }}
@@ -96,7 +91,7 @@ function Locations() {
         ) : null}
         <div>
 
-          <ImageUpload imageId={imageId} locationId={location.id} />
+          <ImageUpload userId={userId} imageId={imageId} locationId={location.id} />
 
         </div>
         <div id="update-biography">
@@ -124,11 +119,11 @@ function Locations() {
 
         <div>
 
-          <AllImagesRefactor />
+          <AllImagesRefactor locationId={location.id} />
 
         </div>
       </div>
-    </div>
+    </>
 
   )
 }
