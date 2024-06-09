@@ -1,36 +1,68 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { getAPhoto, getPhotos } from "../store/image";
+import { getOneLocation } from "../store/location";
+import ImageUpload from "./ImageUpload";
 
 
 
 
-const Image = ({ imageId }) => {
+const Image = ({ imageId, locationId }) => {
 
     const dispatch = useDispatch()
     const location = useSelector(state => state.location)
-    const [image, setImage] = useSelector({})
+    const user = useSelector(state => state.session?.user)
+    const images = useSelector(state => Object.values(state.image))
+    // const [images, setImages] = useSelector([])
 
-    console.log('imageId', imageId, 'image>>>', image, "actual image component=====><<<<<=====")
+    console.log(images, imageId, locationId)
+
+    console.log('imageId', imageId, 'image>>><<<<<=====')
+
+
 
 
     useEffect(() => {
-        if (!image) return null;
+        if (!images) {
+            dispatch(getAPhoto(imageId))
+        }
 
-        dispatch(getAPhoto(imageId))
-    }, [dispatch, imageId])
 
+
+    }, [dispatch])
+    const imgMap = images.map((img) => {
+        return (
+            img.image !== null ? (
+                <>
+                    <div>
+
+                        <div>{img.title}</div>
+                        <section>
+                            {img.user_id}
+                        </section>
+                        <section>
+                            {img.location_id}
+                        </section>
+                        <p>{imageId + 'imageId'}</p>
+                        <img src={img.image} alt="blank_" ></img>
+                    </div>
+                </>
+
+            ) : null
+        )
+    });
 
     return (
         <div>
-
-            <p>{imageId + 'imageId'}</p>
-            <div>{image.title}</div>
-            <img src={image.image} alt="blank_" />
+            {imgMap}
         </div>
-
     )
-};
+}
+
+
+
+
+
 
 export default Image;

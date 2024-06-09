@@ -61,7 +61,7 @@ function Locations() {
       <div className="card-container">
         <div className="description-div">
 
-          {showModal && location.profile_img !== null ? (
+          {location.profile_img !== null ? (
             <Box>
               <Avatar sx={{
                 alignContent: "flexStart", width: 300, height: 300, maxWidth: '50em',
@@ -86,9 +86,7 @@ function Locations() {
             ) : null}
           </div>
 
-          <NavLink to={`/images/${image.id}`}>
-          <Image locationId={location.id} images={images} />
-          </NavLink>
+
 
 
           <div id="description-text">
