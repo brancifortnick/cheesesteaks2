@@ -86,14 +86,11 @@ const ImageUpload = () => {
     };
 
     return (
+
         <div className="image-form-container">
-            <Box sx={{ border: "Black" }}>
-            <Button
-                id="upload-location-image"
-                onClick={() => setModal(true)}
-            >
-                Click here to upload photos
-            </Button>
+
+            <Box sx={{}}>
+
             </Box>
             {showModal && (
 

@@ -59,36 +59,42 @@ function Locations() {
   return (
     <>
       <div className="card-container">
-        {location.profile_img !== null ? (
-          <Avatar sx={{
-            alignContent: "center", width: 300, height: 300, maxWidth: '50em',
-          }} src={location.profile_img}>
-          </Avatar>
-        ) : null
-        }
-        <div>
-          {currentUser !== 'unauthorized' ? (
-            <ImageUpload userId={userId} imageId={imageId} locationId={location.id} />
-          ) : null}
-        </div>
-        <div id="update-biography">
-          {currentUser.id === Number(location.user_id) ? (
-            <UpdateBiography
-
-              locationBio={location.biography}
-              locationId={location.id}
-            />
-          ) : null}
-        </div>
-        {/* <NavLink to={`/images/`}>
-          <Image locationId={location.id} images={images} />
-        </NavLink> */}
-
-
         <div className="description-div">
-          <span id="description-text">
-            <strong>Description</strong>
-          </span>
+
+          {showModal && location.profile_img !== null ? (
+            <Box>
+              <Avatar sx={{
+                alignContent: "flexStart", width: 300, height: 300, maxWidth: '50em',
+              }} src={location.profile_img}>
+              </Avatar>
+            </Box>
+          ) : null
+          }
+
+          <div>
+            {currentUser !== 'unauthorized' ? (
+              <ImageUpload userId={userId} imageId={imageId} locationId={location.id} />
+            ) : null}
+          </div>
+          <div id="update-biography">
+            {currentUser.id === Number(location.user_id) ? (
+              <UpdateBiography
+
+                locationBio={location.biography}
+                locationId={location.id}
+              />
+            ) : null}
+          </div>
+
+          <NavLink to={`/images/${image.id}`}>
+          <Image locationId={location.id} images={images} />
+          </NavLink>
+
+
+          <div id="description-text">
+            Description
+          </div>
+
 
 
         </div>

@@ -38,12 +38,15 @@ const UpdateBiography = ({ locationBio, locationId }) => {
             <Box sx={{
               display: 'inlineFlex', alignText: "flexStart"
             }}>
-              <TextField sx={{
-                flexWrap: 'wrap', alignContent: 'center', mt: .5,
-                p: .5, width: 400, fontWeight: '800', fontStyle: 'italic',
-                maxWidth:
-                  '600px'
-              }}
+              <TextField
+                multiline
+                minRows={5}
+                sx={{
+                  flexWrap: 'wrap', alignContent: 'center', mt: .5,
+                  p: .5, width: 400, fontWeight: '800', fontStyle: 'italic',
+                  maxWidth:
+                    '600px'
+                }}
                 fullWidth
                 type="text"
                 name="biography"
