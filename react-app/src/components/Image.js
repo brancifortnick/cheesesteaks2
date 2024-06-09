@@ -8,16 +8,19 @@ import { getAPhoto, getPhotos } from "../store/image";
 
 const Image = ({ imageId }) => {
 
-    const location = useSelector(state => state.location)
-    const image = useSelector((state) => (state.image))
-
-    console.log(image, "actual image component=====><<<<<=====")
     const dispatch = useDispatch()
+    const location = useSelector(state => state.location)
+    const [image, setImage] = useSelector({})
+
+    console.log('imageId', imageId, 'image>>>', image, "actual image component=====><<<<<=====")
 
 
     useEffect(() => {
-        dispatch(getAPhoto(Number(imageId)))
-    }, [dispatch])
+        if (!image) return null;
+
+        dispatch(getAPhoto(imageId))
+    }, [dispatch, imageId])
+
 
     return (
         <div>

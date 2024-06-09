@@ -11,6 +11,8 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
+import { getPhotos } from "../store/image";
+import { Box } from "@mui/material";
 
 
 function AllLocations() {
@@ -19,6 +21,7 @@ function AllLocations() {
   const currentUser = useSelector((state) => state.session.user);
   useEffect(() => {
     dispatch(getAllLocations());
+    dispatch(getPhotos())
   }, [dispatch]);
 
   const locationsList = locations.map((location, idx) => {
@@ -26,24 +29,31 @@ function AllLocations() {
       <div className="locations-container">
         <div key={idx} id='location-key'>
           <div className="location-div-container">
-            <Card sx={{ maxWidth: "200px" }}>
+            <Card sx={{ maxWidth: 450, maxHeight: 'auto' }}>
               <NavLink to={`/locations/${location.id}`}>
                 <CardMedia
                   component="card-img-style"
-                  height="200"
-                  image={location.profile_img}
+                  src={location.profile_img}
                   alt="establishment"
                 />
+                <div>{'what lives here'
+                }</div>
                 <img
                   src={location.profile_img}
                   alt="loading..."
                   className="image_card"
                 />
               </NavLink>
+              <Card sx={{
+
+              }}>
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                  <Typography variant="subtitle" display='block' component="div">
                   {location.location_name}
-                </Typography>
+                  </Typography>
+
+                </CardContent>
+              </Card>
                 {/* <Typography variant="body2" color="text.secondary">
                   <NavLink
                     style={{ color: "#1976d2", fontWeight: "bolder" }}
@@ -52,14 +62,13 @@ function AllLocations() {
                     Add Photos
                   </NavLink>
                 </Typography> */}
-
-
-                <CardActions sx={{ mt: 8 }}>
+              <Card>
+                <CardActions sx={{ border: 'white', mb: 1, pt: 2, mt: 4 }}>
                   {(currentUser.id === location.user_id) ? (
                     <DeleteEstablishment locationId={location.id} />
                   ) : null}
                 </CardActions>
-              </CardContent>
+              </Card>
             </Card>
           </div>
         </div>

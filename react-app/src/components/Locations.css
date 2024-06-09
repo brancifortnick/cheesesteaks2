@@ -7,8 +7,9 @@
 }
 
 img.card {
-  display: block;
-  image-rendering: optimizeQuality;
+  display: flex;
+    flex-direction: column;
+    max-width: 500px;
   /* width: 100%; */
 }
 .establishment-images {

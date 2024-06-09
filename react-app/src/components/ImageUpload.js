@@ -6,10 +6,10 @@ import { getAPhoto, getLocationsImages, getPhotos, postNewPhoto } from '../store
 
 import { Modal } from "../context/Modal";
 import { getOneLocation } from "../store/location";
-import { Button } from "@mui/material";
-
-
-
+import Button from "@mui/material/Button";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField'
+import Form from '@mui/material/FormControl'
 
 const ImageUpload = () => {
 
@@ -87,23 +87,38 @@ const ImageUpload = () => {
 
     return (
         <div className="image-form-container">
+            <Box sx={{ border: "Black" }}>
             <Button
                 id="upload-location-image"
                 onClick={() => setModal(true)}
             >
                 Click here to upload photos
             </Button>
+            </Box>
             {showModal && (
+
                 <Modal onClose={() => setModal(false)}>
-                    <h2>Describe and Upload your photo</h2>
+                    <h3>Upload Images</h3>
+                    <Form>
                     <form className="form-container" onSubmit={onSubmit}>
                         <div>
-                            <input
-                                type="text"
-                                name="title"
-                                onChange={(e) => setTitle(e.target.value)}
-                                value={title}
-                            />
+                                <Box sx={{ display: 'flex', flexDirection: 'row', alignContent: 'center', mt: .5 }}>
+                                    <TextField
+                                        multiline
+                                        fullWidth
+                                        name="biography"
+                                        type="text"
+                                        placeholder="Description..."
+                                        onChange={(e) => setTitle(e.target.value)}
+                                        value={title}
+                                        minRows={5}
+
+                                    />
+
+                                </Box>
+                            </div>
+
+                            <div>
                             <input type='hidden'
                                 name='u-id'
                                 value={user.id}
@@ -111,11 +126,16 @@ const ImageUpload = () => {
 
 
 
-                            <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
-                            <button type="submit">Submit</button>
+
+                                <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, pl: 0 }}>
+                                    <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
+
+                                </Box>
+                                <Button variant='contained' name='image' color='primary' type='submit'>Submit</Button>
 
                         </div>
-                    </form>
+                        </form>
+                    </Form>
                 </Modal>
             )}
         </div>

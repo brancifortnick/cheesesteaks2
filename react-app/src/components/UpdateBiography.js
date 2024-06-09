@@ -36,11 +36,14 @@ const UpdateBiography = ({ locationBio, locationId }) => {
         <Modal onClose={() => setModal(false)}>
           <form onSubmit={onSubmit}>
             <Box sx={{
-              display: 'flex', flexDirection: 'row', alignContent: 'center', mt: .5,
-              p: .5, width: 400, flexWrap: 'wrap', fontWeight: '800', fontStyle: 'italic',
-              maxWidth: '100%',
+              display: 'inlineFlex', alignText: "flexStart"
             }}>
-              <TextField
+              <TextField sx={{
+                flexWrap: 'wrap', alignContent: 'center', mt: .5,
+                p: .5, width: 400, fontWeight: '800', fontStyle: 'italic',
+                maxWidth:
+                  '600px'
+              }}
                 fullWidth
                 type="text"
                 name="biography"

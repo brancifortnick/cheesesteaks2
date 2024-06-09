@@ -45,18 +45,6 @@ function Locations() {
   //     <AllImagesRefactor />
   //   ) : null
   // })
-  // console.log("filteredImages", (filteredImages))
-  // const getIdFromFilter = (filteredImages) => {
-  //   for (let each in filteredImages) {
-  //     for (let i = 0; i < each.length; i++) {
-  //       let imageData = filteredImages[i]
-  //       if (imageData.location_id === location.id) {
-  //         console.log(imageData, 'imagedata')
-  //       } else {
-  //         console.log('function dailing=> no data')
-  //       }
-  //     }
-  //   }
   // }
 
   const image = useSelector(state => state.image)
@@ -66,29 +54,18 @@ function Locations() {
   useEffect(() => {
     dispatch(getOneLocation(Number(locationId)));
     dispatch(getPhotos())
-  }, [dispatch]);
+  }, [dispatch, locationId]);
   let imageId;
   return (
     <>
-
-
       <div className="card-container">
-
-
         {location.profile_img !== null ? (
-          <Box >
-            <Avatar sx={{
-              display: "flex", alignContent: "center", justifyContent: "spaceEvenly", width: 300, height: 300
-            }}>
-              <img
-                // style={{ objectFit: 'contain' }}
-                className="card"
-                src={location.profile_img}
-                alt="image loading..."
-              ></img>
-            </Avatar>
-          </Box>
-        ) : null}
+          <Avatar sx={{
+            alignContent: "center", width: 300, height: 300, maxWidth: '50em',
+          }} src={location.profile_img}>
+          </Avatar>
+        ) : null
+        }
         <div>
           {currentUser !== 'unauthorized' ? (
             <ImageUpload userId={userId} imageId={imageId} locationId={location.id} />
@@ -107,6 +84,7 @@ function Locations() {
           <Image locationId={location.id} images={images} />
         </NavLink> */}
 
+
         <div className="description-div">
           <span id="description-text">
             <strong>Description</strong>
@@ -115,7 +93,7 @@ function Locations() {
 
         </div>
 
-        <p id="bio">{location.biography}</p>
+        <div id="bio">{location.biography}</div>
 
         <div>
 
@@ -125,7 +103,11 @@ function Locations() {
       </div>
     </>
 
+
   )
-}
+};
+
+
+
 
 export default Locations;
