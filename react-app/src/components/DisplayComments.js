@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import AllComments from './AllComments';
+
 import AddComments from './AddComments';
-import { ImageAspectRatio, NightShelter } from '@mui/icons-material';
+
+import { getOneComment, getTheComments } from '../store/comment';
 
 
 const DisplayComments = () => {
@@ -12,6 +13,16 @@ const DisplayComments = () => {
   const images = useSelector((state) => Object.values(state.image));
   console.log(images, "images coming from displaycomments")
   const user = useSelector(state => state.session.user)
+
+  const dispatch = useDispatch()
+
+
+
+
+  useEffect(() => {
+    dispatch(getTheComments())
+  }, [dispatch])
+
 
   return (
     <div id="comment-div">

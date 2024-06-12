@@ -42,15 +42,7 @@ export const getTheComments = () => async (dispatch) => {
   }
 }
 
-export const getImagesComments = (id) => async (dispatch) => {
-  const res = await fetch(`/api/comments/${id}`)
-  if (res.ok) {
-    const comments = await res.json();
-    dispatch(getAllTheComments(comments));
-  } else {
-    alert('image store erroring')
-  }
-}
+
 
 export const createComment = (formData) => async (dispatch) => {
   const res = await fetch(`/api/comments/new`, {

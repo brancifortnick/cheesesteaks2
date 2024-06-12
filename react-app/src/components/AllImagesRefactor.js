@@ -12,6 +12,9 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import AddComments from './AddComments'
 import GetSingleComment from "./GetSingleComment";
+import DisplayComments from "./DisplayComments";
+
+
 function AllImagesRefactor({ locationId }) {
 
     const dispatch = useDispatch();
@@ -39,7 +42,7 @@ function AllImagesRefactor({ locationId }) {
 
                     <Card sx={{ display: "flex", alignContent: "center" }}>
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h3" component="div">
                                 {image.title}
                             </Typography>
                             <div className='comment-component'>
@@ -52,6 +55,9 @@ function AllImagesRefactor({ locationId }) {
                                 src={image.image}
                                 alt="_blank"
                             />
+                            <div>
+                                <DisplayComments imageId={image.id} locationId={locationId} />
+                            </div>
                             <CardActions sx={{ mt: 8 }}>
                                 {user.id === Number(location.user_id) ? (
                                     <DeleteLocationsImages imageId={image.id} userId={user.id} locationId={locationId} />

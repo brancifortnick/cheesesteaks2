@@ -18,11 +18,10 @@ import "./Locations.css";
 import DisplayComments from "./DisplayComments";
 import { Modal } from "../context/Modal";
 import { getPhotos } from "../store/image";
-import AllImages from "./AllImages";
+
 import AllImagesRefactor from './AllImagesRefactor';
 import ImageUpload from "./ImageUpload";
 import { Folder } from "@mui/icons-material";
-import Image from './Image';
 
 
 

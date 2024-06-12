@@ -13,14 +13,15 @@ function GetSingleComment() {
     const comments = useSelector((state) => Object.values(state.comment));
     const { locationId } = useParams()
     const user = useSelector((state) => state.session.user);
-    const image = useSelector(state => Object.values(state.image))
+    const images = useSelector(state => Object.values(state.image))
     const location = useSelector(state => state.location)
     console.log(location, "location state from getSingleComment", location.images, "locationImages")
-    console.log(image, 'image coming from getsinglecomment')
+    const image = useSelector(state => state.image)
+    console.log(image.id, 'image coming from getsinglecomment')
 
 
     useEffect(() => {
-        dispatch(getTheComments())
+        dispatch(getOneComment(image.id))
     }, [dispatch])
 
     return (
