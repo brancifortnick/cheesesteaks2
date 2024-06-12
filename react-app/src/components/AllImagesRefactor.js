@@ -10,7 +10,7 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-function AllImagesRefactor(locationId) {
+function AllImagesRefactor({ locationId }) {
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
@@ -60,7 +60,9 @@ function AllImagesRefactor(locationId) {
     });
     return (
         <>
-            {locationsPictures}
+            <div>
+                {locationsPictures}
+            </div>
         </>
     );
 };

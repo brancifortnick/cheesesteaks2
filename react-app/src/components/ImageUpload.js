@@ -11,18 +11,18 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField'
 import Form from '@mui/material/FormControl'
 
-const ImageUpload = () => {
+const ImageUpload = ({ locationId }) => {
 
 
     const dispatch = useDispatch()
     const history = useHistory()
     const user = useSelector((state) => state.session.user);
 
-    const { locationId } = useParams()
+
     console.log(locationId, 'locationID from useparmas in IMAGEUPLOAD F?E C')
     console.log(locationId, user, '>>>>>from IMAGEUPLOAD frontend')
     const location = useSelector(state => state.location)
-    console.log(location, "location from image upload ==> useselector gravving state")
+    console.log(location, "location from IMAGEUPLOAD ==> useselector giving state")
 
     const [showModal, setModal] = useState(false);
     const [title, setTitle] = useState('');
@@ -77,7 +77,7 @@ const ImageUpload = () => {
 
     useEffect(() => {
         dispatch(getAPhoto(parseInt(locationId)))
-    }, dispatch)
+    }, [dispatch])
 
 
     const addPictureFile = (e) => {

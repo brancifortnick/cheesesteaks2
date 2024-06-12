@@ -76,9 +76,11 @@ function AllLocations() {
     );
   });
   return (
-    <div key="" className="locations-list-container">
+    <>
+      <div className="locations-list-container">
       <div className="locations-list-components">{locationsList}</div>
-    </div>
+      </div>
+    </>
   );
 }
 export default AllLocations;

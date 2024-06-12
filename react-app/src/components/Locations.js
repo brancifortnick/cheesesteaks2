@@ -72,9 +72,9 @@ function Locations() {
           }
 
           <div>
-            {currentUser ? (
+
               <ImageUpload locationId={location.id} />
-            ) : null}
+
           </div>
           <div id="update-biography">
             {currentUser.id === Number(location.user_id) ? (
