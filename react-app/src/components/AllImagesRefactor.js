@@ -10,7 +10,7 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-function AllImagesRefactor() {
+function AllImagesRefactor(locationId) {
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
@@ -18,7 +18,7 @@ function AllImagesRefactor() {
     const image = useSelector((state) => (state.image))
     const location = useSelector(state => (state.location))
     // const comments = useSelector(state => state.comment)
-    const { locationId } = useParams()
+    // const { locationId } = useParams()
     console.log("locationId <<<<<", locationId, "location>>>>", location, "allimagesRefactor====>>>>")
     console.log("allimagesrefactor", "image singular state without object.values", image, "plural=>", images)
 
@@ -47,7 +47,7 @@ function AllImagesRefactor() {
                                 alt="_blank"
                             />
                             <CardActions sx={{ mt: 8 }}>
-                                {user.id === Number(image.user_id) ? (
+                                {user.id === Number(location.user_id) ? (
                                     <DeleteLocationsImages imageId={image.id} userId={user.id} locationId={locationId} />
                                 ) : null}
                             </CardActions>

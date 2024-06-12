@@ -72,8 +72,8 @@ function Locations() {
           }
 
           <div>
-            {currentUser !== 'unauthorized' ? (
-              <ImageUpload userId={userId} imageId={imageId} locationId={location.id} />
+            {currentUser ? (
+              <ImageUpload locationId={location.id} />
             ) : null}
           </div>
           <div id="update-biography">
@@ -104,6 +104,7 @@ function Locations() {
           <AllImagesRefactor locationId={location.id} />
 
         </div>
+
       </div>
     </>
 
