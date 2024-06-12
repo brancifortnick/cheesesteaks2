@@ -10,7 +10,7 @@ const DisplayComments = () => {
   const comments = useSelector((state) => Object.values(state.comment));
 
   const images = useSelector((state) => Object.values(state.image));
-  const { imageId } = useParams()
+  console.log(images, "images coming from displaycomments")
   const user = useSelector(state => state.session.user)
 
   return (

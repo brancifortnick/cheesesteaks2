@@ -42,11 +42,13 @@ export const getTheComments = () => async (dispatch) => {
   }
 }
 
-export const getImagesComments = (locationId, imageId) => async (dispatch) => {
-  const res = await fetch(`/api/locations/${locationId}/images/${imageId}`)
+export const getImagesComments = (id) => async (dispatch) => {
+  const res = await fetch(`/api/comments/${id}`)
   if (res.ok) {
     const comments = await res.json();
-    dispatch(getAllTheComments(comments.comments));
+    dispatch(getAllTheComments(comments));
+  } else {
+    alert('image store erroring')
   }
 }
 
@@ -74,7 +76,6 @@ export const getOneComment = (id) => async (dispatch) => {
     console.log("Can't fetch comments");
   }
 };
-
 
 
 

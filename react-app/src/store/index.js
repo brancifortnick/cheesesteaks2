@@ -11,8 +11,8 @@ const rootReducer = combineReducers({
   user,
   location,
   image,
-  vote,
   comment,
+  vote,
 });
 
 

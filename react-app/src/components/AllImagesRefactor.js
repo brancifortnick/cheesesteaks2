@@ -10,6 +10,8 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
+import AddComments from './AddComments'
+import GetSingleComment from "./GetSingleComment";
 function AllImagesRefactor({ locationId }) {
 
     const dispatch = useDispatch();
@@ -34,13 +36,17 @@ function AllImagesRefactor({ locationId }) {
                 <div key={image.id}>
                     {/* <h4 className="image-title">{image.title}</h4> */}
                     <div>{"im the image id fool" + "" + image.id}</div>
+
                     <Card sx={{ display: "flex", alignContent: "center" }}>
-
-
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 {image.title}
                             </Typography>
+                            <div className='comment-component'>
+
+                                <AddComments locationId={locationId} imageId={image.id} />
+                            </div>
+
                             <img
                                 className="locations-pictures"
                                 src={image.image}

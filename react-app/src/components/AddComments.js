@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { getTheComments, createComment } from "../store/comment";
+import { getTheComments, createComment, getOneComment } from "../store/comment";
 import { Modal } from '../context/Modal'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -10,9 +10,10 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import { TextareaAutosize } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { getAllLocations } from "../store/location";
 // import Modal from '@mui/material/Modal';
 
-const AddComments = ({ locationId }) => {  //added imageId prop and then useparams for locationId because addcomments lives on locations/id
+const AddComments = ({ locationId, imageId }) => {  //added imageId prop and then useparams for locationId because addcomments lives on locations/id
 
   const dispatch = useDispatch();
   const history = useHistory()
@@ -20,7 +21,7 @@ const AddComments = ({ locationId }) => {  //added imageId prop and then usepara
   const [comment, setComment] = useState("");
   const [showModal, setModal] = useState(false)
 
-  const { imageId } = useParams()
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -30,9 +31,10 @@ const AddComments = ({ locationId }) => {  //added imageId prop and then usepara
 
     dispatch(createComment(formData));
     dispatch(getTheComments())
+    dispatch(getOneComment(Number(imageId)))
     setModal(false)
     setComment("");
-    history.push(`/locations/${locationId}`)
+    // history.push(`/locations/${locationId}`)
   };
 
 
