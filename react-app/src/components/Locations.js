@@ -52,7 +52,7 @@ function Locations() {
 
 
   useEffect(() => {
-    dispatch(getOneLocation(Number(locationId)));
+    dispatch(getOneLocation(parseInt(locationId)));
     dispatch(getPhotos())
   }, [dispatch, locationId]);
   let imageId;
@@ -101,7 +101,7 @@ function Locations() {
 
         <div>
 
-          <AllImagesRefactor locationId={location.id} />
+          <AllImagesRefactor imageId={imageId} locationId={location.id} />
 
         </div>
 

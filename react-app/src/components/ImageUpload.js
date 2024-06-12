@@ -58,7 +58,7 @@ const ImageUpload = ({ locationId }) => {
             dispatch(getOneLocation(Number(locationId)))
             setModal(false);
         }
-        history.push(`/locations/${locationId}`);
+
     };
 
 
@@ -77,7 +77,7 @@ const ImageUpload = ({ locationId }) => {
 
     useEffect(() => {
         dispatch(getAPhoto(parseInt(locationId)))
-    }, [dispatch])
+    }, [dispatch, locationId])
 
 
     const addPictureFile = (e) => {
@@ -89,17 +89,18 @@ const ImageUpload = ({ locationId }) => {
 
         <div className="image-form-container">
 
-            <Box sx={{}}>
-
-            </Box>
+            <Button sx={{ mt: '2em', alignContent: 'center', backgroundColor: 'grey' }} id="upload-photos-to-location" onClick={() => setModal(true)}>
+                Upload photos from
+                your favorite establishments
+            </Button>
             {showModal && (
 
                 <Modal onClose={() => setModal(false)}>
-                    <h3>Upload Images</h3>
+
                     <Form>
-                    <form className="form-container" onSubmit={onSubmit}>
-                        <div>
-                                <Box sx={{ display: 'flex', flexDirection: 'row', alignContent: 'center', mt: .5 }}>
+                        <form className="form-container" onSubmit={onSubmit}>
+                            <div>
+                                <Box sx={{ display: 'flex', flexDirection: 'row', alignContent: 'center', mt: 1 }}>
                                     <TextField
                                         multiline
                                         fullWidth
@@ -116,10 +117,10 @@ const ImageUpload = ({ locationId }) => {
                             </div>
 
                             <div>
-                            <input type='hidden'
-                                name='u-id'
-                                value={user.id}
-                            />
+                                <input type='hidden'
+                                    name='u-id'
+                                    value={user.id}
+                                />
 
 
 
@@ -130,7 +131,7 @@ const ImageUpload = ({ locationId }) => {
                                 </Box>
                                 <Button variant='contained' name='image' color='primary' type='submit'>Submit</Button>
 
-                        </div>
+                            </div>
                         </form>
                     </Form>
                 </Modal>
