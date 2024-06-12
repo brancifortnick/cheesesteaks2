@@ -74,7 +74,7 @@ function Locations() {
 
           <div>
 
-              <ImageUpload locationId={location.id} />
+            <ImageUpload imageId={image.id} locationId={location.id} />
 
           </div>
           <div id="update-biography">
@@ -102,7 +102,7 @@ function Locations() {
 
         <div>
 
-          <AllImagesRefactor imageId={imageId} locationId={location.id} />
+          <AllImagesRefactor imageId={image.id} locationId={location.id} />
 
         </div>
 

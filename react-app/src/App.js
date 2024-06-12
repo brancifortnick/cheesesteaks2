@@ -14,13 +14,14 @@ import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
 import VoteCounter from "./components/VoteCounter";
-
+import AllPhotos from "./components/AllPhotos";
 import VoteUpdater from "./components/VoteUpdater";
 import AddComments from "./components/AddComments";
 
 
 import { Add } from "@mui/icons-material";
 import DisplayComments from "./components/DisplayComments";
+import AllImagesRefactor from "./components/AllImagesRefactor";
 
 
 export var UserContext = createContext();
@@ -77,10 +78,10 @@ function App() {
             <Locations />
           </ProtectedRoute>
           <ProtectedRoute path='/images'>
-
+            <AllPhotos />
           </ProtectedRoute>
           <ProtectedRoute path='/images/:imageId'>
-
+            <AllImagesRefactor />
           </ProtectedRoute>
         </Switch>
       </div>

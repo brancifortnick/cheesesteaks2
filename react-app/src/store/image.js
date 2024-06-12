@@ -130,7 +130,8 @@ export default function reducer(state = initialState, action) {
     case GET_ONE_PHOTO:
       return { ...action.payload };
     case UPDATE_PHOTO:
-      const updateState = { ...action.payload };
+      const updateState = { ...state };
+      updateState[action.payload?.id] = action.payload;
       return updateState;
     // case GET_COMMENTS:
     //   const commentState = { ...state }

@@ -49,7 +49,7 @@ function GetSingleComment() {
                         {comment.user_id === user?.id ? (
                             <Button >
                                 <DeleteComment commentId={comment.id} />
-                                {comment.comment}
+
                             </Button>
                         ) : null}
 

@@ -23,7 +23,9 @@ const DeleteComment = ({ commentId }) => {
 
     const commentDelete = async (e) => {
         e.preventDefault();
+        dispatch(getTheComments())
         dispatch(deleteAComment((commentId)));
+
     };
 
     // useEffect(() => {
@@ -32,12 +34,12 @@ const DeleteComment = ({ commentId }) => {
     // }, [dispatch, locationId])
 
     return (
-        <form id='delete-form'>
+        <div>
             <Button type='submit' onClick={commentDelete} >
                 <DeleteIcon className="delete-comment" type="submit" color='white' />
             </Button>
             {/* <button className="delete-comment" type="submit" onClick={commentDelete}>     </button> */}
-        </form >
+        </div>
     );
 };
 export default DeleteComment;

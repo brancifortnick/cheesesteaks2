@@ -21,6 +21,8 @@ def get_images():
 @login_required
 def get_photos(id):
     images = Image.query.get(id)
+    if not images:
+        return jsonify('image does not exist')
     return images.to_dict()
 
 
