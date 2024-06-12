@@ -31,7 +31,7 @@ function AllImagesRefactor({ locationId }) {
         dispatch(getPhotos());
 
         //
-    }, [dispatch]);
+    }, [dispatch, locationId]);
 
     const locationsPictures = images.map((image) => {
         return image !== null && location.id === image.location_id ? (

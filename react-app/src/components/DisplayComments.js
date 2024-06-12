@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-
 import AddComments from './AddComments';
-
+import DeleteComment from './DeleteComment';
 import { getOneComment, getTheComments } from '../store/comment';
 
 
@@ -32,8 +31,9 @@ const DisplayComments = () => {
           <div className="button--buttons-container">
 
           </div>
-
+          <DeleteComment commentId={comment?.id} />
         </div>
+
       )
       )}
     </div>
