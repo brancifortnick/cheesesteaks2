@@ -11,7 +11,7 @@ import AddComments from "./AddComments";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import DeleteEstablishment from "./DeleteEstablishment";
-import { getImagesComments } from "../store/comment";
+import { getImagesComments, getOneComment, getTheComments } from "../store/comment";
 import Grid from "@mui/material/Grid";
 import DeleteLocationsImages from "./DeleteLocationsImages";
 import "./Locations.css";
@@ -51,8 +51,10 @@ function Locations() {
 
 
   useEffect(() => {
-    dispatch(getOneLocation(parseInt(locationId)));
+    dispatch(getOneLocation((locationId)));
     dispatch(getPhotos())
+
+    dispatch(getTheComments())
   }, [dispatch, locationId]);
   let imageId;
   return (

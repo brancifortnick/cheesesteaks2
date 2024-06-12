@@ -10,7 +10,8 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import { TextareaAutosize } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { getAllLocations } from "../store/location";
+import { getAllLocations, getOneLocation } from "../store/location";
+import { getPhotos } from "../store/image";
 // import Modal from '@mui/material/Modal';
 
 const AddComments = ({ locationId, imageId }) => {  //added imageId prop and then useparams for locationId because addcomments lives on locations/id
@@ -30,8 +31,8 @@ const AddComments = ({ locationId, imageId }) => {  //added imageId prop and the
     formData.append("user_id", user.id)
 
     dispatch(createComment(formData));
-    dispatch(getTheComments())
-    dispatch(getOneComment(Number(imageId)))
+    dispatch(getOneLocation(locationId))
+
     setModal(false)
     setComment("");
     // history.push(`/locations/${locationId}`)

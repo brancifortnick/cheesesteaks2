@@ -20,17 +20,13 @@ function AllImagesRefactor({ locationId }) {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
     const images = useSelector((state) => Object.values(state.image));
-    const image = useSelector((state) => (state.image))
+
     const location = useSelector(state => (state.location))
-    // const comments = useSelector(state => state.comment)
-    // const { locationId } = useParams()
-    console.log("locationId <<<<<", locationId, "location>>>>", location, "allimagesRefactor====>>>>")
-    console.log("allimagesrefactor", "image singular state without object.values", image, "plural=>", images)
+
+
 
     useEffect(() => {
         dispatch(getPhotos());
-
-        //
     }, [dispatch, locationId]);
 
     const locationsPictures = images.map((image) => {
@@ -38,7 +34,7 @@ function AllImagesRefactor({ locationId }) {
             <div className="pictures-container">
                 <div key={image.id}>
                     {/* <h4 className="image-title">{image.title}</h4> */}
-                    <div>{"im the image id fool" + "" + image.id}</div>
+                    <div>{'hey im the' + " " + 'image.id of the image below' + " " + image.id}</div>
 
                     <Card sx={{ display: "flex", alignContent: "center" }}>
                         <CardContent>

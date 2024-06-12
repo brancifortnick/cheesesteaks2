@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTheComments, deleteAComment } from "../store/comment";
+import { getTheComments, deleteAComment, getOneComment } from "../store/comment";
 import { useParams, useHistory } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { getAPhoto, getImageComments } from "../store/image";
 import Button from "@mui/material/Button";
 import DisplayComments from './DisplayComments'
-import { getOneLocation } from "../store/location";
+import { getAllLocations, getOneLocation } from "../store/location";
 // import './DeleteComment';
 
 
@@ -14,22 +14,22 @@ import { getOneLocation } from "../store/location";
 const DeleteComment = ({ commentId }) => {
 
     const dispatch = useDispatch();
-    // const images = useSelector(state => Object.values(state.image))
+    const comments = useSelector(state => Object.values(state.comment))
     const history = useHistory();
     const image = useSelector(state => state.image);
     const user = useSelector(state => state.session.user);
-
     const { locationId } = useParams()
+    console.log(image, "image obj coming from deletecomment", commentId, "commentID PASSED IN AS A DECONSTRUCTED PROP")
+
     const commentDelete = async (e) => {
         e.preventDefault();
-        dispatch(deleteAComment(Number(commentId)));
-
+        dispatch(deleteAComment((commentId)));
     };
 
-    useEffect(() => {
-        dispatch(getAPhoto(locationId))
-        dispatch(getTheComments());//base this off of imageId most likely
-    }, [dispatch, commentId]);
+    // useEffect(() => {
+    //     dispatch(getOneLocation(locationId))
+
+    // }, [dispatch, locationId])
 
     return (
         <form id='delete-form'>

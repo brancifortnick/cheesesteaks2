@@ -12,7 +12,10 @@ const DisplayComments = () => {
   const images = useSelector((state) => Object.values(state.image));
   console.log(images, "images coming from displaycomments")
   const user = useSelector(state => state.session.user)
+  const image = useSelector(state => state.image)
 
+
+  console.log(images, "images", image, ">>>>>image")
   const dispatch = useDispatch()
 
 
@@ -20,6 +23,7 @@ const DisplayComments = () => {
 
   useEffect(() => {
     dispatch(getTheComments())
+
   }, [dispatch])
 
 
@@ -31,7 +35,7 @@ const DisplayComments = () => {
           <div className="button--buttons-container">
 
           </div>
-          <DeleteComment commentId={comment?.id} />
+          <DeleteComment imageId={image.id} commentId={comment?.id} />
         </div>
 
       )
