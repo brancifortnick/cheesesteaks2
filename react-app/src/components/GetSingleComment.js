@@ -57,9 +57,6 @@ function GetSingleComment() {
                 </div >
             })}
         </div >
-
-
-
     )
 }
 

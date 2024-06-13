@@ -112,7 +112,9 @@ export default function reducer(state = initialState, action) {
       console.log(state, "after add_comment>>>>> redux store reducer");
       return curr;
     case GET_ONE_COMMENT:
-      return { ...action.payload };
+      const getStateNow = { ...state }
+      getStateNow[action.payload.id] = action.payload
+      return getStateNow;
     case DELETE_COMMENT:
       const deleteState = { ...state };
       delete deleteState[action.payload.id];

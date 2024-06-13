@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 import './EditComment.css';
 import Box from '@mui/material/Box';
 
-const EditComment = ({ commentId }) => {
+const EditComment = ({ commentsImageId, commentId }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { locationId } = useParams();
@@ -17,6 +17,7 @@ const EditComment = ({ commentId }) => {
   const [showModal, setModal] = useState(false);
 
   const onSubmit = async (e) => {
+    e.preventDefault()
     const formData = new FormData();
     formData.append("comment", comment);
     dispatch(updateAComment(formData, commentId));
@@ -24,7 +25,7 @@ const EditComment = ({ commentId }) => {
     history.push(`/locations/${locationId}`);
   };
   useEffect(() => {
-    dispatch(getTheComments(parseInt(commentId)));
+    dispatch(getTheComments(Number(commentId)));
   }, [dispatch, commentId]);
 
   return (
@@ -36,16 +37,18 @@ const EditComment = ({ commentId }) => {
             <TextareaAutosize
               className="comment-input"
               type="text"
-              placeholder={comment}
+              placeholder={commentsImageId}
               onChange={(e) => setComment(e.target.value)}
               value={comment}
               minRows={5}
               style={{ width: 400 }}
             />
-            <Button type="submit" id="update-comment-submit">
-              Submit your new comment
-            </Button>
 
+            <button className="update-comment-submit-outter">
+              <Button type="submit" id="update-comment-submit">
+                Submit changes
+              </Button>
+            </button>
           </form>
         </Modal>
       )

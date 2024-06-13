@@ -13,21 +13,23 @@ import Typography from "@mui/material/Typography";
 import AddComments from './AddComments'
 import GetSingleComment from "./GetSingleComment";
 import DisplayComments from "./DisplayComments";
+import { getOneComment } from "../store/comment";
 
 
-function AllImagesRefactor({ locationId }) {
+function AllImagesRefactor({ imageId, commentId }) {
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
     const images = useSelector((state) => Object.values(state.image));
-
+    const { locationId } = useParams()
     const location = useSelector(state => (state.location))
-
-
+    const comment = useSelector(state => state.comment)
+    console.log(comment, "comment ")
 
     useEffect(() => {
         dispatch(getPhotos());
-    }, [dispatch, locationId]);
+        dispatch(getOneComment(imageId))
+    }, [dispatch, commentId, imageId]);
 
     const locationsPictures = images.map((image) => {
         return image !== null && location.id === image.location_id ? (
@@ -45,6 +47,11 @@ function AllImagesRefactor({ locationId }) {
 
                                 <AddComments locationId={locationId} imageId={image.id} />
                             </div>
+                            <div>
+                                {image.id === comment.image_id ? (
+                                    <DisplayComments imageId={image?.id} commentId={commentId} />
+                                ) : null}
+                            </div>
 
                             <img
                                 className="locations-pictures"
@@ -52,11 +59,13 @@ function AllImagesRefactor({ locationId }) {
                                 alt="_blank"
                             />
                             <div>
-                                <DisplayComments imageId={image.id} locationId={locationId} />
+                                <DisplayComments imageId={image.id} commentId={commentId} />
+
                             </div>
+
                             <CardActions sx={{ mt: 8 }}>
                                 {user.id === Number(location.user_id) ? (
-                                    <DeleteLocationsImages imageId={image.id} userId={user.id} locationId={locationId} />
+                                    <DeleteLocationsImages imageId={image.id} locationId={locationId} />
                                 ) : null}
                             </CardActions>
                         </CardContent>

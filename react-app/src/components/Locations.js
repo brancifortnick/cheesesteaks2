@@ -33,29 +33,24 @@ function Locations() {
 
   const [showModal, setModal] = useState(false)
   const images = useSelector((state) => Object.values(state.image))
-  const comments = useSelector((state) => Object.values(state.comment));
+  const comment = useSelector((state) => (state.comment));
   const location = useSelector((state) => state.location);
-  console.log(images, "image from locations.js+++++++++++++++++++++", location, "location from locations.js ++++++++++++++")
 
+  console.log('................................................,', comment)
 
   const { locationId } = useParams()
-  // const filteredImages = Object.values(images).filter((image) => {
-  //   return image.location_id === location.id ? (
-  //     <AllImagesRefactor />
-  //   ) : null
-  // })
-  // }
+
 
   const image = useSelector(state => state.image)
-  console.log(image, "image")
 
 
   useEffect(() => {
     dispatch(getOneLocation((locationId)));
-    dispatch(getPhotos())
+    dispatch(getPhotos(locationId))
 
-    dispatch(getTheComments())
-  }, [dispatch, locationId]);
+
+    dispatch(getTheComments(parseInt(image.id)))
+  }, [dispatch, locationId, image.id]);
   let imageId;
   return (
     <>
@@ -71,11 +66,8 @@ function Locations() {
             </Box>
           ) : null
           }
-
           <div>
-
             <ImageUpload imageId={image.id} locationId={location.id} />
-
           </div>
           <div id="update-biography">
             {currentUser.id === Number(location.user_id) ? (
@@ -86,30 +78,16 @@ function Locations() {
               />
             ) : null}
           </div>
-
-
-
-
           <div id="description-text">
             Description
           </div>
-
-
-
         </div>
-
         <div id="bio">{location.biography}</div>
-
         <div>
-
           <AllImagesRefactor imageId={image.id} locationId={location.id} />
-
         </div>
-
       </div>
     </>
-
-
   )
 };
 
