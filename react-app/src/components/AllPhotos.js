@@ -5,6 +5,7 @@ import { getPhotos } from "../store/image";
 import Card from '@mui/material/Card'
 import CardMedia from '@mui/material/CardMedia'
 import { getTheComments } from "../store/comment";
+import DisplayComments from "./DisplayComments";
 
 
 
@@ -32,7 +33,7 @@ function AllPhotos() {
                                 <img src={image.image} className='images-photos' alt='loading...' />
                             </NavLink>
                         </Card>
-
+                        {/* <DisplayComments imageId={image.id} />> */}
                     </div>
                 </div>
             </div>
