@@ -43,10 +43,10 @@ function GetSingleComment() {
 
 
                     <ButtonGroup disableElevation variant="contained">
-                        {/* {comment?.user_id === user?.id ? (
+                        {comment?.user_id === user?.id ? (
                             <Button> <EditComment commentId={comment.id} /> </Button>
                         ) : null}
-                        {console.log(comment.image['id'], "doting into getsingle comment comment.image.id")} */}
+
                         {console.log(comment.image_id, "comment.image_id?>>>>>>>")}
                         {comment.user_id === user?.id ? (
                             <Button >

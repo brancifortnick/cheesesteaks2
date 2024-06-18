@@ -7,6 +7,7 @@ import { getOneComment, getTheComments } from '../store/comment';
 import EditComment from './EditComment';
 import Button from '@mui/material/Button'
 import AllImagesRefactor from './AllImagesRefactor';
+import { getAPhoto } from '../store/image';
 
 const DisplayComments = ({ imageId }) => {
   const comments = useSelector((state) => Object.values(state.comment));
@@ -27,12 +28,13 @@ const DisplayComments = ({ imageId }) => {
 
     dispatch(getTheComments())
 
-  }, [dispatch, imageId])
+  }, [dispatch])
 
 
   return (
     <div id="comment-div">
       <div>
+
         <div>
           {comments?.map((comment) => (
             <div key={comment.id}>

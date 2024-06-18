@@ -51,23 +51,16 @@ function AllImagesRefactor({ imageId }) {
                             <Typography gutterBottom variant="h3" component="div">
                                 {image.title}
                             </Typography>
-                            <div className='comment-component'>
 
-                                <AddComments locationId={locationId} imageId={image.id} />
-                            </div>
                             {/* <div>
                                 {image.id === comment.image_id ? (
                                     <DisplayComments imageId={image?.id} commentId={comment.id} />
                                 ) : null}
                             </div> */}
 
-                            <img
-                                className="locations-pictures"
-                                src={image.image}
-                                alt="_blank"
-                            />
+
                             <div>
-                                <DisplayComments imageId={image.id} commentId={comment.id} />
+
 
                             </div>
 

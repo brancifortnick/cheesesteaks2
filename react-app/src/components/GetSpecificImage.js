@@ -27,7 +27,7 @@ const GetSpecificImage = ({ comment }) => {
 
             <div>
                 <div>
-                    {/* <DisplayComments imageId={image.id} commentId={comment.id} /> */}
+                    <DisplayComments commentId={comment?.id} />
 
                 </div>
                 <img src={image.image} />
