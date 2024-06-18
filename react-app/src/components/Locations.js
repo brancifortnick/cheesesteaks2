@@ -60,7 +60,7 @@ function Locations() {
           {location.profile_img !== null ? (
             <Box>
               <Avatar sx={{
-                alignContent: "flexStart", width: 300, height: 300, maxWidth: '50em',
+                alignContent: "center", width: 300, height: 300, maxWidth: '50em',
               }} src={location.profile_img}>
               </Avatar>
             </Box>

@@ -38,7 +38,15 @@ function AllImagesRefactor({ imageId, commentId }) {
                     {/* <h4 className="image-title">{image.title}</h4> */}
                     <div>{'hey im the' + " " + 'image.id of the image below' + " " + image.id}</div>
 
-                    <Card sx={{ display: "flex", alignContent: "center" }}>
+                    <Card>
+                        <NavLink to={`/images/${image.id}`}>
+                            <img
+                                src={image.image}
+                                alt="loading..."
+                                className="image_card"
+                            />
+
+                        </NavLink>
                         <CardContent>
                             <Typography gutterBottom variant="h3" component="div">
                                 {image.title}

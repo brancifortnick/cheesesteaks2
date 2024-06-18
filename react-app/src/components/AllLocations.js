@@ -21,7 +21,7 @@ function AllLocations() {
   const currentUser = useSelector((state) => state.session.user);
   useEffect(() => {
     dispatch(getAllLocations());
-    dispatch(getPhotos())
+    // dispatch(getPhotos())
   }, [dispatch]);
 
   const locationsList = locations.map((location, idx) => {
@@ -36,8 +36,7 @@ function AllLocations() {
                   src={location.profile_img}
                   alt="establishment"
                 />
-                <div>{'what lives here'
-                }</div>
+
                 <img
                   src={location.profile_img}
                   alt="loading..."
