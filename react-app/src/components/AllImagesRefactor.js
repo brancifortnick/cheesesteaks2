@@ -16,7 +16,7 @@ import DisplayComments from "./DisplayComments";
 import { getOneComment } from "../store/comment";
 
 
-function AllImagesRefactor({ imageId, commentId }) {
+function AllImagesRefactor({ imageId }) {
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
@@ -27,9 +27,9 @@ function AllImagesRefactor({ imageId, commentId }) {
     console.log(comment, "comment ")
 
     useEffect(() => {
-        dispatch(getPhotos());
+
         dispatch(getOneComment(imageId))
-    }, [dispatch, commentId, imageId]);
+    }, [dispatch, imageId]);
 
     const locationsPictures = images.map((image) => {
         return image !== null && location.id === image.location_id ? (
@@ -55,11 +55,11 @@ function AllImagesRefactor({ imageId, commentId }) {
 
                                 <AddComments locationId={locationId} imageId={image.id} />
                             </div>
-                            <div>
+                            {/* <div>
                                 {image.id === comment.image_id ? (
-                                    <DisplayComments imageId={image?.id} commentId={commentId} />
+                                    <DisplayComments imageId={image?.id} commentId={comment.id} />
                                 ) : null}
-                            </div>
+                            </div> */}
 
                             <img
                                 className="locations-pictures"
@@ -67,7 +67,7 @@ function AllImagesRefactor({ imageId, commentId }) {
                                 alt="_blank"
                             />
                             <div>
-                                <DisplayComments imageId={image.id} commentId={commentId} />
+                                <DisplayComments imageId={image.id} commentId={comment.id} />
 
                             </div>
 

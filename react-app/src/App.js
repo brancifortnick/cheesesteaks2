@@ -22,6 +22,7 @@ import AddComments from "./components/AddComments";
 import { Add } from "@mui/icons-material";
 import DisplayComments from "./components/DisplayComments";
 import AllImagesRefactor from "./components/AllImagesRefactor";
+import GetSpecificImage from "./components/GetSpecificImage";
 
 
 export var UserContext = createContext();
@@ -81,7 +82,8 @@ function App() {
             <AllPhotos />
           </ProtectedRoute>
           <ProtectedRoute path='/images/:imageId'>
-            <AllImagesRefactor />
+            {/* <AllImagesRefactor /> */}
+            <GetSpecificImage />
           </ProtectedRoute>
         </Switch>
       </div>

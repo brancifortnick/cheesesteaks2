@@ -128,7 +128,9 @@ export default function reducer(state = initialState, action) {
       addingState[action.payload?.id] = action.payload;
       return addingState;
     case GET_ONE_PHOTO:
-      return { ...action.payload };
+      const theCurrent = { ...state }
+      theCurrent[action.payload?.id] = action.payload;
+      return theCurrent
     case UPDATE_PHOTO:
       const updateState = { ...state };
       updateState[action.payload?.id] = action.payload;

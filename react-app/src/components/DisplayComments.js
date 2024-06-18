@@ -8,7 +8,7 @@ import EditComment from './EditComment';
 import Button from '@mui/material/Button'
 import AllImagesRefactor from './AllImagesRefactor';
 
-const DisplayComments = ({ commentId, imageId }) => {
+const DisplayComments = ({ imageId }) => {
   const comments = useSelector((state) => Object.values(state.comment));
 
   const images = useSelector((state) => Object.values(state.image));
@@ -41,7 +41,7 @@ const DisplayComments = ({ commentId, imageId }) => {
                 <div>
                   {/* <AllImagesRefactor imageId={imageId} commentId={comment.id} /> */}
                   <Button>
-                    {comment.image_id === parseInt(imageId) ? (
+                    {comment.image_id === Number(imageId) ? (
                       <EditComment commentsImageId={comment.image_id} commentId={comment?.id} />
                     ) : null}
                   </Button>
@@ -49,7 +49,9 @@ const DisplayComments = ({ commentId, imageId }) => {
 
               </div>
               <Button>
-                <DeleteComment imageId={imageId} commentId={commentId} />
+                {comment.image_id === Number(imageId) ? (
+                  <DeleteComment imageId={imageId} commentId={comment?.id} />
+                ) : null}
               </Button>
             </div>
 

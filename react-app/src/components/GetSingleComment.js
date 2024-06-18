@@ -11,7 +11,7 @@ function GetSingleComment() {
 
     const dispatch = useDispatch();
     const comments = useSelector((state) => Object.values(state.comment));
-    const { locationId } = useParams()
+    const { imageId } = useParams()
     const user = useSelector((state) => state.session.user);
     const images = useSelector(state => Object.values(state.image))
     const location = useSelector(state => state.location)
@@ -20,9 +20,11 @@ function GetSingleComment() {
     console.log(image.id, 'image coming from getsinglecomment')
 
 
-    useEffect(() => {
-        dispatch(getOneComment(image.id))
-    }, [dispatch])
+
+    //! this is getting all the comments ???? it should be returning single comment based off of a map or filter or both
+
+
+
 
     return (
 

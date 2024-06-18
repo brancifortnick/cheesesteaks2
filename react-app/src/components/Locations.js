@@ -22,6 +22,7 @@ import { getPhotos } from "../store/image";
 import AllImagesRefactor from './AllImagesRefactor';
 import ImageUpload from "./ImageUpload";
 import { Folder } from "@mui/icons-material";
+import AllPhotos from "./AllPhotos";
 
 
 
@@ -35,13 +36,20 @@ function Locations() {
   const images = useSelector((state) => Object.values(state.image))
   const comment = useSelector((state) => (state.comment));
   const location = useSelector((state) => state.location);
+  const imagez = (imgs) => {
+    return imgs.map((each) => {
+      return each.id
+    })
+  }
+  const image = useSelector(state => state.image)
 
-  console.log('................................................,', comment)
+  console.log(images, "images from locations", image, "image from location")
+  console.log('..................commentobj state in locations.js..............................,', comment)
 
   const { locationId } = useParams()
 
 
-  const image = useSelector(state => state.image)
+
 
 
   useEffect(() => {
@@ -49,8 +57,7 @@ function Locations() {
     dispatch(getPhotos(locationId))
 
 
-    dispatch(getTheComments(parseInt(image.id)))
-  }, [dispatch, locationId, image.id]);
+  }, [dispatch, locationId]);
   let imageId;
   return (
     <>
@@ -84,7 +91,8 @@ function Locations() {
         </div>
         <div id="bio">{location.biography}</div>
         <div>
-          <AllImagesRefactor imageId={image.id} locationId={location.id} />
+          {/* <AllPhotos /> */}
+          <AllImagesRefactor imageId={image.id} locationId={locationId} />
         </div>
       </div>
     </>
