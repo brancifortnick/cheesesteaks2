@@ -11,7 +11,6 @@ import Box from '@mui/material/Box';
 
 const UpdateBiography = ({ locationBio, locationId }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const [biography, setBiography] = useState("");
   const [showModal, setModal] = useState(false);
 
@@ -58,7 +57,7 @@ const UpdateBiography = ({ locationBio, locationId }) => {
 
 
             <Button type="submit" id="update-biography-submit">
-              Post New Description
+              Edit Description
             </Button>
           </form>
         </Modal>
