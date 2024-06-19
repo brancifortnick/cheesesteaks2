@@ -20,7 +20,7 @@ import AddComments from "./components/AddComments";
 
 
 import { Add } from "@mui/icons-material";
-import DisplayComments from "./components/DisplayComments";
+
 import AllImagesRefactor from "./components/AllImagesRefactor";
 import GetSpecificImage from "./components/GetSpecificImage";
 
@@ -78,13 +78,13 @@ function App() {
           <ProtectedRoute path="/locations/:locationId" >
             <Locations />
           </ProtectedRoute>
-          <ProtectedRoute path='/images' exact={true}>
+          {/* <ProtectedRoute path='/images' exact={true}>
             <AllImagesRefactor />
-          </ProtectedRoute>
-          <ProtectedRoute path='/images/:imageId' exact={true}>
+          </ProtectedRoute> */}
+          {/* <ProtectedRoute path='/images/:imageId' exact={true}>
 
             <GetSpecificImage />
-          </ProtectedRoute>
+          </ProtectedRoute> */}
         </Switch>
       </div>
     </BrowserRouter>

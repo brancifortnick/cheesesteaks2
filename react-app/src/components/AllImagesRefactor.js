@@ -16,6 +16,8 @@ import DisplayComments from "./DisplayComments";
 import { getOneComment, getTheComments } from "../store/comment";
 import Accordian from "./Accordian/Accordian";
 import GetSpecificImage from "./GetSpecificImage";
+import DeleteComment from "./DeleteComment";
+
 
 function AllImagesRefactor({ images }) {
 
@@ -23,9 +25,11 @@ function AllImagesRefactor({ images }) {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
 
-    const image = useSelector((state) => state.image)
+
     const location = useSelector(state => (state.location))
-    console.log(image, location, "--------------")
+
+
+
 
 
     useEffect(() => {
@@ -38,7 +42,15 @@ function AllImagesRefactor({ images }) {
     const buildCommentTemplate = (image) => {
         if (image.comments && Array.isArray(image.comments)) {
             return image.comments.map((comment) => {
-                return <div key={comment.id}>{comment.comment}</div>
+                return (
+                    <div key={comment.id}>
+                        {comment.comment}
+
+
+                        <DeleteComment imageId={image.id} commentId={comment.id} />
+
+                    </div>
+                )
             })
         }
     }
@@ -67,6 +79,7 @@ function AllImagesRefactor({ images }) {
                                     className="image_card"
                                 />
                             </Card>
+                            {/* <div><DisplayComments /></div> */}
                             <Accordian toggleText='comments' children={buildCommentTemplate(image)} />
                             <CardContent>
                                 <CardActions sx={{ mt: 8 }}>
@@ -92,9 +105,9 @@ function AllImagesRefactor({ images }) {
 
     return (
         <>
-
+            <div key={''}>
                 {buildTemplate()}
-
+            </div>
         </>
     );
 };

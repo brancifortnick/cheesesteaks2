@@ -8,23 +8,19 @@ import Button from "@mui/material/Button";
 import DisplayComments from './DisplayComments'
 import { getAllLocations, getOneLocation } from "../store/location";
 // import './DeleteComment';
+import { filterObjsById } from "../Utilities/StoreMethods";
 
 
-
-const DeleteComment = ({ commentId }) => {
+const DeleteComment = ({ imageId, commentId }) => {
 
     const dispatch = useDispatch();
-    const comments = useSelector(state => Object.values(state.comment))
-    const history = useHistory();
-    const image = useSelector(state => state.image);
-    const user = useSelector(state => state.session.user);
-    const { locationId } = useParams()
 
 
     const commentDelete = async (e) => {
         e.preventDefault();
-        dispatch(getTheComments())
-        dispatch(deleteAComment((commentId)));
+        console.log(imageId, commentId, "IMAGEID_>COMMENTID")
+        dispatch(deleteAComment({ id: commentId, image_id: imageId }))
+
 
     };
 

@@ -1,9 +1,13 @@
+import { filterObjsById, findObjectById } from "../Utilities/StoreMethods";
 const GET_PHOTOS = "images/GET_PHOTOS";
 const GET_ONE_PHOTO = "image/GET_ONE_PHOTO";
 const DELETE_PHOTO = "image/DELETE_PHOTO";
 const UPDATE_PHOTO = "image/UPDATE_PHOTO";
 const ADD_ONE_PHOTO = "image/ADD_ONE_PHOTO";
 const ADD_IMAGE_COMMENT = 'image/ADD_IMAGE_COMMENT';
+const DELETE_IMAGE_COMMENT = 'image/DELETE_IMAGE_COMMENT';
+
+
 
 const getOnePhoto = (image) => ({
   type: GET_ONE_PHOTO,
@@ -34,6 +38,8 @@ const updateOnePhoto = (image) => ({
 //   type: ADD_IMAGE_COMMENT,
 //   payload: image,
 // })
+
+
 
 
 export const getPhotos = (id) => async (dispatch) => {
@@ -125,30 +131,41 @@ export default function reducer(state = initialState, action) {
         currentState[image.id] = image;
       });
       return currentState;
-    case ADD_ONE_PHOTO:
+
+    case ADD_ONE_PHOTO: {
       const addingState = { ...state };
       addingState[action.payload?.id] = action.payload;
       return addingState;
-    case GET_ONE_PHOTO:
+    }
+    case GET_ONE_PHOTO: {
       return { ...action.payload };
-    case UPDATE_PHOTO:
+    }
+    case UPDATE_PHOTO: {
       const updateState = { ...state };
       updateState[action.payload?.id] = action.payload;
       return updateState;
-    case DELETE_PHOTO:
+    }
+    case DELETE_PHOTO: {
       const removeState = { ...state };
       delete removeState[action.payload.id];
-      return removeState;
-    case ADD_IMAGE_COMMENT:
-      const targetImage = Object.values(state).find((image) => image.id === action.payload.image_id)
+      return removeState
+    }
+    case ADD_IMAGE_COMMENT: {
+      const targetImage = findObjectById(Object.values(state), action.payload.image_id)
       if (targetImage.comments) {
         const comments = [...targetImage.comments, action.payload]
         targetImage.comments = comments;
       } else {
         targetImage.comments = [action.payload]
       }
-      const newState = JSON.parse(JSON.stringify(state))
-      return newState;
+      return JSON.parse(JSON.stringify(state))
+
+    }
+    case DELETE_IMAGE_COMMENT: {
+      const targetImage = findObjectById(Object.values(state), action.payload.image_id)
+      targetImage.comments = filterObjsById(Object.values(targetImage.comments), action.payload.id)
+      return JSON.parse(JSON.stringify(state))
+    }
     default:
       return state;
   }

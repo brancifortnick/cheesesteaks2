@@ -23,11 +23,6 @@ const DisplayComments = ({ imageId }) => {
 
 
 
-  useEffect(() => {
-
-    dispatch(getTheComments())
-
-  }, [dispatch])
 
 
   return (
@@ -38,7 +33,7 @@ const DisplayComments = ({ imageId }) => {
           {comments?.map((comment) => (
             <div key={comment.id}>
               <div className="button--buttons-container">
-                <ol> {comment.comment}</ol>
+                <div> {comment.comment}</div>
 
                 <div>
                   {/* <AllImagesRefactor imageId={imageId} commentId={comment.id} /> */}
@@ -50,11 +45,7 @@ const DisplayComments = ({ imageId }) => {
                 </div>
 
               </div>
-              <Button>
-                {comment.image_id === Number(imageId) ? (
-                  <DeleteComment imageId={imageId} commentId={comment?.id} />
-                ) : null}
-              </Button>
+
             </div>
 
           )

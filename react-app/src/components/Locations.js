@@ -15,7 +15,7 @@ import { getImagesComments, getOneComment, getTheComments } from "../store/comme
 import Grid from "@mui/material/Grid";
 import DeleteLocationsImages from "./DeleteLocationsImages";
 import "./Locations.css";
-import DisplayComments from "./DisplayComments";
+
 import { Modal } from "../context/Modal";
 import { getPhotos } from "../store/image";
 
