@@ -124,11 +124,11 @@ const ImageUpload = ({ locationId }) => {
 
 
 
-                                <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, pl: 0 }}>
+                                <Box sx={{ display: 'flex', alignContent: 'flexStart', width: 400 }}>
                                     <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
 
                                 </Box>
-                                <Button variant='contained' name='image' color='primary' type='submit'>Submit</Button>
+                                <Button name='image' color='primary' type='submit'>Submit</Button>
 
                             </div>
                         </form>

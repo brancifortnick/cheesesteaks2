@@ -57,7 +57,7 @@ const AddComments = ({ locationId, imageId }) => {  //added imageId prop and the
               onChange={updateComment}
               value={comment}
               minRows={5}
-              style={{ width: 400 }}
+              style={{ width: 450, height: 225, fontSize: 18 }}
             />
 
             <div id='comment-create'>

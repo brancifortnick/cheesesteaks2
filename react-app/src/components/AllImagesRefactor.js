@@ -46,7 +46,6 @@ function AllImagesRefactor({ images }) {
                     <div key={comment.id}>
                         {comment.comment}
 
-
                         <DeleteComment imageId={image.id} commentId={comment.id} />
 
                     </div>
@@ -64,10 +63,10 @@ function AllImagesRefactor({ images }) {
                 return image !== null && location.id === image.location_id ? (
                     <div key={image.id} className="pictures-container">
                         <div>
-                            <div>
+                            {/* <div>
                                 <AddComments imageId={image.id} locationId={location?.id} />
-                            </div>
-                            {/* <h4 className="image-title">{image.title}</h4> */}
+                            </div> */}
+
                             <Typography gutterBottom variant="h3" component="div">
                                 {image.title}
                             </Typography>
@@ -79,8 +78,13 @@ function AllImagesRefactor({ images }) {
                                     className="image_card"
                                 />
                             </Card>
-                            {/* <div><DisplayComments /></div> */}
-                            <Accordian toggleText='comments' children={buildCommentTemplate(image)} />
+
+                            <div>
+                                <AddComments imageId={image.id} locationId={location.id} />
+                            </div>
+                            <div>
+                                <Accordian toggleText='comments' children={buildCommentTemplate(image)} />
+                            </div>
                             <CardContent>
                                 <CardActions sx={{ mt: 8 }}>
                                     {user.id === Number(location.user_id) ? (
