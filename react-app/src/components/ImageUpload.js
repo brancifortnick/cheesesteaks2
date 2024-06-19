@@ -19,10 +19,9 @@ const ImageUpload = ({ locationId }) => {
     const user = useSelector((state) => state.session.user);
 
 
-    console.log(locationId, 'locationID from useparmas in IMAGEUPLOAD F?E C')
-    console.log(locationId, user, '>>>>>from IMAGEUPLOAD frontend')
+
     const location = useSelector(state => state.location)
-    console.log(location, "location from IMAGEUPLOAD ==> useselector giving state")
+
 
     const [showModal, setModal] = useState(false);
     const [title, setTitle] = useState('');

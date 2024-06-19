@@ -78,11 +78,11 @@ function App() {
           <ProtectedRoute path="/locations/:locationId" >
             <Locations />
           </ProtectedRoute>
-          <ProtectedRoute path='/images'>
+          <ProtectedRoute path='/images' exact={true}>
             <AllPhotos />
           </ProtectedRoute>
-          <ProtectedRoute path='/images/:imageId'>
-            {/* <AllImagesRefactor /> */}
+          <ProtectedRoute path='/images/:imageId' exact={true}>
+
             <GetSpecificImage />
           </ProtectedRoute>
         </Switch>

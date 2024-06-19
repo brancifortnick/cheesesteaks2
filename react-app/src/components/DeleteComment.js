@@ -19,7 +19,7 @@ const DeleteComment = ({ commentId }) => {
     const image = useSelector(state => state.image);
     const user = useSelector(state => state.session.user);
     const { locationId } = useParams()
-    console.log(image, "image obj coming from deletecomment", commentId, "commentID PASSED IN AS A DECONSTRUCTED PROP")
+
 
     const commentDelete = async (e) => {
         e.preventDefault();

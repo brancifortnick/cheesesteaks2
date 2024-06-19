@@ -21,6 +21,8 @@ def get_comments():
 @login_required
 def get_one_comment(id):
     comment = Comment.query.get(id)
+    if not comment:
+        return jsonify('comment doesn"t exist=> message from BACKEND COMMENTROUTE')
     return comment.to_dict()
 
 

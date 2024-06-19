@@ -51,6 +51,7 @@ export const getAPhoto = (id) => async (dispatch) => {
   const res = await fetch(`/api/images/${id}`);
   if (res.ok) {
     const photo = await res.json();
+    console.log(photo, "photo from image store-<>>>>>>>getAPhoto thunk")
     dispatch(getOnePhoto(photo));
   } else {
     console.log('erroring from store')
@@ -128,17 +129,11 @@ export default function reducer(state = initialState, action) {
       addingState[action.payload?.id] = action.payload;
       return addingState;
     case GET_ONE_PHOTO:
-      const theCurrent = { ...state }
-      theCurrent[action.payload?.id] = action.payload;
-      return theCurrent
+      return { ...action.payload };
     case UPDATE_PHOTO:
       const updateState = { ...state };
       updateState[action.payload?.id] = action.payload;
       return updateState;
-    // case GET_COMMENTS:
-    //   const commentState = { ...state }
-    //   commentState[action.payload] = action.payload
-    //   return commentState;
     case DELETE_PHOTO:
       const removeState = { ...state };
       delete removeState[action.payload.id];

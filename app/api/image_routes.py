@@ -20,10 +20,10 @@ def get_images():
 @image_routes.route('/<int:id>')
 @login_required
 def get_photos(id):
-    images = Image.query.get(id)
-    if not images:
+    image = Image.query.get(id)
+    if not image:
         return jsonify('image does not exist')
-    return images.to_dict()
+    return image.to_dict()
 
 
 @image_routes.route("/new-image", methods=["POST"])

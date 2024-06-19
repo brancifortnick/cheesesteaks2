@@ -15,9 +15,9 @@ function GetSingleComment() {
     const user = useSelector((state) => state.session.user);
     const images = useSelector(state => Object.values(state.image))
     const location = useSelector(state => state.location)
-    console.log(location, "location state from getSingleComment", location.images, "locationImages")
+
     const image = useSelector(state => state.image)
-    console.log(image.id, 'image coming from getsinglecomment')
+
 
 
 

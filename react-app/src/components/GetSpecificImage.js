@@ -5,42 +5,56 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAPhoto } from "../store/image";
 
 import DisplayComments from "./DisplayComments";
+import GetSingleComment from "./GetSingleComment";
+import { getOneLocation } from "../store/location";
+import { getTheComments } from "../store/comment";
 
-const GetSpecificImage = ({ comment }) => {
+const GetSpecificImage = ({ imageId, comment }) => {
 
     const images = useSelector(state => Object.values(state.image))
-    console.log(images, "images GETSPECIFICIMAGES>>><<<>>><<<>>>>>")
 
-    const { imageId } = useParams()
+
+    // const { imageId } = useParams()
     const dispatch = useDispatch()
 
+    const iterateFunc = (images) => {
+        for (let i = 0; i < images.length; i++) {
+            <img src={`images.${i}.src`} />
+            for (let j = 0; j < images[i].comments; j++) {
+                <p>images[i].comments[j]</p>
+            }
+        }
+    }
 
     useEffect(() => {
         dispatch(getAPhoto(imageId))
     }, [dispatch])
 
 
-    const imageListFilter = images.map((image, idx) => {
 
 
-        return image !== null ? (
+    const imagesComments = images.map((data) => {
+        if (data === 'comments') {
+            const result = data.comments.filter((eachComm) => {
+                return eachComm === data.id
+            })
+            return result
+        } else {
+            console.log('error in imagesComments function in GETSPECIFICIMAGE')
+        }
 
-            <div>
-                <div>
-                    <DisplayComments commentId={comment?.id} />
-
-                </div>
-                <img src={image.image} />
-            </div>
-        ) : null
     })
-    return (
-        <>
-            <div>testing</div>
-            {imageListFilter}
-        </>
 
+    console.log(imagesComments(images))
+    return (
+        <div>
+            {'hey'}
+        </div>
     )
 };
+
+
+
+
 
 export default GetSpecificImage;

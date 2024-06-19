@@ -44,9 +44,9 @@ const NavBar = () => {
             </NavLink>
           ) : null}
         </div>
-        <div className='nav-link'>
+        <div className='nav-link' activeClassName="active">
           {user ? (
-            <Link to='/images' exact={true}>
+            <NavLink to='/images' exact={true}>
               <Button
                 variant='contained'
                 color='primary'
@@ -54,7 +54,7 @@ const NavBar = () => {
               >
                 All Images
               </Button>
-            </Link>
+            </NavLink>
           ) : null}
         </div>
         <div className="nav-link">

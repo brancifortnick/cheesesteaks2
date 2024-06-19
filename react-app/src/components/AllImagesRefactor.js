@@ -13,73 +13,82 @@ import Typography from "@mui/material/Typography";
 import AddComments from './AddComments'
 import GetSingleComment from "./GetSingleComment";
 import DisplayComments from "./DisplayComments";
-import { getOneComment } from "../store/comment";
+import { getOneComment, getTheComments } from "../store/comment";
+import Accordian from "./Accordian/Accordian";
 
+function AllImagesRefactor({ images }) {
 
-function AllImagesRefactor({ imageId }) {
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
-    const images = useSelector((state) => Object.values(state.image));
-    const { locationId } = useParams()
+
+
     const location = useSelector(state => (state.location))
-    const comment = useSelector(state => state.comment)
-    console.log(comment, "comment ")
+
 
     useEffect(() => {
 
-        dispatch(getOneComment(imageId))
-    }, [dispatch, imageId]);
+        console.log(images, "in useFx")
 
-    const locationsPictures = images.map((image) => {
-        return image !== null && location.id === image.location_id ? (
-            <div className="pictures-container">
-                <div key={image.id}>
-                    {/* <h4 className="image-title">{image.title}</h4> */}
-                    <div>{'hey im the' + " " + 'image.id of the image below' + " " + image.id}</div>
+    }, [dispatch, images]);
 
-                    <Card>
-                        <NavLink to={`/images/${image.id}`}>
-                            <img
-                                src={image.image}
-                                alt="loading..."
-                                className="image_card"
-                            />
 
-                        </NavLink>
-                        <CardContent>
+    const buildCommentTemplate = (image) => {
+        if (image.comments && Array.isArray(image.comments)) {
+            return image.comments.map((comment) => {
+                return <div>{comment.comment}</div>
+            })
+        }
+    }
+
+
+    const buildTemplate = () => {
+        if (images) {
+
+
+            return images.map((image) => {
+                return image !== null && location.id === image.location_id ? (
+                    <div className="pictures-container">
+                        <div key={image}>
+                            {/* <h4 className="image-title">{image.title}</h4> */}
                             <Typography gutterBottom variant="h3" component="div">
                                 {image.title}
                             </Typography>
+                            <div>{image.id}</div>
+                            <Card>
+                                <img
+                                    src={image.image}
+                                    alt="loading..."
+                                    className="image_card"
+                                />
+                            </Card>
+                            <Accordian toggleText='comments' children={buildCommentTemplate(image)} />
+                            <CardContent>
+                                <CardActions sx={{ mt: 8 }}>
+                                    {user.id === Number(location.user_id) ? (
+                                        <DeleteLocationsImages imageId={image?.id} locationId={location.id} />
+                                    ) : null}
+                                </CardActions>
+                            </CardContent>
 
-                            {/* <div>
-                                {image.id === comment.image_id ? (
-                                    <DisplayComments imageId={image?.id} commentId={comment.id} />
-                                ) : null}
-                            </div> */}
+                        </div>
+                    </div>
+
+                ) : null;
+            });
+        }
+    }
 
 
-                            <div>
 
 
-                            </div>
 
-                            <CardActions sx={{ mt: 8 }}>
-                                {user.id === Number(location.user_id) ? (
-                                    <DeleteLocationsImages imageId={image.id} locationId={locationId} />
-                                ) : null}
-                            </CardActions>
-                        </CardContent>
-                    </Card>
-                </div>
-            </div>
 
-        ) : null;
-    });
+
     return (
         <>
             <div>
-                {locationsPictures}
+                {buildTemplate()}
             </div>
         </>
     );

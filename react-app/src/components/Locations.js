@@ -23,6 +23,7 @@ import AllImagesRefactor from './AllImagesRefactor';
 import ImageUpload from "./ImageUpload";
 import { Folder } from "@mui/icons-material";
 import AllPhotos from "./AllPhotos";
+import Accordian from "./Accordian/Accordian";
 
 
 
@@ -33,18 +34,13 @@ function Locations() {
   const userId = useSelector((state) => state.session.user?.id);
 
   const [showModal, setModal] = useState(false)
-  const images = useSelector((state) => Object.values(state.image))
+
   const comment = useSelector((state) => (state.comment));
   const location = useSelector((state) => state.location);
-  const imagez = (imgs) => {
-    return imgs.map((each) => {
-      return each.id
-    })
-  }
-  const image = useSelector(state => state.image)
 
-  console.log(images, "images from locations", image, "image from location")
-  console.log('..................commentobj state in locations.js..............................,', comment)
+  const images = useSelector(state => Object.values(state.image))
+
+
 
   const { locationId } = useParams()
 
@@ -58,10 +54,11 @@ function Locations() {
 
 
   }, [dispatch, locationId]);
-  let imageId;
+
   return (
     <>
       <div className="card-container">
+
         <div className="description-div">
 
           {location.profile_img !== null ? (
@@ -74,7 +71,7 @@ function Locations() {
           ) : null
           }
           <div>
-            <ImageUpload imageId={image.id} locationId={location.id} />
+            <ImageUpload locationId={locationId} />
           </div>
           <div id="update-biography">
             {currentUser.id === Number(location.user_id) ? (
@@ -92,7 +89,8 @@ function Locations() {
         <div id="bio">{location.biography}</div>
         <div>
           {/* <AllPhotos /> */}
-          <AllImagesRefactor imageId={image.id} locationId={locationId} />
+          <AllImagesRefactor images={images} locationId={locationId} />
+
         </div>
       </div>
     </>

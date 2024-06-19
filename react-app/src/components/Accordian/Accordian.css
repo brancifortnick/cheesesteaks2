@@ -1,0 +1,36 @@
+.accordion-wrapper[cs-state='closed'] .accordion-body {
+    visibility: hidden;
+}
+
+
+
+
+/*
+when its open the body is styled visibly
+*/
+.accordion-wrapper[cs-state='open'] .accordion-body {
+    visibility: visible;
+}
+
+
+.accordion-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.accordion-head:hover {
+    text-decoration: underline;
+}
+
+
+.caret-icon {
+    height: 1rem;
+    transform: rotate(90deg);
+    transition: transform 500ms ease;
+}
+
+.accordion-wrapper[cs-state='open'] .caret-icon {
+    transform: rotate(180deg);
+}

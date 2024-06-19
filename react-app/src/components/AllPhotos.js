@@ -25,21 +25,22 @@ function AllPhotos({ locationId }) {
         return (
             <div className="images-container">
                 <div key={idx} id='image-key'>
-                    <div className="image-div-container">      <NavLink to={`/images/${image.id}`}>
-                        <img
-                            src={image.image}
-                            alt="loading..."
-                            className="image_card"
-                        />
-
+                    <div className="image-div-container">
                         <Card sx={{
                             maxWidth: 300, maxHeight: 300
                         }}>
-
-                            {/* <img src={image.image} className='images-photos' alt='loading...' /> */}
-
+                            <NavLink to={`/images/${image.id}`}>
+                                <img
+                                    src={image.image}
+                                    alt="loading..."
+                                    className="image_card"
+                                />
+                            </NavLink>
                         </Card>
-                    </NavLink>
+
+
+                        {/* <img src={image.image} className='images-photos' alt='loading...' /> */}
+
 
                     </div>
                 </div>

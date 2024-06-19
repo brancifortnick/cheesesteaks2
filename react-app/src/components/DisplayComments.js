@@ -13,12 +13,11 @@ const DisplayComments = ({ imageId }) => {
   const comments = useSelector((state) => Object.values(state.comment));
 
   const images = useSelector((state) => Object.values(state.image));
-  console.log(images, "images coming from displaycomments")
+
   const user = useSelector(state => state.session.user)
   const image = useSelector(state => state.image)
   const location = useSelector(state => state.location)
-  console.log(imageId, "imageId===>displayComments prop")
-  console.log(images, "images", image, ">>>>>image")
+
   const dispatch = useDispatch()
 
 
@@ -38,8 +37,8 @@ const DisplayComments = ({ imageId }) => {
         <div>
           {comments?.map((comment) => (
             <div key={comment.id}>
-              {comment.comment}
               <div className="button--buttons-container">
+                {comment.comment}
                 <div>
                   {/* <AllImagesRefactor imageId={imageId} commentId={comment.id} /> */}
                   <Button>

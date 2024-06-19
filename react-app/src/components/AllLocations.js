@@ -33,7 +33,7 @@ function AllLocations() {
               <NavLink to={`/locations/${location.id}`}>
                 <CardMedia
                   component="card-img-style"
-                  src={location.profile_img}
+
                   alt="establishment"
                 />
 
