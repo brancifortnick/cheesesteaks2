@@ -27,7 +27,7 @@ function AllPhotos({ locationId }) {
                 <div key={idx} id='image-key'>
                     <div className="image-div-container">
                         <Card sx={{
-                            maxWidth: 300, maxHeight: 300
+                            maxWidth: 600, maxHeight: 560
                         }}>
                             <NavLink to={`/images/${image.id}`}>
                                 <img

@@ -38,7 +38,8 @@ const DisplayComments = ({ imageId }) => {
           {comments?.map((comment) => (
             <div key={comment.id}>
               <div className="button--buttons-container">
-                {comment.comment}
+                <ol> {comment.comment}</ol>
+
                 <div>
                   {/* <AllImagesRefactor imageId={imageId} commentId={comment.id} /> */}
                   <Button>

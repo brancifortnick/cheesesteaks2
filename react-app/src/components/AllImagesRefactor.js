@@ -15,6 +15,7 @@ import GetSingleComment from "./GetSingleComment";
 import DisplayComments from "./DisplayComments";
 import { getOneComment, getTheComments } from "../store/comment";
 import Accordian from "./Accordian/Accordian";
+import GetSpecificImage from "./GetSpecificImage";
 
 function AllImagesRefactor({ images }) {
 
@@ -22,8 +23,9 @@ function AllImagesRefactor({ images }) {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
 
-
+    const image = useSelector((state) => state.image)
     const location = useSelector(state => (state.location))
+    console.log(image, location, "--------------")
 
 
     useEffect(() => {
@@ -36,7 +38,7 @@ function AllImagesRefactor({ images }) {
     const buildCommentTemplate = (image) => {
         if (image.comments && Array.isArray(image.comments)) {
             return image.comments.map((comment) => {
-                return <div>{comment.comment}</div>
+                return <div key={comment.id}>{comment.comment}</div>
             })
         }
     }
@@ -48,8 +50,11 @@ function AllImagesRefactor({ images }) {
 
             return images.map((image) => {
                 return image !== null && location.id === image.location_id ? (
-                    <div className="pictures-container">
-                        <div key={image}>
+                    <div key={image.id} className="pictures-container">
+                        <div>
+                            <div>
+                                <AddComments imageId={image.id} locationId={location?.id} />
+                            </div>
                             {/* <h4 className="image-title">{image.title}</h4> */}
                             <Typography gutterBottom variant="h3" component="div">
                                 {image.title}
@@ -87,9 +92,9 @@ function AllImagesRefactor({ images }) {
 
     return (
         <>
-            <div>
+
                 {buildTemplate()}
-            </div>
+
         </>
     );
 };

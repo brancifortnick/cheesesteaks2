@@ -3,7 +3,7 @@ const ADD_COMMENT = "comment/ADD_COMMENT";
 const GET_ONE_COMMENT = "comment/GET_ONE_COMMENT";
 const DELETE_COMMENT = "comment/DELETE_COMMENT";
 const EDIT_COMMENT = "comment/EDIT_COMMENT";
-
+const ADD_IMAGE_COMMENT = 'image/ADD_IMAGE_COMMENT';
 
 const getAllTheComments = (comments) => ({
   type: GET_THE_COMMENTS,
@@ -15,11 +15,14 @@ const getOne = (comment) => ({
   payload: comment,
 });
 
-const postComment = (comment) => ({
-  type: ADD_COMMENT,
-  payload: comment,
-});
-
+// const postComment = (comment) => ({
+//   type: ADD_COMMENT,
+//   payload: comment,
+// });
+const postComment = (image) => ({
+  type: ADD_IMAGE_COMMENT,
+  payload: image,
+})
 const editComment = (comment) => ({
   type: EDIT_COMMENT,
   payload: comment,

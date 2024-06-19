@@ -3,7 +3,7 @@ const GET_ONE_PHOTO = "image/GET_ONE_PHOTO";
 const DELETE_PHOTO = "image/DELETE_PHOTO";
 const UPDATE_PHOTO = "image/UPDATE_PHOTO";
 const ADD_ONE_PHOTO = "image/ADD_ONE_PHOTO";
-// const GET_COMMENTS = 'image/GET_COMMENTS';
+const ADD_IMAGE_COMMENT = 'image/ADD_IMAGE_COMMENT';
 
 const getOnePhoto = (image) => ({
   type: GET_ONE_PHOTO,
@@ -30,8 +30,8 @@ const updateOnePhoto = (image) => ({
   payload: image,
 });
 
-// const getComments = (image) => ({
-//   type: GET_COMMENTS,
+// const postComment = (image) => ({
+//   type: ADD_IMAGE_COMMENT,
 //   payload: image,
 // })
 
@@ -58,6 +58,7 @@ export const getAPhoto = (id) => async (dispatch) => {
 
   }
 };
+
 
 
 
@@ -138,6 +139,16 @@ export default function reducer(state = initialState, action) {
       const removeState = { ...state };
       delete removeState[action.payload.id];
       return removeState;
+    case ADD_IMAGE_COMMENT:
+      const targetImage = Object.values(state).find((image) => image.id === action.payload.image_id)
+      if (targetImage.comments) {
+        const comments = [...targetImage.comments, action.payload]
+        targetImage.comments = comments;
+      } else {
+        targetImage.comments = [action.payload]
+      }
+      const newState = JSON.parse(JSON.stringify(state))
+      return newState;
     default:
       return state;
   }

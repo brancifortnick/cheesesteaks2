@@ -88,7 +88,7 @@ function Locations() {
         </div>
         <div id="bio">{location.biography}</div>
         <div>
-          {/* <AllPhotos /> */}
+
           <AllImagesRefactor images={images} locationId={locationId} />
 
         </div>

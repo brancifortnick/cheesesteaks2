@@ -79,7 +79,7 @@ function App() {
             <Locations />
           </ProtectedRoute>
           <ProtectedRoute path='/images' exact={true}>
-            <AllPhotos />
+            <AllImagesRefactor />
           </ProtectedRoute>
           <ProtectedRoute path='/images/:imageId' exact={true}>
 

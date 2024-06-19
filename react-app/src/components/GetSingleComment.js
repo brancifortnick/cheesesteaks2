@@ -11,13 +11,12 @@ function GetSingleComment() {
 
     const dispatch = useDispatch();
     const comments = useSelector((state) => Object.values(state.comment));
-    const { imageId } = useParams()
+
     const user = useSelector((state) => state.session.user);
     const images = useSelector(state => Object.values(state.image))
     const location = useSelector(state => state.location)
 
     const image = useSelector(state => state.image)
-
 
 
 
