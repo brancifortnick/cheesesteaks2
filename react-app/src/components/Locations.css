@@ -5,6 +5,7 @@
   margin: 4px;
   padding-top: 24px;
 }
+
 #description-text {
   display: flex;
   flex-direction: row;
@@ -13,12 +14,14 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
 img.card {
   display: flex;
-    flex-direction: column;
-    max-width: 500px;
+  flex-direction: column;
+  align-content: center;
   /* width: 100%; */
 }
+
 .establishment-images {
   display: flex;
   flex-wrap: wrap;
@@ -30,8 +33,11 @@ img.card {
 }
 
 .description-div {
-  padding-top: 2pt;
-  align-self: center;
+display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: large;
   color: #1976d2;
 }
 
@@ -41,14 +47,17 @@ img.card {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+
   border-radius: 3px;
   padding-bottom: 3%;
-  font-weight: 750;
+
 }
+
 #update-biography {
-  display: block;
+  display: flex;
   margin: auto;
   padding: 4pt;
+  flex-direction: column
 }
 
 #add-pictures {
@@ -59,6 +68,7 @@ img.card {
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
 }
+
 #delete-component {
   border: none;
   outline: transparent;

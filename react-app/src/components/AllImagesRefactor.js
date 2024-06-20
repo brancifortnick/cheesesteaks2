@@ -70,12 +70,12 @@ function AllImagesRefactor({ images }) {
                             <Typography gutterBottom variant="h3" component="div">
                                 {image.title}
                             </Typography>
-                            <div>{image.id}</div>
+
                             <Card>
                                 <img
                                     src={image.image}
                                     alt="loading..."
-                                    className="image_card"
+                                    className="image-card"
                                 />
                             </Card>
 

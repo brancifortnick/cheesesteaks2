@@ -43,8 +43,8 @@ const AddComments = ({ locationId, imageId }) => {  //added imageId prop and the
 
   return (
     <div>
-      <div id='comment-modal'>
-        <Fab color="primary" aria-label="add" size='small'> <AddIcon onClick={() => setModal(true)} /></Fab>
+      <div id='comment-modal'><Button onClick={() => setModal(true)} >+</Button>
+        {/* <Fab color="primary" aria-label="add" size='small'> </Fab> */}
       </div>
       {showModal && (
         <Modal onClose={() => setModal(false)}>

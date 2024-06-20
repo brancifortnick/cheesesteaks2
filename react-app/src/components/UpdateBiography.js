@@ -28,8 +28,8 @@ const UpdateBiography = ({ locationBio, locationId }) => {
 
   return (
     <>
-      <Button sx={{ backgroundColor: 'white' }} id="biography-edit" onClick={() => setModal(true)}>
-        Edit your experience description
+      <Button id="biography-edit" onClick={() => setModal(true)}>
+        Edit Info:
       </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
@@ -55,10 +55,11 @@ const UpdateBiography = ({ locationBio, locationId }) => {
               />
             </Box>
 
-
+            <Box sx={{}}>
             <Button type="submit" id="update-biography-submit">
-              Edit Description
-            </Button>
+                Submit
+              </Button>
+            </Box>
           </form>
         </Modal>
       )

@@ -1,7 +1,11 @@
-textarea[name="biography"] {
-  min-height: 250px;
-  min-width: 300px;
-  font-size: 14pt;
+
+ textarea[name="biography"] {
+display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wraps
 }
 
 button.update-biography {

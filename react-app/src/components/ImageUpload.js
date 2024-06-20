@@ -124,7 +124,7 @@ const ImageUpload = ({ locationId }) => {
 
 
 
-                                <Box sx={{ display: 'flex', alignContent: 'flexStart', width: 400 }}>
+                                <Box sx={{ display: 'flex', width: 400 }}>
                                     <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
 
                                 </Box>
