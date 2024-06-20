@@ -15,11 +15,8 @@ const Accordian = ({ children, toggleText }) => {
     const expandCollapse = () => {
         if (expand === 'closed') {
             setExpansion('open')
-            return (
-                <div>
-                    < EditComment />
-                </div>
-            )
+
+
         } else {
             setExpansion('closed')
         }

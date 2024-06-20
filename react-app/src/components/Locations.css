@@ -1,4 +1,4 @@
-.card-container {
+/* .card-container {
   display: flex;
   flex-direction: column;
 
@@ -6,6 +6,7 @@
   padding-top: 24px;
 }
 
+*/
 #description-text {
   display: flex;
   flex-direction: row;
@@ -22,7 +23,7 @@ img.card {
   /* width: 100%; */
 }
 
-.establishment-images {
+/* .establishment-images {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -31,6 +32,8 @@ img.card {
   padding-top: 4%;
   margin: 8px;
 }
+
+*/
 
 .description-div {
 display: flex;

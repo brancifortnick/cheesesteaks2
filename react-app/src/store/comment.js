@@ -85,14 +85,14 @@ export const deleteAComment = ({ id, image_id }) => async (dispatch) => {
   }
 };
 
-export const updateAComment = (formData, commentId) => async (dispatch) => {
+export const updateAComment = (formData, imageId, commentId) => async (dispatch) => {
   const res = await fetch(`/api/comments/update/${commentId}`, {
     method: "PUT",
     body: formData,
   });
   if (res.ok) {
     const updatedComment = await res.json();
-    dispatch(editComment(updatedComment));
+    dispatch(editComment(updatedComment, imageId));
   } else {
     console.log("Comment Can't be edited");
   }

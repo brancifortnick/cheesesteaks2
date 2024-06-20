@@ -39,7 +39,7 @@ const DisplayComments = ({ imageId }) => {
                   {/* <AllImagesRefactor imageId={imageId} commentId={comment.id} /> */}
                   <Button>
                     {comment.image_id === Number(imageId) ? (
-                      <EditComment commentsImageId={comment.image_id} commentId={comment?.id} />
+                      <EditComment imageId={imageId} commentId={comment?.id} />
                     ) : null}
                   </Button>
                 </div>

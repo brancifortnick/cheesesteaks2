@@ -53,24 +53,13 @@ export const editVotes = (formData, locationId) => async (dispatch) => {
   }
 }
 
-const initialState = 0;
-
-export default function reducer(state = initialState, action) {
+export default function counter(state = 0, action) {
   switch (action.type) {
-    case GET_VOTES:
-      const current = {};
-      action.payload.forEach((vote) => {
-        current[vote.id] = vote;
-      });
-      return current;
-    case ADD_VOTES:
-      return { ...action.payload }
-
-    case EDIT_VOTES:
-      const theCurrState = { ...state }
-      theCurrState[action.payload.id] = action.payload;
-      return theCurrState;
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
     default:
-      return state;
+      return state
   }
 }

@@ -13,10 +13,12 @@ import Typography from "@mui/material/Typography";
 import AddComments from './AddComments'
 import GetSingleComment from "./GetSingleComment";
 import DisplayComments from "./DisplayComments";
-import { getOneComment, getTheComments } from "../store/comment";
+import { getOneComment, getTheComments, updateAComment } from "../store/comment";
 import Accordian from "./Accordian/Accordian";
 import GetSpecificImage from "./GetSpecificImage";
 import DeleteComment from "./DeleteComment";
+import { findObjectById } from "../Utilities/StoreMethods";
+import EditComment from "./EditComment";
 
 
 function AllImagesRefactor({ images }) {
@@ -34,8 +36,9 @@ function AllImagesRefactor({ images }) {
 
     useEffect(() => {
 
-        console.log(images, "in useFx")
-
+        let imageId = findObjectById(images)
+        dispatch(updateAComment((imageId)));
+        dispatch(getOneComment(imageId))
     }, [dispatch, images]);
 
 
@@ -45,7 +48,7 @@ function AllImagesRefactor({ images }) {
                 return (
                     <div key={comment.id}>
                         {comment.comment}
-
+                        <EditComment imageId={image.id} commentId={comment.id} />
                         <DeleteComment imageId={image.id} commentId={comment.id} />
 
                     </div>

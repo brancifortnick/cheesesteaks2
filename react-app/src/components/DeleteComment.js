@@ -32,7 +32,7 @@ const DeleteComment = ({ imageId, commentId }) => {
     return (
         <div>
             <Button type='submit' onClick={commentDelete} >
-                <DeleteIcon className="delete-comment" type="submit" color='white' />
+                Delete
             </Button>
             {/* <button className="delete-comment" type="submit" onClick={commentDelete}>     </button> */}
         </div>

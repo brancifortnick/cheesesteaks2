@@ -89,8 +89,7 @@ const ImageUpload = ({ locationId }) => {
         <div className="image-form-container">
 
             <Button sx={{ mt: '2em', alignContent: 'center', backgroundColor: 'grey' }} id="upload-photos-to-location" onClick={() => setModal(true)}>
-                Upload photos from
-                your favorite establishments
+                Upload Photo
             </Button>
             {showModal && (
 
@@ -124,7 +123,10 @@ const ImageUpload = ({ locationId }) => {
 
 
 
-                                <Box sx={{ display: 'flex', width: 400 }}>
+                                <Box sx={{
+                                    display: 'flex', width: 400, mt: .5,
+                                    p: .5
+                                }}>
                                     <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
 
                                 </Box>
