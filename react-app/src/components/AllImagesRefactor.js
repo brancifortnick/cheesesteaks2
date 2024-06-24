@@ -33,22 +33,13 @@ function AllImagesRefactor({ images }) {
 
 
 
-
-    useEffect(() => {
-
-        let imageId = findObjectById(images)
-        dispatch(updateAComment((imageId)));
-        dispatch(getOneComment(imageId))
-    }, [dispatch, images]);
-
-
     const buildCommentTemplate = (image) => {
         if (image.comments && Array.isArray(image.comments)) {
             return image.comments.map((comment) => {
                 return (
                     <div key={comment.id}>
                         {comment.comment}
-                        <EditComment imageId={image.id} commentId={comment.id} />
+                        <EditComment commentsImageId={image.id} commentId={comment.id} />
                         <DeleteComment imageId={image.id} commentId={comment.id} />
 
                     </div>
@@ -89,7 +80,7 @@ function AllImagesRefactor({ images }) {
                                 <Accordian toggleText='comments' children={buildCommentTemplate(image)} />
                             </div>
                             <CardContent>
-                                <CardActions sx={{ mt: 8 }}>
+                                <CardActions >
                                     {user.id === Number(location.user_id) ? (
                                         <DeleteLocationsImages imageId={image?.id} locationId={location.id} />
                                     ) : null}

@@ -5,6 +5,7 @@ const DELETE_PHOTO = "image/DELETE_PHOTO";
 const UPDATE_PHOTO = "image/UPDATE_PHOTO";
 const ADD_ONE_PHOTO = "image/ADD_ONE_PHOTO";
 const ADD_IMAGE_COMMENT = 'image/ADD_IMAGE_COMMENT';
+const EDIT_IMAGE_COMMENT = 'image/EDIT_IMAGE_COMMENT';
 const DELETE_IMAGE_COMMENT = 'image/DELETE_IMAGE_COMMENT';
 
 
@@ -33,11 +34,6 @@ const updateOnePhoto = (image) => ({
   type: UPDATE_PHOTO,
   payload: image,
 });
-
-// const postComment = (image) => ({
-//   type: ADD_IMAGE_COMMENT,
-//   payload: image,
-// })
 
 
 
@@ -159,11 +155,22 @@ export default function reducer(state = initialState, action) {
         targetImage.comments = [action.payload]
       }
       return JSON.parse(JSON.stringify(state))
-
     }
+
     case DELETE_IMAGE_COMMENT: {
       const targetImage = findObjectById(Object.values(state), action.payload.image_id)
       targetImage.comments = filterObjsById(Object.values(targetImage.comments), action.payload.id)
+      return JSON.parse(JSON.stringify(state))
+    }
+    case EDIT_IMAGE_COMMENT: {
+      const targetImg = findObjectById(Object.values(state), action.payload.image_id)
+      targetImg.comments = filterObjsById(Object.values(targetImg.comments), action.payload.id)
+      if (targetImg.comments) {
+        const editComments = [...targetImg.comments, action.payload?.id]
+        targetImg.comments = editComments
+      } else {
+        console.log('error in EDIT_IMAGE_COMMENT+>+_>>>> image store')
+      }
       return JSON.parse(JSON.stringify(state))
     }
     default:

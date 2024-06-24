@@ -18,15 +18,12 @@ const EditComment = ({ commentsImageId, commentId }) => {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    const formData = new FormData();
-    formData.append("comment", comment);
-    dispatch(updateAComment(formData, commentId));
+
+
+    dispatch(updateAComment({ image_id: commentsImageId, id: commentId }));
     setModal(false);
-    history.push(`/locations/${locationId}`);
-  };
-  useEffect(() => {
-    dispatch(getTheComments(Number(commentId)));
-  }, [dispatch, commentId]);
+
+  }
 
   return (
     <div className='edit-container'>
@@ -55,7 +52,9 @@ const EditComment = ({ commentsImageId, commentId }) => {
       }
     </div>
   );
-};
+}
+
+
 export default EditComment;
 {/* <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignContent: 'center' }}> */ }
 {/* <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center' }}> */ }

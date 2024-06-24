@@ -1,11 +1,10 @@
-
- textarea[name="biography"] {
-display: flex;
+textarea[name="biography"] {
+  display: flex;
   flex-direction: row;
   align-content: center;
   justify-content: space-evenly;
   align-items: center;
-  flex-wrap: wraps
+  flex-wrap: wrap;
 }
 
 button.update-biography {

@@ -2,17 +2,15 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getAllLocations } from "../store/location";
-import Grid from "@mui/material/Grid";
 import DeleteEstablishment from "./DeleteEstablishment";
 import "./AllLocations.css";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
-import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-import { getPhotos } from "../store/image";
-import { Box } from "@mui/material";
+
+
 
 
 function AllLocations() {
@@ -50,7 +48,11 @@ function AllLocations() {
                   <Typography variant="subtitle" display='block' component="div">
                   {location.location_name}
                   </Typography>
-
+                  <CardActions sx={{ border: 'white', mb: 1, pt: 2, mt: 4 }}>
+                    {(currentUser.id === location.user_id) ? (
+                      <DeleteEstablishment locationId={location.id} />
+                    ) : null}
+                  </CardActions>
                 </CardContent>
               </Card>
                 {/* <Typography variant="body2" color="text.secondary">
@@ -62,11 +64,7 @@ function AllLocations() {
                   </NavLink>
                 </Typography> */}
               <Card>
-                <CardActions sx={{ border: 'white', mb: 1, pt: 2, mt: 4 }}>
-                  {(currentUser.id === location.user_id) ? (
-                    <DeleteEstablishment locationId={location.id} />
-                  ) : null}
-                </CardActions>
+
               </Card>
             </Card>
           </div>
