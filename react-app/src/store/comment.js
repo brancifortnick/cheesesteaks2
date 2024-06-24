@@ -91,7 +91,7 @@ export const updateAComment = ({ commentsImageId, commentId }) => async (dispatc
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id: commentId, image_id: commentsImageId })
+    body: JSON.stringify({ commentId, commentsImageId })
 
   })
 

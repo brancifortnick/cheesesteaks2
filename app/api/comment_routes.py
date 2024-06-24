@@ -53,7 +53,10 @@ def delete_comment(id):
 @comment_routes.route('/update/<int:id>', methods=['PUT'])
 @login_required
 def update_comment(id):
-    update_comment = Comment.query.get(id)
+    images_id = Image.query.get(id)
+    image_id = Comment.query.get(Comment.image_id == Image.id).one_or_none()
+    response = image_id.to_dict()
+    print(image_id, images_id, "backend->comment rout")
     update_comment.comment = request.form['comment']
     db.session.add(update_comment)
     db.session.commit()
