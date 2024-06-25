@@ -85,13 +85,13 @@ export const deleteAComment = ({ id, image_id }) => async (dispatch) => {
   }
 };
 
-export const updateAComment = ({ commentsImageId, commentId }) => async (dispatch) => {
-  const res = await fetch(`/api/comments/update/${commentId}`, {
+export const updateAComment = ({ id, image_id }) => async (dispatch) => {
+  const res = await fetch(`/api/comments/update/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ commentId, commentsImageId })
+    body: JSON.stringify({ id, image_id })
 
   })
 
@@ -123,10 +123,7 @@ export default function reducer(state = initialState, action) {
       const getStateNow = { ...state }
       getStateNow[action.payload.id] = action.payload
       return getStateNow;
-    case EDIT_COMMENT:
-      const editState = { ...state }
-      editState[action.payload.id] = action.payload
-      return editState;
+
     default:
       return state;
   }

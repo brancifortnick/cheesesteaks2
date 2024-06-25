@@ -42,9 +42,9 @@ function GetSingleComment() {
 
 
                     <ButtonGroup disableElevation variant="contained">
-                        {comment?.user_id === user?.id ? (
+                        {/* {comment?.user_id === user?.id ? (
                             <Button> <EditComment commentId={comment.id} /> </Button>
-                        ) : null}
+                        ) : null} */}
 
                         {console.log(comment.image_id, "comment.image_id?>>>>>>>")}
                         {comment.user_id === user?.id ? (

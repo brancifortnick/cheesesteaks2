@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { Modal } from "../context/Modal";
 import { updateAComment, getTheComments } from "../store/comment";
@@ -8,23 +8,39 @@ import EditIcon from "@mui/icons-material/Edit";
 import { Button } from "@mui/material";
 import './EditComment.css';
 import Box from '@mui/material/Box';
+import { getAPhoto } from "../store/image";
 
-const EditComment = ({ commentsImageId, commentId }) => {
+const EditComment = ({ imageId, commentId }) => {
+
+  console.log(imageId, "commentsImagesId prop from editcomment component", commentId, "commentId prop same place")
   const dispatch = useDispatch();
   const history = useHistory();
-  const { locationId } = useParams();
-  const [comment, setComment] = useState("");
+  const user = useSelector(state => state.session.user)
+  const { locationId } = useParams()
+  const [comment, setComment] = useState('')
+  const comments = useSelector(state => Object.values(state.comment))
   const [showModal, setModal] = useState(false);
+
+
+
+  console.log(comments, "edit comment, => trying to get comments store state")
+  console.log(locationId, "locationId=?????editcomponemt ")
 
   const onSubmit = async (e) => {
     e.preventDefault()
 
-
-    dispatch(updateAComment({ image_id: commentsImageId, id: commentId }));
+    const formData = new FormData()
+    formData.append("comment", comment)
+    formData.append('image_id', parseInt(imageId))
+    formData.append('user_id', user.id)
+    dispatch(updateAComment({ image_id: imageId, id: commentId }));
     setModal(false);
 
   }
 
+  useEffect(() => {
+    dispatch(getAPhoto(locationId))
+  }, [dispatch, locationId])
   return (
     <div className='edit-container'>
       <EditIcon onClick={() => setModal(true)} color='white' />
@@ -34,7 +50,7 @@ const EditComment = ({ commentsImageId, commentId }) => {
             <TextareaAutosize
               className="comment-input"
               type="text"
-              placeholder={commentsImageId}
+              placeholder={imageId}
               onChange={(e) => setComment(e.target.value)}
               value={comment}
               minRows={5}

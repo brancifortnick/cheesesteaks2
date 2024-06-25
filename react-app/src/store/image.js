@@ -117,6 +117,9 @@ export const deletePhoto = (id) => async (dispatch) => {
   }
 };
 
+
+
+
 const initialState = {};
 
 export default function reducer(state = initialState, action) {
@@ -165,11 +168,13 @@ export default function reducer(state = initialState, action) {
     case EDIT_IMAGE_COMMENT: {
       const targetImg = findObjectById(Object.values(state), action.payload.image_id)
       targetImg.comments = filterObjsById(Object.values(targetImg.comments), action.payload.id)
-      if (targetImg.comments) {
-        const editComments = [...targetImg.comments, action.payload?.id]
-        targetImg.comments = editComments
+
+      const previousValue = [...targetImg.comments, action.payload.id]
+      // targetImg.comments = previousValue
+      if (targetImg.comments !== previousValue) {
+        previousValue.comments = targetImg.comments
       } else {
-        console.log('error in EDIT_IMAGE_COMMENT+>+_>>>> image store')
+        targetImg.comments = [action.payload]
       }
       return JSON.parse(JSON.stringify(state))
     }

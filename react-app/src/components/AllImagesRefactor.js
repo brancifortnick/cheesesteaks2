@@ -39,7 +39,7 @@ function AllImagesRefactor({ images }) {
                 return (
                     <div key={comment.id}>
                         {comment.comment}
-                        <EditComment commentsImageId={image.id} commentId={comment.id} />
+                        <EditComment imageId={image.id} commentId={comment.id} />
                         <DeleteComment imageId={image.id} commentId={comment.id} />
 
                     </div>
