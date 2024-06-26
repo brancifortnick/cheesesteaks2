@@ -31,9 +31,9 @@ const EditComment = ({ imageId, commentId }) => {
 
     const formData = new FormData()
     formData.append("comment", comment)
-    formData.append('image_id', parseInt(imageId))
-    formData.append('user_id', user.id)
-    dispatch(updateAComment({ image_id: imageId, id: commentId }));
+
+
+    dispatch(updateAComment(commentId, formData))
     setModal(false);
 
   }

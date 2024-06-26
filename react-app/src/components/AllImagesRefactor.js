@@ -39,7 +39,7 @@ function AllImagesRefactor({ images }) {
                 return (
                     <div key={comment.id}>
                         {comment.comment}
-                        <EditComment imageId={image.id} commentId={comment.id} />
+                        {/* <EditComment imageId={image.id} commentId={comment.id} /> */}
                         <DeleteComment imageId={image.id} commentId={comment.id} />
 
                     </div>
@@ -81,9 +81,9 @@ function AllImagesRefactor({ images }) {
                             </div>
                             <CardContent>
                                 <CardActions >
-                                    {user.id === Number(location.user_id) ? (
-                                        <DeleteLocationsImages imageId={image?.id} locationId={location.id} />
-                                    ) : null}
+
+                                    <DeleteLocationsImages imageId={image?.id} />
+                                    {/* {user.id === Number(location.user_id) ? (  ) : null} */}
                                 </CardActions>
                             </CardContent>
 

@@ -45,7 +45,7 @@ function AllLocations() {
 
               }}>
               <CardContent>
-                  <Typography variant="subtitle" display='block' component="div">
+                  <Typography variant="subtitle" component="div">
                   {location.location_name}
                   </Typography>
                   <CardActions sx={{ border: 'white', mb: 1, pt: 2, mt: 4 }}>

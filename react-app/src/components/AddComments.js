@@ -20,6 +20,8 @@ const AddComments = ({ locationId, imageId }) => {  //added imageId prop and the
   const history = useHistory()
   const user = useSelector(state => state.session.user)
   const [comment, setComment] = useState("");
+
+
   const [showModal, setModal] = useState(false)
 
 
@@ -56,7 +58,7 @@ const AddComments = ({ locationId, imageId }) => {  //added imageId prop and the
               placeholder="Comment here..."
               onChange={updateComment}
               value={comment}
-              minRows={5}
+              minRows={2}
               style={{ width: 450, height: 225, fontSize: 18 }}
             />
 

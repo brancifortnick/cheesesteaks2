@@ -23,21 +23,28 @@ const DeleteLocationsImages = ({ imageId }) => {
         setModal(false)
         history.push(`/locations/${locationId}`)
     };
+    const handleCancel = async (e) => {
+        e.preventDefault();
+        setModal(false)
+        history.push(`/locations/${locationId}`)
 
+    }
     useEffect(() => {
         dispatch(getPhotos(locationId))
     }, [dispatch, locationId])
 
     return (
         <div>
-            {/*
+            <button id="delete-location-images-modal-btn" onClick={() => setModal(true)}>Delete</button>
             {showModal && (
                 <Modal onClose={() => setModal(false)}>
-                    <button id="delete-location-images-modal-btn" onClick={() => setModal(true)}>Are you positive you would like to delete this image?</button>
+                    <button onClick={onSubmit}>Are you positive you would like to delete this image?</button>
+                    <button onClick={handleCancel}>Cancel</button>
                 </Modal>
-            )} */}
-            <button onClick={onSubmit}>Delete Photo</button>
+            )}
+
         </div>
+
     )
 };
 
