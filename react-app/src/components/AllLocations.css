@@ -8,6 +8,11 @@
   margin: 30px 15px;
 
 }
+
+.location-div-container {
+  max-width: 450px;
+  max-height: auto;
+}
 .image_card {
 height: 400px;
   width: auto;

@@ -53,10 +53,9 @@ def delete_comment(id):
 @comment_routes.route('/update/<image_id>', methods=['PUT'])
 @login_required
 def update_comment(id):
-    comment = Comment.query.filter(Comment.image_id == Image.id)
-    if comment:
-        return jsonify('comment doesn"t exist=> message from BACKEND COMMENTROUTE')
-    comment.comment = request.form['comment']
+    update_comment = Comment.query.get(id)
+    print('from update route', update_comment.to_dict())
+    update_comment.comment = request.form['comment']
     db.session.add(update_comment)
     db.session.commit()
-    return comment.to_dict()
+    return update_comment.to_dict()

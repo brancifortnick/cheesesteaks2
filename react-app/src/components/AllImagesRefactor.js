@@ -19,6 +19,7 @@ import GetSpecificImage from "./GetSpecificImage";
 import DeleteComment from "./DeleteComment";
 import { findObjectById } from "../Utilities/StoreMethods";
 import EditComment from "./EditComment";
+import VoteCounter from "./VoteCounter";
 
 
 function AllImagesRefactor({ images }) {
@@ -39,7 +40,8 @@ function AllImagesRefactor({ images }) {
                 return (
                     <div key={comment.id}>
                         {comment.comment}
-                        {/* <EditComment imageId={image.id} commentId={comment.id} /> */}
+
+                        {/* <EditComment imageId={image.id} comment={comment} /> */}
                         <DeleteComment imageId={image.id} commentId={comment.id} />
 
                     </div>
@@ -60,10 +62,9 @@ function AllImagesRefactor({ images }) {
                             {/* <div>
                                 <AddComments imageId={image.id} locationId={location?.id} />
                             </div> */}
-
-                            <Typography gutterBottom variant="h3" component="div">
+                            <p>
                                 {image.title}
-                            </Typography>
+                            </p>
 
                             <Card>
                                 <img
@@ -79,6 +80,7 @@ function AllImagesRefactor({ images }) {
                             <div>
                                 <Accordian toggleText='comments' children={buildCommentTemplate(image)} />
                             </div>
+
                             <CardContent>
                                 <CardActions >
 

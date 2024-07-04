@@ -4,7 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { deletePhoto, getAPhoto, getPhotos } from "../store/image";
 import { Modal } from "../context/Modal";
 
-
+import Button from "@mui/material/Button";
 const DeleteLocationsImages = ({ imageId }) => {
 
 
@@ -35,11 +35,11 @@ const DeleteLocationsImages = ({ imageId }) => {
 
     return (
         <div>
-            <button id="delete-location-images-modal-btn" onClick={() => setModal(true)}>Delete</button>
+            <button id="delete-location-images-modal-btn" onClick={() => setModal(true)}>Delete Image</button>
             {showModal && (
-                <Modal onClose={() => setModal(false)}>
-                    <button onClick={onSubmit}>Are you positive you would like to delete this image?</button>
-                    <button onClick={handleCancel}>Cancel</button>
+                <Modal onClose={() => setModal(false)}><div className='are-you-sure'>
+                    <Button onClick={onSubmit}>Delete this image?</Button></div>
+                    <div><button onClick={handleCancel}>Cancel</button></div>
                 </Modal>
             )}
 

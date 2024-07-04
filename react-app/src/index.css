@@ -11,6 +11,7 @@ html {
   #fbda21;
   background: black;
 } */
+a,
 a:hover,
 a:visited,
 a:link,
@@ -18,9 +19,34 @@ a:active {
   text-decoration: none;
   color: white;
 }
-#main-wrapper {
+.row {
+  display: flex;
+
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
+
+}
+
+.right,
+.left {
+  height: 100vh;
+  width: 100%;
+}
+
+.left {
+  background: red;
+
+}
+
+.right {
+  background: blue;
+}
+ #main-wrapper {
   display: -webkit-inline-box;
-  /* box-sizing: border-box; */
+
   max-width: 100vh;
   left: 0;
   right: 0;
@@ -30,10 +56,11 @@ a:active {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  border-radius: 6px;
-  /* background-color: white; */
+    border-radius: 6px;
 }
-img {
+/* img {
   display: flex;
   align-items: flex-start;
 }
+
+*/

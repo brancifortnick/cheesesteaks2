@@ -44,6 +44,8 @@ export const getPhotos = (id) => async (dispatch) => {
     const photos = await res.json();
     console.log(photos.images, "photos.images>>>>> store")
     dispatch(getAllPhotos(photos.images));
+  } else {
+    return 'error-can not fetch images--store error'
   }
 };
 
@@ -153,7 +155,9 @@ export default function reducer(state = initialState, action) {
       const targetImage = findObjectById(Object.values(state), action.payload.image_id)
       if (targetImage.comments) {
         const comments = [...targetImage.comments, action.payload]
+        console.log(comments, "addimagecomment=> found by Id")
         targetImage.comments = comments;
+        console.log(targetImage.comments, "setting this = comments=> imagestore")
       } else {
         targetImage.comments = [action.payload]
       }
@@ -163,21 +167,23 @@ export default function reducer(state = initialState, action) {
     case DELETE_IMAGE_COMMENT: {
       const targetImage = findObjectById(Object.values(state), action.payload.image_id)
       targetImage.comments = filterObjsById(Object.values(targetImage.comments), action.payload.id)
+      console.log(targetImage.comments, "delete frfom image store")
       return JSON.parse(JSON.stringify(state))
     }
-    case EDIT_IMAGE_COMMENT: {
-      const targetImg = findObjectById(Object.values(state), action.payload.image_id)
-      targetImg.comments = filterObjsById(Object.values(targetImg.comments), action.payload.id)
+    // case EDIT_IMAGE_COMMENT: {
+    //   const targetImg = findObjectById(Object.values(state), action.payload.image_id)
+    //   console.log(targetImg, 'comming from editimage in image store')
+    //   targetImg.comments = filterObjsById(Object.values(targetImg.comments), action.payload)
 
-      const previousValue = [...targetImg.comments, action.payload.id]
-      // targetImg.comments = previousValue
-      if (targetImg.comments !== previousValue) {
-        previousValue.comments = targetImg.comments
-      } else {
-        targetImg.comments = [action.payload]
-      }
-      return JSON.parse(JSON.stringify(state))
-    }
+    //   const previousValue = [...targetImg.comments, action.payload]
+    //   // targetImg.comments = previousValue
+    //   if (targetImg.comments !== previousValue) {
+    //     previousValue.comments = targetImg.comments
+    //   } else {
+    //     targetImg.comments = [action.payload]
+    //   }
+    //   return JSON.parse(JSON.stringify(state))
+    // }
     default:
       return state;
   }

@@ -38,27 +38,19 @@ export const postNewVotes = (formData) => async (dispatch) => {
 };
 
 
-export const editVotes = (formData, locationId) => async (dispatch) => {
-
-  const res = await fetch(`/api/locations/${locationId}/votes`, {
-    method: "PUT",
-    body: formData,
-  });
-  if (res.ok) {
-    console.log(res, "resssssss editVotes")
-    const votes = await res.json();
-    dispatch(editTheVotes(votes))
-  } else {
-    console.log('didnt make it past res')
-  }
-}
 
 export default function counter(state = 0, action) {
   switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
+    case GET_VOTES:
+      let currentVals = {}
+      action.payload.forEach((vote) => {
+        currentVals[vote?.id] = vote
+      })
+      return currentVals;
+    case ADD_VOTES:
+      const currentStateOfVotes = { ...state }
+      currentStateOfVotes[action.payload.id] = action.payload
+      return currentStateOfVotes;
     default:
       return state
   }

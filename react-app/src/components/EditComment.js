@@ -10,9 +10,9 @@ import './EditComment.css';
 import Box from '@mui/material/Box';
 import { getAPhoto } from "../store/image";
 
-const EditComment = ({ imageId, commentId }) => {
+const EditComment = ({ commentId, imageId }) => {
 
-  console.log(imageId, "commentsImagesId prop from editcomment component", commentId, "commentId prop same place")
+
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector(state => state.session.user)
@@ -21,10 +21,9 @@ const EditComment = ({ imageId, commentId }) => {
   const comments = useSelector(state => Object.values(state.comment))
   const [showModal, setModal] = useState(false);
 
+  const images = useSelector(state => Object.values(state.image))
+  console.log(images, "edit comment component")
 
-
-  console.log(comments, "edit comment, => trying to get comments store state")
-  console.log(locationId, "locationId=?????editcomponemt ")
 
   const onSubmit = async (e) => {
     e.preventDefault()
@@ -33,7 +32,7 @@ const EditComment = ({ imageId, commentId }) => {
     formData.append("comment", comment)
 
 
-    dispatch(updateAComment(commentId, formData))
+    dispatch(updateAComment(comment, formData))
     setModal(false);
 
   }

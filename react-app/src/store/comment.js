@@ -85,15 +85,20 @@ export const deleteAComment = ({ id, image_id }) => async (dispatch) => {
   }
 };
 
-export const updateAComment = ({ id, image_id }) => async (dispatch) => {
+export const updateAComment = (formData, image_id) => async (dispatch) => {
+  let id = image_id
   const res = await fetch(`/api/comments/update/${id}`, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ id, image_id })
+
+    body: formData,
 
   })
+  if (res.ok) {
+    const newComment = await res.json();
+    dispatch(editComment(newComment));
+  } else {
+    console.log('error in updateacomment=>>>>>>>store')
+  }
 
   if (res.ok) {
     const updatedComment = await res.json();

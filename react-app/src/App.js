@@ -48,9 +48,10 @@ function App() {
 
   return (
     // <UserContext.Provider value={{stateForId, setStateForId}}>
+
     <BrowserRouter>
       <NavBar />
-      <div id='main-wrapper'>
+
         <Switch>
           <Route path="/login" exact={true}>
             <LoginForm />
@@ -79,7 +80,7 @@ function App() {
             <Locations />
           </ProtectedRoute>
         </Switch>
-      </div>
+
     </BrowserRouter>
     // </UserContext.Provider>
   );

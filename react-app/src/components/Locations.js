@@ -24,7 +24,8 @@ import ImageUpload from "./ImageUpload";
 import { Folder } from "@mui/icons-material";
 import AllPhotos from "./AllPhotos";
 import Accordian from "./Accordian/Accordian";
-
+import VoteCounter from './VoteCounter'
+import { getAllVotes } from "../store/vote";
 
 
 
@@ -51,7 +52,7 @@ function Locations() {
   useEffect(() => {
     dispatch(getOneLocation((locationId)));
     dispatch(getPhotos(locationId))
-
+    dispatch(getAllVotes())
 
   }, [dispatch, locationId]);
 
@@ -63,10 +64,8 @@ function Locations() {
 
           {location.profile_img !== null ? (
             <Box>
-              <Avatar sx={{
-                alignContent: "center", width: 300, height: 300, maxWidth: '50em',
-              }} src={location.profile_img}>
-              </Avatar>
+              <img src={location.profile_img} alt='...loading' />
+
             </Box>
           ) : null
           }
@@ -90,7 +89,7 @@ function Locations() {
         <div>
 
           <AllImagesRefactor images={images} locationId={locationId} />
-
+          {/* <VoteCounter locationId={location.id} /> */}
         </div>
       </div>
     </>

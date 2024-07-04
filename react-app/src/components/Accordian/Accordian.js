@@ -2,7 +2,7 @@
 import { React, useState, useRef } from 'react'
 import './Accordian.css'
 import photo from '../../assets/caret.svg'
-import EditComment from '../../components/EditComment'
+import EditComment from "../EditComment"
 
 
 
@@ -15,8 +15,6 @@ const Accordian = ({ children, toggleText }) => {
     const expandCollapse = () => {
         if (expand === 'closed') {
             setExpansion('open')
-
-
         } else {
             setExpansion('closed')
         }

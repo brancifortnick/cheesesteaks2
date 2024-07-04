@@ -7,12 +7,12 @@ import { getAPhoto } from "../store/image";
 import { getAllLocations } from "../store/location";
 import VoteUpdater from "./VoteUpdater";
 
-const VoteCounter = ({ locationId }) => {
+const VoteCounter = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   const location = useSelector(state => (state.location))
-
-  console.log(locationId, '<<<<<<<<<<<<<<<<locationId inside VOTECOUNER?????????')
+  const { locationId } = useParams();
+  // console.log(locationId, '<<<<<<<<<<<<<<<<locationId inside VOTECOUNER?????????')
 
   const [vote, setVote] = useState(null); // be cautious of this useState
   const [downvote, setDownVote] = useState(null);
@@ -28,10 +28,10 @@ const VoteCounter = ({ locationId }) => {
     dispatch(postNewVotes(formData))
   };
 
-  useEffect(() => {
-    dispatch(editVotes(Number(locationId)))
-    // dispatch(getAllVotes(Number(locationId)))
-  }, [dispatch, locationId])
+  // useEffect(() => {
+  //   // dispatch(editVotes(Number(locationId)))
+  //   dispatch(getAllVotes())
+  // }, [dispatch, locationId])
 
 
   let totalVote = (downvote, vote) => {
@@ -60,7 +60,7 @@ const VoteCounter = ({ locationId }) => {
           <button onClick={up} value={vote}>vote</button>
           {Number(vote)}
         </div>
-        {/* <div>{totalVote(vote, downote)}</div> */}
+        <h2>totalvote: {totalVote(downvote, vote)}</h2>
       </>
     </form>
   );
