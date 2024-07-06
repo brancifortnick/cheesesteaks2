@@ -1,9 +1,8 @@
 .locations-container {
-  display: inline-block;
-  flex-direction: column;
-  align-content: space-between;
-  flex-wrap: wrap;
-  box-shadow: 2px 4px 10px 4px rgba(0, 0, 0, 0.383);
+    grid-column-start: 2;
+      grid-column-end: five;
+      grid-row-start: row1-start;
+      grid-row-end: 3;
   backdrop-filter: blur(7px);
   margin: 30px 15px;
 

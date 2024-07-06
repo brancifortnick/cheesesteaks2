@@ -1,22 +1,36 @@
 .nav-container {
   display: flex;
   flex-direction: row;
-
-  justify-content: space-around;
+  position: fixed;
+    width: 100%;
+    justify-content: space-evenly;
   align-items: center;
   height: 20px;
   padding: 20px;
   margin: 0;
+
   box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.383);
   background-color: #303133;
   backdrop-filter: blur(5px);
   min-width: 450px;
-    max-width: 2650px;
+  max-width: 2650px;
 }
 
 .link-location {
+
   background-color: #1976d2;
+  border: 1px snow;
   border-radius: 3px;
   padding: 4px;
   font-style: normal;
+}
+
+.users-profile {
+  border-radius: 3px;
+  padding: 4px;
+  font-style: normal;
+  background-color: #1976d2;
+  border: 3px solid #9fafbe;
+  border-radius: 3px;
+  color: white;
 }

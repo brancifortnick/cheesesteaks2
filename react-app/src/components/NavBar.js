@@ -74,7 +74,7 @@ const NavBar = () => {
 
         {!user ? (
           <Button
-            variant="contained"
+            variant="primary"
             color="primary"
             className="demo-login"
             onClick={demoLoginButton}
@@ -87,21 +87,27 @@ const NavBar = () => {
             Demo
           </button>
         ) : null} */}
-        {/* {user ? (
-          <button>
-            <NavLink to={`/users/${user.id}`}>{`${user.username}` + 's profile'}</NavLink>
-          </button>
 
-        ) : null} */}
-        <div className='link-location'>
+        <div className='link-location' >
           {user ? (
+
             <Link to={`/users/${user.id}/new-location`}>
               Add Establishment
             </Link>
+
           ) : null}
         </div>
-        <div className="nav-link">{user ? <LogoutButton /> : null}</div>
-      </div>
+
+        <div className="nav-link">{user ? <LogoutButton /> && <p className='users-profile-btn'>
+
+
+          <NavLink to={`/users/${user.id}`}>{`${user.username + 's Profile'}`}</NavLink>
+
+
+
+        </p> : null}</div>
+      </div >
+
     </nav >
   );
 };

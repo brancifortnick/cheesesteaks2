@@ -73,14 +73,14 @@ function AllImagesRefactor({ images }) {
                                     className="image-card"
                                 />
                             </Card>
-
-                            <div>
+                            <section>
+                                <span>
                                 <AddComments imageId={image.id} locationId={location.id} />
-                            </div>
-                            <div>
+                                </span>
+                                <span>
                                 <Accordian toggleText='comments' children={buildCommentTemplate(image)} />
-                            </div>
-
+                                </span>
+                            </section>
                             <CardContent>
                                 <CardActions >
 
