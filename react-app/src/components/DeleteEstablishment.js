@@ -6,6 +6,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box'
 
+
+
+
+//! this component is used to delete a location from the /locations route
 const DeleteEstablishment = ({ locationId }) => {
 
     const history = useHistory();
@@ -16,7 +20,8 @@ const DeleteEstablishment = ({ locationId }) => {
     const onSubmit = async (e) => {
         e.preventDefault();
         dispatch(deleteOneLocation(Number(locationId)));
-        history.push('/')
+        // dispatch(getAllLocations()
+        // history.push('/')
     };
 
     useEffect(() => {

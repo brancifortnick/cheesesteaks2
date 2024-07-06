@@ -1,41 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {
-  getOneLocation,
-  deleteOneLocation,
-  getAllLocations
-} from "../store/location";
+import { deleteOneLocation, getAllLocations } from "../store/location";
 import Button from '@mui/material/Button'
 import { Box } from "@mui/material";
-const DeleteLocation = ({ locationId }) => {
+import { Modal } from "../context/Modal";
+const DeleteLocation = () => {
+
+
+  const [showModal, setModal] = useState(false)
   const history = useHistory();
   const dispatch = useDispatch();
+  const { locationId } = useParams()
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    dispatch(deleteOneLocation(Number(locationId)));
-
-    const message = (msg) => alert(msg)
-    let msg = 'hey did this update the deleted object'
-    msg ? message() : console.log('message function failing')
+    dispatch(deleteOneLocation(Number(locationId)))
+    dispatch(getAllLocations());
+    setModal(false);
     history.push('/locations')
   };
+  const cancelModal = () => {
+    setModal(false)
+  }
 
-  useEffect(() => {
-    dispatch(getAllLocations());
-
-  }, [dispatch, locationId]);
 
   return (
-    <div id="delete-Location-div">
+    <div id="delete-location-container">
+      <Button onClick={() => setModal(true)} id="delete-location-modal-btn">Delete Establishment</Button>
       <Box sx={{ alignContent: "center", mx: "auto", maxWidth: '300px', borderRadius: '6px', textAlign: 'center', backgroundColor: 'white' }}>
-        <Button onClick={onSubmit} id="delete-location-btn">
-          Delete album and its contents
-        </Button>
+        {showModal && (
+          <Modal onClose={() => setModal(true)}>
+            <div className='delete-location-modal'>
+              <Button onClick={onSubmit} id="delete-location-btn">
+                Confirm Delete
+              </Button>
+            </div>
+            <div className='cancel-modal-btn'>
+              <Button onClick={cancelModal} id="cancel-modal-btn">
+                Cancel
+              </Button>
+            </div>
+          </Modal>
+        )}
       </Box>
 
     </div >
+
   );
 };
 export default DeleteLocation;

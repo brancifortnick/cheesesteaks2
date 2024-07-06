@@ -10,5 +10,4 @@ export const filterObjsById = (objs = [], id) => {
 }
 
 
-
 //by id with new value by passing prop(comment) into the function

@@ -6,7 +6,7 @@
 
 .form-element-edit-comment {
     display: flex;
-    flex-direction: column;
+    gap: 1rem;
 }
 
 .form-buttons {
