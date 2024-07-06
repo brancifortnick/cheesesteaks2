@@ -7,31 +7,40 @@
 }
 
 */
-.card-container {}
-#description-text {
-
-}
-
-
-/* .establishment-images {
+.card-container {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
-  align-content: center;
-  padding-top: 4%;
-  margin: 8px;
 }
 
-*/
+.delete-location-comp {
+  color: red;
+}
+#description-text {
+  flex-direction: row;
+    word-wrap: wrap;
+
+}
+
+.location-image {}
+
+.image-upload-comp {}
+
+.image-cards-container {
+  display: flex;
+  flex-direction: column;
+    width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
 
 
 #bio {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  word-wrap: wrap;
   justify-content: center;
-  align-content: center;
+
 
   border-radius: 3px;
   padding-bottom: 3%;

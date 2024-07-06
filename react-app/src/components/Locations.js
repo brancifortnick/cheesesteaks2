@@ -32,6 +32,8 @@ function Locations() {
 
   const images = useSelector(state => Object.values(state.image))
 
+
+
   const { locationId } = useParams()
 
   useEffect(() => {
@@ -44,20 +46,18 @@ function Locations() {
   return (
     <>
       <div className="card-container">
-        <div className='delete-location-comp'>
-          <DeleteLocation location={location.id} />
-        </div>
+
 
 
         {location.profile_img !== null ? (
           <Box>
-            <img src={location.profile_img} alt='...loading' />
+            <img className='location-image' src={location.profile_img} alt='...loading' />
 
           </Box>
         ) : null
         }
-        <div>
-          <ImageUpload locationId={locationId} />
+        <div className='delete-location-comp'>
+          <DeleteLocation location={location.id} />
 
           <div id="update-biography">
             {currentUser.id === Number(location.user_id) ? (
@@ -67,18 +67,21 @@ function Locations() {
                 locationId={location.id}
               />
             ) : null}
-          </div>
           <div id="description-text">
             Brief description of the establishment
 
 
             <div id="establishment-bio">{location.biography}</div>   </div>
           <div className='image-cards-and-delete-comp'>
+              <div className='image-upload-comp'>
+                <ImageUpload locationId={locationId} />
+              </div>
             <div className='image-cards-container'>
               <AllImagesRefactor images={images} locationId={locationId} />
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   )
