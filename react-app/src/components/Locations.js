@@ -32,13 +32,7 @@ function Locations() {
 
   const images = useSelector(state => Object.values(state.image))
 
-
-
   const { locationId } = useParams()
-
-
-
-
 
   useEffect(() => {
     dispatch(getOneLocation((locationId)));
