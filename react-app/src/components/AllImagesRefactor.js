@@ -41,7 +41,7 @@ function AllImagesRefactor({ images }) {
                     <div key={comment.id}>
                         {comment.comment}
 
-                        {/* <EditComment imageId={image.id} comment={comment} /> */}
+                        <EditComment imageId={image.id} commentObj={comment} />
                         <DeleteComment imageId={image.id} commentId={comment.id} />
 
                     </div>
@@ -50,7 +50,7 @@ function AllImagesRefactor({ images }) {
         }
     }
 
-
+    //returning multiple accordians
     const buildTemplate = () => {
         if (images) {
 

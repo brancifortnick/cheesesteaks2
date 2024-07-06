@@ -35,7 +35,10 @@ const updateOnePhoto = (image) => ({
   payload: image,
 });
 
-
+const updateComment = (image) => ({
+  type: EDIT_IMAGE_COMMENT,
+  payload: image,
+})
 
 
 export const getPhotos = (id) => async (dispatch) => {
@@ -80,6 +83,8 @@ export const addImage = (formData) => async (dispatch) => {
     console.log('error res is not okay in addimage')
   }
 };
+
+
 export const postNewPhoto =
   (image, title, user_id, location_id) => async (dispatch) => {
     image = image.url
@@ -97,6 +102,8 @@ export const postNewPhoto =
       console.log('image Not Added - Error');
     }
   };
+
+
 export const editImage = (formData, id) => async (dispatch) => {
   const res = await fetch(`/api/images/${id}`, {
     method: "PUT",
@@ -120,6 +127,20 @@ export const deletePhoto = (id) => async (dispatch) => {
 };
 
 
+export const updateAComment = (formData, commentId) => async (dispatch) => {
+
+  const res = await fetch(`/api/comments/${commentId}/update`, {
+    method: "PUT",
+    body: formData,
+  })
+  if (res.ok) {
+    const updatedComment = await res.json();
+    dispatch(updateComment(updatedComment));
+    return updatedComment
+  } else {
+    console.log("Comment Can't be edited");
+  }
+};
 
 
 const initialState = {};
@@ -170,20 +191,14 @@ export default function reducer(state = initialState, action) {
       console.log(targetImage.comments, "delete frfom image store")
       return JSON.parse(JSON.stringify(state))
     }
-    // case EDIT_IMAGE_COMMENT: {
-    //   const targetImg = findObjectById(Object.values(state), action.payload.image_id)
-    //   console.log(targetImg, 'comming from editimage in image store')
-    //   targetImg.comments = filterObjsById(Object.values(targetImg.comments), action.payload)
+    case EDIT_IMAGE_COMMENT: {
+      const targetImage = findObjectById(Object.values(state), action.payload.image_id)
+      const comment = findObjectById(Object.values(targetImage.comments), action.payload.id)
+      comment.comment = action.payload.comment
+      console.log(comment.comment, "edit comment image store")
+      return JSON.parse(JSON.stringify(state))
+    }
 
-    //   const previousValue = [...targetImg.comments, action.payload]
-    //   // targetImg.comments = previousValue
-    //   if (targetImg.comments !== previousValue) {
-    //     previousValue.comments = targetImg.comments
-    //   } else {
-    //     targetImg.comments = [action.payload]
-    //   }
-    //   return JSON.parse(JSON.stringify(state))
-    // }
     default:
       return state;
   }

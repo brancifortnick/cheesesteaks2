@@ -89,7 +89,7 @@ function Locations() {
         <div>
 
           <AllImagesRefactor images={images} locationId={locationId} />
-          {/* <VoteCounter locationId={location.id} /> */}
+          <DeleteLocation location={location.id} />
         </div>
       </div>
     </>

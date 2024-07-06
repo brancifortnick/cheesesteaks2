@@ -1,12 +1,26 @@
 .update-comment-submit-outter {
     display: flex;
-
-
     background-color: grey;
-    cursor: pointer;
+        cursor: pointer;
+        }
+
+.form-element-edit-comment {
+    display: flex;
+    flex-direction: column;
 }
 
+.form-buttons {
+    color: black;
+    border-radius: 0.25rem;
+    box-shadow: 1rem 1rem 1rem #00000038;
+}
 
+.buttons-container {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
 #update-comment-submit {
     cursor: pointer;
     color: white;

@@ -89,7 +89,7 @@ const ImageUpload = ({ locationId }) => {
         <div className="image-form-container">
 
             <Button sx={{ mt: '2em', alignContent: 'center', backgroundColor: 'grey' }} id="upload-photos-to-location" onClick={() => setModal(true)}>
-                Upload Photo
+                Add Image
             </Button>
             {showModal && (
 
@@ -100,14 +100,14 @@ const ImageUpload = ({ locationId }) => {
                             <div>
                                 <Box sx={{ display: 'flex', flexDirection: 'row', alignContent: 'center', mt: 1 }}>
                                     <TextField
-                                        multiline
+
                                         fullWidth
-                                        name="biography"
+                                        name="title"
                                         type="text"
-                                        placeholder="Description..."
+                                        placeholder="Title"
                                         onChange={(e) => setTitle(e.target.value)}
                                         value={title}
-                                        minRows={5}
+                                        minRows={1}
 
                                     />
 
@@ -130,7 +130,7 @@ const ImageUpload = ({ locationId }) => {
                                     <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
 
                                 </Box>
-                                <Button name='image' color='primary' type='submit'>Submit</Button>
+                                <Button name='image' color='primary' type='submit'> + </Button>
 
                             </div>
                         </form>

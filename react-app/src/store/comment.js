@@ -85,29 +85,7 @@ export const deleteAComment = ({ id, image_id }) => async (dispatch) => {
   }
 };
 
-export const updateAComment = (formData, image_id) => async (dispatch) => {
-  let id = image_id
-  const res = await fetch(`/api/comments/update/${id}`, {
-    method: "PUT",
 
-    body: formData,
-
-  })
-  if (res.ok) {
-    const newComment = await res.json();
-    dispatch(editComment(newComment));
-  } else {
-    console.log('error in updateacomment=>>>>>>>store')
-  }
-
-  if (res.ok) {
-    const updatedComment = await res.json();
-    dispatch(editComment(updatedComment));
-    return updatedComment
-  } else {
-    console.log("Comment Can't be edited");
-  }
-};
 
 const initialState = {};
 
@@ -128,7 +106,10 @@ export default function reducer(state = initialState, action) {
       const getStateNow = { ...state }
       getStateNow[action.payload.id] = action.payload
       return getStateNow;
-
+    // case EDIT_COMMENT:
+    //   const currState = { ...state }
+    //   currState[action.payload.id] = action.payload
+    //   return currState;
     default:
       return state;
   }

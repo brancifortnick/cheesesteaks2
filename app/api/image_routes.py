@@ -73,8 +73,24 @@ def delete_photo(id):
     return {'id': id}
 
 
-# @image_routes.route('/<int:id>/comments')
-# @login_required
-# def get_comments_from_params(id):
-#     comments = Comment.filter.query(Comment.image_id == id)
-#     return comments.to_dict()
+@image_routes.route('/<int:id>/comments')
+@login_required
+def get_comments_from_params(id):
+
+    data = request.get_json()  # Assuming comments data is sent as JSON
+
+    if not data:
+        return jsonify({'error': 'No data provided'}), 400
+
+    # Assuming Image is your SQLAlchemy model
+    image = Image.query.get(id)
+    if not image:
+        return jsonify({'error': 'Image not found'}), 404
+
+    # Update comments in the image model
+    image.comments = data.get('comments', image.comments)
+    print(f'Image comments: {image.comments}')
+    # Save changes to the database
+    db.session.commit()
+
+    return jsonify({'message': 'Comments updated successfully'}), 200

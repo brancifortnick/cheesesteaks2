@@ -7,8 +7,6 @@ from flask_login import current_user, login_required
 comment_routes = Blueprint('comments', __name__)
 
 
-
-
 @comment_routes.route('/')
 @login_required
 def get_comments():
@@ -26,7 +24,7 @@ def get_one_comment(id):
     return comment.to_dict()
 
 
-#post is working
+# post is working
 @comment_routes.route('/new', methods=['POST'])
 @login_required
 def add_comment():
@@ -50,11 +48,10 @@ def delete_comment(id):
     return {'id': id}
 
 
-@comment_routes.route('/update/<image_id>', methods=['PUT'])
+@comment_routes.route('/<int:id>/update', methods=['PUT'])
 @login_required
 def update_comment(id):
     update_comment = Comment.query.get(id)
-    print('from update route', update_comment.to_dict())
     update_comment.comment = request.form['comment']
     db.session.add(update_comment)
     db.session.commit()

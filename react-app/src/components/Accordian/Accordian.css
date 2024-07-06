@@ -1,15 +1,14 @@
 .accordion-wrapper[cs-state='closed'] .accordion-body {
     visibility: hidden;
+    height: 0px;
 }
-
-
-
 
 /*
 when its open the body is styled visibly
 */
 .accordion-wrapper[cs-state='open'] .accordion-body {
     visibility: visible;
+    height: fit-content;
 }
 
 

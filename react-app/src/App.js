@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext, createContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
@@ -13,16 +13,6 @@ import LocationUpload from "./components/LocationUpload";
 import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
-import VoteCounter from "./components/VoteCounter";
-import AllPhotos from "./components/AllPhotos";
-import VoteUpdater from "./components/VoteUpdater";
-import AddComments from "./components/AddComments";
-
-
-import { Add } from "@mui/icons-material";
-
-import AllImagesRefactor from "./components/AllImagesRefactor";
-import GetSpecificImage from "./components/GetSpecificImage";
 
 
 export var UserContext = createContext();
@@ -52,34 +42,34 @@ function App() {
     <BrowserRouter>
       <NavBar />
 
-        <Switch>
-          <Route path="/login" exact={true}>
-            <LoginForm />
-          </Route>
-          <Route path="/sign-up" exact={true}>
-            <SignUpForm />
-          </Route>
-          <ProtectedRoute path="/users" exact={true}>
-            <UsersList />
-          </ProtectedRoute>
-          <ProtectedRoute path="/users/:userId" exact={true}>
-            <User />
-          </ProtectedRoute>
-          <ProtectedRoute path="/" exact={true}>
-            <LandingPage />
-            <MapContainer />
-          </ProtectedRoute>
-          <ProtectedRoute path="/users/:userId/new-location" exact={true}>
-            <LocationUpload />
-          </ProtectedRoute>
-          <ProtectedRoute path="/locations" exact={true}>
-            <AllLocations />
+      <Switch>
+        <Route path="/login" exact={true}>
+          <LoginForm />
+        </Route>
+        <Route path="/sign-up" exact={true}>
+          <SignUpForm />
+        </Route>
+        <ProtectedRoute path="/users" exact={true}>
+          <UsersList />
+        </ProtectedRoute>
+        <ProtectedRoute path="/users/:userId" exact={true}>
+          <User />
+        </ProtectedRoute>
+        <ProtectedRoute path="/" exact={true}>
+          <LandingPage />
+          <MapContainer />
+        </ProtectedRoute>
+        <ProtectedRoute path="/users/:userId/new-location" exact={true}>
+          <LocationUpload />
+        </ProtectedRoute>
+        <ProtectedRoute path="/locations" exact={true}>
+          <AllLocations />
 
-          </ProtectedRoute>
-          <ProtectedRoute path="/locations/:locationId" >
-            <Locations />
-          </ProtectedRoute>
-        </Switch>
+        </ProtectedRoute>
+        <ProtectedRoute path="/locations/:locationId" >
+          <Locations />
+        </ProtectedRoute>
+      </Switch>
 
     </BrowserRouter>
     // </UserContext.Provider>
