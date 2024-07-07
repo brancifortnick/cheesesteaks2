@@ -50,37 +50,41 @@ const SignUpForm = () => {
       <form onSubmit={onSignUp}>
 
         <div className='form-container-sign-up'>
-          <label>User Name</label>
+          <label><br></br></label>
           <TextField
+            placeholder='Username'
             type='text'
             name='username'
             onChange={updateUsername}
             value={username}
           />
-          <label>Email</label>
+          <label><br></br></label>
           <TextField
+            placeholder='Email'
             type='text'
             name='email'
             onChange={updateEmail}
             value={email}
           />
-          <label>Password</label>
+          <label><br></br></label>
           <TextField
+            placeholder='Password'
             type='password'
             name='password'
             onChange={updatePassword}
             value={password}
           />
-          <label>Repeat Password</label>
+          <label><br></br></label>
           <TextField
             type='password'
+            placeholder='Confirm Password'
             name='repeat_password'
             onChange={updateRepeatPassword}
             value={repeatPassword}
             required={true}
           />
 
-          <Button variant='contained' color='primary' type='submit'>Sign Up</Button>
+          <Button sx={{ mt: 2 }} variant='contained' color='primary' type='submit'>Sign Up</Button>
         </div>
       </form>
     </div>
