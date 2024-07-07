@@ -50,14 +50,7 @@ const LocationUpload = () => {
       <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5 }}>
-            {/* <TextField
-              type="text"
-              name="location_name"
-              placeholder="Location Name"
-              onChange={(e) => setLocationName(e.target.value)}
-              value={location_name}
-            /></Box>
-            }}> */}
+
             <TextField
               type="text"
               name="location_name"

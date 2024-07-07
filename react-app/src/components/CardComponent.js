@@ -13,10 +13,10 @@ export default function MediaCard() {
 
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: '450px' }}>
             <CardMedia
                 component="img"
-                height="140"
+
                 image={location.profile_img}
                 alt="establishment"
             />

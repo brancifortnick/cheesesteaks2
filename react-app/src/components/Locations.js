@@ -52,13 +52,26 @@ function Locations() {
         {location.profile_img !== null ? (
           <Box>
             <img className='location-image' src={location.profile_img} alt='...loading' />
+            <div className='location-name'>{location.location_name}
+
+              <div>{currentUser.id === Number(location.user_id) ? (
+                <UpdateBiography
+
+                  locationBio={location.biography}
+                  locationId={location.id}
+                />
+              ) : null}
+                {location.biography}</div>
+            </div>
 
           </Box>
         ) : null
         }
         <div className='delete-location-comp'>
           <DeleteLocation location={location.id} />
+        </div>
 
+        {/*
           <div id="update-biography">
             {currentUser.id === Number(location.user_id) ? (
               <UpdateBiography
@@ -66,24 +79,20 @@ function Locations() {
                 locationBio={location.biography}
                 locationId={location.id}
               />
-            ) : null}
-          <div id="description-text">
-            Brief description of the establishment
+          ) : null} */}
 
+      </div >
 
-            <div id="establishment-bio">{location.biography}</div>   </div>
-          <div className='image-cards-and-delete-comp'>
-              <div className='image-upload-comp'>
-                <ImageUpload locationId={locationId} />
-              </div>
-            <div className='image-cards-container'>
-              <AllImagesRefactor images={images} locationId={locationId} />
-            </div>
-          </div>
+      <div className='image-cards-and-delete-comp'>
+        <div className='image-upload-comp'>
+          <ImageUpload locationId={locationId} />
+        </div>
+        <div className='image-cards-container'>
+          <AllImagesRefactor images={images} locationId={locationId} />
         </div>
       </div>
-      </div>
     </>
+
   )
 };
 

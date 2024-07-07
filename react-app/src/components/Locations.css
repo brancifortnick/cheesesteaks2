@@ -13,7 +13,7 @@
 }
 
 .delete-location-comp {
-  color: red;
+
 }
 #description-text {
   flex-direction: row;
@@ -21,7 +21,11 @@
 
 }
 
-.location-image {}
+.location-image {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
 .image-upload-comp {}
 
@@ -35,7 +39,7 @@
 }
 
 
-#bio {
+#establishment-bio {
   display: flex;
   flex-direction: row;
   word-wrap: wrap;
