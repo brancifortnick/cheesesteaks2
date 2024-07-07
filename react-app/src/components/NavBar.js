@@ -71,7 +71,7 @@ const NavBar = () => {
             </NavLink>
           ) : null}
         </div>
-        <div className='link-location'>
+        <div className='link-location' >
         {!user ? (
           <Button
             variant="primary"
@@ -83,7 +83,6 @@ const NavBar = () => {
           </Button>
         ) : null}
         </div>
-
         <div className='link-location' >
           {user ? (
 
@@ -94,17 +93,11 @@ const NavBar = () => {
           ) : null}
         </div>
 
-        <div className="nav-link">{user ? <LogoutButton /> && <p className='users-profile-btn'>
+        <div className="nav-link">{user ? (<div className='logout-btn'><LogoutButton /> </div>) : null}
+        </div>
 
-
-          <NavLink to={`/users/${user.id}`}>{`${user.username + 's Profile'}`}</NavLink>
-
-
-
-        </p> : null}</div>
       </div >
-
-    </nav >
+    </nav>
   );
 };
 

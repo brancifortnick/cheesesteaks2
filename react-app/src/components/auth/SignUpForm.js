@@ -46,47 +46,45 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div className='form-container-sign-up'>
-        <label>User Name</label>
-        <TextField
-          type='text'
-          name='username'
-          onChange={updateUsername}
-          value={username}
-        />
-        <label>Email</label>
-        <TextField
-          type='text'
-          name='email'
-          onChange={updateEmail}
-          value={email}
-        />
-        <label>Password</label>
-        <TextField
-          type='password'
-          name='password'
-          onChange={updatePassword}
-          value={password}
-        />
-        <label>Repeat Password</label>
-        <TextField
-          type='password'
-          name='repeat_password'
-          onChange={updateRepeatPassword}
-          value={repeatPassword}
-          required={true}
-        />
-        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 0.5 }}>
+    <div className='outter-signup-container'>
+      <form onSubmit={onSignUp}>
+
+        <div className='form-container-sign-up'>
+          <label>User Name</label>
+          <TextField
+            type='text'
+            name='username'
+            onChange={updateUsername}
+            value={username}
+          />
+          <label>Email</label>
+          <TextField
+            type='text'
+            name='email'
+            onChange={updateEmail}
+            value={email}
+          />
+          <label>Password</label>
+          <TextField
+            type='password'
+            name='password'
+            onChange={updatePassword}
+            value={password}
+          />
+          <label>Repeat Password</label>
+          <TextField
+            type='password'
+            name='repeat_password'
+            onChange={updateRepeatPassword}
+            value={repeatPassword}
+            required={true}
+          />
+
           <Button variant='contained' color='primary' type='submit'>Sign Up</Button>
-        </Box>
-      </div>
-    </form>
+        </div>
+      </form>
+    </div>
+
   );
 };
 

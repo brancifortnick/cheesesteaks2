@@ -12,7 +12,7 @@ import Box from '@mui/material/Box'
 //! this component is used to delete a location from the /locations route
 const DeleteEstablishment = ({ locationId }) => {
 
-    const history = useHistory();
+
     const dispatch = useDispatch();
 
     //CHECK BOTTOM CSS PROPERTIES USING NEGATIVE MARGIN FOR NOW TO EVEN CARDS

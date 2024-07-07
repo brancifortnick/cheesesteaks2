@@ -42,7 +42,11 @@ function AllLocations() {
                 />
               </NavLink>
               <Card sx={{
-
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                spacing: 2
               }}>
               <CardContent>
                   <Typography variant="subtitle" component="div">
