@@ -98,7 +98,7 @@ const ImageUpload = ({ locationId }) => {
                     <Form>
                         <form className="form-container" onSubmit={onSubmit}>
                             <div>
-                                <Box sx={{ display: 'flex', flexDirection: 'row', alignContent: 'center', mt: 1 }}>
+                                <Box >
                                     <TextField
 
                                         fullWidth
