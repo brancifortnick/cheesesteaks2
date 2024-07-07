@@ -1,11 +1,11 @@
 .update-comment-submit-outter {
     display: flex;
     background-color: grey;
-        cursor: pointer;
-        }
+    cursor: pointer;
+    }
 
 .form-element-edit-comment {
-    display: flex;
+    display: inline-block;
     gap: 1rem;
 }
 
@@ -17,10 +17,11 @@
 
 .buttons-container {
     width: 100%;
-    display: flex;
+
     gap: 1rem;
     padding: 1rem;
 }
+
 #update-comment-submit {
     cursor: pointer;
     color: white;

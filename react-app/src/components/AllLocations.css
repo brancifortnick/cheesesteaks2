@@ -1,18 +1,22 @@
 .locations-container {
-  grid-column-start: 2;
-    grid-column-end: five;
-    grid-row-start: row1-start;
-    grid-row-end: 3;
+display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
   /* backdrop-filter: blur(7px); */
   margin: 30px 15px;
 }
 
-.location-div-container {
+/* .location-div-container {
+  display: flex;
+  flex-direction: row;
   max-width: 450px;
   max-height: auto;
 }
 
+*/
 .image_card {
   height: 400px;
-  width: auto;
+  min-width: 450px;
 }
