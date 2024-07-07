@@ -1,10 +1,11 @@
 .nav-container {
   display: flex;
   flex-direction: row;
-  position: absolute;
-    justify-content: space-evenly;
   align-items: center;
+  position: sticky;
+    justify-content: space-around;
 width: 100%;
+
 
   box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.383);
   background-color: #303133;
@@ -16,10 +17,9 @@ width: 100%;
 .demo-login {
   color: white;
 }
-.link-location {
+.link-location.active {
   background-color: #1976d2;
-    box-sizing: border-box;
-    box-shadow: 3px rgb(122, 62, 62);
+
     border: 1px snow;
     border-radius: 3px;
     padding: 4px;

@@ -44,19 +44,7 @@ const NavBar = () => {
             </NavLink>
           ) : null}
         </div>
-        {/* <div className='nav-link' activeClassName="active">
-          {user ? (
-            <NavLink to='/images' exact={true}>
-              <Button
-                variant='contained'
-                color='primary'
-                className='all-photos'
-              >
-                All Images
-              </Button>
-            </NavLink>
-          ) : null}
-        </div> */}
+
         <div className="nav-link">
           {!user ? (
             <NavLink to="/login" exact={true} activeClassName="active">
@@ -72,16 +60,16 @@ const NavBar = () => {
           ) : null}
         </div>
         <div className='link-location' >
-        {!user ? (
-          <Button
-            variant="primary"
-            color="primary"
-            className="demo-login"
-            onClick={demoLoginButton}
-          >
-            Demo Login
-          </Button>
-        ) : null}
+          {!user ? (
+            <Button
+              variant="contained"
+              color="primary"
+              className="demo-login"
+              onClick={demoLoginButton}
+            >
+              Demo Login
+            </Button>
+          ) : null}
         </div>
         <div className='link-location' >
           {user ? (
