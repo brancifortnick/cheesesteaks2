@@ -71,7 +71,7 @@ const NavBar = () => {
             </NavLink>
           ) : null}
         </div>
-
+        <div className='link-location'>
         {!user ? (
           <Button
             variant="primary"
@@ -82,11 +82,7 @@ const NavBar = () => {
             Demo Login
           </Button>
         ) : null}
-        {/* {!user ? (
-          <button id="demo-button" onClick={demoLoginButton}>
-            Demo
-          </button>
-        ) : null} */}
+        </div>
 
         <div className='link-location' >
           {user ? (
