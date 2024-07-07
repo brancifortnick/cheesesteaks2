@@ -3,8 +3,8 @@
   flex-direction: row;
   align-items: center;
   position: sticky;
-    justify-content: space-around;
-width: 100%;
+  justify-content: space-around;
+    width: 100%;
 
 
   box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.383);
@@ -17,10 +17,11 @@ width: 100%;
 .demo-login {
   color: white;
 }
+
 .link-location.active {
   background-color: #1976d2;
 
-    border: 1px snow;
+  border: 1px snow;
     border-radius: 3px;
     padding: 4px;
     font-style: normal;
