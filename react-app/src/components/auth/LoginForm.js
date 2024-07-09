@@ -85,7 +85,7 @@ const LoginForm = () => {
         <FormControl variant="filled">
           <InputLabel htmlFor="password">Password</InputLabel>
           <FilledInput
-            id="password"
+            id="current-password"
             type={values.showPassword ? 'text' : 'password'}
             value={password}
             defaultValue="Normal"

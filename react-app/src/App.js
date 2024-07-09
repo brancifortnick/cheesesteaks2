@@ -14,7 +14,6 @@ import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
 
-
 //!adding this so i can make a large commit message for safe revert//
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -35,7 +34,6 @@ function App() {
       <Switch>
         <Route path="/login" exact={true}>
           <LoginForm />
-
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
@@ -56,9 +54,8 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/locations" exact={true}>
           <AllLocations />
-
         </ProtectedRoute>
-        <ProtectedRoute path="/locations/:locationId" >
+        <ProtectedRoute path="/locations/:locationId">
           <Locations />
         </ProtectedRoute>
       </Switch>

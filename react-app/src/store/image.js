@@ -44,7 +44,6 @@ export const getAPhoto = (id) => async (dispatch) => {
   const res = await fetch(`/api/images/${id}`);
   if (res.ok) {
     const photo = await res.json();
-    console.log(photo, "photo from image store-<>>>>>>>getAPhoto thunk")
     dispatch(getOnePhoto(photo));
   } else {
     console.log('erroring from store')
