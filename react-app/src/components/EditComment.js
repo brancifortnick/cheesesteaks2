@@ -6,6 +6,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import { Button } from "@mui/material";
 import './EditComment.css';
 import { updateAComment } from "../store/image";
+import "./EditComment.css";
+
+
 const EditComment = ({ commentObj, imageId }) => {
   const dispatch = useDispatch();
   const [comment, setComment] = useState(commentObj.comment)
@@ -22,32 +25,35 @@ const EditComment = ({ commentObj, imageId }) => {
     setModal(false);
   }
   return (
-    <div className='edit-container'>
-      <EditIcon onClick={() => setModal(true)} color='primary' />
+    <div className="edit-container">
+      <EditIcon onClick={() => setModal(true)} color="primary" />
       {showModal && (
         <Modal onClose={() => setModal(false)}>
-          <form className='form-element-edit-comment' onSubmit={onSubmit}>
+          <form className="form-element-edit-comment" onSubmit={onSubmit}>
             <TextareaAutosize
               className="comment-input"
               type="text"
-              placeholder='Enter text here'
+              placeholder="Enter text here"
               onChange={(e) => setComment(e.target.value)}
               value={comment}
               minRows={5}
               style={{ width: 400 }}
             />
-            <div className='buttons-container'>
-              <Button type="submit" className='form-buttons'>
+            <div className="buttons-container">
+              <Button type="submit" className="confirm-edit-btn">
                 Submit changes
               </Button>
-              <Button type='button' onClick={closeModal} className='form-buttons'>
+              <Button
+                type="button"
+                onClick={closeModal}
+                className="cancel-edit-btn"
+              >
                 Cancel
               </Button>
             </div>
           </form>
         </Modal>
-      )
-      }
+      )}
     </div>
   );
 }
