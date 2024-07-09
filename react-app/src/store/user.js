@@ -1,10 +1,8 @@
 const GET_USER = "user/GET_USER";
-
 const getUser = (user) => ({
   type: GET_USER,
   payload: user,
 });
-
 export const getOneUser = (userId) => async (dispatch) => {
   const res = await fetch(`/api/users/${userId}`);
   if (res.ok) {
@@ -13,9 +11,7 @@ export const getOneUser = (userId) => async (dispatch) => {
     return user;
   }
 };
-
 const initialState = {};
-
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case GET_USER:

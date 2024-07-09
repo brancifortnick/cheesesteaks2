@@ -1,9 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import SvgIcon from "@mui/material/SvgIcon";
-
-
-
 function HomeIcon(props) {
     return (
         <SvgIcon {...props}>
@@ -11,17 +8,14 @@ function HomeIcon(props) {
         </SvgIcon>
     );
 }
-
 export default function SvgIconsColor() {
     return (
         <Box
             sx={{
                 mx: 4,
-
             }}
         >
             <HomeIcon fontSize="large" color='primary' />
-
         </Box>
     );
 }

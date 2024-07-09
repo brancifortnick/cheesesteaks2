@@ -10,9 +10,6 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import './AllLocations.css'
-
-
-
 function AllLocations() {
   const dispatch = useDispatch();
   const locations = useSelector((state) => Object.values(state.location));
@@ -21,7 +18,6 @@ function AllLocations() {
     dispatch(getAllLocations());
     // dispatch(getPhotos())
   }, [dispatch]);
-
   const locationsList = locations.map((location, idx) => {
     return (
       <div className="locations-container">
@@ -31,10 +27,8 @@ function AllLocations() {
               <NavLink to={`/locations/${location.id}`}>
                 <CardMedia
                   component="card-img-style"
-
                   alt="establishment"
                 />
-
                 <img
                   src={location.profile_img}
                   alt="loading..."
@@ -68,7 +62,6 @@ function AllLocations() {
                   </NavLink>
                 </Typography> */}
               <Card>
-
               </Card>
             </Card>
           </div>

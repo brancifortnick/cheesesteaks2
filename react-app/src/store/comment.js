@@ -4,17 +4,14 @@ const GET_ONE_COMMENT = "comment/GET_ONE_COMMENT";
 const EDIT_COMMENT = "comment/EDIT_COMMENT";
 const ADD_IMAGE_COMMENT = 'image/ADD_IMAGE_COMMENT';
 const DELETE_IMAGE_COMMENT = "image/DELETE_IMAGE_COMMENT";
-
 const getAllTheComments = (comments) => ({
   type: GET_THE_COMMENTS,
   payload: comments,
 });
-
 const getOne = (comment) => ({
   type: GET_ONE_COMMENT,
   payload: comment,
 });
-
 // const postComment = (comment) => ({
 //   type: ADD_COMMENT,
 //   payload: comment,
@@ -27,12 +24,10 @@ const editComment = (comment) => ({
   type: EDIT_COMMENT,
   payload: comment,
 });
-
 const deleteComment = (comment) => ({
   type: DELETE_IMAGE_COMMENT,
   payload: comment,
 });
-
 export const getTheComments = () => async (dispatch) => {
   const response = await fetch(`/api/comments/`)
   if (response.ok) {
@@ -44,9 +39,6 @@ export const getTheComments = () => async (dispatch) => {
     console.log('error from getAllcomments aka getTheComments thunk from store ---Comment')
   }
 }
-
-
-
 export const createComment = (formData) => async (dispatch) => {
   const res = await fetch(`/api/comments/new`, {
     method: "POST",
@@ -61,7 +53,6 @@ export const createComment = (formData) => async (dispatch) => {
     console.log("Error-coming from post thunk STORE*******");
   }
 };
-
 export const getOneComment = (id) => async (dispatch) => {
   const response = await fetch(`/api/comments/${id}`);
   if (response.ok) {
@@ -71,9 +62,6 @@ export const getOneComment = (id) => async (dispatch) => {
     console.log("Can't fetch comments");
   }
 };
-
-
-
 export const deleteAComment = ({ id, image_id }) => async (dispatch) => {
   const res = await fetch(`/api/comments/delete/${id}`, {
     method: "DELETE",
@@ -84,11 +72,7 @@ export const deleteAComment = ({ id, image_id }) => async (dispatch) => {
     console.log("Comment Can't be deleted");
   }
 };
-
-
-
 const initialState = {};
-
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case GET_THE_COMMENTS:

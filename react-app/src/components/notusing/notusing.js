@@ -3,7 +3,6 @@
 // import { useDispatch } from "react-redux";
 // import { NavLink } from "react-router-dom";
 // import { getPhotos, getAPhoto } from "../store/image";
-
 // const GetLocationsImages = () => {
 //   const images = useSelector((state) => Object.values(state.image));
 //   const dispatch = useDispatch();
@@ -11,7 +10,6 @@
 //   useEffect(() => {
 //     dispatch(getPhotos());
 //   }, [dispatch]);
-
 //   const locationsPhotos = images.map((index, image) => {
 //     return (
 //       <div key={index}>
@@ -23,5 +21,4 @@
 //   });
 //   return <>{locationsPhotos}</>;
 // };
-
 // export default GetLocationsImages;

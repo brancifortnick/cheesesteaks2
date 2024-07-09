@@ -76,7 +76,7 @@ const LoginForm = () => {
           required
           id="outlined-required"
           label="Required"
-          variant="outlined"
+          variant="filled"
           value={email}
           defaultValue="Normal"
           onChange={updateEmail} />

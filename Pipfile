@@ -2,7 +2,6 @@
 url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
-
 [packages]
 click = "==7.1.2"
 gunicorn = "==20.1.0"
@@ -27,10 +26,8 @@ sqlalchemy = "==1.4.19"
 werkzeug = "==2.0.1"
 wtforms = "==2.3.3"
 psycopg2-binary = "*"
-
 [dev-packages]
 psycopg2-binary = "==2.8.6"
 pycodestyle = "*"
-
 [requires]
 python_version = "3.9"

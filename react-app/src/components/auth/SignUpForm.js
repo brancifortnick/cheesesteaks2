@@ -14,7 +14,6 @@ const SignUpForm = () => {
   const [repeatPassword, setRepeatPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
@@ -24,31 +23,24 @@ const SignUpForm = () => {
       }
     }
   };
-
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
-
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
-
   const updatePassword = (e) => {
     setPassword(e.target.value);
   };
-
   const updateRepeatPassword = (e) => {
     setRepeatPassword(e.target.value);
   };
-
   if (user) {
     return <Redirect to='/' />;
   }
-
   return (
     <div className='outter-signup-container'>
       <form onSubmit={onSignUp}>
-
         <div className='form-container-sign-up'>
           <label><br></br></label>
           <TextField
@@ -83,13 +75,10 @@ const SignUpForm = () => {
             value={repeatPassword}
             required={true}
           />
-
           <Button sx={{ mt: 2 }} variant='contained' color='primary' type='submit'>Sign Up</Button>
         </div>
       </form>
     </div>
-
   );
 };
-
 export default SignUpForm;

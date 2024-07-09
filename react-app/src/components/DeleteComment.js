@@ -9,26 +9,16 @@ import DisplayComments from './DisplayComments'
 import { getAllLocations, getOneLocation } from "../store/location";
 // import './DeleteComment';
 import { filterObjsById } from "../Utilities/StoreMethods";
-
-
 const DeleteComment = ({ imageId, commentId }) => {
-
     const dispatch = useDispatch();
-
-
     const commentDelete = async (e) => {
         e.preventDefault();
         console.log(imageId, commentId, "IMAGEID_>COMMENTID")
         dispatch(deleteAComment({ id: commentId, image_id: imageId }))
-
-
     };
-
     // useEffect(() => {
     //     dispatch(getOneLocation(locationId))
-
     // }, [dispatch, locationId])
-
     return (
         <div>
             <Button type='submit' onClick={commentDelete} >

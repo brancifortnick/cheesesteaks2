@@ -6,13 +6,10 @@ import Button from '@mui/material/Button'
 import { Box } from "@mui/material";
 import { Modal } from "../context/Modal";
 const DeleteLocation = () => {
-
-
   const [showModal, setModal] = useState(false)
   const history = useHistory();
   const dispatch = useDispatch();
   const { locationId } = useParams()
-
   const onSubmit = async (e) => {
     e.preventDefault();
     dispatch(deleteOneLocation(Number(locationId)))
@@ -23,8 +20,6 @@ const DeleteLocation = () => {
   const cancelModal = () => {
     setModal(false)
   }
-
-
   return (
     <div id="delete-location-container">
       <Button onClick={() => setModal(true)} id="delete-location-modal-btn">Delete Establishment</Button>
@@ -44,9 +39,7 @@ const DeleteLocation = () => {
           </Modal>
         )}
       </Box>
-
     </div >
-
   );
 };
 export default DeleteLocation;

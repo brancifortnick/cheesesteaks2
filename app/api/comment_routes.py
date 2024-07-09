@@ -2,19 +2,13 @@ from flask import Blueprint, request, jsonify
 from flask_login import login_required
 from app.models import Comment, Image, db
 from flask_login import current_user, login_required
-
-
 comment_routes = Blueprint('comments', __name__)
-
-
 @comment_routes.route('/')
 @login_required
 def get_comments():
     # comments = Comment.query.filter(Comment.image_id == id).all()
     comments = Comment.query.all()
     return {'comments': [comment.to_dict() for comment in comments]}
-
-
 @comment_routes.route('/<int:id>')
 @login_required
 def get_one_comment(id):
@@ -22,8 +16,6 @@ def get_one_comment(id):
     if not comment:
         return jsonify('comment doesn"t exist=> message from BACKEND COMMENTROUTE')
     return comment.to_dict()
-
-
 # post is working
 @comment_routes.route('/new', methods=['POST'])
 @login_required
@@ -37,8 +29,6 @@ def add_comment():
     db.session.add(new_comment)
     db.session.commit()
     return new_comment.to_dict()
-
-
 @comment_routes.route('/delete/<int:id>', methods=['DELETE'])
 @login_required
 def delete_comment(id):
@@ -46,8 +36,6 @@ def delete_comment(id):
     db.session.delete(comment)
     db.session.commit()
     return {'id': id}
-
-
 @comment_routes.route('/<int:id>/update', methods=['PUT'])
 @login_required
 def update_comment(id):

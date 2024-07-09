@@ -1,23 +1,18 @@
 const GET_VOTES = "vote/GET_VOTES";
 const ADD_VOTES = "vote/ADD_VOTES";
 const EDIT_VOTES = 'vote/EDIT_VOTES';
-
-
 const getVotes = (vote) => ({
   type: GET_VOTES,
   payload: vote,
 });
-
 const postVotes = (vote) => ({
   type: ADD_VOTES,
   payload: vote,
 })
-
 const editTheVotes = (vote) => ({
   type: EDIT_VOTES,
   payload: vote,
 })
-
 export const getAllVotes = () => async (dispatch) => {
   const res = await fetch("/api/votes/");
   if (res.ok) {
@@ -25,7 +20,6 @@ export const getAllVotes = () => async (dispatch) => {
     dispatch(getVotes(data.votes))
   }
 };
-
 export const postNewVotes = (formData) => async (dispatch) => {
   const res = await fetch(`/api/votes/add`, {
     method: "POST",
@@ -36,9 +30,6 @@ export const postNewVotes = (formData) => async (dispatch) => {
     dispatch(postVotes(vote))
   }
 };
-
-
-
 export default function counter(state = 0, action) {
   switch (action.type) {
     case GET_VOTES:

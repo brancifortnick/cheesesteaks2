@@ -10,23 +10,16 @@ import Button from '@mui/material/Button';
 import "./NavBar.css";
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import HomeIcon from './HomeIcon'
-
-
 const NavBar = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   // const { userId } = useParams();
-
-
-
-
   const demoLoginButton = async (e) => {
     e.preventDefault();
     dispatch(demoLogin());
     history.push("/");
   };
-
   return (
     <nav>
       <div className="nav-container">
@@ -44,7 +37,6 @@ const NavBar = () => {
             </NavLink>
           ) : null}
         </div>
-
         <div className="nav-link">
           {!user ? (
             <NavLink to="/login" exact={true} activeClassName="active">
@@ -73,20 +65,15 @@ const NavBar = () => {
         </div>
         <div className='link-location' >
           {user ? (
-
             <Link to={`/users/${user.id}/new-location`}>
               Add Establishment
             </Link>
-
           ) : null}
         </div>
-
         <div className="nav-link">{user ? (<div className='logout-btn'><LogoutButton /> </div>) : null}
         </div>
-
       </div >
     </nav>
   );
 };
-
 export default NavBar;

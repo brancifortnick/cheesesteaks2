@@ -7,14 +7,12 @@ display: flex;
   /* backdrop-filter: blur(7px); */
   margin: 30px 15px;
 }
-
 /* .location-div-container {
   display: flex;
   flex-direction: row;
   max-width: 450px;
   max-height: auto;
 }
-
 */
 .image_card {
   height: 400px;

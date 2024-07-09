@@ -1,25 +1,17 @@
 import React, { useState } from 'react';
-
-
-
 const ImageScroll = ({ images }) => {
-
-
     const [current, setCurrent] = useState(0);
     const length = images.length;
     console.log(images, "imaegs from image scroll")
     const nextSlide = () => {
         setCurrent(current === length - 1 ? 0 : current + 1);
     }
-
     const prevSlide = () => {
         setCurrent(current === 0 ? length - 1 : current - 1);
     }
-
     if (!Array.isArray(images) || images.length <= 0) {
         return null;
     }
-
     return (
         <section className="slider">
             <i className="fas fa-chevron-left" onClick={prevSlide}></i>
@@ -35,8 +27,5 @@ const ImageScroll = ({ images }) => {
             })}
         </section>
     )
-
-
-
 }
 export default ImageScroll;

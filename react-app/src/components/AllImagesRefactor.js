@@ -20,41 +20,28 @@ import DeleteComment from "./DeleteComment";
 import { findObjectById } from "../Utilities/StoreMethods";
 import EditComment from "./EditComment";
 import VoteCounter from "./VoteCounter";
-
+import ButtonGroup from '@mui/material/ButtonGroup'
 
 function AllImagesRefactor({ images }) {
-
-
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
-
-
     const location = useSelector(state => (state.location))
-
-
-
-
     const buildCommentTemplate = (image) => {
         if (image.comments && Array.isArray(image.comments)) {
             return image.comments.map((comment) => {
                 return (
-                    <div key={comment.id}>
-                        {comment.comment}
-
-                        <EditComment imageId={image.id} commentObj={comment} />
-                        <DeleteComment imageId={image.id} commentId={comment.id} />
-
+                    <div key={comment.id}><p className='comment-body'> {comment.comment}</p>
+                    <ButtonGroup><EditComment imageId={image.id} commentObj={comment} />
+                    <DeleteComment imageId={image.id} commentId={comment.id} />     
+                    </ ButtonGroup>
                     </div>
                 )
             })
         }
     }
-
     //returning multiple accordians
     const buildTemplate = () => {
         if (images) {
-
-
             return images.map((image) => {
                 return image !== null && location.id === image.location_id ? (
                     <div key={image.id} className="pictures-container">
@@ -65,7 +52,6 @@ function AllImagesRefactor({ images }) {
                             <p>
                                 {image.title}
                             </p>
-
                             <Card>
                                 <img
                                     src={image.image}
@@ -75,34 +61,25 @@ function AllImagesRefactor({ images }) {
                             </Card>
                             <section>
                                 <span>
-                                <AddComments imageId={image.id} locationId={location.id} />
+                                    <AddComments imageId={image.id} locationId={location.id} />
                                 </span>
                                 <span>
-                                <Accordian toggleText='comments' children={buildCommentTemplate(image)} />
+                                    <Accordian toggleText='comments' children={buildCommentTemplate(image)} />
                                 </span>
                             </section>
                             <CardContent>
                                 <CardActions >
-
                                     <DeleteLocationsImages imageId={image?.id} />
                                     {/* {user.id === Number(location.user_id) ? (  ) : null} */}
                                 </CardActions>
                             </CardContent>
-
                         </div>
                     </div>
-
                 ) : null;
             });
         }
     }
-
-
-
-
-
-
-
+    
     return (
         <>
             <div key={''}>
@@ -110,6 +87,6 @@ function AllImagesRefactor({ images }) {
             </div>
         </>
     );
-};
+}
 
 export default AllImagesRefactor;

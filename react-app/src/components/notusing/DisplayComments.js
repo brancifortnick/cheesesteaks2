@@ -3,15 +3,10 @@
 // import { useSelector, useDispatch } from 'react-redux';
 // import AllComments from '../AllComments';
 // import AddComments from '../AddComments';
-
-
 // const DisplayComments = ({ imageId }) => {
 //   const comments = useSelector((state) => Object.values(state.comment));
-
 //   const images = useSelector((state) => Object.values(state.image));
-
 //   const user = useSelector(state => state.session.user)
-
 //   return (
 //     <div id="comment-div">
 //       {comments?.map((comment) => (
@@ -26,7 +21,4 @@
 //     </div>
 //   )
 // };
-
-
-
 // export default DisplayComments;

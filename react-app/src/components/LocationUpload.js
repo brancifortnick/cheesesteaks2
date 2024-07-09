@@ -9,17 +9,13 @@ import TextareaAutosize from '@mui/base/TextareaAutosize';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import './LocationUpload.css'
-
 const LocationUpload = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-
   const user = useSelector((state) => state.session.user);
-
   const [location_name, setLocationName] = useState("");
   const [profile_img, setProfileImg] = useState("");
   const [biography, setBiography] = useState("");
-
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -36,12 +32,10 @@ const LocationUpload = () => {
     }
     history.push(`/locations`);
   };
-
   const updateProfileImg = (e) => {
     const file = e.target.files[0];
     setProfileImg(file);
   };
-
   return (
     <div className="outer_card">
       <div>
@@ -50,7 +44,6 @@ const LocationUpload = () => {
       <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5 }}>
-
             <TextField
               type="text"
               name="location_name"
@@ -86,9 +79,7 @@ const LocationUpload = () => {
             onChange={(e) => setBiography(e.target.value)}
             value={biography}
             minRows={5}
-
           />
-
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, pt: .5 }}>
           <Button variant='contained' color='primary' type='submit'>Submit</Button>
@@ -97,5 +88,4 @@ const LocationUpload = () => {
     </div >
   );
 };
-
 export default LocationUpload;

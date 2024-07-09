@@ -8,24 +8,19 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 // import "./UpdateBiography.css";
 // import Modal from '@mui/material/Modal';
-
 const UpdateBiography = ({ locationBio, locationId }) => {
   const dispatch = useDispatch();
   const [biography, setBiography] = useState("");
   const [showModal, setModal] = useState(false);
-
   const onSubmit = async (e) => {
     const formData = new FormData();
     formData.append("biography", biography);
     dispatch(updateBiography(formData, locationId));
     setModal(false);
-
   };
-
   useEffect(() => {
     dispatch(getOneLocation(parseInt(locationId)));
   }, [dispatch, locationId]);
-
   return (
     <>
       <Button id="biography-edit" onClick={() => setModal(true)}>
@@ -54,7 +49,6 @@ const UpdateBiography = ({ locationBio, locationId }) => {
                 value={biography}
               />
             </Box>
-
             <Box sx={{}}>
             <Button type="submit" id="update-biography-submit">
                 Submit

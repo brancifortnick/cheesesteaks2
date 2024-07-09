@@ -15,36 +15,27 @@ import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
 
 
-export var UserContext = createContext();
 //!adding this so i can make a large commit message for safe revert//
-
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
-
-
-
-
   useEffect(() => {
     (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
   }, [dispatch]);
-
   if (!loaded) {
     return null;
   }
-
   return (
     // <UserContext.Provider value={{stateForId, setStateForId}}>
-
     <BrowserRouter>
       <NavBar />
-
       <Switch>
         <Route path="/login" exact={true}>
           <LoginForm />
+
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
@@ -57,6 +48,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true}>
           <LandingPage />
+
           <MapContainer />
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId/new-location" exact={true}>
@@ -70,10 +62,8 @@ function App() {
           <Locations />
         </ProtectedRoute>
       </Switch>
-
     </BrowserRouter>
     // </UserContext.Provider>
   );
 }
-
 export default App;

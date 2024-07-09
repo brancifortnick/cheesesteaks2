@@ -4,32 +4,26 @@ const ADD_LOCATION = "location/ADD_LOCATION";
 const DELETE_LOCATION = "location/DELETE_LOCATION";
 const UPDATE_BIOGRAPHY = "location/UPDATE_BIOGRAPHY";
 // const ADD_IMAGE = "musician/ADD_IMAGE"; -- put route for image updating
-
 const getAllLocs = (locations) => ({
   type: GET_LOCATIONS,
   payload: locations,
 });
-
 const getOne = (location) => ({
   type: GET_ONE,
   payload: location,
 });
-
 const addPlace = (location) => ({
   type: ADD_LOCATION,
   payload: location,
 });
-
 const deleteLocation = (location) => ({
   type: DELETE_LOCATION,
   payload: location,
 });
-
 const updateBio = (location) => ({
   type: UPDATE_BIOGRAPHY,
   payload: location,
 });
-
 export const getAllLocations = (id) => async (dispatch) => {
   const res = await fetch(`/api/locations/`);
   if (res.ok) {
@@ -40,7 +34,6 @@ export const getAllLocations = (id) => async (dispatch) => {
     console.log('no!!!- not getting locations')
   }
 };
-
 export const postNewLocation =
   (profile_img, biography, user_id, location_name) => async (dispatch) => {
     profile_img = profile_img.url;
@@ -58,7 +51,6 @@ export const postNewLocation =
       console.log('location Not Added - Error');
     }
   };
-
 export const getOneLocation = (id) => async (dispatch) => {
   const res = await fetch(`/api/locations/${id}`);
   if (res.ok) {
@@ -68,7 +60,6 @@ export const getOneLocation = (id) => async (dispatch) => {
     console.log('error from location store')
   };
 }
-
 // export const getSeveralLocationPics = (id) => async (dispatch) => {
 //   const res = await fetch(`/api/locations/${id}/locations-pictures`);
 //   if (res.ok) {
@@ -78,9 +69,6 @@ export const getOneLocation = (id) => async (dispatch) => {
 //     console.log('no!!!- not getting serveral pics')
 //   }
 // };
-
-
-
 export const deleteOneLocation = (id) => async (dispatch) => {
   const res = await fetch(`/api/locations/${id}`, {
     method: "DELETE",
@@ -91,7 +79,6 @@ export const deleteOneLocation = (id) => async (dispatch) => {
     console.log("Establishment Can't be deleted");
   }
 };
-
 export const updateBiography = (formData, locationId) => async (dispatch) => {
   const response = await fetch(`/api/locations/${locationId}/biography`, {
     method: "PUT",
@@ -102,10 +89,7 @@ export const updateBiography = (formData, locationId) => async (dispatch) => {
     dispatch(updateBio(biography));
   }
 };
-
-
 const initialState = {};
-
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case GET_LOCATIONS:

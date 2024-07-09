@@ -5,18 +5,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
-
 export default function MediaCard() {
-
     const location = useState(state => state.location)
-
-
     return (
         <Card sx={{ maxWidth: '450px' }}>
             <CardMedia
                 component="img"
-
                 image={location.profile_img}
                 alt="establishment"
             />

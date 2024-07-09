@@ -21,32 +21,24 @@ a:active {
 }
 .row {
   display: flex;
-
 }
-
 .column {
   flex: 50%;
   padding: 5px;
-
 }
-
 .right,
 .left {
   height: 100vh;
   width: 100%;
 }
-
 .left {
   background: red;
-
 }
-
 .right {
   background: blue;
 }
  #main-wrapper {
   display: -webkit-inline-box;
-
   max-width: 100vh;
   left: 0;
   right: 0;
@@ -62,5 +54,4 @@ a:active {
   display: flex;
   align-items: flex-start;
 }
-
 */

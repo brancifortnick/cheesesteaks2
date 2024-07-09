@@ -18,15 +18,17 @@
 
 .link-location.active {
   background-color: #1976d2;
-
   border: 1px snow;
   border-radius: 3px;
-    padding: 4px;
+  padding: 4px;
     font-style: normal;
   }
-
-
-
+    .link-location {
+      color: white;
+      padding: 4px;
+      border-radius: 3px;
+      font-style: normal;
+    }
 .users-profile {
   border-radius: 3px;
   padding: 4px;

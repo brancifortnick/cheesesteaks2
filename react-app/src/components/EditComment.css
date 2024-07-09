@@ -2,7 +2,7 @@
     display: flex;
     background-color: grey;
     cursor: pointer;
-    }
+}
 
 .form-element-edit-comment {
     display: inline-block;
@@ -17,7 +17,6 @@
 
 .buttons-container {
     width: 100%;
-
     gap: 1rem;
     padding: 1rem;
 }

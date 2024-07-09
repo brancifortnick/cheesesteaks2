@@ -1,6 +1,4 @@
 from app.models import db, Comment
-
-
 def seed_comments():
     comment = Comment(
         comment='Wow this place has by far the best cheesesteak',
@@ -17,14 +15,10 @@ def seed_comments():
         user_id=3,
         image_id=3
     )
-
     db.session.add(comment)
     db.session.add(comment2)
     db.session.add(comment3)
-
     db.session.commit()
-
-
 def undo_comments():
     db.session.execute('TRUNCATE comments RESTART IDENTITY CASCADE;')
     db.session.commit()
