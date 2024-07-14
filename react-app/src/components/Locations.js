@@ -28,22 +28,28 @@ function Locations() {
       <div className="card-container">
         {location.profile_img !== null ? (
           <Box>
-            <img className='location-image' src={location.profile_img} alt='...loading' />
-            <div className='location-name'>{location.location_name}
-              <div>{currentUser.id === Number(location.user_id) ? (
-                <UpdateBiography
-                  locationBio={location.biography}
-                  locationId={location.id}
-                />
-              ) : null}
-                {location.biography}</div>
+            <img
+              className="location-image"
+              src={location.profile_img}
+              alt="...loading"
+            />
+            <div className="location-name-container">
+              <div className="location-name">{location.location_name}</div>
+              <div>
+                {currentUser.id === Number(location.user_id) ? (
+                  <UpdateBiography
+                    locationBio={location.biography}
+                    locationId={location.id}
+                  />
+                ) : null}
+                {location.biography}
+              </div>
+              <ImageUpload locationId={locationId} />
+              <DeleteLocation location={location.id} />
             </div>
           </Box>
-        ) : null
-        }
-        <div className='delete-location-comp'>
-          <DeleteLocation location={location.id} />
-        </div>
+        ) : null}
+
         {/*
           <div id="update-biography">
             {currentUser.id === Number(location.user_id) ? (
@@ -52,16 +58,13 @@ function Locations() {
                 locationId={location.id}
               />
           ) : null} */}
-      </div >
-      <div className='image-cards-and-delete-comp'>
-        <div className='image-upload-comp'>
-          <ImageUpload locationId={locationId} />
-        </div>
-        <div className='image-cards-container'>
+      </div>
+      <div className="image-cards-and-delete-comp">
+        <div className="image-cards-container">
           <AllImagesRefactor images={images} locationId={locationId} />
         </div>
       </div>
     </>
-  )
+  );
 };
 export default Locations;

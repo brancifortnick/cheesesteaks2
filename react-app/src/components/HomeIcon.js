@@ -9,13 +9,5 @@ function HomeIcon(props) {
     );
 }
 export default function SvgIconsColor() {
-    return (
-        <Box
-            sx={{
-                mx: 4,
-            }}
-        >
-            <HomeIcon fontSize="large" color='primary' />
-        </Box>
-    );
+    return <HomeIcon fontSize="large" color="primary" />;
 }

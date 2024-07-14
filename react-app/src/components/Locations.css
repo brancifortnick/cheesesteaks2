@@ -1,6 +1,5 @@
 .card-container {
   display: flex;
-  max-height: 450px;
   align-items: center;
   /* flex-direction: column-reverse; */
 }
@@ -12,7 +11,7 @@
 }
 
 #description-text {
-  flex-direction: row;
+  flex-direction: column;
   word-wrap: wrap;
 }
 
@@ -21,7 +20,11 @@
   flex-direction: column;
   width: 100%;
 }
-
+.delete-location-comp{
+  display:grid;
+  grid-template-columns: 25%;
+  background-color: #2941ab;
+}
 .image-upload-comp {
   display: flex;
   flex-direction: row;
