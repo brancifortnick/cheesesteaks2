@@ -1,11 +1,20 @@
 
 *,
 body {
+  box-sizing: border-box;
   margin: 0;
+}
+
+
+
+#root {
+  background-color: #3f3932;
+  /* background-color: rgb(25, 117, 209); */
 }
 
 html {
   scroll-behavior: smooth;
+  /* background-image: url(./assets/chad-montano-M0lUxgLnlfk-unsplash.jpg); */
 
 }
 
@@ -52,7 +61,7 @@ a:active {
 .right {
   background: blue;
 } */
-
+/* 
 #main-wrapper {
   display: flex;
   flex-direction: column;
@@ -61,7 +70,7 @@ a:active {
   flex-wrap: row wrap;
   max-width: 100%;
   border-radius: 6px;
-}
+} */
 
 /* img {
   display: flex;

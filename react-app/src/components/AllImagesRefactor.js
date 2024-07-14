@@ -53,7 +53,7 @@ function AllImagesRefactor({ images }) {
               {/* <div>
                                 <AddComments imageId={image.id} locationId={location?.id} />
                             </div> */}
-              <p>{image.title}</p>
+              <p className="image-title">{image.title}</p>
               <Card>
                 <img
                   src={image.image}

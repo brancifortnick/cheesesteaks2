@@ -4,6 +4,6 @@ textarea[name="biography"] {
   flex-wrap: wrap;
 }
 button.update-biography {
-  margin: 40px;
+  margin: 4rem;
   padding: 2px;
 }

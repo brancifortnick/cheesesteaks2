@@ -58,45 +58,50 @@ const ImageUpload = ({ locationId }) => {
         setImage(file);
     };
     return (
-        <div className="image-form-container">
-            <Button sx={{ mt: '2em', alignContent: 'center', backgroundColor: 'grey' }} id="upload-photos-to-location" onClick={() => setModal(true)}>
-                Add Image
-            </Button>
-            {showModal && (
-                <Modal onClose={() => setModal(false)}>
-                    <Form>
-                        <form className="form-container" onSubmit={onSubmit}>
-                            <div>
-                                <Box >
-                                    <TextField
-                                        fullWidth
-                                        name="title"
-                                        type="text"
-                                        placeholder="Title"
-                                        onChange={(e) => setTitle(e.target.value)}
-                                        value={title}
-                                        minRows={1}
-                                    />
-                                </Box>
-                            </div>
-                            <div>
-                                <input type='hidden'
-                                    name='u-id'
-                                    value={user.id}
-                                />
-                                <Box sx={{
-                                    display: 'flex', width: 400, mt: .5,
-                                    p: .5
-                                }}>
-                                    <input type="file" accept="image/*" name='image' onChange={addPictureFile} />
-                                </Box>
-                                <Button name='image' color='primary' type='submit'> + </Button>
-                            </div>
-                        </form>
-                    </Form>
-                </Modal>
-            )}
-        </div>
+      <div className="image-form-container">
+        <Button
+          sx={{ mt: "2em", alignContent: "center", backgroundColor: "grey" }}
+          id="upload-photos-to-location"
+          onClick={() => setModal(true)}
+        >
+          Add Image
+        </Button>
+        {showModal && (
+          <Modal onClose={() => setModal(false)}>
+            <Form>
+              <form className="form-container" onSubmit={onSubmit}>
+                <Box>
+                  <TextField
+                    fullWidth
+                    name="title"
+                    type="text"
+                    placeholder="Title"
+                    onChange={(e) => setTitle(e.target.value)}
+                    value={title}
+                    minRows={2}
+                  />
+                </Box>
+
+                <div>
+                  <input type="hidden" name="u-id" value={user.id} />
+                  <Box>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      name="image"
+                      onChange={addPictureFile}
+                    />
+                  </Box>
+                  <Button name="image" color="primary" type="submit">
+                    {" "}
+                    +{" "}
+                  </Button>
+                </div>
+              </form>
+            </Form>
+          </Modal>
+        )}
+      </div>
     );
 };
 export default ImageUpload;

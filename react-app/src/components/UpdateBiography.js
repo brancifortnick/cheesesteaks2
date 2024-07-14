@@ -29,17 +29,20 @@ const UpdateBiography = ({ locationBio, locationId }) => {
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form onSubmit={onSubmit}>
-            <Box sx={{
-              display: 'inlineFlex', alignText: "flexStart"
-            }}>
+            <Box
+              sx={{
+                display: "inlineFlex",
+                alignText: "flexStart",
+              }}
+            >
               <TextField
                 multiline
-                minRows={5}
+                minRows={3}
                 sx={{
-                  flexWrap: 'wrap', alignContent: 'center', mt: .5,
-                  p: .5, width: 400, fontWeight: '800', fontStyle: 'italic',
-                  maxWidth:
-                    '600px'
+                  width: 400,
+                  fontWeight: "800",
+                  fontStyle: "italic",
+                  maxWidth: "600px",
                 }}
                 fullWidth
                 type="text"
@@ -49,15 +52,14 @@ const UpdateBiography = ({ locationBio, locationId }) => {
                 value={biography}
               />
             </Box>
-            <Box sx={{}}>
-            <Button type="submit" id="update-biography-submit">
+            <Box>
+              <Button type="submit" id="update-biography-submit">
                 Submit
               </Button>
             </Box>
           </form>
         </Modal>
-      )
-      }
+      )}
     </>
   );
 };

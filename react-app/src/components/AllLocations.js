@@ -9,7 +9,9 @@ import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-import './AllLocations.css'
+import "./AllLocations.css";
+import { CardHeader, Container } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
 function AllLocations() {
   const dispatch = useDispatch();
   const locations = useSelector((state) => Object.values(state.location));
@@ -21,39 +23,40 @@ function AllLocations() {
   const locationsList = locations.map((location, idx) => {
     return (
       <div className="locations-container">
-        <div key={idx} id='location-key'>
+        <div key={idx} id="location-key">
           <div className="location-div-container">
-            <Card >
+            <Container sx={{ mt: 5 }}></Container>
+            <Card sx={{ mt: 2, maxWidth: 450 }}>
+              <CardHeader
+                avatar={
+                  <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
+                    {currentUser.username[0]}
+                  </Avatar>
+                }
+                title={location.location_name}
+                subheader={location.updated_at}
+              />
               <NavLink to={`/locations/${location.id}`}>
-                <CardMedia
-                  component="card-img-style"
-                  alt="establishment"
-                />
+                <CardMedia component="card-img-style" alt="establishment" />
                 <img
                   src={location.profile_img}
                   alt="loading..."
                   className="image_card"
                 />
               </NavLink>
-              <Card sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                spacing: 2
-              }}>
-              <CardContent>
-                  <Typography variant="subtitle" component="div">
-                  {location.location_name}
+              <Card>
+                <CardContent>
+                  <Typography variant="subtitle" component="h1">
+                    {location.location_name}
                   </Typography>
-                  <CardActions sx={{ border: 'white', mb: 1, pt: 2, mt: 4 }}>
-                    {(currentUser.id === location.user_id) ? (
+                  <CardActions sx={{ mb: 1, pt: 2, mt: 4 }}>
+                    {currentUser.id === location.user_id ? (
                       <DeleteEstablishment locationId={location.id} />
                     ) : null}
                   </CardActions>
                 </CardContent>
               </Card>
-                {/* <Typography variant="body2" color="text.secondary">
+              {/* <Typography variant="body2" color="text.secondary">
                   <NavLink
                     style={{ color: "#1976d2", fontWeight: "bolder" }}
                     to={`/locations/${location.id}/image-upload`}
@@ -61,8 +64,7 @@ function AllLocations() {
                     Add Photos
                   </NavLink>
                 </Typography> */}
-              <Card>
-              </Card>
+              <Card></Card>
             </Card>
           </div>
         </div>
@@ -71,9 +73,7 @@ function AllLocations() {
   });
   return (
     <>
-      <div className="locations-list-container">
       <div className="locations-list-components">{locationsList}</div>
-      </div>
     </>
   );
 }

@@ -43,7 +43,7 @@ const LocationUpload = () => {
       </div>
       <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
-          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5 }}>
+          <Box>
             <TextField
               type="text"
               name="location_name"
@@ -52,13 +52,34 @@ const LocationUpload = () => {
               value={location_name}
             />
           </Box>
-          <Box sx={{ flexDirection: 'row', justifyContent: 'spaceEvenly', alignContent: 'center', mt: .5, p: 1 }}>
-          </Box>
+          <Box
+          component='div'
+            sx={{
+              flexDirection: "column",
+              justifyContent: "spaceEvenly",
+              alignContent: "center",
+              mt: 0.5,
+              p: 1,
+            }}
+          >
         </div>
-        <label style={{ color: "#1976d2", marginTop: '2pt' }} id='location-photo-text' htmlFor="add-location-pic">
+        <label
+          style={{ color: "#1976d2", marginTop: "2pt" }}
+          id="location-photo-text"
+          htmlFor="add-location-pic"
+        >
           Upload Photo
-        </label>
-        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, p: 2 }}>
+        </label></Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignContent: "center",
+            mt: 0.5,
+            p: 2,
+          }}
+        >
           <input
             type="file"
             accept="image/*"
@@ -69,7 +90,15 @@ const LocationUpload = () => {
         {/* <label htmlFor="biography" >
           Biography
         </label> */}
-        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignContent: "center",
+            mt: 0.5,
+          }}
+        >
           <TextField
             multiline
             fullWidth
@@ -81,11 +110,22 @@ const LocationUpload = () => {
             minRows={5}
           />
         </Box>
-        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: .5, pt: .5 }}>
-          <Button variant='contained' color='primary' type='submit'>Submit</Button>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignContent: "center",
+            mt: 0.5,
+            pt: 0.5,
+          }}
+        >
+          <Button variant="contained" color="primary" type="submit">
+            Submit
+          </Button>
         </Box>
       </form>
-    </div >
+    </div>
   );
 };
 export default LocationUpload;
