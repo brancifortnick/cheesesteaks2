@@ -33,7 +33,7 @@ const EditComment = ({ commentObj, imageId }) => {
             <TextareaAutosize
               className="comment-input"
               type="text"
-              placeholder="Enter text here"
+              placeholder={commentObj.comment}
               onChange={(e) => setComment(e.target.value)}
               value={comment}
               minRows={5}

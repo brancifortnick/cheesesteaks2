@@ -29,38 +29,40 @@ function App() {
   }
   return (
     // <UserContext.Provider value={{stateForId, setStateForId}}>
-    <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route path="/login" exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path="/users" exact={true}>
-          <UsersList />
-        </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true}>
-          <User />
-        </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true}>
-          <LandingPage />
+    loaded && (
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Route path="/login" exact={true}>
+            <LoginForm />
+          </Route>
+          <Route path="/sign-up" exact={true}>
+            <SignUpForm />
+          </Route>
+          <ProtectedRoute path="/users" exact={true}>
+            <UsersList />
+          </ProtectedRoute>
+          <ProtectedRoute path="/users/:userId" exact={true}>
+            <User />
+          </ProtectedRoute>
+          <ProtectedRoute path="/" exact={true}>
+            <LandingPage />
 
-          <MapContainer />
-        </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId/new-location" exact={true}>
-          <LocationUpload />
-        </ProtectedRoute>
-        <ProtectedRoute path="/locations" exact={true}>
-          <AllLocations />
-        </ProtectedRoute>
-        <ProtectedRoute path="/locations/:locationId">
-          <Locations />
-        </ProtectedRoute>
-      </Switch>
-    </BrowserRouter>
-    // </UserContext.Provider>
+            <MapContainer />
+          </ProtectedRoute>
+          <ProtectedRoute path="/users/:userId/new-location" exact={true}>
+            <LocationUpload />
+          </ProtectedRoute>
+          <ProtectedRoute path="/locations" exact={true}>
+            <AllLocations />
+          </ProtectedRoute>
+          <ProtectedRoute path="/locations/:locationId">
+            <Locations />
+          </ProtectedRoute>
+        </Switch>
+      </BrowserRouter>
+      // </UserContext.Provider>
+    ) //end of loaded
   );
 }
 export default App;
