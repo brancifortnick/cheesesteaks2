@@ -30,7 +30,7 @@ a:active {
   color: white;
 }
 
-.row {
+/* .row {
   display: flex;
 }
 
@@ -51,7 +51,7 @@ a:active {
 
 .right {
   background: blue;
-}
+} */
 
 #main-wrapper {
   display: flex;
@@ -68,7 +68,7 @@ a:active {
   align-items: flex-start;
 }
 */
-.column {
+/* .column {
   flex-direction: column;
 }
 
@@ -82,7 +82,7 @@ a:active {
 
 .grid {
   display: grid;
-}
+} */
 
 /* .card-container {
   display: flex;
