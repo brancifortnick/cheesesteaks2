@@ -52,6 +52,7 @@ const LocationUpload = () => {
               value={location_name}
             />
           </Box>
+          <div>
           <Box
           component='div'
             sx={{
@@ -61,15 +62,16 @@ const LocationUpload = () => {
               mt: 0.5,
               p: 1,
             }}
-          >
-        </div>
+            >
         <label
           style={{ color: "#1976d2", marginTop: "2pt" }}
           id="location-photo-text"
           htmlFor="add-location-pic"
-        >
+          >
           Upload Photo
-        </label></Box>
+        </label>
+          </Box>
+          </div>
         <Box
           sx={{
             display: "flex",
@@ -109,7 +111,8 @@ const LocationUpload = () => {
             value={biography}
             minRows={5}
           />
-        </Box>
+          </Box>
+          </div>
         <Box
           sx={{
             display: "flex",
