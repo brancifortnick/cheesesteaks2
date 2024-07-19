@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Grid from "@mui/material/Grid";
 import DeleteLocationsImages from "./DeleteLocationsImages";
+import ImageList from '@mui/material/ImageList';
 
+import ImageListItem from '@mui/material/ImageListItem';
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
@@ -23,6 +25,7 @@ import { findObjectById } from "../Utilities/StoreMethods";
 import EditComment from "./EditComment";
 import VoteCounter from "./VoteCounter";
 import ButtonGroup from "@mui/material/ButtonGroup";
+
 
 function AllImagesRefactor({ images }) {
   const dispatch = useDispatch();
@@ -49,18 +52,17 @@ function AllImagesRefactor({ images }) {
       return images.map((image) => {
         return image !== null && location.id === image.location_id ? (
           <div key={image.id} className="pictures-container">
-            <div>
-              {/* <div>
-                                <AddComments imageId={image.id} locationId={location?.id} />
-                            </div> */}
-              <p className="image-title">{image.title}</p>
-              <Card>
+            <div className='container-child-all-images'>
+
+              <div className="image-title">{image.title}</div>
+              <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}> 
+                <ImageListItem>
                 <img
                   src={image.image}
                   alt="loading..."
                   className="image-card"
-                />
-              </Card>
+                /></ImageListItem>
+</ImageList>
               <section>
                 <span>
                   <AddComments imageId={image.id} locationId={location.id} />

@@ -53,7 +53,7 @@ const LocationUpload = () => {
             />
           </Box>
           <div>
-          <Box
+          {/* <Box
           component='div'
             sx={{
               flexDirection: "column",
@@ -62,15 +62,15 @@ const LocationUpload = () => {
               mt: 0.5,
               p: 1,
             }}
-            >
+            > */}
         <label
           style={{ color: "#1976d2", marginTop: "2pt" }}
           id="location-photo-text"
           htmlFor="add-location-pic"
           >
-          Upload Photo
+          Upload Business Front
         </label>
-          </Box>
+      
           </div>
         <Box
           sx={{
@@ -92,15 +92,7 @@ const LocationUpload = () => {
         {/* <label htmlFor="biography" >
           Biography
         </label> */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignContent: "center",
-            mt: 0.5,
-          }}
-        >
+ 
           <TextField
             multiline
             fullWidth
@@ -111,22 +103,13 @@ const LocationUpload = () => {
             value={biography}
             minRows={5}
           />
-          </Box>
+    
           </div>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignContent: "center",
-            mt: 0.5,
-            pt: 0.5,
-          }}
-        >
+   
           <Button variant="contained" color="primary" type="submit">
             Submit
           </Button>
-        </Box>
+      
       </form>
     </div>
   );

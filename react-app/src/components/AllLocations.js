@@ -25,7 +25,7 @@ function AllLocations() {
       <div className="locations-container">
         <div key={idx} id="location-key">
           <div className="location-div-container">
-            <Container sx={{ mt: 5 }}></Container>
+            <Container sx={{ mt: 5 }}>
             <Card sx={{ mt: 2, maxWidth: 450 }}>
               <CardHeader
                 avatar={
@@ -65,7 +65,7 @@ function AllLocations() {
                   </NavLink>
                 </Typography> */}
               <Card></Card>
-            </Card>
+            </Card></Container>
           </div>
         </div>
       </div>
