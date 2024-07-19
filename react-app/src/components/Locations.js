@@ -67,11 +67,10 @@ function Locations() {
               />
           ) : null} */}
       </div>
-      <div className="image-cards-and-delete-comp">
-        <div className="image-cards-container">
+
           <AllImagesRefactor images={images} locationId={locationId} />
-        </div>
-      </div>
+     
+
     </>
   );
 }

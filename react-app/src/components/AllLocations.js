@@ -23,9 +23,8 @@ function AllLocations() {
   const locationsList = locations.map((location, idx) => {
     return (
       <div className="locations-container">
-        <div key={idx} id="location-key">
-          <div className="location-div-container">
-            <Container sx={{ mt: 5 }}>
+
+
             <Card sx={{ mt: 2, maxWidth: 450 }}>
               <CardHeader
                 avatar={
@@ -64,11 +63,10 @@ function AllLocations() {
                     Add Photos
                   </NavLink>
                 </Typography> */}
-              <Card></Card>
-            </Card></Container>
+       
+            </Card>
           </div>
-        </div>
-      </div>
+   
     );
   });
   return (

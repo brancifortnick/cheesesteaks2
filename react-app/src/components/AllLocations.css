@@ -1,12 +1,12 @@
 .locations-container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto;
-  /* backdrop-filter: blur(7px); */
-  margin: 30px 15px;
+display: inline-flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: space-around;
+padding: 2rem;
 }
 .location-div-container {
-
+order: -1;
 
 }
 
