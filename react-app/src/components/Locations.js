@@ -8,53 +8,56 @@ import Box from "@mui/material/Box";
 import "./Locations.css";
 import { Modal } from "../context/Modal";
 import { getPhotos } from "../store/image";
-import AllImagesRefactor from './AllImagesRefactor';
+import AllImagesRefactor from "./AllImagesRefactor";
 import ImageUpload from "./ImageUpload";
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-
-
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import { CardMedia } from "@mui/material";
+import { ButtonGroup } from "@mui/material";
+import Button from "@mui/material/Button";
 
 function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
   const userId = useSelector((state) => state.session.user?.id);
-  const [showModal, setModal] = useState(false)
-  const comment = useSelector((state) => (state.comment));
+  const [showModal, setModal] = useState(false);
+  const comment = useSelector((state) => state.comment);
   const location = useSelector((state) => state.location);
-  const images = useSelector(state => Object.values(state.image))
-  const { locationId } = useParams()
+  const images = useSelector((state) => Object.values(state.image));
+  const { locationId } = useParams();
   useEffect(() => {
-    dispatch(getOneLocation((locationId)));
-    dispatch(getPhotos(locationId))
+    dispatch(getOneLocation(locationId));
+    dispatch(getPhotos(locationId));
   }, [dispatch, locationId]);
   return (
     <>
       <div className="card-container">
         {location.profile_img !== null ? (
           <Box>
-            <img
-              className="location-image"
-              src={location.profile_img}
-              alt="...loading"
-            />
-            <div className="location-name-container">
-              <div className="location-name">{location.location_name}</div>
-              <div>
-                {currentUser.id === Number(location.user_id) ? (
-                  <UpdateBiography
-                    locationBio={location.biography}
-                    locationId={location.id}
-                  />
-                ) : null}
-                {location.biography}
-              </div>
-              <ImageUpload locationId={locationId} />
-              <DeleteLocation location={location.id} />
-            </div>
+            <Card>
+              <img
+                className="location-image"
+                src={location.profile_img}
+                alt="...loading"
+              />
+              <div className="location-name-container">
+                <div className="location-name">{location.location_name}</div>
+
+                <div className="bio-component-container">
+                  {currentUser.id === Number(location.user_id) ? (
+                    <UpdateBiography
+                      locationBio={location.biography}
+                      locationId={location.id}
+                    />
+                  ) : null}
+                  <p className="location-bio">{location.biography}</p>
+             
+                </div>
+              </div> 
+            </Card>
           </Box>
         ) : null}
-
+<ImageUpload locationId={locationId} />
         {/*
           <div id="update-biography">
             {currentUser.id === Number(location.user_id) ? (
@@ -71,5 +74,5 @@ function Locations() {
       </div>
     </>
   );
-};
+}
 export default Locations;

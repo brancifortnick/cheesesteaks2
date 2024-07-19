@@ -8,13 +8,13 @@ body {
 
 
 #root {
-  background-color: #d8d0c6;
+
   /* background-color: rgb(25, 117, 209); */
 }
 
 html {
   scroll-behavior: smooth;
-  /* background-image: url(./assets/chad-montano-M0lUxgLnlfk-unsplash.jpg); */
+  background-color: #d8d0c6;
 
 }
 

@@ -9,6 +9,9 @@ import Button from "@mui/material/Button";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField'
 import Form from '@mui/material/FormControl'
+import AddIcon from '@mui/icons-material/Add';
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
 const ImageUpload = ({ locationId }) => {
     const dispatch = useDispatch()
     const history = useHistory()
@@ -64,7 +67,7 @@ const ImageUpload = ({ locationId }) => {
           id="upload-photos-to-location"
           onClick={() => setModal(true)}
         >
-          Add Image
+      <AddIcon/>
         </Button>
         {showModal && (
           <Modal onClose={() => setModal(false)}>
@@ -92,10 +95,14 @@ const ImageUpload = ({ locationId }) => {
                       onChange={addPictureFile}
                     />
                   </Box>
+  
                   <Button name="image" color="primary" type="submit">
-                    {" "}
-                    +{" "}
+                  <CheckIcon/>
                   </Button>
+                  <Button onClick={() => setModal(false)}>
+                    <CloseIcon />
+                    </Button>
+                 
                 </div>
               </form>
             </Form>

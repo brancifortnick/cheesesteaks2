@@ -1,18 +1,30 @@
 .card-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   /* flex-direction: column-reverse; */
 }
 
 .location-name {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 
-#description-text {
+/* .image-upload-component{
+display: flex;
+flex-direction: column;
+
+} */
+/* .bio-component-container{
+  display: flex;
   flex-direction: column;
-  word-wrap: wrap;
+  align-items:  center;
+  flex-wrap: wrap;
+  margin: 1rem;
+} */
+#description-text {
+
 }
 
 .location-image {
@@ -20,12 +32,12 @@
   flex-direction: column;
   width: 100%;
 }
-.delete-location-comp{
+/* .delete-location-comp{
   display:grid;
   grid-template-columns: 25%;
   background-color: #2941ab;
-}
-.image-upload-comp {
+} */
+/* .image-upload-comp {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -33,16 +45,19 @@
   border-radius: 3px;
   margin: 4px;
   padding: 4px;
-}
-
+} */
+/* 
 .image-cards-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-}
+} */
 
+.button-group{
+
+}
 #establishment-bio {
   display: flex;
   flex-direction: row;
@@ -52,12 +67,12 @@
   padding-bottom: 3%;
 }
 
-#update-biography {
+/* #update-biography {
   display: flex;
   margin: auto;
   padding: 4pt;
   flex-direction: column
-}
+} */
 
 #add-pictures {
   padding: 4px;

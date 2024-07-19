@@ -6,7 +6,10 @@ import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import EditLocationIcon from '@mui/icons-material/EditLocation';
 // import "./UpdateBiography.css";
+import EditIcon from '@mui/icons-material/Edit';
+import { ButtonGroup } from "@mui/material";
 // import Modal from '@mui/material/Modal';
 const UpdateBiography = ({ locationBio, locationId }) => {
   const dispatch = useDispatch();
@@ -18,22 +21,27 @@ const UpdateBiography = ({ locationBio, locationId }) => {
     dispatch(updateBiography(formData, locationId));
     setModal(false);
   };
+
+
+  const cancelModal = () => {
+    setModal(false)
+  }
   useEffect(() => {
     dispatch(getOneLocation(parseInt(locationId)));
   }, [dispatch, locationId]);
   return (
     <>
       <Button id="biography-edit" onClick={() => setModal(true)}>
-        Edit Info:
+        <EditIcon />
       </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form onSubmit={onSubmit}>
             <Box
-              sx={{
-                display: "inlineFlex",
-                alignText: "flexStart",
-              }}
+              // sx={{
+              //   display: "inlineFlex",
+              //   alignText: "flexStart",
+              // }}
             >
               <TextField
                 multiline
@@ -53,9 +61,13 @@ const UpdateBiography = ({ locationBio, locationId }) => {
               />
             </Box>
             <Box>
+         
               <Button type="submit" id="update-biography-submit">
-                Submit
-              </Button>
+                Submit changes
+            </Button>
+            <Button type='submit' id='cancel-bio-update' onClick={cancelModal}>
+              Cancel
+            </Button>
             </Box>
           </form>
         </Modal>
