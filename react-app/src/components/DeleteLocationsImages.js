@@ -4,6 +4,10 @@ import { useParams, useHistory } from "react-router-dom";
 import { deletePhoto, getAPhoto, getPhotos } from "../store/image";
 import { Modal } from "../context/Modal";
 import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import CancelIcon from '@mui/icons-material/Cancel';
+import CheckIcon from '@mui/icons-material/Check';
+import TrashCanIcon from '@mui/icons-material/Delete';
 const DeleteLocationsImages = ({ imageId }) => {
     const [showModal, setModal] = useState(false);
     const { locationId } = useParams()
@@ -27,15 +31,23 @@ const DeleteLocationsImages = ({ imageId }) => {
         dispatch(getPhotos(locationId))
     }, [dispatch, locationId])
     return (
-        <div>
-            <button id="delete-location-images-modal-btn" onClick={() => setModal(true)}>Delete Image</button>
+        <div className='container for buttons'>
+            <button id="delete-location-images-modal-btn" onClick={() => setModal(true)}><TrashCanIcon /></button>
             {showModal && (
-                <Modal onClose={() => setModal(false)}><div className='are-you-sure'>
-                    <Button onClick={onSubmit}>Delete this image?</Button></div>
-                    <div><button onClick={handleCancel}>Cancel</button></div>
+                
+                <Modal onClose={() => setModal(false)}>
+                    <ButtonGroup>
+                        <Button onClick={onSubmit}><CheckIcon sx={{width: 100}} />
+                        </Button>
+               
+                 
+                        <Button onClick={handleCancel}>
+                            <CancelIcon/>
+                        </Button>
+                    </ButtonGroup>
                 </Modal>
             )}
-        </div>
+             </div>
     )
 };
 export default DeleteLocationsImages;
