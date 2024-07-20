@@ -7,8 +7,8 @@ import { Button } from "@mui/material";
 import './EditComment.css';
 import { updateAComment } from "../store/image";
 import "./EditComment.css";
-
-
+import CheckIcon from "@mui/icons-material/Check";
+import CancelIcon from '@mui/icons-material/Cancel';
 const EditComment = ({ commentObj, imageId }) => {
   const dispatch = useDispatch();
   const [comment, setComment] = useState(commentObj.comment)
@@ -41,14 +41,14 @@ const EditComment = ({ commentObj, imageId }) => {
             />
             <div className="buttons-container">
               <Button type="submit" className="confirm-edit-btn">
-                Submit changes
+                <CheckIcon />
               </Button>
               <Button
-                type="button"
+             
                 onClick={closeModal}
                 className="cancel-edit-btn"
               >
-                Cancel
+                <CancelIcon/>
               </Button>
             </div>
           </form>

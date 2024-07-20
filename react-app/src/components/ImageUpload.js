@@ -96,15 +96,15 @@ const ImageUpload = ({ locationId }) => {
                     name="image"
                     onChange={addPictureFile}
                   />
-                  <p>Are you sure you would like to delete this image</p>
-                  <ButtonGroup>
+        
+              
                     <Button name="image" color="primary" type="submit">
-                      <CheckIcon />
+                      <CheckIcon/>
                     </Button>
                     <Button onClick={() => setModal(false)}>
                       <CloseIcon />
                     </Button>
-                  </ButtonGroup>
+               
                 </Box>
               </div>
             </form>
