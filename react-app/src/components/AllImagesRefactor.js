@@ -15,6 +15,7 @@ import EditComment from "./EditComment";
 import VoteCounter from "./VoteCounter";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
+import './AllImagesRefactor.css'
 function AllImagesRefactor({ images }) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);

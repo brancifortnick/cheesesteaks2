@@ -1,6 +1,6 @@
 .images-container {
   display: inline-flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 2rem;
