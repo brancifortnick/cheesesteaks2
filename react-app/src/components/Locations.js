@@ -16,6 +16,8 @@ import { CardMedia } from "@mui/material";
 import { ButtonGroup } from "@mui/material";
 import Button from "@mui/material/Button";
 
+
+
 function Locations() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
@@ -33,44 +35,36 @@ function Locations() {
     <>
       <div className="card-container">
         {location.profile_img !== null ? (
-          <Box>
-            <Card>
+          <div className='first-container-children'>
+            <h2> {location.location_name}</h2>
+          <Box sx={{ display: 'Flex',justifyContent:'center', maxWidth: 1200}} >
+            <Card >
+         
+
               <img
                 className="location-image"
                 src={location.profile_img}
                 alt="...loading"
               />
-              <div className="location-name-container">
-                <div className="location-name">{location.location_name}</div>
 
-                <div className="bio-component-container">
-                  {currentUser.id === Number(location.user_id) ? (
-                    <UpdateBiography
-                      locationBio={location.biography}
-                      locationId={location.id}
-                    />
-                  ) : null}
-                  <p className="location-bio">{location.biography}</p>
-             
-                </div>
-              </div> 
+              <div className="bio-component-container">
+                {currentUser.id === Number(location.user_id) ? (
+                  <UpdateBiography
+                    locationBio={location.biography}
+                    locationId={location.id}
+                  />
+                ) : null}
+                <p className="location-bio">{location.biography}</p>
+              </div>
             </Card>
           </Box>
+          </div>
         ) : null}
-<ImageUpload locationId={locationId} />
-        {/*
-          <div id="update-biography">
-            {currentUser.id === Number(location.user_id) ? (
-              <UpdateBiography
-                locationBio={location.biography}
-                locationId={location.id}
-              />
-          ) : null} */}
-      </div>
-
-          <AllImagesRefactor images={images} locationId={locationId} />
-     
-
+        <ImageUpload locationId={locationId} />
+      
+      
+        <AllImagesRefactor images={images} locationId={locationId} />
+        </div>
     </>
   );
 }

@@ -63,7 +63,7 @@ const ImageUpload = ({ locationId }) => {
     return (
       <div className="image-form-container">
         <Button
-          sx={{ mt: "2em", alignContent: "center", backgroundColor: "grey" }}
+        
           id="upload-photos-to-location"
           onClick={() => setModal(true)}
         >

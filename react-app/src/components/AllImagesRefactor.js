@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Grid from "@mui/material/Grid";
 import DeleteLocationsImages from "./DeleteLocationsImages";
-import ImageList from '@mui/material/ImageList';
+import ImageList from "@mui/material/ImageList";
 
-import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItem from "@mui/material/ImageListItem";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
@@ -19,13 +19,18 @@ import {
   updateAComment,
 } from "../store/comment";
 import Accordian from "./Accordian/Accordian";
-
+import Divider from "@mui/material/Divider";
 import DeleteComment from "./DeleteComment";
 import { findObjectById } from "../Utilities/StoreMethods";
 import EditComment from "./EditComment";
 import VoteCounter from "./VoteCounter";
 import ButtonGroup from "@mui/material/ButtonGroup";
-
+import { CardHeader } from "@mui/material";
+//mui styling
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+import { styled } from "@mui/material/styles";
 
 function AllImagesRefactor({ images }) {
   const dispatch = useDispatch();
@@ -46,23 +51,32 @@ function AllImagesRefactor({ images }) {
       });
     }
   };
+  //mui styling funcs for images
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
+
   //returning multiple accordians
   const buildTemplate = () => {
     if (images) {
       return images.map((image) => {
         return image !== null && location.id === image.location_id ? (
-          <div key={image.id} className="pictures-container">
-            <div className='container-child-all-images'>
-
-              <div className="image-title">{image.title}</div>
-              <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}> 
-                <ImageListItem>
+        
+            
+            <div className='images-container'> {image.title}
+           
                 <img
                   src={image.image}
                   alt="loading..."
                   className="image-card"
-                /></ImageListItem>
-</ImageList>
+                  />
+                
+           
               <section>
                 <span>
                   <AddComments imageId={image.id} locationId={location.id} />
@@ -80,8 +94,8 @@ function AllImagesRefactor({ images }) {
                   {/* {user.id === Number(location.user_id) ? (  ) : null} */}
                 </CardActions>
               </CardContent>
-            </div>
-          </div>
+       
+              </div>
         ) : null;
       });
     }
@@ -89,7 +103,7 @@ function AllImagesRefactor({ images }) {
 
   return (
     <>
-      <div key="">{buildTemplate()}</div>
+      <div key="hey">{buildTemplate()}</div>
     </>
   );
 }

@@ -1,7 +1,12 @@
-
+.images-container{
+    
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 2rem;
+       
+}
 .comment-body {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  line-height: 175px;
+
 } 
