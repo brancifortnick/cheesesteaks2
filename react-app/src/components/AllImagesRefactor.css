@@ -1,12 +1,9 @@
-.images-container{
-    
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 2rem;
-       
-}
-.comment-body {
-
+.images-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
 } 
+.comment-body {
+}
