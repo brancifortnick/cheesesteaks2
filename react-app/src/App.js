@@ -13,6 +13,7 @@ import LocationUpload from "./components/LocationUpload";
 import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
+import GetUsersIp from "./components/GetUsersIp";
 
 //!adding this so i can make a large commit message for safe revert//
 function App() {
@@ -47,7 +48,7 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute path="/" exact={true}>
             <LandingPage />
-
+<GetUsersIp/>
             <MapContainer />
           </ProtectedRoute>
           <ProtectedRoute path="/users/:userId/new-location" exact={true}>

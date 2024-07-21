@@ -13,12 +13,9 @@
  
 }
 #add-location-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 4px;
-  color: #1976d2;
+flex-direction: column;
+align-items: flex-start;
+
 }
 .input_container {
   

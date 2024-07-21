@@ -15,10 +15,16 @@
   align-items: center;
   flex-wrap: wrap;
   margin-right: 1rem;
-  border: 1px blur(red);
+  border: 1px grey;
   border-radius: 10px;
   box-sizing: border-box;
-  box-shadow: 7px  blur( rgb(161, 130, 130));
+  /* box-shadow: 7px  blur( rgb(161, 130, 130)); */
   width: 300px;
   height: 300px;
+}
+div.image-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem;
+  justify-self: center;
 }

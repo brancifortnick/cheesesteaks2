@@ -12,6 +12,8 @@ import { TextareaAutosize } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { getAllLocations, getOneLocation } from "../store/location";
 import { getPhotos } from "../store/image";
+import CheckIcon from "@mui/icons-material/Check";
+
 // import Modal from '@mui/material/Modal';
 const AddComments = ({ locationId, imageId }) => {
   //added imageId prop and then useparams for locationId because addcomments lives on locations/id
@@ -20,6 +22,7 @@ const AddComments = ({ locationId, imageId }) => {
   const user = useSelector((state) => state.session.user);
   const [comment, setComment] = useState("");
   const [showModal, setModal] = useState(false);
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -36,7 +39,7 @@ const AddComments = ({ locationId, imageId }) => {
   return (
     <div>
       <div id="comment-modal">
-        <Button onClick={() => setModal(true)}>+</Button>
+        <Button onClick={() => setModal(true)}><AddIcon/></Button>
         {/* <Fab color="primary" aria-label="add" size='small'> </Fab> */}
       </div>
       {showModal && (
@@ -53,7 +56,7 @@ const AddComments = ({ locationId, imageId }) => {
             />
             <div id="comment-create">
               <Button className="comment_submit" type="submit" color="primary">
-                Submit Comment
+                <CheckIcon/>
               </Button>
             </div>
           </form>
