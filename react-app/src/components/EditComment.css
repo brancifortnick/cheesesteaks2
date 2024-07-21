@@ -1,0 +1,37 @@
+.update-comment-submit-outter {
+    display: flex;
+    background-color: grey;
+    cursor: pointer;
+}
+
+.form-element-edit-comment {
+    display: inline-block;
+    gap: 4rem;
+}
+
+.form-buttons {
+    color: black;
+    border-radius: 0.25rem;
+    box-shadow: 1rem 1rem 1rem #00000038;
+}
+
+.buttons-container {
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+#update-comment-submit {
+    cursor: pointer;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.cancel-edit-btn{
+    border: 2px solid grey;
+    box-sizing: border-box;
+    box-shadow : 3px 1 ;
+}

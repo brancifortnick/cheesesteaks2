@@ -1,0 +1,9 @@
+textarea[name="biography"] {
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+button.update-biography {
+  margin: 4rem;
+  padding: 2px;
+}

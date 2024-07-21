@@ -1,0 +1,16 @@
+.locations-container {
+display: inline-flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: space-around;
+padding: 2rem;
+}
+.location-div-container {
+order: -1;
+
+}
+
+.image_card {
+  height: 400px;
+  min-width: 450px;
+}
