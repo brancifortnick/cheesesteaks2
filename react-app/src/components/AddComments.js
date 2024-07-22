@@ -44,11 +44,11 @@ const AddComments = ({ locationId, imageId }) => {
             <TextareaAutosize
               className="comment-input"
               type="text"
-              placeholder="Describe your experience here..."
+              placeholder="write a comment"
               onChange={updateComment}
               value={comment}
               minRows={2}
-              style={{ width: 450, height: 225, fontSize: 18 }}
+              style={{ width: 450, height: 225, fontSize: 16 }}
             />
             <div id="comment-create">
               <Button className="comment_submit" type="submit" color="primary">

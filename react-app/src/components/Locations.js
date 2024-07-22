@@ -37,8 +37,13 @@ function Locations() {
         {location.profile_img !== null ? (
           <div className='first-container-children'>
             <h2> {location.location_name}</h2>
-          <Box sx={{ display: 'flex',flexDirection: "row", justifyContent:'center'}} >
-            <Card >
+            <Box sx={{ display: 'flex', flexDirection: "row", justifyContent: 'center', mt: 1 }} >
+              <Card sx={{
+                borderRadius: '10px',
+                margin: 0,
+                backgroundColor: 'rgba(255, 255, 255, 0.75)',
+                backdropFilter: 'blur(10px)',
+              }}>
          
 
               <img
@@ -60,6 +65,7 @@ function Locations() {
           </Box>
           </div>
         ) : null}
+        {/* <p id='image-upload-text'>Upload Photos</p> */}
         <ImageUpload locationId={locationId} />
       
       

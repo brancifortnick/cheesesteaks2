@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckIcon from '@mui/icons-material/Check';
-import TrashCanIcon from '@mui/icons-material/Delete';
+import DeleteIcon from '@mui/icons-material/Delete';
 import './DeleteLocationsImages.css'
 
 
@@ -37,7 +37,7 @@ const DeleteLocationsImages = ({ imageId }) => {
     return (
         <div className='container for buttons'>
             <div className='delete-location-images-modal-btn'>
-                <button id="delete-location-images-modal-btn" onClick={() => setModal(true)}><TrashCanIcon /></button></div>
+                <DeleteIcon color='disabled' sx={{ color: 'red' }} id="delete-location-images-modal-btn" onClick={() => setModal(true)} /></div>
             {showModal && (
 
                 <Modal onClose={() => setModal(false)}>

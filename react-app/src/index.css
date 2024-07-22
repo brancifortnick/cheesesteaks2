@@ -1,10 +1,12 @@
-
+*,
 body {
   box-sizing: border-box;
   margin: 0;
 }
 
-
+* {
+  font-style: helvetica, sans-serif;
+}
 
 #root {
 
@@ -97,4 +99,6 @@ a:active {
   max-height: 450px;
   align-items: center;
   flex-direction: column-reverse;
-}*/
+}
+
+*/

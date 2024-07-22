@@ -2,6 +2,7 @@
     visibility: hidden;
     height: 0px;
 }
+
 /*
 when its open the body is styled visibly
 */
@@ -9,20 +10,25 @@ when its open the body is styled visibly
     visibility: visible;
     height: fit-content;
 }
+
 .accordion-head {
     display: flex;
-    align-items: center;
+    justify-content: space-evenly;
+        align-content: center;
     gap: 0.5rem;
     cursor: pointer;
 }
+
 .accordion-head:hover {
     text-decoration: underline;
 }
+
 .caret-icon {
     height: 1rem;
     transform: rotate(90deg);
     transition: transform 500ms ease;
 }
+
 .accordion-wrapper[cs-state='open'] .caret-icon {
     transform: rotate(180deg);
 }

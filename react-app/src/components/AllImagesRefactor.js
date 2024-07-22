@@ -39,7 +39,7 @@ function AllImagesRefactor({ images }) {
       });
     }
   };
-  
+
 
   //returning multiple accordians
   const buildTemplate = () => {
@@ -47,25 +47,31 @@ function AllImagesRefactor({ images }) {
       return images.map((image) => {
         return image !== null && location.id === image.location_id ? (
           <div className="images-container">
-            <div className='image-title'>{image.title}</div>
-            <img src={image.image} className="image-card" alt="loading..." />
-            <span>
-              <AddComments imageId={image.id} locationId={location.id} />
-            </span>
-            <span>
-              <Accordian
-                toggleText="comments"
-                children={buildCommentTemplate(image)}
-              />
-            </span>
+            <div className='image-title'>{image.title}
+              <img src={image.image} className="image-card" alt="loading..." />
             <CardContent>
               <CardActions>
                 <DeleteLocationsImages imageId={image?.id} />
                 {/* {user.id === Number(location.user_id) ? (  ) : null} */}
               </CardActions>
             </CardContent>
+            </div>
+
+            <div className='comment-module'>
+
+
+
+
+              <Accordian
+                toggleText="comments"
+                children={buildCommentTemplate(image)}
+              />
+              <AddComments imageId={image.id} locationId={location.id} />
+            </div>
           </div>
         ) : null;
+
+
       });
     }
   };
