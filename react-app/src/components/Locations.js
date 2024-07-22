@@ -37,7 +37,7 @@ function Locations() {
         {location.profile_img !== null ? (
           <div className='first-container-children'>
             <h2> {location.location_name}</h2>
-          <Box sx={{ display: 'flex',justifyContent:'center', maxWidth: 1200}} >
+          <Box sx={{ display: 'flex',flexDirection: "row", justifyContent:'center'}} >
             <Card >
          
 

@@ -42,7 +42,7 @@ const DeleteLocationsImages = ({ imageId }) => {
                
                  
                         <Button onClick={handleCancel}>
-                            <CancelIcon/>
+                            <CancelIcon color='disabled' sx={{color: 'red'}} />
                         </Button>
                     </ButtonGroup>
                 </Modal>

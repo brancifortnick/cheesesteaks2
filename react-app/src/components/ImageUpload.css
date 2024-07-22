@@ -1,4 +1,13 @@
 .image-form-container {
     display: flex;
     flex-direction: column;
+    padding: 4em;
+    }
+    
+    #comment-modal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
 }

@@ -6,10 +6,10 @@ import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import EditLocationIcon from '@mui/icons-material/EditLocation';
-// import "./UpdateBiography.css";
+
+import "./UpdateBiography.css";
 import EditIcon from '@mui/icons-material/Edit';
-import { ButtonGroup } from "@mui/material";
+
 import CancelIcon from '@mui/icons-material/Cancel';
 const UpdateBiography = ({ locationBio, locationId }) => {
   const dispatch = useDispatch();
@@ -66,7 +66,7 @@ const UpdateBiography = ({ locationBio, locationId }) => {
                 Submit changes
             </Button>
             <Button type='submit' id='cancel-bio-update' onClick={cancelModal}>
-             <CancelIcon/>
+             <CancelIcon sx={{color: 'red'}} color='disabled' />
             </Button>
             </Box>
           </form>

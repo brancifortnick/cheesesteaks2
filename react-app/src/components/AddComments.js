@@ -1,20 +1,16 @@
-import { useParams } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+
+import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { getTheComments, createComment, getOneComment } from "../store/comment";
+import { createComment} from "../store/comment";
 import { Modal } from "../context/Modal";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import { TextareaAutosize } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { getAllLocations, getOneLocation } from "../store/location";
-import { getPhotos } from "../store/image";
+import {getOneLocation } from "../store/location";
 import CheckIcon from "@mui/icons-material/Check";
 import CancelIcon from "@mui/icons-material/Cancel";
-// import Modal from '@mui/material/Modal';
+
 const AddComments = ({ locationId, imageId }) => {
   //added imageId prop and then useparams for locationId because addcomments lives on locations/id
   const dispatch = useDispatch();
@@ -33,7 +29,7 @@ const AddComments = ({ locationId, imageId }) => {
     dispatch(getOneLocation(locationId));
     setModal(false);
     setComment("");
-    // history.push(`/locations/${locationId}`)
+   
   };
   const updateComment = (e) => setComment(e.target.value);
   return (
@@ -48,7 +44,7 @@ const AddComments = ({ locationId, imageId }) => {
             <TextareaAutosize
               className="comment-input"
               type="text"
-              placeholder="Comment here..."
+              placeholder="Describe your experience here..."
               onChange={updateComment}
               value={comment}
               minRows={2}
@@ -58,10 +54,10 @@ const AddComments = ({ locationId, imageId }) => {
               <Button className="comment_submit" type="submit" color="primary">
                 <CheckIcon/>
               </Button>
-              <Button type='submit' color='secondary' onClick={() => setModal(false)}>
-                <CancelIcon/>
+              <Button type='submit'  onClick={() => setModal(false)}>
+                <CancelIcon color='disabled' sx={{color: 'red'}} />
               </Button>
-            </div>
+                    </div>
           </form>
         </Modal>
       )}

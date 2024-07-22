@@ -103,7 +103,7 @@ const ImageUpload = ({ locationId }) => {
                       <CheckIcon/>
                     </Button>
                     <Button onClick={() => setModal(false)}>
-                      <CloseIcon />
+                      <CloseIcon sx={{color: 'red'}} color='disabled' />
                     </Button>
                
                 </Box>

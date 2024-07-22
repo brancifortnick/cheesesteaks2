@@ -21,8 +21,8 @@ const DeleteEstablishment = ({ locationId }) => {
     return (
         <div>
             <Box sx={{ m: -2.3 }}>
-                <Button size='medium' color='warning' onClick={onSubmit}>
-                    <DeleteIcon />
+                <Button size='medium' onClick={onSubmit}>
+                    <DeleteIcon color='disabled' sx={{color: 'red'}}  />
                 </Button>
             </Box>
         </div>
