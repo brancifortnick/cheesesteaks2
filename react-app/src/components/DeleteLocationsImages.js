@@ -8,6 +8,10 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckIcon from '@mui/icons-material/Check';
 import TrashCanIcon from '@mui/icons-material/Delete';
+import './DeleteLocationsImages.css'
+
+
+
 const DeleteLocationsImages = ({ imageId }) => {
     const [showModal, setModal] = useState(false);
     const { locationId } = useParams()
@@ -15,7 +19,7 @@ const DeleteLocationsImages = ({ imageId }) => {
     const dispatch = useDispatch();
     const image = useSelector(state => state.image)
     const user = useSelector(state => state.session.user)
-    // console.log(locationId, 'locationID????????????????????????????????????????????????---deletelocationsimages', image, "image state from DELTELOCATIONSIMAGES))))))))))))))))))))))))))))))))))))))))", imageId, "passed in as a prop obj")
+
     const onSubmit = async (e) => {
         e.preventDefault();
         dispatch(deletePhoto(Number(imageId)));
@@ -32,22 +36,23 @@ const DeleteLocationsImages = ({ imageId }) => {
     }, [dispatch, locationId])
     return (
         <div className='container for buttons'>
-            <button id="delete-location-images-modal-btn" onClick={() => setModal(true)}><TrashCanIcon /></button>
+            <div className='delete-location-images-modal-btn'>
+                <button id="delete-location-images-modal-btn" onClick={() => setModal(true)}><TrashCanIcon /></button></div>
             {showModal && (
-                
+
                 <Modal onClose={() => setModal(false)}>
                     <ButtonGroup>
-                        <Button onClick={onSubmit}><CheckIcon sx={{width: 100}} />
+                        <Button onClick={onSubmit}><CheckIcon sx={{ width: 100 }} />
                         </Button>
-               
-                 
+
+
                         <Button onClick={handleCancel}>
-                            <CancelIcon color='disabled' sx={{color: 'red'}} />
+                            <CancelIcon color='disabled' sx={{ color: 'red' }} />
                         </Button>
                     </ButtonGroup>
                 </Modal>
             )}
-             </div>
+        </div>
     )
 };
 export default DeleteLocationsImages;
