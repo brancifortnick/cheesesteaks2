@@ -9,9 +9,15 @@ import { getOneLocation } from "../store/location";
 import { getTheComments } from "../store/comment";
 const GetSpecificImage = () => {
     const images = useSelector(state => Object.values(state.image))
-    return (
-        <>
-        </>
-    )
+    const users = useSelector((state) => Object.values(state.users));
+    const dispatch = useDispatch();
+    const userId = useParams();
+    let obj = {}
+    let
+
+
+})
 }
+
+
 export default GetSpecificImage;

@@ -21,7 +21,7 @@ const NavBar = () => {
     history.push("/");
   };
   return (
-    <nav>
+    <nav className="nav-bar">
       <div className="nav-container">
         <div className="nav-link">
           {user ? (
@@ -61,6 +61,15 @@ const NavBar = () => {
             >
               Demo Login
             </Button>
+          ) : null}
+        </div>
+        <div className="nav-link">
+          {user ? (
+            <div className="users-profile">
+              <NavLink to={`/users/${user.id}/profile`} exact={true}>
+                {user.username[0].toUpperCase() + user.username.slice(1) + "'s Profile"}
+              </NavLink>
+            </div>
           ) : null}
         </div>
         <div className='link-location' >

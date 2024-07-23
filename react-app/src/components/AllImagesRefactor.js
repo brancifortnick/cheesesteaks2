@@ -49,24 +49,26 @@ function AllImagesRefactor({ images }) {
           <div className="images-container">
             <div className='image-title'>{image.title}
               <img src={image.image} className="image-card" alt="loading..." />
-            <CardContent>
-              <CardActions>
-                <DeleteLocationsImages imageId={image?.id} />
-                {/* {user.id === Number(location.user_id) ? (  ) : null} */}
-              </CardActions>
-            </CardContent>
+              <CardContent>
+                <CardActions>
+                  <DeleteLocationsImages imageId={image?.id} />
+                  {/* {user.id === Number(location.user_id) ? (  ) : null} */}
+                </CardActions>
+              </CardContent>
             </div>
+
 
             <div className='comment-module'>
 
 
 
-
+              <p className='accordian-p-tag'>
               <Accordian
                 toggleText="comments"
                 children={buildCommentTemplate(image)}
               />
               <AddComments imageId={image.id} locationId={location.id} />
+              </p>
             </div>
           </div>
         ) : null;

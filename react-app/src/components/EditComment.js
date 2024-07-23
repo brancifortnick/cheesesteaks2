@@ -26,7 +26,7 @@ const EditComment = ({ commentObj, imageId }) => {
   }
   return (
     <div className="edit-container">
-      <EditIcon onClick={() => setModal(true)} color="primary" />
+      <EditIcon onClick={() => setModal(true)} color="disabled" sx={{ color: 'black', bgColor: 'white', width: '30rem' }} />
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form className="form-element-edit-comment" onSubmit={onSubmit}>

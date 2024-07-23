@@ -6,7 +6,8 @@ import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 import "./UpdateBiography.css";
 import EditIcon from '@mui/icons-material/Edit';
 
@@ -64,9 +65,10 @@ const UpdateBiography = ({ locationBio, locationId }) => {
          
               <Button type="submit" id="update-biography-submit">
                 Submit changes
+                <AddIcon />
             </Button>
             <Button type='submit' id='cancel-bio-update' onClick={cancelModal}>
-             <CancelIcon sx={{color: 'red'}} color='disabled' />
+                <DeleteIcon sx={{ color: 'red' }} color='disabled' />
             </Button>
             </Box>
           </form>

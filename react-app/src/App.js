@@ -15,7 +15,6 @@ import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
 import GetUsersIp from "./components/GetUsersIp";
 
-//!adding this so i can make a large commit message for safe revert//
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -48,8 +47,11 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute path="/" exact={true}>
             <LandingPage />
-<GetUsersIp/>
             <MapContainer />
+          </ProtectedRoute>
+          {/* <GetUsersIp/> */}
+          <ProtectedRoute path="/users/:userId/profile" exact={true}>
+            <UsersList />
           </ProtectedRoute>
           <ProtectedRoute path="/users/:userId/new-location" exact={true}>
             <LocationUpload />

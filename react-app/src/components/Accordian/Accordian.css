@@ -32,3 +32,13 @@ when its open the body is styled visibly
 .accordion-wrapper[cs-state='open'] .caret-icon {
     transform: rotate(180deg);
 }
+.accordion-body {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    gap: 1rem;
+}

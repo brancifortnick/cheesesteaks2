@@ -37,13 +37,14 @@ function Locations() {
         {location.profile_img !== null ? (
           <div className='first-container-children'>
             <h2> {location.location_name}</h2>
-            <Box sx={{ display: 'flex', flexDirection: "row", justifyContent: 'center', mt: 1 }} >
+            <Box sx={{ display: 'flex', flexDirection: "row", alignItems: 'center', mt: 1 }} >
               <Card sx={{
-                width: '300px',
+
                 borderRadius: '10px',
-                margin: 0,
+                borderBottom: 'hidden',
+                boxShadow: '0 4px 6px 0 rgba(3,3, 3, 3)',
                 backgroundColor: 'rgba(255, 255, 255, 0.75)',
-                backdropFilter: 'blur(10px)',
+
               }}>
          
 
