@@ -1,17 +1,19 @@
 .outer_card {
   display: flex;
-    flex-direction: row;
+  flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
   background-color: rgb(255, 255, 255);
-    margin: 3rem;
-      padding: 1rem;
-      border-radius: 8px;
-      width: 450px;
-        text-align: center;
+  margin: 3rem;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 450px;
+    text-align: center;
 }
+
 #location-photo-text {}
+
 #add-location-text {
   text-align: center;
-    padding: 1rem;
+  padding: 1rem;
 }
