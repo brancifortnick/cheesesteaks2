@@ -9,15 +9,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
 import CardActions from "@mui/material/CardActions";
 import AddComments from "./AddComments";
-import Accordian from "./Accordian/Accordian";
+import Accordian from "../components/Accordian/Accordian.js";
 import DeleteComment from "./DeleteComment";
 import EditComment from "./EditComment";
 import VoteCounter from "./VoteCounter";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import "./AllImagesRefactor.css";
-
-
 
 function AllImagesRefactor({ images }) {
   const dispatch = useDispatch();
@@ -63,12 +61,12 @@ function AllImagesRefactor({ images }) {
 
 
               <p className='accordian-p-tag'>
-              <Accordian
-                toggleText="comments"
-                children={buildCommentTemplate(image)}
-              />
-              <AddComments imageId={image.id} locationId={location.id} />
-              </p>
+                <Accordian
+                  toggleText="comments"
+                  children={buildCommentTemplate(image)}
+                />
+
+              </p><AddComments imageId={image.id} locationId={location.id} />
             </div>
           </div>
         ) : null;
