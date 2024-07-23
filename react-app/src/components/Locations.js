@@ -39,6 +39,7 @@ function Locations() {
             <h2> {location.location_name}</h2>
             <Box sx={{ display: 'flex', flexDirection: "row", justifyContent: 'center', mt: 1 }} >
               <Card sx={{
+                width: '300px',
                 borderRadius: '10px',
                 margin: 0,
                 backgroundColor: 'rgba(255, 255, 255, 0.75)',
