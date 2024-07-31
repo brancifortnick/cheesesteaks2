@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
+import CloseIcon from '@mui/icons-material/Close';
 import "./UpdateBiography.css";
 import EditIcon from '@mui/icons-material/Edit';
 
@@ -68,7 +68,7 @@ const UpdateBiography = ({ locationBio, locationId }) => {
 
             </Button>
             <Button type='submit' id='cancel-bio-update' onClick={cancelModal}>
-                <DeleteIcon sx={{ color: 'red' }} color='disabled' />
+                <CloseIcon sx={{ color: 'red' }} color='disabled' />
             </Button>
             </Box>
           </form>

@@ -8,7 +8,7 @@ import './EditComment.css';
 import { updateAComment } from "../store/image";
 import "./EditComment.css";
 import CheckIcon from "@mui/icons-material/Check";
-import CancelIcon from '@mui/icons-material/Cancel';
+import CloseIcon from '@mui/icons-material/Close';
 const EditComment = ({ commentObj, imageId }) => {
   const dispatch = useDispatch();
   const [comment, setComment] = useState(commentObj.comment)
@@ -48,7 +48,7 @@ const EditComment = ({ commentObj, imageId }) => {
                 onClick={closeModal}
                 className="cancel-edit-btn"
               >
-                <CancelIcon color='disabled' sx={{color: 'red'}} />
+                <CloseIcon color='disabled' sx={{ color: 'red' }} />
               </Button>
             </div>
           </form>

@@ -63,7 +63,7 @@ function AllImagesRefactor({ images }) {
 
               <p className='accordian-p-tag'>
                 <Accordian
-                  toggleText="comments"
+                  toggleText="View Comments"
                   children={buildCommentTemplate(image)}
                 />
 
