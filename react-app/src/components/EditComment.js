@@ -9,6 +9,7 @@ import { updateAComment } from "../store/image";
 import "./EditComment.css";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from '@mui/icons-material/Close';
+import TextField from '@mui/material/TextField';
 const EditComment = ({ commentObj, imageId }) => {
   const dispatch = useDispatch();
   const [comment, setComment] = useState(commentObj.comment)
@@ -26,11 +27,11 @@ const EditComment = ({ commentObj, imageId }) => {
   }
   return (
     <div className="edit-container">
-      <EditIcon onClick={() => setModal(true)} color="disabled" sx={{ color: 'black', bgColor: 'white', width: '30rem' }} />
+      <EditIcon onClick={() => setModal(true)} color="disabled" sx={{ color: '#700f11', bgColor: 'white', width: '30rem' }} />
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form className="form-element-edit-comment" onSubmit={onSubmit}>
-            <TextareaAutosize
+            <TextField
               className="comment-input"
               type="text"
               placeholder={commentObj.comment}
@@ -38,6 +39,14 @@ const EditComment = ({ commentObj, imageId }) => {
               value={comment}
               minRows={5}
               style={{ width: 400 }}
+              multiline
+              sx={{
+                width: 400,
+                fontWeight: "800",
+                fontStyle: "italic",
+                maxWidth: "600px",
+              }}
+              fullWidth
             />
             <div className="buttons-container">
               <Button type="submit" className="confirm-edit-btn">

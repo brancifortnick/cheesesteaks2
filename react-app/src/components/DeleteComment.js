@@ -25,12 +25,12 @@ const DeleteComment = ({ imageId, commentId }) => {
   return (
     <div>
       <Button type="submit" className="delete-btn" onClick={() => setModal(true)}>
-        <DeleteIcon onClick={() => setModal(false)} color='disabled' sx={{ color: 'red' }} />
+        <DeleteIcon onClick={() => setModal(false)} color='disabled' sx={{ color: '#fbd345' }} />
       </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <div className="delete-modal">
-            <h1>Are you sure you want to delete this comment?</h1>
+            <h1>Delete comment?</h1>
             <div className="delete-buttons">
 
               <CheckIcon type="submit" className="confirm-delete-btn" onClick={commentDelete} />

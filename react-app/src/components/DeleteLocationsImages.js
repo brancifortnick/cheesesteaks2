@@ -37,7 +37,7 @@ const DeleteLocationsImages = ({ imageId }) => {
     return (
         <div className='container for buttons'>
             <div className='delete-location-images-modal-btn'>
-                <DeleteIcon color='disabled' sx={{ color: 'red' }} id="delete-location-images-modal-btn" onClick={() => setModal(true)} /></div>
+                <DeleteIcon color='disabled' sx={{ color: '#FB6C45' }} id="delete-location-images-modal-btn" onClick={() => setModal(true)} /></div>
             {showModal && (
 
                 <Modal onClose={() => setModal(false)}>

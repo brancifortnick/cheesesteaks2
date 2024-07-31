@@ -45,8 +45,10 @@ function AllImagesRefactor({ images }) {
       return images.map((image) => {
         return image !== null && location.id === image.location_id ? (
           <div className="images-container">
+
+            <div className="image-child-container">
             <div className='image-title'>{image.title}
-              <img src={image.image} className="image-card" alt="loading..." />
+                <img src={image.image} className="image-card" alt="loading..." />
               <CardContent>
                 <CardActions>
                   <AddComments imageId={image.id} locationId={location.id} />
@@ -55,7 +57,7 @@ function AllImagesRefactor({ images }) {
                 </CardActions>
               </CardContent>
             </div>
-
+            </div>
 
             <div className='comment-module'>
 

@@ -44,7 +44,7 @@ const AddComments = ({ locationId, imageId }) => {
             <TextareaAutosize
               className="comment-input"
               type="text"
-              placeholder="write a comment"
+              placeholder="Comment..."
               onChange={updateComment}
               value={comment}
               minRows={2}
