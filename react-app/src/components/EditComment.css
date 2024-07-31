@@ -23,11 +23,12 @@
 
 #update-comment-submit {
     cursor: pointer;
+    background-color: black;
+        border: .5px solid black;
     color: white;
-    align-items: center;
-    justify-content: center;
+    padding: 0.5rem;
     text-align: center;
-    padding-top: 3px;
+
 }
 
 .cancel-edit-btn{

@@ -81,7 +81,7 @@ const ImageUpload = ({ locationId }) => {
                   fullWidth
                   name="title"
                   type="text"
-                  placeholder="Title"
+                  placeholder="Add image and title..."
                   onChange={(e) => setTitle(e.target.value)}
                   value={title}
                   minRows={2}

@@ -49,6 +49,7 @@ function AllImagesRefactor({ images }) {
               <img src={image.image} className="image-card" alt="loading..." />
               <CardContent>
                 <CardActions>
+                  <AddComments imageId={image.id} locationId={location.id} />
                   <DeleteLocationsImages imageId={image?.id} />
                   {/* {user.id === Number(location.user_id) ? (  ) : null} */}
                 </CardActions>
@@ -66,7 +67,8 @@ function AllImagesRefactor({ images }) {
                   children={buildCommentTemplate(image)}
                 />
 
-              </p><AddComments imageId={image.id} locationId={location.id} />
+              </p>
+
             </div>
           </div>
         ) : null;

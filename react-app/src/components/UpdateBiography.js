@@ -65,7 +65,7 @@ const UpdateBiography = ({ locationBio, locationId }) => {
          
               <Button type="submit" id="update-biography-submit">
                 Submit changes
-                <AddIcon />
+
             </Button>
             <Button type='submit' id='cancel-bio-update' onClick={cancelModal}>
                 <DeleteIcon sx={{ color: 'red' }} color='disabled' />

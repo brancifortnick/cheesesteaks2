@@ -25,7 +25,7 @@ function AllLocations() {
       <div className="locations-container">
 
 
-            <Card sx={{ mt: 2, maxWidth: 450 }}>
+        <Card sx={{ mt: 2, maxWidth: 450, borderRadius: '10px' }}>
               <CardHeader
                 avatar={
                   <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">

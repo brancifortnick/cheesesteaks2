@@ -10,8 +10,10 @@ button.update-biography {
 
 */ .location-bio {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
+    font-size: larger;
 }
