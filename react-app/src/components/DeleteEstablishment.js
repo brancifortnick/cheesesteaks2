@@ -8,15 +8,16 @@ import Box from '@mui/material/Box'
 
 const DeleteEstablishment = ({ locationId }) => {
     const dispatch = useDispatch();
-
+    const history = useHistory();
     const onSubmit = async (e) => {
         e.preventDefault();
         dispatch(deleteOneLocation(Number(locationId)));
-
+        history.push('/')
     };
-    useEffect(() => {
-        dispatch(getAllLocations())
-    }, [dispatch, locationId])
+    // useEffect(() => {
+    //     dispatch(getAllLocations())
+
+    // }, [dispatch, locationId])
     return (
         <div>
             <Box sx={{ m: -2.3 }}>

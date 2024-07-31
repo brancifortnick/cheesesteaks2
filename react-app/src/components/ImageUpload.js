@@ -81,10 +81,10 @@ const ImageUpload = ({ locationId }) => {
                   fullWidth
                   name="title"
                   type="text"
-                  placeholder="Add image and title..."
+                  placeholder="Add photo and title..."
                   onChange={(e) => setTitle(e.target.value)}
                   value={title}
-                  minRows={2}
+                  minRows={3}
                 />
               </Box>
 
