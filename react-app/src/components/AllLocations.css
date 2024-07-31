@@ -12,5 +12,5 @@ order: -1;
 
 .image_card {
   height: 400px;
-  min-width: 450px;
+  max-width: 450px;
 }

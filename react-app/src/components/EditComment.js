@@ -53,7 +53,7 @@ const EditComment = ({ commentObj, imageId }) => {
                 <CheckIcon />
               </Button>
               <Button
-             
+
                 onClick={closeModal}
                 className="cancel-edit-btn"
               >
@@ -67,3 +67,4 @@ const EditComment = ({ commentObj, imageId }) => {
   );
 }
 export default EditComment;
+// Compare this snippet from react-app/src/components/DeleteComment.js: 

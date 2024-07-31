@@ -15,6 +15,7 @@ import CardHeader from "@mui/material/CardHeader";
 import { CardMedia } from "@mui/material";
 import { ButtonGroup } from "@mui/material";
 import Button from "@mui/material/Button";
+import AllImagesRefactorTwo from "./AllImagesRefactorTwo";
 
 
 
@@ -71,7 +72,7 @@ function Locations() {
         <ImageUpload locationId={locationId} />
       
       
-        <AllImagesRefactor images={images} locationId={locationId} />
+        <AllImagesRefactorTwo images={images} locationId={locationId} />
         </div>
     </>
   );

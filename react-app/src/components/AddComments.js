@@ -33,7 +33,7 @@ const AddComments = ({ locationId, imageId }) => {
   };
   const updateComment = (e) => setComment(e.target.value);
   return (
-    <div>
+    <div className="add-comment-container">
       <div id="comment-modal">
         <Button onClick={() => setModal(true)}><AddIcon/></Button>
         {/* <Fab color="primary" aria-label="add" size='small'> </Fab> */}

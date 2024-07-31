@@ -14,6 +14,7 @@ import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
 import GetUsersIp from "./components/GetUsersIp";
+import LocationDetails from "./components/LocationDetails";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -60,7 +61,7 @@ function App() {
             <AllLocations />
           </ProtectedRoute>
           <ProtectedRoute path="/locations/:locationId">
-            <Locations />
+            <LocationDetails />
           </ProtectedRoute>
         </Switch>
       </BrowserRouter>
