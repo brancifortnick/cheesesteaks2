@@ -3,9 +3,9 @@
     flex-direction: column;
     align-items: center;
     /* Center items horizontally */
-    padding: 0 20%;
+
     /* 20% padding from the left and right sides */
-    box-sizing: border-box;
+
     /* Ensure padding is included in the width */
 }
 
@@ -27,6 +27,6 @@
 .location-image-media {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    
     /* Ensure the image covers the container */
 }

@@ -34,8 +34,10 @@ function AllImagesRefactorTwo({ images }) {
                         <Card className="image-card">
                             <CardContent>
                                 <Typography className="image-title">{image.title}</Typography>
-                                <img src={image.image} className="image-src" alt={image.title || '...loading-browser-data'} />
-                                <AddComments imageId={image.id} locationId={location.id} />
+                                <img src={image.image} className="image-src" alt={image.title || '...loading'} />
+                                <CardActions>
+                                    {/* Optional: You can place action buttons here */}
+                                </CardActions>
                             </CardContent>
                         </Card>
                         <DeleteLocationsImages imageId={image.id} />
@@ -43,8 +45,10 @@ function AllImagesRefactorTwo({ images }) {
                             <Accordion
                                 toggleText="View Comments"
                                 children={buildCommentTemplate(image)}
-                            // imageId={image.id}
                             />
+                            <div className='add-comment-container'>
+                                <AddComments imageId={image.id} locationId={location.id} />
+                            </div>
                         </Box>
                     </Box>
                 ) : null
