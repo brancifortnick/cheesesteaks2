@@ -42,13 +42,16 @@ const DeleteLocationsImages = ({ imageId }) => {
 
                 <Modal onClose={() => setModal(false)}>
                     <ButtonGroup>
-                        <Typography>Delete photo and comments</Typography>
-                        <Button onClick={onSubmit}><CheckIcon sx={{ width: 100 }} />
+
+                        <Button onClick={onSubmit}><CheckIcon sx={{
+                            color:
+                                "#fbd345"
+                        }} />
                         </Button>
 
 
                         <Button onClick={handleCancel}>
-                            <CancelIcon color='disabled' sx={{ color: 'red' }} />
+                            <CancelIcon color='disabled' sx={{ color: '#fb6c45' }} />
                         </Button>
                     </ButtonGroup>
                 </Modal>
