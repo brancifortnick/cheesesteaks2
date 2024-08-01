@@ -9,6 +9,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import CheckIcon from '@mui/icons-material/Check';
 import DeleteIcon from '@mui/icons-material/Delete';
 import './DeleteLocationsImages.css'
+import { Typography } from "@mui/material";
 
 
 
@@ -17,8 +18,7 @@ const DeleteLocationsImages = ({ imageId }) => {
     const { locationId } = useParams()
     const history = useHistory();
     const dispatch = useDispatch();
-    const image = useSelector(state => state.image)
-    const user = useSelector(state => state.session.user)
+
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -42,6 +42,7 @@ const DeleteLocationsImages = ({ imageId }) => {
 
                 <Modal onClose={() => setModal(false)}>
                     <ButtonGroup>
+                        <Typography>Delete photo and comments</Typography>
                         <Button onClick={onSubmit}><CheckIcon sx={{ width: 100 }} />
                         </Button>
 

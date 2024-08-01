@@ -70,7 +70,7 @@ const ImageUpload = ({ locationId }) => {
   return (
     <div className="image-form-container">
       <Button id="upload-photos-to-location" onClick={() => setModal(true)}>
-        <AddIcon />
+        <AddIcon color='disabled' sx={{ color: " #fb6c45" }} />
       </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
@@ -99,11 +99,12 @@ const ImageUpload = ({ locationId }) => {
                   />
         
               
-                    <Button name="image" color="primary" type="submit">
-                      <CheckIcon/>
+                  <Button name="image" type="submit">
+                    <CheckIcon color="disabled" sx={{ color: " #fb6c45" }}
+                    />
                     </Button>
                     <Button onClick={() => setModal(false)}>
-                      <CloseIcon sx={{color: 'red'}} color='disabled' />
+                    <CloseIcon sx={{ color: '#700f11' }} color='disabled' />
                     </Button>
                
                 </Box>

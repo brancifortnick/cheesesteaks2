@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./LandingPage.css";
+import UsersImages from "./UsersImages";
 
 const LandingPage = () => {
   return (
     <div>
-      <p className="welcome-text"> Welcome To The Preliminary Landing Page</p>
+      <p className="welcome-text">asd </p>
+      <UsersImages />
     </div>
   );
 };

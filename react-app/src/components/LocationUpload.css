@@ -1,11 +1,16 @@
 .outer_card {
   display: flex;
-  flex-direction: row;
-    justify-content: center;
+  position: fixed;
+    top: 0;
+    right: 25%;
+    flex-direction: column;
     flex-wrap: wrap;
+    /* align-content: flex-start; */
+    justify-content: center;
+
   background-color: rgb(255, 255, 255);
   margin: 3rem;
-    padding: 1rem;
+  padding: 1rem .5rem;
     border-radius: 8px;
     width: 450px;
     text-align: center;
