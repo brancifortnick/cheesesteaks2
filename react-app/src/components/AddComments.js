@@ -48,14 +48,14 @@ const AddComments = ({ locationId, imageId }) => {
               onChange={updateComment}
               value={comment}
               minRows={2}
-              style={{ width: 450, height: 225, fontSize: 16 }}
+              style={{ width: 450, height: 325, fontSize: 16 }}
             />
             <div id="comment-create">
-              <Button className="comment_submit" type="submit" color="primary">
-                <CheckIcon/>
+              <Button type="submit" >
+                <CheckIcon color='disabled' sx={{ color: '#fb6c45' }} />
               </Button>
               <Button type='submit'  onClick={() => setModal(false)}>
-                <CancelIcon color='disabled' sx={{color: 'red'}} />
+                <CancelIcon color='disabled' sx={{ color: '#ffd345' }} />
               </Button>
                     </div>
           </form>

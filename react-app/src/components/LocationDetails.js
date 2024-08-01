@@ -11,6 +11,7 @@ import UpdateBiography from "./UpdateBiography";
 import ImageUpload from "./ImageUpload";
 import AllImagesRefactorTwo from "./AllImagesRefactorTwo";
 import "./LocationDetails.css";
+import { CardContent } from "@mui/material";
 
 function LocationDetails() {
     const dispatch = useDispatch();
@@ -38,11 +39,12 @@ function LocationDetails() {
                             className="location-image-media"
                         />
                         <Box sx={{ p: 2 }}>
-                            {currentUser.id === Number(location.user_id) && (
+                            {currentUser.id === Number(location.user_id) ? (
                                 <UpdateBiography locationBio={location.biography} locationId={location.id} />
-                            )}
-                            <Typography id="description-text">{location.biography}</Typography>
+                            ) : null}
+
                         </Box>
+                        <Typography id="description-text">{location.biography}</Typography>
                     </Card>
                 </Box>
             )}
@@ -52,6 +54,6 @@ function LocationDetails() {
             </Box>
         </Box>
     );
-}
+};
 
 export default LocationDetails;
