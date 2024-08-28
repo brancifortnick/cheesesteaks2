@@ -26,7 +26,7 @@ const Accordion = ({ children, toggleText }) => {
                 <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     <ListItem alignItems='flex-start'>
                         <ListItemAvatar>
-                            <Avatar alt='profile-img' />
+                            {/* <Avatar alt='profile-img' /> */}
                         </ListItemAvatar>
                         <ListItemText
                             primary={children}

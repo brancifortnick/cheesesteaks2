@@ -16,6 +16,8 @@ const LocationUpload = () => {
   const [location_name, setLocationName] = useState("");
   const [profile_img, setProfileImg] = useState("");
   const [biography, setBiography] = useState("");
+
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();

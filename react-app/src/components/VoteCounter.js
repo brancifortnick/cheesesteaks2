@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { getAPhoto } from "../store/image";
 import { getAllLocations } from "../store/location";
 import VoteUpdater from "./VoteUpdater";
+
 const VoteCounter = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
@@ -14,6 +15,7 @@ const VoteCounter = () => {
   // console.log(locationId, '<<<<<<<<<<<<<<<<locationId inside VOTECOUNER?????????')
   const [vote, setVote] = useState(null); // be cautious of this useState
   const [downvote, setDownVote] = useState(null);
+
   const onSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData();
