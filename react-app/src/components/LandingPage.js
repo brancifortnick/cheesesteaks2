@@ -5,8 +5,8 @@ import UsersImages from "./UsersImages";
 const LandingPage = () => {
   return (
     <div>
-      <p className="welcome-text">asd </p>
-      <UsersImages />
+      <p className="welcome-text">Welcome to the app where you rate the best cheesesteak spots you encounter</p>
+      {/* <UsersImages /> */}
     </div>
   );
 };

@@ -1,15 +1,20 @@
+import React, { useState } from "react";
 import {
   GoogleMap,
   LoadScript,
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
-import React, { useState } from "react";
+
+import './MapContainer.css'
+
+
+
 // import { useGeolocation } from "./services/getgeo";
 // import { useDispatch, useEffect } from "react";
 export const MapContainer = () => {
   const [selected, setSelected] = useState({});
-  const [count, setCount] = useState(0);
+
   // const dispatch = useDispatch();
   // const getCoords = useGeolocation();
   //  useEffect(()=> {
@@ -67,7 +72,8 @@ export const MapContainer = () => {
   ];
   return (
     <LoadScript googleMapsApiKey="AIzaSyAcelo-SkZtb2UUrrXHZsjxtA1NZGrsh3g">
-      <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
+      <div className='the-map'><GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
+
         {locations.map((item) => {
           return (
             <Marker
@@ -87,6 +93,7 @@ export const MapContainer = () => {
           </InfoWindow>
         )}
       </GoogleMap>
+      </div>
     </LoadScript>
   );
 };

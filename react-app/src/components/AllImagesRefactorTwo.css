@@ -40,13 +40,8 @@
 
 .image-src {
     display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-content: center;
-        align-items: center;
-    max-width: 40rem;
-    min-width: 60rem;
-    
+    justify-items: center;
+        max-width: 50rem;
         min-height: 50rem;
         border-radius: 8px;
         /* Round corners of the image to match card */

@@ -15,6 +15,7 @@ import Locations from "./components/Locations";
 import { MapContainer } from "./components/MapContainer";
 import GetUsersIp from "./components/GetUsersIp";
 import LocationDetails from "./components/LocationDetails";
+import VoteCounter from "./components/VoteCounter";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -29,7 +30,7 @@ function App() {
     return null;
   }
   return (
-    // <UserContext.Provider value={{stateForId, setStateForId}}>
+
     loaded && (
       <BrowserRouter>
         <NavBar />
@@ -63,9 +64,12 @@ function App() {
           <ProtectedRoute path="/locations/:locationId">
             <LocationDetails />
           </ProtectedRoute>
+          <ProtectedRoute path="/votes ">
+            <VoteCounter />
+          </ProtectedRoute>
         </Switch>
       </BrowserRouter>
-      // </UserContext.Provider>
+
     ) //end of loaded
   );
 }

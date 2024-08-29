@@ -25,10 +25,13 @@ const VoteCounter = () => {
     formData.append('location_id', Number(locationId))
     dispatch(postNewVotes(formData))
   };
-  // useEffect(() => {
-  //   // dispatch(editVotes(Number(locationId)))
-  //   dispatch(getAllVotes())
-  // }, [dispatch, locationId])
+  useEffect(() => {
+
+    dispatch(getAllVotes())
+
+  }, [dispatch]);
+
+
   let totalVote = (downvote, vote) => {
     return (downvote) += (vote);
   }
@@ -50,7 +53,7 @@ const VoteCounter = () => {
           <button onClick={up} value={vote}>vote</button>
           {Number(vote)}
         </div>
-        <h2>totalvote: {totalVote(downvote, vote)}</h2>
+        <h2>Total Votes: {totalVote()}</h2>
       </>
     </form>
   );

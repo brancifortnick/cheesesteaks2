@@ -1,6 +1,5 @@
 .welcome-text {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  width: 45rem;
   padding-top: 8rem;
 }

@@ -75,7 +75,7 @@ const NavBar = () => {
         <div className='link-location' >
           {user ? (
             <Link to={`/users/${user.id}/new-location`}>
-              Add Establishment
+              Add a Spot
             </Link>
           ) : null}
         </div>

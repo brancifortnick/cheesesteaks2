@@ -12,6 +12,7 @@ import ImageUpload from "./ImageUpload";
 import AllImagesRefactorTwo from "./AllImagesRefactorTwo";
 import "./LocationDetails.css";
 import { CardContent } from "@mui/material";
+import { MapContainer } from "./MapContainer";
 
 function LocationDetails() {
     const dispatch = useDispatch();

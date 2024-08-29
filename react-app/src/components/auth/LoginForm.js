@@ -97,7 +97,7 @@ const LoginForm = () => {
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
                   edge="start"
-                  size='large'
+                  size=''
                 >
                   {values.showPassword ? <VisibilityOff /> : <Visibility />}
                 </IconButton>
