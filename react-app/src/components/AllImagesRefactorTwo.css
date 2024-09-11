@@ -30,7 +30,7 @@
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 1rem;
+margin: auto;
 }
 
 .image-title {
@@ -40,9 +40,7 @@
 
 .image-src {
     display: flex;
-    justify-items: center;
-        max-width: 50rem;
-        min-height: 50rem;
+    justify-items: flex-start;
         border-radius: 8px;
         /* Round corners of the image to match card */
 }

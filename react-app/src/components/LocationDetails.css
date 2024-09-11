@@ -1,8 +1,9 @@
 .locations-container {
-    display: flex;
+
     flex-direction: column;
     align-items: center;
     /* Center items horizontally */
+    margin: 8rem;
 
     /* 20% padding from the left and right sides */
 
