@@ -16,6 +16,8 @@ import { MapContainer } from "./components/MapContainer";
 import GetUsersIp from "./components/GetUsersIp";
 import LocationDetails from "./components/LocationDetails";
 import VoteCounter from "./components/VoteCounter";
+import UsersLocations from "./components/UsersLocations";
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -53,7 +55,7 @@ function App() {
           </ProtectedRoute>
           {/* <GetUsersIp/> */}
           <ProtectedRoute path="/users/:userId/profile" exact={true}>
-            <UsersList />
+            <UsersLocations />
           </ProtectedRoute>
           <ProtectedRoute path="/users/:userId/new-location" exact={true}>
             <LocationUpload />
