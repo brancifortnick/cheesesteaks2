@@ -6,14 +6,15 @@
     /* Add space between cards */
     margin: 2rem;
     padding: 1rem 1rem 1rem 1rem;
-        background-color: #fff1b4;
+    background-color: #fff1b4;
         border-radius: 10px;
     /* Add padding around the grid */
 }
+
 /*updated card-container 09.12.24
 */
 .image-card-container {
-    display: flex;
+    display: inline-flex;
         flex-direction: column;
         /* width: 80rem; */
         /* height: 50rem; */
@@ -23,40 +24,30 @@
         align-content: center;
         justify-content: space-evenly;
     }
-    
-    /*original card-container below
-            */
-    /* .image-card-container {
-    display: flex;
-    flex-direction: column;
+.comment-container {
+    display: inline-flex;
+}
 
-    align-items: center;
-    /* Center items horizontally */
-    /* width: 80rem; */
-    /* Set width of each image card */
-    /* height: 50rem; */
-    /* Allow height to adjust based on content */
-        /* gap: 1rem; */
-        /* Add margin for spacing between rows */
-/* }  */
-
+.delete-comment-div {
+    display: inline-flex;
+}
 .image-card {
     width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-margin: auto;
+    margin: auto;
 }
 
 .image-title {
     font-weight: bold;
-/* Add spacing below the title */
+    /* Add spacing below the title */
 }
 
 .image-src {
     display: flex;
     justify-items: flex-start;
     max-width: 28rem;
-        border-radius: 8px;
+    border-radius: 8px;
         /* Round corners of the image to match card */
 }

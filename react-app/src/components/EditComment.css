@@ -1,12 +1,11 @@
-.update-comment-submit-outter {
+.update-comment-submit-gutter {
     display: flex;
     background-color: grey;
-    cursor: pointer;
+
 }
 
 .form-element-edit-comment {
-
-    gap: 4rem;
+    cursor: pointer;
 }
 
 .form-buttons {

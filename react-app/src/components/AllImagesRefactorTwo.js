@@ -13,16 +13,25 @@ function AllImagesRefactorTwo({ images }) {
     const location = useSelector((state) => state.location);
 
     const buildCommentTemplate = (image) => {
+
         if (image.comments && Array.isArray(image.comments)) {
+
             return image.comments.map((comment) => (
-                <Box key={comment.id} sx={{ mb: 1 }}>
-                    <Typography className="comment-body">{comment.comment}</Typography>
-                    <ButtonGroup variant="text" aria-label="text button group">
-                        <EditComment imageId={image.id} commentObj={comment} />
-                        <DeleteComment imageId={image.id} commentId={comment.id} />
-                    </ButtonGroup>
-                </Box>
+                <div className='delete-comment-div'>
+                    <div className='comment-container' key={comment.id}>
+                        <Box key={comment.id} sx={{ alignItems: 'right', mb: 1 }}>
+                            <Typography className="comment-body">{comment.comment}</Typography>
+
+                            <EditComment imageId={image.id} commentObj={comment} />
+                            <DeleteComment imageId={image.id} commentId={comment.id} />
+
+                        </Box>
+                    </div>
+                </div>
+
             ));
+        } else {
+            console.log('no comments currently')
         }
     };
 
