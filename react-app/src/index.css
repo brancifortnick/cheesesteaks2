@@ -1,17 +1,15 @@
 * body {
   box-sizing: border-box;
-  margin: 0;
+  /* margin: 0; */
 }
-
+/* 
 * {
   font-style: sans-serif;
 
 }
 
-#root {
+*/
 
-  /* background-color: rgb(25, 117, 209); */
-}
 
 html {
   scroll-behavior: smooth;
@@ -47,6 +45,54 @@ a:link,
 a:active {
   text-decoration: none;
   color: white;
+}
+/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div#root {
+  /* background: #fbda21; */
+  /* background: #1ed760; */
+  /* background: #700F11; */
+  /* background: #fbd345; */
+  /* background: #fb6c45; */
+  /* background: #fff1b4; */
+  background: rgb(255, 255, 255);
 }
 
 /* .row {

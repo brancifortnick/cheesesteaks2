@@ -48,7 +48,7 @@ const AddComments = ({ locationId, imageId }) => {
               onChange={updateComment}
               value={comment}
               minRows={2}
-              style={{ width: 450, height: 325, fontSize: 16 }}
+              style={{ width: 'fitContent', height: 325, fontSize: 16 }}
             />
             <div id="comment-create">
               <Button type="submit" >
