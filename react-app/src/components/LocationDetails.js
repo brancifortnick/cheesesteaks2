@@ -13,6 +13,7 @@ import AllImagesRefactorTwo from "./AllImagesRefactorTwo";
 import "./LocationDetails.css";
 import { CardContent } from "@mui/material";
 import { MapContainer } from "./MapContainer";
+import Stack from '@mui/material/Stack';
 
 function LocationDetails() {
     const dispatch = useDispatch();
@@ -28,18 +29,31 @@ function LocationDetails() {
     }, [dispatch, locationId]);
 
     return (
-        <Box className="locations-container">
+        <div className='locations-container-wrapper'>
+
             {location.profile_img && (
+                /* The `<Box className="location-header">` element is creating a container with the class
+                name "location-header" in the JSX code. This container is used to style and structure
+                the content within it, typically for displaying the header section of a location in
+                this specific React component. It contains the location name and an image related to
+                the location, along with additional styling properties like borderRadius, boxShadow,
+                and backgroundColor to enhance the visual presentation of the header. */
                 <Box className="location-header">
                     <Typography className="location-name">{location.location_name}</Typography>
-                    <Card className="location-image">
+                    <Card className="location-image" sx={{
+
+                        borderRadius: '10px',
+                        borderBottom: 'hidden',
+                        boxShadow: '0 4px 6px 0 rgba(3,3, 3, 3)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.75)'
+                    }}>
                         <CardMedia
                             component="img"
                             image={location.profile_img}
                             alt="Location"
                             className="location-image-media"
                         />
-                        <Box sx={{ p: 2 }}>
+                        <Box sx={{ display: 'flex', flexDirection: "row", alignItems: 'spaceEvenly', textAlign: 'center' }} >
                             {currentUser.id === Number(location.user_id) ? (
                                 <UpdateBiography locationBio={location.biography} locationId={location.id} />
                             ) : null}
@@ -49,11 +63,12 @@ function LocationDetails() {
                     </Card>
                 </Box>
             )}
-            <Box className="image-upload-text">
+            <Stack>
                 <ImageUpload locationId={locationId} />
                 <AllImagesRefactorTwo images={images} locationId={locationId} />
-            </Box>
-        </Box>
+            </Stack>
+
+        </div >
     );
 };
 

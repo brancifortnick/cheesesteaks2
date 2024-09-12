@@ -2,6 +2,7 @@
   box-sizing: border-box;
   /* margin: 0; */
 }
+
 /* 
 * {
   font-style: sans-serif;
@@ -15,9 +16,9 @@ html {
   scroll-behavior: smooth;
   /* background-color: #fff1b4; */
 
-      /*  background-color: */
-        /* background-color: #fb6c45; */
-        background-color: rgb(255, 255, 255);
+  /*  background-color: */
+    /* background-color: #fb6c45; */
+    background-color: rgb(255, 255, 255);
 }
 
 /*#700F11; #fbd345;#fb6c45;#fff1b4; */
@@ -38,14 +39,15 @@ html {
   #fbda21;
   background: black;
 } */
-a,
+/* a,
 a:hover,
 a:visited,
 a:link,
 a:active {
   text-decoration: none;
-  color: white;
 }
+
+*/
 /*  */
 
 

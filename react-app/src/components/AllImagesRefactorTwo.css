@@ -10,20 +10,35 @@
         border-radius: 10px;
     /* Add padding around the grid */
 }
-
+/*updated card-container 09.12.24
+*/
 .image-card-container {
+    display: flex;
+        flex-direction: column;
+        /* width: 80rem; */
+        /* height: 50rem; */
+        grid-gap: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-evenly;
+    }
+    
+    /*original card-container below
+            */
+    /* .image-card-container {
     display: flex;
     flex-direction: column;
 
     align-items: center;
     /* Center items horizontally */
-    width: 80rem;
+    /* width: 80rem; */
     /* Set width of each image card */
-    height: 50rem;
+    /* height: 50rem; */
     /* Allow height to adjust based on content */
-        gap: 1rem;
+        /* gap: 1rem; */
         /* Add margin for spacing between rows */
-}
+/* }  */
 
 .image-card {
     width: 100%;
@@ -41,6 +56,7 @@ margin: auto;
 .image-src {
     display: flex;
     justify-items: flex-start;
+    max-width: 28rem;
         border-radius: 8px;
         /* Round corners of the image to match card */
 }

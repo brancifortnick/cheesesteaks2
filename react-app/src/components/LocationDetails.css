@@ -1,9 +1,14 @@
-.locations-container {
-
-    flex-direction: column;
+.locations-container-wrapper {
+    display: flex;
+    background-size: contain;
+    background-position: center;
     align-items: center;
-    /* Center items horizontally */
     margin: 8rem;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    /* Center items horizontally */
+
 
     /* 20% padding from the left and right sides */
 
