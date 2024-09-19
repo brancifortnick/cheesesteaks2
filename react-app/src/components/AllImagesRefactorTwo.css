@@ -5,9 +5,11 @@
     gap: 10rem;
     /* Add space between cards */
     margin: 2rem;
-    padding: 1rem 1rem 1rem 1rem;
-    background-color: #2f2b1d;
+    padding: 1rem;
+        background-color: #7a7d81;
+        /* border: 1px solid #fb6c45; */
         border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     /* Add padding around the grid */
 }
 
@@ -15,7 +17,7 @@
 */
 .image-card-container {
     display: inline-flex;
-        flex-direction: column;
+    flex-direction: column;
         /* width: 80rem; */
         /* height: 50rem; */
         grid-gap: 1rem;
@@ -24,6 +26,7 @@
         align-content: center;
         justify-content: space-evenly;
     }
+
 .comment-container {
     display: inline-flex;
 }
@@ -31,9 +34,10 @@
 .delete-comment-div {
     /* display: inline-flex; */
 }
+
 .image-card {
     width: 100%;
-    height: auto;
+    height: fit-content;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: auto;
@@ -49,5 +53,5 @@
     justify-items: flex-start;
     max-width: 28rem;
     border-radius: 8px;
-        /* Round corners of the image to match card */
+    /* Round corners of the image to match card */
 }

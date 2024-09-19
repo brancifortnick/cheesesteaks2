@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Box, Typography, Card, CardContent, CardActions, ButtonGroup } from "@mui/material";
+import { Box, Typography, Card, CardContent, CardActions, ButtonGroup, CardMedia } from "@mui/material";
 import DeleteLocationsImages from "./DeleteLocationsImages";
 import AddComments from "./AddComments";
 import Accordion from "./Accordion";
@@ -40,10 +40,11 @@ function AllImagesRefactorTwo({ images }) {
             return images.map((image) => (
                 image !== null && location.id === image.location_id ? (
                     <Box key={image.id} className="image-card-container">
-                        <Card className="image-card">
+                        <Card className="image-card" component='card-style-img'>
                             <CardContent>
                                 <Typography className="image-title">{image.title}</Typography>
-                                <img src={image.image} className="image-src" alt={image.title || '...loading'} />
+                                <CardMedia>
+                                    <img src={image.image} className="image-src" alt={image.title || '...loading'} /></CardMedia>
                                 <CardActions>
                                     {/* Optional: You can place action buttons here */}
                                 </CardActions>

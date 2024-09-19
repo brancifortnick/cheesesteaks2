@@ -14,6 +14,7 @@
 
 .accordion-head {
     display: flex;
+    color: white;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
@@ -23,6 +24,7 @@
 
 .caret-icon {
     height: 1rem;
+    background-color: #ccc;
     transition: transform 0.3s ease;
 }
 

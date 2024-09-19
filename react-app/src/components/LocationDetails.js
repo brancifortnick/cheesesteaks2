@@ -32,12 +32,7 @@ function LocationDetails() {
         <div className='locations-container-wrapper'>
 
             {location.profile_img && (
-                /* The `<Box className="location-header">` element is creating a container with the class
-                name "location-header" in the JSX code. This container is used to style and structure
-                the content within it, typically for displaying the header section of a location in
-                this specific React component. It contains the location name and an image related to
-                the location, along with additional styling properties like borderRadius, boxShadow,
-                and backgroundColor to enhance the visual presentation of the header. */
+
                 <Box className="location-header">
                     <Typography className="location-name">{location.location_name}</Typography>
                     <Card className="location-image" sx={{
@@ -45,7 +40,7 @@ function LocationDetails() {
                         borderRadius: '10px',
                         borderBottom: 'hidden',
                         boxShadow: '0 4px 6px 0 rgba(3,3, 3, 3)',
-                        backgroundColor: 'rgba(255, 255, 255, 0.75)'
+                        backgroundColor: '#303133',
                     }}>
                         <CardMedia
                             component="img"
@@ -71,5 +66,10 @@ function LocationDetails() {
         </div >
     );
 };
-
+/* The `<Box className="location-header">` element is creating a container with the class
+         name "location-header" in the JSX code. This container is used to style and structure
+         the content within it, typically for displaying the header section of a location in
+         this specific React component. It contains the location name and an image related to
+         the location, along with additional styling properties like borderRadius, boxShadow,
+         and backgroundColor to enhance the visual presentation of the header. */
 export default LocationDetails;
