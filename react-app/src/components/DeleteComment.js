@@ -9,7 +9,7 @@ import { Modal } from '../context/Modal';
 import CheckIcon from '@mui/icons-material/Check';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Button from '@mui/material/Button';
-
+import './DeleteComment.css';
 
 const DeleteComment = ({ imageId, commentId }) => {
 
@@ -37,7 +37,7 @@ const DeleteComment = ({ imageId, commentId }) => {
 
 
               <CancelIcon onClick={() => setModal(false)}
-                className="cancel-delete-btn" color='disabled' sx={{ color: '#fbd345' }} />
+                className="cancel-delete-btn" color='disabled' sx={{ color: '#fb6c45' }} />
             </div> 
 
           </div>

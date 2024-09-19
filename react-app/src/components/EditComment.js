@@ -50,14 +50,14 @@ const EditComment = ({ commentObj, imageId }) => {
             />
             <div className="buttons-container">
               <Button type="submit" className="confirm-edit-btn">
-                <CheckIcon />
+                <CheckIcon sx={{ color: '#fbd345' }} />
               </Button>
               <Button
 
                 onClick={closeModal}
                 className="cancel-edit-btn"
               >
-                <CloseIcon color='disabled' sx={{ color: 'red' }} />
+                <CloseIcon color='disabled' sx={{ color: '#700f11' }} />
               </Button>
             </div>
           </form>

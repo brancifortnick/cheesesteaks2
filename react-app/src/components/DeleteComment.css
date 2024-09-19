@@ -16,6 +16,8 @@
     height: 30rem;
         */
 }
+
 .delete-container {
-    display: inline;
+    display: flex;
+        flex-direction: column;
 }
