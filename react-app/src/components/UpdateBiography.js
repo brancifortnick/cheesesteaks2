@@ -33,17 +33,12 @@ const UpdateBiography = ({ locationBio, locationId }) => {
   return (
     <>
       <Button id="biography-edit" onClick={() => setModal(true)}>
-        <EditIcon />
+        <EditIcon sx={{ color: '#fb6c45' }} />
       </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form onSubmit={onSubmit}>
-            <Box
-              // sx={{
-              //   display: "inlineFlex",
-              //   alignText: "flexStart",
-              // }}
-            >
+            <Box>
               <TextField
                 multiline
                 minRows={3}
@@ -63,12 +58,12 @@ const UpdateBiography = ({ locationBio, locationId }) => {
             </Box>
             <Box>
          
-              <Button type="submit" id="update-biography-submit">
+              <Button sx={{ color: '#fb6c45' }} type="submit" id="update-biography-submit">
                 Submit changes
 
             </Button>
             <Button type='submit' id='cancel-bio-update' onClick={cancelModal}>
-                <CloseIcon color='disabled' />
+                <CloseIcon sx={{ color: '#ffd345' }} />
             </Button>
             </Box>
           </form>

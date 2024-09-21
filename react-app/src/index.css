@@ -1,6 +1,6 @@
 * body {
   box-sizing: border-box;
-  /* margin: 0; */
+  margin: 0;
 }
 
 /* 
@@ -10,7 +10,15 @@
 }
 
 */
-
+#root {
+  /* background: #fbda21; */
+  /* background: #1ed760; */
+  /* background: #700F11; */
+  /* background: #fbd345; */
+  /* background: #fb6c45; */
+  /* background: #fff1b4; */
+  background-color: #fff1b4;
+}
 
 html {
   scroll-behavior: smooth;
@@ -18,7 +26,7 @@ html {
 
   /*  background-color: */
     /* background-color: #fb6c45; */
-    background-color: rgb(255, 255, 255);
+    background-color: #fff1b4;
 }
 
 /*#700F11; #fbd345;#fb6c45;#fff1b4; */
@@ -87,15 +95,6 @@ a:active {
 
 
 
-div#root {
-  /* background: #fbda21; */
-  /* background: #1ed760; */
-  /* background: #700F11; */
-  /* background: #fbd345; */
-  /* background: #fb6c45; */
-  /* background: #fff1b4; */
-  background: rgb(255, 255, 255);
-}
 
 /* .row {
   display: flex;

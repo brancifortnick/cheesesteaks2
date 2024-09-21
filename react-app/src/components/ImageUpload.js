@@ -100,11 +100,11 @@ const ImageUpload = ({ locationId }) => {
         
               
                   <Button name="image" type="submit">
-                    <CheckIcon color="disabled" sx={{ color: " #fb6c45" }}
+                    <CheckIcon color="disabled" sx={{ color: " #ffd345" }}
                     />
                     </Button>
                     <Button onClick={() => setModal(false)}>
-                    <CloseIcon sx={{ color: '#700f11' }} color='disabled' />
+                    <CloseIcon color='disabled' sx={{ color: '#fb6c45' }} />
                     </Button>
                
                 </Box>

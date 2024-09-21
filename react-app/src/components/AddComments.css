@@ -1,18 +1,27 @@
-#comment-modal {
-
+/* /* #comment-modal {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
     text-align: center;
     font-size: 1rem;
-    }
-    
-    .add-comment-container {
+    */ */ .add-comment-container {
         display: flex;
-        justify-content: center;
+    flex-direction: column;
+        flex-wrap: wrap;
+        text-wrap: wrap;
         align-items: center;
-        height: 100vh;
-        width: 100vw;
+    /* height: 100vh;
+                                                    width: 100vw; */
         background-color: rgba(0, 0, 0, 0.5);
         position: fixed;
         top: 0;
         left: 0;
         z-index: 1000;
+}
+#comment-create {
+
+    flex-direction: column;
+
+
 }

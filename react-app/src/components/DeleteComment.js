@@ -8,9 +8,10 @@ import './DeleteComment';
 import { Modal } from '../context/Modal';
 import CheckIcon from '@mui/icons-material/Check';
 import CancelIcon from '@mui/icons-material/Cancel';
+import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
 import './DeleteComment.css';
-
+import Box from '@mui/material/Box';
 const DeleteComment = ({ imageId, commentId }) => {
 
 
@@ -18,32 +19,33 @@ const DeleteComment = ({ imageId, commentId }) => {
   const dispatch = useDispatch();
   const commentDelete = async (e) => {
     e.preventDefault();
-    console.log(imageId, commentId, "IMAGEID_>COMMENTID");
+
     dispatch(deleteAComment({ id: commentId, image_id: imageId }));
   };
 
   return (
     <div className='delete-container'>
-      <Button type="submit" className="delete-btn" onClick={() => setModal(true)}>
-        <DeleteIcon onClick={() => setModal(false)} color='disabled' sx={{ color: '#fbd345' }} />
+      <Button type="submit" onClick={() => setModal(true)}>
+        <DeleteIcon color='disabled' sx={{ color: '#fbd345' }} />
       </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
-          <div className="delete-modal">
-            <div>Remove Comment</div>
-            <div className="delete-buttons">
+          <Box>
+            <Button type="submit" onClick={() => setModal(false)}>
 
-              <CheckIcon type="submit" className="confirm-delete-btn" onClick={commentDelete} />
+              <CheckIcon sx={{ color: '#ffd345' }} onClick={commentDelete} />
+            </Button>
+            <Button type="submit" onClick={() => setModal(false)}>
 
+              <CloseIcon sx={{ color: '#fb6c45' }} />
+            </Button>
 
-              <CancelIcon onClick={() => setModal(false)}
-                className="cancel-delete-btn" color='disabled' sx={{ color: '#fb6c45' }} />
-            </div> 
+          </Box>
 
-          </div>
         </Modal>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 };
 export default DeleteComment;

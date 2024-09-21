@@ -23,9 +23,9 @@
 }
 
 .location-header {
-    width: 30rem;
+    /* width: 30rem; */
     /* Set width of the main image card */
-    height: 40rem;
+    /* height: 40rem; */
     /* Set height of the main image card */
     display: flex;
     flex-direction: column;

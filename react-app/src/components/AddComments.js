@@ -1,16 +1,18 @@
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { createComment} from "../store/comment";
+import { createComment } from "../store/comment";
 import { Modal } from "../context/Modal";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import { TextareaAutosize } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import {getOneLocation } from "../store/location";
+import { getOneLocation } from "../store/location";
 import CheckIcon from "@mui/icons-material/Check";
-import CancelIcon from "@mui/icons-material/Cancel";
-
+import CloseIcon from "@mui/icons-material/Close";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import "./AddComments.css";
 const AddComments = ({ locationId, imageId }) => {
   //added imageId prop and then useparams for locationId because addcomments lives on locations/id
   const dispatch = useDispatch();
@@ -29,7 +31,7 @@ const AddComments = ({ locationId, imageId }) => {
     dispatch(getOneLocation(locationId));
     setModal(false);
     setComment("");
-   
+
   };
   const updateComment = (e) => setComment(e.target.value);
   return (
@@ -41,7 +43,25 @@ const AddComments = ({ locationId, imageId }) => {
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form className="comment-container" onSubmit={onSubmit}>
-            <TextareaAutosize
+            <Box>
+              <TextField className='comment-text-field'
+                multiline
+                type="text" placeholder="Comment..."
+                onChange={updateComment}
+                value={comment}
+                minRows={3}
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: 400,
+                  padding: 0,
+                  fontWeight: "800",
+                  fontStyle: "italic",
+                  maxWidth: "600px",
+
+                }}
+                fullWidth />
+              {/* <TextareaAutosize
               className="comment-input"
               type="text"
               placeholder="Comment..."
@@ -49,15 +69,16 @@ const AddComments = ({ locationId, imageId }) => {
               value={comment}
               minRows={2}
               style={{ width: 'fitContent', height: 325, fontSize: 16 }}
-            />
+            /> */}
             <div id="comment-create">
               <Button type="submit" >
                 <CheckIcon color='disabled' sx={{ color: '#fb6c45' }} />
               </Button>
-              <Button type='submit'  onClick={() => setModal(false)}>
-                <CancelIcon color='disabled' sx={{ color: '#ffd345' }} />
+                <Button type='submit' onClick={() => setModal(false)}>
+                  <CloseIcon color='disabled' sx={{ color: '#ffd345' }} />
               </Button>
-                    </div>
+              </div>
+            </Box>
           </form>
         </Modal>
       )}

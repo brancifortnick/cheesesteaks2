@@ -20,11 +20,12 @@
     cursor: pointer;
     padding: 0.5rem;
     border-bottom: 1px solid #ccc;
+    /* border-radius: 10px; */
 }
 
 .caret-icon {
     height: 1rem;
-    background-color: #ccc;
+    /* background-color: #ccc; */
     transition: transform 0.3s ease;
 }
 
@@ -34,6 +35,7 @@
 
 .accordion-body {
     padding: 1rem;
+
 }
 
 .comment-actions {

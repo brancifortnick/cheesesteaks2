@@ -27,7 +27,7 @@ const EditComment = ({ commentObj, imageId }) => {
   }
   return (
     <div className="edit-container">
-      <EditIcon onClick={() => setModal(true)} color="disabled" sx={{ color: '#700f11', bgColor: 'white', width: '30rem' }} />
+      <EditIcon onClick={() => setModal(true)} color="disabled" sx={{ color: '#fb6c45', bgColor: 'white', width: '30rem' }} />
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form className="form-element-edit-comment" onSubmit={onSubmit}>
@@ -37,8 +37,8 @@ const EditComment = ({ commentObj, imageId }) => {
               placeholder={commentObj.comment}
               onChange={(e) => setComment(e.target.value)}
               value={comment}
-              minRows={5}
-              style={{ width: 400 }}
+              minRows={3}
+
               multiline
               sx={{
                 width: 400,
@@ -50,7 +50,7 @@ const EditComment = ({ commentObj, imageId }) => {
             />
             <div className="buttons-container">
               <Button type="submit" className="confirm-edit-btn">
-                <CheckIcon sx={{ color: '#fbd345' }} />
+                <CheckIcon sx={{ color: '#fb6c45' }} />
               </Button>
               <Button
 

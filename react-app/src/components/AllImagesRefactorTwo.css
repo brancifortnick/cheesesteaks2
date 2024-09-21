@@ -52,6 +52,7 @@
     display: flex;
     justify-items: flex-start;
     max-width: 28rem;
+    max-height: 40rem;
     border-radius: 8px;
     /* Round corners of the image to match card */
 }

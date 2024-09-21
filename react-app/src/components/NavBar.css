@@ -3,21 +3,39 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+
   text-align: center;
-font-size: large;
-    font-weight: 400;
+  font-size: large;
+  font-weight: 550;
   box-shadow: 1px 4px 10px 4px rgba(0, 0, 0, 0.383);
   background-color: #303133;
-    /* background-color: #700f11; */
+  /* background-color: #700f11; */
   backdrop-filter: blur(5px);
-  min-width: auto;
-  height: 50px;
-  position: sticky;
+  min-width: 400px;
+    overflow-y: 0;
+    height: 69px;
+    /* position: static; */
 }
-.nav-bar {
+a,
+div.nav-link,
+a.active,
+a:hover,
+div.nav-link {
+  text-decoration: none;
+  color: #fb6c45;
+}
 
+a.active {
+  color: #fb6c45;
 }
+
+div.nav-link {
+  text-decoration: none;
+  color: #fb6c45;
+}
+.nav-bar {}
 .users-profile {
+  list-style: none;
   /* border-radius: 3px;
   padding: 4px;
   font-style: normal;

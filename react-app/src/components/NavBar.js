@@ -23,17 +23,17 @@ const NavBar = () => {
   return (
     <nav className="nav-bar">
       <div className="nav-container">
-        <div className="nav-link">
+        {/* <div className="nav-link">
           {user ? (
             <NavLink to="/" exact={true} activeClassName="active">
-              <HomeIcon />
+              <HomeIcon color="disabled" sx={{ color: '#fb6c45' }}  />
             </NavLink>
           ) : null}
-        </div>
+        </div> */}
         <div className="nav-link">
           {user ? (
             <NavLink to="/locations" exact={true}>
-              <StorefrontIcon color="primary" fontSize="large" />
+              <StorefrontIcon color="disabled" sx={{ color: '#fb6c45' }} fontSize="large" />
             </NavLink>
           ) : null}
         </div>
