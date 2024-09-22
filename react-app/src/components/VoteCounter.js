@@ -24,6 +24,7 @@ const VoteCounter = () => {
     formData.append('user_id', user.id)
     formData.append('location_id', Number(locationId))
     dispatch(postNewVotes(formData))
+    dispatch(getAllVotes())
   };
   useEffect(() => {
 
@@ -32,15 +33,22 @@ const VoteCounter = () => {
   }, [dispatch]);
 
 
-  let totalVote = (downvote, vote) => {
-    return (downvote) += (vote);
-  }
   const down = () => {
     setDownVote(downvote => (downvote) -= 1);
   };
   const up = () => {
     setVote(vote => vote += 1);
   };
+  let totalVote = (num, num2) => {
+    if (num && num2) {
+      return num + num2
+    } else {
+      return 0
+    }
+  }
+
+
+
   // should i be using a form => also should this be an onChange Event vs a click event i think so
   return (
     <form onSubmit={onSubmit}>
@@ -53,7 +61,8 @@ const VoteCounter = () => {
           <button onClick={up} value={vote}>vote</button>
           {Number(vote)}
         </div>
-        <h2>Total Votes: {totalVote()}</h2>
+        <h2>Total Votes:</h2>
+        {totalVote(Number(vote), Number(downvote))}
       </>
     </form>
   );

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 
 
-const UsersImages = () => {
+const UsersImages = ({ imageId }) => {
 
 
     const user = useSelector(state => state.session.user)
@@ -11,7 +11,6 @@ const UsersImages = () => {
 
 
     console.log(location)
-
 
 
 

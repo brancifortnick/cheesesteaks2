@@ -38,11 +38,11 @@ const NavBar = () => {
           ) : null}
         </div>
         <div className="nav-link">
-          {!user ? (
+          {/* {!user ? (
             <NavLink to="/login" exact={true} activeClassName="active">
               Login
             </NavLink>
-          ) : null}
+          ) : null} */}
         </div>
         <div className="nav-link">
           {!user ? (
@@ -53,13 +53,13 @@ const NavBar = () => {
         </div>
         <div className='link-location' >
           {!user ? (
-            <Button
+            <Button style={{ backgroundColor: '#fb6c45', color: 'white' }}
               variant="contained"
-              color="primary"
+
               className="demo-login"
               onClick={demoLoginButton}
             >
-              Demo Login
+              Guest Login
             </Button>
           ) : null}
         </div>
@@ -74,9 +74,9 @@ const NavBar = () => {
         </div>
         <div className='link-location' >
           {user ? (
-            <Link to={`/users/${user.id}/new-location`}>
+            <NavLink to={`/users/${user.id}/new-location`}>
               Add a Spot
-            </Link>
+            </NavLink>
           ) : null}
         </div>
         <div className="nav-link">{user ? (<div className='logout-btn'><LogoutButton /> </div>) : null}

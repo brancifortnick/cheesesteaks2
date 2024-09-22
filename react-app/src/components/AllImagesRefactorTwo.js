@@ -7,6 +7,8 @@ import Accordion from "./Accordion";
 import "./AllImagesRefactorTwo.css";
 import EditComment from "./EditComment";
 import DeleteComment from './DeleteComment';
+import VoteCounter from "./VoteCounter";
+
 
 function AllImagesRefactorTwo({ images }) {
     const user = useSelector((state) => state.session.user);
@@ -47,11 +49,15 @@ function AllImagesRefactorTwo({ images }) {
                                     <img src={image.image} className="image-src" alt={image.title || '...loading'} /></CardMedia>
                                 <CardActions>
                                     {/* Optional: You can place action buttons here */}
+                                    <VoteCounter imageId={image.id} />
                                 </CardActions>
                             </CardContent>
                         </Card>
-                        <DeleteLocationsImages imageId={image.id} />
-                        <Box className="comment-module">
+                        {(user.id === location.user_id ? (
+                            <DeleteLocationsImages imageId={image.id} />
+                        ) : null)
+                        }
+                        < Box className="comment-module">
                             <Accordion
                                 toggleText="View Comments"
                                 children={buildCommentTemplate(image)}
@@ -60,7 +66,7 @@ function AllImagesRefactorTwo({ images }) {
                                 <AddComments imageId={image.id} locationId={location.id} />
                             </div>
                         </Box>
-                    </Box>
+                    </Box >
                 ) : null
             ));
         }

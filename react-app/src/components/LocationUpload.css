@@ -1,15 +1,11 @@
 .outer_card {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+
     /* align-content: flex-start; */
 
-  background-color: rgb(255, 255, 255);
-  margin: 3rem;
-  padding: 1rem .5rem;
-  border-radius: 8px;
-    /* width: 450px; */
     text-align: center;
+    align-items: center;
 }
 
 #location-photo-text {}

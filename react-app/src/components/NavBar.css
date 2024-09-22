@@ -12,10 +12,11 @@
   /* background-color: #700f11; */
   backdrop-filter: blur(5px);
   min-width: 400px;
-    overflow-y: 0;
+  overflow-y: 0;
     height: 69px;
     /* position: static; */
 }
+
 a,
 div.nav-link,
 a.active,
@@ -23,17 +24,16 @@ a:hover,
 div.nav-link {
   text-decoration: none;
   color: #fb6c45;
+  background-color: #303133;
 }
 
-a.active {
+.link-location {
   color: #fb6c45;
+  background-color: white;
+    border: 1px;
+    border-radius: 10px;
 }
 
-div.nav-link {
-  text-decoration: none;
-  color: #fb6c45;
-}
-.nav-bar {}
 .users-profile {
   list-style: none;
   /* border-radius: 3px;

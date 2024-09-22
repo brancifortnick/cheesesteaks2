@@ -1,6 +1,6 @@
 * body {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 !important;
 }
 
 /* 
@@ -26,7 +26,7 @@ html {
 
   /*  background-color: */
     /* background-color: #fb6c45; */
-    background-color: #fff1b4;
+    background-color: #fff1b4 !important;
 }
 
 /*#700F11; #fbd345;#fb6c45;#fff1b4; */

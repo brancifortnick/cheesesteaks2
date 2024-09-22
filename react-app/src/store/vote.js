@@ -40,7 +40,7 @@ export default function counter(state = 0, action) {
       return currentVals;
     case ADD_VOTES:
       const currentStateOfVotes = { ...state }
-      currentStateOfVotes[action.payload.id] = action.payload
+      currentStateOfVotes[action.payload] = action.payload
       return currentStateOfVotes;
     default:
       return state
