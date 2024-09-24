@@ -1,7 +1,7 @@
 .outer_card {
   display: flex;
   flex-direction: column;
-
+  background-color: white;
     /* align-content: flex-start; */
 
     text-align: center;
