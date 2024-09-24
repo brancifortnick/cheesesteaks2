@@ -33,8 +33,8 @@ const Accordion = ({ children, toggleText }) => {
 
                             secondary={
                                 <Typography
-                                    sx={{ display: 'inline' }}
-                                    component='span'
+                                    sx={{ display: 'flex' }}
+                                    component='div'
                                     variant='body2'
                                     color='text.primary'
                                 >
