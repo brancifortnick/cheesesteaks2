@@ -11,7 +11,7 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import "./AllLocations.css";
 import { CardHeader, Container } from "@mui/material";
-import Avatar from "@mui/material/Avatar";
+
 function AllLocations() {
   const dispatch = useDispatch();
   const locations = useSelector((state) => Object.values(state.location));
@@ -23,15 +23,8 @@ function AllLocations() {
   const locationsList = locations.map((location, idx) => {
     return (
       <div className="locations-container">
-
-
         <Card sx={{ mt: 2, maxWidth: 450, borderRadius: '10px' }}>
           <CardHeader
-            //   <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-            //     {currentUser.username[0]}
-            //   </Avatar>
-            // }
-            // title={location.location_name}
             subheader={location.updated_at}
           />
           <NavLink to={`/locations/${location.id}`}>
@@ -54,15 +47,6 @@ function AllLocations() {
               </CardActions>
             </CardContent>
           </Card>
-          {/* <Typography variant="body2" color="text.secondary">
-                  <NavLink
-                    style={{ color: "#1976d2", fontWeight: "bolder" }}
-                    to={`/locations/${location.id}/image-upload`}
-                  >
-                    Add Photos
-                  </NavLink>
-                </Typography> */}
-
         </Card>
       </div>
 

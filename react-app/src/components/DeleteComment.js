@@ -32,16 +32,12 @@ const DeleteComment = ({ imageId, commentId }) => {
         <Modal onClose={() => setModal(false)}>
           <Box>
             <Button type="submit" onClick={() => setModal(false)}>
-
               <CheckIcon sx={{ color: '#ffd345' }} onClick={commentDelete} />
             </Button>
             <Button type="submit" onClick={() => setModal(false)}>
-
               <CloseIcon sx={{ color: '#fb6c45' }} />
             </Button>
-
           </Box>
-
         </Modal>
       )
       }
