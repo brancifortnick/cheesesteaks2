@@ -24,13 +24,13 @@ const VoteCounter = () => {
     formData.append('user_id', user.id)
     formData.append('location_id', Number(locationId))
     dispatch(postNewVotes(formData))
-    dispatch(getAllVotes())
+
   };
   useEffect(() => {
 
-    dispatch(getAllVotes())
+    dispatch(getAllVotes(locationId))
 
-  }, [dispatch]);
+  }, [dispatch, locationId]);
 
 
   const down = () => {
@@ -41,9 +41,9 @@ const VoteCounter = () => {
   };
   let totalVote = (num, num2) => {
     if (num && num2) {
-      return num + num2
+      return num += num2
     } else {
-      return 0
+      return num || num2
     }
   }
 
