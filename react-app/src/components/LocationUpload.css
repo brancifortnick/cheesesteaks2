@@ -8,7 +8,10 @@
     align-items: center;
 }
 
-#location-photo-text {}
+#location-photo-text:hover {
+  background-color: #fb6c45;
+  color: white;
+}
 
 #add-location-text {
   text-align: center;

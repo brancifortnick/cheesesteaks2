@@ -30,7 +30,11 @@ export const postNewVotes = (formData) => async (dispatch) => {
     dispatch(postVotes(vote))
   }
 };
-export default function counter(state = 0, action) {
+
+
+const initialState = {};
+//make state = initial state? or 0
+export default function counter(state = initialState, action) {
   switch (action.type) {
     case GET_VOTES:
       let currentVals = {}

@@ -141,9 +141,9 @@ export default function reducer(state = initialState, action) {
       const targetImage = findObjectById(Object.values(state), action.payload.image_id)
       if (targetImage.comments) {
         const comments = [...targetImage.comments, action.payload]
-        console.log(comments, "addimagecomment=> found by Id")
+        console.log(comments, "add image comment=> found by Id")
         targetImage.comments = comments;
-        console.log(targetImage.comments, "setting this = comments=> imagestore")
+        console.log(targetImage.comments, "setting this = comments=> images tore")
       } else {
         targetImage.comments = [action.payload]
       }
@@ -152,7 +152,7 @@ export default function reducer(state = initialState, action) {
     case DELETE_IMAGE_COMMENT: {
       const targetImage = findObjectById(Object.values(state), action.payload.image_id)
       targetImage.comments = filterObjsById(Object.values(targetImage.comments), action.payload.id)
-      console.log(targetImage.comments, "delete frfom image store")
+      console.log(targetImage.comments, "delete from image store")
       return JSON.parse(JSON.stringify(state))
     }
     case EDIT_IMAGE_COMMENT: {

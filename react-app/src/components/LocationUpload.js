@@ -45,7 +45,7 @@ const LocationUpload = () => {
 
       <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
-          <Box>
+          <Box sx={{ padding: '2px' }}>
             <TextField
               type="text"
               name="location_name"
@@ -66,11 +66,11 @@ const LocationUpload = () => {
             }}
             > */}
         <label
-          style={{ color: "#1976d2", marginTop: "2pt" }}
+              style={{ color: "#fb6c45", marginTop: "2pt" }}
           id="location-photo-text"
           htmlFor="add-location-pic"
           >
-          Upload Business Front
+              Upload Business Front Image
         </label>
       
           </div>
@@ -93,14 +93,17 @@ const LocationUpload = () => {
            fullWidth
             name="biography"
             type="text"
-            placeholder="Description..."
+            placeholder="Write a brief description..."
             onChange={(e) => setBiography(e.target.value)}
             value={biography}
             minRows={5}
             minCols={3}
           />
     
-    <Button variant="contained" color="primary" type="submit">
+          <Button variant="contained" sx={{
+
+            color: 'white', bgcolor: '#fb6c45'
+          }} type="submit">
             Submit
           </Button>
           </div>
