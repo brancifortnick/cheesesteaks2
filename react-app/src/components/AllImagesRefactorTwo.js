@@ -49,7 +49,7 @@ function AllImagesRefactorTwo({ images }) {
                                     <img src={image.image} className="image-src" alt={image.title || '...loading'} /></CardMedia>
                                 <CardActions>
                                     {/* Optional: You can place action buttons here */}
-                                    <VoteCounter imageId={image.id} />
+                                    {/* <VoteCounter imageId={image.id} /> */}
                                 </CardActions>
                             </CardContent>
                         </Card>

@@ -57,7 +57,7 @@ const EditComment = ({ commentObj, imageId }) => {
                 onClick={closeModal}
                 className="cancel-edit-btn"
               >
-                <CloseIcon color='disabled' sx={{ color: '#700f11' }} />
+                <CloseIcon color='disabled' sx={{ color: '#fbda21' }} />
               </Button>
             </div>
           </form>

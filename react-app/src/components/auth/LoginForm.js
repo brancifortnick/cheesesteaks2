@@ -107,7 +107,7 @@ const LoginForm = () => {
         </FormControl>
       </Box>
       <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 2 }}>
-        <Button variant='contained' color='primary' type='submit'>Login</Button>
+        <Button variant='contained' sx={{ color: 'white', bgcolor: '#fb6c45' }} type='submit'>Login</Button>
       </Box>
       {/* </div> */}
     </form>
