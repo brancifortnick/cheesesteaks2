@@ -8,10 +8,10 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckIcon from '@mui/icons-material/Check';
 import DeleteIcon from '@mui/icons-material/Delete';
-import './DeleteLocationsImages.css'
 import { Typography } from "@mui/material";
-
-
+import { Box } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
+import './DeleteLocationsImages.css'
 
 const DeleteLocationsImages = ({ imageId }) => {
     const [showModal, setModal] = useState(false);
@@ -37,23 +37,27 @@ const DeleteLocationsImages = ({ imageId }) => {
     return (
         <div className='container for buttons'>
             <div className='delete-location-images-modal-btn'>
-                <DeleteIcon color='disabled' sx={{ color: '#FB6C45' }} id="delete-location-images-modal-btn" onClick={() => setModal(true)} /></div>
+                <Button type="submit" onClick={() => setModal(true)}>
+                    <DeleteIcon color='disabled' sx={{ color: '#fbd345' }} />
+                </Button>
+            </div>
             {showModal && (
 
                 <Modal onClose={() => setModal(false)}>
-                    <ButtonGroup>
-
+                    <div>
+                        Are you sure you want to delete this image?
+                    </div>
+                    <Box>
                         <Button onClick={onSubmit}><CheckIcon sx={{
                             color:
                                 "#fbd345"
                         }} />
                         </Button>
 
-
                         <Button onClick={handleCancel}>
-                            <CancelIcon color='disabled' sx={{ color: '#fb6c45' }} />
+                            <CloseIcon sx={{ color: '#fb6c45' }} />
                         </Button>
-                    </ButtonGroup>
+                    </Box>
                 </Modal>
             )}
         </div>

@@ -33,6 +33,7 @@ function AllLocations() {
               src={location.profile_img}
               alt="loading..."
               className="image_card"
+
             />
           </NavLink>
           <Card>

@@ -45,7 +45,7 @@ function AllImagesRefactorTwo({ images }) {
                         <Card className="image-card" component='card-style-img'>
                             <CardContent>
                                 <Typography className="image-title">{image.title}</Typography>
-                                <CardMedia>
+                                <CardMedia component="card-img-style" alt="establishment">
                                     <img src={image.image} className="image-src" alt={image.title || '...loading'} /></CardMedia>
                                 <CardActions>
                                     {/* Optional: You can place action buttons here */}

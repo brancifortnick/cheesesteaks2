@@ -30,6 +30,9 @@ const DeleteComment = ({ imageId, commentId }) => {
       </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
+          <div>
+            Are you sure you want to delete this comment?
+          </div>
           <Box>
             <Button type="submit" onClick={() => setModal(false)}>
               <CheckIcon sx={{ color: '#ffd345' }} onClick={commentDelete} />
