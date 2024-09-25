@@ -25,8 +25,8 @@ function AllLocations() {
       <div className="locations-container">
         <Card sx={{ mt: 2, maxWidth: 450, borderRadius: '10px' }}>
           <CardHeader
-            subheader={location.updated_at}
-          />
+            subheader={location.location_name}
+          />  <Typography sx={{ padding: 1 }} variant="subtitle" component="body">{location.updated_at}</Typography>
           <NavLink to={`/locations/${location.id}`}>
             <CardMedia component="card-img-style" alt="establishment" />
             <img
@@ -38,8 +38,9 @@ function AllLocations() {
           <Card>
             <CardContent>
               <Typography variant="subtitle" component="h1">
-                {location.location_name}
+                {location.biography}
               </Typography>
+
               <CardActions sx={{ mb: 1, pt: 2, mt: 4 }}>
                 {currentUser.id === location.user_id ? (
                   <DeleteEstablishment locationId={location.id} />
