@@ -27,10 +27,13 @@ sqlalchemy = "==1.4.19"
 werkzeug = "==2.0.1"
 wtforms = "==2.3.3"
 psycopg2-binary = "*"
+pyscopg2 = "*"
 
 [dev-packages]
 psycopg2-binary = "==2.8.6"
 pycodestyle = "*"
+boto3 = "*"
+pyscopg2 = "*"
 
 [requires]
 python_version = "3.9"

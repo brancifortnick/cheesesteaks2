@@ -1,0 +1,7 @@
+ id | title |                                                                            image                                                                            | user_id |          created_at           |          updated_at           | location_id 
+----+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+-------------------------------+-------------------------------+-------------
+  1 | test  | https://github.com/brancifortnick/cheesesteaks2/blob/a9585e7202dc82ff74a5ce22693c293f552f7fef/react-app/src/assets/chad-montano-M0lUxgLnlfk-unsplash.jpg    |       1 | 2024-09-26 03:12:37.190903-04 | 2024-09-26 03:12:37.190903-04 |           1
+  2 | test2 | https://mycheesesteaks.s3.amazonaws.com/wizwit.jpg                                                                                                          |       2 | 2024-09-26 03:12:37.190903-04 | 2024-09-26 03:12:37.190903-04 |           2
+  3 | test3 | https://github.com/brancifortnick/cheesesteaks2/blob/a9585e7202dc82ff74a5ce22693c293f552f7fef/react-app/src/assets/emanuel-ekstrom-DHxLfzqhoIk-unsplash.jpg |       3 | 2024-09-26 03:12:37.190903-04 | 2024-09-26 03:12:37.190903-04 |           3
+(3 rows)
+

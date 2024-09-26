@@ -6,7 +6,7 @@ from sqlalchemy import func
 class Location(db.Model):
     __tablename__ = 'locations'
     id = db.Column(db.Integer, primary_key=True)
-    location_name = db.Column(db.String(30), nullable=False, unique=True)
+    location_name = db.Column(db.String(50), nullable=False, unique=True)
     profile_img = db.Column(db.String(255))
     biography = db.Column(db.String(255))
     created_at = db.Column(db.DateTime(timezone=True),

@@ -5,7 +5,7 @@ from sqlalchemy import func
 class Comment(db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
-    comment = db.Column(db.String(255), nullable=True)
+    comment = db.Column(db.String(500), nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     image_id = db.Column(db.Integer, db.ForeignKey('images.id'))
     created_at = db.Column(db.DateTime(timezone=True),
