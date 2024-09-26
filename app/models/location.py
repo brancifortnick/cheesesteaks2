@@ -14,6 +14,8 @@ nullable=False, server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True),
 nullable=False, server_default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+
     users = db.relationship('User', back_populates='locations')
     images = db.relationship('Image', back_populates='locations')
     votes = db.relationship('Vote', back_populates='locations')

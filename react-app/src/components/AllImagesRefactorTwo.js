@@ -7,7 +7,7 @@ import Accordion from "./Accordion";
 import "./AllImagesRefactorTwo.css";
 import EditComment from "./EditComment";
 import DeleteComment from './DeleteComment';
-import VoteCounter from "./VoteCounter";
+import VotingRefactor from "./VotingRefactor";
 
 
 function AllImagesRefactorTwo({ images }) {
@@ -22,6 +22,7 @@ function AllImagesRefactorTwo({ images }) {
                 <div className='delete-comment-div'>
                     <div className='comment-container' key={comment.id}>
                         <Box key={comment.id} sx={{ alignItems: 'right', mb: 1 }}>
+                            <VotingRefactor />
                             <Typography className="comment-body">{comment.comment}</Typography>
 
                             <EditComment imageId={image.id} commentObj={comment} />

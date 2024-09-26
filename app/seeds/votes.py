@@ -1,15 +1,12 @@
-from app.models import Vote,db
+from app.models import db, Vote
+
+
 def seed_votes():
-    vote = Vote(
-        user_id=1, location_id=1, vote=1, downvote=0)
-    vote2 = Vote(
-        user_id=2, location_id=2, vote=0, downvote=1)
-    vote3 = Vote(
-        user_id=3, location_id=3, vote=0, downvote=1)
-    db.session.add(vote)
-    db.session.add(vote2)
-    db.session.add(vote3)
+    count = Vote(
+        user_id=1, count=1, location_id=1)
     db.session.commit()
+
+    db.session.add(count)
 def undo_votes():
-    db.session.execute('TRUNCATE votes RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
     db.session.commit()

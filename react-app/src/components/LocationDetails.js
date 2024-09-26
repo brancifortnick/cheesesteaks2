@@ -15,6 +15,11 @@ import CardActions from "@mui/material/CardActions";
 import { CardContent, CardHeader } from "@mui/material";
 import { MapContainer } from "./MapContainer";
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import VotingRefactor from "./VotingRefactor";
+
+
+
 function LocationDetails() {
     const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.session.user);
@@ -47,6 +52,7 @@ function LocationDetails() {
                         <img src={location.profile_img} alt="...loading" className="location-image-media" />
                         {/* <Box sx={{ display: 'flex', flexDirection: "row", alignItems: 'spaceEvenly', textAlign: 'center' }} > */}
                         <Card>
+
                             <CardHeader subheader={location.biography} />
                             <CardContent>
                                 <CardActions sx={{ mb: 1, pt: 2, mt: 4 }}>
