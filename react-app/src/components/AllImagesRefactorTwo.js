@@ -21,14 +21,16 @@ function AllImagesRefactorTwo({ images }) {
             return image.comments.map((comment) => (
                 <div className='delete-comment-div'>
                     <div className='comment-container' key={comment.id}>
-                        <Box key={comment.id} sx={{ alignItems: 'right', mb: 1 }}>
-                            <VotingRefactor />
-                            <Typography className="comment-body">{comment.comment}</Typography>
+                        <Box key={comment.id} sx={{
+                            display: 'flex', flexDirection: 'column'
+                        }}>
 
-                            <EditComment imageId={image.id} commentObj={comment} />
-                            <DeleteComment imageId={image.id} commentId={comment.id} />
-
+                            <Typography className="comment-body">{comment.comment + `${user.username}`} </Typography>
                         </Box>
+                        <EditComment imageId={image.id} commentObj={comment} />
+                        <DeleteComment imageId={image.id} commentId={comment.id} />
+
+
                     </div>
                 </div>
 
