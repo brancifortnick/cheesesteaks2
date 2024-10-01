@@ -25,7 +25,8 @@ function AllImagesRefactorTwo({ images }) {
 
 
                             <Typography className="comment-body">{comment.comment + " " + '---' + `${user.username}`} </Typography>
-
+                            <div>Review by  -{user.username}</div>
+                            <div>{comment.created_at}</div>
                         <EditComment imageId={image.id} commentObj={comment} />
                         <DeleteComment imageId={image.id} commentId={comment.id} />
                         </Box>
@@ -43,8 +44,7 @@ function AllImagesRefactorTwo({ images }) {
         if (images) {
             return images.map((image) => (
                 image !== null && location.id === image.location_id ? (
-                    <ImageList variant='quilted'
-                        rowHeight={121}>
+
                     <Box key={image.id} className="image-card-container">
                         <Card className="image-card" component='card-style-img'>
                             <CardContent>
@@ -71,7 +71,7 @@ function AllImagesRefactorTwo({ images }) {
                             </div>
                         </Box>
                         </Box >
-                    </ImageList>
+
                 ) : null
             ));
         }
