@@ -19,6 +19,8 @@
 
 a,
 div.nav-link,
+a.link,
+a:visited,
 a.active,
 a:hover,
 div.nav-link {

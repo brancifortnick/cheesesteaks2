@@ -9,7 +9,7 @@ const LogoutButton = () => {
     await dispatch(logout());
   };
   return (
-    <Button variant='contained' sx={{ color: 'white', bgcolor: '#fb6c45' }} type='submit' onClick={onLogout}>Logout</Button>
+    <Button variant='contained' sx={{ color: 'white', bgcolor: '#fb6c45', '&:hover': { color: 'black', bgcolor: 'white' } }} type='submit' onClick={onLogout}>Logout</Button>
   )
 };
 export default LogoutButton;

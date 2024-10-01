@@ -6,9 +6,9 @@
     /* Add space between cards */
     margin: 2rem;
     padding: 1rem;
-        background-color: white;
-        /* border: 1px solid #fb6c45; */
-        border-radius: 10px;
+    background-color: white;
+    /* border: 1px solid #fb6c45; */
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     /* Add padding around the grid */
 }
@@ -18,14 +18,14 @@
 .image-card-container {
     display: inline-flex;
     flex-direction: column;
-        /* width: 80rem; */
-        /* height: 50rem; */
-        grid-gap: 1rem;
-        gap: 1rem;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: space-evenly;
-    }
+    /* width: 80rem; */
+    /* height: 50rem; */
+    grid-gap: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
 
 .comment-container {
     display: inline-flex;

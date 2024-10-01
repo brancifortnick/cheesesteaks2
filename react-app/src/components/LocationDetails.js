@@ -49,7 +49,7 @@ function LocationDetails() {
                             component="card-img-style"
                             alt="Location"
                         />
-                        <img src={location.profile_img} alt="...loading" className="location-image-media" />
+                        <img src={location.profile_img} alt="...loading profile image" className="location-image-media" />
                         {/* <Box sx={{ display: 'flex', flexDirection: "row", alignItems: 'spaceEvenly', textAlign: 'center' }} > */}
                         <Card>
 

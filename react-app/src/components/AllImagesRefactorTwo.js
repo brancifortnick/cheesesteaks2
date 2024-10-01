@@ -25,11 +25,11 @@ function AllImagesRefactorTwo({ images }) {
                             display: 'flex', flexDirection: 'column'
                         }}>
 
-                            <Typography className="comment-body">{comment.comment + `${user.username}`} </Typography>
-                        </Box>
+                            <Typography className="comment-body">{comment.comment + " " + '---' + `${user.username}`} </Typography>
+
                         <EditComment imageId={image.id} commentObj={comment} />
                         <DeleteComment imageId={image.id} commentId={comment.id} />
-
+                        </Box>
 
                     </div>
                 </div>

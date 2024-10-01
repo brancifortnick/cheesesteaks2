@@ -15,7 +15,7 @@ import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
-
+import './LoginForm.css'
 
 const LoginForm = () => {
 
@@ -107,7 +107,7 @@ const LoginForm = () => {
         </FormControl>
       </Box>
       <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 2 }}>
-        <Button variant='contained' sx={{ color: 'white', bgcolor: '#fb6c45' }} type='submit'>Login</Button>
+        <Button className='login-button' variant='contained' sx={{ color: 'white', bgcolor: '#fb6c45', '&:hover': { bgcolor: 'black', color: 'white' } }} type='submit'>Login</Button>
       </Box>
       {/* </div> */}
     </form>

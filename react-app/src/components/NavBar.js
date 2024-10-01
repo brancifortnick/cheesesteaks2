@@ -25,8 +25,8 @@ const NavBar = () => {
       <div className="nav-container">
         <div className="nav-link">
           {user ? (
-            <NavLink to="/" exact={true} activeClassName="active">
-              <HomeIcon color="disabled" sx={{ color: '#fb6c45' }}  />
+            <NavLink to="/" exact={true} >
+              <HomeIcon color="disabled" sx={{ color: '#fb6c45' }} />
             </NavLink>
           ) : null}
         </div>
@@ -72,7 +72,7 @@ const NavBar = () => {
             </div>
           ) : null}
         </div>
-        <div className='link-location' >
+        <div className='nav-link' >
           {user ? (
             <NavLink to={`/users/${user.id}/new-location`}>
               Add a Spot

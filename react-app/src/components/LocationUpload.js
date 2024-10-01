@@ -41,7 +41,7 @@ const LocationUpload = () => {
   return (
     <div className="outer_card">
     
-        <h1 id="add-location-text">Upload Establishment</h1>
+      <h1 id="add-location-text" style={{ color: "#fb6c45", marginTop: "2rem", fontSize: 'larger' }}>Upload Establishment</h1>
 
       <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
@@ -66,11 +66,11 @@ const LocationUpload = () => {
             }}
             > */}
         <label
-              style={{ color: "#fb6c45", marginTop: "2pt" }}
+              style={{ color: "#fb6c45", marginTop: "2rem" }}
           id="location-photo-text"
           htmlFor="add-location-pic"
           >
-              Upload Business Front Image
+              Add store front image
         </label>
       
           </div>

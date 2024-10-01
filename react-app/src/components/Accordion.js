@@ -23,11 +23,11 @@ const Accordion = ({ children, toggleText }) => {
                 <img className='caret-icon' alt='caret icon open close' src={photo} />
             </div>
             <div className='accordion-body'>
-                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                <List sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper' }}>
                     <ListItem alignItems='flex-start'>
-                        <ListItemAvatar>
+                        {/* <ListItemAvatar> */}
                             {/* <Avatar alt='profile-img' /> */}
-                        </ListItemAvatar>
+                        {/* </ListItemAvatar> */}
                         <ListItemText
                             primary={children}
 
