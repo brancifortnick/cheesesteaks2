@@ -7,8 +7,7 @@ import Accordion from "./Accordion";
 import "./AllImagesRefactorTwo.css";
 import EditComment from "./EditComment";
 import DeleteComment from './DeleteComment';
-import VotingRefactor from "./VotingRefactor";
-
+import ImageList from "@mui/material/ImageList";
 
 function AllImagesRefactorTwo({ images }) {
     const user = useSelector((state) => state.session.user);
@@ -21,9 +20,9 @@ function AllImagesRefactorTwo({ images }) {
             return image.comments.map((comment) => (
                 <div className='delete-comment-div'>
                     <div className='comment-container' key={comment.id}>
-                        <Box key={comment.id} sx={{
-                            display: 'flex', flexDirection: 'column'
-                        }}>
+                        <Box key={comment.id}
+                            sx={{ display: 'flex', flexDirection: "column", alignItems: 'spaceEvenly', textAlign: 'center' }} >
+
 
                             <Typography className="comment-body">{comment.comment + " " + '---' + `${user.username}`} </Typography>
 
@@ -44,6 +43,8 @@ function AllImagesRefactorTwo({ images }) {
         if (images) {
             return images.map((image) => (
                 image !== null && location.id === image.location_id ? (
+                    <ImageList variant='quilted'
+                        rowHeight={121}>
                     <Box key={image.id} className="image-card-container">
                         <Card className="image-card" component='card-style-img'>
                             <CardContent>
@@ -69,7 +70,8 @@ function AllImagesRefactorTwo({ images }) {
                                 <AddComments imageId={image.id} locationId={location.id} />
                             </div>
                         </Box>
-                    </Box >
+                        </Box >
+                    </ImageList>
                 ) : null
             ));
         }

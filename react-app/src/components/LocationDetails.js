@@ -37,7 +37,7 @@ function LocationDetails() {
         <div className='locations-container-wrapper'>
             {location.profile_img && location.user_id !== null ? (
                 // <Box className="location-header">
-                <Card className="location-header" sx={{ mt: 2, maxWidth: 450, borderRadius: '10px' }}>
+                <Card className="location-header" sx={{ mt: 2, maxWidth: 700, borderRadius: '10px' }}>
                     <Typography className="location-name">{location.location_name}</Typography>
                     <Card className="location-image" sx={{
                         borderRadius: '10px',

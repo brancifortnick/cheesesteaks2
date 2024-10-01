@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./LandingPage.css";
 import UsersImages from "./UsersImages";
+import video from '../assets/31994bae7657087a9d7f486b8cd108c1.mp4'
 
 const LandingPage = () => {
   return (
     <div>
-      <p className="welcome-text">Welcome to the app where you rate the best cheesesteak spots you encounter</p>
+      <video controls autoplay>
+        <source type='video/mp4' src={video} />
+      </video>
+
       {/* <UsersImages /> */}
     </div>
   );
