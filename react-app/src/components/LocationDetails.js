@@ -16,8 +16,8 @@ import { CardContent, CardHeader } from "@mui/material";
 import { MapContainer } from "./MapContainer";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import VotingRefactor from "./VotingRefactor";
-
+import AllImagesRefactorThree from "./AllImagesRefactor3";
+import Avatar from "@mui/material/Avatar";
 
 
 function LocationDetails() {
@@ -37,41 +37,64 @@ function LocationDetails() {
         <div className='locations-container-wrapper'>
             {location.profile_img && location.user_id !== null ? (
                 // <Box className="location-header">
-                <Card className="location-header" sx={{ mt: 2, maxWidth: 700, borderRadius: '10px' }}>
-                    <Typography className="location-name">{location.location_name}</Typography>
-                    <Card className="location-image" sx={{
-                        borderRadius: '10px',
-                        borderBottom: 'hidden',
-                        boxShadow: '0 4px 6px 0 rgba(3,3, 3, 3)',
-                        backgroundColor: '#ffffff',
-                    }}>
-                        <CardMedia
-                            component="card-img-style"
-                            alt="Location"
-                        />
-                        <img src={location.profile_img} alt="...loading profile image" className="location-image-media" />
-                        {/* <Box sx={{ display: 'flex', flexDirection: "row", alignItems: 'spaceEvenly', textAlign: 'center' }} > */}
-                        <Card>
 
-                            <CardHeader subheader={location.biography} />
-                            <CardContent>
-                                <CardActions sx={{ mb: 1, pt: 2, mt: 4 }}>
+
+                <Card className="location-image" sx={{
+                    borderRadius: '10px',
+                    borderBottom: 'hidden',
+                    boxShadow: '0 4px 6px 0 rgba(3,3, 3, 3)',
+                    backgroundColor: '#ffffff',
+                    maxWidth: 1200,
+                    maxHeight: 1200,
+
+                }}>
+                    <CardMedia
+                        component="img"
+                        image={location.profile_img} alt="...loading profile image" className="location-image-media" />
+                    {/* <Box sx={{ display: 'flex', flexDirection: "row", alignItems: 'spaceEvenly', textAlign: 'center' }} > */}
+                    <Card>
+                        <CardHeader
+                            avatar={
+                                <Avatar sx={{
+                                    bgcolor: '#fb6c45', objectFit:
+                                        "fill", borderRadius: '50%', width: '50px', height: '50px', fontSize: '20px'
+
+                                }} >
                                     {currentUser.id === Number(location.user_id) ? (
-                                        <UpdateBiography locationBio={location.biography} locationId={location.id} />
-                                    ) : null}
-                                </CardActions>
-                                {/* </Box> */}
-                                {/* <Typography id="description-text">{location.biography}</Typography> */}
-                            </CardContent>
-                            {/* </Box> */}
-                        </Card>
+                                        currentUser.username[0].toUpperCase() + currentUser.username.slice(1).toUpperCase()
+                                    ) : 'Niko'}
+                                </Avatar>
+                            }
+
+                            action={
+                                currentUser.id === Number(location.user_id) ? (
+                                    <UpdateBiography locationBio={location.biography} locationId={location.id} />
+                                ) : null
+                            }
+                            title={location.location_name}
+                        />
+                        <div style={{ padding: '2px' }}>{location.biography}
+                            <div>{'Created at' + "    " + `${location.created_at}`} </div>
+                            <div>{'Updated at' + "    " + `${location.updated_at}`} </div>
+                        </div>
+
+                        {/* <CardActions sx={{ mb: 1, pt: 2, mt: 4 }}>
+                                   
+                                </CardActions> */}
+                        {/* </Box> */}
+                        {/* <Typography id="description-text">{location.biography}</Typography> */}
+
+                        {/* </Box> */}
+
                     </Card>
+
                 </Card>
+
             ) : null}
-            <Stack>
-                <ImageUpload locationId={locationId} />
-                <AllImagesRefactorTwo images={images} locationId={locationId} />
-            </Stack>
+
+            <ImageUpload locationId={locationId} />
+            <AllImagesRefactorThree images={images} locationId={locationId} />
+
         </div>
     );
 }

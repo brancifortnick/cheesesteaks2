@@ -23,7 +23,7 @@ const Accordion = ({ children, toggleText }) => {
                 <img className='caret-icon' alt='caret icon open close' src={photo} />
             </div>
             <div className='accordion-body'>
-                <List sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper' }}>
+                <List sx={{ width: '100%', maxWidth: 1200, bgcolor: 'background.paper', border: '1px solid #ccc', borderRadius: '3px' }}>
                     <ListItem alignItems='flex-start'>
                         {/* <ListItemAvatar> */}
                             {/* <Avatar alt='profile-img' /> */}
@@ -33,9 +33,9 @@ const Accordion = ({ children, toggleText }) => {
 
                             secondary={
                                 <Typography
-                                    sx={{ display: 'flex' }}
-                                    component='div'
-                                    variant='body2'
+                                    sx={{ display: 'inline-flex', flexWrap: 'wrap' }}
+
+                                    component='body2'
                                     color='text.primary'
                                 >
 
