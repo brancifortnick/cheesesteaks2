@@ -27,7 +27,7 @@ const EditComment = ({ commentObj, imageId }) => {
   }
   return (
     <div className="edit-container">
-      <EditIcon onClick={() => setModal(true)} color="disabled" sx={{ color: '#fb6c45', bgColor: 'white', width: '30rem' }} />
+      <EditIcon onClick={() => setModal(true)} color="disabled" sx={{ color: '#fb6c45', bgColor: 'white' }} />
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form className="form-element-edit-comment" onSubmit={onSubmit}>
@@ -42,7 +42,7 @@ const EditComment = ({ commentObj, imageId }) => {
               multiline
               sx={{
                 width: 400,
-                fontWeight: "800",
+                fontWeight: "500",
                 fontStyle: "italic",
                 maxWidth: "600px",
               }}

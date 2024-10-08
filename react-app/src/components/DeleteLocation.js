@@ -5,11 +5,14 @@ import { deleteOneLocation, getAllLocations } from "../store/location";
 import Button from '@mui/material/Button'
 import { Box, ButtonGroup } from "@mui/material";
 import { Modal } from "../context/Modal";
-const DeleteLocation = () => {
+import DeleteIcon from '@mui/icons-material/Delete';
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
+const DeleteLocation = ({ locationId }) => {
   const [showModal, setModal] = useState(false)
   const history = useHistory();
   const dispatch = useDispatch();
-  const { locationId } = useParams()
+
   const onSubmit = async (e) => {
     e.preventDefault();
     dispatch(deleteOneLocation(Number(locationId)))
@@ -22,27 +25,26 @@ const DeleteLocation = () => {
     setModal(false)
   }
   return (
-    <div id="delete-location-container">
-      <Button onClick={() => setModal(true)} id="delete-location-modal-btn">Delete Establishment</Button>
-      <Box>
-        {showModal && (   <ButtonGroup>
-          <Modal onClose={() => setModal(true)}>
-            <div className='delete-location-modal'>
-           
-              <Button onClick={onSubmit} id="delete-location-btn">
-                Confirm Delete
-              </Button>
-         
-            </div>
-            <div className='cancel-modal-btn'>
-              <Button onClick={cancelModal} id="cancel-modal-btn">
-                Cancel
-              </Button>
-            </div>
-          </Modal>
-          </ButtonGroup>
-        )}
-      </Box>
+    <div className='delete-container'>
+      <Button type="submit" onClick={() => setModal(true)}>
+        <DeleteIcon color='disabled' sx={{ color: '#fbd345' }} />
+      </Button>
+      {showModal && (
+        <Modal onClose={() => setModal(false)}>
+          <div>
+            Are you sure you want to delete this establishment?
+          </div>
+          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+            <Button type="submit" onClick={() => setModal(false)}>
+              <CheckIcon sx={{ color: '#ffd345' }} onClick={onSubmit} />
+            </Button>
+            <Button type="submit" onClick={() => setModal(false)}>
+              <CloseIcon sx={{ color: '#fb6c45' }} />
+            </Button>
+          </Box>
+        </Modal>
+      )
+      }
     </div >
   );
 };

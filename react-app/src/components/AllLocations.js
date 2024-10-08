@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getAllLocations } from "../store/location";
-import DeleteEstablishment from "./DeleteEstablishment";
+
 import "./AllLocations.css";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -11,6 +11,7 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import "./AllLocations.css";
 import { CardHeader, Container } from "@mui/material";
+import DeleteLocation from "./DeleteLocation";
 
 function AllLocations() {
   const dispatch = useDispatch();
@@ -42,11 +43,6 @@ function AllLocations() {
                 {location.biography}
               </Typography>
 
-              <CardActions sx={{ mb: 1, pt: 2, mt: 4 }}>
-                {currentUser.id === location.user_id ? (
-                  <DeleteEstablishment locationId={location.id} />
-                ) : null}
-              </CardActions>
             </CardContent>
           </Card>
         </Card>

@@ -44,7 +44,7 @@ const DeleteLocationsImages = ({ imageId }) => {
             {showModal && (
 
                 <Modal onClose={() => setModal(false)}>
-                    <div>
+                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                         Are you sure you want to delete this image?
                     </div>
                     <Box>

@@ -1,11 +1,12 @@
 .locations-container {
-/* align-content: center; */
-  display: inline-block;
-padding: 2rem;
+    /* align-content: center; */
+    display: inline-block;
+    padding: 2rem;
+    /* background-color: white; */
+    color: #fb6c45;
 }
 
-
 .image_card {
-  height: 400px;
-  max-width: 450px;
+    height: 400px;
+    max-width: 450px;
 }

@@ -24,8 +24,8 @@ function AllImagesRefactorTwo({ images }) {
                             sx={{ display: 'flex', flexDirection: "column", alignItems: 'spaceEvenly', textAlign: 'center' }} >
 
 
-                            <Typography className="comment-body">{comment.comment + " " + '---' + `${user.username}`} </Typography>
-                            <div>Review by  -{user.username}</div>
+                            <Typography className="comment-body">{comment.comment} </Typography>
+                            <div>user.username</div>
                             <div>{comment.created_at}</div>
                         <EditComment imageId={image.id} commentObj={comment} />
                         <DeleteComment imageId={image.id} commentId={comment.id} />
