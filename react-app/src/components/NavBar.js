@@ -20,6 +20,9 @@ const NavBar = () => {
     dispatch(demoLogin());
     history.push("/");
   };
+
+  const currentPath = window.location.pathname;
+  console.log(currentPath, "currentPath coming from navbar component")
   return (
     <nav className="nav-bar">
       <div className="nav-container">
@@ -37,17 +40,18 @@ const NavBar = () => {
             </NavLink>
           ) : null}
         </div>
-        <div className="nav-link">
-          {/* {!user ? (
-            <NavLink to="/login" exact={true} activeClassName="active">
+        {/* <div className="nav-link">
+          {currentPath === '/sign-up' ? (
+            <NavLink to="/login" exact={true} >
               Login
             </NavLink>
-          ) : null} */}
-        </div>
+          ) : null}
+        </div> */}
         <div className="nav-link">
           {!user ? (
             <NavLink to="/sign-up" exact={true} activeClassName="active">
               Sign Up
+
             </NavLink>
           ) : null}
         </div>

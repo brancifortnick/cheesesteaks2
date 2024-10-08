@@ -6,6 +6,10 @@ import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import './SignUpForm.css';
+import Login from '@mui/icons-material/Login';
+import LoginForm from './LoginForm';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import FormControl from '@mui/material/FormControl';
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
@@ -39,18 +43,21 @@ const SignUpForm = () => {
     return <Redirect to='/' />;
   }
   return (
+
     <div className='outter-signup-container'>
       <form onSubmit={onSignUp}>
         <div className='form-container-sign-up'>
-          <label><br></br></label>
+          <Box sx={{ pt: 2, p: 1 }}>
+
           <TextField
             placeholder='Username'
             type='text'
             name='username'
             onChange={updateUsername}
             value={username}
-          />
-          <label><br></br></label>
+            />
+          </Box>
+          <Box sx={{ p: 1 }}>
           <TextField
             placeholder='Email'
             type='text'
@@ -58,15 +65,17 @@ const SignUpForm = () => {
             onChange={updateEmail}
             value={email}
           />
-          <label><br></br></label>
+          </Box>
+          <Box sx={{ p: 1 }}>
           <TextField
             placeholder='Password'
             type='password'
             name='password'
             onChange={updatePassword}
             value={password}
-          />
-          <label><br></br></label>
+            />
+          </Box>
+          <Box sx={{ p: 1 }}>
           <TextField
             type='password'
             placeholder='Confirm Password'
@@ -75,10 +84,20 @@ const SignUpForm = () => {
             value={repeatPassword}
             required={true}
           />
-          <Button sx={{ mt: 2 }} variant='contained' color='primary' type='submit'>Sign Up</Button>
+          </Box>
         </div>
-      </form>
-    </div>
+        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 2 }}>
+          <Button variant='contained' type='submit' sx={{ color: 'white', bgcolor: '#fb6c45', padding: '2px', '&:hover': { bgcolor: 'black', color: 'white' } }} >Sign Up</Button>
+        </Box>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 2 }}> Already a user ? Sign in below
+
+        </div>
+        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 2 }}>
+          <NavLink to='/login' exact={true}>
+            <Login sx={{ color: '#fb6c45', bgcolor: '#fff1b4' }} />
+          </NavLink></Box>
+      </form >
+    </div >
   );
 };
 export default SignUpForm;
