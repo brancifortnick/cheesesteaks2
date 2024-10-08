@@ -33,7 +33,9 @@
 .accordion-wrapper[cs-state='open'] .caret-icon {
     transform: rotate(180deg);
 }
-
+.caret-icon{
+    
+}
 .accordion-body {
     padding: 1rem;
     display: flex;
