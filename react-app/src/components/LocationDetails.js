@@ -73,7 +73,7 @@ function LocationDetails() {
                             }
                             title={location.location_name}
                         />
-                        <div style={{ padding: '2px' }}>{location.biography}
+                        <div style={{ padding: '2px', margin: '1em' }}>{location.biography}
                             <div>{'Created at' + "    " + `${location.created_at}`} </div>
                             <div>{'Updated at' + "    " + `${location.updated_at}`} </div>
                         </div>

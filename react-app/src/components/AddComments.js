@@ -37,7 +37,7 @@ const AddComments = ({ locationId, imageId }) => {
   return (
     <div className="add-comment-container">
       <div id="comment-modal">
-        <Button onClick={() => setModal(true)}><AddIcon color='disabled' sx={{ color: " #fb6c45" }} /></Button>
+        <Button variant='text' onClick={() => setModal(true)} sx={{ color: 'white', bgcolor: '#fb6c45', '&:hover': { color: '#fb6c45', bgcolor: 'white', bgcolor: '#303133' } }}>Add Comment</Button>
         {/* <Fab color="primary" aria-label="add" size='small'> </Fab> */}
       </div>
       {showModal && (

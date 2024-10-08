@@ -1,27 +1,20 @@
-/* /* #comment-modal {
-display: flex;
+
+.add-comment-container {
+    display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    text-wrap: wrap;
     align-items: center;
-    margin: 2rem;
-    text-align: center;
-    font-size: 1rem;
-    */ */ .add-comment-container {
-        display: flex;
-    flex-direction: column;
-        flex-wrap: wrap;
-        text-wrap: wrap;
-        align-items: center;
     /* height: 100vh;
                                                     width: 100vw; */
-        background-color: rgba(0, 0, 0, 0.5);
-        position: fixed;
-        top: 0;
-        left: 0;
-        
+  
+  
+    
 }
+/* .add-comment-container:hover {
+    color: 'fb6c45';
+    background-color: #f0f0f0;
+}  */
 #comment-create {
-
     flex-direction: column;
-
-
 }
