@@ -12,16 +12,20 @@ import LandingPage from "./components/LandingPage";
 import LocationUpload from "./components/LocationUpload";
 import AllLocations from "./components/AllLocations";
 import Locations from "./components/Locations";
-import { MapContainer } from "./components/MapContainer";
+// import { MapContainer } from "./components/MapContainer";
 import GetUsersIp from "./components/GetUsersIp";
 import LocationDetails from "./components/LocationDetails";
-import VoteCounter from "./components/VoteCounter";
+import VotingRefactor from "./components/VotingRefactor";
 import UsersLocations from "./components/UsersLocations";
 
 
 function App() {
+
+
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+
+
   useEffect(() => {
     (async () => {
       await dispatch(authenticate());
@@ -32,7 +36,6 @@ function App() {
     return null;
   }
   return (
-
     loaded && (
       <BrowserRouter>
         <NavBar />
@@ -51,9 +54,9 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute path="/" exact={true}>
             <LandingPage />
-            <MapContainer />
+
+
           </ProtectedRoute>
-          {/* <GetUsersIp/> */}
           <ProtectedRoute path="/users/:userId/profile" exact={true}>
             <UsersLocations />
           </ProtectedRoute>
@@ -67,7 +70,7 @@ function App() {
             <LocationDetails />
           </ProtectedRoute>
           <ProtectedRoute path="/votes ">
-            <VoteCounter />
+
           </ProtectedRoute>
         </Switch>
       </BrowserRouter>

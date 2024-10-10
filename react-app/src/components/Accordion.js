@@ -35,7 +35,7 @@ const Accordion = ({ children, toggleText }) => {
                                 <Typography
                                     sx={{ display: 'inline-flex', flexWrap: 'wrap' }}
 
-                                    component='body2'
+                                    component='p'
                                     color='text.primary'
                                 >
 

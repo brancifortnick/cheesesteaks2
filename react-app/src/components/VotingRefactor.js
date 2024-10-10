@@ -1,39 +1,49 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { increment, decrement } from '../store/vote';
+// import { getAllVotes } from '../store/vote';
 
-const VotingRefactor = () => {
-    const [count, setCount] = useState(0);
+// const VotingRefactor = () => {
 
-    useEffect(() => {
-        fetch('/api/vote')
-            .then(response => response.json())
-            .then(data => setCount(data.count));
-    }, []);
 
-    const handleVote = (action) => {
-        fetch('/api/vote', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ action })
-        })
-            .then(response => response.json())
-            .then(data => setCount(data.count));
-    };
+//     const vote = useSelector(state => state.vote);
 
-    return (
-        <div>
-            <h1>Count: {count}</h1>
-            <button onClick={() => handleVote('increment')}>+</button>
-            <button onClick={() => handleVote('decrement')}>-</button>
-        </div>
-    );
-};
-
-export default VotingRefactor;
+//     const dispatch = useDispatch();
 
 
 
+
+//     return (
+//         <div>
+//             <h1>Total Votes</h1>
+//             <p>Count: {vote.count}</p>
+//             <button onClick={() => dispatch(increment())}>Increment</button>
+//             <button onClick={() => dispatch(decrement())}>Decrement</button>
+//         </div>
+//     );
+// }
+
+// export default VotingRefactor;
+
+
+
+// useEffect(() => {
+//     fetch('/api/vote')
+//         .then(response => response.json())
+//         .then(data => setCount(data.count));
+// }, []);
+
+// const handleVote = (action) => {
+//     fetch('/api/vote', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ action })
+//     })
+//         .then(response => response.json())
+//         .then(data => setCount(data.count));
+// };
 
 
 

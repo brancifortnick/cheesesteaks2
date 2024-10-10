@@ -45,7 +45,7 @@ function LocationDetails() {
                     boxShadow: '0 4px 6px 0 rgba(3,3, 3, 3)',
                     backgroundColor: '#ffffff',
                     maxWidth: 1200,
-                    maxHeight: 1200,
+
 
                 }}>
                     <CardMedia
@@ -74,8 +74,10 @@ function LocationDetails() {
                             title={location.location_name}
                         />
                         <div style={{ padding: '2px', margin: '1em' }}>{location.biography}
+                            <section>
                             <div>{'Created at' + "    " + `${location.created_at}`} </div>
-                            <div>{'Updated at' + "    " + `${location.updated_at}`} </div>
+                                <div>{'Updated at' + "    " + `${location.updated_at}`} </div>
+                            </section>
                         </div>
 
                         {/* <CardActions sx={{ mb: 1, pt: 2, mt: 4 }}>

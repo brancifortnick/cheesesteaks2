@@ -23,15 +23,19 @@ function AllImagesRefactorThree({ images }) {
                         <Box key={comment.id}>
 
 
-                            <Card sx={{ maxWidth: 450, }}>
+                            <Card>
 
 
                                 <CardHeader
 
-                                    title={comment.comment}
-                                    subheader={'Review By ' + " " + " " + '-' + `${comment.user.username}`}
+                                    component='body'
 
-                                    subheader={comment.created_at} />
+                                    title={comment.comment}
+
+                                    subheader={'Review By -' + " " + " " + `${comment.user.username}`} />
+                                <div style={{ padding: 1 }}>
+
+                                </div>
                                 <EditComment imageId={image.id} commentObj={comment} />
                                 <DeleteComment imageId={image.id} commentId={comment.id} />
                             </Card>
@@ -55,8 +59,8 @@ function AllImagesRefactorThree({ images }) {
                         <Typography className="image-title">{image.title}</Typography>
                         <CardMedia
                             component='img'
-                            // height=''
-                            image={location.profile_img}
+                            height='400'
+                            src={image.image}
                             alt="Nick"
                             sx={{
                                 display: 'flex', justifyContent: 'space-evenly',

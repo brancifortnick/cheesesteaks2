@@ -44,9 +44,9 @@ const SignUpForm = () => {
   }
   return (
 
-    <div className='outter-signup-container'>
+    <div className='outter-signup-container' style={{ padding: '4rem' }}>
       <form onSubmit={onSignUp}>
-        <div className='form-container-sign-up'>
+        {/* <div className='form-container-sign-up'> */}
           <Box sx={{ pt: 2, p: 1 }}>
 
           <TextField
@@ -64,6 +64,7 @@ const SignUpForm = () => {
             name='email'
             onChange={updateEmail}
             value={email}
+            sx={{}}
           />
           </Box>
           <Box sx={{ p: 1 }}>
@@ -85,11 +86,11 @@ const SignUpForm = () => {
             required={true}
           />
           </Box>
-        </div>
+        {/* </div> */}
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 2 }}>
           <Button variant='contained' type='submit' sx={{ color: 'white', bgcolor: '#fb6c45', padding: '2px', '&:hover': { bgcolor: 'black', color: 'white' } }} >Sign Up</Button>
         </Box>
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 2 }}> Already a user ? Sign in below
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', m: 2 }}> Already a user ? Click Below 
 
         </div>
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', mt: 2 }}>

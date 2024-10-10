@@ -2,10 +2,11 @@
     display: flex;
    flex-direction: column;
     align-items: center;
-    margin: 1rem;
+    padding: 2rem;
     color: #202020;
-   justify-content: space-evenly;
-    background-position: center;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
 
   
  
@@ -36,8 +37,12 @@
 }
 
 .location-image {
+   
+    
+    max-width: 600px;
     width: 100%;
     height: 100%;
+
     /* Set width of the main image card */
     /* Set height of the main image card */
 }

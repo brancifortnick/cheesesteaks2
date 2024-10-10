@@ -4,7 +4,7 @@ import { Box, Typography, Card, CardContent, CardActions, ButtonGroup, CardMedia
 import DeleteLocationsImages from "./DeleteLocationsImages";
 import AddComments from "./AddComments";
 import Accordion from "./Accordion";
-import "./AllImagesRefactorTwo.css";
+// import "./AllImagesRefactorTwo.css";
 import EditComment from "./EditComment";
 import DeleteComment from './DeleteComment';
 import ImageList from "@mui/material/ImageList";
@@ -27,8 +27,8 @@ function AllImagesRefactorTwo({ images }) {
                             <Typography className="comment-body">{comment.comment} </Typography>
                             <div>user.username</div>
                             <div>{comment.created_at}</div>
-                        <EditComment imageId={image.id} commentObj={comment} />
-                        <DeleteComment imageId={image.id} commentId={comment.id} />
+                            <EditComment imageId={image.id} commentObj={comment} />
+                            <DeleteComment imageId={image.id} commentId={comment.id} />
                         </Box>
 
                     </div>
@@ -70,18 +70,19 @@ function AllImagesRefactorTwo({ images }) {
                                 <AddComments imageId={image.id} locationId={location.id} />
                             </div>
                         </Box>
-                        </Box >
+                    </Box >
 
                 ) : null
-            ));
+            ))
         }
-    };
 
-    return (
-        <Box className="images-grid">
-            {buildTemplate()}
-        </Box>
-    );
+        return (
+            <Box className="images-grid">
+                {buildTemplate()}
+            </Box>
+        );
+    }
+
 }
 
 export default AllImagesRefactorTwo;
