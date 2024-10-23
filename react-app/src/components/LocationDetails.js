@@ -57,7 +57,7 @@ function LocationDetails() {
                             avatar={
                                 <Avatar sx={{
                                     bgcolor: '#fb6c45', objectFit:
-                                        "fill", borderRadius: '50%', width: '50px', height: '50px', fontSize: '20px'
+                                        "fill", borderRadius: '50%', width: 'auto', height: '60px', fontSize: '20px'
 
                                 }} >
                                     {currentUser.id === Number(location.user_id) ? (
@@ -73,11 +73,11 @@ function LocationDetails() {
                             }
                             title={location.location_name}
                         />
-                        <div style={{ padding: '2px', margin: '1em' }}>{location.biography}
-                            <section>
+                        <div style={{}}>{location.biography}
+                            {/* <section>
                             <div>{'Created at' + "    " + `${location.created_at}`} </div>
                                 <div>{'Updated at' + "    " + `${location.updated_at}`} </div>
-                            </section>
+                            </section> */}
                         </div>
 
                         {/* <CardActions sx={{ mb: 1, pt: 2, mt: 4 }}>

@@ -28,7 +28,7 @@ const UsersLocations = () => {
                             src={location.profile_img}
                             alt="_blank"
                             className="card"
-                            style={{ height: "500px", width: "600px" }}
+                            style={{ display: 'inline-block', height: "450px", width: "500px" }}
                         ></img>
                         <div className="delete-location-profile-page">
                             <DeleteLocation locationId={location.id} />

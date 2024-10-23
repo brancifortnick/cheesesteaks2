@@ -27,7 +27,7 @@ a:hover,
 div.nav-link {
   text-decoration: none;
   color: #fb6c45;
-  background-color: #303133;
+  /* background-color: #303133; */
 }
 
 .link-location {

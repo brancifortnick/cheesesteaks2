@@ -21,20 +21,12 @@ function AllImagesRefactorThree({ images }) {
                 <div className='delete-comment-div'>
                     <div className='comment-container' key={comment.id}>
                         <Box key={comment.id}>
-
-
                             <Card>
-
-
-                                <CardHeader
-
-                                    component='body'
-
-                                    title={comment.comment}
-
-                                    subheader={'Review By -' + " " + " " + `${comment.user.username}`} />
-                                <div style={{ padding: 1 }}>
-
+                                <div className='comment-card-text' style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                    {comment.comment}
+                                </div>
+                                <div >
+                                    {'Review By -' + " " + " " + `${comment.user.username}`}
                                 </div>
                                 <EditComment imageId={image.id} commentObj={comment} />
                                 <DeleteComment imageId={image.id} commentId={comment.id} />
@@ -42,21 +34,17 @@ function AllImagesRefactorThree({ images }) {
                         </Box>
                     </div>
                 </div >
-
             ));
         } else {
             console.log('no comments currently')
         }
     };
-
     const buildTemplate = () => {
         if (images) {
             return images.map((image) => (
                 image !== null && location.id === image.location_id ? (
-
                     <Box key={image.id} className="image-card-container">
 
-                        <Typography className="image-title">{image.title}</Typography>
                         <CardMedia
                             component='img'
                             height='400'
@@ -66,16 +54,15 @@ function AllImagesRefactorThree({ images }) {
                                 display: 'flex', justifyContent: 'space-evenly',
                                 bgcolor: '#fb6c45', objectFit: "cover",
 
-                                borderRadius: '10px', maxWidth: 345, fontSize: '20px',
+                                borderRadius: '10px', maxWidth: 360, fontSize: '20px',
                             }}
                         />
-
-
                         {(user.id === location.user_id ? (
                             <DeleteLocationsImages imageId={image.id} />
                         ) : null)
                         }
                         <CardContent>
+                            <Typography className="image-title">{image.title}</Typography>
                             <Accordion
                                 toggleText="View Comments"
                                 children={buildCommentTemplate(image)}
@@ -86,7 +73,6 @@ function AllImagesRefactorThree({ images }) {
                 ) : null
             ));
         }
-
     };
 
     return (

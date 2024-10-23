@@ -15,7 +15,7 @@ const LandingPage = () => {
         <source src={video} type="video/mp4" />
       </video>
       <section>
-        <GetUsersIp />
+          {/* <GetUsersIp /> */}
       </section>
 
 </div>

@@ -1,36 +1,32 @@
 * body {
   box-sizing: border-box;
   margin: 0 !important;
+  font-family: 'brandon-grotesque'
 }
-:root{
-  background-color: #fff1b4;
+:root #root{
+  /* background-color: #fff1b4; */
+  background-color: #f9f7ea;
+ 
 }
-#root {
-  /* background: #fbda21; */
-  /* background: #1ed760; */
-  /* background: #700F11; */
-  /* background: #fbd345; */
-  /* background: #fb6c45; */
-  /* background: #fff1b4; */
-  background-color: #fff1b4;
-}
+
 
 html {
   scroll-behavior: smooth;
   /* background-color: #fff1b4; */
-
+ font-family: 'brandon-grotesque';
   /*  background-color: */
     /* background-color: #fb6c45; */
-    background-color: #fff1b4 !important;
+    /* background-color: #fff1b4 !important; */
+    background-color: #f9f7ea;
 }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+/* html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-}
+} */
 /*#700F11; #fbd345;#fb6c45;#fff1b4; */
 /*{
   margin: 0;

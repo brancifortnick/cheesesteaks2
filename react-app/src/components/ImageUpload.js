@@ -69,7 +69,7 @@ const ImageUpload = ({ locationId }) => {
   };
   return (
     <div className="image-form-container">
-      <Button variant='text' id="upload-photos-to-location" onClick={() => setModal(true)} sx={{ color: 'white', bgcolor: '#fb6c45', '&:hover': { color: '#fb6c45', bgcolor: '#303133' } }}>
+      <Button variant='text' id="upload-photos-to-location" onClick={() => setModal(true)} sx={{ color: 'white', bgcolor: '#fb6c45', '&:hover': { color: '#fb6c45', bgcolor: 'white' } }}>
         Upload food pics
       </Button>
       {showModal && (
