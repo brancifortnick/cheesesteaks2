@@ -9,23 +9,29 @@ import AllImagesRefactorFour from "./AllImagesRefactorFour";
 const LandingPage = () => {
 
   return (
-    <>
-    <header>
-      <h1>WELCOME TO THE LANDING PAGE</h1>    </header>
+
     <div className='landing-page'>
 
-        {/* <FoodGallery /> */}
-        <video className='auto-vid' autoPlay loop muted controls >
-          <source src={video} type="video/mp4" />
+      <h1>Welcome TO THE Steak Out</h1>
 
-        </video>
-        {/* <AllImagesRefactorFour /> */}
+      {/* <FoodGallery /> */}
+      <video className='auto-vid' autoPlay loop muted controls >
+        <source src={video} type="video/mp4" />
+        <div className='secondary-text-div'>
+          <body className='secondary-text-body'>
+            <h2>Steak Out</h2>
+            <h3>Where the best steak is always on the menu</h3>
+            <h4>Join us for a meal you won't forget</h4>
+          </body>
+        </div>
+      </video>
+      {/* <AllImagesRefactorFour /> */}
       <section>
-          {/* <GetUsersIp /> */}
+        {/* <GetUsersIp /> */}
       </section>
 
-</div>
-</>
+    </div >
+
   );
 };
 export default LandingPage;

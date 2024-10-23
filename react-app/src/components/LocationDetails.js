@@ -74,19 +74,9 @@ function LocationDetails() {
                             title={location.location_name}
                         />
                         <div style={{}}>{location.biography}
-                            {/* <section>
-                            <div>{'Created at' + "    " + `${location.created_at}`} </div>
-                                <div>{'Updated at' + "    " + `${location.updated_at}`} </div>
-                            </section> */}
+
                         </div>
 
-                        {/* <CardActions sx={{ mb: 1, pt: 2, mt: 4 }}>
-                                   
-                                </CardActions> */}
-                        {/* </Box> */}
-                        {/* <Typography id="description-text">{location.biography}</Typography> */}
-
-                        {/* </Box> */}
 
                     </Card>
 

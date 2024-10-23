@@ -15,7 +15,7 @@ const UsersLocations = () => {
 
     const usersLocations = locations.map((location, idx) => {
         return user.id === Number(location.user_id) ? (
-            <>
+            <div>
 
                 <h4>Click on a location to view more details</h4>
                 <div key={idx} className="musician-ol">
@@ -23,20 +23,20 @@ const UsersLocations = () => {
                     <NavLink
                         to={`/locations/${location.id}`}
                     >{`View ${location.location_name}`}</NavLink>
+                </div>
                     <div className="location-div">
                         <img
                             src={location.profile_img}
                             alt="_blank"
                             className="card"
-                            style={{ display: 'inline-block', height: "450px", width: "500px" }}
+
                         ></img>
                         <div className="delete-location-profile-page">
                             <DeleteLocation locationId={location.id} />
                         </div>
                         <div id="add-location-link"></div>
-                    </div>
                 </div>
-            </>
+            </div>
         ) : null;
     });
 
