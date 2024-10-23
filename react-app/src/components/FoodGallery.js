@@ -31,7 +31,7 @@ export const useStyles = styled((theme) => ({
 const foodData = [
     {
         id: 1,
-        imageUrl: 'https://via.placeholder.com/300', // Replace with your image URL
+        imageUrl: '', // Replace with your image URL
         bio: 'Delicious Cheeseburger',
         updatedAt: new Date('1992-06-04'),
     },

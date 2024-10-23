@@ -3,7 +3,9 @@ import "./LandingPage.css";
 import UsersImages from "./UsersImages";
 import video from '../assets/31994bae7657087a9d7f486b8cd108c1.mp4'
 import { useSelector } from "react-redux";
-import GetUsersIp from './GetUsersIp'
+import FoodGallery from "./FoodGallery";
+import AllImagesRefactorFour from "./AllImagesRefactorFour";
+
 const LandingPage = () => {
 
   return (
@@ -11,9 +13,13 @@ const LandingPage = () => {
     <header>
       <h1>WELCOME TO THE LANDING PAGE</h1>    </header>
     <div className='landing-page'>
-      <video className='auto-vid' autoPlay loop muted >
-        <source src={video} type="video/mp4" />
-      </video>
+
+        {/* <FoodGallery /> */}
+        <video className='auto-vid' autoPlay loop muted >
+          <source src={video} type="video/mp4" />
+
+        </video>
+        {/* <AllImagesRefactorFour /> */}
       <section>
           {/* <GetUsersIp /> */}
       </section>

@@ -57,7 +57,7 @@ function LocationDetails() {
                             avatar={
                                 <Avatar sx={{
                                     bgcolor: '#fb6c45', objectFit:
-                                        "fill", borderRadius: '50%', width: 'auto', height: '60px', fontSize: '20px'
+                                        "fill", borderRadius: '50%', height: 'auto', width: '50px', fontSize: '20px'
 
                                 }} >
                                     {currentUser.id === Number(location.user_id) ? (

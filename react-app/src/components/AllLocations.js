@@ -36,16 +36,16 @@ function AllLocations() {
 
             />
           </NavLink>
-          <Card>
+          <div>
             {location.location_name}
-            <CardContent>
 
+            <div>
 
                 {location.biography}
 
+            </div>
 
-            </CardContent>
-          </Card>
+          </div>
         </Card>
       </div>
 
