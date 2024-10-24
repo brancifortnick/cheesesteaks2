@@ -62,7 +62,7 @@ function AllImagesRefactorThree({ images }) {
                         ) : null)
                         }
                         <CardContent>
-                            <Typography className="image-title">{image.title}</Typography>
+                            <Typography className="image-title" sx={{ fontWeight: 'bold', fontSize: 22 }}>{image.title}</Typography>
                             <Accordion
                                 toggleText="View Comments"
                                 children={buildCommentTemplate(image)}

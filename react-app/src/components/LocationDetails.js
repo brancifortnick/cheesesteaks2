@@ -71,9 +71,13 @@ function LocationDetails() {
                                     <UpdateBiography locationBio={location.biography} locationId={location.id} />
                                 ) : null
                             }
-                            title={location.location_name}
                         />
-                        <div style={{}}>{location.biography}
+
+                        <div className="location-bio">
+                            <div className='location-bio'>
+                                {location.location_name}
+                            </div>
+                            {location.biography}
 
                         </div>
 

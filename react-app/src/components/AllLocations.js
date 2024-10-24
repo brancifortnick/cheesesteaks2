@@ -29,21 +29,18 @@ function AllLocations() {
           {/* <Typography sx={{ padding: 1 }} variant="subtitle" component="body">{location.updated_at}</Typography> */}
           <NavLink to={`/locations/${location.id}`}>
             <CardMedia alt="establishment" />
+            <div>
             <img
               src={location.profile_img}
               alt="loading..."
               className="image_card"
 
             />
+            </div>
           </NavLink>
-          <div>
+          <div className="location-name">
             {location.location_name}
 
-            <div>
-
-                {location.biography}
-
-            </div>
 
           </div>
         </Card>

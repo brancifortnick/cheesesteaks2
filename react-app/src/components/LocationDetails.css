@@ -52,3 +52,8 @@
 
     /* Ensure the image covers the container */
 }
+.location-bio{
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+}
