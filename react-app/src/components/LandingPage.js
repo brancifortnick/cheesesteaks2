@@ -5,7 +5,9 @@ import video from '../assets/steak_video.mp4'
 import { useSelector } from "react-redux";
 import FoodGallery from "./FoodGallery";
 import AllImagesRefactorFour from "./AllImagesRefactorFour";
-
+import Home from "./Home";
+import Footer from './Footer';
+import About from "./About";
 const LandingPage = () => {
 
   return (
@@ -13,18 +15,19 @@ const LandingPage = () => {
     <div className='landing-page'>
 
       <h1>Welcome TO THE Steak Out</h1>
-
+      <ul>
+        <a href='Home'>
+          <Home />
+        </a>
+        <a href='About'>
+          <About />
+        </a>
+      </ul>
       {/* <FoodGallery /> */}
       <video className='auto-vid' autoPlay loop muted controls >
         <source src={video} type="video/mp4" />
-        <div className='secondary-text-div'>
-          <body className='secondary-text-body'>
-            <h2>Steak Out</h2>
-            <h3>Where the best steak is always on the menu</h3>
-            <h4>Join us for a meal you won't forget</h4>
-          </body>
-        </div>
       </video>
+
       {/* <AllImagesRefactorFour /> */}
       <section>
         {/* <GetUsersIp /> */}
