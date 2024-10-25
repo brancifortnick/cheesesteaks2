@@ -31,8 +31,7 @@ const Footer = () => {
         <div className="footer-section-columns">
           <span>856-237-4875</span>
           <span>thoughts@steakout.com</span>
-          <span>press@steakout.com</span>
-          <span>contact@steakout.com</span>
+
         </div>
         <div className="footer-section-columns">
           <span>Terms & Conditions</span>

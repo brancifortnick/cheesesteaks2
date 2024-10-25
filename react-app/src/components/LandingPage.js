@@ -12,36 +12,33 @@ import PseudoImageName from "../assets/about-background-image.png";
 import About from "./About";
 import Footer from "./Footer";
 import Contact from './Contact';
+import { TbBackground } from "react-icons/tb";
 const LandingPage = () => {
   return (
-    <div className="landing-page">
+    <>
+      <div className="landing-page">
 
-      STEAK OUT
-      <div>
+
+        <h1 className='landing-title'>Get Out, Pig Out, STEAK OUT</h1>
+
         <div>
 
           <Home />
-          <img src={ PseudoImageName } ></img>
+        </div>
+
+        <div>
+
+          < About />
         </div>
         <div>
-          <img src={ PhotoPseudoAliasThree } ></img>
+          <img src={ PhotoPseudoAlias } ></img>
+          <Contact />
         </div>
-        <div>
-          <About />
-
-          <img src={ PhotoPseudoAlias } ></img> <div>
-
-          </div>
-
-        </div>
-        <Contact />
+        <footer>
+          <Footer />
+        </footer>
       </div>
-      {/* <FoodGallery /> */ }
-      <footer>
-        <Footer />
-      </footer>
-
-    </div>
+    </>
   );
 };
 export default LandingPage;
