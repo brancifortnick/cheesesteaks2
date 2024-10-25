@@ -24,32 +24,22 @@ function AllLocations() {
   const locationsList = locations.map((location, idx) => {
     return (
       <>
-
-        <div>
-
-        </div>
+        <div></div>
         <div className="locations-container">
-        <Card sx={{ height: 'auto', borderRadius: '10px' }}>
-
-          {/* <Typography sx={{ padding: 1 }} variant="subtitle" component="body">{location.updated_at}</Typography> */}
-          <NavLink to={`/locations/${location.id}`}>
-            <CardMedia alt="establishment" />
-            <div>
-            <img
-              src={location.profile_img}
-              alt="loading..."
-              className="image_card"
-
-            />
-            </div>
-          </NavLink>
-          <div className="location-name">
-            {location.location_name}
-
-            </div>
-          </Card >
-
-
+          <Card sx={{ height: "auto", borderRadius: "10px" }}>
+            {/* <Typography sx={{ padding: 1 }} variant="subtitle" component="body">{location.updated_at}</Typography> */}
+            <NavLink to={`/locations/${location.id}`}>
+              <CardMedia alt="establishment" />
+              <div>
+                <img
+                  src={location.profile_img}
+                  alt="loading..."
+                  className="image_card"
+                />
+              </div>
+            </NavLink>
+            <div className="location-name">{location.location_name}</div>
+          </Card>
         </div>
       </>
     );

@@ -17,8 +17,6 @@
 // import Button from "@mui/material/Button";
 // import AllImagesRefactorTwo from "./AllImagesRefactorTwo";
 
-
-
 // function Locations() {
 //   const dispatch = useDispatch();
 //   const currentUser = useSelector((state) => state.session.user);
@@ -47,7 +45,6 @@
 //                 backgroundColor: 'rgba(255, 255, 255, 0.75)',
 
 //               }}>
-         
 
 //               <img
 //                 className="location-image"
@@ -70,8 +67,7 @@
 //         ) : null}
 
 //         <ImageUpload locationId={locationId} />
-      
-      
+
 //         <AllImagesRefactorTwo images={images} locationId={locationId} />
 //         </div>
 //     </>

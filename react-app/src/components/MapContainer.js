@@ -6,9 +6,7 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
-import './MapContainer.css'
-
-
+import "./MapContainer.css";
 
 // import { useGeolocation } from "./services/getgeo";
 // import { useDispatch, useEffect } from "react";
@@ -72,27 +70,31 @@ export const MapContainer = () => {
   ];
   return (
     <LoadScript googleMapsApiKey="AIzaSyAcelo-SkZtb2UUrrXHZsjxtA1NZGrsh3g">
-      <div className='the-map'><GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
-
-        {locations.map((item) => {
-          return (
-            <Marker
-              key={item.name}
-              position={item.location}
-              onClick={() => onSelect(item)}
-            />
-          );
-        })}
-        {selected.location && (
-          <InfoWindow
-            position={selected.location}
-            clickable={true}
-            onCloseClick={() => setSelected({})}
-          >
-            <p>{selected.name}</p>
-          </InfoWindow>
-        )}
-      </GoogleMap>
+      <div className="the-map">
+        <GoogleMap
+          mapContainerStyle={mapStyles}
+          zoom={13}
+          center={defaultCenter}
+        >
+          {locations.map((item) => {
+            return (
+              <Marker
+                key={item.name}
+                position={item.location}
+                onClick={() => onSelect(item)}
+              />
+            );
+          })}
+          {selected.location && (
+            <InfoWindow
+              position={selected.location}
+              clickable={true}
+              onCloseClick={() => setSelected({})}
+            >
+              <p>{selected.name}</p>
+            </InfoWindow>
+          )}
+        </GoogleMap>
       </div>
     </LoadScript>
   );

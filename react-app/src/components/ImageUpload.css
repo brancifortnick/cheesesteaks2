@@ -1,18 +1,17 @@
 .image-form-container {
-    display: flex;
-    flex-direction: row;
-    padding: 4em;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  padding: 4em;
+  justify-content: center;
 }
-#upload-photos-to-location{
-    
+#upload-photos-to-location {
 }
 #comment-modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 1em;
-    border-radius: 8px;
-    align-self: flex-start;
-    margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1em;
+  border-radius: 8px;
+  align-self: flex-start;
+  margin: 3rem;
 }

@@ -1,37 +1,35 @@
 .update-comment-submit-gutter {
-    display: flex;
-    background-color: grey;
-
+  display: flex;
+  background-color: grey;
 }
 
 .form-element-edit-comment {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .form-buttons {
-    color: #700f11;
-    border-radius: 0.25rem;
-    box-shadow: 1rem 1rem 1rem #00000038;
+  color: #700f11;
+  border-radius: 0.25rem;
+  box-shadow: 1rem 1rem 1rem #00000038;
 }
 
 .buttons-container {
-    width: 100%;
-    gap: 1rem;
-    padding: 1rem;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 #update-comment-submit {
-    cursor: pointer;
-    background-color: black;
-        border: .5px solid black;
-    color: white;
-    padding: 0.5rem;
-    text-align: center;
-
+  cursor: pointer;
+  background-color: black;
+  border: 0.5px solid black;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
 }
 
-.cancel-edit-btn{
-    border: 2px solid grey;
-    box-sizing: border-box;
-    box-shadow : 3px 1 ;
+.cancel-edit-btn {
+  border: 2px solid grey;
+  box-sizing: border-box;
+  box-shadow: 3px 1;
 }

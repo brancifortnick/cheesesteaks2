@@ -13,7 +13,7 @@
   backdrop-filter: blur(5px);
   min-width: 400px;
   flex-wrap: wrap;
-  overflow-y: 0;
+  /* overflow-y: 0; */
   height: 69px;
   top: 20;
 }

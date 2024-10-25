@@ -5,13 +5,9 @@
 
 // const VotingRefactor = () => {
 
-
 //     const vote = useSelector(state => state.vote);
 
 //     const dispatch = useDispatch();
-
-
-
 
 //     return (
 //         <div>
@@ -24,8 +20,6 @@
 // }
 
 // export default VotingRefactor;
-
-
 
 // useEffect(() => {
 //     fetch('/api/vote')
@@ -45,37 +39,10 @@
 //         .then(data => setCount(data.count));
 // };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React, { useEffect, useState } from "react";
 // import { getAllVotes } from "../store/vote";
 // import { useDispatch, useSelector } from "react-redux";
 // import { useHistory } from "react-router-dom";
-
 
 // const VotingRefactor = ({ locationId }) => {
 
@@ -83,7 +50,6 @@
 //     const history = useHistory();
 //     const dispatch = useDispatch();
 //     const currentUser = useSelector(state => state.session.user);
-
 
 //     const handleSubmit = (e) => {
 
@@ -93,7 +59,6 @@
 //         formData.append("user_id", userId)
 //     }
 
-
 //     useEffect(() => {
 //         dispatch(getAllVotes(locationId))
 //     }, [dispatch, locationId])
@@ -101,13 +66,8 @@
 //     return (
 //         <div>
 
-
 //         </div>
 //     )
 // }
 
-
-
 // export default VotingRefactor;
-
-

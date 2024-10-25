@@ -18,7 +18,7 @@ import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import ButtonGroup from "@mui/material/ButtonGroup";
-import './ImageUpload.css'
+import "./ImageUpload.css";
 const ImageUpload = ({ locationId }) => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -69,7 +69,16 @@ const ImageUpload = ({ locationId }) => {
   };
   return (
     <div className="image-form-container">
-      <Button variant='text' id="upload-photos-to-location" onClick={() => setModal(true)} sx={{ color: 'white', bgcolor: '#fb6c45', '&:hover': { color: '#fb6c45', bgcolor: 'white' } }}>
+      <Button
+        variant="text"
+        id="upload-photos-to-location"
+        onClick={() => setModal(true)}
+        sx={{
+          color: "white",
+          bgcolor: "#fb6c45",
+          "&:hover": { color: "#fb6c45", bgcolor: "white" },
+        }}
+      >
         Upload food pics
       </Button>
       {showModal && (
@@ -98,15 +107,12 @@ const ImageUpload = ({ locationId }) => {
                     onChange={addPictureFile}
                   />
 
-
                   <Button name="image" type="submit">
-                    <CheckIcon color="disabled" sx={{ color: " #ffd345" }}
-                    />
+                    <CheckIcon color="disabled" sx={{ color: " #ffd345" }} />
                   </Button>
                   <Button onClick={() => setModal(false)}>
-                    <CloseIcon color='disabled' sx={{ color: '#fb6c45' }} />
+                    <CloseIcon color="disabled" sx={{ color: "#fb6c45" }} />
                   </Button>
-
                 </Box>
               </div>
             </form>

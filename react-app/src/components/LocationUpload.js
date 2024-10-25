@@ -5,10 +5,10 @@ import { getAllLocations, postNewLocation } from "../store/location";
 import { TextField } from "@mui/material";
 import { TextFormatRounded } from "@mui/icons-material";
 import { Label } from "@mui/icons-material";
-import TextareaAutosize from '@mui/base/TextareaAutosize';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import './LocationUpload.css'
+import TextareaAutosize from "@mui/base/TextareaAutosize";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import "./LocationUpload.css";
 const LocationUpload = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -16,7 +16,6 @@ const LocationUpload = () => {
   const [location_name, setLocationName] = useState("");
   const [profile_img, setProfileImg] = useState("");
   const [biography, setBiography] = useState("");
-
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -40,12 +39,16 @@ const LocationUpload = () => {
   };
   return (
     <div className="outer_card">
-    
-      <h1 id="add-location-text" style={{ color: "#fb6c45", marginTop: "2rem", fontSize: 'larger' }}>Upload Establishment</h1>
+      <h1
+        id="add-location-text"
+        style={{ color: "#fb6c45", marginTop: "2rem", fontSize: "larger" }}
+      >
+        Upload Establishment
+      </h1>
 
       <form className="location-form" onSubmit={onSubmit}>
         <div className="input_container">
-          <Box sx={{ padding: '2px' }}>
+          <Box sx={{ padding: "2px" }}>
             <TextField
               type="text"
               name="location_name"
@@ -55,7 +58,7 @@ const LocationUpload = () => {
             />
           </Box>
           <div>
-          {/* <Box
+            {/* <Box
           component='div'
             sx={{
               flexDirection: "column",
@@ -65,32 +68,29 @@ const LocationUpload = () => {
               p: 1,
             }}
             > */}
-        <label
+            <label
               style={{ color: "#fb6c45", marginTop: "2rem" }}
-          id="location-photo-text"
-          htmlFor="add-location-pic"
-          >
+              id="location-photo-text"
+              htmlFor="add-location-pic"
+            >
               Add store front image
-        </label>
-      
+            </label>
           </div>
-        <Box
-         
-        >
-          <input
-            type="file"
-            accept="image/*"
-            name="profile_img"
-            onChange={updateProfileImg}
-          />
-        </Box>
-        {/* <label htmlFor="biography" >
+          <Box>
+            <input
+              type="file"
+              accept="image/*"
+              name="profile_img"
+              onChange={updateProfileImg}
+            />
+          </Box>
+          {/* <label htmlFor="biography" >
           Biography
         </label> */}
- 
+
           <TextField
             multiline
-           fullWidth
+            fullWidth
             name="biography"
             type="text"
             placeholder="Write a brief description..."
@@ -99,16 +99,18 @@ const LocationUpload = () => {
             minRows={5}
             minCols={3}
           />
-    
-          <Button variant="contained" sx={{
 
-            color: 'white', bgcolor: '#fb6c45'
-          }} type="submit">
+          <Button
+            variant="contained"
+            sx={{
+              color: "white",
+              bgcolor: "#fb6c45",
+            }}
+            type="submit"
+          >
             Submit
           </Button>
-          </div>
-   
-      
+        </div>
       </form>
     </div>
   );

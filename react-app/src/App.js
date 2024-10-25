@@ -36,7 +36,7 @@ function App() {
     return null;
   }
   return (
-    loaded && (
+    (loaded && (
       <BrowserRouter>
         <NavBar />
         <Switch>
@@ -74,7 +74,7 @@ function App() {
           </ProtectedRoute>
         </Switch>
       </BrowserRouter>
-
+    )
     ) //end of loaded
   );
 }

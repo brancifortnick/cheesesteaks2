@@ -32,7 +32,6 @@
 
 //   }, [dispatch, locationId]);
 
-
 //   const down = () => {
 //     setDownVote(downvote => (downvote) -= 1);
 //   };
@@ -46,8 +45,6 @@
 //       return num || num2
 //     }
 //   }
-
-
 
 //   // should i be using a form => also should this be an onChange Event vs a click event i think so
 //   return (

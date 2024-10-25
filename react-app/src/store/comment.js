@@ -1,8 +1,8 @@
-const GET_THE_COMMENTS = 'comments/GET_THE_COMMENTS';
+const GET_THE_COMMENTS = "comments/GET_THE_COMMENTS";
 const ADD_COMMENT = "comment/ADD_COMMENT";
 const GET_ONE_COMMENT = "comment/GET_ONE_COMMENT";
 const EDIT_COMMENT = "comment/EDIT_COMMENT";
-const ADD_IMAGE_COMMENT = 'image/ADD_IMAGE_COMMENT';
+const ADD_IMAGE_COMMENT = "image/ADD_IMAGE_COMMENT";
 const DELETE_IMAGE_COMMENT = "image/DELETE_IMAGE_COMMENT";
 const getAllTheComments = (comments) => ({
   type: GET_THE_COMMENTS,
@@ -19,7 +19,7 @@ const getOne = (comment) => ({
 const postComment = (image) => ({
   type: ADD_IMAGE_COMMENT,
   payload: image,
-})
+});
 const editComment = (comment) => ({
   type: EDIT_COMMENT,
   payload: comment,
@@ -29,16 +29,17 @@ const deleteComment = (comment) => ({
   payload: comment,
 });
 export const getTheComments = () => async (dispatch) => {
-  const response = await fetch(`/api/comments/`)
+  const response = await fetch(`/api/comments/`);
   if (response.ok) {
-    const allcomments = await response.json()
-    dispatch(getAllTheComments(allcomments.comments))
-    return allcomments
+    const allcomments = await response.json();
+    dispatch(getAllTheComments(allcomments.comments));
+    return allcomments;
+  } else {
+    console.log(
+      "error from getAllcomments aka getTheComments thunk from store ---Comment",
+    );
   }
-  else {
-    console.log('error from getAllcomments aka getTheComments thunk from store ---Comment')
-  }
-}
+};
 export const createComment = (formData) => async (dispatch) => {
   const res = await fetch(`/api/comments/new`, {
     method: "POST",
@@ -62,16 +63,18 @@ export const getOneComment = (id) => async (dispatch) => {
     console.log("Can't fetch comments");
   }
 };
-export const deleteAComment = ({ id, image_id }) => async (dispatch) => {
-  const res = await fetch(`/api/comments/delete/${id}`, {
-    method: "DELETE",
-  });
-  if (res.ok) {
-    dispatch(deleteComment({ id, image_id }));
-  } else {
-    console.log("Comment Can't be deleted");
-  }
-};
+export const deleteAComment =
+  ({ id, image_id }) =>
+  async (dispatch) => {
+    const res = await fetch(`/api/comments/delete/${id}`, {
+      method: "DELETE",
+    });
+    if (res.ok) {
+      dispatch(deleteComment({ id, image_id }));
+    } else {
+      console.log("Comment Can't be deleted");
+    }
+  };
 const initialState = {};
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -87,8 +90,8 @@ export default function reducer(state = initialState, action) {
       curr[action.payload.id] = action.payload;
       return curr;
     case GET_ONE_COMMENT:
-      const getStateNow = { ...state }
-      getStateNow[action.payload.id] = action.payload
+      const getStateNow = { ...state };
+      getStateNow[action.payload.id] = action.payload;
       return getStateNow;
     // case EDIT_COMMENT:
     //   const currState = { ...state }

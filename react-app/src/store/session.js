@@ -65,8 +65,8 @@ export const logout = () => async (dispatch) => {
   });
   if (response.ok) {
     dispatch(removeUser());
-  }else{
-    console.log(response, "resource not found-> store res")
+  } else {
+    console.log(response, "resource not found-> store res");
   }
 };
 export const signUp = (username, email, password) => async (dispatch) => {

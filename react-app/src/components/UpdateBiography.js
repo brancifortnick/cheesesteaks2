@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateBiography, getOneLocation } from '../store/location'
+import { updateBiography, getOneLocation } from "../store/location";
 import { Modal } from "../context/Modal";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import AddIcon from '@mui/icons-material/Add';
-import CloseIcon from '@mui/icons-material/Close';
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import AddIcon from "@mui/icons-material/Add";
+import CloseIcon from "@mui/icons-material/Close";
 import "./UpdateBiography.css";
-import EditIcon from '@mui/icons-material/Edit';
+import EditIcon from "@mui/icons-material/Edit";
 
-import CancelIcon from '@mui/icons-material/Cancel';
+import CancelIcon from "@mui/icons-material/Cancel";
 const UpdateBiography = ({ locationBio, locationId }) => {
   const dispatch = useDispatch();
   const [biography, setBiography] = useState("");
@@ -23,17 +23,16 @@ const UpdateBiography = ({ locationBio, locationId }) => {
     setModal(false);
   };
 
-
   const cancelModal = () => {
-    setModal(false)
-  }
+    setModal(false);
+  };
   useEffect(() => {
     dispatch(getOneLocation(parseInt(locationId)));
   }, [dispatch, locationId]);
   return (
     <>
       <Button id="biography-edit" onClick={() => setModal(true)}>
-        <EditIcon sx={{ color: '#fb6c45' }} />
+        <EditIcon sx={{ color: "#fb6c45" }} />
       </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
@@ -57,14 +56,20 @@ const UpdateBiography = ({ locationBio, locationId }) => {
               />
             </Box>
             <Box>
-         
-              <Button sx={{ color: '#fb6c45' }} type="submit" id="update-biography-submit">
+              <Button
+                sx={{ color: "#fb6c45" }}
+                type="submit"
+                id="update-biography-submit"
+              >
                 Submit changes
-
-            </Button>
-            <Button type='submit' id='cancel-bio-update' onClick={cancelModal}>
-                <CloseIcon sx={{ color: '#ffd345' }} />
-            </Button>
+              </Button>
+              <Button
+                type="submit"
+                id="cancel-bio-update"
+                onClick={cancelModal}
+              >
+                <CloseIcon sx={{ color: "#ffd345" }} />
+              </Button>
             </Box>
           </form>
         </Modal>

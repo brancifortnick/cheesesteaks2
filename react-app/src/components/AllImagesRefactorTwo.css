@@ -1,61 +1,61 @@
 .images-grid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-    /* Add space between cards */
-    margin: 2rem;
-    padding: 1rem;
-    /* width: 500px; */
-    /* height: 450px; */
-    border: 1px solid #fb6c45;
-    background-color: #ffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    /* Add padding around the grid */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* Add space between cards */
+  margin: 2rem;
+  padding: 1rem;
+  /* width: 500px; */
+  /* height: 450px; */
+  border: 1px solid #fb6c45;
+  background-color: #ffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  /* Add padding around the grid */
 }
 
 /*updated card-container 09.12.24
 */
 .image-card-container {
-    display: inline-flex;
-    flex-direction: column;
-    /* width: 80rem; */
-    /* height: 50rem; */
-    grid-gap: 1rem;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-evenly;
+  display: inline-flex;
+  flex-direction: column;
+  /* width: 80rem; */
+  /* height: 50rem; */
+  grid-gap: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
 }
 
 .comment-container {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .delete-comment-div {
-    /* display: inline-flex; */
+  /* display: inline-flex; */
 }
 
 .image-card {
-    width: 450px;
-    height: fit-content;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: auto;
+  width: 450px;
+  height: fit-content;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: auto;
 }
 
 .image-title {
-    font-weight: bold;
-    /* Add spacing below the title */
+  font-weight: bold;
+  /* Add spacing below the title */
 }
 
 .image-src {
-    display: flex;
-    justify-items: flex-start;
-    max-width: 28rem;
-    max-height: 40rem;
-    border-radius: 8px;
-    /* Round corners of the image to match card */
+  display: flex;
+  justify-items: flex-start;
+  max-width: 28rem;
+  max-height: 40rem;
+  border-radius: 8px;
+  /* Round corners of the image to match card */
 }

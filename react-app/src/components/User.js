@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 function User() {
   const [user, setUser] = useState({});
   const { userId } = useParams();
-  const location = useSelector(state => (state.location))
-  console.log(location, 'location gerom user.js')
+  const location = useSelector((state) => state.location);
+  console.log(location, "location gerom user.js");
   useEffect(() => {
     if (!userId) {
       return;

@@ -1,13 +1,12 @@
-
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
+const INCREMENT = "INCREMENT";
+const DECREMENT = "DECREMENT";
 
 // Action creators
 export const increment = () => ({
-  type: INCREMENT
+  type: INCREMENT,
 });
 export const decrement = () => ({
-  type: DECREMENT
+  type: DECREMENT,
 });
 
 // Reducer
@@ -31,10 +30,7 @@ export default function reducer(state = initialState, action) {
   }
 }
 
-
-
 //NO NEED FOR THIS NONSENSE I WAas not thinking clearly
-
 
 // const GET_VOTES = "vote/GET_VOTES";
 // const ADD_VOTES = "vote/ADD_VOTES";
@@ -53,7 +49,6 @@ export default function reducer(state = initialState, action) {
 //   payload: vote,
 // })
 
-
 // //! these are new redux thunks for vote counts
 
 // export const increment = () => {
@@ -69,10 +64,6 @@ export default function reducer(state = initialState, action) {
 
 //   };
 // };
-
-
-
-
 
 // export const getAllVotes = () => async (dispatch) => {
 //   const res = await fetch("/api/votes/");
@@ -91,4 +82,3 @@ export default function reducer(state = initialState, action) {
 //     dispatch(postVotes(vote))
 //   }
 // };
-

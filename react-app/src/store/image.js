@@ -4,9 +4,9 @@ const GET_ONE_PHOTO = "image/GET_ONE_PHOTO";
 const DELETE_PHOTO = "image/DELETE_PHOTO";
 const UPDATE_PHOTO = "image/UPDATE_PHOTO";
 const ADD_ONE_PHOTO = "image/ADD_ONE_PHOTO";
-const ADD_IMAGE_COMMENT = 'image/ADD_IMAGE_COMMENT';
-const EDIT_IMAGE_COMMENT = 'image/EDIT_IMAGE_COMMENT';
-const DELETE_IMAGE_COMMENT = 'image/DELETE_IMAGE_COMMENT';
+const ADD_IMAGE_COMMENT = "image/ADD_IMAGE_COMMENT";
+const EDIT_IMAGE_COMMENT = "image/EDIT_IMAGE_COMMENT";
+const DELETE_IMAGE_COMMENT = "image/DELETE_IMAGE_COMMENT";
 const getOnePhoto = (image) => ({
   type: GET_ONE_PHOTO,
   payload: image,
@@ -30,14 +30,14 @@ const updateOnePhoto = (image) => ({
 const updateComment = (image) => ({
   type: EDIT_IMAGE_COMMENT,
   payload: image,
-})
+});
 export const getPhotos = (id) => async (dispatch) => {
   const res = await fetch("/api/images/");
   if (res.ok) {
     const photos = await res.json();
     dispatch(getAllPhotos(photos.images));
   } else {
-    return 'error-can not fetch images--store error'
+    return "error-can not fetch images--store error";
   }
 };
 export const getAPhoto = (id) => async (dispatch) => {
@@ -46,7 +46,7 @@ export const getAPhoto = (id) => async (dispatch) => {
     const photo = await res.json();
     dispatch(getOnePhoto(photo));
   } else {
-    console.log('erroring from store')
+    console.log("erroring from store");
   }
 };
 export const addImage = (formData) => async (dispatch) => {
@@ -58,12 +58,12 @@ export const addImage = (formData) => async (dispatch) => {
     const imageObj = await res.json();
     dispatch(addOnePhoto(imageObj));
   } else {
-    console.log('error res is not okay in addimage')
+    console.log("error res is not okay in addimage");
   }
 };
 export const postNewPhoto =
   (image, title, user_id, location_id) => async (dispatch) => {
-    image = image.url
+    image = image.url;
     const res = await fetch("/api/images/new", {
       method: "POST",
       headers: {
@@ -75,7 +75,7 @@ export const postNewPhoto =
       const image = await res.json();
       dispatch(addOnePhoto(image));
     } else {
-      console.log('image Not Added - Error');
+      console.log("image Not Added - Error");
     }
   };
 export const editImage = (formData, id) => async (dispatch) => {
@@ -101,11 +101,11 @@ export const updateAComment = (formData, commentId) => async (dispatch) => {
   const res = await fetch(`/api/comments/${commentId}/update`, {
     method: "PUT",
     body: formData,
-  })
+  });
   if (res.ok) {
     const updatedComment = await res.json();
     dispatch(updateComment(updatedComment));
-    return updatedComment
+    return updatedComment;
   } else {
     console.log("Comment Can't be edited");
   }
@@ -135,32 +135,50 @@ export default function reducer(state = initialState, action) {
     case DELETE_PHOTO: {
       const removeState = { ...state };
       delete removeState[action.payload.id];
-      return removeState
+      return removeState;
     }
     case ADD_IMAGE_COMMENT: {
-      const targetImage = findObjectById(Object.values(state), action.payload.image_id)
+      const targetImage = findObjectById(
+        Object.values(state),
+        action.payload.image_id,
+      );
       if (targetImage.comments) {
-        const comments = [...targetImage.comments, action.payload]
-        console.log(comments, "add image comment=> found by Id")
+        const comments = [...targetImage.comments, action.payload];
+        console.log(comments, "add image comment=> found by Id");
         targetImage.comments = comments;
-        console.log(targetImage.comments, "setting this = comments=> images tore")
+        console.log(
+          targetImage.comments,
+          "setting this = comments=> images tore",
+        );
       } else {
-        targetImage.comments = [action.payload]
+        targetImage.comments = [action.payload];
       }
-      return JSON.parse(JSON.stringify(state))
+      return JSON.parse(JSON.stringify(state));
     }
     case DELETE_IMAGE_COMMENT: {
-      const targetImage = findObjectById(Object.values(state), action.payload.image_id)
-      targetImage.comments = filterObjsById(Object.values(targetImage.comments), action.payload.id)
-      console.log(targetImage.comments, "delete from image store")
-      return JSON.parse(JSON.stringify(state))
+      const targetImage = findObjectById(
+        Object.values(state),
+        action.payload.image_id,
+      );
+      targetImage.comments = filterObjsById(
+        Object.values(targetImage.comments),
+        action.payload.id,
+      );
+      console.log(targetImage.comments, "delete from image store");
+      return JSON.parse(JSON.stringify(state));
     }
     case EDIT_IMAGE_COMMENT: {
-      const targetImage = findObjectById(Object.values(state), action.payload.image_id)
-      const comment = findObjectById(Object.values(targetImage.comments), action.payload.id)
-      comment.comment = action.payload.comment
-      console.log(comment.comment, "edit comment image store")
-      return JSON.parse(JSON.stringify(state))
+      const targetImage = findObjectById(
+        Object.values(state),
+        action.payload.image_id,
+      );
+      const comment = findObjectById(
+        Object.values(targetImage.comments),
+        action.payload.id,
+      );
+      comment.comment = action.payload.comment;
+      console.log(comment.comment, "edit comment image store");
+      return JSON.parse(JSON.stringify(state));
     }
     default:
       return state;

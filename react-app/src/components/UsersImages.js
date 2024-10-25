@@ -1,28 +1,13 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-
-
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 const UsersImages = ({ imageId }) => {
+  const user = useSelector((state) => state.session.user);
+  const location = useSelector((state) => state.location);
 
+  console.log(location);
 
-    const user = useSelector(state => state.session.user)
-    const location = useSelector(state => state.location)
-
-
-    console.log(location)
-
-
-
-
-
-    return (
-        <>
-
-
-        </>
-    )
-
+  return <></>;
 };
 
 export default UsersImages;

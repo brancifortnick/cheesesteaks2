@@ -38,7 +38,6 @@
 //     }
 //   };
 
-
 //   //returning multiple accordians
 //   const buildTemplate = () => {
 //     if (images) {
@@ -61,8 +60,6 @@
 
 //             <div className='comment-module'>
 
-
-
 //               <p className='accordian-p-tag'>
 //                 <Accordian
 //                   toggleText="View Comments"
@@ -74,7 +71,6 @@
 //             </div>
 //           </div>
 //         ) : null;
-
 
 //       });
 //     }

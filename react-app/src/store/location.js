@@ -31,7 +31,7 @@ export const getAllLocations = (id) => async (dispatch) => {
     dispatch(getAllLocs(data.locations));
     // return data;
   } else {
-    console.log('no!!!- not getting locations')
+    console.log("no!!!- not getting locations");
   }
 };
 export const postNewLocation =
@@ -48,7 +48,7 @@ export const postNewLocation =
       const location = await res.json();
       dispatch(addPlace(location));
     } else {
-      console.log('location Not Added - Error');
+      console.log("location Not Added - Error");
     }
   };
 export const getOneLocation = (id) => async (dispatch) => {
@@ -57,9 +57,9 @@ export const getOneLocation = (id) => async (dispatch) => {
     const data = await res.json();
     dispatch(getOne(data));
   } else {
-    console.log('error from location store')
-  };
-}
+    console.log("error from location store");
+  }
+};
 // export const getSeveralLocationPics = (id) => async (dispatch) => {
 //   const res = await fetch(`/api/locations/${id}/locations-pictures`);
 //   if (res.ok) {

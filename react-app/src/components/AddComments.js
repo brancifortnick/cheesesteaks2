@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createComment } from "../store/comment";
@@ -31,36 +30,51 @@ const AddComments = ({ locationId, imageId }) => {
     dispatch(getOneLocation(locationId));
     setModal(false);
     setComment("");
-
   };
   const updateComment = (e) => setComment(e.target.value);
   return (
     <div className="add-comment-container">
       <div id="comment-modal">
-        <Button variant='text' onClick={() => setModal(true)} sx={{ color: 'white', bgcolor: '#fb6c45', '&:hover': { color: '#fb6c45', bgcolor: 'white', bgcolor: '#303133' } }}>Add Comment</Button>
+        <Button
+          variant="text"
+          onClick={() => setModal(true)}
+          sx={{
+            color: "white",
+            bgcolor: "#fb6c45",
+            "&:hover": {
+              color: "#fb6c45",
+              bgcolor: "white",
+              bgcolor: "#303133",
+            },
+          }}
+        >
+          Add Comment
+        </Button>
         {/* <Fab color="primary" aria-label="add" size='small'> </Fab> */}
       </div>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
           <form className="comment-container" onSubmit={onSubmit}>
             <Box>
-              <TextField className='comment-text-field'
+              <TextField
+                className="comment-text-field"
                 multiline
-                type="text" placeholder="Comment..."
+                type="text"
+                placeholder="Comment..."
                 onChange={updateComment}
                 value={comment}
                 minRows={3}
                 sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
+                  display: "flex",
+                  flexDirection: "column",
                   width: 400,
                   padding: 0,
                   fontWeight: "800",
                   fontStyle: "italic",
                   maxWidth: "600px",
-
                 }}
-                fullWidth />
+                fullWidth
+              />
               {/* <TextareaAutosize
               className="comment-input"
               type="text"
@@ -70,13 +84,13 @@ const AddComments = ({ locationId, imageId }) => {
               minRows={2}
               style={{ width: 'fitContent', height: 325, fontSize: 16 }}
             /> */}
-            <div id="comment-create">
-              <Button type="submit" >
-                <CheckIcon color='disabled' sx={{ color: '#fb6c45' }} />
-              </Button>
-                <Button type='submit' onClick={() => setModal(false)}>
-                  <CloseIcon color='disabled' sx={{ color: '#ffd345' }} />
-              </Button>
+              <div id="comment-create">
+                <Button type="submit">
+                  <CheckIcon color="disabled" sx={{ color: "#fb6c45" }} />
+                </Button>
+                <Button type="submit" onClick={() => setModal(false)}>
+                  <CloseIcon color="disabled" sx={{ color: "#ffd345" }} />
+                </Button>
               </div>
             </Box>
           </form>

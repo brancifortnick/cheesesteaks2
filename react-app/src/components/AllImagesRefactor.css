@@ -4,13 +4,14 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 2rem;
-    */ display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    padding: 2rem;
-    /* float: left; */
-      /* position: absolute; */
+    */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 2rem;
+  /* float: left; */
+  /* position: absolute; */
 }
 /* 
 .comment-module {

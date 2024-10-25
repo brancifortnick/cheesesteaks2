@@ -1,31 +1,29 @@
 .locations-container {
-    /* align-content: center; */
-    display: inline-block;
-    padding: 2rem;
-  
-    /* background-color: white; */
-    color: #fb6c45;
-}
-.locations-list-components{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    /* background-color: white; */
+  /* align-content: center; */
+  display: inline-block;
+  padding: 2rem;
 
+  /* background-color: white; */
+  color: #fb6c45;
+}
+.locations-list-components {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  /* background-color: white; */
 }
 .image_card {
-    min-height: 450px;
-    height: 450px;
-    object-fit: cover;
-    padding: 0 0 1rem;
-    
+  min-height: 450px;
+  height: 450px;
+  object-fit: cover;
+  padding: 0 0 1rem;
 }
-.location-name{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-    line-height: 1.5;
+.location-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  line-height: 1.5;
 }

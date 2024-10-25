@@ -23,6 +23,6 @@ export function Modal({ onClose, children }) {
       <div id="modal-background" onClick={onClose} />
       <div id="modal-content">{children}</div>
     </div>,
-    modalNode
+    modalNode,
   );
 }
