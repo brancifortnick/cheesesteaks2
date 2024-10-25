@@ -6,32 +6,30 @@ import { useSelector } from "react-redux";
 import FoodGallery from "./FoodGallery";
 import AllImagesRefactorFour from "./AllImagesRefactorFour";
 import Home from "./Home";
-import Footer from './Footer';
-import About from "./About";
+import PhotoPseudoAlias from '../assets/orangeBackground..png'
+import PseudoImageName from '../assets/about-background-image.png'
+import About from './About';
+
 const LandingPage = () => {
+
 
   return (
 
-    <div className='landing-page'>
 
-      <h1>Welcome TO THE Steak Out</h1>
+    <div className='landing-page'>
+      <header>STEAK OUT</header>
+
       <ul>
-        <a href='Home'>
+        <div>
           <Home />
-        </a>
-        <a href='About'>
+          {PseudoImageName}
+        </div>
+        <div>
           <About />
-        </a>
+          {PhotoPseudoAlias}
+        </div>
       </ul>
       {/* <FoodGallery /> */}
-      <video className='auto-vid' autoPlay loop muted controls >
-        <source src={video} type="video/mp4" />
-      </video>
-
-      {/* <AllImagesRefactorFour /> */}
-      <section>
-        {/* <GetUsersIp /> */}
-      </section>
 
     </div >
 

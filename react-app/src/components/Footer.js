@@ -1,5 +1,5 @@
 import React from "react";
-
+import stockImage from "../assets/stockImage.png";
 import { BsTwitter } from "react-icons/bs";
 import { SiLinkedin } from "react-icons/si";
 import { BsYoutube } from "react-icons/bs";
@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer-wrapper">
             <div className="footer-section-one">
                 <div className="footer-logo-container">
-                    {/* <img src={Logo} alt="" /> */}
+                    <img src={stockImage} alt="" />
                 </div>
                 <div className="footer-icons">
                     <BsTwitter />
@@ -24,15 +24,15 @@ const Footer = () => {
                     <span>Quality</span>
                     <span>Help</span>
                     <span>Share</span>
-                    <span>Carrers</span>
+                    <span>Carreers</span>
                     <span>Testimonials</span>
                     <span>Work</span>
                 </div>
                 <div className="footer-section-columns">
-                    <span>244-5333-7783</span>
-                    <span>hello@food.com</span>
-                    <span>press@food.com</span>
-                    <span>contact@food.com</span>
+                    <span>856-237-4875</span>
+                    <span>thoughts@steakout.com</span>
+                    <span>press@steakout.com</span>
+                    <span>contact@steakout.com</span>
                 </div>
                 <div className="footer-section-columns">
                     <span>Terms & Conditions</span>

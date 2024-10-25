@@ -1,7 +1,8 @@
 
 import React from "react";
-
 import { BsFillPlayCircleFill } from "react-icons/bs";
+
+
 
 const About = () => {
     return (
@@ -13,9 +14,10 @@ const About = () => {
 
             </div>
             <div className="about-section-text-container">
-                <p className="primary-subheading">About</p>
+
                 <h1 className="primary-heading">
-                    Food Is An Important Part Of A Balanced Diet
+                    <p className="primary-subheading">Brief Overview</p>
+                    Cheesesteaks are Philadelphia's most sought out and iconic food, comparing the philly cheesesteak to other cities favorites like New York with their chopped cheeses', Chicago and their deep dish pizza, and New Orleans and their gumbo.
                 </h1>
                 <p className="primary-text">
                     Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et

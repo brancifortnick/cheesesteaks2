@@ -23,7 +23,12 @@ function AllLocations() {
   }, [dispatch]);
   const locationsList = locations.map((location, idx) => {
     return (
-      <div className="locations-container">
+      <>
+
+        <div>
+
+        </div>
+        <div className="locations-container">
         <Card sx={{ height: 'auto', borderRadius: '10px' }}>
 
           {/* <Typography sx={{ padding: 1 }} variant="subtitle" component="body">{location.updated_at}</Typography> */}
@@ -41,11 +46,12 @@ function AllLocations() {
           <div className="location-name">
             {location.location_name}
 
+            </div>
+          </Card >
 
-          </div>
-        </Card>
-      </div>
 
+        </div>
+      </>
     );
   });
   return (

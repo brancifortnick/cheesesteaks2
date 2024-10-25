@@ -20,10 +20,11 @@ function AllImagesRefactorThree({ images }) {
             return image.comments.map((comment) => (
                 <div className='delete-comment-div'>
                     <div className='comment-container' key={comment.id}>
-                        <Box key={comment.id}>
+
+                        <Box key={comment.id} my={4} >
                             <Card>
                                 <div className='comment-card-text' style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                                    {comment.comment}
+                                    <Typography variant="h4" component="h2" gutterBottom>  {comment.comment}</Typography>
                                 </div>
                                 <div >
                                     {'Review By -' + " " + " " + `${comment.user.username}`}

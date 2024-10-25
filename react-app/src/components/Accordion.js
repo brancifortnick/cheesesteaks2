@@ -35,7 +35,8 @@ const Accordion = ({ children, toggleText }) => {
                                 <Typography
                                     component='span'
                                     variant='body2'
-                                    sx={{ display: 'inline' }}>
+                                    sx={{ overscrollBehaviorInline: 'contain' }}
+                                >
                                     {children}
                                 </Typography>
 
