@@ -16,7 +16,7 @@ const Home = () => {
           </Typography> */}
         </Box >
         {/* Video Section */ }
-        < Box sx={ {} } my={ 2 } >
+        < Box sx={ { width: '100%' } } my={ 2 } >
           { /* controls removed so users can't pause video */ }
           <video width="100%" autoPlay loop muted src={ video } type="video/mp4">
 

@@ -9,17 +9,15 @@ const About = () => {
       <div className="about-section-text-container">
         <h1 className="primary-heading">
           <p className="primary-subheading">Brief Overview</p>
-          Cheesesteaks are some of Philadelphia's most sought out and iconic food items.
+          Cheesesteaks are one of Philadelphia's most sought out and iconic food items.
           Our goal is to provide a platform that allows users to see which cheesesteak spots are most popular,
-
+          and to provide a platform for users to rate and review their favorite cheesesteak spots.
         </h1>
         <p className="primary-text">
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+          place some shit here
         </p>
         <p className="primary-text">
-          Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
-          facilisis at fringilla quam.
+          and place some more shit here
         </p>
         <div className="about-buttons-container">
           <button className="secondary-button">Learn More</button>

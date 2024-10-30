@@ -6,11 +6,15 @@ from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 # from app.forms import ImageForm
 image_routes = Blueprint('images', __name__)
+
+
 @image_routes.route('/')
 @login_required
 def get_images():
     images = Image.query.all()
     return {'images': [image.to_dict() for image in images]}
+
+
 @image_routes.route('/<int:id>')
 @login_required
 def get_photos(id):
@@ -18,6 +22,8 @@ def get_photos(id):
     if not image:
         return jsonify('image does not exist')
     return image.to_dict()
+
+
 @image_routes.route("/new-image", methods=["POST"])
 @login_required
 def upload_image():
@@ -28,6 +34,8 @@ def upload_image():
         return upload, 400
     url = upload["url"]
     return {'url': url}
+
+
 @image_routes.route('/new', methods=['POST'])
 @login_required
 def second_image_loader():
@@ -37,6 +45,8 @@ def second_image_loader():
     db.session.add(new_image)
     db.session.commit()
     return new_image.to_dict()
+
+
 @image_routes.route('/delete/<int:id>', methods=['DELETE'])
 @login_required
 def delete_photo(id):
@@ -46,6 +56,8 @@ def delete_photo(id):
     db.session.delete(image)
     db.session.commit()
     return {'id': id}
+
+
 @image_routes.route('/<int:id>/comments')
 @login_required
 def get_comments_from_params(id):
