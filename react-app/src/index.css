@@ -453,3 +453,11 @@ nav {
     display: none;
   }
 }
+/* 
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: baseline;
+  padding: 20rem;
+} */

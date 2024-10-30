@@ -17,26 +17,18 @@ const LandingPage = () => {
   return (
     <>
       <div className="landing-page">
-
-
-        <h1 className='landing-title'>Get Out, Pig Out, STEAK OUT</h1>
-
+        <h1 className='landing-title'>Get Out | Pig Out | STEAK OUT</h1>
         <div>
-
           <Home />
-        </div>
-
-        <div>
-
           < About />
         </div>
         <div>
-          <img src={ PhotoPseudoAlias } ></img>
+          {/* <img className='orange-blob' src={ PhotoPseudoAlias } ></img> */ }
           <Contact />
         </div>
-        <footer>
+        {/* <footer>
           <Footer />
-        </footer>
+        </footer> */}
       </div>
     </>
   );
