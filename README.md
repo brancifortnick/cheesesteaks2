@@ -3,7 +3,10 @@
 This is the starter for the Flask React project.
 
 ## Getting started
-
+[![CodeTime Badge](https://img.shields.io/endpoint?style=social&color=222&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D29969%26project%3D%26in=0)](https://codetime.dev)
+```
+3 back tiffs to type like thi s- similiar to writing js in html
+```
 1. Clone this repository (only this branch)
    ```bash
    git clone https://github.com/appacademy-starters/python-project-starter.git
