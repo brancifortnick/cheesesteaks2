@@ -37,7 +37,8 @@ function AllImagesRefactorThree({ images }) {
                     flexWrap: "wrap",
                   }}
                 >
-                  <Typography variant="h4" component="h2" gutterBottom>
+                  {/* <Box sx={{ display: 'flex', flexWrap: 'wrap',flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', width: '100%' }}> */ }
+                  <Typography variant="h2" component="h2" gutterBottom>
                     {" "}
                     {comment.comment}
                   </Typography>

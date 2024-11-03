@@ -13,19 +13,28 @@ import About from "./About";
 import Footer from "./Footer";
 import Contact from './Contact';
 import { TbBackground } from "react-icons/tb";
+
+import photoQuote from '../assets/happy-quote.jpg'
+
 const LandingPage = () => {
+  const videoStyles = {
+    height: "50vh",
+    width: "100%",
+  };
   return (
     <>
+
+      <img className="image-styling-landing" style={ videoStyles } src={ photoQuote } type='image/*'></img>
       <div className="landing-page">
         <h1 className='landing-title'>Get Out | Pig Out | STEAK OUT</h1>
-        <div>
+
           <Home />
           < About />
-        </div>
-        <div>
+
+
           {/* <img className='orange-blob' src={ PhotoPseudoAlias } ></img> */ }
           <Contact />
-        </div>
+
         {/* <footer>
           <Footer />
         </footer> */}

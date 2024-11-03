@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { } from "react";
 import { useSelector } from "react-redux";
-import { NavLink, useHistory, Link } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
 import { demoLogin } from "../store/session";
 import LogoutButton from "./auth/LogoutButton";
-import LoginIcon from "@mui/icons-material/Login";
 import Button from "@mui/material/Button";
 import "./NavBar.css";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import HomeIcon from "./HomeIcon";
+
 
 const NavBar = () => {
   const history = useHistory();
@@ -28,7 +27,10 @@ const NavBar = () => {
   return (
     <>
       <nav className="nav-bar">
+
         <div className="nav-container">
+
+
           <div className="nav-link">
             {user ? (
               <NavLink to="/" exact={true}>
@@ -97,6 +99,7 @@ const NavBar = () => {
             ) : null}
           </div>
         </div>
+
       </nav>
     </>
   );

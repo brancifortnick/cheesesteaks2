@@ -58,16 +58,7 @@ const LocationUpload = () => {
             />
           </Box>
           <div>
-            {/* <Box
-          component='div'
-            sx={{
-              flexDirection: "column",
-              justifyContent: "spaceEvenly",
-              alignContent: "center",
-              mt: 0.5,
-              p: 1,
-            }}
-            > */}
+
             <label
               style={{ color: "#fb6c45", marginTop: "2rem" }}
               id="location-photo-text"
