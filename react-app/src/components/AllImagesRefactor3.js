@@ -27,7 +27,7 @@ function AllImagesRefactorThree({ images }) {
       return image.comments.map((comment) => (
         <div className="delete-comment-div">
           <div className="comment-container" key={comment.id}>
-            <Box key={comment.id} my={4}>
+            <Box key={ comment.id } my={ 4 } sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'center' } }>
               <Card>
                 <div
                   className="comment-card-text"

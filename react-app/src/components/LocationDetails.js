@@ -33,73 +33,72 @@ function LocationDetails() {
   }, [dispatch, locationId]);
 
   return (
-    <div className="locations-container-wrapper">
-      {location.profile_img && location.user_id !== null ? (
-        // <Box className="location-header">
+    <>
+      { location.profile_img && location.user_id !== null ? (
+
 
         <Card
           className="location-image"
-          sx={{
+          sx={ {
             borderRadius: "10px",
             borderBottom: "hidden",
             boxShadow: "0 4px 6px 0 rgba(3,3, 3, 3)",
             backgroundColor: "#ffffff",
-            maxWidth: 1200,
-          }}
+            maxWidth: 800,
+            margin: "auto",
+          } }
         >
           <CardMedia
             component="img"
-            image={location.profile_img}
+            image={ location.profile_img }
             alt="...loading profile image"
             className="location-image-media"
           />
-          {/* <Box sx={{ display: 'flex', flexDirection: "row", alignItems: 'spaceEvenly', textAlign: 'center' }} > */}
+          {/* <Box sx={{ display: 'flex', flexDirection: "row", alignItems: 'spaceEvenly', textAlign: 'center' }} > */ }
           <Card>
             <CardHeader
               avatar={
                 <Avatar
-                  sx={{
+                  sx={ {
                     bgcolor: "#fb6c45",
                     objectFit: "fill",
                     borderRadius: "50%",
                     height: "60px",
                     width: "60px",
                     fontSize: "20px",
-                  }}
+                  } }
                 >
-                  {currentUser.id === Number(location.user_id)
+                  { currentUser.id === Number(location.user_id)
                     ? currentUser.username[0].toUpperCase() +
-                      currentUser.username.slice(1).toUpperCase()
-                    : "Niko"}
+                    currentUser.username.slice(1).toUpperCase()
+                    : "Niko" }
                 </Avatar>
               }
               action={
                 currentUser.id === Number(location.user_id) ? (
                   <UpdateBiography
-                    locationBio={location.biography}
-                    locationId={location.id}
+                    locationBio={ location.biography }
+                    locationId={ location.id }
                   />
                 ) : null
               }
             />
 
             <div className="location-bio">
-              <div className="location-bio">{location.location_name}</div>
-              {location.biography}
+              <div className="location-bio">{ location.location_name }</div>
+              { location.biography }
             </div>
           </Card>
         </Card>
-      ) : null}
+      ) : null }
+      <div className="locations-container-wrapper">
 
-      <ImageUpload locationId={locationId} />
-      <AllImagesRefactorThree images={images} locationId={locationId} />
-    </div>
+
+        <ImageUpload locationId={ locationId } />
+        <AllImagesRefactorThree images={ images } locationId={ locationId } />
+      </div>
+    </>
   );
 }
-/* he `<Box className="location-header">` element is creating a container with the class
-         name "location-header" in the JSX code. This container is used to style and structure
-         the content within it, typically for displaying the header section of a location in
-         this specific React component. It contains the location name and an image related to
-         the location, along with additional styling properties like borderRadius, boxShadow,
-         and backgroundColor to enhance the visual presentation of the header. */
+
 export default LocationDetails;

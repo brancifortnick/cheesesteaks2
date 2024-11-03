@@ -15,6 +15,7 @@
   /* background-color: white; */
 }
 .image_card {
+  max-width: 25rem;
   min-height: 450px;
   height: 450px;
   object-fit: cover;
