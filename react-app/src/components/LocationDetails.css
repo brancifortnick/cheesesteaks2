@@ -45,4 +45,10 @@
   /* Ensure the image covers the container */
 }
 .location-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 1rem;
 }
