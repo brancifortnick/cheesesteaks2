@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import "./NavBar.css";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import HomeIcon from "./HomeIcon";
-
+import ProfileHamburger from "./ProfileHamburger";
 
 const NavBar = () => {
   const history = useHistory();
@@ -32,71 +32,67 @@ const NavBar = () => {
 
 
           <div className="nav-link">
-            {user ? (
-              <NavLink to="/" exact={true}>
-                <HomeIcon color="disabled" sx={{ color: "#fb6c45" }} />
+            { user ? (
+              <NavLink to="/" exact={ true }>
+                <HomeIcon color="disabled" sx={ { color: "#fb6c45" } } />
               </NavLink>
-            ) : null}
+            ) : null }
           </div>
           <div className="nav-link">
-            {user ? (
-              <NavLink to="/locations" exact={true}>
+            { user ? (
+              <NavLink to="/locations" exact={ true }>
                 <StorefrontIcon
                   color="disabled"
-                  sx={{ color: "#fb6c45" }}
+                  sx={ { color: "#fb6c45" } }
                   fontSize="large"
                 />
               </NavLink>
-            ) : null}
+            ) : null }
           </div>
           <div className="nav-link">
-            {!user ? (
-              <NavLink to="/sign-up" exact={true} activeClassName="active">
+            { !user ? (
+              <NavLink to="/sign-up" exact={ true } activeClassName="active">
                 Sign Up
               </NavLink>
             ) : window.location.pathname === "/sign-up" ? (
-              <NavLink to="/login" exact={true} activeClassName="active">
+                <NavLink to="/login" exact={ true } activeClassName="active">
                 <Home />
                 <About />
               </NavLink>
-            ) : null}
+            ) : null }
           </div>
           <div className="link-location">
-            {!user ? (
+            { !user ? (
               <Button
-                style={{ backgroundColor: "#fb6c45", color: "white" }}
+                style={ { backgroundColor: "#fb6c45", color: "white" } }
                 variant="contained"
                 className="demo-login"
-                onClick={demoLoginButton}
+                onClick={ demoLoginButton }
               >
                 Guest Login
               </Button>
-            ) : null}
+            ) : null }
           </div>
+
           <div className="nav-link">
-            {user ? (
-              <div className="users-profile">
-                <NavLink to={`/users/${user.id}/profile`} exact={true}>
-                  {user.username[0].toUpperCase() +
-                    user.username.slice(1) +
-                    "'s Profile"}
-                </NavLink>
-              </div>
-            ) : null}
-          </div>
-          <div className="nav-link">
-            {user ? (
-              <NavLink to={`/users/${user.id}/new-location`}>
+            { user ? (
+              <NavLink to={ `/users/${user.id}/new-location` }>
                 Add a Spot
               </NavLink>
-            ) : null}
+            ) : null }
           </div>
-          <div className="nav-link">
-            {user ? (
+          <div className="hamburger-dropdown">
+            { user ? (
               <div className="logout-btn">
-                <LogoutButton />
+                <ProfileHamburger user={ user } />
+
               </div>
-            ) : null}
+            ) : null }
+
+            <div className='hamburger-menu'>
+
+            </div>
+
           </div>
         </div>
 
