@@ -20,16 +20,16 @@ const Home = () => {
         </Box >
 
         <Box sx={ { fontSize: "1rem" } } my={ 4 }>
-          <Typography variant="h5" component="h4" gutterBottom>
+          <Typography variant="h5" component="h5" gutterBottom>
             Most people don't enjoy waiting for their meals. We understand.
             That's why we've made it easy to see which restaurants are currently
             the busiest. Avoid waiting for your meal and get back to enjoying your day with Steak Out.
           </Typography>
         </Box>
-        <Box display="flex" justifyContent="" flexWrap="wrap">
+        <Box display="flex" justifyContent="" flexWrap="nowrap">
           <Box p={ 2 } bgcolor="white" m={ 1 } width="30%">
             <Typography variant="h6">Angelo's Pizza </Typography>
-            <Typography variant="body1">
+            <Typography variant="body1" >
               South, Philadelphia - known for its top tier pizza and incredible cheesesteaks
             </Typography>
           </Box>

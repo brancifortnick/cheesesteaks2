@@ -16,7 +16,6 @@
 .buttons-container {
   width: 100%;
   gap: 1rem;
-  padding: 1rem;
 }
 
 #update-comment-submit {
@@ -24,7 +23,7 @@
   background-color: black;
   border: 0.5px solid black;
   color: white;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   text-align: center;
 }
 

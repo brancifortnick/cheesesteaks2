@@ -5,22 +5,23 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 550;
   box-shadow: 1px 4px 10px 4px rgba(0, 0, 0, 0.383);
-  background-color: #5e160c;
+  background-color: #ffffff;
+  /* background-color: #f1eeb7; */
   /* background-color: #700f11; */
+
   backdrop-filter: blur(5px);
-  z-index: -999;
+  z-index: 10;
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
 }
-@media screen and (max-width: 768px) {
-  .nav-container {
-    overflow: hidden;
-    position: fixed;
-    top: 0 !important;
-    padding-bottom: 0;
-  }
-}
+
 .nav-container a,
 div.nav-link,
 a.link,

@@ -19,7 +19,7 @@ import theme from "./Theme";
 
 const LandingPage = () => {
   const videoStyles = {
-    theme: theme,
+    background- size: "contain",
     width: "100%",
   };
   return (
