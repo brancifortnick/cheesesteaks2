@@ -5,20 +5,23 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  font-size: large;
+  font-size: 22px;
   font-weight: 550;
   box-shadow: 1px 4px 10px 4px rgba(0, 0, 0, 0.383);
-  background-color: #303133;
+  background-color: #5e160c;
   /* background-color: #700f11; */
   backdrop-filter: blur(5px);
-
-  /* overflow-y: 0; */
-  height: 69px;
-  top: 20;
-  position: static;
+  z-index: -999;
 }
-
-a,
+@media screen and (max-width: 768px) {
+  .nav-container {
+    overflow: hidden;
+    position: fixed;
+    top: 0 !important;
+    padding-bottom: 0;
+  }
+}
+.nav-container a,
 div.nav-link,
 a.link,
 a:visited,

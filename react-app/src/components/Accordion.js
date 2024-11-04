@@ -30,30 +30,24 @@ const Accordion = ({ children, toggleText }) => {
         <Typography>{ toggleText }</Typography>
         <img className="caret-icon" alt="caret icon open close" src={ photo } />
       </div>
+
       <div className="accordion-body">
-        <List
-          sx={ { width: "100%", maxWidth: 360, bgcolor: "background.paper" } }
-        >
-          <ListItem alignItems="flex-start">
-            {/* <ListItemAvatar> */ }
-            {/* <Avatar alt='profile-img' /> */ }
-            {/* </ListItemAvatar> */ }
-            <ListItemText
-              // primary={children}
-              secondary={
-                <Typography
-                  component="span"
-                  variant="body2"
-                // sx={{ overscrollBehaviorInline: "contain" }}
-                >
-                  { children }
-                </Typography>
-              }
-            />
-          </ListItem>
-        </List>
+        <Box>
+
+
+
+          { children }
+
+
+        </Box>
+
+
+
+
+
       </div>
     </div>
+
   );
 };
 

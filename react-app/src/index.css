@@ -21,7 +21,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-
+  background-color: #f9f7ea;
   /* overscroll-behavior-y: contain; */
   font-family: "brandon-grotesque";
 
@@ -30,10 +30,12 @@ html {
 footer {
   background-color: black;
 }
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
   font-family: "cursive";
 }
 img {
@@ -106,8 +108,8 @@ img {
 }
 .primary-heading {
   /* font-size: clamp(2rem, 5vw, 4rem); */
-  color: #4c4c4c;
-  line-height: 1;
+  color: black;
+
   max-width: 600px;
   padding: 1rem;
   line-height: 1.2;
@@ -156,6 +158,52 @@ video {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.about-section-text-container-two {
+  /* margin-top: 8rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; */
+  position: relative;
+  margin-top: 2rem;
+}
+.img-snippet {
+  max-height: 600px;
+  width: 30%;
+  border: none;
+  border-radius: 1rem;
+  margin: 0 auto;
+}
+.about-section-container-two {
+  display: flex;
+  position: relative;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-items: end;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8rem;
+  width: 90%;
+}
+.primary-text-two {
+  text-align: center;
+  max-width: 80%;
+}
+.primary-subheading-two {
+  font-weight: 700;
+  color: #fe9e0d;
+  font-size: 1.15rem;
+}
+.primary-heading-two {
+  padding: 4rem;
+  margin-top: 8rem;
+  max-width: 600px;
+}
+.about-section-text-container-two {
+  justify-content: flex-end;
 }
 .about-background-image-container {
   position: absolute;
@@ -166,7 +214,10 @@ video {
   flex: 0.9;
   margin-right: 1rem;
 }
-
+.about-section-image-container-two {
+  flex: 0.9;
+  margin-left: 1rem;
+}
 .primary-subheading {
   font-weight: 700;
   color: #fe9e0d;

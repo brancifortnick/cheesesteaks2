@@ -13,12 +13,13 @@ import About from "./About";
 import Footer from "./Footer";
 import Contact from './Contact';
 import { TbBackground } from "react-icons/tb";
-
+import AboutTwo from './AboutTwo'
 import photoQuote from '../assets/happy-quote.jpg'
+import theme from "./Theme";
 
 const LandingPage = () => {
   const videoStyles = {
-    height: "50vh",
+    theme: theme,
     width: "100%",
   };
   return (
@@ -30,7 +31,7 @@ const LandingPage = () => {
 
           <Home />
           < About />
-
+        <AboutTwo />
 
           {/* <img className='orange-blob' src={ PhotoPseudoAlias } ></img> */ }
           <Contact />

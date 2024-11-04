@@ -19,12 +19,12 @@ const About = () => {
           Our goal is to provide a platform that allows users to see which cheesesteak spots are most popular,
           and to provide a platform for users to rate and review their favorite cheesesteak spots.
         </h1>
-        <p className="primary-text">
+        {/* <p className="primary-text">
           place some shit here
         </p>
         <p className="primary-text">
           and place some more shit here
-        </p>
+        </p> */}
         <div className="about-buttons-container">
           {/* <button className="secondary-button">Learn More</button> */ }
 

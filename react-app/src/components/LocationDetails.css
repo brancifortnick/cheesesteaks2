@@ -33,7 +33,6 @@
 }
 
 .location-image {
- 
   height: 100%;
 
   /* Set width of the main image card */
@@ -46,7 +45,4 @@
   /* Ensure the image covers the container */
 }
 .location-bio {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }

@@ -13,7 +13,7 @@ h1.landing-title {
   font-size: 3rem;
   font-weight: 700;
   padding: 1rem;
-  margin: 0;
+  margin: 0 auto;
   /* border-radius: 10px;
   box-shadow: 1px 4px 10px 4px rgba(0, 0, 0, 0.383); */
   backdrop-filter: blur(5px);
@@ -25,14 +25,17 @@ video.auto-vid {
   min-width: 100%;
   min-height: 50%;
 }
-img.image-styling-landing {
-  display: flex;
-  justify-content: center;
-
+.image-styling-landing {
   width: 100%;
   height: 100%;
-  z-index: -5;
+  min-width: 600px;
 }
-
+@media (min-width: 600px) {
+  .image-styling-landing {
+    height: 80vh;
+    min-height: 500px;
+    max-height: 1300px;
+  }
+}
 .orange-blob {
 }

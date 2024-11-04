@@ -76,6 +76,7 @@ const ImageUpload = ({ locationId }) => {
         sx={{
           color: "white",
           bgcolor: "#fb6c45",
+          fontFamily: 'sans-serif',
           "&:hover": { color: "#fb6c45", bgcolor: "white" },
         }}
       >

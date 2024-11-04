@@ -1,6 +1,6 @@
 .locations-container {
   /* align-content: center; */
-  display: inline-block;
+
   padding: 2rem;
 
   /* background-color: white; */
@@ -8,6 +8,7 @@
 }
 .locations-list-components {
   display: flex;
+  gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -16,7 +17,7 @@
 }
 .image_card {
   max-width: 25rem;
-  min-height: 450px;
+
   height: 450px;
   object-fit: cover;
   padding: 0 0 1rem;

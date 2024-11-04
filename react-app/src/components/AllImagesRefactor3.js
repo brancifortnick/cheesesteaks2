@@ -26,28 +26,24 @@ function AllImagesRefactorThree({ images }) {
     if (image.comments && Array.isArray(image.comments)) {
       return image.comments.map((comment) => (
         <div className="delete-comment-div">
-          <div className="comment-container" key={comment.id}>
+          <div className="comment-container" key={ comment.id }>
             <Box key={ comment.id } my={ 4 } sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'center' } }>
               <Card>
                 <div
                   className="comment-card-text"
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    flexWrap: "wrap",
-                  }}
+
                 >
                   {/* <Box sx={{ display: 'flex', flexWrap: 'wrap',flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', width: '100%' }}> */ }
                   <Typography variant="h2" component="h2" gutterBottom>
-                    {" "}
-                    {comment.comment}
+                    { " " }
+                    { comment.comment }
                   </Typography>
                 </div>
                 <div>
-                  {"Review By -" + " " + " " + `${comment.user.username}`}
+                  { "Review By -" + " " + " " + `${comment.user.username}` }
                 </div>
-                <EditComment imageId={image.id} commentObj={comment} />
-                <DeleteComment imageId={image.id} commentId={comment.id} />
+                <EditComment imageId={ image.id } commentObj={ comment } />
+                <DeleteComment imageId={ image.id } commentId={ comment.id } />
               </Card>
             </Box>
           </div>
@@ -61,38 +57,38 @@ function AllImagesRefactorThree({ images }) {
     if (images) {
       return images.map((image) =>
         image !== null && location.id === image.location_id ? (
-          <Box key={image.id} className="image-card-container">
+          <Box key={ image.id } className="image-card-container">
             <CardMedia
               component="img"
               height="400"
-              src={image.image}
-              alt="Nick"
-              sx={{
+              src={ image.image }
+              alt="images-image-src"
+              sx={ {
                 display: "flex",
+                flexWrap: "wrap",
                 justifyContent: "space-evenly",
                 bgcolor: "#fb6c45",
                 objectFit: "cover",
-
                 borderRadius: "10px",
-                maxWidth: 360,
+                maxWidth: 600,
                 fontSize: "20px",
-              }}
+              } }
             />
-            {user.id === location.user_id ? (
-              <DeleteLocationsImages imageId={image.id} />
-            ) : null}
+            { user.id === location.user_id ? (
+              <DeleteLocationsImages imageId={ image.id } />
+            ) : null }
             <CardContent>
               <Typography
                 className="image-title"
-                sx={{ fontWeight: "bold", fontSize: 22 }}
+                sx={ { fontWeight: "bold", fontSize: 22 } }
               >
-                {image.title}
+                { image.title }
               </Typography>
               <Accordion
                 toggleText="View Comments"
-                children={buildCommentTemplate(image)}
+                children={ buildCommentTemplate(image) }
               />
-              <AddComments imageId={image.id} locationId={location.id} />
+              <AddComments imageId={ image.id } locationId={ location.id } />
             </CardContent>
           </Box>
         ) : null,
@@ -100,7 +96,7 @@ function AllImagesRefactorThree({ images }) {
     }
   };
 
-  return <Box className="images-grid">{buildTemplate()}</Box>;
+  return <Box className="images-grid">{ buildTemplate() }</Box>;
 }
 
 export default AllImagesRefactorThree;
