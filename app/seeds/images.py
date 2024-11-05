@@ -7,14 +7,14 @@ def seed_images(locations):
         location_id=locations[0].id,
     )
     image2 = Image(
-        image='https://mycheesesteaks.s3.amazonaws.com/wizwit.jpg',
-        title='test2',
+        image='https://mycheesesteaks.s3.us-east-1.amazonaws.com/large-barclay-img.jpg',
+        title='Barclay Prime Steakhouse Steak',
         user_id=2,
         location_id=locations[1].id
     )
     image3 = Image(
-        image='https://mycheesesteaks.s3.amazonaws.com/steak2.jpg',
-        title='test3',
+        image='https://mycheesesteaks.s3.us-east-1.amazonaws.com/126d62ae52d845ab9ccb10767b1a5bf2.jpg',
+        title='Pats steaks ',
         user_id=3,
         location_id=locations[2].id,
     )

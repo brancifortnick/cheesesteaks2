@@ -11,7 +11,7 @@ import {
   CardMedia,
   CardHeader,
   Stack,
-  Divider
+  Divider,
 } from "@mui/material";
 import DeleteLocationsImages from "./DeleteLocationsImages";
 import AddComments from "./AddComments";
@@ -30,20 +30,22 @@ function AllImagesRefactorThree({ images }) {
       return image.comments.map((comment) => (
         <div className="delete-comment-div">
           <div className="comment-container" key={ comment.id }>
-            <Box key={ comment.id } my={ 4 } sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', fontSize: '1.5rem', bgcolor: 'primary.paper' } }>
-              <List>
-
-                <Box sx={ { maxWidth: 600, flexWrap: 'wrap' } }>   { comment.comment }</Box>
+            <Box key={ comment.id } >
+              <List sx={ { color: 'lightgray' } }>
 
 
-                { "Review By -" + " " + " " + `${comment.user.username}` }
+                { comment.comment }    </List>
+              <span style={ { alignSelf: 'flex-start', color: '#fb6c45', fontWeight: 400, fontSize: 18 } }>   { "Review By -" + " " + " " + `${comment.user.username}` } </span>
+
                 <Divider />
-              </List>
 
-              <EditComment imageId={ image.id } commentObj={ comment } />
-              <DeleteComment imageId={ image.id } commentId={ comment.id } />
 
+              <ButtonGroup>
+                <EditComment imageId={ image.id } commentObj={ comment } />
+                <DeleteComment imageId={ image.id } commentId={ comment.id } />
+              </ButtonGroup>
             </Box>
+
           </div>
         </div>
       ));

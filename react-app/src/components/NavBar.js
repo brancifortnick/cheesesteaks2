@@ -54,12 +54,8 @@ const NavBar = () => {
               <NavLink to="/sign-up" exact={ true } activeClassName="active">
                 Sign Up
               </NavLink>
-            ) : window.location.pathname === "/sign-up" ? (
-                <NavLink to="/login" exact={ true } activeClassName="active">
-                <Home />
-                <About />
-              </NavLink>
             ) : null }
+
           </div>
           <div className="link-location">
             { !user ? (

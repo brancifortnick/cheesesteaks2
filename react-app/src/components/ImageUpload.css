@@ -1,5 +1,10 @@
 .image-form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 4em;
+  margin: 0 auto;
+  width: 600px;
 }
 #upload-photos-to-location {
 }
@@ -9,6 +14,7 @@
   justify-content: center;
   line-height: 1em;
   border-radius: 8px;
+  padding: 2px;
   align-self: flex-start;
   margin: 3rem;
 }

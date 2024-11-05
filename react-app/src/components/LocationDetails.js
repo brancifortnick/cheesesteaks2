@@ -35,11 +35,13 @@ function LocationDetails() {
 
   return (
     <>
-      { location.profile_img !== null && location.location_name ? (
+      { location.profile_img !== null ? (
         <div className='locations-container-wrapper'>
-
+          <div className='location-image'>{ location.name }
+          </div>
         </div>
       ) : null }
+
 
       <div className='upload-image-button'>
         <ImageUpload locationId={ locationId } />
