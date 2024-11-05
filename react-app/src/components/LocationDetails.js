@@ -35,25 +35,33 @@ function LocationDetails() {
 
   return (
     <>
-      { location.profile_img !== null ? (
-        <div className='locations-container-wrapper'>
-          <div className='location-image'>{ location.name }
-          </div>
-        </div>
-      ) : null }
+      <div className="location-details-container">
 
+        <div className="location-details-image-container">
+          <h1 className='location-name'>{ location.location_name }</h1>
+
+
+          <div className='location-name'>
+
+            { location.address + ',' + " " }
+            { location.city + ',' + " " }
+            { location.state + ',' + " " }
+            { location.zipcode }
+
+          </div>
 
       <div className='upload-image-button'>
         <ImageUpload locationId={ locationId } />
       </div>
 
 
-      <section>
         <div className="images-container-wrapper">
           <AllImagesRefactorThree images={ images } locationId={ locationId } />
         </div>
-      </section>
+        </div>
+      </div>
     </>
+
   );
 }
 

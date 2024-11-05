@@ -59,8 +59,8 @@ const NavBar = () => {
           </div>
           <div className="link-location">
             { !user ? (
-              <Button
-                style={ { backgroundColor: "#fb6c45", color: "white" } }
+              <Button 
+                sx={ { backgroundColor: "#fb6c45", color: "white" } }
                 variant="contained"
                 className="demo-login"
                 onClick={ demoLoginButton }
