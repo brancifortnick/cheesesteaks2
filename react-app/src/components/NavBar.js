@@ -81,17 +81,15 @@ const NavBar = () => {
               </NavLink>
             ) : null }
           </div>
-          <div className="hamburger-dropdown">
+          <div className="users-profile">
             { user ? (
-              <div className="logout-btn">
+              <div className="hamburger-menu">
                 <ProfileHamburger user={ user } />
 
               </div>
             ) : null }
 
-            <div className='hamburger-menu'>
 
-            </div>
 
           </div>
         </div>
@@ -100,5 +98,4 @@ const NavBar = () => {
     </>
   );
 };
-
 export default NavBar;

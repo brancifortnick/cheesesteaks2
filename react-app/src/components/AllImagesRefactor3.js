@@ -4,11 +4,14 @@ import {
   Box,
   Typography,
   Card,
+  List,
   CardContent,
   CardActions,
   ButtonGroup,
   CardMedia,
   CardHeader,
+  Stack,
+  Divider
 } from "@mui/material";
 import DeleteLocationsImages from "./DeleteLocationsImages";
 import AddComments from "./AddComments";
@@ -27,24 +30,19 @@ function AllImagesRefactorThree({ images }) {
       return image.comments.map((comment) => (
         <div className="delete-comment-div">
           <div className="comment-container" key={ comment.id }>
-            <Box key={ comment.id } my={ 4 } sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'center' } }>
-              <Card>
-                <div
-                  className="comment-card-text"
+            <Box key={ comment.id } my={ 4 } sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', fontSize: '1.5rem', bgcolor: 'primary.paper' } }>
+              <List>
 
-                >
-                  {/* <Box sx={{ display: 'flex', flexWrap: 'wrap',flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-start', width: '100%' }}> */ }
-                  <Typography variant="h2" component="h2" gutterBottom>
-                    { " " }
-                    { comment.comment }
-                  </Typography>
-                </div>
-                <div>
-                  { "Review By -" + " " + " " + `${comment.user.username}` }
-                </div>
-                <EditComment imageId={ image.id } commentObj={ comment } />
-                <DeleteComment imageId={ image.id } commentId={ comment.id } />
-              </Card>
+                <Box sx={ { maxWidth: 600, flexWrap: 'wrap' } }>   { comment.comment }</Box>
+
+
+                { "Review By -" + " " + " " + `${comment.user.username}` }
+                <Divider />
+              </List>
+
+              <EditComment imageId={ image.id } commentObj={ comment } />
+              <DeleteComment imageId={ image.id } commentId={ comment.id } />
+
             </Box>
           </div>
         </div>
@@ -58,29 +56,20 @@ function AllImagesRefactorThree({ images }) {
       return images.map((image) =>
         image !== null && location.id === image.location_id ? (
           <Box key={ image.id } className="image-card-container">
-            <CardMedia
-              component="img"
-              height="400"
-              src={ image.image }
+            <img src={ image.image }
               alt="images-image-src"
-              sx={ {
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "space-evenly",
-                bgcolor: "#fb6c45",
-                objectFit: "cover",
-                borderRadius: "10px",
-                maxWidth: 600,
-                fontSize: "20px",
-              } }
-            />
+            ></img>
             { user.id === location.user_id ? (
               <DeleteLocationsImages imageId={ image.id } />
             ) : null }
             <CardContent>
               <Typography
+                component='primary-subtitle'
                 className="image-title"
-                sx={ { fontWeight: "bold", fontSize: 22 } }
+                sx={ {
+                  fontWeight: "bold", fontSize:
+                    '22pt', justifySelf: 'center'
+                } }
               >
                 { image.title }
               </Typography>
@@ -96,7 +85,7 @@ function AllImagesRefactorThree({ images }) {
     }
   };
 
-  return <Box className="images-grid">{ buildTemplate() }</Box>;
+  return <Box sx={ {} } className="images-grid">{ buildTemplate() }</Box>;
 }
 
 export default AllImagesRefactorThree;

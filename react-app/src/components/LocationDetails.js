@@ -19,6 +19,7 @@ import Button from "@mui/material/Button";
 import AllImagesRefactorThree from "./AllImagesRefactor3";
 import Avatar from "@mui/material/Avatar";
 
+
 function LocationDetails() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
@@ -34,69 +35,22 @@ function LocationDetails() {
 
   return (
     <>
-      { location.profile_img && location.user_id !== null ? (
+      { location.profile_img !== null && location.location_name ? (
+        <div className='locations-container-wrapper'>
 
-
-        <Card
-          className="location-image"
-          sx={ {
-            borderRadius: "10px",
-            borderBottom: "hidden",
-            boxShadow: "0 4px 6px 0 rgba(3,3, 3, 3)",
-            backgroundColor: "#ffffff",
-            maxWidth: 800,
-            margin: "auto",
-          } }
-        >
-          <CardMedia
-            component="img"
-            image={ location.profile_img }
-            alt="...loading profile image"
-            className="location-image-media"
-          />
-          {/* <Box sx={{ display: 'flex', flexDirection: "row", alignItems: 'spaceEvenly', textAlign: 'center' }} > */ }
-          <Card>
-            <CardHeader
-              avatar={
-                <Avatar
-                  sx={ {
-                    bgcolor: "#fb6c45",
-                    objectFit: "fill",
-                    borderRadius: "50%",
-                    height: "60px",
-                    width: "60px",
-                    fontSize: "20px",
-                  } }
-                >
-                  { currentUser.id === Number(location.user_id)
-                    ? currentUser.username[0].toUpperCase() +
-                    currentUser.username.slice(1).toUpperCase()
-                    : "Niko" }
-                </Avatar>
-              }
-              action={
-                currentUser.id === Number(location.user_id) ? (
-                  <UpdateBiography
-                    locationBio={ location.biography }
-                    locationId={ location.id }
-                  />
-                ) : null
-              }
-            />
-
-            <div className="location-bio">
-              <div className="location-bio">{ location.location_name }</div>
-              { location.biography }
-            </div>
-          </Card>
-        </Card>
+        </div>
       ) : null }
-      <div className="locations-container-wrapper">
 
-
+      <div className='upload-image-button'>
         <ImageUpload locationId={ locationId } />
-        <AllImagesRefactorThree images={ images } locationId={ locationId } />
       </div>
+
+
+      <section>
+        <div className="images-container-wrapper">
+          <AllImagesRefactorThree images={ images } locationId={ locationId } />
+        </div>
+      </section>
     </>
   );
 }

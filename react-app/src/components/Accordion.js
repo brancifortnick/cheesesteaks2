@@ -27,24 +27,12 @@ const Accordion = ({ children, toggleText }) => {
   return (
     <div className="accordion-wrapper" cs-state={ expand }>
       <div className="accordion-head" onClick={ expandCollapse }>
-        <Typography>{ toggleText }</Typography>
+        { toggleText }
         <img className="caret-icon" alt="caret icon open close" src={ photo } />
       </div>
 
       <div className="accordion-body">
-        <Box>
-
-
-
-          { children }
-
-
-        </Box>
-
-
-
-
-
+        { children }
       </div>
     </div>
 

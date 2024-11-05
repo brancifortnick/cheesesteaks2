@@ -36,22 +36,10 @@
 }
 
 .accordion-body {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   padding: 1rem;
+  font-weight: 400;
 }
 
 .comment-actions {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
   margin-top: 1rem;
-}
-@media screen and (max-width: 600px) {
-  p {
-    color: green;
-    transform: rotate(360deg);
-  }
 }

@@ -72,6 +72,7 @@ const AddComments = ({ locationId, imageId }) => {
                   fontWeight: "800",
                   fontStyle: "italic",
                   maxWidth: "600px",
+                  flexWrap: 'wrap'
                 }}
                 fullWidth
               />
