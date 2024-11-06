@@ -18,7 +18,8 @@ import LocationDetails from "./components/LocationDetails";
 import VotingRefactor from "./components/VotingRefactor";
 import UsersLocations from "./components/UsersLocations";
 import FoodGallery from './components/FoodGallery';
-
+import Footer from './components/Footer';
+import AllImagesRefactorFour from "./components/AllImagesRefactorFour";
 function App() {
 
 
@@ -70,9 +71,10 @@ function App() {
             <LocationDetails />
           </ProtectedRoute>
           <ProtectedRoute path="/votes ">
-            <FoodGallery />
+            <AllImagesRefactorFour />
           </ProtectedRoute>
         </Switch>
+        <Footer />
       </BrowserRouter>
     )
     ) //end of loaded

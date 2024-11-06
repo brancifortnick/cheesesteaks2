@@ -14,3 +14,7 @@ class LocationForm(FlaskForm):
                                 DataRequired(), name_exists])
     profile_img = StringField('profile_img')
     biography = StringField('biography')
+    address = StringField('address')
+    city = StringField('city')
+    state = StringField('state')
+    zipcode = IntegerField('zipcode')

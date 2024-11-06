@@ -29,12 +29,11 @@ const LandingPage = () => {
       <div className="landing-page">
         <h1 className='landing-title'>Get Out | Pig Out | STEAK OUT</h1>
 
-          <Home />
-          < About />
+        <Home />
+        < About />
         <AboutTwo />
 
-          {/* <img className='orange-blob' src={ PhotoPseudoAlias } ></img> */ }
-          <Contact />
+        <Contact />
 
         {/* <footer>
           <Footer />

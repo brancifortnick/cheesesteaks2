@@ -35,14 +35,14 @@ export const getAllLocations = (id) => async (dispatch) => {
   }
 };
 export const postNewLocation =
-  (profile_img, biography, user_id, location_name) => async (dispatch) => {
+  (profile_img, biography, user_id, location_name, address, city, state, zipcode) => async (dispatch) => {
     profile_img = profile_img.url;
     const res = await fetch("/api/locations/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ profile_img, biography, user_id, location_name }),
+      body: JSON.stringify({ profile_img, biography, user_id, location_name, address, city, state, zipcode }),
     });
     if (res.ok) {
       const location = await res.json();
