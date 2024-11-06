@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getAllLocations } from "../store/location";
-
+import './UsersLocations.css'
 import DeleteLocation from "./DeleteLocation";
+import UpdateBiography from "./UpdateBiography";
 const UsersLocations = () => {
   const dispatch = useDispatch();
   const locations = useSelector((state) => Object.values(state.location));
@@ -25,10 +26,15 @@ const UsersLocations = () => {
         </div>
         <div className="location-div">
           <img src={location.profile_img} alt="_blank" className="card"></img>
+
           <div className="delete-location-profile-page">
             <DeleteLocation locationId={location.id} />
           </div>
-          <div id="add-location-link"></div>
+          <div id="add-location-link">
+            <UpdateBiography />
+
+            { location.biography }
+          </div>
         </div>
       </div>
     ) : null;

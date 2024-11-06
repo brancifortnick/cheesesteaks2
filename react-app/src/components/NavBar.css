@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  min-width: 100%;
+  width: 100%;
   text-align: center;
   font-size: 20px;
   font-weight: 550;
@@ -11,8 +11,7 @@
   background-color: #ffffff;
   /* background-color: #f1eeb7; */
   /* background-color: #700f11; */
-  position: fixed;
-  top: 0;
+
   backdrop-filter: blur(5px);
   z-index: 10;
 }

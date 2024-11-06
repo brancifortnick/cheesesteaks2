@@ -31,7 +31,7 @@ function AllImagesRefactorThree({ images }) {
         <div className="delete-comment-div">
           <div className="comment-container" key={ comment.id }>
             <Box key={ comment.id } >
-              <List sx={ { color: 'lightgray' } }>
+              <List sx={ { color: 'gray' } }>
 
 
                 { comment.comment }    </List>

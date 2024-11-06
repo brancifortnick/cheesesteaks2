@@ -17,7 +17,7 @@ import GetUsersIp from "./components/GetUsersIp";
 import LocationDetails from "./components/LocationDetails";
 import VotingRefactor from "./components/VotingRefactor";
 import UsersLocations from "./components/UsersLocations";
-
+import FoodGallery from './components/FoodGallery';
 
 function App() {
 
@@ -70,7 +70,7 @@ function App() {
             <LocationDetails />
           </ProtectedRoute>
           <ProtectedRoute path="/votes ">
-
+            <FoodGallery />
           </ProtectedRoute>
         </Switch>
       </BrowserRouter>
