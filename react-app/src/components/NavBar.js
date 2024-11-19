@@ -9,6 +9,8 @@ import "./NavBar.css";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import HomeIcon from "./HomeIcon";
 import ProfileHamburger from "./ProfileHamburger";
+import Footer from './Footer';
+
 
 const NavBar = () => {
   const history = useHistory();
@@ -59,7 +61,7 @@ const NavBar = () => {
           </div>
           <div className="link-location">
             { !user ? (
-              <Button 
+              <Button
                 sx={ { backgroundColor: "#fb6c45", color: "white" } }
                 variant="contained"
                 className="demo-login"
@@ -89,7 +91,9 @@ const NavBar = () => {
 
           </div>
         </div>
-
+        {/* <div className='footer'>
+        <Footer />
+</div> */}
       </nav>
     </>
   );

@@ -18,23 +18,26 @@ const UsersLocations = () => {
     return user.id === Number(location.user_id) ? (
       <div>
         <h4>Click on a location to view more details</h4>
-        <div key={idx} className="musician-ol">
-          {/* <div id="musician-name">{musician.musician_name}</div> */}
+        <div key={ idx } className="musician-ol">
+          {/* <div id="musician-name">{musician.musician_name}</div> */ }
           <NavLink
-            to={`/locations/${location.id}`}
-          >{`View ${location.location_name}`}</NavLink>
+            to={ `/locations/${location.id}` }
+          >{ `View ${location.location_name}` }</NavLink>
         </div>
         <div className="location-div">
-          <img src={location.profile_img} alt="_blank" className="card"></img>
+          <img src={ location.profile_img } alt="_blank" className="card" />
 
           <div className="delete-location-profile-page">
-            <DeleteLocation locationId={location.id} />
+            <DeleteLocation locationId={ location.id } />
           </div>
-          <div id="add-location-link">
-            <UpdateBiography />
 
+
+          <UpdateBiography locationId={ location.id } />
             { location.biography }
-          </div>
+
+
+
+
         </div>
       </div>
     ) : null;
@@ -42,7 +45,7 @@ const UsersLocations = () => {
 
   return (
     <div className="user-locations-container">
-      <div id="users-locations">{usersLocations}</div>
+      <div id="users-locations">{ usersLocations }</div>
     </div>
   );
 };

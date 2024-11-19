@@ -74,7 +74,7 @@ function App() {
             <AllImagesRefactorFour />
           </ProtectedRoute>
         </Switch>
-        <Footer />
+
       </BrowserRouter>
     )
     ) //end of loaded

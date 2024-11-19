@@ -8,10 +8,7 @@
   font-size: 20px;
   font-weight: 550;
   box-shadow: 1px 4px 10px 4px rgba(0, 0, 0, 0.383);
-  background-color: #ffffff;
-  /* background-color: #f1eeb7; */
-  /* background-color: #700f11; */
-
+  background-color: white;
   backdrop-filter: blur(5px);
   z-index: 10;
 }
@@ -34,7 +31,6 @@ div.nav-link {
 
   border-radius: 10px;
 
-  padding: 5px;
   margin: 5px;
   font-size: 20px;
   font-weight: 550;
@@ -44,4 +40,10 @@ div.nav-link {
   /* background-color: #700f11; */
 
   backdrop-filter: blur(5px);
+}
+
+.footer footer {
+  justify-content: center;
+  position: absolute;
+  display: flex;
 }

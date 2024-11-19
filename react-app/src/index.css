@@ -33,6 +33,7 @@ html {
 }
 footer {
   background-color: black;
+position: absolute;
 }
 
 img {

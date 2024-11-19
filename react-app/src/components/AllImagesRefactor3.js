@@ -11,6 +11,7 @@ import {
   CardMedia,
   CardHeader,
   Stack,
+  Button,
   Divider,
 } from "@mui/material";
 import DeleteLocationsImages from "./DeleteLocationsImages";
@@ -40,10 +41,15 @@ function AllImagesRefactorThree({ images }) {
                 <Divider />
 
 
-              <ButtonGroup>
+              <Button>
+
                 <EditComment imageId={ image.id } commentObj={ comment } />
+
+
+              </Button>
+              <Button>
                 <DeleteComment imageId={ image.id } commentId={ comment.id } />
-              </ButtonGroup>
+              </Button>
             </Box>
 
           </div>

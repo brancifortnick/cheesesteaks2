@@ -36,7 +36,8 @@ const DeleteComment = ({ imageId, commentId }) => {
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
-              padding: "2px",
+
+
             }}
           >
             <Button type="submit" onClick={() => setModal(false)}>
