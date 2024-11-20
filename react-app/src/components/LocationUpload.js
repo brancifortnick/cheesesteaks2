@@ -84,7 +84,7 @@ const LocationUpload = () => {
           Biography
         </label> */}
             <Box>
-              <Input placeholder="Brief Description and thoughts">
+
                 <TextField
                   multiline
                   fullWidth
@@ -93,10 +93,10 @@ const LocationUpload = () => {
                   placeholder="Write a brief description..."
                   onChange={ (e) => setBiography(e.target.value) }
                   value={ biography }
-                  minRows={ 5 }
-                  minCols={ 3 }
+                minRows={ 3 }
+                minCols={ 5 }
                 />
-              </Input>
+
             </Box>
             <Box>
               <Input

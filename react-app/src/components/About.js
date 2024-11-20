@@ -4,7 +4,7 @@ import videoAlias from '../assets/steak_video.mp4'
 const About = () => {
   return (
     <div className="about-section-container">
-      <video className='video-snippet' src={ videoAlias } controls />
+      <video className='video-snippet' src={ videoAlias } autoPlay loop muted />
       {/* autoPlay loop muted  */ }
       <div className="about-background-image-container"></div>
       <div className="about-section-image-container">

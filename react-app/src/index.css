@@ -33,14 +33,19 @@ html {
 }
 footer {
   background-color: black;
-position: absolute;
+  position: absolute;
 }
 
 img {
-  max-width: 100%;
+  /* max-width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 10px;
+  border-radius: 10px; */
+  background-image: inherit;
+  background-image: initial;
+  background-image: revert;
+  background-image: revert-layer;
+  background-image: unset;
 }
 
 /* body {
@@ -49,7 +54,7 @@ img {
 } */
 
 /* .navbar-menu-container {
-  display: none;
+  display: none;KW
 }
 .navbar-links-container a {
   margin-right: 3rem;
@@ -177,9 +182,9 @@ img {
 }
 .img-snippet {
   height: 100%;
-  max-height: 600px;
-  width: 30%;
-  border: none;
+  position: relative;
+  width: 20%;
+
   border-radius: 1rem;
   margin: 0 auto;
 }

@@ -3,14 +3,15 @@ import { Container, Typography, Box } from "@mui/material";
 import video from "../assets/steak_video.mp4";
 import Footer from "./Footer";
 import { PhotoPseudoAliasThree } from '../assets/happy-quote.jpg';
+import { useSelector } from 'react-redux';
 const Home = () => {
 
-
+  const location = useSelector((state) => state.location);
+  console.log(location)
   const videoStyles = {
     height: "50vh",
     width: "100%",
   };
-
 
   return (
     <>

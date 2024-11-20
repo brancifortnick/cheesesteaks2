@@ -38,15 +38,15 @@ function AllImagesRefactorThree({ images }) {
                 { comment.comment }    </List>
               <span style={ { alignSelf: 'flex-start', color: '#fb6c45', fontWeight: 400, fontSize: 18 } }>   { "Review By -" + " " + " " + `${comment.user.username}` } </span>
 
-                <Divider />
 
 
+
+
+              <Divider />
               <Button>
-
                 <EditComment imageId={ image.id } commentObj={ comment } />
-
-
               </Button>
+
               <Button>
                 <DeleteComment imageId={ image.id } commentId={ comment.id } />
               </Button>

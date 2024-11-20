@@ -19,29 +19,34 @@ const UsersLocations = () => {
       <div>
         <h4>Click on a location to view more details</h4>
         <div key={ idx } className="musician-ol">
-          {/* <div id="musician-name">{musician.musician_name}</div> */ }
+
           <NavLink
             to={ `/locations/${location.id}` }
           >{ `View ${location.location_name}` }</NavLink>
         </div>
         <div className="location-div">
           <img src={ location.profile_img } alt="_blank" className="card" />
+          { user.id === Number(location.user_id) ? (
+            <div className="delete-location-profile-page">
+              <DeleteLocation locationId={ location.id } />
+            </div>
+          ) : null };
+          <div>
+            { user.id === Number(location.user_id) ? (
 
-          <div className="delete-location-profile-page">
-            <DeleteLocation locationId={ location.id } />
+              <UpdateBiography locationId={ location.id } />
+
+            ) : null };
+
           </div>
-
-
-          <UpdateBiography locationId={ location.id } />
-            { location.biography }
-
-
+          <div>  { location.biography }</div>
 
 
         </div>
       </div>
-    ) : null;
+    ) : null
   });
+
 
   return (
     <div className="user-locations-container">
