@@ -16,16 +16,16 @@ const UsersLocations = () => {
 
   const usersLocations = locations.map((location, idx) => {
     return user.id === Number(location.user_id) ? (
-      <div>
-        <h4>Click on a location to view more details</h4>
-        <div key={ idx } className="musician-ol">
+      <div className='users-locationpage-wrapper'>
+
+        <div key={ idx } className="location-inner-wrapper">
           {/* <div id="musician-name">{musician.musician_name}</div> */ }
           <NavLink
             to={ `/locations/${location.id}` }
           >{ `View ${location.location_name}` }</NavLink>
         </div>
         <div className="location-div">
-          <img src={ location.profile_img } alt="_blank" className="card"></img>
+          <img src={ location.profile_img } alt="_blank" className="users-locationpage-images" />
 
           <div className="delete-location-profile-page">
             <DeleteLocation locationId={ location.id } />
