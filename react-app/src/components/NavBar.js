@@ -62,7 +62,7 @@ const NavBar = () => {
           <div className="link-location">
             { !user ? (
               <Button
-                sx={ { backgroundColor: "#fb6c45", color: "white" } }
+                sx={ { fontWeight: 550, backgroundColor: "#fb6c45", color: "white", "&:hover": { backgroundColor: "white", color: '#fb6c45' } } }
                 variant="contained"
                 className="demo-login"
                 onClick={ demoLoginButton }

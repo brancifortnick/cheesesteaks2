@@ -190,6 +190,8 @@ img {
   align-items: flex-start;
   flex-wrap: nowrap;
   flex-direction: row-reverse;
+  height: 750px;
+  padding: 2rem;
 }
 .primary-text-two {
   text-align: center;

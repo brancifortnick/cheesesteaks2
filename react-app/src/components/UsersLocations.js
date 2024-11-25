@@ -5,14 +5,17 @@ import { getAllLocations } from "../store/location";
 import './UsersLocations.css'
 import DeleteLocation from "./DeleteLocation";
 import UpdateBiography from "./UpdateBiography";
+import { useParams } from "react-router-dom";
 const UsersLocations = () => {
   const dispatch = useDispatch();
   const locations = useSelector((state) => Object.values(state.location));
   const user = useSelector((state) => state.session.user);
 
+  const { userId } = useParams();
+
   useEffect(() => {
-    dispatch(getAllLocations());
-  }, [dispatch]);
+    dispatch(getAllLocations(userId));
+  }, [dispatch, userId]);
 
   const usersLocations = locations.map((location, idx) => {
     return user.id === Number(location.user_id) ? (
@@ -46,7 +49,6 @@ const UsersLocations = () => {
       </div>
     ) : null
   });
-
 
   return (
     <div className="user-locations-container">
