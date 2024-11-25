@@ -40,7 +40,7 @@ function LocationDetails() {
         <div className="location-details-image-container">
           <h1 className='location-name'>{ location.location_name }</h1>
           <Box  sx={{display: 'flex',flexDirection: 'row', justifyContent: 'center'}}>
-            <img style={ { borderRadius: '50%', height: '50%', width: '50%' } } src={ location.profile_img } alt="location" className="location-details-image" />
+            <img style={ { borderRadius: '50%' } } src={ location.profile_img } alt="location" className="location-details-image" />
           </Box>
           <div className='location-name'>
 
@@ -54,8 +54,14 @@ function LocationDetails() {
       <div className='upload-image-button'>
         <ImageUpload locationId={ locationId } />
       </div>
+          { currentUser.id === location.user_id ? (
+            <div className='biography-container'>
+
+              <UpdateBiography locationId={ locationId } />
 
 
+            </div>) : null }
+          <div> { location.biography }</div>
         <div className="images-container-wrapper">
           <AllImagesRefactorThree images={ images } locationId={ locationId } />
         </div>

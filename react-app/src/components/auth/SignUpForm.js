@@ -44,7 +44,8 @@ const SignUpForm = () => {
   }
   return (
     <div className="outter-signup-container" style={{ padding: "4rem" }}>
-      <form onSubmit={onSignUp}>
+      <div className='input-fields'>
+        <form className='input-fields' onSubmit={ onSignUp }>
         {/* <div className='form-container-sign-up'> */}
         <Box sx={{ pt: 2, p: 1 }}>
           <TextField
@@ -93,7 +94,8 @@ const SignUpForm = () => {
             alignContent: "center",
             mt: 2,
           }}
-        >
+          >
+
           <Button
             variant="contained"
             type="submit"
@@ -132,7 +134,8 @@ const SignUpForm = () => {
             <Login sx={{ color: "#fb6c45", bgcolor: "#fff1b4" }} />
           </NavLink>
         </Box>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

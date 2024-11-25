@@ -14,3 +14,11 @@ div.form-container-login {
   margin: 0 auto;
   padding: 0;
 }
+form.input-fields {
+  background-color: white;
+  border-radius: 10px;
+
+  font-size: larger;
+  padding: 3rem;
+  justify-content: center;
+}

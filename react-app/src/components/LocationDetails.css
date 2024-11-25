@@ -57,6 +57,16 @@ li {
   align-items: center;
   margin: 1rem;
 }
+.biography-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+div.biography-container {
+  font-size: 20px;
+  padding: 1rem;
+  align-items: center;
+}
 .images-container-wrapper {
   display: flex;
   flex-direction: row;
@@ -75,15 +85,20 @@ li {
 
   background-image: repeating-linear-gradient(90deg, #f0f0f0, #f1eeb7, 100px);
 }
-.location-details-image-container {
+img.location-details-image-container {
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  /* background-image: url(../assets/flowing-melted-cheese-isolated-white-background-processed-cheese-wallpaper_345837-792.avif); */
+  border-radius: 6rem;
+
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  /* border: 1rem solid black; */
+  box-shadow: 0 20px 20px 4px;
 }
 .location-name {
   font-size: 2rem;
   font-weight: 700;
-  color: #70360fb4;
+  color: #000000;
   padding: 1rem;
 }
