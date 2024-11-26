@@ -5,12 +5,55 @@
   justify-content: space-evenly;
   align-items: center;
   font-size: 1rem;
-  color: whitesmoke;
-
+  vertical-align: middle;
+  border: 1px solid #fb6c45;
   right: 0;
   margin: 1rem;
   padding: 1rem;
   border-radius: 1rem;
   background-color: #202020;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.hamburger-toppings {
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  min-height: 100px;
+  border: 1px solid #fb6c4546;
+  top: 2rem;
+
+  z-index: 200;
+  border-radius: 10px;
+}
+
+.profile-button {
+  background-color: none;
+  color: #fb6c45;
+  cursor: pointer;
+  font-size: 18px;
+  border: none;
+  width: 100%;
+}
+.profile-button:hover {
+  background-color: #f1eeb7;
+  box-shadow: linear content-box;
+}
+
+.hamburger-toppings a {
+  color: #fb6c45;
+
+  display: block;
+}
+
+.hamburger-toppings:hover .dropdown-container:hover {
+  background-color: aqua;
+  display: block;
+  cursor: pointer;
 }

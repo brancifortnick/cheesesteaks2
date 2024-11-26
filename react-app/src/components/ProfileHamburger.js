@@ -4,7 +4,7 @@ import { logout } from "../store/session";
 import { NavLink } from "react-router-dom";
 import { useHistory } from 'react-router'
 import UsersLocations from './UsersLocations.js'
-import { Button, Box } from '@mui/material';
+import { Button, Box } from '@mui/material'; ``
 import LogoutButton from "./auth/LogoutButton";
 import './ProfileHamburger.css'
 
@@ -38,12 +38,14 @@ function ProfileHamburger({ user }) {
 
     return (
         <>
-            <button className='profile-button' style={ { border: 'none', backgroundColor: 'white', color: '#fb6c45', fontWeight: 500, fontSize: '18px' } } onClick={ openMenu }>
-                Profile
-            </button>
-            { showMenu && (
-                <div className='dropdown-container'>
-                    <ul className="profile-dropdown">
+            <div className='dropdown-container'>
+                <button className='profile-button' style={ { border: 'none', backgroundColor: 'white', color: '#fb6c45', fontWeight: 500, fontSize: '18px' } } onClick={ openMenu }>
+                    Profile
+                </button>
+                { showMenu && (
+                    <div className='hamburger-toppings'>
+
+
                         <Button className='user_name'>
                             <NavLink to={ `/users/${user.id}/profile` }>
                                 { user.username[0].toUpperCase() +
@@ -54,10 +56,11 @@ function ProfileHamburger({ user }) {
                         </Button>
                         <LogoutButton user={ user } />
 
-                    </ul >
-                </div>
-            )
-            }
+                    </div >
+
+                )
+                }
+            </div>
         </>
     );
 }

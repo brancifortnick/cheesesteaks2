@@ -81,10 +81,10 @@ const NavBar = () => {
           </div>
           <div className="users-profile">
             { user ? (
-              <div className="hamburger-menu">
+              // <div className="hamburger-menu">
                 <ProfileHamburger user={ user } />
 
-              </div>
+              // </div>
             ) : null }
 
 
