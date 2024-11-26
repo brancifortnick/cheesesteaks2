@@ -29,7 +29,7 @@ const Accordion = ({ children, toggleText }) => {
       <div className="accordion-head" onClick={ expandCollapse }>
         { toggleText }
       </div>
-      <img className="caret-icon" alt="caret icon open close" src={ photo } ></img>
+      <img className="caret-icon" alt="caret icon open close" src={ photo } />
       <div className="accordion-body">
         { children }
       </div>

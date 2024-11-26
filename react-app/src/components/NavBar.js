@@ -28,7 +28,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="nav-bar">
+      <div className="nav-bar">
 
         <div className="nav-container">
 
@@ -36,7 +36,7 @@ const NavBar = () => {
           <div className="nav-link">
             { user ? (
               <NavLink to="/" exact={ true }>
-                <HomeIcon color="disabled" sx={ { color: "#fb6c45" } } />
+                <HomeIcon color="disabled" sx={ { color: "#fb6c45", bgcolor: 'white', "& hover": { bgcolor: 'white' } } } />
               </NavLink>
             ) : null }
           </div>
@@ -91,10 +91,8 @@ const NavBar = () => {
 
           </div>
         </div>
-        {/* <div className='footer'>
-        <Footer />
-</div> */}
-      </nav>
+
+      </div>
     </>
   );
 };

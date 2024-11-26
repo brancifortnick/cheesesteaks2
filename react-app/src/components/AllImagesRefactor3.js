@@ -17,7 +17,7 @@ import {
 import DeleteLocationsImages from "./DeleteLocationsImages";
 import AddComments from "./AddComments";
 import Accordion from "./Accordion";
-// import "./AllImagesRefactorThree.css";
+// import "./AllImagesRefactor.css";
 import EditComment from "./EditComment";
 import DeleteComment from "./DeleteComment";
 import ImageList from "@mui/material/ImageList";
@@ -93,7 +93,9 @@ function AllImagesRefactorThree({ images }) {
     }
   };
 
-  return <Box sx={ {} } className="images-grid">{ buildTemplate() }</Box>;
+  return (
+    <Box sx={ {} } className="images-grid">{ buildTemplate() }</Box>
+  );
 }
 
 export default AllImagesRefactorThree;

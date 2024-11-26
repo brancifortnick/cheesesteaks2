@@ -64,7 +64,7 @@ const LoginForm = () => {
   };
   return (
     <form onSubmit={onLogin}>
-      <div>
+      <div className='login-errors'>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
@@ -113,6 +113,7 @@ const LoginForm = () => {
           justifyContent: "center",
           alignContent: "center",
           mt: 2,
+          fontWeight: 500,
         }}
       >
         <Button
@@ -121,7 +122,7 @@ const LoginForm = () => {
           sx={{
             color: "white",
             bgcolor: "#fb6c45",
-            "&:hover": { bgcolor: "black", color: "white" },
+            "&:hover": { bgcolor: "white", color: "#fb6c45" },
           }}
           type="submit"
         >

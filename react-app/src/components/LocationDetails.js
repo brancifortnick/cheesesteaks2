@@ -18,7 +18,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import AllImagesRefactorThree from "./AllImagesRefactor3";
 import Avatar from "@mui/material/Avatar";
-
+import Footer from './Footer'
 
 function LocationDetails() {
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ function LocationDetails() {
         <div className="location-details-image-container">
           <h1 className='location-name'>{ location.location_name }</h1>
           <Box  sx={{display: 'flex',flexDirection: 'row', justifyContent: 'center'}}>
-            <img style={ { borderRadius: '50%' } } src={ location.profile_img } alt="location" className="location-details-image" />
+            <img style={ { borderRadius: '20px' } } src={ location.profile_img } alt="location" className="location-details-image" />
           </Box>
           <div className='location-name'>
 
@@ -50,10 +50,6 @@ function LocationDetails() {
             { location.zipcode }
 
           </div>
-
-      <div className='upload-image-button'>
-        <ImageUpload locationId={ locationId } />
-      </div>
           { currentUser.id === location.user_id ? (
             <div className='biography-container'>
 
@@ -61,12 +57,18 @@ function LocationDetails() {
 
 
             </div>) : null }
-          <div> { location.biography }</div>
-        <div className="images-container-wrapper">
+          <div className="biography-wrapper"> { location.biography }</div>
+          <div className='upload-image-button'>
+            <ImageUpload locationId={ locationId } />
+          </div>
+
+          <div className="images-inner-container">
           <AllImagesRefactorThree images={ images } locationId={ locationId } />
         </div>
         </div>
+
       </div>
+
     </>
 
   );
