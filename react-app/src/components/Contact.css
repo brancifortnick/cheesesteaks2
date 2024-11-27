@@ -1,0 +1,11 @@
+.contact-form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #fb6c45;
+  padding: 0.5rem !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem !important;
+}
