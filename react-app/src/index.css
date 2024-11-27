@@ -1,18 +1,10 @@
-/* html,
-body {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  overflow: clip;
-  contain: content;
-} */
-/* body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
-} */
 
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 /* :root #root {
   background-color: #f9f7ea;
 
@@ -32,12 +24,6 @@ html {
   /* background-color: #e4d155; */
 }
 footer {
-  background-color: white;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: absolute;
 }
 
 img {
@@ -287,6 +273,8 @@ img {
 .footer-wrapper {
   margin: 6rem 0rem;
   display: flex;
+flex-direction: row;
+justify-content: center;
   margin-top: 10rem;
 }
 .footer-logo-container {
@@ -298,7 +286,7 @@ img {
 .footer-icons svg {
   font-size: 1.5rem;
   margin-right: 1.25rem;
-  color: #585858;
+
 }
 /* .footer-section-one {
     border: 2px solid blue;
