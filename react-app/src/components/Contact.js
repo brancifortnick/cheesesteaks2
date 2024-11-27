@@ -5,10 +5,10 @@ const Contact = () => {
   return (
     <div className="contact-page-wrapper">
 
-      <h1 className="primary-heading">Let Us Help You: Email Us Here ▼</h1>
+      <h1 className="primary-heading">Let Us Help You | Email Us Here ▼</h1>
       <div className="contact-form-container">
         <h1 className='show-email'>
-          brancifortnick@gmail.com
+          nicholasbrancifort@coopersharp.com
         </h1>
 
 

@@ -1,26 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {
-  Box,
-  Typography,
-  Card,
-  List,
-  CardContent,
-  CardActions,
-  ButtonGroup,
-  CardMedia,
-  CardHeader,
-  Stack,
-  Button,
-  Divider,
-} from "@mui/material";
+import {  Box,Typography,List,CardContent,Button,Divider} from "@mui/material";
 import DeleteLocationsImages from "./DeleteLocationsImages";
 import AddComments from "./AddComments";
 import Accordion from "./Accordion";
-// import "./AllImagesRefactor.css";
 import EditComment from "./EditComment";
 import DeleteComment from "./DeleteComment";
-import ImageList from "@mui/material/ImageList";
 
 function AllImagesRefactorThree({ images }) {
   const user = useSelector((state) => state.session.user);
@@ -33,14 +18,8 @@ function AllImagesRefactorThree({ images }) {
           <div className="comment-container" key={ comment.id }>
             <Box key={ comment.id } >
               <List sx={ { color: 'gray' } }>
-
-
                 { comment.comment }    </List>
               <span style={ { alignSelf: 'flex-start', color: '#fb6c45', fontWeight: 400, fontSize: 18 } }>   { "Review By -" + " " + " " + `${comment.user.username}` } </span>
-
-
-
-
 
               <Divider />
               <Button>
@@ -51,7 +30,6 @@ function AllImagesRefactorThree({ images }) {
                 <DeleteComment imageId={ image.id } commentId={ comment.id } />
               </Button>
             </Box>
-
           </div>
         </div>
       ));
@@ -92,9 +70,8 @@ function AllImagesRefactorThree({ images }) {
       );
     }
   };
-
   return (
-    <Box sx={ {} } className="images-grid">{ buildTemplate() }</Box>
+    <Box  className="images-grid">{ buildTemplate() }</Box>
   );
 }
 
