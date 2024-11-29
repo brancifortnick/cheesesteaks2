@@ -77,37 +77,29 @@ const LoginForm = () => {
               required
               variant='filled'
               label="Required"
+              placeholder='Email'
               value={ email }
+              defaultValue="Normal"
               onChange={ updateEmail }
+
+
+
             />
           </Box>
-          <Box sx={ { mx: "auto", maxWidth: "28ch", pt: 1, borderRadius: '10px' } }>
-            <FormControl >
-              <InputLabel htmlFor="password">Password</InputLabel>
-              <FilledInput
+          <Box sx={ { mx: "auto", maxWidth: "28ch", pt: 1 } } >
 
-                label="Required"
+            <TextField
+              variant="filled"
+              placeholder='Password'
 
+              id="password"
                 type={ values.showPassword ? "text" : "password" }
                 value={ password }
-                defaultValue="Normal"
-                onChange={ updatePassword }
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={ handleClickShowPassword }
-                      onMouseDown={ handleMouseDownPassword }
 
-
-                    >
-                      { values.showPassword ? <VisibilityOff /> : <Visibility /> }
-                    </IconButton>
-                  </InputAdornment>
-                }
-              />
-            </FormControl>
+              onChange={ updatePassword }
+            />
           </Box>
+
 
           <Box
             sx={ {

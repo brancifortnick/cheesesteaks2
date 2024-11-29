@@ -20,5 +20,29 @@ const theme = createTheme({
   },
   spacing: 8, // Default or modify based on site spacing
 });
+const inputStyle = createTheme({
+  components: {
+    MuiBox: {
+      styleOverrides: {
+        root: {
+          variants: [
+            {
+              props: { variant: 'outlined' },
+              style: {
+                border: '1px solid #fb6c45',
 
+              },
+              '& focus': {
+                border: '1px solid #000',
+              },
+              '& hover': {
+                border: '1px solid #000',
+              },
+            },
+          ],
+        },
+      },
+    },
+  },
+});
 export default theme;
