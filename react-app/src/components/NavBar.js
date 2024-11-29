@@ -59,6 +59,13 @@ const NavBar = () => {
             ) : null }
 
           </div>
+          <div className="nav-link">
+            { !user ? (
+              <NavLink to="/login" exact={ true } activeClassName="active">
+                Login
+              </NavLink>
+            ) : null }
+          </div>
           <div className="link-location">
             { !user ? (
               <Button

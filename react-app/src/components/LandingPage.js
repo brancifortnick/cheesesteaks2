@@ -21,6 +21,7 @@ const LandingPage = () => {
   const videoStyles = {
     backgroundSize: "contain",
     width: "100%",
+
   };
   return (
     <>

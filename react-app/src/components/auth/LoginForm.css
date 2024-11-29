@@ -1,3 +1,36 @@
 .login-errors {
+  font-size: 2rem;
   color: red;
+  background-color: black;
+
+  font-weight: 700;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+
+  height: 100vh;
+  background-image: url(../../assets/PatsMenu2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  z-index: -100;
+}
+
+.inner-login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: white;
+  border: 1px solid #fb6c45;
+  width: 400px;
+  border-radius: 10px;
+  height: 400px;
+  margin-top: 100px;
+  padding: 20px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.212);
 }
