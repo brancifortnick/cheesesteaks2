@@ -82,7 +82,16 @@ const LoginForm = () => {
               defaultValue="Normal"
               onChange={ updateEmail }
 
-
+              sx={ {
+                '& .MuiFilledInput-root': {
+                  '&:before': { borderBottomColor: 'black' },
+                  '&:after': { borderBottomColor: '#fb6c45' },
+                  '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                },
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#fb6c45',
+                },
+              } }
 
             />
           </Box>
@@ -91,12 +100,20 @@ const LoginForm = () => {
             <TextField
               variant="filled"
               placeholder='Password'
-
               id="password"
-                type={ values.showPassword ? "text" : "password" }
-                value={ password }
-
+              type={ values.showPassword ? "text" : "password" }
+              value={ password }
               onChange={ updatePassword }
+              sx={ {
+                '& .MuiFilledInput-root': {
+                  '&:before': { borderBottomColor: 'black' },
+                  '&:after': { borderBottomColor: '#fb6c45' },
+                  '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                },
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#fb6c45',
+                },
+              } }
             />
           </Box>
 

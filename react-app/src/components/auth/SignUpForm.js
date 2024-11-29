@@ -21,18 +21,18 @@ const SignUpForm = () => {
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
-
-
-  //theme for disabling input blue outline color
-
-
-  const inputTheme = createTheme({
-    palette: {
-      action: {
-      }
-    },
-  });
-
+  const updateUsername = (e) => {
+    setUsername(e.target.value);
+  };
+  const updateEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const updatePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const updateRepeatPassword = (e) => {
+    setRepeatPassword(e.target.value);
+  };
 
 
 
@@ -49,18 +49,6 @@ const SignUpForm = () => {
       }
     }
   };
-  const updateUsername = (e) => {
-    setUsername(e.target.value);
-  };
-  const updateEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const updatePassword = (e) => {
-    setPassword(e.target.value);
-  };
-  const updateRepeatPassword = (e) => {
-    setRepeatPassword(e.target.value);
-  };
   if (user) {
     return <Redirect to="/" />;
   }
@@ -71,100 +59,136 @@ const SignUpForm = () => {
           {/* <div className='form-container-sign-up'> */ }
           <Box sx={ { pt: 2, p: 2 } }>
             <TextField
+              variant="filled"
               placeholder="Username"
               type="text"
               name="username"
               onChange={ updateUsername }
               value={ username }
+              sx={ {
+                '& .MuiFilledInput-root': {
+                  '&:before': { borderBottomColor: 'black' },
+                  '&:after': { borderBottomColor: '#fb6c45' },
+                  '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                },
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#fb6c45',
+                },
+              } }
             />
           </Box>
           <Box sx={ { p: 2 } }>
             <TextField
+              variant="filled"
               placeholder="Email"
               type="text"
               name="email"
               onChange={ updateEmail }
               value={ email }
-              sx={ {} }
+              sx={ {
+                '& .MuiFilledInput-root': {
+                  '&:before': { borderBottomColor: 'black' },
+                  '&:after': { borderBottomColor: '#fb6c45' },
+                  '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                },
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#fb6c45',
+                },
+              } }
             />
           </Box>
           <Box sx={ { p: 2 } }>
             <TextField
-              theme={ inputTheme }
-              variant="outlined"
+              variant="filled"
               placeholder="Password"
               type="password"
               name="password"
               onChange={ updatePassword }
-
-
-
-
+              sx={ {
+                '& .MuiFilledInput-root': {
+                  '&:before': { borderBottomColor: 'black' },
+                  '&:after': { borderBottomColor: '#fb6c45' },
+                  '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                },
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#fb6c45',
+                },
+              } }
             />
-
-        </Box>
+          </Box>
           <Box sx={ { p: 2 } }>
-          <TextField
-            type="password"
-            placeholder="Confirm Password"
-            name="repeat_password"
+            <TextField
+              variant="filled"
+              type="password"
+              placeholder="Confirm Password"
+              name="repeat_password"
               onChange={ updateRepeatPassword }
               value={ repeatPassword }
               required={ true }
-          />
-        </Box>
-          {/* </div> */ }
-        <Box
+              sx={ {
+                '& .MuiFilledInput-root': {
+                  '&:before': { borderBottomColor: 'black' },
+                  '&:after': { borderBottomColor: '#fb6c45' },
+                  '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                },
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#fb6c45',
+                },
+              } }
+            />
+          </Box>
+
+          <Box
             sx={ {
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignContent: "center",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignContent: "center",
               mt: 6,
             } }
           >
 
-          <Button
-            variant="contained"
-            type="submit"
+            <Button
+              variant="contained"
+              type="submit"
               sx={ {
-              color: "white",
-              bgcolor: "#fb6c45",
+                color: "white",
+                bgcolor: "#fb6c45",
 
+                mt: 4,
+
+                "&:hover": { bgcolor: "white", color: "#fb6c45" },
+              } }
+            >
+              Sign Up
+            </Button>
+          </Box>
+          <div
+            style={ {
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignContent: "center",
               mt: 4,
-
-              "&:hover": { bgcolor: "white", color: "#fb6c45" },
             } }
           >
-            Sign Up
-          </Button>
-        </Box>
-        <div
-            style={ {
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignContent: "center",
-              mt: 4,
-            } }
-        >
             <Box sx={ { mt: 2 } }>
               Already a user ? Click Below
             </Box>
-        </div>
-        <Box
+          </div>
+          <Box
             sx={ {
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignContent: "center",
-            mt: 2,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignContent: "center",
+              mt: 2,
             } }
-        >
+          >
             <NavLink to="/login" exact={ true }>
               <Login sx={ { color: "#fb6c45", bgcolor: "#white", "&:hover": { bgcolor: "#fb6c45", color: "white" }, } } />
-          </NavLink>
-        </Box>
+            </NavLink>
+          </Box>
         </form>
       </div>
     </div >
