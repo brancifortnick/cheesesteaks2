@@ -74,7 +74,7 @@ const ImageUpload = ({ locationId }) => {
         id="upload-photos-to-location"
         onClick={() => setModal(true)}
         sx={ {
-          fontSize: '18px',
+          fontSize: '16px',
           color: "white",
           bgcolor: "#fb6c45",
           fontFamily: 'sans-serif',

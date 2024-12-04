@@ -42,7 +42,7 @@ const AddComments = ({ locationId, imageId }) => {
             color: "white",
             bgcolor: "#fb6c45",
             "&:hover": {
-              color: "#303133",
+              color: "#fb6c45",
               bgcolor: "white",
 
             },

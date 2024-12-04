@@ -70,9 +70,7 @@ function App() {
           <ProtectedRoute path="/locations/:locationId">
             <LocationDetails />
           </ProtectedRoute>
-          <ProtectedRoute path="/votes ">
-            <AllImagesRefactorTwo />
-          </ProtectedRoute>
+
         </Switch>
 
       </BrowserRouter>
