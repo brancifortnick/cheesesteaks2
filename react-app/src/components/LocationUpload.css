@@ -1,20 +1,30 @@
 .outer_card {
   display: flex;
   flex-direction: column;
-  background-color: white;
-  margin: 4rem;
-  padding: 2rem;
-  border: 1px solid #fb6c45;
-  border-radius: 10px;
+
+  /* border: 1px solid #fb6c45; */
+  background-repeat: no-repeat;
+  background-size: contain;
   /* align-content: flex-start; */
-  justify-content: space-around;
+  justify-content: space-evenly;
   text-align: center;
   align-items: center;
+  height: 100vh;
+  background-color: #faf8eb;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
+.input_container {
+  background-color: white;
+  border-radius: 10px;
 
+  width: 800px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 #location-photo-text:hover {
   background-color: white;
-  color: #fb6c45
+  color: #fb6c45;
 }
 
 #add-location-text {

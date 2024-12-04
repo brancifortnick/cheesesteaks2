@@ -19,7 +19,7 @@ import VotingRefactor from "./components/VotingRefactor";
 import UsersLocations from "./components/UsersLocations";
 import FoodGallery from './components/FoodGallery';
 import Footer from './components/Footer';
-import AllImagesRefactorFour from "./components/AllImagesRefactorFour";
+import AllImagesRefactorTwo from './components/AllImagesRefactorTwo'
 function App() {
 
 
@@ -71,7 +71,7 @@ function App() {
             <LocationDetails />
           </ProtectedRoute>
           <ProtectedRoute path="/votes ">
-            <AllImagesRefactorFour />
+            <AllImagesRefactorTwo />
           </ProtectedRoute>
         </Switch>
 

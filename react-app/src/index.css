@@ -21,7 +21,12 @@ html {
 
   /* background-color: #e4d155; */
 }
-footer {
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 0 !important;
 }
 
 img {

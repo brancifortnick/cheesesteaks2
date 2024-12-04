@@ -70,32 +70,44 @@ function AllImagesRefactorThree({ images }) {
                             src={ image.image }
                             alt="images-image-src"
 
-                        />   </Box>
-                            {
-                    user.id === location.user_id ? (
-                        <DeleteLocationsImages imageId={ image.id } />
-                    ) : null
-                }
-                < CardContent >
-                                <Typography
-                                    className="image-title"
-                                    sx={ { fontWeight: "bold", fontSize: 22 } }
-                                >
-                                    { image.title }
-                                </Typography>
-                                <Accordion
-                                    toggleText="View Comments"
-                                    children={ buildCommentTemplate(image) }
-                                />
-                                <AddComments imageId={ image.id } locationId={ location.id } />
-                            </CardContent >
-                 
-                ) : null,
-            );
-}
+                        />
+                        {
+                            user.id === location.user_id ? (
+                                <DeleteLocationsImages imageId={ image.id } />
+                            ) : null
+                        }
+
+                    </Box>
+
+
+                ) : null;
+            )
+};
     };
 
-return <Box className="images-grid">{ buildTemplate() }</Box>;
+
+< CardContent >
+    <Typography
+        className="image-title"
+        sx={ { fontWeight: "bold", fontSize: 22 } }
+    >
+        { image.title }
+    </Typography>
+    <Accordion
+        toggleText="View Comments"
+        children={ buildCommentTemplate(image) }
+    />
+    <AddComments imageId={ image.id } locationId={ location.id } />
+</CardContent >
+
+
+
+
+
+return
+<Box className="images-grid">
+    { buildTemplate() }
+</Box>;
 
 }
 

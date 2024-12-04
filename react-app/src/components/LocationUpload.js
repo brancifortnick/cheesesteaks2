@@ -44,35 +44,49 @@ const LocationUpload = () => {
   };
   return (
     <div className="outer_card">
-      <h1
-        id="add-location-text"
-        style={ { color: "#fb6c45", marginTop: "2rem", fontSize: "larger" } }
-      >
-        Upload Establishment
-      </h1>
+
       <Form>
+        <h1
+          id="add-location-text"
+          style={ {
+            color: '#fb6c45', fontSize: "24px"
+          } }
+        >
+          Upload Establishment
+        </h1>
         <form className="location-form" onSubmit={ onSubmit }>
           <div className="input_container">
             <Box sx={ { padding: "2px" } }>
               <TextField
+                variant='filled'
                 type="text"
                 name="location_name"
                 placeholder="Business Name"
                 onChange={ (e) => setLocationName(e.target.value) }
                 value={ location_name }
+                sx={ {
+                  '& .MuiFilledInput-root': {
+                    '&:before': { borderBottomColor: 'black' },
+                    '&:after': { borderBottomColor: '#fb6c45' },
+                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
+                } }
               />
             </Box>
             <Box sx={ { p: 2 } }>
 
               <label
-                style={ { color: "#fb6c45" } }
+                style={ { color: "#fb6c45", fontSize: '18px' } }
                 id="location-photo-text"
                 htmlFor="add-location-pic"
               >
                 Add store front image
               </label>
             </Box>
-            <Box>
+            <Box sx={ { p: 2 } }>
               <input
                 type="file"
                 accept="image/*"
@@ -83,62 +97,118 @@ const LocationUpload = () => {
             {/* <label htmlFor="biography" >
           Biography
         </label> */}
-            <Box>
+            <Box sx={ { p: 2 } }>
 
-                <TextField
-                  multiline
-                  fullWidth
-                  name="biography"
-                  type="text"
-                  placeholder="Write a brief description..."
-                  onChange={ (e) => setBiography(e.target.value) }
-                  value={ biography }
-                minRows={ 3 }
-                minCols={ 5 }
-                />
+              <TextField
+                variant='filled'
+                multiline
+                fullWidth
+                name="biography"
+                type="text"
+                placeholder="Write a brief description..."
+                onChange={ (e) => setBiography(e.target.value) }
+                value={ biography }
+                sx={ {
+                  '& .MuiFilledInput-root': {
+                    '&:before': { borderBottomColor: 'black' },
+                    '&:after': { borderBottomColor: '#fb6c45' },
+                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
+                } }
+
+              />
 
             </Box>
-            <Box>
-              <Input
+            <Box sx={ { p: 2 } }>
+              <TextField
+                variant='filled'
                 type='text'
                 name="address"
                 placeholder="Address"
                 onChange={ (e) => setAddress(e.target.value) }
                 value={ address }
+                sx={ {
+                  '& .MuiFilledInput-root': {
+                    '&:before': { borderBottomColor: 'black' },
+                    '&:after': { borderBottomColor: '#fb6c45' },
+                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
+                } }
               />
             </Box>
-            <Box>
-              <Input
+            <Box sx={ { p: 2 } }>
+              <TextField
                 type='text'
                 name="city"
                 placeholder="City"
                 onChange={ (e) => setCity(e.target.value) }
                 value={ city }
+                variant="filled"
+                sx={ {
+                  '& .MuiFilledInput-root': {
+                    '&:before': { borderBottomColor: 'black' },
+                    '&:after': { borderBottomColor: '#fb6c45' },
+                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
+                } }
               />
             </Box>
-            <Box>
-              <Input
+            <Box sx={ { p: 2 } }>
+              <TextField
                 type='text'
                 name="state"
                 placeholder="State"
                 onChange={ (e) => setState(e.target.value) }
                 value={ state }
+                variant="filled"
+                sx={ {
+                  '& .MuiFilledInput-root': {
+                    '&:before': { borderBottomColor: 'black' },
+                    '&:after': { borderBottomColor: '#fb6c45' },
+                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
+                } }
               />
             </Box>
-            <Box>
-              <Input
+            <Box sx={ { p: 2 } }>
+              <TextField
                 type='number'
                 name='zipcode'
                 placeholder="Zipcode"
                 onChange={ (e) => setZip(e.target.value) }
                 value={ zipcode }
+                variant="filled"
+                sx={ {
+                  '& .MuiFilledInput-root': {
+                    '&:before': { borderBottomColor: 'black' },
+                    '&:after': { borderBottomColor: '#fb6c45' },
+                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
+                } }
               />
             </Box>
             <Button
               variant="contained"
               m={ 2 }
               sx={ {
-                color: "white", bgcolor: "#fb6c45"
+                color: "white",
+                bgcolor: "#fb6c45",
+                "&:hover": { bgcolor: "white", color: "#fb6c45" },
               } }
 
               type="submit"

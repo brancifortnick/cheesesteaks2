@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-
+  margin: 0 auto;
   background-color: white;
 
   height: 100vh;
@@ -29,9 +29,21 @@ form.input-fields {
   background-color: white;
   border-radius: 10px;
   text-align: center;
-  font-size: larger;
+  font-size: 20px;
+  color: black;
   padding: 3rem;
   justify-content: center;
   width: 1200px;
   border: 1px solid #fb6c45;
+  opacity: 0.92;
 }
+/* @media screen and (max-width: 1200px) {
+  form.input-fields input {
+    background-color: transparent;
+    color: black;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+} */
