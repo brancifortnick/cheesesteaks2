@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getAllLocations } from "../store/location";
-import './UsersLocations.css'
+import './UsersLocations.css';
 import DeleteLocation from "./DeleteLocation";
-import UpdateBiography from "./UpdateBiography";
+
+
 const UsersLocations = () => {
   const dispatch = useDispatch();
   const locations = useSelector((state) => Object.values(state.location));
@@ -16,21 +17,17 @@ const UsersLocations = () => {
 
   const usersLocations = locations.map((location, idx) => {
     return user.id === Number(location.user_id) ? (
-      <div className='users-locationpage-wrapper'>
-
-        <div key={ idx } className="location-inner-wrapper">
-          {/* <div id="musician-name">{musician.musician_name}</div> */ }
-          <NavLink
-            to={ `/locations/${location.id}` }
-          >{ `View ${location.location_name}` }</NavLink>
+      <div key={ idx } className='location-card'>
+        <div className="location-inner-wrapper">
+          <NavLink to={ `/locations/${location.id}` }>
+            { `View ${location.location_name}` }
+          </NavLink>
         </div>
         <div className="location-div">
-          <img src={ location.profile_img } alt="_blank" className="users-locationpage-images" />
-
+          <img src={ location.profile_img } alt="location" className="users-locationpage-images" />
           <div className="delete-location-profile-page">
             <DeleteLocation locationId={ location.id } />
           </div>
-
         </div>
       </div>
     ) : null;
@@ -42,4 +39,5 @@ const UsersLocations = () => {
     </div>
   );
 };
+
 export default UsersLocations;
