@@ -23,32 +23,39 @@ const DeleteComment = ({ imageId, commentId }) => {
     <div className="delete-container">
       <DeleteIcon
         type="submit"
-        onClick={() => setModal(true)}
+        onClick={ () => setModal(true) }
         color="disabled"
-        sx={{ color: "#fbd345" }}
+        sx={ { color: "#fbd345" } }
       />
 
-      {showModal && (
-        <Modal onClose={() => setModal(false)}>
-          <div>Are you sure you want to delete this comment?</div>
+      { showModal && (
+        <Modal onClose={ () => setModal(false) }>
+          <div style={ {
+            fontSize: '20px',
+
+            paddingTop: '2px',
+          } }>Are you sure you want to delete this comment?</div>
           <Box
-            sx={{
+            sx={ {
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
+              padding: '2rem'
 
 
-            }}
+
+            } }
           >
-            <Button type="submit" onClick={() => setModal(false)}>
-              <CheckIcon sx={{ color: "#ffd345" }} onClick={commentDelete} />
+            <Button type="submit" onClick={ () => setModal(false) }>
+              <CheckIcon sx={ { color: "#ffd345" } } onClick={ commentDelete } />
             </Button>
-            <Button type="submit" onClick={() => setModal(false)}>
-              <CloseIcon sx={{ color: "#fb6c45" }} />
+            <Button type="submit" onClick={ () => setModal(false) }>
+              <CloseIcon sx={ { color: "#fb6c45" } } />
             </Button>
           </Box>
         </Modal>
-      )}
+      )
+      }
     </div>
   );
 };

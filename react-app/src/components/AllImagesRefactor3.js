@@ -18,9 +18,9 @@ function AllImagesRefactorThree({ images }) {
         <div className="delete-comment-div">
           <div className="comment-container" key={ comment.id }>
             <Box key={ comment.id } >
-              <List sx={ { color: 'gray' } }>
+              <List sx={ { color: '#fb6c45' } }>
                 { comment.comment }    </List>
-              <span style={ { alignSelf: 'flex-start', color: '#fb6c45', fontWeight: 400, fontSize: 18 } }>   { "Review By -" + " " + " " + `${comment.user.username}` } </span>
+              <span style={ { alignSelf: 'flex-start', color: 'black', fontWeight: 400, fontSize: 18 } }>   { "Review By -" + " " + " " + `${comment.user.username}` } </span>
 
               <Divider />
               <Button>
@@ -42,6 +42,7 @@ function AllImagesRefactorThree({ images }) {
     if (images) {
       return images.map((image) =>
         image !== null && location.id === image.location_id ? (
+          <div className="image-card-container">
           <Box key={ image.id } className="image-card-container">
             <img src={ image.image }
               alt="images-image-src"
@@ -53,8 +54,9 @@ function AllImagesRefactorThree({ images }) {
               <Typography
                 component='primary-subtitle'
                 className="image-title"
-                sx={ {
-                  fontWeight: "bold", fontSize:
+                  sx={ {
+                    color: '#fbd345',
+                    fontSize:
                     '24px', justifySelf: 'center'
                 } }
               >
@@ -70,6 +72,7 @@ function AllImagesRefactorThree({ images }) {
               </div>
             </CardContent>
           </Box>
+          </div >
         ) : null,
       );
     }

@@ -6,9 +6,6 @@
 }
 
 .location-details-image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .location-details-image {
@@ -20,11 +17,16 @@
 
 .images-inner-container {
   display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
   font-weight: 600;
   justify-content: center;
-  gap: 10px;
+
   margin-top: 20px;
   font-size: 24px;
+  color: #fb6c45;
+  background-color: white;
 }
 
 .images-inner-container .image-wrapper {
@@ -37,10 +39,14 @@
 }
 
 .images-inner-container img {
-  max-width: 450px;
-  height: 400px;
+  background-color: white;
+  min-width: 150px;
+  width: 300px;
+  height: 300px;
   object-fit: cover; /* Maintain aspect ratio */
   border-radius: 10px;
+
+  flex-wrap: wrap;
 }
 .biography-container {
   display: flex;

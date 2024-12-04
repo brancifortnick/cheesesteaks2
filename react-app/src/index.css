@@ -44,8 +44,8 @@ img {
 
 .images-grid {
   display: flex;
-  flex: 1;
-  gap: 30%;
+  flex-wrap: wrap;
+
   margin-top: 2rem;
   padding: 4rem;
   width: 100%;
@@ -453,20 +453,7 @@ img {
   .work-section-bottom {
     margin-top: 1rem !important;
   }
-  .contact-form-container {
-    padding: 0.5rem !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem !important;
-  }
-  .contact-form-container input {
-    font-size: 1rem !important;
-    max-width: 100%;
-    padding: 0.5rem 1rem !important;
-    margin-bottom: 0.8rem !important;
-    text-align: center;
-  }
+
   .footer-wrapper {
     flex-direction: column;
   }
@@ -476,9 +463,6 @@ img {
   }
   .footer-section-columns {
     margin: 1rem 0rem;
-  }
-  .App {
-    max-width: 95vw;
   }
 }
 @media (max-width: 600px) {
