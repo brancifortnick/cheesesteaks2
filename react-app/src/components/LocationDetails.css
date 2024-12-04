@@ -20,10 +20,11 @@
 
 .images-inner-container {
   display: flex;
-  flex-wrap: wrap;
+  font-weight: 600;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+  font-size: 24px;
 }
 
 .images-inner-container .image-wrapper {
@@ -40,4 +41,17 @@
   height: 400px;
   object-fit: cover; /* Maintain aspect ratio */
   border-radius: 10px;
+}
+.biography-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
+}
+.biography-wrapper {
+  font-size: 20px;
+  font-family: helvetica neue;
+  line-height: 1.5;
+  text-align: center;
 }

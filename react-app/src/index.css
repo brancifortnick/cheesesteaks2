@@ -3,6 +3,7 @@
 *:after {
   box-sizing: inherit;
 }
+
 /* :root #root {
   background-color: #f9f7ea;
 
@@ -17,7 +18,6 @@ html {
   scroll-behavior: smooth;
   background-color: #f9f7ea;
   /* overscroll-behavior-y: contain; */
-  font-family: "brandon-grotesque";
 
   /* background-color: #e4d155; */
 }
@@ -25,6 +25,7 @@ nav {
   position: fixed;
   top: 0;
   right: 0;
+  left: 0;
   margin: 0 auto;
   padding: 0 !important;
 }

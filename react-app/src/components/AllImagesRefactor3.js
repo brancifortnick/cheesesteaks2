@@ -6,6 +6,7 @@ import AddComments from "./AddComments";
 import Accordion from "./Accordion";
 import EditComment from "./EditComment";
 import DeleteComment from "./DeleteComment";
+import './AllImagesRefactorThree.css';
 
 function AllImagesRefactorThree({ images }) {
   const user = useSelector((state) => state.session.user);
@@ -54,16 +55,19 @@ function AllImagesRefactorThree({ images }) {
                 className="image-title"
                 sx={ {
                   fontWeight: "bold", fontSize:
-                    '22pt', justifySelf: 'center'
+                    '24px', justifySelf: 'center'
                 } }
               >
                 { image.title }
               </Typography>
+              <div className='accordion-wrapper'>
               <Accordion
                 toggleText="View Comments"
                 children={ buildCommentTemplate(image) }
-              />
-              <AddComments imageId={ image.id } locationId={ location.id } />
+                />
+
+                <AddComments imageId={ image.id } locationId={ location.id } />
+              </div>
             </CardContent>
           </Box>
         ) : null,
