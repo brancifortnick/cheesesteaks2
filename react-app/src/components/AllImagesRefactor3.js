@@ -46,7 +46,7 @@ function AllImagesRefactorThree({ images }) {
           <Box key={ image.id } className="image-card-container">
             <img src={ image.image }
               alt="images-image-src"
-            ></img>
+              />
             { user.id === location.user_id ? (
               <DeleteLocationsImages imageId={ image.id } />
             ) : null }

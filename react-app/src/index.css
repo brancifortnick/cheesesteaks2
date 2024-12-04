@@ -42,19 +42,6 @@ img {
   background-image: unset;
 }
 
-.images-grid {
-  display: flex;
-  flex-wrap: wrap;
-
-  margin-top: 2rem;
-  padding: 4rem;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  word-break: break-word;
-  background-color: light grey;
-}
 .primary-button {
   padding: 0.9rem 1.75rem;
   background-color: white;

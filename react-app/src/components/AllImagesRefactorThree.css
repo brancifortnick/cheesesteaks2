@@ -5,5 +5,30 @@
 .image-card-container {
   max-width: 400px;
 
-  height: 100vh;
+  height: auto;
+}
+.images-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  word-break: break-word;
+  background-color: light grey;
+}
+.css-0 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

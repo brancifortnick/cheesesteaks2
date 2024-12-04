@@ -33,14 +33,13 @@ const DeleteComment = ({ imageId, commentId }) => {
           <div style={ {
             fontSize: '20px',
 
-            paddingTop: '2px',
+
           } }>Are you sure you want to delete this comment?</div>
           <Box
             sx={ {
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
-              padding: '2rem'
 
 
 
