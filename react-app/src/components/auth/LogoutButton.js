@@ -14,7 +14,7 @@ const LogoutButton = () => {
       sx={{
         color: "white",
         bgcolor: "#fb6c45",
-        "&:hover": { color: "black", bgcolor: "white" },
+        "&:hover": { color: "#fb6c45", bgcolor: "white" },
       }}
       type="submit"
       onClick={onLogout}
