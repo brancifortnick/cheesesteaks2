@@ -18,7 +18,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 1rem;
   padding: 1rem;
-  /*upadte commit*/
 }
 
 .accordion-head {
@@ -29,13 +28,9 @@
   cursor: pointer;
   padding: 0.5rem;
   border-bottom: 1px solid #ccc;
-  /* border-radius: 10px; */
-  /*upadte commit*/
 }
 
 .caret-icon {
-  height: 1rem;
-  /* background-color: #ccc; */
   transition: transform 0.3s ease;
 }
 
@@ -46,8 +41,4 @@
 .accordion-body {
   padding: 1rem;
   font-weight: 550;
-}
-
-.comment-actions {
-  margin-top: 1rem;
 }

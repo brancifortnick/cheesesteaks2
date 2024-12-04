@@ -1,107 +1,43 @@
-.locations-container-wrapper {
-  /* border-radius: 10px solid #FB6C45; */
-  /* border: 4rem solid #f0f0f0; */
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
-  /* background-color: #2f2b1d; */
-  /* background-color: #fff1b4; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-  /* Center items horizontally */
-
-  /* 20% padding from the left and right sides */
-
-  /* Ensure padding is included in the width */
-}
-
-.location-details-head {
-  display: flex;
-}
-.location-header {
-  width: 50rem;
-  /* Set width of the main image card */
-  /* height: 40rem; */
-  /* Set height of the main image card */
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-}
-
-.location-image {
-  /* height: 100%;
-  position: absolute;
-  top: 0;
-  background: url(../assets/flowing-melted-cheese-isolated-white-background-processed-cheese-wallpaper_345837-792.avif); */
-  /* Set width of the main image card */
-  /* Set height of the main image card */
-}
-li {
-  list-style: none;
-}
-.location-name-img {
-}
-
-.location-image-media {
-  width: 100%;
-
-  /* Ensure the image covers the container */
-}
-.location-bio {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  margin: 1rem;
-}
-.biography-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-div.biography-container {
-  padding: 1rem;
-  align-items: center;
-}
-.biography-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  font-size: 24px;
-  font-weight: 500;
-}
-.images-container-wrapper {
-  display: flex;
-
-  text-align: center;
-  font-size: 20px;
-}
 .location-details-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.location-details-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location-details-image {
   width: 100%;
-  height: auto;
-
-  background-image: repeating-linear-gradient(90deg, #f0f0f0, #f1eeb7, 100px);
+  max-width: 600px;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
-img.location-details-image-container {
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  border-radius: 6rem;
 
-  backdrop-filter: blur(10px);
-  box-sizing: border-box;
-  /* border: 1rem solid black; */
-  box-shadow: 0 20px 20px 4px;
+.images-inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 }
-.location-name {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #000000;
-  padding: 1rem;
+
+.images-inner-container .image-wrapper {
+  width: calc(33.33% - 10px); /* Adjust the size as needed */
+  max-width: 150px;
+  height: 150px; /* Set a fixed height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images-inner-container img {
+  max-width: 450px;
+  height: 400px;
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 10px;
 }
