@@ -25,9 +25,7 @@ const UsersLocations = () => {
         </div>
         <div className="location-div">
           <img src={ location.profile_img } alt="location" className="users-locationpage-images" />
-          <div className="delete-location-profile-page">
-            <DeleteLocation locationId={ location.id } />
-          </div>
+
         </div>
       </div>
     ) : null;

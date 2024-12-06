@@ -57,6 +57,7 @@ const AddComments = ({ locationId, imageId }) => {
           <form className="comment-container" onSubmit={onSubmit}>
             <Box>
               <TextField
+                variant='outlined'
                 className="comment-text-field"
                 multiline
                 type="text"
@@ -65,9 +66,17 @@ const AddComments = ({ locationId, imageId }) => {
                 value={comment}
                 minRows={3}
                 sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: 'black' },
+                    '&:hover fieldset': { borderColor: '#fb6c45' },
+                    '&.Mui-focused fieldset': { borderColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
                   display: "flex",
                   flexDirection: "column",
-                  width: 400,
+                  width: 300,
                   padding: 0,
                   fontWeight: "800",
                   fontStyle: "italic",
@@ -76,6 +85,7 @@ const AddComments = ({ locationId, imageId }) => {
                 }}
                 fullWidth
               />
+
               {/* <TextareaAutosize
               className="comment-input"
               type="text"

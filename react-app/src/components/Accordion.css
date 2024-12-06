@@ -3,14 +3,13 @@
   visibility: hidden;
   height: 0;
   overflow: hidden;
-  transition: height 0.3s ease;
+
   flex-wrap: wrap;
 }
 
 .accordion-wrapper[cs-state="open"] .accordion-body {
   visibility: visible;
-  height: auto;
-  transition: height 0.3s ease;
+
   flex-wrap: wrap;
   background: white;
   border: 1px solid #ccc;

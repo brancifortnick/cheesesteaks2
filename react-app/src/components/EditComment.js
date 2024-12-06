@@ -36,6 +36,7 @@ const EditComment = ({ commentObj, imageId }) => {
         <Modal onClose={() => setModal(false)}>
           <form className="form-element-edit-comment" onSubmit={onSubmit}>
             <TextField
+variant='outlined'
               className="comment-input"
               type="text"
               placeholder={commentObj.comment}
@@ -48,6 +49,14 @@ const EditComment = ({ commentObj, imageId }) => {
                 fontWeight: "500",
                 fontStyle: "italic",
                 maxWidth: "600px",
+                      '& .MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: 'black' },
+                    '&:hover fieldset': { borderColor: '#fb6c45' },
+                    '&.Mui-focused fieldset': { borderColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
               }}
               fullWidth
             />

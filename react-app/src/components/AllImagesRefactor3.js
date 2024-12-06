@@ -12,6 +12,10 @@ function AllImagesRefactorThree({ images }) {
   const user = useSelector((state) => state.session.user);
   const location = useSelector((state) => state.location);
 
+
+  // const myScrollBarElement = document.querySelector('.comments-scrollable');
+
+
   const buildCommentTemplate = (image) => {
     if (image.comments && Array.isArray(image.comments)) {
       return image.comments.map((comment) => (
@@ -24,11 +28,15 @@ function AllImagesRefactorThree({ images }) {
 
               <Divider />
               <Button>
-                <EditComment imageId={ image.id } commentObj={ comment } />
-              </Button>
+          {user.id ===comment.user_id ? (
 
+                <EditComment imageId={ image.id } commentObj={ comment } />
+          ): null}
+              </Button>
               <Button>
+          {user.id ===comment.user_id ? (
                 <DeleteComment imageId={ image.id } commentId={ comment.id } />
+    ): null}
               </Button>
             </Box>
           </div>
@@ -38,6 +46,8 @@ function AllImagesRefactorThree({ images }) {
       console.log("no comments currently");
     }
   };
+//*replaced the accordion component with a div calling the function rather then the accordion component toggling (using children as a prop from acoordion and toggletxt)the sizing of the flex boxes which are contritbuting to image styling
+
   const buildTemplate = () => {
     if (images) {
       return images.map((image) =>
@@ -47,9 +57,7 @@ function AllImagesRefactorThree({ images }) {
             <img src={ image.image }
               alt="images-image-src"
               />
-            { user.id === location.user_id ? (
-              <DeleteLocationsImages imageId={ image.id } />
-            ) : null }
+
             <CardContent>
               <Typography
                 component='primary-subtitle'
@@ -63,11 +71,14 @@ function AllImagesRefactorThree({ images }) {
                 { image.title }
               </Typography>
               <div className='accordion-wrapper'>
-              <Accordion
-                toggleText="View Comments"
-                children={ buildCommentTemplate(image) }
-                />
+                  {/* <Accordion
+                    toggleText="View Comments"
+                    children={  }
+                /> */}
 
+
+
+                  <div className="comments-scrollable"> { buildCommentTemplate(image) }</div>
                 <AddComments imageId={ image.id } locationId={ location.id } />
               </div>
             </CardContent>

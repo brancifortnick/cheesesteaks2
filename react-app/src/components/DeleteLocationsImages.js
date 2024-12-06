@@ -47,6 +47,8 @@ const DeleteLocationsImages = ({ imageId }) => {
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
+padding: '2px',
+fontSize: '20px'
             }}
           >
             Are you sure you want to delete this image?

@@ -24,11 +24,25 @@
   flex-wrap: wrap;
   flex-direction: row;
 
-  align-items: center;
   gap: 1rem;
   margin: 1rem;
   padding: 1rem;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.comments-scrollable {
+  max-height: 150px; /* Set a fixed height for the scrollable section */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+}
+
+
+.comments-scrollable{
+background: #fb6c45;
+
+
 }

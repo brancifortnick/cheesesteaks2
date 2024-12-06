@@ -7,8 +7,8 @@ import { getPhotos } from '../store/image';
 import UpdateBiography from './UpdateBiography';
 import ImageUpload from './ImageUpload';
 import AllImagesRefactorThree from './AllImagesRefactor3';
+import DeleteLocation from './DeleteLocation'
 import './LocationDetails.css'; // Import the CSS file
-
 function LocationDetails() {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
@@ -30,6 +30,12 @@ function LocationDetails() {
           <Box sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'center' } }>
             <img style={ { borderRadius: '20px' } } src={ location.profile_img } alt="location" className="location-details-image" />
           </Box>
+
+{currentUser.id===location.user_id ? (
+
+<DeleteLocation locationId={locationId}/>
+): null}
+
           <div className='location-name'>
             { location.address + ',' + " " }
             { location.city + ',' + " " }

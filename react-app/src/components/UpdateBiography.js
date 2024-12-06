@@ -39,6 +39,8 @@ const UpdateBiography = ({ locationBio, locationId }) => {
           <form onSubmit={onSubmit}>
             <Box>
               <TextField
+
+variant='outlined'
                 multiline
                 minRows={3}
                 sx={{
@@ -46,6 +48,14 @@ const UpdateBiography = ({ locationBio, locationId }) => {
                   fontWeight: "800",
                   fontStyle: "italic",
                   maxWidth: "600px",
+ '& .MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: 'black' },
+                    '&:hover fieldset': { borderColor: '#fb6c45' },
+                    '&.Mui-focused fieldset': { borderColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
                 }}
                 fullWidth
                 type="text"
