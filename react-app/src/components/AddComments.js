@@ -85,7 +85,7 @@ const AddComments = ({ locationId, imageId }) => {
                 }}
                 fullWidth
               />
-
+//!read commit message
               {/* <TextareaAutosize
               className="comment-input"
               type="text"
