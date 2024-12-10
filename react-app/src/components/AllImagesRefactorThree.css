@@ -15,7 +15,7 @@
 
   width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: auto;
   word-break: break-word;
   background-color: light grey;
@@ -24,8 +24,6 @@
   min-width: 400px;
   flex-wrap: wrap;
   flex-direction: row;
-
-  gap: 1rem;
   margin: 1rem;
   padding: 1rem;
   background-color: white;

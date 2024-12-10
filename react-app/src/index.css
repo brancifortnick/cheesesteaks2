@@ -3,7 +3,9 @@
 *:after {
   box-sizing: inherit;
 }
-
+body {
+  overflow-x: hidden !important;
+}
 /* :root #root {
   background-color: #f9f7ea;
 

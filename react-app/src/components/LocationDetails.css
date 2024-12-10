@@ -49,7 +49,7 @@
   height: 300px;
   object-fit: cover; /* Maintain aspect ratio */
   border-radius: 10px;
-
+  margin-left: 18px;
   flex-wrap: wrap;
 }
 .biography-container {

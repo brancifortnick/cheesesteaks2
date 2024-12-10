@@ -47,7 +47,7 @@ const DeleteLocationsImages = ({ imageId }) => {
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
-padding: '2px',
+
 fontSize: '20px'
             }}
           >
