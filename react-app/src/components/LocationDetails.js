@@ -8,6 +8,7 @@ import UpdateBiography from './UpdateBiography';
 import ImageUpload from './ImageUpload';
 import AllImagesRefactorThree from './AllImagesRefactor3';
 import DeleteLocation from './DeleteLocation'
+
 import './LocationDetails.css'; // Import the CSS file
 function LocationDetails() {
   const dispatch = useDispatch();
@@ -22,6 +23,8 @@ function LocationDetails() {
     dispatch(getPhotos(locationId));
   }, [dispatch, locationId]);
 
+
+  console.log(images, "images console.log coming from locationsDetails+++++++++++++++++++++++++++++++++++++++++++")
   return (
     <>
       <div className="location-details-container">
@@ -31,10 +34,10 @@ function LocationDetails() {
             <img style={ { borderRadius: '20px' } } src={ location.profile_img } alt="location" className="location-details-image" />
           </Box>
           <div className='delete-location-button'>
-{currentUser.id===location.user_id ? (
+            { currentUser.id === location.user_id ? (
 
-<DeleteLocation locationId={locationId}/>
-): null}
+              <DeleteLocation locationId={ locationId } />
+            ) : null }
           </div>
           <div className='location-name'>
             { location.address + ',' + " " }
@@ -54,6 +57,8 @@ function LocationDetails() {
           <div className="images-inner-container">
             <AllImagesRefactorThree images={ images } locationId={ locationId } />
           </div>
+          {/* { currentUser.id === } */ }
+
         </div>
       </div>
     </>

@@ -3,17 +3,7 @@ import React, { useState } from "react";
 import "./Accordion.css";
 import photo from "../assets/caret.svg";
 import { useSelector } from "react-redux";
-import {
-  ListItemText,
-  ListItem,
-  Typography,
-  Avatar,
-  ListItemAvatar,
-  List,
-  Box,
-} from "@mui/material";
-// import EditComment from './EditComment';
-// import DeleteComment from './DeleteComment';
+
 
 import AddComments from "./AddComments";
 const Accordion = ({ children, toggleText }) => {
@@ -29,14 +19,10 @@ const Accordion = ({ children, toggleText }) => {
       <div className="accordion-head" onClick={ expandCollapse }>
         { toggleText }
       </div>
-
       <div className="accordion-body">
         { children }
       </div>
     </div>
-
-
-
   )
 };
 

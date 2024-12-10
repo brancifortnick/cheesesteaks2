@@ -63,9 +63,11 @@ function AllImagesRefactorThree({ images }) {
                 component='primary-subtitle'
                 className="image-title"
                   sx={ {
-                    color: '#fbd345',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    color: 'black',
                     fontSize:
-                    '24px', justifySelf: 'center'
+                      '24px', justifyContent: 'center'
                 } }
               >
                 { image.title }
