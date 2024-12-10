@@ -30,12 +30,12 @@ function LocationDetails() {
           <Box sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'center' } }>
             <img style={ { borderRadius: '20px' } } src={ location.profile_img } alt="location" className="location-details-image" />
           </Box>
-
+          <div className='delete-location-button'>
 {currentUser.id===location.user_id ? (
 
 <DeleteLocation locationId={locationId}/>
 ): null}
-
+          </div>
           <div className='location-name'>
             { location.address + ',' + " " }
             { location.city + ',' + " " }

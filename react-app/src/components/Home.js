@@ -22,11 +22,9 @@ const Home = () => {
 
         </Box >
 
-        <Box sx={ { fontSize: "24px" } } my={ 4 }>
+        <Box sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'center', fontSize: "24px" } } my={ 4 }>
           <Typography variant="h4" component="h5" gutterBottom>
-            Most people don't enjoy waiting for their meals. We understand.
-            That's why we've made it easy to see which restaurants are currently
-            the busiest. Avoid waiting for your meal and get back to enjoying your day with Steak Out.
+            Our Top Three Favorite Spots
           </Typography>
         </Box>
         <Box display="flex" justifyContent="" flexWrap="nowrap">
@@ -39,14 +37,13 @@ const Home = () => {
           <Box p={ 2 } bgcolor="white"  m={ 1 } width="30%">
             <Typography variant="h6">Daellsandro's Steaks</Typography>
             <Typography variant="body1">
-              Thinly chopped and extra cheesey - a must try for any cheesesteak lover
+              A slight drive outside of Philadelphia- a must try for any cheesesteak enthusiast
             </Typography>
           </Box>
           <Box p={ 2 } bgcolor="white" m={ 1 } width="30%">
-            <Typography variant="h6">Geno's</Typography>
+            <Typography variant="h6">Lillo's</Typography>
             <Typography variant="body1">
-              Rival's with Pat's King of Steaks - known for its bright lights
-              NOT its steaks LMAO
+              A hidden gem located in southern New Jersey with outstanding pizza and steaks
             </Typography>
           </Box>
         </Box>

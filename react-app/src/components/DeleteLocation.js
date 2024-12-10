@@ -31,12 +31,14 @@ const DeleteLocation = ({ locationId }) => {
       </Button>
       {showModal && (
         <Modal onClose={() => setModal(false)}>
-          <div>Are you sure you want to delete this establishment?</div>
+          <div style={ { fontSize: '20px', padding: 2 } }>Are you sure you want to delete this establishment?</div>
           <Box
             sx={{
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
+
+
             }}
           >
             <Button type="submit" onClick={() => setModal(false)}>

@@ -24,7 +24,7 @@ function AllImagesRefactorThree({ images }) {
             <Box key={ comment.id } >
               <List sx={ { color: '#fb6c45' } }>
                 { comment.comment }    </List>
-              <span style={ { alignSelf: 'flex-start', color: 'black', fontWeight: 400, fontSize: 18 } }>   { "Review By -" + " " + " " + `${comment.user.username}` } </span>
+              <span style={ { color: 'black', fontWeight: 400, fontSize: 18 } }>   { "Review By -" + " " + " " + `${comment.user.username}` } </span>
 
               <Divider />
               <Button>

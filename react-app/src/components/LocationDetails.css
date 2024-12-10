@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  /* max-width: 400px; */
 }
 
 .location-details-image-container {
@@ -14,7 +15,10 @@
   border-radius: 20px;
   margin-bottom: 20px;
 }
-
+.delete-container {
+  display: flex;
+  justify-content: center;
+}
 .images-inner-container {
   display: flex;
   flex-direction: row;
@@ -22,7 +26,7 @@
   flex-wrap: wrap;
   font-weight: 600;
   justify-content: center;
-
+  /* max-width: 400px; */
   margin-top: 20px;
   font-size: 24px;
   color: #fb6c45;
@@ -30,9 +34,9 @@
 }
 
 .images-inner-container .image-wrapper {
-  width: calc(33.33% - 10px); /* Adjust the size as needed */
+  width: calc(33.33% - 20px); /* Adjust the size as needed */
   max-width: 150px;
-  height: 150px; /* Set a fixed height */
+  height: 300px; /* Set a fixed height */
   display: flex;
   justify-content: center;
   align-items: center;

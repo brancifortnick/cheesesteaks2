@@ -31,24 +31,24 @@ const UpdateBiography = ({ locationBio, locationId }) => {
   }, [dispatch, locationId]);
   return (
     <>
-      <Button id="biography-edit" onClick={() => setModal(true)}>
-        <EditIcon sx={{ color: "#fb6c45" }} />
+      <Button id="biography-edit" onClick={ () => setModal(true) }>
+        <EditIcon sx={ { color: "#fb6c45" } } />
       </Button>
-      {showModal && (
-        <Modal onClose={() => setModal(false)}>
-          <form onSubmit={onSubmit}>
+      { showModal && (
+        <Modal onClose={ () => setModal(false) }>
+          <form onSubmit={ onSubmit }>
             <Box>
               <TextField
 
-variant='outlined'
+                variant='outlined'
                 multiline
-                minRows={3}
-                sx={{
+                minRows={ 3 }
+                sx={ {
                   width: 400,
                   fontWeight: "800",
                   fontStyle: "italic",
                   maxWidth: "600px",
- '& .MuiOutlinedInput-root': {
+                  '& .MuiOutlinedInput-root': {
                     '& fieldset': { borderColor: 'black' },
                     '&:hover fieldset': { borderColor: '#fb6c45' },
                     '&.Mui-focused fieldset': { borderColor: '#fb6c45' },
@@ -56,18 +56,18 @@ variant='outlined'
                   '& .MuiInputLabel-root.Mui-focused': {
                     color: '#fb6c45',
                   },
-                }}
+                } }
                 fullWidth
                 type="text"
                 name="biography"
-                placeholder={locationBio}
-                onChange={(e) => setBiography(e.target.value)}
-                value={biography}
+                placeholder='Edit store bio...'
+                onChange={ (e) => setBiography(e.target.value) }
+                value={ biography }
               />
             </Box>
-            <Box>
+            <Box sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'center' } }>
               <Button
-                sx={{ color: "#fb6c45" }}
+                sx={ { color: "#fb6c45" } }
                 type="submit"
                 id="update-biography-submit"
               >
@@ -76,14 +76,14 @@ variant='outlined'
               <Button
                 type="submit"
                 id="cancel-bio-update"
-                onClick={cancelModal}
+                onClick={ cancelModal }
               >
-                <CloseIcon sx={{ color: "#ffd345" }} />
+                <CloseIcon sx={ { color: "#ffd345" } } />
               </Button>
             </Box>
           </form>
         </Modal>
-      )}
+      ) }
     </>
   );
 };

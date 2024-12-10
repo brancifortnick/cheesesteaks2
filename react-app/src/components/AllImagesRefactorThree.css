@@ -3,8 +3,9 @@
   font-family: helvetica neue;
 }
 .image-card-container {
-  max-width: 400px;
-
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
   height: auto;
 }
 .images-grid {
@@ -20,7 +21,7 @@
   background-color: light grey;
 }
 .css-0 {
-  display: flex;
+  min-width: 400px;
   flex-wrap: wrap;
   flex-direction: row;
 
@@ -29,20 +30,16 @@
   padding: 1rem;
   background-color: white;
   border-radius: 10px;
-
 }
 .comments-scrollable {
-  max-height: 150px; /* Set a fixed height for the scrollable section */
+  max-height: 300px; /* Set a fixed height for the scrollable section */
   overflow-y: auto; /* Enable vertical scrolling */
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-
+  min-height: 300px;
 }
 
-
-.comments-scrollable{
-background: #fb6c45;
-
-
+.comments-scrollable {
+  background: #fb6c45;
 }

@@ -11,8 +11,6 @@
   align-items: center;
   height: 100vh;
   background-color: #faf8eb;
-
-  border-bottom: 1px solid black;
 }
 .input_container {
   background-color: white;
