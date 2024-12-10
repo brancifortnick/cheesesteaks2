@@ -57,21 +57,23 @@ function AllImagesRefactorThree({ images }) {
             <img src={ image.image }
               alt="images-image-src"
               />
+              <div className='delete-locations-images'>
+                { user.id === image.user_id ? (
+                  <DeleteLocationsImages imageId={ image.id
+                  } />
+                ) : null }
+              </div>
 
             <CardContent>
+
               <Typography
                 component='primary-subtitle'
                 className="image-title"
-                  sx={ {
-                    display: 'flex',
-                    flexDirection: 'row',
-                    color: 'black',
-                    fontSize:
-                      '24px', justifyContent: 'center'
-                } }
+
               >
                 { image.title }
               </Typography>
+
               <div className='accordion-wrapper'>
                   {/* <Accordion
                     toggleText="View Comments"
@@ -91,7 +93,10 @@ function AllImagesRefactorThree({ images }) {
     }
   };
   return (
-    <Box  className="images-grid">{ buildTemplate() }</Box>
+    <div>
+
+      <Box className="images-grid">{ buildTemplate() }</Box>
+    </div>
   );
 }
 
