@@ -1,9 +1,0 @@
-# Query: react-icons
-# ContextLines: 1
-
-1 result - 1 file
-
-react-app/src/components/About.js:
-  1  import React from "react";
-
-  3  import videoAlias from '../assets/steak_video.mp4'

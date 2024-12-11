@@ -1,4 +1,4 @@
-FROM node:22 AS build-stage
+FROM node:22.12 AS build-stage
 WORKDIR /react-app
 COPY react-app/. .
 # You have to set this because it should be set during build time.
@@ -18,6 +18,8 @@ COPY --from=build-stage /react-app/build/* app/static/
 # Install Python Dependencies
 RUN pip install -r requirements.txt
 RUN pip install psycopg2
-
+FROM ubuntu:22.04
+RUN ["/bin/bash", "-c", "apt update && apt install curl -y && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash && source ~/.nvm/nvm.sh && nvm install --lts && npm install -g npm"]
 # Run flask environment
 CMD gunicorn app:app
+
