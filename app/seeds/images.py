@@ -7,7 +7,7 @@ def seed_images(locations):
         location_id=locations[0].id,
     )
     image2 = Image(
-        image='https://mycheesesteaks.s3.us-east-1.amazonaws.com/large-barclay-img.jpg',
+        image='https://mycheesesteaks.s3.us-east-1.amazonaws.com/00ddbac09f5b40d39e4fe08b03bc83fa.jpg',
         title='Barclay Prime Steakhouse Steak',
         user_id=2,
         location_id=locations[1].id

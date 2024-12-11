@@ -43,5 +43,5 @@
     ]
   },
 
-  "proxy": "http://localhost:5000"
+  "proxy": "https://steakout-db59827f2430.herokuapp.com/"
 }

@@ -1,9 +1,7 @@
 import React from "react";
 import stockImage from "../assets/stockImage.png";
-import { BsTwitter } from "react-icons/bs";
-import { SiLinkedin } from "react-icons/si";
-import { BsYoutube } from "react-icons/bs";
-import { FaFacebookF } from "react-icons/fa";
+
+
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import photoBomb from '../assets/icons8-portfolio-96.png'

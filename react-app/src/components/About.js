@@ -1,5 +1,5 @@
 import React from "react";
-import { BsFillPlayCircleFill } from "react-icons/bs";
+
 import videoAlias from '../assets/steak_video.mp4'
 const About = () => {
   return (

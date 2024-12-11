@@ -1,4 +1,4 @@
-FROM node:12 AS build-stage
+FROM node:22 AS build-stage
 WORKDIR /react-app
 COPY react-app/. .
 # You have to set this because it should be set during build time.
