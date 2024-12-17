@@ -17,7 +17,7 @@ const Footer = () => {
           <a href='https://linkedin.com/in/brancifortnick/'>
 
 
-            <SiLinkedin size={ 65 } color='#fb6c45' />
+            {/* <SiLinkedin size={ 65 } color='#fb6c45' /> */ }
             </a>
 
 
