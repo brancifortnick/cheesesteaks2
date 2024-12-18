@@ -12,7 +12,6 @@ import PseudoImageName from "../assets/about-background-image.png";
 import About from "./About";
 import Footer from "./Footer";
 import Contact from './Contact';
-import { TbBackground } from "react-icons/tb";
 import AboutTwo from './AboutTwo'
 import photoQuote from '../assets/happy-quote.jpg'
 import theme from "./Theme";

@@ -1,0 +1,55 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=cheesewhiz
+      - POSTGRES_USER=niko
+    ports:
+      - 5432:5432
+
+  backend:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile-flask
+    entrypoint: ["sh", "flask-entrypoint.sh"] # new
+    ports:
+      - 5000:5000
+    environment:
+      - SECRET_KEY=h11WB0Umi6mZHnFSmS3+Hu/p596OevZo/fu4Qu7srzM=
+      - FLASK_APP=app
+      - FLASK_ENV=development
+      - DATABASE_URL=postgresql://niko:password@db:5432/cheesewhiz
+      - S3_BUCKET=mycheesesteaks
+      - S3_KEY=AKIA4QD6RFSFJTPZNDUL
+      - S3_SECRET=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
+      - SQLALCHEMY_ECHO=True
+    links:
+      - db
+
+  react:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile-react
+    ports:
+     - 3000:3000
+    environment:
+      - REACT_APP_BASE_URL=http://backend:5000
+    links:
+      - backend
+
+
+
+# initial db cheese
+# FLASK_ENV=development
+# SECRET_KEY=h11WB0Umi6mZHnFSmS3+Hu/p596OevZo/fu4Qu7srzM=
+# DATABASE_URL=postgresql://niko:password@localhost:5432/cheesewhiz
+# S3_BUCKET=mycheesesteaks
+# S3_KEY=AKIA4QD6RFSFJTPZNDUL
+# S3_SECRET=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
+
+
+# REACT_APP_BASE_URL=https://steakout-db59827f2430.herokuapp.com/
