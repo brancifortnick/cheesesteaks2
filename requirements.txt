@@ -1,6 +1,8 @@
+
+
+-i https://pypi.org/simple
+
 alembic==1.6.5
-boto3==1.35.83
-botocore==1.35.83
 certifi==2023.7.22
 click==7.1.2
 distlib==0.3.7
@@ -15,6 +17,8 @@ greenlet==1.1.0
 gunicorn==20.1.0
 itsdangerous==2.0.1
 Jinja2==3.0.1
+boto3==1.35.83
+botocore==1.35.83
 jmespath==1.0.1
 Mako==1.1.4
 MarkupSafe==2.0.1
@@ -45,4 +49,6 @@ zope.event==5.0
 zope.hookable==6.0
 zope.interface==6.4.post2
 zope.lifecycleevent==5.0
+
 zope.proxy==5.2
+

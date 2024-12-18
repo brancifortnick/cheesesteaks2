@@ -25,9 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-   "format": "prettier-eslint \"src/**/*.js\""
+    "format": "prettier-eslint \"src/**/*.js\""
   },
-
   "browserslist": {
     "production": [
       ">0.3%",
@@ -40,5 +39,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+ 
 }
+}
+

@@ -1,4 +1,5 @@
 import React from "react";
+
 import videoAlias from '../assets/steak_video.mp4'
 const About = () => {
   return (
