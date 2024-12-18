@@ -1,0 +1,27 @@
+# Use the latest LTS version of Node.js
+FROM node:18-alpine
+ 
+# Set the working directory inside the container
+WORKDIR /app
+ 
+# Copy package.json and package-lock.json
+COPY ../react-app/package*.json ./
+ 
+
+ 
+# Copy the rest of your application files
+COPY ../react-app/ .
+
+# RUN npx browserslist@latest --update-db
+# RUN export NODE_OPTIONS=--openssl-legacy-provider
+ 
+# Install dependencies
+# RUN npm update
+RUN npm install
+# RUN npm audit fix --force
+
+# Expose the port your app runs on
+EXPOSE 3000
+ 
+# Define the command to run your app
+CMD ["npm", "start"]
