@@ -9,16 +9,20 @@
 ### More to come in the README
 #### Adding Schemas | CRUD | Brief overlook & Other details
 
-# Languages and Libraries:
-### Python
-### Javascript
-### CSS
-### MUI
-### React
-### Redux
-### AWS (s3 bucket)
-### Flask / Alembic / SQLAlchemy
-### PostgreSQL
+# Languages/Libraries used:
+ * Python
+ * Javascript
+ * CSS
+ * MUI
+ * React
+ * Redux
+ * AWS (s3 bucket)
+ * Flask / Alembic / SQLAlchemy
+ * PostgreSQL
+
+ **Nicholas Brancifort**
+  * https://github.com/brancifortnick
+  * brancifortnick.github.io/
 
 
 
