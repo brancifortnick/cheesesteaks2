@@ -19,6 +19,8 @@
  * AWS (s3 bucket)
  * Flask / Alembic / SQLAlchemy
  * PostgreSQL
+ * HTML
+ * Heroku
 
 
 # Developer:
