@@ -20,6 +20,8 @@
  * Flask / Alembic / SQLAlchemy
  * PostgreSQL
 
+
+# Developer:
  **Nicholas Brancifort**
   * https://github.com/brancifortnick
   * https://brancifortnick.github.io/
