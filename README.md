@@ -22,7 +22,7 @@
 
  **Nicholas Brancifort**
   * https://github.com/brancifortnick
-  * brancifortnick.github.io/
+  * https://brancifortnick.github.io/
 
 
 
