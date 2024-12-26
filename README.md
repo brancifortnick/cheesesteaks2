@@ -23,10 +23,10 @@
  * Heroku
 
 
-  # Developer:
+###Developer:
      **Nicholas Brancifort**
-     * https://github.com/brancifortnick
-     * https://brancifortnick.github.io/
+     *https://github.com/brancifortnick
+     *https://brancifortnick.github.io/
 
 
 
