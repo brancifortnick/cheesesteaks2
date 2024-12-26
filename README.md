@@ -3,8 +3,8 @@
 
 ## App will be rolling out google api features(Maps), Voting components, and more...
 
-### Added this cool extension to give myself a deadline on features
-#### Check out my hours coded, languages used most often, and other cool stats.
+* Added this cool extension to give myself a deadline on features
+* Check out my hours coded, languages used most often, and other cool stats.
 
 ### More to come in the README
 #### Adding Schemas | CRUD | Brief overlook & Other details
