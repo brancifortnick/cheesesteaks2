@@ -25,8 +25,8 @@
 
 ### Developer:
   **Nicholas Brancifort**
-   [!Github](https://github.com/brancifortnick)
-   [!Portfolio](https://brancifortnick.github.io/)
+  
+   * [Portfolio](https://brancifortnick.github.io/)
 
 
 
