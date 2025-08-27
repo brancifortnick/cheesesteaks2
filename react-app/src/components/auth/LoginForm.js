@@ -50,7 +50,7 @@ const LoginForm = () => {
 
   if (user) {
     return <Redirect to="/" />;
-  }
+  } 
 
   const handleClickShowPassword = () => {
     setValues({
@@ -62,89 +62,95 @@ const LoginForm = () => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
   return (
-    <form onSubmit={ onLogin }>
-      <div className='login-errors'>
-        { errors.map((error, ind) => (
-          <div key={ ind }>{ error }</div>
-        )) }
+    <div>
+      <div style={{ backgroundColor: 'red', color: 'white', padding: '20px', position: 'fixed', top: '100px', left: '50px', zIndex: 9999 }}>
+        LOGIN FORM TEST - I AM RENDERING!
       </div>
-      <div className='login-container'>
-        {/* <Box sx={{ display: 'inline-flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', m: 1, width: '28ch' }}> */ }
-        <div className='inner-login-wrapper'>
-          <Box sx={ { mx: "auto", maxWidth: "28ch", pt: 8 } }>
-            <TextField
-              required
-              variant='filled'
-              label="Required"
-              placeholder='Email'
-              value={ email }
-              defaultValue="Normal"
-              onChange={ updateEmail }
-
-              sx={ {
-                '& .MuiFilledInput-root': {
-                  '&:before': { borderBottomColor: 'black' },
-                  '&:after': { borderBottomColor: '#fb6c45' },
-                  '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
-                },
-                '& .MuiInputLabel-root.Mui-focused': {
-                  color: '#fb6c45',
-                },
-              } }
-
-            />
-          </Box>
-          <Box sx={ { mx: "auto", maxWidth: "28ch", pt: 1 } } >
-
-            <TextField
-              variant="filled"
-              placeholder='Password'
-              id="password"
-              type={ values.showPassword ? "text" : "password" }
-              value={ password }
-              onChange={ updatePassword }
-              sx={ {
-                '& .MuiFilledInput-root': {
-                  '&:before': { borderBottomColor: 'black' },
-                  '&:after': { borderBottomColor: '#fb6c45' },
-                  '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
-                },
-                '& .MuiInputLabel-root.Mui-focused': {
-                  color: '#fb6c45',
-                },
-              } }
-            />
-          </Box>
-
-
-          <Box
-            sx={ {
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignContent: "center",
-              mt: 2,
-              fontWeight: 500,
-            } }
-          >
-            <Button
-              className="login-button"
-              variant="contained"
-              sx={ {
-                color: "white",
-                bgcolor: "#fb6c45",
-                "&:hover": { bgcolor: "white", color: "#fb6c45" },
-              } }
-              type="submit"
-            >
-              Login
-            </Button>
-          </Box>
+      <form onSubmit={onLogin}>
+        <div className='login-errors'>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
         </div>
+        <div className='login-container'>
+          {/* <Box sx={{ display: 'inline-flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', m: 1, width: '28ch' }}> */}
+          <div className='inner-login-wrapper'>
+            <Box sx={{ mx: "auto", maxWidth: "28ch", pt: 8 }}>
+              <TextField
+                required
+                variant='filled'
+                label="Required"
+                placeholder='Email'
+                value={email}
+                defaultValue="Normal"
+                onChange={updateEmail}
 
-      </div>
-    </form>
+                sx={{
+                  '& .MuiFilledInput-root': {
+                    '&:before': { borderBottomColor: 'black' },
+                    '&:after': { borderBottomColor: '#fb6c45' },
+                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
+                }}
+
+              />
+            </Box>
+            <Box sx={{ mx: "auto", maxWidth: "28ch", pt: 1 }} >
+
+              <TextField
+                variant="filled"
+                placeholder='Password'
+                id="password"
+                type={values.showPassword ? "text" : "password"}
+                value={password}
+                onChange={updatePassword}
+                sx={{
+                  '& .MuiFilledInput-root': {
+                    '&:before': { borderBottomColor: 'black' },
+                    '&:after': { borderBottomColor: '#fb6c45' },
+                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#fb6c45',
+                  },
+                }}
+              />
+            </Box>
+
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignContent: "center",
+                mt: 2,
+                fontWeight: 500,
+              }}
+            >
+              <Button
+                className="login-button"
+                variant="contained"
+                sx={{
+                  color: "white",
+                  bgcolor: "#fb6c45",
+                  "&:hover": { bgcolor: "white", color: "#fb6c45" },
+                }}
+                type="submit"
+              >
+                Login
+              </Button>
+            </Box>
+          </div>
+
+        </div>
+      </form>
+    </div>
   );
 };
 

@@ -20,26 +20,39 @@ import UsersLocations from "./components/UsersLocations";
 import FoodGallery from './components/FoodGallery';
 import Footer from './components/Footer';
 import AllImagesRefactorTwo from './components/AllImagesRefactorTwo'
+
 function App() {
-
-
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     (async () => {
-      await dispatch(authenticate());
-      setLoaded(true);
+      console.log("Starting authentication...");
+      try {
+        const result = await dispatch(authenticate());
+        console.log("Authentication result:", result);
+        setLoaded(true);
+      } catch (error) {
+        console.error("Authentication failed:", error);
+        setLoaded(true); // Still load the app even if auth fails
+      }
     })();
   }, [dispatch]);
+
+  console.log("App render - loaded:", loaded);
+
   if (!loaded) {
+    console.log("Not loaded, returning null");
     return null;
   }
+
+  console.log("Rendering main app");
+
   return (
-    (loaded && (
-      <BrowserRouter>
+    <BrowserRouter>
+      <div>
         <NavBar />
+        <div>DEBUG: Routes should render here</div>
         <Switch>
           <Route path="/login" exact={true}>
             <LoginForm />
@@ -55,8 +68,6 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute path="/" exact={true}>
             <LandingPage />
-
-
           </ProtectedRoute>
           <ProtectedRoute path="/users/:userId/profile" exact={true}>
             <UsersLocations />
@@ -70,12 +81,11 @@ function App() {
           <ProtectedRoute path="/locations/:locationId">
             <LocationDetails />
           </ProtectedRoute>
-
         </Switch>
-
-      </BrowserRouter>
-    )
-    ) //end of loaded
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
+
 export default App;

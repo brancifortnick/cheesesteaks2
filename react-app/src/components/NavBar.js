@@ -34,8 +34,8 @@ const NavBar = () => {
 
 
           <div className="nav-link">
-            { user ? (
-              <NavLink to="/" exact={ true }>
+            { !user ? (
+              <NavLink to="/login" exact={ true }>
                 <HomeIcon color="disabled" sx={ { color: "#fb6c45", bgcolor: 'white', "& hover": { bgcolor: 'white' } } } />
               </NavLink>
             ) : null }

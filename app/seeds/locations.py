@@ -16,8 +16,8 @@ def seed_locations():
     location2 = Location(
         user_id=2,
         location_name='Ishkibbibles',
-        profile_img='https://mycheesesteaks.s3.us-east-1.amazonaws.com/034bcd5951d2430a8ade2c26a63cc916.jpg',
-        biography='Top 10 in philly for sure',
+        profile_img='https://mycheesesteaks.s3.us-east-1.amazonaws.com/1f9578e4471b413a8190f473bd646e2f.jpg',
+        biography='Random pic-not ishkibbles store front',
         address='337 S St',
         city='Philadelphia',
         state='PA',
