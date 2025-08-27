@@ -1,25 +1,31 @@
 .locations-container {
-  /* align-content: center; */
+display: flex;
   max-width: 400px;
   padding: 2rem;
   height: 100vh;
+  /* height: auto; */
   /* background-color: white; */
   color: #fb6c45;
-}
-.locations-list-components {
-  display: flex;
-  gap: 1.5rem;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  font-weight: 550;
-  /* background-color: white; */
+    align-content: center;
 }
+
+.locations-list-components {
+    display: flex;
+      grid-gap: 1.5rem;
+      gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-weight: 550;
+}
+
 .image_card {
   height: 450px;
   object-fit: cover;
   padding: 0 0 1rem;
 }
+
 .location-name {
   display: flex;
   flex-direction: row;
@@ -27,4 +33,67 @@
   font-weight: 700;
   font-size: 22px;
   line-height: 1.5;
+}
+
+/* iPhone 13 and similar mobile devices */
+@media screen and (max-width: 428px) {
+  .locations-container {
+    max-width: 100%;
+    padding: 1rem;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .locations-list-components {
+    grid-gap: 1rem;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 0 0.5rem;
+  }
+
+  .image_card {
+    height: 300px;
+    width: 100%;
+    max-width: 350px;
+    padding: 0 0 0.5rem;
+  }
+
+  .location-name {
+    font-size: 18px;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+}
+
+/* General mobile devices (portrait) */
+@media screen and (max-width: 480px) {
+  .locations-container {
+    max-width: 100%;
+    padding: 1rem 0.5rem;
+  }
+
+  .locations-list-components {
+    grid-gap: 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .image_card {
+    height: 280px;
+    max-width: 100%;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 360px) {
+  .locations-container {
+    padding: 0.5rem;
+  }
+
+  .image_card {
+    height: 250px;
+  }
+
+  .location-name {
+    font-size: 16px;
+  }
 }

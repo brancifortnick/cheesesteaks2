@@ -63,6 +63,8 @@ const LoginForm = () => {
     event.preventDefault();
   };
 
+  console.log("LoginForm component is rendering!");
+
   return (
     <div>
       <div style={{ backgroundColor: 'red', color: 'white', padding: '20px', position: 'fixed', top: '100px', left: '50px', zIndex: 9999 }}>

@@ -1,19 +1,22 @@
 .nav-container {
-    display: flex;
-    position: fixed;
-      background-color: white;
-    flex-direction: row;
-    border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
     justify-content: space-evenly;
-    top: 0;
-      width: 100%;
-      height: 60px;
-      /* Add a fixed height */
-    align-items: center;
-      text-align: center;
-    border-bottom: 4px ridge #fff;
-      z-index: 1000;
-      /* Ensure it's on top */
+  align-items: center;
+    text-align: center;
+  width: 100%;
+    background-color: white;
+  border-bottom: 4px ridge #fff;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    /* Stack items vertically */
+  }
+
+  /* Style for hamburger menu icon and menu toggling */
 }
 
 .link-location {
@@ -30,15 +33,13 @@
 
   backdrop-filter: blur(5px);
 }
-.link-location {
-}
+.link-location {}
 /* .footer footer {
   justify-content: center;
   position: absolute;
   display: flex;
 } */
-.hamburger-menu {
-}
+.hamburger-menu {}
 
 a {
   text-decoration: none;

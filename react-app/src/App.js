@@ -50,9 +50,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>
+
         <NavBar />
-        <div>DEBUG: Routes should render here</div>
+
         <Switch>
           <Route path="/login" exact={true}>
             <LoginForm />
@@ -83,7 +83,7 @@ function App() {
           </ProtectedRoute>
         </Switch>
         <Footer />
-      </div>
+
     </BrowserRouter>
   );
 }

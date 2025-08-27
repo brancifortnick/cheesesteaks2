@@ -1,6 +1,6 @@
 import React from "react";
 import stockImage from "../assets/stockImage.png";
-
+import linkedIn from '../assets/linkedin-orange.svg'
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import photoBomb from '../assets/icons8-portfolio-96.png'
@@ -13,15 +13,13 @@ const Footer = () => {
 
         <div className="footer-icons"  >
 
-          <a href='https://linkedin.com/in/brancifortnick/'>LinkedIn</a>
-
           <a href='https://linkedin.com/in/brancifortnick/'>
 
-
-            {/* <SiLinkedin size={ 65 } color='#fb6c45' /> */ }
-            </a>
-
-
+            <img alt="stockImage" src={linkedIn} style={{
+              margin: '2em', padding: '8px', backgroundColor: 'fb6c45', height: '96px', width: '98px', color:
+                'fb6c45'
+            }} />
+          </a>
 
             <div style={ { backgroundColor: 'fb6c45' } } className='github-icon' >
               <a href="https://www.github.com/brancifortnick" >
