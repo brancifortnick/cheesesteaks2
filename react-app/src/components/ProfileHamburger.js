@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../store/session";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useHistory } from 'react-router'
 import UsersLocations from './UsersLocations.js'
 import { Button, Box } from '@mui/material'; ``
@@ -47,12 +47,12 @@ function ProfileHamburger({ user }) {
 
 
                         <Button className='user_name'>
-                            <NavLink to={ `/users/${user.id}/profile` }>
+                            <Link to={`/users/${user.id}/profile`}>
                                 { user.username[0].toUpperCase() +
                                     user.username.slice(1) +
                                     "'s Uploads" }
 
-                            </NavLink>
+                            </Link>
                         </Button>
                         <LogoutButton user={ user } />
 
