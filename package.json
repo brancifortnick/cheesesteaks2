@@ -7,7 +7,7 @@
     "npm": "9.x"
   },
   "scripts": {
-    "heroku-postbuild": "cd react-app && npm install && npm run build && cd .. && mkdir -p app/static && cp -r react-app/build/* app/static/"
+    "heroku-postbuild": "cd react-app && npm install && NODE_OPTIONS=--openssl-legacy-provider npm run build && cd .. && mkdir -p app/static && cp -r react-app/build/* app/static/"
   },
   "dependencies": {
     "npm": "^9.0.0"
