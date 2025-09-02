@@ -1,59 +1,138 @@
+/* Modern Professional NavBar */
+.nav-bar {
+  height: 80px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(251, 108, 69, 0.1);
+}
 .nav-container {
-    display: flex;
-      flex-direction: row;
-      position: relative;
-        justify-content: space-evenly;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        background-color: white;
-        border-bottom: 4px ridge #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    padding: 0 2rem;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    /* Stack items vertically */
+.nav-link {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: #495057;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link a:hover,
+.nav-link a.active {
+  color: #fb6c45;
+  background: rgba(251, 108, 69, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Logo/Brand Area */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fb6c45;
+}
+
+/* Navigation Links Group */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Profile/User Section */
+.users-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Demo Login Button */
+.link-location {
+  margin: 0;
+  }
+  
+  .demo-login {
+    padding: 0.6rem 1.2rem !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .demo-login:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 20px rgba(251, 108, 69, 0.4) !important;
   }
 
-  /* Style for hamburger menu icon and menu toggling */
+/* Mobile Navigation */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+    .nav-links {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link a {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .demo-login {
+      padding: 0.5rem 1rem !important;
+      font-size: 0.9rem !important;
+    }
 }
 
-.link-location {
-  color: #fb6c45;
+@media screen and (max-width: 480px) {
+  .nav-container {
+    padding: 0 0.5rem;
+    height: auto;
+    min-height: 80px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    }
+    
+    .nav-brand {
+      font-size: 1.1rem;
+    }
 
-  border-radius: 10px;
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.3rem;
+    }
 
-  margin: 5px;
-  font-size: 20px;
-  font-weight: 500;
+    .nav-link a {
+      font-size: 0.85rem;
+      padding: 0.3rem 0.6rem;
+    }
 
-  /* background-color: #f1eeb7; */
-  /* background-color: #700f11; */
-
-  backdrop-filter: blur(5px);
-}
-.link-location {}
-/* .footer footer {
-  justify-content: center;
-  position: absolute;
-  display: flex;
-} */
-.hamburger-menu {}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-div.nav-link,
-a.link,
-a:visited,
-a.active,
-div.nav-link {
-  text-decoration: none;
-  color: #fb6c45;
+    .users-profile {
+      gap: 0.5rem;
+    }
 }

@@ -18,29 +18,24 @@ import photoQuote from '../assets/happy-quote.jpg'
 import theme from "./Theme";
 
 const LandingPage = () => {
-  const videoStyles = {
-    backgroundSize: "contain",
-    width: "100%",
-
-  };
   return (
-    <>
-
-      <img className="image-styling-landing" style={ videoStyles } src={ photoQuote } type='image/*'></img>
-      <div className="landing-page">
-        <h1 className='landing-title'>Get Out | Pig Out | STEAK OUT</h1>
-
-        <Home />
-        < About />
-        <AboutTwo />
-
-        <Contact />
-
-        {/* <footer>
-          <Footer />
-        </footer> */}
+    <div className="landing-page">
+      {/* Hero Section */}
+      <div className="hero-section" style={{ position: 'relative' }}>
+        <img
+          className="image-styling-landing"
+          src={photoQuote}
+          alt="Delicious steaks and food"
+        />
+        <h1 className="landing-title">Get Out | Pig Out | STEAK OUT</h1>
       </div>
-    </>
+
+      {/* Content Sections */}
+      <Home />
+      <About />
+      <AboutTwo />
+      <Contact />
+    </div>
   );
 };
 export default LandingPage;

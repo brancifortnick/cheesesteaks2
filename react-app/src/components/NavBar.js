@@ -23,84 +23,81 @@ const NavBar = () => {
     history.push("/");
   };
 
-  const currentPath = window.location.pathname;
-  console.log(currentPath, "currentPath coming from navbar component");
-
   return (
-    <>
-      <div className="nav-bar">
-
-        <div className="nav-container">
-
-
-          <div className="nav-link">
-            { !user ? (
-              <NavLink to="/login" exact={ true }>
-                <HomeIcon color="disabled" sx={ { color: "#fb6c45", bgcolor: 'white', "& hover": { bgcolor: 'white' } } } />
-              </NavLink>
-            ) : null }
-          </div>
-          <div className="nav-link">
-            { user ? (
-              <NavLink to="/locations" exact={ true }>
-                <StorefrontIcon
-                  color="disabled"
-                  sx={ { color: "#fb6c45" } }
-                  fontSize="large"
-                />
-              </NavLink>
-            ) : null }
-          </div>
-          <div className="nav-link">
-            { !user ? (
-              <NavLink to="/sign-up" exact={ true } activeClassName="active">
-                Sign Up
-              </NavLink>
-            ) : null }
-
-          </div>
-          <div className="nav-link">
-            { !user ? (
-              <NavLink to="/login" exact={ true } activeClassName="active">
-                Login
-              </NavLink>
-            ) : null }
-          </div>
-          <div className="link-location">
-            { !user ? (
-              <Button
-                sx={ { fontWeight: 550, backgroundColor: "#fb6c45", color: "white", "&:hover": { backgroundColor: "white", color: '#fb6c45' } } }
-                variant="contained"
-                className="demo-login"
-                onClick={ demoLoginButton }
-              >
-                Guest Login
-              </Button>
-            ) : null }
-          </div>
-
-          <div className="nav-link">
-            { user ? (
-              <NavLink to={ `/users/${user.id}/new-location` }>
-                Add a Spot
-              </NavLink>
-            ) : null }
-          </div>
-          <div className="users-profile">
-            { user ? (
-              // <div className="hamburger-menu">
-                <ProfileHamburger user={ user } />
-
-              // </div>
-            ) : null }
-
-
-
-          </div>
+    <div className="nav-bar">
+      <div className="nav-container">
+        {/* Brand/Logo Section */}
+        <div className="nav-brand">
+          {user ? (
+            <NavLink to="/" exact={true}>
+              <HomeIcon sx={{ color: "#fb6c45", fontSize: "1.8rem" }} />
+              <span>SteakOut</span>
+            </NavLink>
+          ) : (
+            <NavLink to="/login" exact={true}>
+              <HomeIcon sx={{ color: "#fb6c45", fontSize: "1.8rem" }} />
+              <span>SteakOut</span>
+            </NavLink>
+          )}
         </div>
 
+        {/* Navigation Links */}
+        <div className="nav-links">
+          {user ? (
+            <>
+              <div className="nav-link">
+                <NavLink to="/locations" exact={true}>
+                  <StorefrontIcon sx={{ fontSize: "1.2rem" }} />
+                  Locations
+                </NavLink>
+              </div>
+              <div className="nav-link">
+                <NavLink to={`/users/${user.id}/new-location`}>
+                  Add a Spot
+                </NavLink>
+              </div>
+            </>
+          ) : (
+            <>
+                <div className="nav-link">
+                  <NavLink to="/sign-up" exact={true} activeClassName="active">
+                    Sign Up
+                  </NavLink>
+                </div>
+                <div className="nav-link">
+                  <NavLink to="/login" exact={true} activeClassName="active">
+                    Login
+                  </NavLink>
+                </div>
+                <div className="link-location">
+                  <Button
+                    sx={{
+                      fontWeight: 600,
+                      backgroundColor: "#fb6c45",
+                      color: "white",
+                      textTransform: "none",
+                      "&:hover": {
+                        backgroundColor: "#e55a39",
+                        color: "white"
+                      }
+                    }}
+                    variant="contained"
+                    className="demo-login"
+                    onClick={demoLoginButton}
+                  >
+                    Guest Login
+                  </Button>
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* User Profile Section */}
+        <div className="users-profile">
+          {user && <ProfileHamburger user={user} />}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 export default NavBar;

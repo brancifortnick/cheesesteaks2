@@ -1,36 +1,21 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
-import Box from "@mui/material/Box";
+import { Redirect, Link } from "react-router-dom";
 import { login } from "../../store/session";
-import IconButton from "@mui/material/IconButton";
-import Input from "@mui/material/Input";
-import FilledInput from "@mui/material/FilledInput";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
-import TextField from "@mui/material/TextField";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import Button from "@mui/material/Button";
-import "./LoginForm.css";
+import "./Auth.css";
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [values, setValues] = useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false,
-  });
+    const [showPassword, setShowPassword] = useState(false);
 
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
+
+    if (user) {
+        return <Redirect to="/" />;
+    }
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -48,110 +33,81 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
-  if (user) {
-    return <Redirect to="/" />;
-  } 
-
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
   };
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
-  console.log("LoginForm component is rendering!");
 
   return (
-    <div>
-      <div style={{ backgroundColor: 'red', color: 'white', padding: '20px', position: 'fixed', top: '100px', left: '50px', zIndex: 9999 }}>
-        LOGIN FORM TEST - I AM RENDERING!
-      </div>
-      <form onSubmit={onLogin}>
-        <div className='login-errors'>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
-        </div>
-        <div className='login-container'>
-          {/* <Box sx={{ display: 'inline-flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center', m: 1, width: '28ch' }}> */}
-          <div className='inner-login-wrapper'>
-            <Box sx={{ mx: "auto", maxWidth: "28ch", pt: 8 }}>
-              <TextField
-                required
-                variant='filled'
-                label="Required"
-                placeholder='Email'
-                value={email}
-                defaultValue="Normal"
-                onChange={updateEmail}
+      <div className="auth-container">
+          <div className="auth-form-wrapper">
+              <h1 className="auth-title">Welcome Back</h1>
+              <p className="auth-subtitle">Sign in to your account to continue</p>
 
-                sx={{
-                  '& .MuiFilledInput-root': {
-                    '&:before': { borderBottomColor: 'black' },
-                    '&:after': { borderBottomColor: '#fb6c45' },
-                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
-                  },
-                  '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#fb6c45',
-                  },
-                }}
+              {errors.length > 0 && (
+                  <div className="error-message">
+                      <ul className="error-list">
+                          {errors.map((error, idx) => (
+                              <li key={idx}>{error}</li>
+                          ))}
+                      </ul>
+                  </div>
+              )}
 
-              />
-            </Box>
-            <Box sx={{ mx: "auto", maxWidth: "28ch", pt: 1 }} >
+              <form className="auth-form" onSubmit={onLogin}>
+                  <div className="form-group">
+                      <label htmlFor="email">Email Address</label>
+                      <input
+                          id="email"
+                          type="email"
+                          value={email}
+                          onChange={updateEmail}
+                          placeholder="Enter your email"
+                          className="auth-input"
+                          required
+                      />
+                  </div>
 
-              <TextField
-                variant="filled"
-                placeholder='Password'
+                  <div className="form-group">
+                      <label htmlFor="password">Password</label>
+                      <div style={{ position: 'relative' }}>
+                          <input
                 id="password"
-                type={values.showPassword ? "text" : "password"}
+                              type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={updatePassword}
-                sx={{
-                  '& .MuiFilledInput-root': {
-                    '&:before': { borderBottomColor: 'black' },
-                    '&:after': { borderBottomColor: '#fb6c45' },
-                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#fb6c45' },
-                  },
-                  '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#fb6c45',
-                  },
-                }}
+                              placeholder="Enter your password"
+                              className="auth-input"
+                              required
               />
-            </Box>
-
-
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignContent: "center",
-                mt: 2,
-                fontWeight: 500,
-              }}
-            >
-              <Button
-                className="login-button"
-                variant="contained"
-                sx={{
-                  color: "white",
-                  bgcolor: "#fb6c45",
-                  "&:hover": { bgcolor: "white", color: "#fb6c45" },
+                          <button
+                              type="button"
+                              onClick={togglePasswordVisibility}
+                              style={{
+                                  position: 'absolute',
+                                  right: '12px',
+                                  top: '50%',
+                                  transform: 'translateY(-50%)',
+                                  background: 'none',
+                                  border: 'none',
+                                  cursor: 'pointer',
+                                  color: '#6c757d',
+                                  fontSize: '1.2rem'
                 }}
-                type="submit"
               >
-                Login
-              </Button>
-            </Box>
+                              {showPassword ? '👁️' : '👁️‍🗨️'}
+                          </button>
+                      </div>
           </div>
 
-        </div>
-      </form>
+                  <button type="submit" className="auth-button">
+                      Sign In
+                  </button>
+              </form>
+
+              <div className="auth-link">
+                  Don't have an account? <Link to="/sign-up">Sign up here</Link>
+              </div>
+          </div>
     </div>
   );
 };
