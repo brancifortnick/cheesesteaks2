@@ -121,6 +121,79 @@ img {
   justify-content: center;
   align-items: center;
 }
+/* adding styling to make page more responsive/fix comments issue with footer */
+/* === Comments Section === */
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .comment-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.comment img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* === Footer Section === */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer a {
+  margin: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* === Image Sizing === */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.image-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
 
 /* Typography */
 .heading-primary {
