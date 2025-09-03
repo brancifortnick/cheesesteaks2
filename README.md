@@ -2,7 +2,7 @@
 # [Steakout](https://www.steaklocate.com/)
 
 ## App will be rolling out google api features(Maps), Voting components, and more...
---- More to come in the README
+  More to come in the README
 #### Adding Schemas | CRUD | Brief overlook & Other details
 
 # Languages/Libraries used:
