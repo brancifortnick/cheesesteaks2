@@ -1,5 +1,5 @@
 
-# [Steakout](https://www.steaklocate.com/)
+# [Steakout](https://www.locatesteaks.com/)
 
 ## App will be rolling out google api features(Maps), Voting components, and more...
   More to come in the README
