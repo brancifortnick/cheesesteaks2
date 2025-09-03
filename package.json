@@ -1,0 +1,23 @@
+{
+  "name": "steaklocate-app",
+  "version": "1.0.0",
+  "description": "SteakLocate - Find the best cheesesteaks near you",
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
+  "scripts": {
+    "heroku-postbuild": "cd react-app && npm install && NODE_OPTIONS=--openssl-legacy-provider npm run build && cd .. && mkdir -p app/static && cp -r react-app/build/* app/static/"
+  },
+  "dependencies": {
+    "npm": "^9.0.0"
+  },
+  "keywords": [
+    "cheesesteaks",
+    "food",
+    "restaurant",
+    "location"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

@@ -1,13 +1,10 @@
-FROM node:18 AS build-stage
-
+# Build stage for React app
+FROM node:18-alpine AS build-stage
 WORKDIR /react-app
-COPY react-app/. .
-
-# You have to set this because it should be set during build time.
-ENV REACT_APP_BASE_URL=https://steaklocate.com
-
-# Build our React App
+COPY react-app/package*.json ./
 RUN npm install
+COPY react-app/. .
+ENV REACT_APP_BASE_URL=https://steaklocate-app-2025-375d8b40dba2.herokuapp.com
 RUN npm run build
 
 FROM python:3.9
@@ -20,6 +17,10 @@ ENV SQLALCHEMY_ECHO=True
 EXPOSE 8000
 
 WORKDIR /var/www
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir psycopg2-binary
+
 COPY . .
 COPY --from=build-stage /react-app/build/* app/static/
 
