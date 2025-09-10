@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.4rem;
   vertical-align: middle;
   border: 1px solid #fb6c45;
   right: 0;
@@ -37,7 +37,7 @@
   background-color: none;
   color: #fb6c45;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.4rem;
   border: none;
   width: 100%;
 }
@@ -48,8 +48,15 @@
 
 .hamburger-toppings a {
   color: #fb6c45;
-
+  font-size: 1.4rem;
+  text-decoration: none;
   display: block;
+  padding: 0.8rem 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger-toppings a:hover {
+  background-color: rgba(251, 108, 69, 0.1);
 }
 
 .hamburger-toppings:hover .dropdown-container:hover {

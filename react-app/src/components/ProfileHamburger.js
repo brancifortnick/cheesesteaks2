@@ -39,7 +39,7 @@ function ProfileHamburger({ user }) {
     return (
         <>
             <div className='dropdown-container'>
-                <button className='profile-button' style={ { border: 'none', backgroundColor: 'white', color: '#fb6c45', fontWeight: 500, fontSize: '18px' } } onClick={ openMenu }>
+                <button className='profile-button' style={ { border: 'none', backgroundColor: 'white', color: '#fb6c45', fontWeight: 500, fontSize: '1.4rem' } } onClick={ openMenu }>
                     Profile
                 </button>
                 { showMenu && (

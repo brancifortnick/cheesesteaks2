@@ -30,12 +30,12 @@ const NavBar = () => {
         <div className="nav-brand">
           {user ? (
             <NavLink to="/" exact={true}>
-              <HomeIcon sx={{ color: "#fb6c45", fontSize: "1.8rem" }} />
+              <HomeIcon sx={{ color: "#fb6c45", fontSize: "1.4rem" }} />
               <span>SteakOut</span>
             </NavLink>
           ) : (
             <NavLink to="/login" exact={true}>
-              <HomeIcon sx={{ color: "#fb6c45", fontSize: "1.8rem" }} />
+              <HomeIcon sx={{ color: "#fb6c45", fontSize: "1.4rem" }} />
               <span>SteakOut</span>
             </NavLink>
           )}
@@ -47,7 +47,7 @@ const NavBar = () => {
             <>
               <div className="nav-link">
                 <NavLink to="/locations" exact={true}>
-                  <StorefrontIcon sx={{ fontSize: "1.2rem" }} />
+                  <StorefrontIcon sx={{ fontSize: "1.4rem" }} />
                   Locations
                 </NavLink>
               </div>
@@ -92,9 +92,11 @@ const NavBar = () => {
           )}
         </div>
 
-        {/* User Profile Section */}
+        {/* User Profile Section - Only show for logged-in users */}
         <div className="users-profile">
-          {user && <ProfileHamburger user={user} />}
+          {user ? (
+            <ProfileHamburger user={user} />
+          ) : null}
         </div>
       </div>
     </div>
