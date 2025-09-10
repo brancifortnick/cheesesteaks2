@@ -79,13 +79,12 @@ const AddComments = ({ locationId, imageId }) => {
                   width: 300,
                   padding: 0,
                   fontWeight: "800",
-                  fontStyle: "italic",
-                  maxWidth: "600px",
+
                   flexWrap: 'wrap'
                 }}
                 fullWidth
               />
-//!read commit message
+
               {/* <TextareaAutosize
               className="comment-input"
               type="text"
