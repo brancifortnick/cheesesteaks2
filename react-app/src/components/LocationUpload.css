@@ -1,13 +1,6 @@
 .outer_card {
-text-align: center;
-  /* height: 100vh; */
-  background-color: #faf8eb;
-  background-image: url(../assets/paul-hermann-jeiqzOgwwKU-unsplash.jpg);
-    background-position: 50%;
-    background-size: cover;
-    padding: 2rem;
-    /* z-index: -1; */
-    background-repeat: no-repeat;
+
+
 }
 .input_container {
   background-color: white;

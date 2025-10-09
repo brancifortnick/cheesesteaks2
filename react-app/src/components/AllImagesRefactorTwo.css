@@ -19,13 +19,13 @@
 /*updated card-container 09.12.24
 */
 .image-card-container {
-  display: inline-flex;
+
   flex-direction: column;
   /* width: 80rem; */
   /* height: 50rem; */
   grid-gap: 1rem;
   gap: 1rem;
-  flex-wrap: wrap;
+  word-wrap: wrap;
   align-content: center;
   justify-content: space-evenly;
 }

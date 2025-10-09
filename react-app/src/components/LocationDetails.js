@@ -22,9 +22,8 @@ function LocationDetails() {
     dispatch(getOneLocation(locationId));
     dispatch(getPhotos(locationId));
   }, [dispatch, locationId]);
-
-
-  console.log(images, "images console.log coming from locationsDetails+++++++++++++++++++++++++++++++++++++++++++")
+  // Defensive guards: ensure we have data while async fetch completes
+  const isLoaded = location && Object.keys(location).length > 0;
   return (
     <>
       <div className="location-details-container">
@@ -34,8 +33,7 @@ function LocationDetails() {
             <img style={ { borderRadius: '20px' } } src={ location.profile_img } alt="location" className="location-details-image" />
           </Box>
           <div className='delete-location-button'>
-            { currentUser.id === location.user_id ? (
-
+            { currentUser && isLoaded && currentUser.id === location.user_id ? (
               <DeleteLocation locationId={ locationId } />
             ) : null }
           </div>
@@ -45,7 +43,7 @@ function LocationDetails() {
             { location.state + ',' + " " }
             { location.zipcode }
           </div>
-          { currentUser.id === location.user_id ? (
+          { currentUser && isLoaded && currentUser.id === location.user_id ? (
             <div className='biography-container'>
               <UpdateBiography locationId={ locationId } />
             </div>
