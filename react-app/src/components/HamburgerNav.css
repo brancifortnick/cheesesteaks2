@@ -23,7 +23,8 @@ height: 80px;
 }
 
 .nav-brand {
-    font-size: 2rem;
+border: none;   
+text-decoration: none;
 }
 
 .nav-links a {

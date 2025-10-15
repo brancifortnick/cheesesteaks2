@@ -31,13 +31,13 @@ const NavBar = () => {
         <div className="nav-brand">
           {user ? (
             <NavLink to="/" exact={true}>
-              <HomeIcon sx={{ color: "#fb6c45", fontSize: "1.4rem" }} />
-              <span>Locate Steaks</span>
+              
+              <span>Home</span>
             </NavLink>
           ) : (
             <NavLink to="/login" exact={true}>
               <HomeIcon sx={{ color: "#fb6c45", fontSize: "1.4rem" }} />
-              <span>Locate Steaks</span>
+              <span>Home</span>
             </NavLink>
           )}
         </div>

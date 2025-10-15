@@ -33,7 +33,7 @@ color: #fb6c45;
 
 .users-locationpage-images {
   width: 100%;
-  height: auto;
+  max-height: 400px;
   border-radius: 10px;
 }
 

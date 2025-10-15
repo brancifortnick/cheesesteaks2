@@ -1,6 +1,11 @@
 .outer_card {
-
-
+display:flex;
+justify-content: center;
+flex-direction: row;
+align-items: center;
+width: auto;
+margin-top: 2rem;
+margin-bottom: 2rem;
 }
 .input_container {
   background-color: white;

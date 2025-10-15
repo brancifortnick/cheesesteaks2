@@ -6,11 +6,11 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem 1.25rem 6.5rem;
-    /* extra bottom padding to clear footer */
-    max-width: 1200px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    min-height: calc(100vh - 80px);
+  /* extra bottom padding to clear footer */
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: calc(100vh - 80px);
   box-sizing: border-box;
 }
 
@@ -18,16 +18,18 @@
 .location-details-image-container {
   width: 100%;
   display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
-  }
+font-size: 1.4rem;
+}
+
 /* Title */
 .location-name {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
-  color: #2c3e50;
-  text-align: center;
+  color: #000000;
+  text-align: center; 
   margin-bottom: 1rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -37,7 +39,7 @@
   width: 100%;
   max-width: 700px;
   height: 400px;
-    object-fit: cover;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -50,19 +52,19 @@
 
 /* ---------- Address / bio ---------- */
 .location-address {
-  font-size: 1.15rem;
-  color: #6c757d;
+  font-size: 1rem;
+  color: #2c3e50;
   text-align: center;
   margin: 1rem 0;
   background: rgba(255, 255, 255, 0.95);
-    padding: 0.9rem 1.25rem;
+  padding: 0.9rem 1.25rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   word-break: break-word;
 }
 
 .biography-wrapper {
-  font-size: 1.05rem;
+  font-size: 2rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
   text-align: center;
@@ -74,11 +76,11 @@
 .images-inner-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+  gap: 2rem;
   justify-content: center;
   margin-top: 2.5rem;
-    width: 100%;
-    max-width: 1000px;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .images-inner-container .image-wrapper {
@@ -89,21 +91,22 @@
   align-items: center;
   border-radius: 16px;
   overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .images-inner-container .image-wrapper:hover {
+}
+
+.images-inner-container .image-wrapper:hover {
   transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .images-inner-container img {
   width: 100%;
   height: 100%;
-    object-fit: cover;
-    border-radius: 16px;
+  object-fit: cover;
+  border-radius: 16px;
 }
+
 /* ---------- Comments Section ---------- */
 .comments-section {
   width: 100%;
@@ -115,12 +118,14 @@
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
 }
+
 .comments-section h2 {
   font-size: 1.6rem;
   margin: 0 0 1rem 0;
   color: #243447;
   text-align: left;
 }
+
 /* Each comment row (image thumbnail + content) */
 .image-comments-block {
   display: flex;
@@ -129,9 +134,11 @@
   padding: 0.75rem 0;
   border-bottom: 1px solid #f0f2f4;
 }
+
 .image-comments-block:last-child {
   border-bottom: none;
 }
+
 /* thumbnail */
 .image-comments-block img {
   width: 84px;
@@ -141,6 +148,7 @@
   flex-shrink: 0;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
+
 /* comment body: form + metadata */
 .comment-body {
   flex: 1;
@@ -148,27 +156,30 @@
   flex-direction: column;
   gap: 0.4rem;
 }
+
 /* small text */
 .comment-meta {
   font-size: 0.9rem;
   color: #6c757d;
 }
+
 /* ---------- Footer helpers ---------- */
 /* If your footer is position:fixed add 'with-fixed-footer' to body */
 body.with-fixed-footer .location-details-container {
   padding-bottom: 92px;
   /* footer height + breathing room, adjust if your footer differs */
 }
+
 /* ---------- Responsive ---------- */
 @media screen and (max-width: 428px) {
   .location-details-container {
     padding: 1rem;
   }
-    
+
   .location-name {
     font-size: 2rem;
   }
-    
+
   .location-details-image {
     height: 280px;
     border-radius: 15px;
@@ -178,16 +189,16 @@ body.with-fixed-footer .location-details-container {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
-  
+
   .images-inner-container .image-wrapper {
     height: 240px;
   }
-  
+
   .image-comments-block {
     flex-direction: row;
     gap: 0.75rem;
   }
-  
+
   .image-comments-block img {
     width: 72px;
     height: 72px;
