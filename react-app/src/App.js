@@ -51,6 +51,7 @@ function App() {
   console.log("Rendering main app");
 
   return (
+    (loaded &&
     <BrowserRouter>
 
       <NavBar />
@@ -67,7 +68,8 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true}>
+          <ProtectedRoute path="/" exact={true}>
+            
           <LandingPage />
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId/profile" exact={true}>
@@ -85,7 +87,8 @@ function App() {
       </Switch>
       <Footer />
 
-    </BrowserRouter>
+      </BrowserRouter>
+      )
   );
 }
 

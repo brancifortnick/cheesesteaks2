@@ -27,7 +27,12 @@ html {
   /* 1rem = 10px base for easier scaling */
 }
 
-:root{
+nav {
+  top: 0;
+  position: fixed;
+}
+
+:root {
   /* Breakpoints */
   --bp-xs: 360px;
   --bp-sm: 480px;
@@ -56,6 +61,36 @@ body {
   height: auto;
   display: block;
   max-width: 100%;
+}
+
+/* Improved button touch targets for mobile */
+button,
+.primary-button,
+.secondary-button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Large desktop improvements */
+@media screen and (min-width: 1200px) {
+
+  .container,
+  .fluid {
+    max-width: 1200px;
+  }
+
+  body {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ultra-wide screen support */
+@media screen and (min-width: 1400px) {
+
+  .container,
+  .fluid {
+    max-width: 1400px;
+  }
 }
 
 /* Navigation Styles */
@@ -188,12 +223,12 @@ img {
 
 .footer {
   position: relative;
-    z-index: 10;
-    background-color: #2c3e50;
-    color: white;
-    padding: 2rem;
-    text-align: center;
-  }
+  z-index: 10;
+  background-color: #2c3e50;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
 
 .comments-index {
   position: relative;
@@ -616,10 +651,13 @@ html {
 .about-section-container {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   padding: 2rem;
+  grid-gap: 2rem;
   gap: 2rem;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .about-section-text-container-two {
@@ -1002,9 +1040,9 @@ a:active {
     padding-top: 75px;
   }
 
-        nav {
-          height: 6rem;
-        }
+  nav {
+    height: 6rem;
+  }
 
   .work-section-wrapper {
     margin-top: 4rem;

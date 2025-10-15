@@ -32,12 +32,12 @@ const NavBar = () => {
           {user ? (
             <NavLink to="/" exact={true}>
               <HomeIcon sx={{ color: "#fb6c45", fontSize: "1.4rem" }} />
-              <span>SteakOut</span>
+              <span>Locate Steaks</span>
             </NavLink>
           ) : (
             <NavLink to="/login" exact={true}>
               <HomeIcon sx={{ color: "#fb6c45", fontSize: "1.4rem" }} />
-              <span>SteakOut</span>
+              <span>Locate Steaks</span>
             </NavLink>
           )}
         </div>
