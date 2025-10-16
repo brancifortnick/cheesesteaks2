@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
@@ -26,7 +26,7 @@ import HamburgerNav from "./components/HamburgerNav";
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
-
+  let user = useSelector(state => state.session.user || null);
   useEffect(() => {
     (async () => {
       console.log("Starting authentication...");
@@ -54,7 +54,7 @@ function App() {
     (loaded &&
     <BrowserRouter>
 
-      <NavBar />
+      <NavBar user={user} />
       <Switch>
         <Route path="/login" exact={true}>
           <LoginForm />
