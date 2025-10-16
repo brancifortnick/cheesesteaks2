@@ -19,7 +19,6 @@ body {
   color: #333;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   overflow-x: hidden;
-  padding-top: 6rem;
   /* Space for fixed navbar */
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -75,19 +74,20 @@ main {
 
 /* Improved button touch targets for mobile */
 button,
+button,
 .primary-button,
 .secondary-button {
   min-height: 44px;
   min-width: 44px;
-}
-footer {
-  background: #690000;
-  color: #fff;
-  padding: 1rem 1rem;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.4rem;
+
+
+ 
+  padding: 2rem 1rem;
   text-align: center;
   margin-top: auto;
 
-  position: relative;
   z-index: 100;
 }
 
@@ -220,7 +220,13 @@ img {
   gap: 1rem;
   padding: 1rem;
   font-size: 2.5rem;
-font-weight: 700;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .comment-container {
+    font-size: 1.3rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -358,18 +364,14 @@ label {
 /* Professional Form Elements */
 input,
 textarea,
-select {
-  font-family: inherit;
-  font-size: 1rem;
-}
-
+select,
 button {
   padding: 0.8rem 1.2rem;
   font-size: 1.4rem;
   min-height: 44px;
 }
 
-/* Professional Animation Classes */
+
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.6s ease-out forwards;
@@ -394,7 +396,7 @@ button {
   }
 }
 
-/* Professional Grid Systems */
+
 .grid {
   display: grid;
   gap: 2rem;
@@ -424,7 +426,6 @@ button {
   }
 }
 
-/* Professional Spacing System */
 .mb-1 {
   margin-bottom: 0.5rem;
 }
@@ -513,7 +514,6 @@ button {
   font-weight: 600;
 }
 
-/* Professional Focus States */
 *:focus {
   outline: 2px solid #fb6c45;
   outline-offset: 2px;
