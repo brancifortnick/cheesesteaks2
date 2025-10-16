@@ -7,6 +7,7 @@ import photoBomb from '../assets/icons8-portfolio-96.png'
 import gitPhoto from '../assets/github-mark-white.svg'
 const Footer = () => {
   return (
+    <footer>
     <div className="footer-wrapper">
       <div className="footer-section-one">
 
@@ -36,7 +37,7 @@ const Footer = () => {
         </div >
       </div>
     </div>
-
+</footer>
   );
 };
 
