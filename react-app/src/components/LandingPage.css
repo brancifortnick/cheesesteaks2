@@ -4,7 +4,10 @@
   overflow-x: hidden;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
+#footer{
 
+bottom: 0;
+}
 /* Hero Image Section */
 .image-styling-landing {
   width: 100%;

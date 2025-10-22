@@ -69,7 +69,6 @@ function App() {
           <User />
         </ProtectedRoute>
           <ProtectedRoute path="/" exact={true}>
-            
           <LandingPage />
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId/profile" exact={true}>
@@ -85,7 +84,7 @@ function App() {
           <LocationDetails />
         </ProtectedRoute>
       </Switch>
-      <Footer />
+
 
       </BrowserRouter>
       )

@@ -2,8 +2,7 @@
 
 /* ---------- Page container ---------- */
 .location-details-container {
-  display: flex;
-  flex-direction: column;
+
   align-items: center;
   padding: 2rem 1.25rem 6.5rem;
   /* extra bottom padding to clear footer */

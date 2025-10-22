@@ -185,11 +185,6 @@ nav {
 }
 
 /* Image Styles */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
 /* Professional Layout Classes */
 .container {
@@ -252,14 +247,7 @@ img {
 
 /* === Footer Section === */
 
-.footer {
-  position: relative;
-  z-index: 10;
-  background-color: #2c3e50;
-  color: white;
-  padding: 2rem;
-  text-align: center;
-}
+
 
 .comments-index {
   position: relative;
@@ -273,19 +261,19 @@ img {
     text-align: left;
   }
 }
-
+/* 
 .footer a {
   margin: 0.5rem;
   font-size: 1.2rem;
-}
+} */
 
 /* === Image Sizing === */
-img {
+/* img {
   max-width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
-}
+} */
 
 .image-wrapper {
   width: 100%;
@@ -631,7 +619,7 @@ html {
 
 .primary-heading {
   font-size: clamp(2.4rem, 4vw, 3.2rem);
-  font-weight: 800;
+  font-weight: 700;
   color: #2c3e50;
   line-height: 1.2;
   margin-bottom: 1.5rem;
@@ -812,7 +800,7 @@ html {
 }
 
 /* Footer Styles */
-.footer-wrapper {
+/* .footer-wrapper {
 
   position: fixed;
   background: linear-gradient(135deg, #d9dfe6 0%, #34495e 100%);
@@ -878,7 +866,7 @@ html {
 
 .footer-section-columns span:hover {
   color: #fb6c45;
-}
+} */
 
 /* Work Section Styles */
 .work-section-wrapper {
@@ -1024,7 +1012,7 @@ a:active {
   }
 
   /* Footer mobile */
-  .footer-wrapper {
+  /* .footer-wrapper {
     padding: 2rem 1rem;
   }
 
@@ -1032,7 +1020,7 @@ a:active {
   .footer-section-two {
     flex-direction: column;
     text-align: center;
-  }
+  } */
 
   /* About sections mobile */
   .about-section-container,
@@ -1227,7 +1215,7 @@ label {
 /* Comment / meta text */
 .comment-container,
 .comment,
-.footer a {
+a {
   font-size: 1.2rem;
 }
 

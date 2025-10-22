@@ -12,7 +12,7 @@ const GetUsersIp = () => {
       .then((response) => response.json())
       .then((data) => {
         setIpAddress(data.ip);
-        console.log(data.ip, "+++++++++++++++++++++++++++");
+        // console.log(data.ip, "+++++++++++++++++++++++++++");
       })
       .catch((error) => console.error(error));
   };
@@ -35,7 +35,7 @@ const GetUsersIp = () => {
     fetchIp();
   }, []);
 
-  console.log(ipAddress);
+  console.log(ipAddress, 'this is the current ip address');
 
   return (
     <>

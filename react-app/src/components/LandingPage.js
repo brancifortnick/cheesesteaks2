@@ -37,6 +37,8 @@ const LandingPage = () => {
       <About />
       <AboutTwo />
       <Contact />
+
+      
     </div>
   );
 };

@@ -7,6 +7,12 @@ width: auto;
 margin-top: 2em;
 margin-bottom: 2em;
 }
+
+.outer_card input[type="text"]{
+width: 100%;
+}
+
+
 .input_container {
 display:flex;
 flex-direction: column;
