@@ -10,6 +10,8 @@
     "heroku-postbuild": "cd react-app && npm install && NODE_OPTIONS=--openssl-legacy-provider npm run build && cd .. && mkdir -p app/static && cp -r react-app/build/* app/static/"
   },
   "dependencies": {
+    "heroku": "^10.13.2",
+    "heroku-cli": "^7.0.9",
     "npm": "^9.0.0"
   },
   "keywords": [

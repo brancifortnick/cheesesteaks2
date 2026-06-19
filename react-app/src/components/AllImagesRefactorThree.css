@@ -1,12 +1,22 @@
 .accordion-wrapper {
   font-size: 20px;
-  font-family: helvetica neue;
+  font-family: "Arial", sans-serif;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    overflow: hidden;
 }
 .image-card-container {
-  display: flex;
+  
+  flex-direction: column;
+    align-items: center;
   justify-content: center;
-  max-width: 600px;
-  height: auto;
+  margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .images-grid {
   display: flex;
@@ -20,24 +30,19 @@
   word-break: break-word;
   background-color: light grey;
 }
-.css-0 {
-  min-width: 400px;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin: 1rem;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 10px;
-}
+
 .comments-scrollable {
   max-height: 300px; /* Set a fixed height for the scrollable section */
   overflow-y: auto; /* Enable vertical scrolling */
   padding: 10px;
+font-size: 2.4rem;
   border: 1px solid #ddd;
   border-radius: 5px;
-  min-height: 300px;
+  /* min-height: 300px; */
 }
 
 .comments-scrollable {
-  background: #fb6c45;
+  /* background: #fb6c45; */
+    border: none;
+    font-size: 2rem;
 }

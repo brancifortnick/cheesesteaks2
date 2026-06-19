@@ -5,7 +5,7 @@ import { getAllLocations, postNewLocation } from "../store/location";
 import { TextField } from "@mui/material";
 import { TextFormatRounded } from "@mui/icons-material";
 import { Label } from "@mui/icons-material";
-import TextareaAutosize from "@mui/base/TextareaAutosize";
+
 import Button from "@mui/material/Button";
 import { Box } from "@mui/material";
 import Form from "@mui/material/FormControl";

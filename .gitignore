@@ -1,6 +1,40 @@
-.env
+# Node modules
+/frontend/node_modules/
+
+# Build output
+/frontend/build/
+/frontend/dist/
+
+# Python cache
 __pycache__/
 *.py[cod]
-.venv
+*.egg-info/
+node_modules/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environment
+venv/
+.env
+
+# OS-specific
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDEs
 .vscode/
+.idea/
+
+# Coverage reports
+coverage/
+*.cover
+*.py,cover
+
+# Misc
+*.sqlite3
+node_modules

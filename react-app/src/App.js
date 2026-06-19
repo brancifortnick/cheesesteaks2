@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
@@ -20,11 +20,13 @@ import UsersLocations from "./components/UsersLocations";
 import FoodGallery from './components/FoodGallery';
 import Footer from './components/Footer';
 import AllImagesRefactorTwo from './components/AllImagesRefactorTwo'
+import HamburgerNav from "./components/HamburgerNav";
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
-
+  let user = useSelector(state => state.session.user || null);
   useEffect(() => {
     (async () => {
       console.log("Starting authentication...");
@@ -49,42 +51,43 @@ function App() {
   console.log("Rendering main app");
 
   return (
+    (loaded &&
     <BrowserRouter>
 
-        <NavBar />
-
-        <Switch>
-          <Route path="/login" exact={true}>
-            <LoginForm />
-          </Route>
-          <Route path="/sign-up" exact={true}>
-            <SignUpForm />
-          </Route>
-          <ProtectedRoute path="/users" exact={true}>
-            <UsersList />
-          </ProtectedRoute>
-          <ProtectedRoute path="/users/:userId" exact={true}>
-            <User />
-          </ProtectedRoute>
+      <NavBar user={user} />
+      <Switch>
+        <Route path="/login" exact={true}>
+          <LoginForm />
+        </Route>
+        <Route path="/sign-up" exact={true}>
+          <SignUpForm />
+        </Route>
+        <ProtectedRoute path="/users" exact={true}>
+          <UsersList />
+        </ProtectedRoute>
+        <ProtectedRoute path="/users/:userId" exact={true}>
+          <User />
+        </ProtectedRoute>
           <ProtectedRoute path="/" exact={true}>
-            <LandingPage />
-          </ProtectedRoute>
-          <ProtectedRoute path="/users/:userId/profile" exact={true}>
-            <UsersLocations />
-          </ProtectedRoute>
-          <ProtectedRoute path="/users/:userId/new-location" exact={true}>
-            <LocationUpload />
-          </ProtectedRoute>
-          <ProtectedRoute path="/locations" exact={true}>
-            <AllLocations />
-          </ProtectedRoute>
-          <ProtectedRoute path="/locations/:locationId">
-            <LocationDetails />
-          </ProtectedRoute>
-        </Switch>
-        <Footer />
+          <LandingPage />
+        </ProtectedRoute>
+        <ProtectedRoute path="/users/:userId/profile" exact={true}>
+          <UsersLocations />
+        </ProtectedRoute>
+        <ProtectedRoute path="/users/:userId/new-location" exact={true}>
+          <LocationUpload />
+        </ProtectedRoute>
+        <ProtectedRoute path="/locations" exact={true}>
+          <AllLocations />
+        </ProtectedRoute>
+        <ProtectedRoute path="/locations/:locationId">
+          <LocationDetails />
+        </ProtectedRoute>
+      </Switch>
 
-    </BrowserRouter>
+
+      </BrowserRouter>
+      )
   );
 }
 

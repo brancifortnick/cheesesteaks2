@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: steaklocate-app
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon
+    env_vars:
+      - key: DATABASE_URL
+        from_database:
+          name: steaklocate-db
+          property: connectionString
+      - key: SECRET_KEY
+        generate_value: true
+      - key: FLASK_APP
+        value: app
+      - key: FLASK_ENV
+        value: production
+      - key: REACT_APP_BASE_URL
+        value: https://steaklocate-app.onrender.com
+
+databases:
+  - name: steaklocate-db
+    databaseName: steaklocate
+    user: steaklocate
+    plan: free

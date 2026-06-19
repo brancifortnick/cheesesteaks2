@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const GetUsersIp = () => {
-  let API_KEY = "b54e5eacb39c4a2687a5295f24e172d0";
+  let API_KEY = process.env.API_KEY;
 
   const [ipAddress, setIpAddress] = useState("");
 
@@ -12,7 +12,7 @@ const GetUsersIp = () => {
       .then((response) => response.json())
       .then((data) => {
         setIpAddress(data.ip);
-        console.log(data.ip, "+++++++++++++++++++++++++++");
+        // console.log(data.ip, "+++++++++++++++++++++++++++");
       })
       .catch((error) => console.error(error));
   };
@@ -35,11 +35,11 @@ const GetUsersIp = () => {
     fetchIp();
   }, []);
 
-  console.log(ipAddress);
+  console.log(ipAddress, 'this is the current ip address');
 
   return (
     <>
-      <div>{ipAddress}</div>
+  
     </>
   );
 };

@@ -1,198 +1,205 @@
-/* Professional Location Details Page */
+/* File: react-app/src/components/LocationDetails.css */
+
+/* ---------- Page container ---------- */
 .location-details-container {
+
+  align-items: center;
+  padding: 2rem 1.25rem 6.5rem;
+  /* extra bottom padding to clear footer */
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: calc(100vh - 80px);
+  box-sizing: border-box;
+}
+
+/* ---------- Image & header wrapper ---------- */
+.location-details-image-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    min-height: calc(100vh - 80px);
+  gap: 2rem;
+font-size: 1.4rem;
 }
 
-.location-details-image-container {
-  width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  
-  .location-name {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+/* Title */
+.location-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #000000;
+  text-align: center; 
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* Hero image */
 .location-details-image {
   width: 100%;
   max-width: 700px;
-    height: 400px;
-    object-fit: cover;
+  height: 400px;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .location-details-image:hover {
   transform: scale(1.02);
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
 }
 
-.delete-location-button {
-  margin: 1rem 0;
-}
-.delete-container {
-  display: flex;
-  justify-content: center;
-}
-/* Address Information */
+/* ---------- Address / bio ---------- */
 .location-address {
-  font-size: 1.2rem;
-  color: #6c757d;
+  font-size: 1rem;
+  color: #2c3e50;
   text-align: center;
   margin: 1rem 0;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.9rem 1.25rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Biography Section */
-.biography-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  margin-top: 2rem;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 800px;
+  word-break: break-word;
 }
 
 .biography-wrapper {
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
   text-align: center;
   color: #495057;
+  margin-top: 0.9rem;
 }
 
-/* Images Gallery */
+/* ---------- Images gallery ---------- */
 .images-inner-container {
   display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   justify-content: center;
-  margin-top: 2rem;
-    width: 100%;
-    max-width: 1000px;
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .images-inner-container .image-wrapper {
   width: 100%;
-    height: 300px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .images-inner-container .image-wrapper:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images-inner-container .image-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .images-inner-container img {
   width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 16px;
-    margin: 0;
-  }
-  
-  /* Mobile Responsiveness */
-  @media screen and (max-width: 428px) {
-    .location-details-container {
-      padding: 1rem;
-    }
-  
-    .location-name {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-  
-    .location-details-image {
-      height: 300px;
-    border-radius: 15px;
-    }
-    
-    .location-address {
-      font-size: 1rem;
-      padding: 0.8rem 1.5rem;
-      margin: 0.8rem 0;
-    }
-    
-    .biography-container {
-      padding: 1.5rem;
-      margin-top: 1.5rem;
-      border-radius: 12px;
-    }
-    
-    .biography-wrapper {
-      font-size: 1rem;
-    }
-    
-    .images-inner-container {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    
-    .images-inner-container .image-wrapper {
-      height: 250px;
-    }
-    }
-    
-    @media screen and (max-width: 360px) {
-      .location-details-container {
-        padding: 0.8rem;
-      }
-    
-      .location-name {
-        font-size: 1.7rem;
-      }
-    
-      .location-details-image {
-        height: 250px;
-      }
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
 
-    .biography-container {
+/* ---------- Comments Section ---------- */
+.comments-section {
+  width: 100%;
+  max-width: 980px;
+  margin: 2.25rem auto;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.comments-section h2 {
+  font-size: 1.6rem;
+  margin: 0 0 1rem 0;
+  color: #243447;
+  text-align: left;
+}
+
+/* Each comment row (image thumbnail + content) */
+.image-comments-block {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f2f4;
+}
+
+.image-comments-block:last-child {
+  border-bottom: none;
+}
+
+/* thumbnail */
+.image-comments-block img {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* comment body: form + metadata */
+.comment-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* small text */
+.comment-meta {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* ---------- Footer helpers ---------- */
+/* If your footer is position:fixed add 'with-fixed-footer' to body */
+body.with-fixed-footer .location-details-container {
+  padding-bottom: 92px;
+  /* footer height + breathing room, adjust if your footer differs */
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 428px) {
+  .location-details-container {
     padding: 1rem;
-    }
-    
-    .images-inner-container .image-wrapper {
-      height: 220px;
-    }
-    }
-    
-    /* Tablet adjustments */
-    @media screen and (min-width: 429px) and (max-width: 768px) {
-      .location-name {
-        font-size: 2.2rem;
-      }
-    
-      .location-details-image {
-        height: 350px;
-      }
+  }
 
-    .images-inner-container {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
+  .location-name {
+    font-size: 2rem;
+  }
+
+  .location-details-image {
+    height: 280px;
+    border-radius: 15px;
+  }
+
+  .images-inner-container {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .images-inner-container .image-wrapper {
+    height: 240px;
+  }
+
+  .image-comments-block {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .image-comments-block img {
+    width: 72px;
+    height: 72px;
+  }
 }

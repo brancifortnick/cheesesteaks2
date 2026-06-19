@@ -16,6 +16,7 @@ import Contact from './Contact';
 import AboutTwo from './AboutTwo'
 import photoQuote from '../assets/happy-quote.jpg'
 import theme from "./Theme";
+import GetUsersIp from "./GetUsersIp";
 
 const LandingPage = () => {
   return (
@@ -32,9 +33,12 @@ const LandingPage = () => {
 
       {/* Content Sections */}
       <Home />
+      <GetUsersIp />
       <About />
       <AboutTwo />
       <Contact />
+
+      
     </div>
   );
 };

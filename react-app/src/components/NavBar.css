@@ -1,16 +1,23 @@
 /* Modern Professional NavBar */
 .nav-bar {
-  height: 80px;
+  position: fixed;
+    top: 0;
+    left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(251, 108, 69, 0.1);
+  height: 60px;
+
+    background-color: #000000;
+    z-index: 1000;
+    font-size: 1.4rem;
+    border-bottom: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
+
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-    padding: 0 2rem;
+  padding: 0 2rem;
     height: 100%;
     max-width: 1400px;
     margin: 0 auto;
@@ -25,7 +32,7 @@
   text-decoration: none;
   color: #495057;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.4rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -46,7 +53,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #fb6c45;
 }
@@ -68,23 +75,26 @@
 /* Demo Login Button */
 .link-location {
   margin: 0;
-  }
-  
-  .demo-login {
-    padding: 0.6rem 1.2rem !important;
-    font-weight: 600 !important;
-    text-transform: none !important;
-    border-radius: 8px !important;
-    transition: all 0.3s ease !important;
-  }
-  
-  .demo-login:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 20px rgba(251, 108, 69, 0.4) !important;
-  }
+}
+
+.demo-login {
+  padding: 0.6rem 1.2rem !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.demo-login:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 20px rgba(251, 108, 69, 0.4) !important;
+}
 
 /* Mobile Navigation */
 @media screen and (max-width: 768px) {
+  .nav-bar {
+      height: 60px;
+    }
   .nav-container {
     padding: 0 1rem;
     flex-wrap: wrap;
@@ -97,26 +107,28 @@
     }
 
     .nav-link a {
-      font-size: 0.9rem;
+      font-size: 1.3rem;
       padding: 0.4rem 0.8rem;
     }
 
     .demo-login {
       padding: 0.5rem 1rem !important;
-      font-size: 0.9rem !important;
+      font-size: 1.3rem !important;
     }
 }
 
 @media screen and (max-width: 480px) {
+  .nav-bar {
+      height: 60px;
+    }
   .nav-container {
     padding: 0 0.5rem;
     height: auto;
-    min-height: 80px;
+    min-height: 60px;
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
-    }
-    
+
     .nav-brand {
       font-size: 1.1rem;
     }
@@ -128,11 +140,12 @@
     }
 
     .nav-link a {
-      font-size: 0.85rem;
+      font-size: 1.2rem;
       padding: 0.3rem 0.6rem;
     }
 
     .users-profile {
       gap: 0.5rem;
+    }
     }
 }

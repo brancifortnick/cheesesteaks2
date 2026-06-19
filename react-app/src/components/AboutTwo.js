@@ -9,12 +9,6 @@ const About = () => {
 
     return (
         <div className="about-section-container-two">
-            <img className='img-snippet' src={ videoAlias } />
-            <div className="about-background-image-container-two"></div>
-            <div className="about-section-image-container-two">
-
-            </div>
-
             <div className="about-section-text-container-two">
                 <h1 className="primary-heading-two">
 
@@ -28,6 +22,12 @@ const About = () => {
         </p> */}
 
             </div>
+            
+            <div className="about-section-image-container-two">
+                <img className='img-snippet' src={ videoAlias } />
+            </div>
+            
+            <div className="about-background-image-container-two"></div>
         </div>
     );
 };

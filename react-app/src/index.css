@@ -8,22 +8,112 @@
 }
 
 body {
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   color: #333;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   overflow-x: hidden;
-  padding-top: 80px;
   /* Space for fixed navbar */
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: calc(var(--nav-height) + env(safe-area-inset-top));
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
+
+nav {
+  top: 0;
+  position: fixed;
+}
+
+:root {
+  /* Breakpoints */
+  --bp-xs: 360px;
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --nav-height: 6rem;
+}
+
+
+/* Utility: full width responsive container */
+.fluid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 4rem; /* ensures content never hides behind footer */
+}
+
+/* Helper: ensure media elements respect container and don't overflow */
+.responsive-media {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+/* Improved button touch targets for mobile */
+button,
+button,
+.primary-button,
+.secondary-button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.4rem;
+
+
+ 
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: auto;
+
+  z-index: 100;
+}
+
+
+
+
+
+@media screen and (min-width: 1200px) {
+
+  .container,
+  .fluid {
+    max-width: 1200px;
+  }
+
+  body {
+    font-size: 2.5rem;
+  }
+}
+
+/* Ultra-wide screen support */
+@media screen and (min-width: 1400px) {
+
+  .container,
+  .fluid {
+    max-width: 1400px;
+  }
 }
 
 /* Navigation Styles */
@@ -33,7 +123,7 @@ nav {
   left: 0;
   right: 0;
   width: 100%;
-  height: 80px;
+  height: 6rem;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
@@ -50,7 +140,7 @@ nav {
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -77,7 +167,7 @@ nav {
   color: #fb6c45;
   border: 2px solid #fb6c45;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -95,11 +185,6 @@ nav {
 }
 
 /* Image Styles */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
 /* Professional Layout Classes */
 .container {
@@ -122,24 +207,128 @@ img {
   align-items: center;
 }
 
+/* adding styling to make page more responsive/fix comments issue with footer */
+/* === Comments Section === */
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .comment-container {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .comment-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.comment img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+/* === Footer Section === */
+
+
+
+.comments-index {
+  position: relative;
+  z-index: 5;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+/* 
+.footer a {
+  margin: 0.5rem;
+  font-size: 1.2rem;
+} */
+
+/* === Image Sizing === */
+/* img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+} */
+
+.image-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
 /* Typography */
 .heading-primary {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
   font-weight: 800;
   color: #2c3e50;
   margin-bottom: 1rem;
 }
 
 .heading-secondary {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 1.5rem;
 }
 
 .text-large {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.6;
+}
+
+label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 1.3rem;
+}
+
+/* Scale down miscellaneous larger text */
+.status-success,
+.status-warning,
+.status-error {
+  font-size: 1.3rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 1.3rem;
+  color: #6c757d;
 }
 
 /* Card Components */
@@ -159,31 +348,18 @@ img {
 }
 
 /* Loading States */
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px;
-  font-size: 1.1rem;
-  color: #6c757d;
-}
 
 /* Professional Form Elements */
 input,
 textarea,
-select {
-  font-family: inherit;
-  font-size: 1rem;
+select,
+button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.4rem;
+  min-height: 44px;
 }
 
-label {
-  font-weight: 600;
-  color: #495057;
-  margin-bottom: 0.5rem;
-  display: block;
-}
 
-/* Professional Animation Classes */
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.6s ease-out forwards;
@@ -208,7 +384,7 @@ label {
   }
 }
 
-/* Professional Grid Systems */
+
 .grid {
   display: grid;
   gap: 2rem;
@@ -238,7 +414,6 @@ label {
   }
 }
 
-/* Professional Spacing System */
 .mb-1 {
   margin-bottom: 0.5rem;
 }
@@ -327,7 +502,6 @@ label {
   font-weight: 600;
 }
 
-/* Professional Focus States */
 *:focus {
   outline: 2px solid #fb6c45;
   outline-offset: 2px;
@@ -444,8 +618,8 @@ html {
 }
 
 .primary-heading {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 700;
   color: #2c3e50;
   line-height: 1.2;
   margin-bottom: 1.5rem;
@@ -490,15 +664,19 @@ html {
 .about-section-container {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   padding: 2rem;
+  grid-gap: 2rem;
   gap: 2rem;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .about-section-text-container-two {
   position: relative;
   flex: 1;
+  font-size: 3rem;
   min-width: 300px;
 }
 
@@ -520,7 +698,7 @@ html {
 }
 
 .primary-text-two {
-  font-size: 1.1rem;
+  font-size: 2rem;
   line-height: 1.6;
   color: #6c757d;
 }
@@ -622,17 +800,21 @@ html {
 }
 
 /* Footer Styles */
-.footer-wrapper {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+/* .footer-wrapper {
+
+  position: fixed;
+  background: linear-gradient(135deg, #d9dfe6 0%, #34495e 100%);
   color: white;
+
+
+  width: 100%;
+  bottom: 0;
 }
 
 .footer-section-one {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
+
+ 
 }
 
 .footer-section-two {
@@ -642,13 +824,21 @@ html {
 }
 
 .footer-logo-container {
-  max-width: 120px;
-}.footer-icons {
+  max-width: 1200px;
+}
+
+.footer-icons {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-gap: 1rem;
   gap: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  bottom: 0;
+
 }
 
 .footer-icons svg {
@@ -663,7 +853,7 @@ html {
 
 .footer-section-columns {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-width: 180px;
 }
 
@@ -676,7 +866,9 @@ html {
 
 .footer-section-columns span:hover {
   color: #fb6c45;
-}/* Work Section Styles */
+} */
+
+/* Work Section Styles */
 .work-section-wrapper {
   margin-top: 8rem;
   padding: 2rem;
@@ -743,7 +935,9 @@ html {
   align-items: center;
   font-weight: 500;
   line-height: 1.6;
-}/* Global Link Styling */
+}
+
+/* Global Link Styling */
 a {
   text-decoration: none;
   color: inherit;
@@ -767,8 +961,8 @@ a:active {
 /* iPhone 13 and similar devices (≤428px) */
 @media screen and (max-width: 428px) {
   body {
-    font-size: 16px;
-    padding-top: 80px;
+    font-size: 1.4rem;
+    padding-top: 6rem;
   }
 
   .container,
@@ -797,7 +991,7 @@ a:active {
   /* Button adjustments */
   button {
     padding: 0.8rem 1.2rem;
-    font-size: 16px;
+    font-size: 1.4rem;
     min-height: 44px;
   }
 
@@ -805,7 +999,7 @@ a:active {
   input,
   textarea,
   select {
-    font-size: 16px;
+    font-size: 1.4rem;
     padding: 0.8rem;
     width: 100%;
     box-sizing: border-box;
@@ -818,7 +1012,7 @@ a:active {
   }
 
   /* Footer mobile */
-  .footer-wrapper {
+  /* .footer-wrapper {
     padding: 2rem 1rem;
   }
 
@@ -826,7 +1020,7 @@ a:active {
   .footer-section-two {
     flex-direction: column;
     text-align: center;
-  }
+  } */
 
   /* About sections mobile */
   .about-section-container,
@@ -849,7 +1043,7 @@ a:active {
   }
 
   .contact-form-container input {
-    font-size: 16px;
+    font-size: 1.4rem;
     padding: 0.8rem;
   }
 
@@ -869,6 +1063,10 @@ a:active {
     padding-top: 75px;
   }
 
+  nav {
+    height: 6rem;
+  }
+
   .work-section-wrapper {
     margin-top: 4rem;
   }
@@ -881,12 +1079,12 @@ a:active {
 /* Small mobile devices (≤360px) */
 @media screen and (max-width: 360px) {
   body {
-    font-size: 14px;
+    font-size: 1.25rem;
     padding-top: 70px;
   }
 
   h1 {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 
   h2 {
@@ -895,14 +1093,14 @@ a:active {
 
   button {
     padding: 0.7rem 1rem;
-    font-size: 14px;
+    font-size: 1.3rem;
   }
 
   input,
   textarea,
   select {
     padding: 0.7rem;
-    font-size: 16px;
+    font-size: 1.4rem;
     /* Keep 16px to prevent zoom on iOS */
   }
 
@@ -964,5 +1162,135 @@ a:active {
 
   .primary-text-two {
     max-width: 90%;
+  }
+}
+
+/* === Responsive Typography & Image Refinements (override) === */
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px base for easier scaling */
+}
+
+body {
+  font-size: 1.4rem;
+  padding-top: 6rem;
+}
+
+nav {
+  height: 6rem;
+}
+
+.primary-button,
+.secondary-button {
+  font-size: 1.4rem;
+}
+
+.heading-primary {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+}
+
+.heading-secondary {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+}
+
+.text-large {
+  font-size: 1.4rem;
+}
+
+label {
+  font-size: 1.3rem;
+}
+
+/* Scale down miscellaneous larger text */
+.status-success,
+.status-warning,
+.status-error {
+  font-size: 1.3rem;
+}
+
+.loading {
+  font-size: 1.3rem;
+}
+
+/* Comment / meta text */
+.comment-container,
+.comment,
+a {
+  font-size: 1.2rem;
+}
+
+/* Avatar & small media */
+.comment img,
+.avatar-sm {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* Professional image sizing */
+.location-image,
+.card img,
+.image-wrapper img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 1.2rem;
+}
+
+.image-grid img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+/* Utility scaling */
+.small-text {
+  font-size: 1.1rem;
+}
+
+.xsmall-text {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.3rem;
+  }
+
+  .heading-primary {
+    font-size: clamp(2.2rem, 6vw, 2.8rem);
+  }
+
+  .heading-secondary {
+    font-size: clamp(1.7rem, 5vw, 2.3rem);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1.25rem;
+  }
+
+  nav {
+    height: 6rem;
+  }
+
+  .heading-primary {
+    font-size: clamp(2rem, 7vw, 2.6rem);
+  }
+
+  .heading-secondary {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .primary-button,
+  .secondary-button {
+    font-size: 1.3rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .comment img,
+  .avatar-sm {
+    width: 3.6rem;
+    height: 3.6rem;
   }
 }
